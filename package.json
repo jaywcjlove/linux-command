@@ -1,0 +1,33 @@
+{
+  "name": "linux-command",
+  "version": "1.0.0",
+  "description": "Linux Command",
+  "main": "build/compile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node build/compile.js",
+    "build:css": "stylus -u autoprefixer-stylus template/styl/index.styl -o .deploy/ -c",
+    "watch:css": "stylus -u autoprefixer-stylus -w template/styl/index.styl -o .deploy/ -c"
+  },
+  "keywords": [
+    "Linux",
+    "Command"
+  ],
+  "author": "kenny wang <wowohoo@qq.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaywcjlove/linux-command.git"
+  },
+  "devDependencies": {
+    "autoprefixer": "^6.5.1",
+    "autoprefixer-stylus": "^0.11.0",
+    "colors-cli": "^1.0.7",
+    "ejs": "^2.5.2",
+    "highlight.js": "^9.8.0",
+    "marked": "^0.3.6",
+    "ssr": "^1.1.1",
+    "stylus": "^0.54.5",
+    "watch": "^1.0.1"
+  }
+}

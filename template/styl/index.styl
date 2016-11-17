@@ -1,0 +1,215 @@
+@import('mixins/reset.styl')
+@import('mixins/highlight.styl')
+@import('mixins/markdown.styl')
+
+
+a.github-corner { 
+    position: fixed
+    top: 0
+    right: 0
+    &:hover{
+        .octo-arm{
+            animation:octocat-wave 560ms ease-in-out
+        }
+    }
+    svg{
+        fill #f1f1f1
+        color #000
+        position absolute
+        top 0
+        border 0
+        right 0
+        z-index 99
+        width 70px
+        height 70px
+    }
+}
+
+@keyframes octocat-wave{
+    0%,100%{-webkit-transform:rotate(0);transform:rotate(0)}
+    20%,60%{-webkit-transform:rotate(-25deg);transform:rotate(-25deg)}
+    40%,80%{-webkit-transform:rotate(10deg);transform:rotate(10deg)}
+}
+    
+
+.header{
+    width 517px
+    margin 0 auto 0
+    padding 0 10px
+    .logo{
+        text-align center
+        padding-top 50px
+        padding-bottom 50px
+    }
+    .box{
+        position relative
+    }
+    .search{
+        min-height 20px
+        position relative
+        display table
+        border-collapse separate
+        li,ul{
+            list-style none
+        }
+        .search-list{
+            position absolute
+            display none
+            z-index 999
+            box-shadow 1px 1px 3px #ededed
+            border 1px solid #d5d5d5
+            background #fff
+            min-width 100px
+            top 39px
+            width 100%
+            padding 5px
+            border-radius 5px 5px 5px 5px
+            li{
+                line-height 23px
+            }
+            a{
+                display block
+                padding 2px 6px 2px 6px
+                color #555555
+                &:hover{
+                    background-color #f2f2f2
+                }
+                .kw{
+                    color #f00
+                    font-style inherit
+                    font-weight bold
+                }
+            }
+        }
+        .query,.enter-input{
+            display table-cell
+            transition border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s
+        }
+        .query{
+            position relative
+            z-index 2
+            width 100%
+            height 40px
+            padding 6px 12px
+            font-size 14px
+            font-weight bold
+            line-height 1.42857143
+            color #555
+            background-color #fff
+            background-image none
+            border 1px solid $border-color
+            border-radius 5px 0 0 5px
+            &:focus{
+                z-index 99
+                border-color #66afe9
+                outline 0
+                box-shadow inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(102,175,233,0.6)
+            }
+        }
+        .enter-input{
+            width 1%
+            white-space nowrap
+            vertical-align middle
+            button{
+                position relative
+                z-index 5
+                display inline-block
+                padding 9px 23px
+                margin-bottom 0
+                margin-left -1px
+                font-size 14px
+                font-weight bold
+                line-height 1.42857143
+                text-align center
+                text-rendering auto
+                white-space nowrap
+                vertical-align middle
+                touch-action manipulation
+                cursor pointer
+                user-select none
+                background-image none
+                background-color #fff
+                border 1px solid transparent
+                border-collapse separate
+                border-radius 0 5px 5px 0
+                border-color $border-color
+                color #333
+                &:focus,&:active:focus{
+                    outline thin dotted
+                    outline 5px auto -webkit-focus-ring-color
+                    outline-offset -2px
+                }
+                &:active{
+                    color #333
+                    background-color #e6e6e6
+                    border-color #b4b4b4
+                    background-image none
+                    box-shadow inset 0 8px 32px -8px rgba(0,0,0,0.3)
+                }
+                &:focus{
+                    color #333
+                    background-color #e6e6e6
+                    border-color #999
+                    text-decoration none
+                }
+                &:hover{
+                    color #333
+                    background-color #e6e6e6
+                    border-color #b4b4b4
+                }
+            }
+        }
+    }
+    .footer{
+        text-align center
+        padding-top 31px
+        color #616161
+        font-size 14px
+        font-weight 300
+    }
+}
+
+
+.header.header_list{
+    width auto
+}
+
+.header_list{
+    padding 10px 10px 10px 13px 
+    border-bottom 1px solid #EEEEEE
+    .logo{
+        float left
+        padding-top 3px
+        padding-bottom 0
+        padding-right 24px
+        text-align left
+        svg{
+            height 37px
+            width 136px
+        }
+    }
+    .search{
+        max-width 517px
+    }
+    .footer{
+        display none
+    }
+}
+
+.search_list{
+    padding 17px 27px 
+    a{
+        font-size 16px
+        strong{
+            font-weight bold
+        }
+    }
+    li{
+        padding 10px 0 10px 0
+        p{
+            padding-top 5px
+            color #4F4F4F
+        }
+    }
+
+}

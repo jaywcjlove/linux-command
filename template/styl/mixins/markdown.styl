@@ -1,0 +1,132 @@
+
+div.markdown-body
+    .edit_btn{
+        position relative
+        right 0
+        float right
+        top 48px
+        z-index 2
+    }
+    padding 30px 35px 30px 35px
+    word-wrap break-word
+    font-family "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif
+    font-size 14px
+    line-height 1.6
+    color #333
+    @media mq-mobile
+        padding-right 0
+    &>*:first-child
+        margin-top 0 !important
+    strong
+        font-weight bold
+    hr 
+        border-top 1px solid #CACACA
+        border-width 1px 0 0 0
+    em 
+        font-style italic
+    img 
+        max-width 100%
+    h1,h2,h3,h4,h5,h6
+        position relative
+        margin-top 1em
+        margin-bottom 16px
+        font-weight bold
+        line-height 1.4
+        a 
+            display none
+        &:hover a
+            display inline
+            color #000
+            font-size 85%
+    h1,h2
+        border-bottom 1px solid #eee
+    h1
+        font-size 2.25em
+        line-height 1.2
+        padding-bottom 0.3em
+    h2
+        padding-bottom 0.3em
+        font-size 1.50em
+        line-height 1.225
+        // border-bottom:1px solid #DEDEDE
+    blockquote
+        padding 0 15px
+        color #777
+        border-left 4px solid #ddd
+        margin 0;
+        &>:last-child
+            margin-bottom 0
+        &>:first-child
+            margin-top 0
+    p,blockquote,ul,ol,dl,table,pre
+        margin-top 0;
+        margin-bottom 16px
+    ul,ol
+        padding-left 1.4em
+        list-style:initial
+    ol
+        list-style-type decimal
+    ol ol, ul ol
+        list-style-type lower-roman
+    ul ul ol, ul ol ol, ol ul ol, ol ol ol
+        list-style-type lower-alpha
+    pre
+        padding 1em
+        overflow auto
+        background-color #f7f7f9
+        border-radius 3px
+        word-break break-all
+        word-wrap break-word 
+        font "Source Code Pro", Consolas, Menlo, Monaco, "Courier New", monospace
+        font-size 0.93em
+        -webkit-overflow-scrolling touch
+        code
+            background-color transparent
+            color inherit
+            line-height 1.4
+            display block
+            font-size 1em
+        // code:before,code:after,tt:before,tt:after
+        //     letter-spacing 0
+        //     content ""
+    code,tt
+        padding 0
+        padding-bottom 2px
+        margin 0 3px
+        vertical-align top
+        background-color #EDEDF7
+        border-radius 4px
+        padding-left 3px
+        padding-right 3px
+        font-size 14px
+        color #6F5990
+        padding-top 2px
+    // code:before,code:after,tt:before,tt:after
+    //     content "\00a0"
+    //     vertical-align text-top
+    //     display inline-block
+    //     width 0px
+    table
+        width 100%
+        border-collapse collapse
+        border-spacing 0
+        max-width 100%
+        display block
+        background-color transparent
+        th,td
+            border 1px solid #ddd
+            padding 4px 10px
+        th
+            font-weight bold
+            background #F3F3F3
+        tr:nth-child(2n) 
+            background-color #f8f8f8
+        tbody
+            background #fff
+
+// markdown 增强样式
+.markdown-body
+    .task-list-item
+        padding 0
+        li 
+            list-style-type none
