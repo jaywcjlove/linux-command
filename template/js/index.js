@@ -73,15 +73,21 @@
         createListHTML:function(){
             var arr = this.commands,self = this,page_size = this.page_size,i=0;
             if(arr&&arr.length&&toString.call(arr).indexOf('Array')>-1){
-                self.elm_result.innerHTML=''
+                self.elm_result.innerHTML='';
+                var relese = 0
                 for (; i < page_size; i++) {
                     if(!arr[i]) break;
+                    var myLi = document.createElement("LI");
                     if(self.isSreachIndexOF(arr[i].n,self.query) 
                         || self.isSreachIndexOF(arr[i].d,self.query) 
                     ){
-                        var myLi = document.createElement("LI");
+                        relese += 1
                         myLi.innerHTML = self.createKeyworldsHTML(arr[i],self.query)
                         self.elm_result.appendChild(myLi);
+                    }
+                    if(relese ===0){
+                        myLi.innerHTML = '<span>没有任何内容，请尝试输入其它字符！</span>';
+                        self.elm_result.innerHTML = myLi.outerHTML;
                     }
                 }
             }
