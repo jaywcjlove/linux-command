@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node build/compile.js",
+    "deploy": "node build/deploy.js",
     "build:css": "stylus -u autoprefixer-stylus template/styl/index.styl -o .deploy/ -c",
     "watch:css": "stylus -u autoprefixer-stylus -w template/styl/index.styl -o .deploy/ -c"
   },
@@ -29,5 +30,9 @@
     "ssr": "^1.1.1",
     "stylus": "^0.54.5",
     "watch": "^1.0.1"
+  },
+  "dependencies": {
+    "gh-pages": "^0.12.0",
+    "loading-cli": "^1.0.2"
   }
 }
