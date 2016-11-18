@@ -46,7 +46,7 @@
         pushState:function(){
             if(window.history&&window.history.pushState)
                 this.query ? history.pushState({},"linux_commands","#!kw="+this.query):
-                    history.pushState({},"linux_commands","/");
+                    history.pushState({},"linux_commands",window.location.pathname);
         },
         //简单模版
         simple:function(str,obj){
