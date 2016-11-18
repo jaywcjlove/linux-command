@@ -45,8 +45,13 @@ marked.setOptions({
   }
 });
 
-var path_root = path.dirname(__dirname);
+// 根目录
+// var path_root = path.dirname(__dirname);
+var path_root = process.cwd();
 
+
+// 删除文件夹
+exec('rm -rf .deploy');
 
 // .deploy
 // 当前项目根目录
