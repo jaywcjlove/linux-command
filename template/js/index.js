@@ -7,15 +7,29 @@
         this.elm_info = $$('commands_info');
         this.elm_result = $$('result');
 
+        // 获取根路径
+        this.root_path = (function(){
+            var elm_path = $$('current_path');
+            var url = window.location.origin+window.location.pathname;
+            return elm_path?url.replace(elm_path.value,''):'';
+        })();
+
         this.query = '';     //
         this.page_size = 10; //每页显示10条
 
         this.init()
+        this.goToIndex()
     }
 
     Commands.prototype = {
         $$:function(id){
             return document.getElementById(id)
+        },
+        goToIndex(){
+            var elma = document.getElementsByTagName('A');
+            for (var i = 0; i < elma.length; i++) {
+                if(elma[i].pathname==='/') elma[i].href = this.root_path.replace(/\/$/,'')+'/';
+            }
         },
         bindEvent:function(elm,type,handle){
             if (elm.addEventListener) {
@@ -38,9 +52,7 @@
         //获取URL上面的参数
         getQueryString:function(name) { 
             var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i"); 
-            console.log("reg1:",reg);
             var r = decodeURIComponent(window.location.hash.replace(/^(\#\!|\#)/,'')).match(reg);
-            console.log("reg2:",r);
             if (r != null) return unescape(r[2]); return null; 
         },
         pushState:function(){
@@ -63,22 +75,18 @@
                 des = json.d.replace(reg,'<i class="kw">'+"$1"+"</i>") || '';
             }
 
-            return this.simple('<a href="/c$url$.html"><strong>$name$</strong> - $des$</a>',{
+            return this.simple('<a href="'+this.root_path+'/c$url$.html"><strong>$name$</strong> - $des$</a>',{
                 name:name,
                 url:json.p,
                 des:des
             })
 
         },
-        // 获取根路径
-        getRootPath(){
-
-        },
         createListHTML:function(){
             var arr = this.commands,self = this,page_size = this.page_size,i=0;
             if(arr&&arr.length&&toString.call(arr).indexOf('Array')>-1){
                 self.elm_result.innerHTML='';
-                var relese = 0
+                var relese = 0;
                 for (; i < page_size; i++) {
                     if(!arr[i]) break;
                     var myLi = document.createElement("LI");
@@ -89,10 +97,10 @@
                         myLi.innerHTML = self.createKeyworldsHTML(arr[i],self.query)
                         self.elm_result.appendChild(myLi);
                     }
-                    if(relese ===0){
-                        myLi.innerHTML = '<span>没有任何内容，请尝试输入其它字符！</span>';
-                        self.elm_result.innerHTML = myLi.outerHTML;
-                    }
+                }
+                if(relese ===0){
+                    myLi.innerHTML = '<span>没有任何内容，请尝试输入其它字符！</span>';
+                    self.elm_result.innerHTML = myLi.outerHTML;
                 }
             }
         },
