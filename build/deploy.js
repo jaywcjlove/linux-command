@@ -2,6 +2,7 @@ var exec = require('child_process').exec;
 var ghpages = require('gh-pages');
 var loading =  require('loading-cli');
 var path = require('path');
+var fs = require('fs');
 var color = require('colors-cli/safe');
 var error = color.red.bold;
 var warn = color.yellow;
