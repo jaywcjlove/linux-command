@@ -63,11 +63,15 @@
                 des = json.d.replace(reg,'<i class="kw">'+"$1"+"</i>") || '';
             }
 
-            return this.simple('<a href="/command$url$.html"><strong>$name$</strong> - $des$</a>',{
+            return this.simple('<a href="/c$url$.html"><strong>$name$</strong> - $des$</a>',{
                 name:name,
                 url:json.p,
                 des:des
             })
+
+        },
+        // 获取根路径
+        getRootPath(){
 
         },
         createListHTML:function(){

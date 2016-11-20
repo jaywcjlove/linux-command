@@ -3,7 +3,9 @@
 <%- include('search',{type: "list"}); %>
 
 <div class="markdown-body">
-<!--[编辑]-->
+<% if(md_path){ %>
+<a class="edit_btn" href="https://github.com/jaywcjlove/linux-command/edit/master/<%=md_path%>">编辑</a>
+<% } %>
 {{content}}
 </div>
 

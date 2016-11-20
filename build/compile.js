@@ -66,14 +66,22 @@ CreateDatajs('./.deploy/js/dt.js',function(dt_path,arr){
 
     CreateStyl('/template/styl/index.styl','/.deploy/css/index.css')
     // 首页生成
-    ReadTmpToHTML('/template/index.ejs','/.deploy/index.html');
-    ReadTmpToHTML('/template/list.ejs','/.deploy/list.html');
+    ReadTmpToHTML('/template/index.ejs','/.deploy/index.html',null,{
+      'p':'/index.html',
+      'n':'首页',
+      'd':'最专业的Linux命令大全，内容包含Linux命令手册、详解、学习，值得收藏的Linux命令速查手册。'
+    });
+    ReadTmpToHTML('/template/list.ejs','/.deploy/list.html',null,{
+      p:'/list.html',
+      n:'搜索',
+      d:'最专业的Linux命令大全，内容包含Linux命令手册、详解、学习，值得收藏的Linux命令速查手册。'
+    });
     // 文章批量生成
     arr.forEach(function(itm,idx){
         var ejstpm = path.join('/template/',itm.p);
         var md_path = path.join('/command',itm.p);
-        var dep = path.join('/.deploy/command',itm.p);      
-        ReadTmpToHTML('/template/details.ejs',dep+'.html',md_path+'.md')
+        var dep = path.join('/.deploy/c',itm.p);      
+        ReadTmpToHTML('/template/details.ejs', dep+'.html' ,md_path+'.md', itm)
     });
 
 })
@@ -118,23 +126,29 @@ watch.watchTree(path.join(path.dirname(__dirname),'/'), function (f, curr, prev)
  * [ReadTmpToHTML ejs 模板转换成HTML]
  * @param {[type]} from_path [模版来源地址]
  * @param {[type]} to_path   [生成到指定的位置]
- * @param {[type]} md_path   [Markdown的位置]
+ * @param {[type]} md_path   [Markdown的路径] // 给md地址就生产详情页面
+ * @param {[type]} des_json   [页面信息 json 格式]
  */
-function ReadTmpToHTML(from_path,to_path,md_path){
+function ReadTmpToHTML(from_path,to_path,md_path,des_json){
     var tmp_path = path.join(path.dirname(__dirname),from_path);
     if(!exists(tmp_path))  return console.log("\n  → error: 模板文件 "+tmp_path+" 不存在")
     var tmp_str  = fs.readFileSync(tmp_path);
     tmp_str = tmp_str.toString();
 
-    var relative_path = '';
+    var relative_path = '',current_path='';
     if(md_path){
-        relative_path = path.relative(md_path.toString(),'/');
-        relative_path = relative_path.replace(/\.\.$/,'');
+      //CSS/JS 引用相对地址
+      relative_path = path.relative(md_path.toString(),'/');
+      relative_path = relative_path.replace(/\.\.$/,'');
+      current_path = md_path.replace(/\.md$/,'.html').replace(/^\/command\//,'/c/');
     }
     // 生成 HTML
     var html = ejs.render(tmp_str,{
         filename: tmp_path,
-        relative_path:relative_path
+        relative_path:relative_path, // 当前文件相对于根目录的相对路径
+        md_path:md_path?md_path:'',  // markdown 路径
+        current_path:current_path,   // 当前 html 路径
+        describe:des_json?des_json:{},   // 当前 md 的描述
     });
     // 生成到指定目录
     var new_to_path = path.join(path.dirname(__dirname),to_path);
@@ -147,13 +161,10 @@ function ReadTmpToHTML(from_path,to_path,md_path){
             if (err) return console.log(error('  → '+md_path+" 转换成HTML失败!"));
 
             html = html.replace('{{content}}',md_html);
-            html = html.replace('<!--[编辑]-->','<a class="edit_btn" href="'+path.join('https://github.com/jaywcjlove/linux-command/edit/master/',md_path)+'">编辑</a>')
             fs.writeFileSync(new_to_path,html);
             console.log(success("  → ")+to_path + '');
-
         })
     }else{
-
         html = html.toString();
         fs.writeFileSync(new_to_path, html.replace(/\n/g,''));
         console.log(success("  → ")+to_path + '');
