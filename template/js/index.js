@@ -17,6 +17,8 @@
         this.query = '';     //
         this.page_size = 10; //每页显示10条
 
+        this.elm_info.innerHTML = this.commands.length;
+
         this.init()
         this.goToIndex()
     }
@@ -99,7 +101,7 @@
                     }
                 }
                 if(relese ===0){
-                    myLi.innerHTML = '<span>没有任何内容，请尝试输入其它字符！</span>';
+                    myLi.innerHTML = this.query?'<span>没有搜索到任何内容，请尝试输入其它字符！</span>':'<span>请尝试输入一些字符，进行搜素！</span>';
                     self.elm_result.innerHTML = myLi.outerHTML;
                 }
             }
