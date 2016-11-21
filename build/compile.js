@@ -135,12 +135,12 @@ function ReadTmpToHTML(from_path,to_path,md_path,des_json){
     var tmp_str  = fs.readFileSync(tmp_path);
     tmp_str = tmp_str.toString();
 
-    var relative_path = '',current_path='';
+    var relative_path = '';
+    var current_path = to_path.replace(/^\/\.deploy/,'');
     if(md_path){
       //CSS/JS 引用相对地址
       relative_path = path.relative(md_path.toString(),'/');
       relative_path = relative_path.replace(/\.\.$/,'');
-      current_path = md_path.replace(/\.md$/,'.html').replace(/^\/command\//,'/c/');
     }
     // 生成 HTML
     var html = ejs.render(tmp_str,{

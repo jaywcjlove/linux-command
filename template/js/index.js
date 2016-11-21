@@ -6,6 +6,7 @@
         this.elm_btn = $$('search_btn');
         this.elm_info = $$('commands_info');
         this.elm_result = $$('result');
+        this.elm_search_result = $$('search_list_result');
 
         // 获取根路径
         this.root_path = (function(){
@@ -15,7 +16,8 @@
         })();
 
         this.query = '';     //
-        this.page_size = 10; //每页显示10条
+        this.query_size = 5; //搜索框结果显示5条
+        this.page_size = 20; //每页显示20条
 
         this.elm_info.innerHTML = this.commands.length;
 
@@ -69,41 +71,48 @@
                 return typeof returns === "undefined" ? "" : returns;
             })
         },
-        createKeyworldsHTML:function(json,keywolds){
+        createKeyworldsHTML:function(json,keywolds,islist){
             var name = json.n,des = json.d,self = this,
-                reg = new RegExp("("+keywolds+")","ig");
+                reg = new RegExp("("+keywolds+")","ig"),
+                str = '';
             if(keywolds){
                 name = json.n.replace(reg,'<i class="kw">'+"$1"+"</i>");
                 des = json.d.replace(reg,'<i class="kw">'+"$1"+"</i>") || '';
             }
 
-            return this.simple('<a href="'+this.root_path+'/c$url$.html"><strong>$name$</strong> - $des$</a>',{
+            str = islist ? '<a href="'+this.root_path+'/c$url$.html"><strong>$name$</strong> - $des$</a><p></p>' : '<a href="'+this.root_path+'/c$url$.html"><strong>$name$</strong> - $des$</a>';
+            return this.simple(str,{
                 name:name,
                 url:json.p,
                 des:des
-            })
-
+            });
         },
-        createListHTML:function(){
-            var arr = this.commands,self = this,page_size = this.page_size,i=0;
+        searchResult:function(islist){
+            var arr = this.commands,self = this,i=0,
+                page_size = islist?this.page_size:this.query_size,
+                arrResultHTML = [];
             if(arr&&arr.length&&toString.call(arr).indexOf('Array')>-1){
-                self.elm_result.innerHTML='';
-                var relese = 0;
                 for (; i < page_size; i++) {
                     if(!arr[i]) break;
-                    var myLi = document.createElement("LI");
-                    if(self.isSreachIndexOF(arr[i].n,self.query) 
-                        || self.isSreachIndexOF(arr[i].d,self.query) 
+                    if(self.isSreachIndexOF(arr[i].n,self.query)
+                     || self.isSreachIndexOF(arr[i].d,self.query) 
                     ){
-                        relese += 1
-                        myLi.innerHTML = self.createKeyworldsHTML(arr[i],self.query)
-                        self.elm_result.appendChild(myLi);
+                        arrResultHTML.push(self.createKeyworldsHTML(arr[i],self.query,islist));
                     }
                 }
-                if(relese ===0){
-                    myLi.innerHTML = this.query?'<span>没有搜索到任何内容，请尝试输入其它字符！</span>':'<span>请尝试输入一些字符，进行搜素！</span>';
-                    self.elm_result.innerHTML = myLi.outerHTML;
-                }
+            }
+
+            var elm = islist?this.elm_search_result:this.elm_result;
+            elm.innerHTML='';
+            for (var i = 0; i < arrResultHTML.length; i++) {
+                var myLi = document.createElement("LI");
+                myLi.innerHTML = arrResultHTML[i];
+                elm.appendChild(myLi);
+            }
+            if(arrResultHTML.length === 0){
+                var myLi = document.createElement("LI");
+                myLi.innerHTML = '<span>'+this.query?'请尝试输入一些字符，进行搜素！'+'</span>':'没有搜索到任何内容，请尝试输入其它字符！';
+                elm.appendChild(myLi);
             }
         },
         init:function(){
@@ -112,17 +121,24 @@
             var  timer = null
             this.elm_query.value = kw;
             this.query = kw;
+            if(this.elm_search_result) self.searchResult(true);
             this.bindEvent(this.elm_query,'input',function(e){
                 self.query = e.target.value;
                 self.pushState()
-                self.createListHTML();
+                self.searchResult();
                 self.elm_result.style.display = self.query?'block':'none';
             })
             this.bindEvent(this.elm_btn,'click',function(e){
-                self.createListHTML();
+                    console.log("---->")
+                if(self.elm_search_result){
+                    self.searchResult(true);  
+                } 
+                else{
+                    window.location.href = self.root_path + '/list.html#!kw='+self.query;
+                }
             })
             this.bindEvent(this.elm_query,'focus',function(e){
-                self.createListHTML();
+                self.searchResult();
                 self.elm_result.style.display = 'block';
             })
             this.bindEvent(this.elm_query,'blur',function(e){
@@ -130,7 +146,7 @@
                     self.elm_result.style.display = 'none';
                 },600)
             })
-            if(kw) self.createListHTML();
+            if(kw) self.searchResult();
         }
     }
 
