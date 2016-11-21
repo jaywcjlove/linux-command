@@ -124,8 +124,13 @@
             if(this.elm_search_result) self.searchResult(true);
             this.bindEvent(this.elm_query,'input',function(e){
                 self.query = e.target.value;
+   
                 self.pushState()
-                self.searchResult();
+                if(self.query){
+                    self.searchResult();
+                }else{
+                    self.elm_result.style.display = 'none';
+                }
                 if(!self.elm_search_result){
                     self.elm_result.style.display = self.query?'block':'none';
                 }else{
@@ -141,7 +146,7 @@
             })
             this.bindEvent(this.elm_query,'focus',function(e){
                 self.searchResult();
-                self.elm_result.style.display = 'block';
+                if(self.query)self.elm_result.style.display = 'block';
             })
             this.bindEvent(this.elm_query,'blur',function(e){
                 timer = setTimeout(function(){
