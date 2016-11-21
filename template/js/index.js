@@ -126,7 +126,11 @@
                 self.query = e.target.value;
                 self.pushState()
                 self.searchResult();
-                self.elm_result.style.display = self.query?'block':'none';
+                if(!self.elm_search_result){
+                    self.elm_result.style.display = self.query?'block':'none';
+                }else{
+                    self.elm_btn.click();
+                }
             })
             this.bindEvent(this.elm_btn,'click',function(e){
                 self.elm_result.style.display = 'none';
@@ -142,8 +146,15 @@
             this.bindEvent(this.elm_query,'blur',function(e){
                 timer = setTimeout(function(){
                     self.elm_result.style.display = 'none';
-                },600)
+                },300)
             })
+            // 输入Enter键
+            this.bindEvent(document,'keyup',function(e){
+                if(e.key =='Enter'){
+                    self.elm_btn.click();
+                }
+            })
+
             if(kw) self.searchResult();
         }
     }
