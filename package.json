@@ -33,6 +33,7 @@
   },
   "dependencies": {
     "gh-pages": "^0.12.0",
-    "loading-cli": "^1.0.2"
+    "loading-cli": "^1.0.2",
+    "uglify-js": "^2.7.4"
   }
 }

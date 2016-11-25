@@ -6,6 +6,7 @@ var marked = require('marked');
 var watch = require('watch');
 var stylus = require('stylus')
 var highlight = require('highlight.js')
+var UglifyJS = require("uglify-js");
 var renderer = new marked.Renderer();
 var color = require('colors-cli/safe');
 var error = color.red.bold;
@@ -58,13 +59,10 @@ exec('rm -rf .deploy');
 // 生成 项目所需的文件
 CreateDatajs('./.deploy/js/dt.js',function(dt_path,arr){
 
-    cp(path.join(path_root,'/template/js/index.js'),
-       path.join(path_root,'/.deploy/js/index.js'),function(err,r){
-          if(err) return console.log(error("  → error:"),err.errno);
-          console.log(success("  → ") + '/template/js/index.js');
-    })
+    CreateJS('/template/js/index.js','/.deploy/js/index.js')
 
     CreateStyl('/template/styl/index.styl','/.deploy/css/index.css')
+
     // 首页生成
     ReadTmpToHTML('/template/index.ejs','/.deploy/index.html',null,{
       'p':'/index.html',
@@ -102,11 +100,7 @@ watch.watchTree(path.join(path.dirname(__dirname),'/'), function (f, curr, prev)
       CreateStyl('/template/styl/index.styl','/.deploy/css/index.css')
     }else if(/\.js$/.test(f)){
 
-      cp(path.join(path_root,'/template/js/index.js'),
-         path.join(path_root,'/.deploy/js/index.js'),function(err,r){
-            if(err) return console.log(error("  → error:"),err.errno);
-            console.log(success("  → ") + '/template/js/index.js');
-      })
+      CreateJS('/template/js/index.js','/.deploy/js/index.js')
     
     }else if(/\.ejs$/.test(f)){
       // 首页生成
@@ -121,6 +115,18 @@ watch.watchTree(path.join(path.dirname(__dirname),'/'), function (f, curr, prev)
   }
 })
 
+
+function CreateJS(from_path,to_path){
+
+  // 生成到指定目录
+  var new_to_path = path.join(path.dirname(__dirname),to_path);
+  // 循环创建目录
+  mkdirsSync(path.dirname(new_to_path));
+  var js_code = UglifyJS.minify(path.join(path_root,from_path), { mangle: { toplevel: true } });
+  fs.writeFileSync(new_to_path, js_code.code);
+  console.log(success("  → ")+to_path + '');
+
+}
 
 /**
  * [ReadTmpToHTML ejs 模板转换成HTML]
