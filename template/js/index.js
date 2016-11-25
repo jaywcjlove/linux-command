@@ -29,7 +29,7 @@
         $$:function(id){
             return document.getElementById(id)
         },
-        goToIndex(){
+        goToIndex:function(){
             var elma = document.getElementsByTagName('A');
             for (var i = 0; i < elma.length; i++) {
                 if(elma[i].pathname==='/') elma[i].href = this.root_path.replace(/\/$/,'')+'/';
