@@ -18,11 +18,13 @@ CreatMarkdown(from_path,to_path)
 function CreatMarkdown(from_path,to_path){
 
     var new_to_path = path.join(path.dirname(__dirname),to_path)
+    if(exists(new_to_path)) return console.log(" → error: 目录存在 ",to_path,'\n')
+
     new_to_path = path.dirname(new_to_path)
     mkdirsSync(new_to_path,0777,function(){
 
         request.get(from_path).end(function(err, res){
-            console.log("to_path::",to_path)
+            // console.log("to_path::",to_path)
             fs.writeFileSync(to_path, toMarkdown(res.text).toString() ,'utf-8');
             console.log(" → ",to_path)
         });
@@ -46,3 +48,7 @@ function mkdirsSync(dirpath, mode, callback) {
         }
     }
 };
+
+
+//检查指定路径的文件或者目录，是否存在
+function exists(_path){return fs.existsSync(_path);}
