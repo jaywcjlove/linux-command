@@ -10,7 +10,10 @@ var param = process.argv.slice(2);
 var from_path = param[0];
 var to_path = param[1];
 
-// CreatMarkdown(from_path,to_path)
+if(!from_path) return console.error("请输入请求参数！");
+if(!to_path) return console.error("请输入写入目标目录！");
+
+CreatMarkdown(from_path,to_path)
 
 function CreatMarkdown(from_path,to_path){
 
