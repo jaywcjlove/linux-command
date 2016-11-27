@@ -80,7 +80,8 @@
                 des = json.d.replace(reg,'<i class="kw">'+"$1"+"</i>") || '';
             }
 
-            str = islist ? '<a href="'+this.root_path+'/c$url$.html"><strong>$name$</strong> - $des$</a><p></p>' : '<a href="'+this.root_path+'/c$url$.html"><strong>$name$</strong> - $des$</a>';
+            var rootp = this.root_path.replace(/\/$/,'');
+            str = islist ? '<a href="'+ rootp +'/c$url$.html"><strong>$name$</strong> - $des$</a><p></p>' : '<a href="'+ rootp +'/c$url$.html"><strong>$name$</strong> - $des$</a>';
             return this.simple(str,{
                 name:name,
                 url:json.p,
