@@ -88,17 +88,26 @@
                 des:des
             });
         },
+        /**
+         * [searchResult ]
+         * @param  {[type]} islist [是否为列表]
+         */
         searchResult:function(islist){
             var arr = this.commands,self = this,i=0,
-                page_size = islist?this.page_size:this.query_size,
-                arrResultHTML = [];
+                page_size = arr.length,
+                arrResultHTML = [],
+                show_list_count = islist?this.page_size:this.query_size;
             if(arr&&arr.length&&toString.call(arr).indexOf('Array')>-1){
+                var count = 0
                 for (; i < page_size; i++) {
                     if(!arr[i]) break;
                     if(self.isSreachIndexOF(arr[i].n,self.query)
                      || self.isSreachIndexOF(arr[i].d,self.query) 
                     ){
-                        arrResultHTML.push(self.createKeyworldsHTML(arr[i],self.query,islist));
+                        if(count<show_list_count){
+                            arrResultHTML.push(self.createKeyworldsHTML(arr[i],self.query,islist));
+                            ++count;
+                        }
                     }
                 }
             }
