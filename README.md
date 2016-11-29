@@ -66,3 +66,24 @@ archive、ctlinnd、elm、getlist、inncheck、mail、mailconf、mailq、message
 ## 其他命令
 
 yes
+
+## 中国开源镜像站点汇总
+
+- 网易开源镜像站：http://mirrors.163.com/
+- 搜狐开源镜像站：http://mirrors.sohu.com/
+- 北京交通大学：http://mirror.bjtu.edu.cn/cn/ <教育网荐>
+- 兰州大学：http://mirror.lzu.edu.cn/ <西北高校FTP搜索引擎>
+- 厦门大学：http://mirrors.xmu.edu.cn/
+- 上海交通大学：http://ftp.sjtu.edu.cn/
+- 清华大学：http://mirrors.tuna.tsinghua.edu.cn/
+  - http://mirrors.6.tuna.tsinghua.edu.cn/
+  - http://mirrors.4.tuna.tsinghua.edu.cn/
+- 天津大学：http://mirror.tju.edu.cn/
+- 中国科学技术大学：http://mirrors.ustc.edu.cn/ 
+  - http://mirrors4.ustc.edu.cn/ <教育网、电信>
+  - http://mirrors6.ustc.edu.cn/ <IPv6 only>
+- 西南大学：http://linux.swu.edu.cn/swudownload/
+- 泰安移动：http://mirrors.ta139.com/
+- 东北大学：http://mirror.neu.edu.cn/
+- 浙江大学：http://mirrors.zju.edu.cn/
+- 东软信息学院：http://mirrors.neusoft.edu.cn/
