@@ -32,18 +32,24 @@ marked.setOptions({
   renderer: renderer,
   gfm: true,
   tables: true,
-  breaks: true,
+  breaks: false,
   pedantic: false,
   sanitize: false,
   smartLists: true,
   smartypants: false,
   highlight: function (code, lang, callback) {
-    if(lang){
-      return  callback('',highlight.highlight(lang,code).value);
-    }else{
-      return  callback('',highlight.highlightAuto(code).value);
-    }
+    lang = lang?lang:"bash";
+    return  callback('',highlight.highlight(lang,code).value);
   }
+  // highlight: function (code, lang, callback) {
+  //   if(lang){
+  //     return  highlight.highlight(lang,code).value;
+  //     // return  callback('',highlight.highlight(lang,code).value);
+  //   }else{
+  //     return highlight.highlightAuto(code).value;
+  //     // return  callback('',highlight.highlightAuto(code).value);
+  //   }
+  // }
 });
 
 // 根目录
@@ -83,6 +89,7 @@ CreateDatajs('./.deploy/js/dt.js',function(dt_path,arr){
     });
 
 })
+
 
 // 监听实时编译
 watch.watchTree(path.join(path.dirname(__dirname),'/'), function (f, curr, prev) {
@@ -159,7 +166,8 @@ function ReadTmpToHTML(from_path,to_path,md_path,des_json){
     // 生成到指定目录
     var new_to_path = path.join(path.dirname(__dirname),to_path);
     // 循环创建目录
-    mkdirsSync(path.dirname(new_to_path));
+    !exists(path.dirname(new_to_path)) && mkdirsSync(path.dirname(new_to_path));
+    
     if(md_path){
         var new_md_path =  path.join(path.dirname(__dirname),md_path);
         var README_str = fs.readFileSync(new_md_path);
