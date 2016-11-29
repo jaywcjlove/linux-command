@@ -5,7 +5,7 @@ pwunconv
 
 ## 补充说明
 
-**pwunconv命** 与pwconv功能相反，用来关闭用户的投影密码。它会把密码从shadow文件内，重回存到passwd文件里。
+**pwunconv命令** 与pwconv功能相反，用来关闭用户的投影密码。它会把密码从shadow文件内，重回存到passwd文件里。
 
 ### 语法  
 
@@ -23,3 +23,6 @@ test:$6$nYOEWamm$bz07nlv/.RgJufb3FAqJJeULfwybzgxmrWqbk7O4vI0KsT6N.ujrh6dDIUcAJdf
 ls /etc/shadow     //查看影子文件，提示没有这个文件或目录
 ls: cannot access /etc/shadow: No such file or directory
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

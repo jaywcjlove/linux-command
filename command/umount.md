@@ -5,7 +5,7 @@ umount
 
 ## 补充说明
 
-**umount命** 用于卸载已经加载的文件系统。利用设备名或挂载点都能umount文件系统，不过最好还是通过挂载点卸载，以免使用绑定挂载（一个设备，多个挂载点）时产生混乱。
+**umount命令** 用于卸载已经加载的文件系统。利用设备名或挂载点都能umount文件系统，不过最好还是通过挂载点卸载，以免使用绑定挂载（一个设备，多个挂载点）时产生混乱。
 
 ### 语法  
 
@@ -75,3 +75,6 @@ umount -vl /mnt/mymount/     执行延迟卸载
 ```
 eject /dev/cdrom      卸载并弹出CD 
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -5,7 +5,7 @@ free
 
 ## 补充说明
 
-**free命** 可以显示当前系统未使用的和已使用的内存数目，还可以显示被内核使用的内存缓冲区。
+**free命令** 可以显示当前系统未使用的和已使用的内存数目，还可以显示被内核使用的内存缓冲区。
 
 ### 语法  
 
@@ -35,7 +35,7 @@ Mem:          2016       1973         42          0        163       1497
 Swap:         4094          0       4094
 ```
 
-**第一部分Mem行解释：**
+ **第一部分Mem行解释：** 
 
 ```
 total：内存总数；
@@ -48,7 +48,7 @@ cached Page：缓存内存数。
 
 关系：total = used + free
 
-**第二部分(-/+ buffers/cache)解释:**
+ **第二部分(-/+ buffers/cache)解释:** 
 
 ```
 (-buffers/cache) used内存数：第一部分Mem行中的 used – buffers – cached
@@ -58,3 +58,6 @@ cached Page：缓存内存数。
 可见-buffers/cache反映的是被程序实实在在吃掉的内存，而+buffers/cache反映的是可以挪用的内存总数。
 
 第三部分是指交换分区。
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

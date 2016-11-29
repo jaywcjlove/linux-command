@@ -5,7 +5,7 @@ unzip
 
 ## 补充说明
 
-**unzip命** 用于解压缩由zip命令压缩的“.zip”压缩包。
+**unzip命令** 用于解压缩由zip命令压缩的“.zip”压缩包。
 
 ### 语法  
 
@@ -71,3 +71,6 @@ unzip -v test.zip
 ```
 unzip -o test.zip -d tmp/
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

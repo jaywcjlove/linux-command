@@ -5,7 +5,7 @@ quotaoff
 
 ## 补充说明
 
-**quotaoff命** 用于关闭Linux内核中指定文件系统的磁盘配额功能。
+**quotaoff命令** 用于关闭Linux内核中指定文件系统的磁盘配额功能。
 
 ### 语法  
 
@@ -25,3 +25,6 @@ quotaoff(选项)(参数)
 ### 参数  
 
 文件系统：指定要关闭磁盘配额功能的文件系统。
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

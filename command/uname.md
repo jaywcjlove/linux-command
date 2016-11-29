@@ -5,7 +5,7 @@ uname
 
 ## 补充说明
 
-**uname命** 用于打印当前系统相关信息（内核版本号、硬件架构、主机名称和操作系统类型等）。
+**uname命令** 用于打印当前系统相关信息（内核版本号、硬件架构、主机名称和操作系统类型等）。
 
 ### 语法  
 
@@ -71,3 +71,6 @@ Copyright (C) 2006 free Software Foundation, Inc.
 
 由 David MacKenzie 编写。
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

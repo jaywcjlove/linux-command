@@ -5,7 +5,7 @@ losetup
 
 ## 补充说明
 
-**losetup命** 用来设置循环设备。循环设备可把文件虚拟成块设备，籍此来模拟整个文件系统，让用户得以将其视为硬盘驱动器，光驱或软驱等设备，并挂入当作目录来使用。
+**losetup命令** 用来设置循环设备。循环设备可把文件虚拟成块设备，籍此来模拟整个文件系统，让用户得以将其视为硬盘驱动器，光驱或软驱等设备，并挂入当作目录来使用。
 
 ### 语法  
 
@@ -65,3 +65,6 @@ mount /dev/loop0 /tmp
 umount /tmp
 losetup -d /dev/loop1
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -5,7 +5,7 @@ halt
 
 ## 补充说明
 
-**halt命** 用来关闭正在运行的Linux操作系统。halt命令会先检测系统的runlevel，若runlevel为0或6，则关闭系统，否则即调用shutdown来关闭系统。
+**halt命令** 用来关闭正在运行的Linux操作系统。halt命令会先检测系统的runlevel，若runlevel为0或6，则关闭系统，否则即调用shutdown来关闭系统。
 
 ### 语法  
 
@@ -30,3 +30,6 @@ halt(选项)
 halt -p     //关闭系统后关闭电源。
 halt -d     //关闭系统，但不留下纪录。
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

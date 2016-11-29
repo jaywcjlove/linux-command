@@ -5,7 +5,7 @@ split
 
 ## 补充说明
 
-**split命** 可以将一个大文件分割成很多个小文件，有时需要将文件分割成更小的片段，比如为提高可读性，生成日志等。
+**split命令** 可以将一个大文件分割成很多个小文件，有时需要将文件分割成更小的片段，比如为提高可读性，生成日志等。
 
 ### 选项  
 
@@ -56,3 +56,6 @@ date.file  split_file000  split_file001  split_file002  split_file003  split_fil
 ```
 split -l 10 date.file
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

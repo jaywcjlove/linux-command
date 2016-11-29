@@ -5,7 +5,7 @@ whoami
 
 ## 补充说明
 
-**whoami命** 用于打印当前有效的用户名称，相当于执行`id -un`命令。
+**whoami命令** 用于打印当前有效的用户名称，相当于执行`id -un`命令。
 
 ### 语法  
 
@@ -29,3 +29,6 @@ root
 [root@localhost ~]# id -un
 root
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

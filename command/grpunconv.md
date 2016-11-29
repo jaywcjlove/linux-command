@@ -5,7 +5,7 @@ grpunconv
 
 ## 补充说明
 
-**grpunconv命** 用来关闭群组的投影密码。它会把密码从gshadow文件内，回存到group文件里。
+**grpunconv命令** 用来关闭群组的投影密码。它会把密码从gshadow文件内，回存到group文件里。
 
 ### 语法  
 
@@ -35,3 +35,6 @@ cat: /etc/gshadow: 没有那个文件或目录
 cat /etc/group | grep cdy
 cdy:123456:1000:
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

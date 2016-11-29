@@ -5,7 +5,7 @@ export
 
 ## 补充说明
 
-**export命** 用于将shell变量输出为环境变量，或者将shell函数输出为环境变量。
+**export命令** 用于将shell变量输出为环境变量，或者将shell函数输出为环境变量。
 
 一个变量创建时，它不会自动地为在它之后创建的shell进程所知。而命令export可以向后面的shell传递变量的值。当一个shell脚本调用并执 行时，它不会自动得到原为脚本（调用者）里定义的变量的访问权，除非这些变量已经被显式地设置为可用。export命令可以用于传递一个或多个变量的值到任何后继脚本。
 
@@ -54,3 +54,6 @@ declare -x SSH_TTY="/dev/pts/0"
 declare -x TERM="linux"
 declare -x USER="root"
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

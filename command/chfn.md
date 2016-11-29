@@ -5,7 +5,7 @@ chfn
 
 ## 补充说明
 
-**chfn命** 用来改变finger命令显示的信息。这些信息都存放在/etc目录里的passwd文件里。若不指定任何选项，则chfn命令会进入问答式界面。
+**chfn命令** 用来改变finger命令显示的信息。这些信息都存放在/etc目录里的passwd文件里。若不指定任何选项，则chfn命令会进入问答式界面。
 
 ### 语法  
 
@@ -62,3 +62,6 @@ Office[]:NCCU
 Office Phone[]: [del]
 Home Phone[]: [del]
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

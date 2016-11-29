@@ -5,7 +5,7 @@ groupmod
 
 ## 补充说明
 
-**groupmod命** 更改群组识别码或名称。需要更改群组的识别码或名称时，可用groupmod指令来完成这项工作。
+**groupmod命令** 更改群组识别码或名称。需要更改群组的识别码或名称时，可用groupmod指令来完成这项工作。
 
 ### 语法  
 
@@ -24,3 +24,6 @@ groupmod(选项)(参数)
 ### 参数  
 
 组名：指定要修改的工作的组名。
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

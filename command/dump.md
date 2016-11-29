@@ -5,7 +5,7 @@ dump
 
 ## 补充说明
 
-**dump命** 用于备份ext2或者ext3文件系统。可将目录或整个文件系统备份至指定的设备，或备份成一个大文件。
+**dump命令** 用于备份ext2或者ext3文件系统。可将目录或整个文件系统备份至指定的设备，或备份成一个大文件。
 
 ### 语法  
 
@@ -50,3 +50,6 @@ dump -1u -f /tmp/homeback.bak /home
 ```
 
 通过dump命令的备份层级，可实现完整+增量备份、完整+差异备份，在配合crontab可以实现无人值守备份。
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

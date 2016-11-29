@@ -5,7 +5,7 @@ dirs
 
 ## 补充说明
 
-**dirs命** 显示当前目录栈中的所有记录（不带参数的dirs命令显示当前目录栈中的记录）。dirs始终显示当然目录, 再是堆栈中的内容；即使目录堆栈为空, dirs命令仍然只显示当然目录。
+**dirs命令** 显示当前目录栈中的所有记录（不带参数的dirs命令显示当前目录栈中的记录）。dirs始终显示当然目录, 再是堆栈中的内容；即使目录堆栈为空, dirs命令仍然只显示当然目录。
 
 ### 语法  
 
@@ -35,3 +35,6 @@ dirs(选项)(参数)
 [root@localhost etc]# dirs
 /etc
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

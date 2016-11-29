@@ -5,7 +5,7 @@ logname
 
 ## 补充说明
 
-**logname命** 用来显示用户名称。
+**logname命令** 用来显示用户名称。
 
 ### 语法  
 
@@ -19,3 +19,6 @@ logname(选项)
 --help：在线帮助；
 --vesion：显示版本信息。
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

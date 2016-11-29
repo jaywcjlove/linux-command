@@ -5,7 +5,7 @@ repquota
 
 ## 补充说明
 
-**repquota命** 以报表的格式输出指定分区，或者文件系统的磁盘配额信息。
+**repquota命令** 以报表的格式输出指定分区，或者文件系统的磁盘配额信息。
 
 ### 语法  
 
@@ -33,3 +33,6 @@ repquota(选项)(参数)
 ```
 repquota -a
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

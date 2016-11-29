@@ -5,7 +5,7 @@ rmmod
 
 ## 补充说明
 
-**rmmod命** 用于从当前运行的内核中移除指定的内核模块。执行rmmod指令，可删除不需要的模块。Linux操作系统的核心具有模块化的特性，应此在编译核心时，务须把全部的功能都放如核心。你可以将这些功能编译成一个个单独的模块，待有需要时再分别载入它们。
+**rmmod命令** 用于从当前运行的内核中移除指定的内核模块。执行rmmod指令，可删除不需要的模块。Linux操作系统的核心具有模块化的特性，应此在编译核心时，务须把全部的功能都放如核心。你可以将这些功能编译成一个个单独的模块，待有需要时再分别载入它们。
 
 ### 语法  
 
@@ -37,3 +37,6 @@ raid1                  25153  0
 [root@localhost boot]# rmmod raid1
 [root@localhost boot]# lsmod | grep raid1
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

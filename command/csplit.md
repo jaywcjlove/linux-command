@@ -5,7 +5,7 @@ csplit
 
 ## 补充说明
 
-**csplit命** 用于将一个大文件分割成小的碎片，并且将分割后的每个碎片保存成一个文件。碎片文件的命名类似“xx00”，“xx01”。csplit命令是split的一个变体，split只能够根据文件大小或行数来分割，但csplit能够根据文件本身特点来分割文件。
+**csplit命令** 用于将一个大文件分割成小的碎片，并且将分割后的每个碎片保存成一个文件。碎片文件的命名类似“xx00”，“xx01”。csplit命令是split的一个变体，split只能够根据文件大小或行数来分割，但csplit能够根据文件本身特点来分割文件。
 
 ### 语法  
 
@@ -60,7 +60,7 @@ root@localhost split
 server01.log  server02.log  server03.log  server.log
 ```
 
-**命令详细说明：**
+ **命令详细说明：** 
 
 ```
 /[正则表达式]/   #匹配文本样式，比如/SERVER/，从第一行到包含SERVER的匹配行。
@@ -71,3 +71,6 @@ server01.log  server02.log  server03.log  server.log
 -b      #指定后缀格式。比如%02d.log，类似于C语言中的printf参数格式。
 rm server00.log    #是删除第一个文件，因为分割后的的第一个文件没有内容，匹配的单词就位于文件的第一行中。
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

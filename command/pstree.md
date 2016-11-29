@@ -5,7 +5,7 @@ pstree
 
 ## 补充说明
 
-**pstree命** 以树状图的方式展现进程之间的派生关系，显示效果比较直观。
+**pstree命令** 以树状图的方式展现进程之间的派生关系，显示效果比较直观。
 
 ### 语法  
 
@@ -42,3 +42,6 @@ pstree -p
 ```
 pstree  -a
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

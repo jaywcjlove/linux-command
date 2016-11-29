@@ -5,7 +5,7 @@ ftpwho
 
 ## 补充说明
 
-**ftpwho命** ftp服务器套件proftpd的工作指令，用于显示当前每个ftp会话信息。
+**ftpwho命令** ftp服务器套件proftpd的工作指令，用于显示当前每个ftp会话信息。
 
 ### 语法  
 
@@ -19,3 +19,6 @@ ftpwho(选项)
 -h：显示帮助信息；
 -v：详细模式，输出更多信息。
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -5,7 +5,7 @@ tee
 
 ## 补充说明
 
-**tee命** 用于将数据重定向到文件，另一方面还可以提供一份重定向数据的副本作为后续命令的stdin。简单的说就是把数据重定向到给定文件和屏幕上。
+**tee命令** 用于将数据重定向到文件，另一方面还可以提供一份重定向数据的副本作为后续命令的stdin。简单的说就是把数据重定向到给定文件和屏幕上。
 
 !
 
@@ -59,3 +59,6 @@ root@localhost text -n
     10  WWW.pdf
     11  WWW.pef
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

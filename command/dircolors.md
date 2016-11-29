@@ -5,7 +5,7 @@ dircolors
 
 ## 补充说明
 
-**dircolors命** 设置ls命令在显示目录或文件时所用的色彩。dircolors可根据[色彩配置文件]来设置LS_COLORS环境变量或是显示设置LS_COLORS环境变量的命令。
+**dircolors命令** 设置ls命令在显示目录或文件时所用的色彩。dircolors可根据[色彩配置文件]来设置LS_COLORS环境变量或是显示设置LS_COLORS环境变量的命令。
 
 ### 语法  
 
@@ -140,3 +140,6 @@ exec 01;32
 .ogg 01;35
 .wav 01;35
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

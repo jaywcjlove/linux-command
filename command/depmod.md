@@ -5,7 +5,7 @@ depmod
 
 ## 补充说明
 
-**depmod命** 可产生模块依赖的映射文件，在构建嵌入式系统时，需要由这个命令来生成相应的文件，由modprobe使用。
+**depmod命令** 可产生模块依赖的映射文件，在构建嵌入式系统时，需要由这个命令来生成相应的文件，由modprobe使用。
 
 ### 语法  
 
@@ -59,3 +59,6 @@ depmod -b /home/windsome/EMMA3PF-KernelSource-20080626/install_pos -e -F ./boot/
 在linux桌面系统中，当你编译了新的驱动，为了能够用`modprobe ***`加载模块, 你需要先将模块拷贝到`/lib/modules /2.6.31-20-generic`目录下，然后运行`sudo depmod -a`将模块信息写入modules.dep、modules.dep.bin、modules.alias.bin、modules.alias和modules.pcimap文件中。
 
 如，我编译了一个新的wifi驱动r8192se_pci.ko，将其拷贝到`/lib/modules/2.6.31-20-generic/wireless`下，然后到`/lib/modules/2.6.31-20-generic`运行`depmod -a`，之后可以在任意目录运行modprobe r8192se_pci。
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

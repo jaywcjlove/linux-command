@@ -5,7 +5,7 @@ ping
 
 ## 补充说明
 
-**ping命** 用来测试主机之间网络的连通性。执行ping指令会使用ICMP传输协议，发出要求回应的信息，若远端主机的网络功能没有问题，就会回应该信息，因而得知该主机运作正常。
+**ping命令** 用来测试主机之间网络的连通性。执行ping指令会使用ICMP传输协议，发出要求回应的信息，若远端主机的网络功能没有问题，就会回应该信息，因而得知该主机运作正常。
 
 ### 语法  
 
@@ -51,3 +51,6 @@ PING host.1.linuxde.net (100.42.212.8) 56(84) bytes of data.
 4 packets transmitted, 4 received, 0% packet loss, time 2998ms
 rtt min/avg/max/mdev = 174.068/176.916/178.182/1.683 ms
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

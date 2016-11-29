@@ -5,7 +5,7 @@ netstat
 
 ## 补充说明
 
-**netstat命** 用来打印Linux中网络系统的状态信息，可让你得知整个Linux系统的网络情况。
+**netstat命令** 用来打印Linux中网络系统的状态信息，可让你得知整个Linux系统的网络情况。
 
 ### 语法  
 
@@ -44,7 +44,7 @@ netstat(选项)
 
 ### 实例  
 
-**列出所有端口 (包括监听和未监听的)**
+ **列出所有端口 (包括监听和未监听的)** 
 
 ```
 netstat -a     #列出所有端口
@@ -52,7 +52,7 @@ netstat -at    #列出所有tcp端口
 netstat -au    #列出所有udp端口                             
 ```
 
-**列出所有处于监听状态的 Sockets**
+ **列出所有处于监听状态的 Sockets** 
 
 ```
 netstat -l        #只显示监听端口
@@ -61,7 +61,7 @@ netstat -lu       #只列出所有监听 udp 端口
 netstat -lx       #只列出所有监听 UNIX 端口
 ```
 
-**显示每个协议的统计信息**
+ **显示每个协议的统计信息** 
 
 ```
 netstat -s   显示所有端口的统计信息
@@ -70,7 +70,7 @@ netstat -su   显示UDP端口的统计信息
 
 ```
 
-**在netstat输出中显示 PID 和进程名称**
+ **在netstat输出中显示 PID 和进程名称** 
 
 ```
 netstat -pt
@@ -78,7 +78,7 @@ netstat -pt
 
 `netstat -p`可以与其它开关一起使用，就可以添加“PID/进程名称”到netstat输出中，这样debugging的时候可以很方便的发现特定端口运行的程序。
 
-**在netstat输出中不显示主机，端口和用户名(host, port or user)**
+ **在netstat输出中不显示主机，端口和用户名(host, port or user)** 
 
 当你不想让主机，端口和用户名显示，使用`netstat -n`。将会使用数字代替那些名称。同样可以加速输出，因为不用进行比对查询。
 
@@ -94,13 +94,13 @@ netsat -a --numeric-hosts
 netsat -a --numeric-users
 ```
 
-**持续输出netstat信息**
+ **持续输出netstat信息** 
 
 ```
 netstat -c   #每隔一秒输出网络信息
 ```
 
-**显示系统不支持的地址族(Address Families)**
+ **显示系统不支持的地址族(Address Families)** 
 
 ```
 netstat --verbose
@@ -115,7 +115,7 @@ netstat: no support for `AF X25' on this system.
 netstat: no support for `AF NETROM' on this system.
 ```
 
-**显示核心路由信息**
+ **显示核心路由信息** 
 
 ```
 netstat -r
@@ -123,7 +123,7 @@ netstat -r
 
 使用`netstat -rn`显示数字格式，不查询主机名称。
 
-**找出程序运行的端口**
+ **找出程序运行的端口** 
 
 并不是所有的进程都能找到，没有权限的会不显示，使用 root 权限查看所有的信息。
 
@@ -137,7 +137,7 @@ netstat -ap | grep ssh
 netstat -an | grep ':80'
 ```
 
-**显示网络接口列表**
+ **显示网络接口列表** 
 
 ```
 netstat -i
@@ -145,7 +145,7 @@ netstat -i
 
 显示详细信息，像是ifconfig使用`netstat -ie`。
 
-**IP和TCP分析**
+ **IP和TCP分析** 
 
 查看连接某服务端口最多的的IP地址：
 
@@ -164,3 +164,6 @@ netstat -nt | grep -e 127.0.0.1 -e 0.0.0.0 -e ::: -v | awk '/^tcp/ {++state$NF p
 ```
 netstat -anpo | grep "php-cgi" | wc -l
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

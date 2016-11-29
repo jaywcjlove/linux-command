@@ -5,7 +5,7 @@ jed
 
 ## 补充说明
 
-**jed命** 是由Slang所开发，其主要用用途是编辑程序的源代码。它支持彩色语法加亮显示，可以模拟emacs，EDT，wordstar和Brief编辑器。
+**jed命令** 是由Slang所开发，其主要用用途是编辑程序的源代码。它支持彩色语法加亮显示，可以模拟emacs，EDT，wordstar和Brief编辑器。
 
 ### 语法  
 
@@ -37,7 +37,7 @@ jed(选项)(参数)
 jed -2 mysource.c
 ```
 
-**操作**
+ **操作** 
 
 有些Emacs的组合键和jed菜单组合键冲突例如Alt+f在Emacs中应该是“前进一个单词”，而在jed中则是“文件菜单” 想使用Emacs风格的组合键的话，编辑`/usr/share/jed/lib/menus.slc`找到如下段落：
 
@@ -57,7 +57,7 @@ unset_setkey ("@\emy", "\ey");
 
 由于Jed可模拟多种编辑器，其各自按键指令也有所不同。这里以模拟 Emacs 为例，说明在编辑器中的操作方法。
 
-**文件**
+ **文件** 
 
 ```
 /usr/share/jed/lib/*.sl 这是默认的运行jed slang的文件。
@@ -65,3 +65,6 @@ unset_setkey ("@\emy", "\ey");
 /etc/jed.rc 这是全局系统配置文件。
 ~/.jedrc 这是用户配置文件。
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

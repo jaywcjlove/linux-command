@@ -5,7 +5,7 @@ gunzip
 
 ## 补充说明
 
-**gunzip命** 用来解压缩文件。gunzip是个使用广泛的解压缩程序，它用于解开被gzip压缩过的文件，这些压缩文件预设最后的扩展名为.gz。事实上gunzip就是gzip的硬连接，因此不论是压缩或解压缩，都可通过gzip指令单独完成。
+**gunzip命令** 用来解压缩文件。gunzip是个使用广泛的解压缩程序，它用于解开被gzip压缩过的文件，这些压缩文件预设最后的扩展名为.gz。事实上gunzip就是gzip的硬连接，因此不论是压缩或解压缩，都可通过gzip指令单独完成。
 
 ### 语法  
 
@@ -62,3 +62,6 @@ compressed        uncompressed ratio uncompressed_name
 ```
 
 通过上面的示例可以知道`gzip –d`等价于`gunzip`命令。
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

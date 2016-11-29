@@ -5,7 +5,7 @@ ulimit
 
 ## 补充说明
 
-**ulimit命** 用来限制系统用户对shell资源的访问。如果不懂什么意思，下面一段内容可以帮助你理解：
+**ulimit命令** 用来限制系统用户对shell资源的访问。如果不懂什么意思，下面一段内容可以帮助你理解：
 
 假设有这样一种情况，当一台 Linux 主机上同时登陆了 10 个人，在系统资源无限制的情况下，这 10 个用户同时打开了 500 个文档，而假设每个文档的大小有 10M，这时系统的内存资源就会受到巨大的挑战。
 
@@ -60,3 +60,6 @@ max user processes              (-u) 98304       #当前用户同时打开的进
 virtual memory          (kbytes, -v) unlimited   #没有限制进程的最大地址空间。
 file locks                      (-x) unlimited   #所能锁住的文件的最大个数没有限制。
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

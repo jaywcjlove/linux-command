@@ -5,7 +5,7 @@ bind
 
 ## 补充说明
 
-**bind命** 用于显示和设置命令行的键盘序列绑定功能。通过这一命令，可以提高命令行中操作效率。您可以利用bind命令了解有哪些按键组合与其功能，也可以自行指定要用哪些按键组合。
+**bind命令** 用于显示和设置命令行的键盘序列绑定功能。通过这一命令，可以提高命令行中操作效率。您可以利用bind命令了解有哪些按键组合与其功能，也可以自行指定要用哪些按键组合。
 
 ### 语法  
 
@@ -54,3 +54,6 @@ Press any keys - Ctrl-D will terminate this program
 ^C        3 0003 0x03 Ctrl-C
 ^D        4 0004 0x04 Ctrl-D 退出
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

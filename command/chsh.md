@@ -5,7 +5,7 @@ chsh
 
 ## 补充说明
 
-**chsh命** 用来更换登录系统时使用的shell。若不指定任何参数与用户名称，则chsh会以应答的方式进行设置。
+**chsh命令** 用来更换登录系统时使用的shell。若不指定任何参数与用户名称，则chsh会以应答的方式进行设置。
 
 ### 语法  
 
@@ -28,7 +28,7 @@ chsh(选项)(参数)
 
 ### 实例  
 
-**查看系统安装了哪些shell的两种方法：**
+ **查看系统安装了哪些shell的两种方法：** 
 
 第一种：
 
@@ -52,7 +52,7 @@ rocrocket@localhost ~ /etc/shells
 
 其实`chsh -l`也是来查看这个文件。
 
-**查看当前正在使用的shell：**
+ **查看当前正在使用的shell：** 
 
 ```
 rocrocket@localhost ~ $SHELL
@@ -61,7 +61,7 @@ rocrocket@localhost ~ $SHELL
 
 注意SHELL一定要是大写。可以看到，目前使用的shell是`/bin/bash`
 
-**把我的shell改成zsh：**
+ **把我的shell改成zsh：** 
 
 ```
 [rocrocket@localhost ~]$ chsh -s /bin/zsh
@@ -80,7 +80,7 @@ rocrocket:x:500:500:rocrocket,China:/rocrocket/PSB/home:/bin/zsh
 
 你可以发现输出内容的最后部分已经变成了`/bin/zsh`了，下次重启的时候，linux就会读取这一命令来启动shell了！
 
-**把shell修改回/bin/bash：**
+ **把shell修改回/bin/bash：** 
 
 ```
 [rocrocket@localhost ~]$ chsh -s /bin/bash
@@ -88,3 +88,6 @@ Changing shell for rocrocket.
 Password:
 Shell changed.
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

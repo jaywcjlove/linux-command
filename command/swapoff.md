@@ -5,7 +5,7 @@ swapoff
 
 ## 补充说明
 
-**swapoff命** 用于关闭指定的交换空间（包括交换文件和交换分区）。swapoff实际上为swapon的符号连接，可用来关闭系统的交换区。
+**swapoff命令** 用于关闭指定的交换空间（包括交换文件和交换分区）。swapoff实际上为swapon的符号连接，可用来关闭系统的交换区。
 
 ### 语法  
 
@@ -30,3 +30,6 @@ swapoff(选项)(参数)
 ```
 swapoff /dev/sda2
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -5,7 +5,7 @@ bunzip2
 
 ## 补充说明
 
-**bunzip2命** 解压缩由bzip2指令创建的”.bz2"压缩包。对文件进行压缩与解压缩。此命令类似于“gzip/gunzip”命令，只能对文件进行压缩。对于目录只能压缩目录下的所有文件，压缩完成后，在目录下生成以“.bz2”为后缀的压缩包。bunzip2其实是bzip2的符号链接，即软链接，因此压缩解压都可以通过bzip2实现。
+**bunzip2命令** 解压缩由bzip2指令创建的”.bz2"压缩包。对文件进行压缩与解压缩。此命令类似于“gzip/gunzip”命令，只能对文件进行压缩。对于目录只能压缩目录下的所有文件，压缩完成后，在目录下生成以“.bz2”为后缀的压缩包。bunzip2其实是bzip2的符号链接，即软链接，因此压缩解压都可以通过bzip2实现。
 
 ### 语法  
 
@@ -36,3 +36,6 @@ bzip2 -9vk /opt/etc.zip /opt/var.zip /opt/backup.zip
 ```
 
 压缩完毕后，在`/opt`下就会生成相应的etc.zip.bz2、var.zip.bz2和backup.zip.bz2文件。
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

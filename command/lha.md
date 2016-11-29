@@ -5,7 +5,7 @@ lha
 
 ## 补充说明
 
-**lha命** 是从lharc演变而来的压缩程序，文件经它压缩后，会另外产生具有`.lzh`扩展名的压缩文件。
+**lha命令** 是从lharc演变而来的压缩程序，文件经它压缩后，会另外产生具有`.lzh`扩展名的压缩文件。
 
 ### 选项  
 
@@ -41,3 +41,6 @@ lha -a abc.lhz a.b         #压缩a.b文件，压缩后生成 abc.lhz 文件
 lha -a abc2 /home/hnlinux  #压缩目录
 lha -xiw=agis abc          #解压文件abc，到当前目录
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

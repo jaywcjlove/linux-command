@@ -5,7 +5,7 @@ enable
 
 ## 补充说明
 
-**enable命** 用于临时关闭或者激活指定的shell内部命令。若要执行的文件名称与shell内建命令相同，可用`enable -n`来关闭shell内建命令。若不加`-n`选项，enable可重新启动关闭的命令。
+**enable命令** 用于临时关闭或者激活指定的shell内部命令。若要执行的文件名称与shell内建命令相同，可用`enable -n`来关闭shell内建命令。若不加`-n`选项，enable可重新启动关闭的命令。
 
 linux shell命令执行时，shell总是先在自己的shell builtin中查找该命令，如果找到则执行该命令；如果找不到该命令，则会从环境变量$PATH指定的路径中依次去查找待执行的命令。因为了解了这一点，所以看起来好像没有办法编写用户自己的命令来替代shell builtin命令。幸运的是，有了enable命令我们就能做到了。
 
@@ -92,3 +92,6 @@ enable unalias
 enable unset
 enable wait
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -5,7 +5,7 @@ dmesg
 
 ## 补充说明
 
-**dmesg命** 被用于检查和控制内核的环形缓冲区。kernel会将开机信息存储在ring buffer中。您若是开机时来不及查看信息，可利用dmesg来查看。开机信息保存在`/var/log/dmesg`文件里。
+**dmesg命令** 被用于检查和控制内核的环形缓冲区。kernel会将开机信息存储在ring buffer中。您若是开机时来不及查看信息，可利用dmesg来查看。开机信息保存在`/var/log/dmesg`文件里。
 
 ### 语法  
 
@@ -36,3 +36,6 @@ BIOS-provided physical RAM map:
  BIOS-e820: 000000007f5f0000 - 000000007f600000 (reserved)
  BIOS-e820: 00000000e0000000 - 00000000e8000000 (reserved)
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -5,7 +5,7 @@ mke2fs
 
 ## 补充说明
 
-**mke2fs命** 被用于创建磁盘分区上的“etc2/etc3”文件系统。
+**mke2fs命令** 被用于创建磁盘分区上的“etc2/etc3”文件系统。
 
 ### 语法  
 
@@ -46,3 +46,6 @@ mke2fs(选项)(参数)
 ```
 mke2fs -q /dev/hda1
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

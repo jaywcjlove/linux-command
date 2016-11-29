@@ -5,7 +5,7 @@ uniq
 
 ## 补充说明
 
-**uniq命** 用于报告或忽略文件中的重复行，一般与sort命令结合使用。
+**uniq命令** 用于报告或忽略文件中的重复行，一般与sort命令结合使用。
 
 ### 语法  
 
@@ -58,3 +58,6 @@ sort file.txt | uniq -c
 ```
 sort file.txt | uniq -d
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

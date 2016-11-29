@@ -5,7 +5,7 @@ chkconfig
 
 ## 补充说明
 
-**chkconfig命** 检查、设置系统的各种服务。这是Red Hat公司遵循GPL规则所开发的程序，它可查询操作系统在每一个执行等级中会执行哪些系统服务，其中包括各类常驻服务。谨记chkconfig不是立即自动禁止或激活一个服务，它只是简单的改变了符号连接。
+**chkconfig命令** 检查、设置系统的各种服务。这是Red Hat公司遵循GPL规则所开发的程序，它可查询操作系统在每一个执行等级中会执行哪些系统服务，其中包括各类常驻服务。谨记chkconfig不是立即自动禁止或激活一个服务，它只是简单的改变了符号连接。
 
 ### 语法  
 
@@ -63,3 +63,6 @@ chkconfig mysqld on            #设定mysqld在各等级为on，“各等级”�
 1.  服务脚本必须存放在`/etc/ini.d/`目录下；
 2.  `chkconfig --add servicename`在chkconfig工具服务列表中增加此服务，此时服务会被在`/etc/rc.d/rcN.d`中赋予K/S入口了；
 3.  `chkconfig --level 35 mysqld on`修改服务的默认启动等级。
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

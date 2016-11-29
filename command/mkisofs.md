@@ -5,7 +5,7 @@ mkisofs
 
 ## 补充说明
 
-**mkisofs命** 用来将指定的目录与文件做成ISO 9660格式的映像文件，以供刻录光盘。
+**mkisofs命令** 用来将指定的目录与文件做成ISO 9660格式的映像文件，以供刻录光盘。
 
 ### 语法  
 
@@ -96,3 +96,6 @@ cp /usr/share/comps/i386/.discinfo rhel4.0/
 ```
 mkisofs -R -J -T -v -no-emul-boot -boot-load-size 4 -boot-info-table -V RHEL4ASDVD -b isolinux/isolinux.bin -c isolinux/boot.cat -o /RHEL4AS.iso rhel4.0/
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

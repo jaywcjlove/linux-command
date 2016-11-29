@@ -5,7 +5,7 @@ xlsfonts
 
 ## 补充说明
 
-**xlsfonts命** 列出X Server使用的字体，也能使用范本样式仅列出的符合条件的字体。
+**xlsfonts命令** 列出X Server使用的字体，也能使用范本样式仅列出的符合条件的字体。
 
 ### 语法  
 
@@ -25,3 +25,6 @@ xlsfonts(选项)
 -u：列出字体清单时不依照其名称排序；
 -w<每列字符数>：设置每列的最大字符数。
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -5,7 +5,7 @@ restore
 
 ## 补充说明
 
-**restore命** 是dump命令的逆过程，用于还原dump命令生成的备份文件。倾倒操作可用来备份文件，而还原操作则是写回这些已备份的文件。
+**restore命令** 是dump命令的逆过程，用于还原dump命令生成的备份文件。倾倒操作可用来备份文件，而还原操作则是写回这些已备份的文件。
 
 ### 语法  
 
@@ -50,3 +50,6 @@ restore rf /dev/hda3 /home/frank
 ```
 restore ft /dev/hda3
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

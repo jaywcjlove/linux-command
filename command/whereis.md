@@ -5,7 +5,7 @@ whereis
 
 ## 补充说明
 
-**whereis命** 用来定位指令的二进制程序、源代码文件和man手册页等相关文件的路径。
+**whereis命令** 用来定位指令的二进制程序、源代码文件和man手册页等相关文件的路径。
 
 whereis命令只能用于程序名的搜索，而且只搜索二进制文件（参数-b）、man说明文件（参数-m）和源代码文件（参数-s）。如果省略参数，则返回所有信息。
 
@@ -63,3 +63,6 @@ svn:
 ```
 
 说明：`whereis -m svn`查出说明文档路径，`whereis -s svn`找source源文件。
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

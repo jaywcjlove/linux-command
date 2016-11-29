@@ -5,7 +5,7 @@ du
 
 ## 补充说明
 
-**du命** 也是查看使用空间的，但是与df命令不同的是Linux du命令是对文件和目录磁盘使用的空间的查看，还是和df命令有一些区别的。
+**du命令** 也是查看使用空间的，但是与df命令不同的是Linux du命令是对文件和目录磁盘使用的空间的查看，还是和df命令有一些区别的。
 
 ### 语法  
 
@@ -97,3 +97,6 @@ root@localhost test ..
 [root@localhost soft]# du -s test
 1288 test
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

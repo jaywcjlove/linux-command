@@ -5,7 +5,7 @@ nice
 
 ## 补充说明
 
-**nice命** 用于以指定的进程调度优先级启动其他的程序。
+**nice命令** 用于以指定的进程调度优先级启动其他的程序。
 
 ### 语法  
 
@@ -36,3 +36,6 @@ nice -19 tar zcf pack.tar.gz documents
 ```
 nice --19 tar zcf pack.tar.gz documents
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

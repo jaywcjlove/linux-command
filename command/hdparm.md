@@ -5,7 +5,7 @@ hdparm
 
 ## 补充说明
 
-**hdparm命** 提供了一个命令行的接口用于读取和设置IDE或SCSI硬盘参数。
+**hdparm命令** 提供了一个命令行的接口用于读取和设置IDE或SCSI硬盘参数。
 
 ### 语法  
 
@@ -104,10 +104,13 @@ hdparm -m /dev/sda
 hdparm -m    #参数值为整数值如8 /dev/sda
 ```
 
-**附：硬盘坏道修复方法**
+ **附：硬盘坏道修复方法** 
 
 ```
 检查：smartctl -l selftest /dev/sda
 卸载：umount /dev/sda*
 修复：badblocks /dev/sda
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

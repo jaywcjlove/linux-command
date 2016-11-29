@@ -5,7 +5,7 @@ declare
 
 ## 补充说明
 
-**declare命** 用于声明和显示已存在的shell变量。当不提供变量名参数时显示所有shell变量。declare命令若不带任何参数选项，则会显示所有shell变量及其值。declare的功能与typeset命令的功能是相同的。
+**declare命令** 用于声明和显示已存在的shell变量。当不提供变量名参数时显示所有shell变量。declare命令若不带任何参数选项，则会显示所有shell变量及其值。declare的功能与typeset命令的功能是相同的。
 
 ### 语法  
 
@@ -46,3 +46,6 @@ echo $test                        #输出shell变量的值
 ```
 man.linuxde.net
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

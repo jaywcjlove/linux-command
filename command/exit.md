@@ -5,7 +5,7 @@ exit
 
 ## 补充说明
 
-**exit命** 同于退出shell，并返回给定值。在shell脚本中可以终止当前脚本执行。执行exit可使shell以指定的状态值退出。若不设置状态值参数，则shell以预设值退出。状态值0代表执行成功，其他值代表执行失败。
+**exit命令** 同于退出shell，并返回给定值。在shell脚本中可以终止当前脚本执行。执行exit可使shell以指定的状态值退出。若不设置状态值参数，则shell以预设值退出。状态值0代表执行成功，其他值代表执行失败。
 
 ### 语法  
 
@@ -56,3 +56,6 @@ if [ "$EXCODE" == "0" ]; then
     echo "O.K"
 fi
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -5,7 +5,7 @@ mkbootdisk
 
 ## 补充说明
 
-**mkbootdisk命** 用来为当前运行的系统创建能够单独使用的系统引导软盘，以便在系统出现故障时能够启动操作进行适当的修复工作。
+**mkbootdisk命令** 用来为当前运行的系统创建能够单独使用的系统引导软盘，以便在系统出现故障时能够启动操作进行适当的修复工作。
 
 ### 语法  
 
@@ -38,3 +38,6 @@ mkbootdisk --device /dev/fd0 `uname -r`
 ```
 mkbootdisk --device /dev/fd0 2.2.18
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

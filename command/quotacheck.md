@@ -5,7 +5,7 @@ quotacheck
 
 ## 补充说明
 
-**quotacheck命** 通过扫描指定的文件系统，获取磁盘的使用情况，创建、检查和修复磁盘配额（quota）文件。执行quotacheck指令，扫描挂入系统的分区，并在各分区的文件系统根目录下产生quota.user和quota.group文件，设置用户和群组的磁盘空间限制。
+**quotacheck命令** 通过扫描指定的文件系统，获取磁盘的使用情况，创建、检查和修复磁盘配额（quota）文件。执行quotacheck指令，扫描挂入系统的分区，并在各分区的文件系统根目录下产生quota.user和quota.group文件，设置用户和群组的磁盘空间限制。
 
 ### 语法  
 
@@ -44,3 +44,6 @@ quotacheck: Checked 3 directories and 4 files
 ```
 [root@linux ~]# quotacheck -avug -m
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

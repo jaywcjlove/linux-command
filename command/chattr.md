@@ -5,7 +5,7 @@ chattr
 
 ## 补充说明
 
-**chattr命** 用来改变文件属性。这项指令可改变存放在ext2文件系统上的文件或目录属性，这些属性共有以下8种模式：
+**chattr命令** 用来改变文件属性。这项指令可改变存放在ext2文件系统上的文件或目录属性，这些属性共有以下8种模式：
 
 ```
 a：让文件或目录仅供附加用途；
@@ -50,3 +50,6 @@ chattr +i /etc/fstab
 ```
 chattr +a /data1/user_act.log
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

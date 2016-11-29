@@ -5,7 +5,7 @@ fdisk
 
 ## 补充说明
 
-**fdisk命** 用于观察硬盘实体使用情况，也可对硬盘分区。它采用传统的问答式界面，而非类似DOS fdisk的cfdisk互动式操作界面，因此在使用上较为不便，但功能却丝毫不打折扣。
+**fdisk命令** 用于观察硬盘实体使用情况，也可对硬盘分区。它采用传统的问答式界面，而非类似DOS fdisk的cfdisk互动式操作界面，因此在使用上较为不便，但功能却丝毫不打折扣。
 
 ### 语法  
 
@@ -313,3 +313,6 @@ proc                    /proc                   proc    defaults        0 0
 /dev/sdb1               /oracle                 ext2    defaults        0 0
 /dev/sdb6               /web                    ext3    defaults        0 0
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

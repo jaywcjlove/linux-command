@@ -5,31 +5,7 @@ find
 
 ## 补充说明
 
-<div id="content-index" class="content-index" style="float:right;">
-
-<div class="content-index-title">本文索引</div>
-
-[隐藏)] <script type="text/javascript" language="javascript">window.content_index_showTocToggle=true;function content_index_toggleToc(){var tts="显示";var tth="隐藏";if(window.content_index_showTocToggle){window.content_index_showTocToggle=false;document.getElementById("content-index-contents").style.display="none";document.getElementById("content-index-togglelink").innerHTML=tts}else{window.content_index_showTocToggle=true;document.getElementById("content-index-contents").style.display="block";document.getElementById("content-index-togglelink").innerHTML=tth}}</script>
-
-*   语法
-*   选项
-*   参数
-*   实例
-    *   根据文件或者正则表达式进行匹配
-    *   否定参数
-    *   根据文件类型进行搜索
-    *   基于目录深度搜索
-    *   根据文件时间戳进行搜索
-    *   根据文件大小进行匹配
-    *   删除匹配文件
-    *   根据文件权限/所有权进行匹配
-    *   借助-exec选项与其他命令结合使用
-    *   搜索但跳出指定的目录
-    *   find其他技巧收集
-
-</div>
-
-**find命令**用来在指定目录下查找文件。任何位于参数之前的字符串都将被视为欲查找的目录名。如果使用该命令时，不设置任何参数，则find命令将在当前目录下查找子目录与文件。并且将查找到的子目录和文件全部进行显示。
+**find命令** 用来在指定目录下查找文件。任何位于参数之前的字符串都将被视为欲查找的目录名。如果使用该命令时，不设置任何参数，则find命令将在当前目录下查找子目录与文件。并且将查找到的子目录和文件全部进行显示。
 
 ### 语法  
 
@@ -167,13 +143,13 @@ find . -type 类型参数
 
 类型参数列表：
 
-*   **f** 普通文件
-*   **l** 符号连接
-*   **d** 目录
-*   **c** 字符设备
-*   **b** 块设备
-*   **s** 套接字
-*   **p** Fifo
+*    **f**  普通文件
+*    **l**  符号连接
+*    **d**  目录
+*    **c**  字符设备
+*    **b**  块设备
+*    **s**  套接字
+*    **p**  Fifo
 
 #### 基于目录深度搜索  
 
@@ -197,9 +173,9 @@ find . -type f 时间戳
 
 UNIX/Linux文件系统每个文件都有三种时间戳：
 
-*   **访问时间**（-atime/天，-amin/分钟）：用户最近一次访问时间。
-*   **修改时间**（-mtime/天，-mmin/分钟）：文件最后一次修改时间。
-*   **变化时间**（-ctime/天，-cmin/分钟）：文件数据元（例如权限等）最后一次修改时间。
+*    **访问时间** （-atime/天，-amin/分钟）：用户最近一次访问时间。
+*    **修改时间** （-mtime/天，-mmin/分钟）：文件最后一次修改时间。
+*    **变化时间** （-ctime/天，-cmin/分钟）：文件数据元（例如权限等）最后一次修改时间。
 
 搜索最近七天内被访问过的所有文件
 
@@ -239,12 +215,12 @@ find . -type f -size 文件大小单元
 
 文件大小单元：
 
-*   **b** —— 块（512字节）
-*   **c** —— 字节
-*   **w** —— 字（2字节）
-*   **k** —— 千字节
-*   **M** —— 兆字节
-*   **G** —— 吉字节
+*    **b**  —— 块（512字节）
+*    **c**  —— 字节
+*    **w**  —— 字（2字节）
+*    **k**  —— 千字节
+*    **M**  —— 兆字节
+*    **G**  —— 吉字节
 
 搜索大于10KB的文件
 
@@ -306,7 +282,7 @@ find . -type f -group sunk
 find .-type f -user root -exec chown tom {} \;
 ```
 
-上例中，**{}** 用于与**-exec**选项结合使用来匹配所有文件，然后会被替换为相应的文件名。
+上例中， **{}**  用于与 **-exec** 选项结合使用来匹配所有文件，然后会被替换为相应的文件名。
 
 找出自己家目录下所有的.txt文件并删除
 
@@ -314,7 +290,7 @@ find .-type f -user root -exec chown tom {} \;
 find $HOME/. -name "*.txt" -ok rm {} \;
 ```
 
-上例中，**-ok**和**-exec**行为一样，不过它会给出提示，是否执行相应的操作。
+上例中， **-ok** 和 **-exec** 行为一样，不过它会给出提示，是否执行相应的操作。
 
 查找当前目录下所有.txt文件并把他们拼接起来写入到all.txt文件中
 
@@ -355,3 +331,6 @@ find . -path "./sk" -prune -o -name "*.txt" -print
 ```
 find . -empty
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -5,7 +5,7 @@ swapon
 
 ## 补充说明
 
-**swapon命** 用于激活Linux系统中交换空间，Linux系统的内存管理必须使用交换区来建立虚拟内存。
+**swapon命令** 用于激活Linux系统中交换空间，Linux系统的内存管理必须使用交换区来建立虚拟内存。
 
 ### 语法  
 
@@ -37,3 +37,6 @@ Filename                                type            Size    Used    Priority
 /dev/hda5                               partition       506008 96      -1
 /dev/hdb4                               partition       489972 0       -2
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

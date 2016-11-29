@@ -5,7 +5,7 @@ xlsclients
 
 ## 补充说明
 
-**xlsclients命** 用来列出显示器中的客户端应用程序。
+**xlsclients命令** 用来列出显示器中的客户端应用程序。
 
 ### 语法  
 
@@ -21,3 +21,6 @@ xlsclients(选项)
 -l：使用详细格式列表；
 -m<最大指令长度>：设置显示指令信息的最大长度，单位以字符计算。
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

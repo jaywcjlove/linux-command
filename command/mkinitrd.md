@@ -5,7 +5,7 @@ mkinitrd
 
 ## 补充说明
 
-**mkinitrd命** 建立要载入ramdisk的映像文件，以供Linux开机时载入ramdisk。
+**mkinitrd命令** 建立要载入ramdisk的映像文件，以供Linux开机时载入ramdisk。
 
 这个是重新封包核心的命令，例如你自己修改了一个设备的驱动，如果这个驱动要加入核心级别的话，就需要对核心进行重新封包，把新加的配置编译到核心内部去！
 
@@ -58,3 +58,6 @@ root@localhost tmp myinitrd.img  myinitrd.img.gz
 [root@localhost tmp]# file myinitrd.img
 myinitrd.img: ASCII cpio archive (SVR4 with no CRC)
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

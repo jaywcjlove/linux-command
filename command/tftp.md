@@ -5,7 +5,7 @@ tftp
 
 ## 补充说明
 
-**tftp命** 用在本机和tftp服务器之间使用TFTP协议传输文件。
+**tftp命令** 用在本机和tftp服务器之间使用TFTP协议传输文件。
 
 TFTP是用来下载远程文件的最简单网络协议，它其于UDP协议而实现。嵌入式linux的tftp开发环境包括两个方面：一是linux服务器端的tftp-server支持，二是嵌入式目标系统的tftp-client支持。因为u-boot本身内置支持tftp-client，所以嵌入式目标系统端就不用配置了。下面就详细介绍一下linux服务器端tftp-server的配置。
 
@@ -30,7 +30,7 @@ tftp(选项)(参数)
 
 ### 实例  
 
-**1、安装tftp服务器**
+ **1、安装tftp服务器** 
 
 需要安装xinetd、tftp和tftp-server 3个软件
 
@@ -50,7 +50,7 @@ rpm -ivh tftp-0.48-3.fc9.i386.rpm
 rpm -ivh tftp-server-0.48-3.fc9.i386.rpm
 ```
 
-**2、配置tftp服务器**
+ **2、配置tftp服务器** 
 
 修改/etc/xinetd.d/tftp文件，将其中的disable=yes改为disable=no。主要是设置TFTP服务器的根目录，开启服务。修改后的文件如下：
 
@@ -72,7 +72,7 @@ service tftp
 
 说明：修改项`server_args= -s <path> -c`，其中<path>处可以改为你的tftp-server的根目录，参数-s指定chroot，-c指定了可以创建文件。
 
-**3、启动tftp服务器并关闭防火墙**
+ **3、启动tftp服务器并关闭防火墙** 
 
 ```
 /etc/init.d/iptables stop        //关闭防火墙
@@ -92,7 +92,7 @@ netstat -a | grep tftp
 
 显示结果为`udp 0 0 *:tftp *:*`表明服务已经开启，就表明tftp配置成功了。
 
-**5、tftp使用**
+ **5、tftp使用** 
 
 复制一个文件到tftp服务器目录，然后在主机启动tftp软件，进行简单测试。
 
@@ -104,7 +104,7 @@ tftp>put <upload file>
 tftp>q
 ```
 
-**6、tftp命令用法如下**
+ **6、tftp命令用法如下** 
 
 ```
 tftp your-ip-address
@@ -127,11 +127,11 @@ tftp your-ip-address
 *   help：帮助信息
 *   ? ：帮助信息
 
-**7、如果老是出现“AVC Denial, click icon to view”的错误，并不能传输文件，需要作如下修改**
+ **7、如果老是出现“AVC Denial, click icon to view”的错误，并不能传输文件，需要作如下修改** 
 
 修改`/etc/sysconfig/selinux`,将SELINUX设定为disable，使用命令`setenforce 0`让selinux配置文件生效。
 
-**8、Busybox中tftp命令的用法**
+ **8、Busybox中tftp命令的用法** 
 
 命令格式为：
 
@@ -153,3 +153,6 @@ tftp option [port]
 ```
 tftp -g -r embedexpert 192.168.1.2
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

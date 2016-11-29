@@ -5,7 +5,7 @@ quota
 
 ## 补充说明
 
-**quota命** 用于显示用户或者工作组的磁盘配额信息。输出信息包括磁盘使用和配额限制。
+**quota命令** 用于显示用户或者工作组的磁盘配额信息。输出信息包括磁盘使用和配额限制。
 
 ### 语法  
 
@@ -146,3 +146,6 @@ Disk quotas for group qgroup (gid 502):
      Filesystem   blocks    quota      limit      grace    files   quota   limit   grace
       /dev/hdb1         0     80000   90000                       0        0        0
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -5,7 +5,7 @@ zipinfo
 
 ## 补充说明
 
-**zipinfo命** 用来列出压缩文件信息。执行zipinfo指令可得知zip压缩文件的详细信息。
+**zipinfo命令** 用来列出压缩文件信息。执行zipinfo指令可得知zip压缩文件的详细信息。
 
 ### 语法  
 
@@ -33,3 +33,6 @@ zipinfo(选项)(参数)
 ### 参数  
 
 文件：指定zip格式的压缩包。
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

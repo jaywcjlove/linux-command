@@ -5,7 +5,7 @@ diffstat
 
 ## 补充说明
 
-**diffstat命** 用来显示diff命令输出信息的柱状图，用以显示diff命令比较两个文件的不同统计信息。用户也可以直接使用`|`将diff命令所输出的结果直接送给diffstat命令进行统计结果的显示。使用该命令时，若所比较的文件或者子目录不在当前目录下，则应该使用其完整路径。
+**diffstat命令** 用来显示diff命令输出信息的柱状图，用以显示diff命令比较两个文件的不同统计信息。用户也可以直接使用`|`将diff命令所输出的结果直接送给diffstat命令进行统计结果的显示。使用该命令时，若所比较的文件或者子目录不在当前目录下，则应该使用其完整路径。
 
 ### 语法  
 
@@ -63,3 +63,6 @@ mno
 testfile | 2 +-             #统计信息输出显示
 1 file changed, 1 insertion(+), 1 deletion(-)
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

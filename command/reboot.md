@@ -5,7 +5,7 @@ reboot
 
 ## 补充说明
 
-**reboot命** 用来重新启动正在运行的Linux操作系统。
+**reboot命令** 用来重新启动正在运行的Linux操作系统。
 
 ### 语法  
 
@@ -29,3 +29,6 @@ reboot(选项)
 reboot        //重开机。
 reboot -w     //做个重开机的模拟（只有纪录并不会真的重开机）。
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -5,7 +5,7 @@ file
 
 ## 补充说明
 
-**file命** 用来探测给定文件的类型。file命令对文件的检查分为文件系统、魔法幻数检查和语言检查3个过程。
+**file命令** 用来探测给定文件的类型。file命令对文件的检查分为文件系统、魔法幻数检查和语言检查3个过程。
 
 ### 语法  
 
@@ -67,3 +67,6 @@ lrwxrwxrwx 1 root root 10 08-13 00:11 /var/mail -> spool/mail
 /var/spool/mail: directory
 
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

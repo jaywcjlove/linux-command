@@ -5,7 +5,7 @@ mtools
 
 ## 补充说明
 
-**mtools命** 显示mtools支持的指令，mtools为MS-DOS文件系统的工具程序，可模拟许多MS-DOS的指令。这些指令都是mtools的符号连接，因此会有一些共同的特性。
+**mtools命令** 显示mtools支持的指令，mtools为MS-DOS文件系统的工具程序，可模拟许多MS-DOS的指令。这些指令都是mtools的符号连接，因此会有一些共同的特性。
 
 ### 语法  
 
@@ -43,3 +43,6 @@ mwrite, mzip
 ```
 
 如上所示，其显示的所有命令均为mtools工具所支持的。
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

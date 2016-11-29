@@ -5,7 +5,7 @@ shutdown
 
 ## 补充说明
 
-**shutdown命** 用来系统关机命令。shutdown指令可以关闭所有程序，并依用户的需要，进行重新开机或关机的动作。
+**shutdown命令** 用来系统关机命令。shutdown指令可以关闭所有程序，并依用户的需要，进行重新开机或关机的动作。
 
 ### 语法  
 
@@ -44,3 +44,6 @@ shutdown -h now
 ```
 shutdown +5 "System will shutdown after 5 minutes"
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

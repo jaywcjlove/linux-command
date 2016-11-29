@@ -19,3 +19,6 @@ ftpshut [-d<分钟>][-l<分钟>][关闭时间]["警告信息"]
 -d<分钟>   切断所有FTP连线时间。
 -l<分钟>   停止接受FTP登入的时间。
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

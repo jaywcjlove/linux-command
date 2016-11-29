@@ -5,7 +5,7 @@ rcp
 
 ## 补充说明
 
-**rcp命** 使在两台Linux主机之间的文件复制操作更简单。通过适当的配置，在两台Linux主机之间复制文件而无需输入密码，就像本地文件复制一样简单。
+**rcp命令** 使在两台Linux主机之间的文件复制操作更简单。通过适当的配置，在两台Linux主机之间复制文件而无需输入密码，就像本地文件复制一样简单。
 
 ### 语法  
 
@@ -32,7 +32,7 @@ directory 每个文件或目录参数既可以是远程文件名也可以是本
 
 ### 实例  
 
-**rcp命令使用条件**
+ **rcp命令使用条件** 
 
 如果系统中有`/etc/hosts`文件，系统管理员应确保该文件包含要与之进行通信的远程主机的项。配置过程:
 
@@ -46,7 +46,7 @@ directory 每个文件或目录参数既可以是远程文件名也可以是本
 
 3、到`/etc/pam.d/`目录下，把rsh文件中的`auth required /lib/security/pam_securetty.so`一行用“#”注释掉即可。（只有注释掉这一行，才能用root用户登录）
 
-**将当前目录下的 test1 复制到名为 webserver1 的远程系统：**
+ **将当前目录下的 test1 复制到名为 webserver1 的远程系统：** 
 
 ```
 rcp test1 webserver1:/home/root/test3
@@ -54,7 +54,7 @@ rcp test1 webserver1:/home/root/test3
 
 在这种情况下，test1 被复制到远程子目录 test3下，名称仍为 test1 。如果仅提供了远程主机名，rcp 将把 test1 复制到远程主目录下，名称仍为 test1 。
 
-**还可以在目的目录中包含文件名。例如，将文件复制到名为 webserver1的系统中：**
+ **还可以在目的目录中包含文件名。例如，将文件复制到名为 webserver1的系统中：** 
 
 ```
 rcp test1 webserver1:/home/root/test3
@@ -62,13 +62,13 @@ rcp test1 webserver1:/home/root/test3
 
 在这种情况下，将 test1 复制到远程目录root 下并将其命名为 test3。
 
-**从远程系统复制文件：要将远程系统中的文件复制到本地目录下：**
+ **从远程系统复制文件：要将远程系统中的文件复制到本地目录下：** 
 
 ```
 rcp remote_hostname:remote_file local_fileEnter
 ```
 
-**将远程系统 webserver1中的 test2 复制到当前目录：**
+ **将远程系统 webserver1中的 test2 复制到当前目录：** 
 
 ```
 rcp webserver1:/home/root/test2 .Enter
@@ -88,7 +88,7 @@ rcp webserver1:/home/root/test2 otherdir/ Enter
 rcp webserver1:/home/root/test2 otherdir/otherfile Enter
 ```
 
-**将目录复制到远程系统：**
+ **将目录复制到远程系统：** 
 
 要将本地目录及其文件和子目录复制到远程系统，请同时使用 rcp 和 -r（递归）选项。
 
@@ -98,7 +98,7 @@ rcp -r local_dir remote_hostname:remote_dir Enter
 
 如果当前目录下没有 local_dir，则除本地目录名外，还需要提供相对路径名（自当前目录开始）或绝对路径名（自 / 顶级目录开始）。另外，如果主目录下没有 remote_dir，则 remote_dir 将需要一个相对路径（自主目录开始）或绝对路径（自 / 开始）。
 
-**要将名为 work 的子目录完整地复制到 webserver1远程计算机中的主目录下名为 products 的目录，请键入以下内容：**
+ **要将名为 work 的子目录完整地复制到 webserver1远程计算机中的主目录下名为 products 的目录，请键入以下内容：** 
 
 ```
 rcp -r work webserver1:/home/root/products Enter
@@ -108,7 +108,7 @@ rcp -r work webserver1:/home/root/products Enter
 
 本示例假定用户处于包含 work 的本地目录下。否则，必须提供该目录的相对或绝对路径，如`/home/root/work`。
 
-**从远程系统复制目录：**
+ **从远程系统复制目录：** 
 
 要将远程目录及其所有文件和子目录复制到本地目录，请在以下语法中使用 rcp 和 -r（递归）选项。
 
@@ -123,3 +123,6 @@ rcp –r webserver1:/home/root/work .Enter
 ```
 
 `.`表示当前目录。将在此目录下创建 work 目录。
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
