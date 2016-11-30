@@ -17,7 +17,7 @@
 
         this.query = '';     //
         this.query_size = 5; //搜索框结果显示5条
-        this.page_size = 20; //每页显示20条
+        this.page_size = 50; //每页显示20条
 
         this.elm_info.innerHTML = this.commands.length;
 
