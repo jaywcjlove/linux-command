@@ -88,39 +88,41 @@ CreateDatajs('./.deploy/js/dt.js',function(dt_path,arr){
         ReadTmpToHTML('/template/details.ejs', dep+'.html' ,md_path+'.md', itm)
     });
 
+    console.log(success("  → "),arr.length)
+
 })
 
 
-// 监听实时编译
-watch.watchTree(path.join(path.dirname(__dirname),'/'), function (f, curr, prev) {
-  if (typeof f == "object" && prev === null && curr === null) {
-    console.log(success("  → :watching ") + '/template/');
-    // Finished walking the tree
-  } else if (prev === null) {
+// // 监听实时编译
+// watch.watchTree(path.join(path.dirname(__dirname),'/'), function (f, curr, prev) {
+//   if (typeof f == "object" && prev === null && curr === null) {
+//     console.log(success("  → :watching ") + '/template/');
+//     // Finished walking the tree
+//   } else if (prev === null) {
 
-    // f is a new file
-  } else if (curr.nlink === 0) {
-    // f was removed
-  } else {
+//     // f is a new file
+//   } else if (curr.nlink === 0) {
+//     // f was removed
+//   } else {
     
-    if(/\.styl$/.test(f)){
-      CreateStyl('/template/styl/index.styl','/.deploy/css/index.css')
-    }else if(/\.js$/.test(f)){
+//     if(/\.styl$/.test(f)){
+//       CreateStyl('/template/styl/index.styl','/.deploy/css/index.css')
+//     }else if(/\.js$/.test(f)){
 
-      CreateJS('/template/js/index.js','/.deploy/js/index.js')
+//       CreateJS('/template/js/index.js','/.deploy/js/index.js')
     
-    }else if(/\.ejs$/.test(f)){
-      // 首页生成
-      ReadTmpToHTML('/template/index.ejs','/.deploy/index.html');
-      ReadTmpToHTML('/template/list.ejs','/.deploy/list.html');
+//     }else if(/\.ejs$/.test(f)){
+//       // 首页生成
+//       ReadTmpToHTML('/template/index.ejs','/.deploy/index.html');
+//       ReadTmpToHTML('/template/list.ejs','/.deploy/list.html');
     
-    }else if(/\.md$/.test(f)){
-      var mdp = f.replace(path_root,'');
-      var dep = path.join('/.deploy/',mdp);
-      ReadTmpToHTML('/template/details.ejs',dep.replace('.md','.html'),mdp);
-    }
-  }
-})
+//     }else if(/\.md$/.test(f)){
+//       var mdp = f.replace(path_root,'');
+//       var dep = path.join('/.deploy/',mdp);
+//       ReadTmpToHTML('/template/details.ejs',dep.replace('.md','.html'),mdp);
+//     }
+//   }
+// })
 
 
 function CreateJS(from_path,to_path){
@@ -220,6 +222,7 @@ function CreateDatajs(dt_path,callback){
     if(!exists(path_md)) return console.log("\n  → error: 文件夹 "+path_md+" 不存在 \n ")
     // 获取 markdown 目录的集合
     var path_arr = readMDSync(path_md);
+    path_arr = sortLength(path_arr);
     var indexes = []
     path_arr.forEach(function(md_path,i){
         var json = {}
@@ -243,6 +246,21 @@ function CreateDatajs(dt_path,callback){
     });
 }
 
+// 按长度排序
+function sortLength(arr){
+  var compare = function (x, y) {//比较函数
+    x = path.basename(x,'.md');
+    y = path.basename(y,'.md');
+    if (x.length < y.length) {
+        return -1;
+    } else if (x.length > y.length) {
+        return 1;
+    } else {
+        return 0;
+    }
+  }
+  return arr.sort(compare)
+}
 
 // 同步循环创建所有目录 resolvePath
 function mkdirsSync(dirpath, mode, callback) {
