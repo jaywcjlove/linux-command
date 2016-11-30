@@ -49,7 +49,7 @@ URL：下载指定的URL地址。
  **使用wget下载单个文件** 
 
 ```
-wget http://www.linuxde.net/testfile.zip
+wget http://www.jsdig.com/testfile.zip
 ```
 
 以下的例子是从网络下载一个文件并保存在当前目录，在下载的过程中会显示进度条，包含（下载完成百分比，已经下载的字节，当前下载速度，剩余下载时间）。
@@ -57,7 +57,7 @@ wget http://www.linuxde.net/testfile.zip
  **下载并以不同的文件名保存** 
 
 ```
-wget -O wordpress.zip http://www.linuxde.net/download.aspx?id=1080
+wget -O wordpress.zip http://www.jsdig.com/download.aspx?id=1080
 ```
 
 wget默认会以最后一个符合`/`的后面的字符来命令，对于动态链接的下载通常文件名会不正确。
@@ -65,7 +65,7 @@ wget默认会以最后一个符合`/`的后面的字符来命令，对于动态�
 错误：下面的例子会下载一个文件并以名称`download.aspx?id=1080`保存:
 
 ```
-wget http://www.linuxde.net/download?id=1
+wget http://www.jsdig.com/download?id=1
 ```
 
 即使下载的文件是zip格式，它仍然以`download.php?id=1080`命令。
@@ -73,13 +73,13 @@ wget http://www.linuxde.net/download?id=1
 正确：为了解决这个问题，我们可以使用参数`-O`来指定一个文件名：
 
 ```
-wget -O wordpress.zip http://www.linuxde.net/download.aspx?id=1080
+wget -O wordpress.zip http://www.jsdig.com/download.aspx?id=1080
 ```
 
  **wget限速下载** 
 
 ```
-wget --limit-rate=300k http://www.linuxde.net/testfile.zip
+wget --limit-rate=300k http://www.jsdig.com/testfile.zip
 ```
 
 当你执行wget的时候，它默认会占用全部可能的宽带下载。但是当你准备下载一个大文件，而你还需要下载其它文件时就有必要限速了。
@@ -87,7 +87,7 @@ wget --limit-rate=300k http://www.linuxde.net/testfile.zip
  **使用wget断点续传** 
 
 ```
-wget -c http://www.linuxde.net/testfile.zip
+wget -c http://www.jsdig.com/testfile.zip
 ```
 
 使用`wget -c`重新启动下载中断的文件，对于我们下载大文件时突然由于网络等原因中断非常有帮助，我们可以继续接着下载而不是重新下载一个文件。需要继续中断的下载时可以使用`-c`参数。
@@ -95,7 +95,7 @@ wget -c http://www.linuxde.net/testfile.zip
  **使用wget后台下载** 
 
 ```
-wget -b http://www.linuxde.net/testfile.zip
+wget -b http://www.jsdig.com/testfile.zip
 
 Continuing in background, pid 1840.
 Output will be written to `wget-log'.
@@ -110,7 +110,7 @@ tail -f wget-log
  **伪装代理名称下载** 
 
 ```
-wget --user-agent="Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.16 (KHTML, like Gecko) Chrome/10.0.648.204 Safari/534.16" http://www.linuxde.net/testfile.zip
+wget --user-agent="Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.16 (KHTML, like Gecko) Chrome/10.0.648.204 Safari/534.16" http://www.jsdig.com/testfile.zip
 ```
 
 有些网站能通过根据判断代理名称不是浏览器而拒绝你的下载请求。不过你可以通过`--user-agent`参数伪装。

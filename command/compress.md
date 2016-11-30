@@ -34,10 +34,10 @@ compress(选项)(参数)
 将`/etc/man.config`复到`/tmp` ，并加以压缩
 
 ```
-root@localhost ~ /tmp
-root@localhost tmp /etc/man.config .
+[root@localhost ~]# cd /tmp
+[root@localhost tmp]# cp /etc/man.config .
 [root@localhost tmp]# compress man.config
-root@localhost tmp -l
+[root@localhost tmp]# ls -l
 ```
 
 ```

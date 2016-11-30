@@ -46,8 +46,8 @@ od(选项)(参数)
 ### 实例  
 
 ```
-linuxde@localhost ~ abcdef g > tmp
-linuxde@localhost ~ tmp
+[linuxde@localhost ~]$ echo abcdef g > tmp
+[linuxde@localhost ~]$ cat tmp
 abcdef g
 ```
 

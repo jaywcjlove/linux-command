@@ -40,7 +40,7 @@ cut(选项)(参数)
 例如有一个学生报表信息，包含No、Name、Mark、Percent：
 
 ```
-root@localhost text test.txt 
+[root@localhost text]# cat test.txt 
 No Name Mark Percent
 01 tom 69 91
 02 jack 71 87

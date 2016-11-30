@@ -34,7 +34,7 @@ file(选项)(参数)
 显示文件类型
 
 ```
-root@localhost ~.log
+[root@localhost ~]# file install.log
 install.log: UTF-8 Unicode text
 
 [root@localhost ~]# file -b install.log      <== 不显示文件名称
@@ -51,7 +51,7 @@ text/plain; charset=utf-8
 显示符号链接的文件类型
 
 ```
-root@localhost ~ -l /var/mail
+[root@localhost ~]# ls -l /var/mail
 lrwxrwxrwx 1 root root 10 08-13 00:11 /var/mail -> spool/mail
 
 [root@localhost ~]# file /var/mail

@@ -31,7 +31,7 @@ which(选项)(参数)
 查找文件、显示命令路径：
 
 ```
-root@localhost ~
+[root@localhost ~]# which pwd
 /bin/pwd
 
 [root@localhost ~]#  which adduser

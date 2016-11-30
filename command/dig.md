@@ -37,24 +37,24 @@ dig(选项)(参数)
 ### 实例  
 
 ```
-[root@localhost ~]# dig www.linuxde.net
+[root@localhost ~]# dig www.jsdig.com
 
-; <<>> DiG 9.3.6-P1-RedHat-9.3.6-20.P1.el5_8.1 <<>> www.linuxde.net
+; <<>> DiG 9.3.6-P1-RedHat-9.3.6-20.P1.el5_8.1 <<>> www.jsdig.com
 ;; global options:  printcmd
 ;; Got answer:
 ;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 2115
 ;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 2, ADDITIONAL: 0
 
 ;; QUESTION SECTION:
-;www.linuxde.net.               IN      A
+;www.jsdig.com.               IN      A
 
 ;; ANSWER SECTION:
-www.linuxde.net.        0       IN      CNAME   host.1.linuxde.net.
-host.1.linuxde.net.     0       IN      A       100.42.212.8
+www.jsdig.com.        0       IN      CNAME   host.1.jsdig.com.
+host.1.jsdig.com.     0       IN      A       100.42.212.8
 
 ;; AUTHORITY SECTION:
-linuxde.net.            8       IN      NS      f1g1ns2.dnspod.net.
-linuxde.net.            8       IN      NS      f1g1ns1.dnspod.net.
+jsdig.com.            8       IN      NS      f1g1ns2.dnspod.net.
+jsdig.com.            8       IN      NS      f1g1ns1.dnspod.net.
 
 ;; Query time: 0 msec
 ;; SERVER: 202.96.104.15#53(202.96.104.15)

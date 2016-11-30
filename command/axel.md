@@ -61,7 +61,7 @@ axel [options] url1 [url2] [url...]
 如下载lnmp安装包指定10个线程，存到/tmp/：
 
 ```
-axel -n 10 -o /tmp/ http://www.linuxde.net/lnmp.tar.gz
+axel -n 10 -o /tmp/ http://www.jsdig.com/lnmp.tar.gz
 ```
 
 如果下载过程中下载中断可以再执行下载命令即可恢复上次的下载进度。

@@ -12,7 +12,7 @@ id
 ### 语法  
 
 ```
-id -gGnru][--version][用户名称]
+id [-gGnru]--[help][--version][用户名称]
 ```
 
 ### 选项  

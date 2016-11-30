@@ -34,7 +34,7 @@ pgrep(选项)(参数)
 ```
 pgrep -lo httpd
 4557 httpd
- root@localhost ~ httpd
+ [root@localhost ~]# pgrep -ln httpd
 4566 httpd
 
 [root@localhost ~]# pgrep -l httpd

@@ -5,7 +5,7 @@ startx
 
 ## 补充说明
 
-**startx命** 用来启动X Window，实际上启动X Window的程序为xinit。
+**startx命令** 用来启动X Window，实际上启动X Window的程序为xinit。
 
 ### 语法  
 
@@ -86,3 +86,6 @@ $HOME/.awmrc awm 配置文件。
 $HOME/.uwmrc uwm 配置文件。
 /dev/lft* 终端或 tty、工作站初始 login shell 的界面。
 ```
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

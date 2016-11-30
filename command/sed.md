@@ -12,8 +12,8 @@ sed
  **命令格式** 
 
 ```
-sed options' file(s)
-sed options
+sed [options] 'command' file(s)
+sed [options] -f scriptfile file(s)
 ```
 
 ### 选项  
@@ -79,7 +79,7 @@ sed options
  **$**  匹配行结束，如：/sed$/匹配所有以sed结尾的行。
  **.**  匹配一个非换行符的任意字符，如：/s.d/匹配s后接一个任意字符，最后是d。
  **** * 匹配0个或多个字符，如：/*sed/匹配所有模板是一个或多个空格后紧跟sed的行。
- **]ed/匹配sed和Sed。  
+ **[]**  匹配一个指定范围内的字符，如/[ss]ed/匹配sed和Sed。  
  **[^]**  匹配一个不在指定范围内的字符，如：/[^A-RT-Z]ed/匹配不包含A-R和T-Z的一个字母开头，紧跟ed的行。
  **\(..\)**  匹配子串，保存匹配的字符，如s/\(love\)able/\1rs，loveable被替换成lovers。
  **&**  保存搜索字符用来替换其他字符，如s/love/ **&** /，love这成 **love** 。
@@ -199,14 +199,14 @@ sed 's/^192.168.0.1/&localhost/' file
 匹配给定样式的其中一部分：
 
 ```
-echo this is digit 7 in a number | sed 's/digit \(0-9/\1/'
+echo this is digit 7 in a number | sed 's/digit \([0-9]\)/\1/'
 this is 7 in a number
 ```
 
 命令中 digit 7，被替换成了 7。样式匹配到的子串是 7，\(..\) 用于匹配子串，对于匹配到的第一个子串就标记为  **\1** ，依此类推匹配到的第二个结果就是  **\2** ，例如：
 
 ```
-echo aaa BBB | sed 's/\(a-z \(A-Z/\2 \1/'
+echo aaa BBB | sed 's/\([a-z]\+\) \([A-Z]\+\)/\2 \1/'
 BBB aaa
 ```
 
@@ -363,7 +363,7 @@ sed -e '/test/h' -e '/check/x' file
 sed脚本是一个sed的命令清单，启动Sed时以-f选项引导脚本文件名。Sed对于脚本中输入的命令非常挑剔，在命令的末尾不能有任何空白或文本，如果在一行中有多个命令，要用分号分隔。以#开头的行为注释行，且不能跨行。
 
 ```
-sed options
+sed [options] -f scriptfile file(s)
 ```
 
 ### 打印奇数行或偶数行  

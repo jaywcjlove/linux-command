@@ -60,7 +60,7 @@ foobar ALL=(ALL)    ALL
 保存退出后，切换到foobar用户，我们用它的身份执行命令：
 
 ```
-foobar@localhost ~ /root
+[foobar@localhost ~]$ ls /root
 ls: /root: 权限不够
 
 [foobar@localhost ~]$ sudo ls /root
@@ -77,7 +77,7 @@ foobar localhost=    /sbin/ifconfig,   /bin/ls
 再来执行命令：
 
 ```
-foobar@localhost ~ -5 /etc/shadow
+[foobar@localhost ~]$ sudo head -5 /etc/shadow
 Password:
 Sorry, user foobar is not allowed to execute '/usr/bin/head -5 /etc/shadow' as root on localhost.localdomain.
 

@@ -10,7 +10,7 @@ losetup
 ### 语法  
 
 ```
-losetup  -e encryption 
+losetup [ -e encryption ] [ -o offset ] loop_device file
 losetup [ -d ] loop_device
 ```
 

@@ -35,7 +35,6 @@ enable(选项)(参数)
 [root@localhost ~]# enable -a
 enable .
 enable :
-enable [
 enable alias
 enable bg
 enable bind

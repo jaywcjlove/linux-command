@@ -205,7 +205,7 @@ drwxr-xr-x  19 root root 4.0K Jun 11 23:38 var
 显示文件夹信息
 
 ```
-root@localhost / /etc/
+[root@localhost /]# ls -ld /etc/
 
 drwxr-xr-x 75 root root 4096 Oct 16 04:02 /etc/
 

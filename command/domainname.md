@@ -31,11 +31,11 @@ NIS域名：指定要设置的NIS域名。
 getdomainname()=`(none)'
 (none)
  [root@AY1307311912260196fcZ ~]# domainname
-www.linuxde.net
+www.jsdig.com
 
 [root@AY1307311912260196fcZ ~]# domainname -v
-getdomainname()=`www.linuxde.net'
-www.linuxde.net
+getdomainname()=`www.jsdig.com'
+www.jsdig.com
 ```
 
 

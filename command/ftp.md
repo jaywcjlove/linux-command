@@ -40,7 +40,7 @@ FTP>cdup: 返回上一级目录.
 FTP>chmod: 改变远端主机的文件权限.
 FTP>close: 终止远端的FTP进程,返回到FTP命令状态, 所有的宏定义都被删除.
 FTP>delete: 删除远端主机中的文件.
-FTP>dir remote-directory] 列出当前远端主机目录中的文件.如果有本地文件,就将结果写至本地文件.
+FTP>dir [remote-directory] local-[file] 列出当前远端主机目录中的文件.如果有本地文件,就将结果写至本地文件.
 FTP>get [remote-file] [local-file] 从远端主机中传送至本地主机中.
 FTP>help [command] 输出命令的解释.
 FTP>lcd: 改变当前本地主机的工作目录,如果缺省,就转到当前用户的HOME目录.

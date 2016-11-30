@@ -31,7 +31,7 @@ rmmod(选项)(参数)
 用rmmod命令主要用于卸载正在使用的Linux内核模块，与`modprobe -r`命令相似，如下所示：
 
 ```
-root@localhost boot | grep raid1
+[root@localhost boot]# lsmod | grep raid1
 raid1                  25153  0
 
 [root@localhost boot]# rmmod raid1

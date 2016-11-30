@@ -103,7 +103,7 @@ passwd: all authentication tokens updated successfully. //更改成功；
 Locking password for user linuxde.
 passwd: Success           //锁定成功；
 
-linuxde@localhost ~ linuxde   //通过su切换到linuxde用户；
+[linuxde@localhost ~]# su linuxde   //通过su切换到linuxde用户；
 [linuxde@localhost ~]$ passwd      //linuxde来更改密码；
 Changing password for user linuxde.
 Changing password for linuxde

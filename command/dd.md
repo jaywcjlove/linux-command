@@ -39,7 +39,7 @@ skip=<区块数>：一开始读取时，跳过指定的区块数；
 1+0 records out
 1048576 bytes (1.0 MB) copied, 0.006107 seconds, 172 MB/s
 
-root@localhost text -sh sun.txt 
+[root@localhost text]# du -sh sun.txt 
 1.1M    sun.txt
 ```
 

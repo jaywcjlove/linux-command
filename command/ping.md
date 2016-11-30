@@ -39,15 +39,15 @@ ping(选项)(参数)
 ### 实例  
 
 ```
-[root@AY1307311912260196fcZ ~]# ping www.linuxde.net
-PING host.1.linuxde.net (100.42.212.8) 56(84) bytes of data.
+[root@AY1307311912260196fcZ ~]# ping www.jsdig.com
+PING host.1.jsdig.com (100.42.212.8) 56(84) bytes of data.
 64 bytes from 100-42-212-8.static.webnx.com (100.42.212.8): icmp_seq=1 ttl=50 time=177 ms
 64 bytes from 100-42-212-8.static.webnx.com (100.42.212.8): icmp_seq=2 ttl=50 time=178 ms
 64 bytes from 100-42-212-8.static.webnx.com (100.42.212.8): icmp_seq=3 ttl=50 time=174 ms
 64 bytes from 100-42-212-8.static.webnx.com (100.42.212.8): icmp_seq=4 ttl=50 time=177 ms
 ...按Ctrl+C结束
 
---- host.1.linuxde.net ping statistics ---
+--- host.1.jsdig.com ping statistics ---
 4 packets transmitted, 4 received, 0% packet loss, time 2998ms
 rtt min/avg/max/mdev = 174.068/176.916/178.182/1.683 ms
 ```

@@ -79,7 +79,7 @@ root@localhost [test]# du
 显示多个文件所占空间：
 
 ```
-root@localhost test.gz log31.tar.gz
+[root@localhost test]# du log30.tar.gz log31.tar.gz
 4 log30.tar.gz
 4 log31.tar.gz
 ```
@@ -93,7 +93,7 @@ root@localhost test.gz log31.tar.gz
 [root@localhost test]# du -s scf
 32 scf
 
-root@localhost test ..
+[root@localhost test]# cd ..
 [root@localhost soft]# du -s test
 1288 test
 ```

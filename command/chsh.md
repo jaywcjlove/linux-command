@@ -43,7 +43,7 @@ chsh(选项)(参数)
 第二种：
 
 ```
-rocrocket@localhost ~ /etc/shells
+[rocrocket@localhost ~]$ cat /etc/shells
 /bin/sh
 /bin/bash
 /sbin/nologin
@@ -55,7 +55,7 @@ rocrocket@localhost ~ /etc/shells
  **查看当前正在使用的shell：** 
 
 ```
-rocrocket@localhost ~ $SHELL
+[rocrocket@localhost ~]$ echo $SHELL
 /bin/bash
 ```
 
@@ -74,7 +74,7 @@ Shell changed.
 使用chsh加选项`-s`就可以修改登录的shell了！你会发现你现在执行`echo $SHELL`后仍然输出为`/bin/bash`，这是因为你需要重启你的shell才完全投入到zsh怀抱中去。`chsh -s`其实修改的就是`/etc/passwd`文件里和你的用户名相对应的那一行。现在来查看下：
 
 ```
-rocrocket@localhost ~ ^rocrocket
+[rocrocket@localhost ~]$ cat /etc/passwd|grep ^rocrocket
 rocrocket:x:500:500:rocrocket,China:/rocrocket/PSB/home:/bin/zsh
 ```
 

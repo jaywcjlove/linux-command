@@ -33,7 +33,7 @@ comm(选项)(参数)
 ### 实例  
 
 ```
-root@localhost text aaa.txt 
+[root@localhost text]# cat aaa.txt 
 aaa
 bbb
 ccc
@@ -86,7 +86,7 @@ ccc
 打印出两个文件中不相同的行，需要删除第三列：
 
 ```
-root@localhost text 's/^\t//'
+[root@localhost text]# comm aaa.txt bbb.txt -3 | sed 's/^\t//'
 aaa
 aaa
 ddd

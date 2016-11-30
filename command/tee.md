@@ -46,7 +46,7 @@ WWW.pef
 ```
 
 ```
-root@localhost text -n
+[root@localhost text]# ls | tee out.txt | cat -n
      1  1.sh
      2  1.txt
      3  2.txt

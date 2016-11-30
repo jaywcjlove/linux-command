@@ -55,8 +55,8 @@ SERVER-3
 需要将server.log分割成server1.log、server2.log、server3.log，这些文件的内容分别取自原文件中不同的SERVER部分：
 
 ```
-root@localhost split server00.log
-root@localhost split
+[root@localhost split]# csplit server.log /SERVER/ -n2 -s {*} -f server -b "%02d.log"; rm server00.log
+[root@localhost split]# ls
 server01.log  server02.log  server03.log  server.log
 ```
 

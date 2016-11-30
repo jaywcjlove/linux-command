@@ -51,9 +51,9 @@ drwxr-xr-x  root root root:object_r:var_t    /srv/samba
 ```
 semanage fcontext -l | grep '/srv'
 /srv/.*                     all files   system_u:object_r:var_t:s0
-/srv/(^/?ftp(/.*)?     all files   system_u:object_r:public_content_t:s0
-/srv/(^/?www(/.*)?     all files   system_u:object_r:httpd_sys_content_t:s0
-/srv/(^/?rsync(/.*)?   all files   system_u:object_r:public_content_t:s0
+/srv/([^/]*/)?ftp(/.*)?     all files   system_u:object_r:public_content_t:s0
+/srv/([^/]*/)?www(/.*)?     all files   system_u:object_r:httpd_sys_content_t:s0
+/srv/([^/]*/)?rsync(/.*)?   all files   system_u:object_r:public_content_t:s0
 /srv/gallery2(/.*)?         all files   system_u:object_r:httpd_sys_content_t:s0
 /srv                        directory   system_u:object_r:var_t:s0   //看这里！
 ```

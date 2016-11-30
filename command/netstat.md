@@ -150,13 +150,13 @@ netstat -i
 查看连接某服务端口最多的的IP地址：
 
 ```
-netstat -ntu | grep :80 | awk '{print $5}' | cut -d: -f1 | awk '{++ip$1 print ipi -nr
+netstat -ntu | grep :80 | awk '{print $5}' | cut -d: -f1 | awk '{++ip[$1]} END {for(i in ip) print ip[i],"\t",i}' | sort -nr
 ```
 
 TCP各种状态列表：
 
 ```
-netstat -nt | grep -e 127.0.0.1 -e 0.0.0.0 -e ::: -v | awk '/^tcp/ {++state$NF print i,"\t",state[i]}'
+netstat -nt | grep -e 127.0.0.1 -e 0.0.0.0 -e ::: -v | awk '/^tcp/ {++state[$NF]} END {for(i in state) print i,"\t",state[i]}'
 ```
 
 查看phpcgi进程数，如果接近预设值，说明不够用，需要增加：

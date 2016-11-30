@@ -30,13 +30,13 @@ nslookup(选项)(参数)
 ### 实例  
 
 ```
-[root@localhost ~]# nslookup www.linuxde.net
+[root@localhost ~]# nslookup www.jsdig.com
 Server:         202.96.104.15
 Address:        202.96.104.15#53
 
 Non-authoritative answer:
-www.linuxde.net canonical name = host.1.linuxde.net.
-Name:   host.1.linuxde.net
+www.jsdig.com canonical name = host.1.jsdig.com.
+Name:   host.1.jsdig.com
 Address: 100.42.212.8
 ```
 

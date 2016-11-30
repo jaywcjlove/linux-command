@@ -34,10 +34,10 @@ apache服务器创建密码认证文件
  **利用htpasswd命令添加用户** 
 
 ```
-htpasswd -bc .passwd www.linuxde.net php
+htpasswd -bc .passwd www.jsdig.com php
 ```
 
-在bin目录下生成一个.passwd文件，用户名www.linuxde.net，密码：php，默认采用MD5加密方式。
+在bin目录下生成一个.passwd文件，用户名www.jsdig.com，密码：php，默认采用MD5加密方式。
 
  **在原有密码文件中增加下一个用户** 
 

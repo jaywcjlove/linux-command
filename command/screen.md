@@ -87,8 +87,8 @@ C-a ] -> paste，把刚刚在 copy mode 选定的内容贴上
 流行的Linux发行版（例如Red Hat Enterprise Linux）通常会自带screen实用程序，如果没有的话，可以从GNU screen的官方网站下载。
 
 ```
-root@TS-DEV ~ install screen
-root@TS-DEV ~ -qa|grep screen
+[root@TS-DEV ~]# yum install screen
+[root@TS-DEV ~]# rpm -qa|grep screen
 screen-4.0.3-4.el5
 [root@TS-DEV ~]#
 ```
@@ -192,7 +192,7 @@ Screen允许使用快捷键C-a s锁定会话。锁定以后，再进行任何输
 在Screen会话之外，可以通过screen命令操作一个Screen会话，这也为使用Screen作为脚本程序增加了便利。关于Screen在脚本中的应用超出了入门的范围，这里只看一个例子，体会一下在会话之外对Screen的操作：
 
 ```
-root@TS-DEV ~ www.baidu.com
+[root@TS-DEV ~]# screen -S sandy -X screen ping www.baidu.com
 ```
 
 这个命令在一个叫做sandy的screen会话中创建一个新窗口，并在其中运行ping命令。

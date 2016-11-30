@@ -136,7 +136,7 @@ tftp your-ip-address
 命令格式为：
 
 ```
-tftp option [port]
+tftp [option] ... host [port]
 ```
 
 如果要下载或上传文件的话是一定要用这些option的。

@@ -34,18 +34,18 @@ quota(选项)(参数)
 要求：Linux 主机里面主要针对 quser1 及 quser2 两个使用者来进行磁盘配额， 且这两个使用者都是挂在 qgroup 组里面的。每个使用者总共有 50MB 的磁盘空间 (不考虑 inode) 限制！并且 soft limit 为 45 MB；而宽限时间设定为 1 天， 但是在一天之内必须要将多余的文件删除掉，否则将无法使用剩下的空间 ；gquota 这个组考虑最大限额，所以设定为 90 MB！（注意，这样设置的好处是富有弹性，好比现在的邮件服务，那么多用户，承诺给用户每人最大空间为数GB，然而人们不可能每人都会使用那么大的空间，所以邮件服务的总空间，实际上肯定不是注册客户数乘以数GB，否则这样得多大啊。）
 
 ```
-root@localhost ~ qgroup
-root@localhost ~ -m -g qgroup quser1
+[root@localhost ~]# groupadd qgroup
+[root@localhost ~]# useradd -m -g qgroup quser1
 [root@localhost ~]# useradd -m -g qgroup quser2
-root@localhost ~ quser1
+[root@localhost ~]# passwd quser1
 [root@localhost ~]# passwd quser2
-root@localhost ~     ===>  自己找一个合适的分区来做实验，这里用/disk2
+[root@localhost ~]# df     ===>  自己找一个合适的分区来做实验，这里用/disk2
 Filesystem             1K-blocks        Used      Available   Use% Mounted on
 /dev/hda1              5952252   3193292     2451720     57%     /
 /dev/hdb1            28267608       77904   26730604       1%     /disk2
 /dev/hda5              9492644     227252     8775412       3%     /disk1
 
-root@localhost ~ /etc/fstab
+[root@localhost ~]# vi /etc/fstab
 LABEL=/             /                ext3      defaults                                     1 1
 LABEL=/disk1    /disk1        ext3      defaults                                      1 2
 LABEL=/disk2    /disk2        ext3      defaults,usrquota,grpquota       1 2  
@@ -57,9 +57,9 @@ LABEL=/disk2    /disk2        ext3      defaults,usrquota,grpquota       1 2
 重新`remount filesystem`来驱动设定值。
 
 ```
-root@localhost ~ /dev/hdb1
-root@localhost ~ -a
-root@localhost ~ '/disk2' /etc/mtab
+[root@localhost ~]# umount /dev/hdb1
+[root@localhost ~]# mount -a
+[root@localhost ~]# grep '/disk2' /etc/mtab
 /dev/hdb1 /disk2 ext3 rw,usrquota,grpquota 0 0
 ```
 
@@ -74,7 +74,7 @@ root@localhost ~ '/disk2' /etc/mtab
 扫瞄磁盘的使用者使用状况，并产生重要的 aquota.group 与 aquota.user：
 
 ```
-root@localhost ~ -avug
+[root@localhost ~]# quotacheck -avug
 quotacheck: Scanning /dev/hdb1 [/disk2] done
 quotacheck: Checked 3 directories and 4 files
 
@@ -86,15 +86,15 @@ quotacheck: Checked 3 directories and 4 files
 使用 quotacheck 就可以轻易的将所需要的数据给他输出了！但奇怪的是，在某些 Linux 版本中，不能够以 aquota.user(group) 来启动quota ，可能是因为旧版 quota 的关系， 所以就另外做了一个 link 文件按来欺骗 quota，这个动作非必要。（主要是学习这个思维很重要）
 
 ```
-root@localhost ~ /disk2
-root@localhost ~ -s aquota.user quota.user
+[root@localhost ~]# cd /disk2
+[root@localhost ~]# ln -s aquota.user quota.user
 [root@localhost ~]# ln -s aquota.group quota.group
 ```
 
 启动 quota 的限额：
 
 ```
-root@localhost ~ -avug
+[root@localhost ~]# quotaon -avug
 /dev/hdb1 [/disk2]: group quotas turned on
 /dev/hdb1 [/disk2]: user quotas turned on    ===>  看到turned on，才是真的成功！
 ```
@@ -102,7 +102,7 @@ root@localhost ~ -avug
 编辑使用者的可使用空间：
 
 ```
-root@localhost ~ -u quser1
+[root@localhost ~]# edquota -u quser1
 Disk quotas for user quser1 (uid 502):
   Filesystem    blocks    soft    hard   inodes   soft   hard
   /dev/hdb1           0     45000    50000         0      0      0

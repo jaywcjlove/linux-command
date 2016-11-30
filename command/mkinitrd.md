@@ -34,7 +34,7 @@ mkinitrd(选项)(参数)
 ### 实例  
 
 ```
-root@localhost tmp -r)
+[root@localhost tmp]# mkinitrd -v -f myinitrd.img $(uname -r)
 Creating initramfs
 WARNING: using /tmp for temporary files
 Looking for deps of module ide-disk
@@ -50,10 +50,10 @@ copy from /lib/modules/2.6.9-5.EL/./kernel/fs/ext3/ext3.ko(elf32-i386) to /tmp/i
 Loading module jbd
 Loading module ext3
 
-root@localhost tmp myinitrd.img
+[root@localhost tmp]# file myinitrd.img
 myinitrd.img: gzip compressed data, from Unix, max compression
 
-root@localhost tmp myinitrd.img  myinitrd.img.gz
+[root@localhost tmp]# mv myinitrd.img  myinitrd.img.gz
 [root@localhost tmp]# gzip -d myinitrd.img.gz
 [root@localhost tmp]# file myinitrd.img
 myinitrd.img: ASCII cpio archive (SVR4 with no CRC)

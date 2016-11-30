@@ -21,7 +21,7 @@ split
 生成一个大小为100KB的测试文件：
 
 ```
-root@localhost split if=/dev/zero bs=100k count=1 of=date.file
+[root@localhost split]# dd if=/dev/zero bs=100k count=1 of=date.file
 1+0 records in
 1+0 records out
 102400 bytes (102 kB) copied, 0.00043 seconds, 238 MB/s
@@ -31,7 +31,7 @@ root@localhost split if=/dev/zero bs=100k count=1 of=date.file
 
 ```
 [root@localhost split]# split -b 10k date.file 
-root@localhost split
+[root@localhost split]# ls
 date.file  xaa  xab  xac  xad  xae  xaf  xag  xah  xai  xaj
 ```
 

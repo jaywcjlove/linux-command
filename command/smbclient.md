@@ -5,7 +5,7 @@ smbclient
 
 ## 补充说明
 
-**smbclient命** 属于samba套件，它提供一种命令行使用交互式方式访问samba服务器的共享资源。
+**smbclient命令** 属于samba套件，它提供一种命令行使用交互式方式访问samba服务器的共享资源。
 
 ### 语法  
 
@@ -43,13 +43,13 @@ smb服务器：指定要连接的smb服务器。
 
 ### 实例  
 
-**列出某个IP地址所提供的共享文件夹**
+ **列出某个IP地址所提供的共享文件夹** 
 
 ```
 smbclient -L 198.168.0.1 -U username%password
 ```
 
-**像ftp客户端一样使用smbclient**
+ **像ftp客户端一样使用smbclient** 
 
 ```
 smbclient //192.168.0.1/tmp  -U username%password
@@ -59,7 +59,7 @@ smbclient //192.168.0.1/tmp  -U username%password
 
 这里有许多命令和ftp命令相似，如cd 、lcd、get、megt、put、mput等。通过这些命令，我们可以访问远程主机的共享资源。
 
-**直接一次性使用smbclient命令**
+ **直接一次性使用smbclient命令** 
 
 ```
 smbclient -c "ls"  //192.168.0.1/tmp  -U username%password
@@ -74,10 +74,13 @@ smb:/>ls
 
 功能一样的。
 
-**创建一个共享文件夹**
+ **创建一个共享文件夹** 
 
 ```
 smbclient -c "mkdir share1" //192.168.0.1/tmp -U username%password
 ```
 
 如果用户共享`//192.168.0.1/tmp`的方式是只读的，会提示`NT_STATUS_ACCESS_DENIED making remote directory /share1`
+
+
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

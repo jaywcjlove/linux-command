@@ -225,7 +225,7 @@ Syncing disks.
 在sdb1上建立ext2分区：
 
 ```
-root@localhost ~.ext2 /dev/sdb1
+[root@localhost ~]# mkfs.ext2 /dev/sdb1
 mke2fs 1.39 (29-May-2006)
 Filesystem label=
 OS type: Linux
@@ -279,16 +279,16 @@ This filesystem will be automatically checked every 32 mounts or
 建立两个目录`/oracle`和`/web`，将新建好的两个分区挂载到系统：
 
 ```
-root@localhost ~ /oracle
+[root@localhost ~]# mkdir /oracle
 [root@localhost ~]# mkdir /web
-root@localhost ~ /dev/sdb1 /oracle
+[root@localhost ~]# mount /dev/sdb1 /oracle
 [root@localhost ~]# mount /dev/sdb6 /web
 ```
 
 查看分区挂载情况：
 
 ```
-root@localhost ~ -h
+[root@localhost ~]# df -h
 文件系统              容量  已用 可用 已用% 挂载点
 /dev/mapper/VolGroup00-LogVol00
                       6.7G  2.8G  3.6G  44% /
