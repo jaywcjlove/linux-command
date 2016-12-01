@@ -4,7 +4,11 @@
 
 <div class="markdown-body">
 <% if(md_path){ %>
-<a class="edit_btn" href="https://github.com/jaywcjlove/linux-command/edit/master/<%=md_path%>">编辑</a>
+<span class="edit_btn">
+<a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master<%=md_path%>">纠正错误</a> 
+<span class="split"></span>
+<a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master<%=md_path%>">添加实例</a>
+</span>
 <% } %>
 {{content}}
 </div>
