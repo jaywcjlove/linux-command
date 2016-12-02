@@ -11,7 +11,7 @@
         this.root_path = (function(){
             var elm_path = $$('current_path');
             var url = window.location.origin+window.location.pathname;
-            return elm_path?url.replace(elm_path.value,''):'';
+            return elm_path?url.replace(elm_path.value,'').replace(/\/$/,''):'';
         })();
 
         this.query = '';     //
@@ -29,7 +29,7 @@
         goToIndex:function(){
             var elma = document.getElementsByTagName('A');
             for (var i = 0; i < elma.length; i++) {
-                if(elma[i].pathname==='/') elma[i].href = this.root_path.replace(/\/$/,'')+'/';
+                if(elma[i].pathname==='/') elma[i].href = this.root_path+'/';
             }
         },
         bindEvent:function(elm,type,handle){
