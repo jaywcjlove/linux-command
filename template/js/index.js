@@ -4,7 +4,6 @@
         this.commands = linux_commands || [];
         this.elm_query = $$('query');
         this.elm_btn = $$('search_btn');
-        this.elm_info = $$('commands_info');
         this.elm_result = $$('result');
         this.elm_search_result = $$('search_list_result');
 
@@ -18,8 +17,6 @@
         this.query = '';     //
         this.query_size = 5; //搜索框结果显示5条
         this.page_size = 50; //每页显示20条
-
-        this.elm_info.innerHTML = this.commands.length;
 
         this.init()
         this.goToIndex()
