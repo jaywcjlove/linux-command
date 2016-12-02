@@ -2,6 +2,7 @@
 @import('mixins/highlight.styl')
 @import('mixins/markdown.styl')
 
+mq-mobile = "screen and (max-width: 479px)"
 
 a.github-corner { 
     position: fixed
@@ -30,7 +31,6 @@ a.github-corner {
     20%,60%{-webkit-transform:rotate(-25deg);transform:rotate(-25deg)}
     40%,80%{-webkit-transform:rotate(10deg);transform:rotate(10deg)}
 }
-    
 
 .header{
     width 517px
@@ -227,4 +227,42 @@ a.github-corner {
         }
     }
 
+}
+
+
+@media mq-mobile{
+    .header{
+        width inherit
+        .logo svg{
+            height: 26px;
+            width: 96px;
+        }
+        .search {
+            .query{
+                height: 34px;
+            }
+            .enter-input button{
+                padding: 6px 12px;   
+            }
+        }
+    }
+    .header_list .logo{
+        float: inherit;
+        padding-right: 10px;
+        padding-top: 8px;
+        padding-bottom: 14px;
+        text-align: center;
+    }
+    div.markdown-body{
+        padding: 10px 10px 10px 13px;
+    }
+    div.markdown-body .edit_btn + *{
+        margin-top: 0 !important;
+    }
+    div.markdown-body .edit_btn{
+        top: 9px;
+    }
+    div.markdown-body pre{
+        padding: 0.6em;
+    }
 }
