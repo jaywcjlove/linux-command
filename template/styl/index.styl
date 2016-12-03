@@ -5,9 +5,10 @@
 mq-mobile = "screen and (max-width: 479px)"
 
 a.github-corner { 
-    position: fixed
-    top: 0
-    right: 0
+    position fixed
+    z-index 9999
+    top 0
+    right 0
     &:hover{
         .octo-arm{
             animation:octocat-wave 560ms ease-in-out
@@ -117,12 +118,12 @@ a.github-corner {
             white-space nowrap
             vertical-align middle
             button{
+                margin 0
+                left -1px
                 position relative
                 z-index 5
                 display inline-block
                 padding 9px 23px
-                margin-bottom 0
-                margin-left -1px
                 font-size 14px
                 font-weight bold
                 line-height 1.42857143
@@ -235,27 +236,28 @@ a.github-corner {
 @media mq-mobile{
     .header{
         width inherit
+        .search .enter-input {
+            button{
+                padding: 9px 14px;
+            }
+        }
     }
     .header_list{
         .logo svg{
-            // height: 26px;
-            width: 96px;
+            width 96px
         }
         .search {
             .query{
-                // height: 34px;
-            }
-            .enter-input button{
-                padding: 9px 14px;   
+                line-height 31px
             }
         }
     }
     .header_list .logo{
-        float: inherit;
-        padding-right: 10px;
-        padding-top: 8px;
-        padding-bottom: 14px;
-        text-align: center;
+        float inherit
+        padding-right 10px
+        padding-top 8px
+        padding-bottom 14px
+        text-align center
     }
     div.markdown-body{
         padding: 10px 10px 10px 13px;
@@ -265,6 +267,10 @@ a.github-corner {
     }
     div.markdown-body .edit_btn{
         top: 9px;
+        a{
+            background #f1f1f1
+            color #a3a3a3
+        }
     }
     div.markdown-body pre{
         padding: 0.6em;
