@@ -90,6 +90,7 @@ a.github-corner {
             transition border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s
         }
         .query{
+            resize: none;
             position relative
             z-index 2
             width 100%
@@ -103,6 +104,7 @@ a.github-corner {
             background-image none
             border 1px solid $border-color
             border-radius 5px 0 0 5px
+            -webkit-appearance: none;
             &:focus{
                 z-index 99
                 border-color #66afe9
@@ -233,16 +235,18 @@ a.github-corner {
 @media mq-mobile{
     .header{
         width inherit
+    }
+    .header_list{
         .logo svg{
-            height: 26px;
+            // height: 26px;
             width: 96px;
         }
         .search {
             .query{
-                height: 34px;
+                // height: 34px;
             }
             .enter-input button{
-                padding: 6px 12px;   
+                padding: 9px 14px;   
             }
         }
     }
