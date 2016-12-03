@@ -46,11 +46,11 @@ ls（选项）（参数）
 
 ### 实例  
 
-显示当前目录下非影藏文件与目录
-
-```
-[root@localhost ~]# ls
-anaconda-ks.cfg  install.log  install.log.syslog  satools
+```bash
+$ ls       # 仅列出当前目录可见文件
+$ ls -l    # 列出当前目录可见文件详细信息
+$ ls -hl   # 列出详细信息并以可读大小显示文件大小
+$ ls -al   # 列出所有文件（包括隐藏）的详细信息
 ```
 
 显示当前目录下包括影藏文件在内的所有文件列表
