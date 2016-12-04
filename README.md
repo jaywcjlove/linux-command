@@ -8,6 +8,9 @@ Linux Command
 
 ## 目录
 
+
+### Linux命令分类
+
 - [文件管理](#文件管理) File Management
 - [文件传输](#文件传输) File Transfer
 - [文档编辑](#文档编辑) File Editor
@@ -21,55 +24,92 @@ Linux Command
 - [电子邮件与新闻组](#电子邮件与新闻组)
 - [其他命令](#其他命令) Misc Commands
 
-## 文件传输
+### [Linux学习资源整理](linux学习资源整理)
+
+- [社区网站](#社区网站) 
+- [知识相关](#知识相关) 
+- [软件工具](#软件工具) 
+- [中国开源镜像站点](#中国开源镜像站点) 
+
+## Linux命令分类
+
+### 文件传输
 
 bye、ftp、ftpcount、ftpshut、ftpwho、ncftp、tftp、uucico、uucp、uupick、uuto
 
-## 备份压缩
+### 备份压缩
 
 ar、bunzip2、bzip2、bzip2recover、compress、cpio、dump、gunzip、gzexe、gzip、lha、restore、tar、unarj、unzip、zip、zipinfo
 
-## 文件管理
+### 文件管理
 
 diff、diffstat、file、find、git、gitview、ln、locate、lsattr、mattrib、mc、mcopy、mdel、mdir、mktemp、mmove、mread、mren、mshowfat、mtools、mtoolstest、mv、od、paste、patch、rcp、rhmask、rm、slocate、split、tee、tmpwatch、touch、umask、whereis、which、cat、chattr、chgrp、chmod、chown、cksum、cmp、cp、cut、indent
 
-## 磁盘管理
+### 磁盘管理
 
 cd、df、dirs、du、edquota、eject、lndir、ls、mcd、mdeltree、mdu、mkdir、mlabel、mmd、mmount、mrd、mzip、pwd、quota、quotacheck、quotaoff、quotaon、repquota、rmdir、rmt、stat、tree、umount
 
-## 磁盘维护
+### 磁盘维护
 
 badblocks、cfdisk、dd、e2fsck、ext2ed、fdisk、fsck.ext2、fsck、fsck.minix、fsconf、hdparm、losetup、mbadblocks、mformat、mkbootdisk、mkdosfs、mke2fs、mkfs.ext2、mkfs、mkfs.minix、mkfs.msdos、mkinitrd、mkisofs、mkswap、mpartition、sfdisk、swapoff、swapon、symlinks、sync
 
-## 系统设置
+### 系统设置
 
 alias、apmd、aumix、bind、chkconfig、chroot、clock、crontab、declare、depmod、dircolors、dmesg、enable、eval、export、fbset、grpconv、grpunconv、hwclock、insmod、kbdconfig、lilo、liloconfig、lsmod、minfo、mkkickstart、modinfo、modprobe、mouseconfig、ntsysv、passwd、pwconv、pwunconv、rdate、resize、rmmod、rpm、set、setconsole、setenv、setup、sndconfig、SVGAText Mode、timeconfig、ulimit、unalias、unset
 
-## 系统管理
+### 系统管理
 
 adduser、chfn、chsh、date、exit、finger、free、fwhois、gitps、groupdel、groupmod、halt、id、kill、last、lastb、login、logname、logout、logrotate、newgrp、nice、procinfo、ps、pstree、reboot、renice、rlogin、rsh、rwho、screen、shutdown、sliplogin、su、sudo、suspend、swatch、tload、top、uname、useradd、userconf、userdel、usermod、vlock、w、who、whoami、whois
 
-## 文档编辑
+### 文档编辑
 
 col、colrm、comm、csplit、ed、egrep、ex、fgrep、fmt、fold、grep、ispell、jed、joe、join、look、mtype、pico、rgrep、sed、sort、spell、tr、uniq、wc
 
-## 网络通讯
+### 网络通讯
 
 dip、getty、mingetty、ppp-off、smbd(samba daemon)、telnet、uulog、uustat、uux、cu、dnsconf、efax、httpd、ifconfig、mesg、minicom、nc、netconf、netconfig、netstat、ping、pppstats、samba、setserial、shapecfg(shaper configuration)、smbd(samba daemon)、statserial(status ofserial port)、talk、tcpdump、testparm(test parameter)、traceroute、tty(teletypewriter)、uuname、wall(write all)、write、ytalk、arpwatch、apachectl、smbclient(samba client)、pppsetup
 
-## 设备管理
+### 设备管理
 
 dumpkeys、loadkeys、MAKEDEV、rdev、setleds
 
-## 电子邮件与新闻组
+### 电子邮件与新闻组
 
 archive、ctlinnd、elm、getlist、inncheck、mail、mailconf、mailq、messages、metamail、mutt、nntpget、pine、slrn、X WINDOWS SYSTEM、reconfig、startx(start X Window)、Xconfigurator、XF86Setup、xlsatoms、xlsclients、xlsfonts
 
-## 其他命令
+### 其他命令
 
 yes
 
-## 中国开源镜像站点汇总
+## Linux学习资源整理
+
+### 社区网站
+
+- [Linux中国](https://linux.cn/) - 各种资讯、文章、技术
+- [实验楼](https://linux.cn/) - 免费提供了Linux在线环境，不用在自己机子上装系统也可以学习Linux，超方便实用。
+- [鸟哥的linux私房菜](http://linux.vbird.org/) - 非常适合Linux入门初学者看的教程。
+- [Linux公社](http://linux.vbird.org/) - Linux相关的新闻、教程、主题、壁纸都有。
+
+### 知识相关
+
+- [Linux思维导图整理](http://www.jianshu.com/p/59f759207862)
+- [Linux初学者进阶学习资源整理](http://www.jianshu.com/p/fe2a790b41eb)
+- [Linux 基础入门（新版）](https://www.shiyanlou.com/courses/1)
+- [【译】Linux概念架构的理解](http://www.jianshu.com/p/c5ae8f061cfe) [En](http://oss.org.cn/ossdocs/linux/kernel/a1/index.html)
+- [Linux 守护进程的启动方法](http://www.ruanyifeng.com/blog/2016/02/linux-daemon.html)
+- [Linux编程之内存映射](https://www.shiyanlou.com/questions/2992)
+- [Linux知识点小结](https://blog.huachao.me/2016/1/Linux%E7%9F%A5%E8%AF%86%E7%82%B9%E5%B0%8F%E7%BB%93/)
+- [10大白帽黑客专用的 Linux 操作系统](https://linux.cn/article-6971-1.html)
+
+### 软件工具
+
+- [超赞的Linux软件](https://www.gitbook.com/book/alim0x/awesome-linux-software-zh_cn/details) Github仓库[Zh](https://github.com/alim0x/Awesome-Linux-Software-zh_CN) [En](https://github.com/VoLuong/Awesome-Linux-Software)
+- [程序员喜欢的9款最佳的Linux文件比较工具](http://os.51cto.com/art/201607/513796.htm)
+- [提高 Linux 开发效率的 5 个工具](http://www.codeceo.com/article/5-linux-productivity-tools.html)
+- [你要了解的11款面向Linux系统的一流备份实用工具](http://os.51cto.com/art/201603/508027.htm)
+- [16个很有用的在线工具](http://www.simlinux.com/archives/264.html)
+
+### 中国开源镜像站点
 
 - 网易开源镜像站：http://mirrors.163.com/
 - 搜狐开源镜像站：http://mirrors.sohu.com/
