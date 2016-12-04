@@ -30,7 +30,7 @@ Linux Command
 
 ## Linux命令分类
 
-*这里存放Linux 命令大全并不全，你可以通过它来搜索 [linux-command](https://jaywcjlove.github.io/linux-command/) ，它是把 [command](./command) 目录里面搜集的命令生成了静态HTML并提供索引搜索。*
+*这里存放Linux 命令大全并不全，你可以通过[linux-command](https://jaywcjlove.github.io/linux-command/)来搜索，它是把 [command](./command) 目录里面搜集的命令，生成了静态HTML并提供预览以及索引搜索。请原谅我写了个爬虫，爬了他们家的数据[linuxde.net](http://man.linuxde.net)，同时进行了编辑，增加了一些数据。对他们的辛勤劳动表示敬意，个人不喜欢广告，并喜欢干净漂亮的界面，业余和工作时间需要使用大量的命令，所以干了一件看似比较愚蠢的事情，在回头有空的时候估计能做一个App？，或者是命令行帮助工具？目前还没有计划...*
 
 ### 文件传输
 
@@ -88,6 +88,7 @@ yes
 - [实验楼](https://linux.cn/) - 免费提供了Linux在线环境，不用在自己机子上装系统也可以学习Linux，超方便实用。
 - [鸟哥的linux私房菜](http://linux.vbird.org/) - 非常适合Linux入门初学者看的教程。
 - [Linux公社](http://linux.vbird.org/) - Linux相关的新闻、教程、主题、壁纸都有。
+- [Linux Today](http://www.linuxde.net) - Linux新闻资讯发布，Linux职业技术学习！。
 
 ### 知识相关
 
