@@ -8,27 +8,25 @@ Linux Command
 
 ## 目录
 
-### [Linux命令分类](#linux命令分类)
+- [Linux命令分类](#linux命令分类)
+  - [文件管理](#文件管理) File Management
+  - [文件传输](#文件传输) File Transfer
+  - [文档编辑](#文档编辑) File Editor
+  - [备份压缩](#备份压缩) File Compression
+  - [系统管理](#系统管理) System Management
+  - [系统设置](#系统设置) System Settings
+  - [网络通讯](#网络通讯) Network Communication
+  - [磁盘管理](#磁盘管理) Disk Management
+  - [磁盘维护](#磁盘维护) Disk Maintenance
+  - [设备管理](#设备管理) Device Commands
+  - [电子邮件与新闻组](#电子邮件与新闻组)
+  - [其他命令](#其他命令) Misc Commands
 
-- [文件管理](#文件管理) File Management
-- [文件传输](#文件传输) File Transfer
-- [文档编辑](#文档编辑) File Editor
-- [备份压缩](#备份压缩) File Compression
-- [系统管理](#系统管理) System Management
-- [系统设置](#系统设置) System Settings
-- [网络通讯](#网络通讯) Network Communication
-- [磁盘管理](#磁盘管理) Disk Management
-- [磁盘维护](#磁盘维护) Disk Maintenance
-- [设备管理](#设备管理) Device Commands
-- [电子邮件与新闻组](#电子邮件与新闻组)
-- [其他命令](#其他命令) Misc Commands
-
-### [Linux学习资源整理](#linux学习资源整理)
-
-- [社区网站](#社区网站) 
-- [知识相关](#知识相关) 
-- [软件工具](#软件工具) 
-- [中国开源镜像站点](#中国开源镜像站点) 
+- [Linux学习资源整理](#linux学习资源整理)
+ - [社区网站](#社区网站) 
+ - [知识相关](#知识相关) 
+ - [软件工具](#软件工具) 
+ - [中国开源镜像站点](#中国开源镜像站点) 
 
 ## Linux命令分类
 
