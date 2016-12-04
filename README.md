@@ -8,8 +8,7 @@ Linux Command
 
 ## 目录
 
-
-### Linux命令分类
+### [Linux命令分类](#linux命令分类)
 
 - [文件管理](#文件管理) File Management
 - [文件传输](#文件传输) File Transfer
@@ -24,7 +23,7 @@ Linux Command
 - [电子邮件与新闻组](#电子邮件与新闻组)
 - [其他命令](#其他命令) Misc Commands
 
-### [Linux学习资源整理](linux学习资源整理)
+### [Linux学习资源整理](#linux学习资源整理)
 
 - [社区网站](#社区网站) 
 - [知识相关](#知识相关) 
@@ -32,6 +31,8 @@ Linux Command
 - [中国开源镜像站点](#中国开源镜像站点) 
 
 ## Linux命令分类
+
+*这里存放Linux 命令大全并不全，你可以通过它来搜索 [linux-command](https://jaywcjlove.github.io/linux-command/) ，它是把 [command](./command) 目录里面搜集的命令生成了静态HTML并提供索引搜索。*
 
 ### 文件传输
 
