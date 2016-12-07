@@ -30,6 +30,18 @@ htop 官网：http://htop.sourceforge.net/
 htop
 ```
 
+### 参数
+
+```
+-C --no-color               使用单色配色方案
+-d --delay=DELAY            设置更新之间的延迟，在十秒
+-s --sort-key=COLUMN        纵列排序(try --sort-key=help for a list)
+-u --user=USERNAME          只显示一个指定用户的进程
+-p --pid=PID,[,PID,PID...]  只显示给用户
+-h --help                   打印此命令帮助
+-v --version                打印版本信息
+```
+
 ### 选项  
 
 ```
