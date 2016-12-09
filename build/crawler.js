@@ -25,7 +25,18 @@ function CreatMarkdown(from_path,to_path){
 
         request.get(from_path).end(function(err, res){
             // console.log("to_path::",to_path)
-            fs.writeFileSync(to_path, toMarkdown(res.text).toString() ,'utf-8');
+            var md_str = res.text
+
+            md_str = md_str.replace(/<pre>/gi,'```\n')
+            md_str = md_str.replace(/<\/pre>/gi,'\n```')
+            md_str = md_str.replace(/<span.*?>/gi,'')
+            md_str = md_str.replace(/<\/span>/gi,'')
+            md_str = md_str.replace(/\[[^\]]*\]\(.*?\)/g,function(str){
+                str.replace(/\[(.*?)\]/,'');
+                return RegExp.$1;
+            })
+
+            fs.writeFileSync(to_path, toMarkdown(md_str).toString() ,'utf-8');
             console.log(" → ",to_path)
         });
 
