@@ -240,30 +240,49 @@ function CreateStyl(styl_path,css_path){
 function CreateDatajs(dt_path,callback){
     // 获取 markdown文件所在的目录
     var path_md = path.join(path.dirname(__dirname),'command');
+    var path_dist = path.join(path.dirname(__dirname),'dist');
     if(!exists(path_md)) return console.log("\n  → error: 文件夹 "+path_md+" 不存在 \n ")
     // 获取 markdown 目录的集合
     var path_arr = readMDSync(path_md);
     path_arr = sortLength(path_arr);
-    var indexes = []
+    var indexes = [];
+
+    var command_data={}
     path_arr.forEach(function(md_path,i){
         var json = {}
         var con = fs.readFileSync(md_path);
         var str = con.toString();
         var title = str.match(/[^===]+(?=[===])/g);
+
+        title = title[0]?title[0].replace(/\n/g,''):title[0];
         // 命令名称
-        json["n"] = title[0]?title[0].replace(/\n/g,''):title[0];
+        json["n"] = title;
         // 命令路径
         json["p"] = md_path.replace(/\.md$/,'').replace(path_md,'');
         // 命令描述
         var des = str.match(/\n==={1,}([\s\S]*?)##/i);
-        json["d"] = des[1]?des[1].replace(/\n/g,''):des[1];
+        des = des[1]?des[1].replace(/\n/g,''):des[1];
+        des = des.replace(/\r/g,'')
+        json["d"] = des;
         indexes.push(json)
+
+        command_data[title] = json;
     })
     mkdirsSync(path.dirname(dt_path));
+
+    console.log("path.dirname(__dirname)",path.dirname(__dirname))
     //生成数据文件
     fs.writeFile(dt_path, 'var linux_commands='+JSON.stringify(indexes) , 'utf8',function(err){
         console.log(success("\n  → ")+"生成数据成功！"+dt_path+" \n ");
-        callback&&callback(dt_path,indexes);
+
+
+        path_dist = path.join(path_dist,'data.json')
+
+        fs.writeFile(path_dist, JSON.stringify(command_data) , 'utf8',function(err){
+            console.log(success("\n  → ")+"生成数据成功！"+path_dist+" \n ");
+            callback&&callback(dt_path,indexes);
+        });
+
     });
 }
 

@@ -2,7 +2,7 @@
   "name": "linux-command",
   "version": "1.0.0",
   "description": "Linux Command",
-  "main": "build/compile.js",
+  "main": "dist/data.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node build/compile.js",
@@ -18,7 +18,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/jaywcjlove/linux-command.git"
+    "url": "git+https://github.com/jaywcjlove/linux-command.git"
   },
   "devDependencies": {
     "autoprefixer": "^6.5.1",
@@ -29,14 +29,18 @@
     "marked": "^0.3.6",
     "ssr": "^1.1.1",
     "stylus": "^0.54.5",
-    "watch": "^1.0.1"
-  },
-  "dependencies": {
+    "watch": "^1.0.1",
     "cheerio": "^0.22.0",
     "gh-pages": "^0.12.0",
     "loading-cli": "^1.0.2",
     "superagent": "^3.0.0",
     "to-markdown": "^3.0.3",
     "uglify-js": "^2.7.4"
-  }
+  },
+  "dependencies": {
+  },
+  "bugs": {
+    "url": "https://github.com/jaywcjlove/linux-command/issues"
+  },
+  "homepage": "https://jaywcjlove.github.io/linux-command/"
 }
