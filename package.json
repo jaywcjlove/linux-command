@@ -2,7 +2,7 @@
   "name": "linux-command",
   "version": "1.0.0",
   "description": "Linux Command",
-  "main": "dist/data.js",
+  "main": "dist/data.json",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node build/compile.js",

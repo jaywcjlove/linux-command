@@ -21,12 +21,14 @@ Linux Command
   - [设备管理](#设备管理) Device Commands
   - [电子邮件与新闻组](#电子邮件与新闻组)
   - [其他命令](#其他命令) Misc Commands
+- [Node调用](#node调用)
 
 - [Linux学习资源整理](#linux学习资源整理)
  - [社区网站](#社区网站) 
  - [知识相关](#知识相关) 
  - [软件工具](#软件工具) 
  - [中国开源镜像站点](#中国开源镜像站点) 
+
 
 ## Linux命令分类
 
@@ -80,7 +82,22 @@ archive、ctlinnd、elm、getlist、inncheck、mail、mailconf、mailq、message
 
 yes
 
+### Node调用
+
+```
+npm install linux-command
+```
+
+
+```js
+var comm = require("linux-command")
+console.log("---->",comm.ls)
+
+```
+
+
 ## Linux学习资源整理
+
 
 ### 社区网站
 
