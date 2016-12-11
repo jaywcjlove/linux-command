@@ -1,7 +1,7 @@
 firewall-cmd
 ===
 
-用于查找并显示用户信息
+Linux上新用的防火墙软件，跟iptables差不多的工具。
 
 ## 补充说明
 
