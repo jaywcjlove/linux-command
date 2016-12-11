@@ -34,6 +34,15 @@ systemctl start  firewalld # 启动
 systemctl status firewalld # 或者 firewall-cmd --state 查看状态
 systemctl disable firewalld # 停止
 systemctl stop firewalld  # 禁用
+
+# 关闭服务的方法
+# 你也可以关闭目前还不熟悉的FirewallD防火墙，而使用iptables，命令如下：
+
+systemctl stop firewalld
+systemctl disable firewalld
+yum install iptables-services
+systemctl start iptables
+systemctl enable iptables
 ```
 
 配置firewalld
@@ -61,11 +70,6 @@ firewall-cmd --zone=public --add-interface=eth0
  
 # 设置默认接口区域，立即生效无需重启
 firewall-cmd --set-default-zone=public
-```
-
-打开端口
-
-```
 
 # 查看所有打开的端口：
 firewall-cmd --zone=dmz --list-ports
@@ -79,6 +83,79 @@ firewall-cmd --zone=work --add-service=smtp
  
 # 移除服务
 firewall-cmd --zone=work --remove-service=smtp
+
+# 显示支持的区域列表
+firewall-cmd --get-zones
+
+# 设置为家庭区域
+firewall-cmd --set-default-zone=home
+
+# 查看当前区域
+firewall-cmd --get-active-zones
+
+# 设置当前区域的接口
+firewall-cmd --get-zone-of-interface=enp03s
+
+# 显示所有公共区域（public）
+firewall-cmd --zone=public --list-all
+
+# 临时修改网络接口（enp0s3）为内部区域（internal）
+firewall-cmd --zone=internal --change-interface=enp03s
+
+# 永久修改网络接口enp03s为内部区域（internal）
+firewall-cmd --permanent --zone=internal --change-interface=enp03s
 ```
 
+服务管理
 
+```bash
+# 显示服务列表  
+Amanda, FTP, Samba和TFTP等最重要的服务已经被FirewallD提供相应的服务，可以使用如下命令查看：
+
+firewall-cmd --get-services
+
+# 允许SSH服务通过
+firewall-cmd --enable service=ssh
+
+# 禁止SSH服务通过
+firewall-cmd --disable service=ssh
+
+# 打开TCP的8080端口
+firewall-cmd --enable ports=8080/tcp
+
+# 临时允许Samba服务通过600秒
+firewall-cmd --enable service=samba --timeout=600
+
+# 显示当前服务
+firewall-cmd --list-services
+
+# 添加HTTP服务到内部区域（internal）
+firewall-cmd --permanent --zone=internal --add-service=http
+firewall-cmd --reload     # 在不改变状态的条件下重新加载防火墙
+```
+
+端口管理
+
+```bash
+# 打开443/TCP端口
+firewall-cmd --add-port=443/tcp
+
+# 永久打开3690/TCP端口
+firewall-cmd --permanent --add-port=3690/tcp
+
+# 永久打开端口好像需要reload一下，临时打开好像不用，如果用了reload临时打开的端口就失效了
+# 其它服务也可能是这样的，这个没有测试
+firewall-cmd --reload
+
+# 查看防火墙，添加的端口也可以看到
+firewall-cmd --list-all
+```
+
+直接模式
+
+```bash
+# FirewallD包括一种直接模式，使用它可以完成一些工作，例如打开TCP协议的9999端口
+
+firewall-cmd --direct -add-rule ipv4 filter INPUT 0 -p tcp --dport 9000 -j ACCEPT
+firewall-cmd --reload
+```
