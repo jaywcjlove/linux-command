@@ -43,5 +43,11 @@ ssh(选项)(参数)
 *   远程主机：指定要连接的远程ssh服务器；
 *   指令：要在远程ssh服务器上执行的指令。
 
+### 实例
+
+```
+# ssh 用户名@远程服务器地址
+ssh user1@172.24.210.101
+```
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
