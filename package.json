@@ -5,7 +5,7 @@
   "main": "dist/data.json",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node build/compile.js",
+    "start": "node build/compile.js && npm run deploy",
     "deploy": "node build/deploy.js",
     "build:css": "stylus -u autoprefixer-stylus template/styl/index.styl -o .deploy/ -c",
     "watch:css": "stylus -u autoprefixer-stylus -w template/styl/index.styl -o .deploy/ -c"
