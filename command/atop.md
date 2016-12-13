@@ -93,4 +93,8 @@ swin、swout字段：换入和换出内存页数
 0 0 * * * root /etc/cron.daily/atop.daily
 ```
 
+## 相关资料
+
+- [官方手册](http://www.atoptool.nl/download/man_atop-1.pdf)
+
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
