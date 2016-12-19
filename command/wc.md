@@ -25,5 +25,12 @@ wc(选项)(参数)
 
 文件：需要统计的文件列表。
 
+## 例子
+
+```
+wc -l *       # 统计当前目录下的所有文件行数
+wc -l *.js    # 统计当前目录下的所有 .js 后缀的文件行数
+find  . * | xargs wc -l # 当前目录以及子目录的所有文件行数
+```
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
