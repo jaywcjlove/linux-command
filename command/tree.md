@@ -67,7 +67,7 @@ tree(选项)(参数)
 -H baseHREF   Prints out HTML format with baseHREF as top directory.
 -T string     Replace the default HTML title and H1 header with string.
 --nolinks     Turn off hyperlinks in HTML output.
----- Miscellaneous options ----
+---- 杂项选项 ----
 --version     输入版本信息。
 --help        打印使用帮助信息。
 --            Options processing terminator.
