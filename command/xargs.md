@@ -149,7 +149,8 @@ cmd1 | ( cmd2; cmd3; cmd4 ) | cmd5
 
 子shell可用于为一组命令设定临时的环境变量：
 
-<pre class="PROGRAMLISTING">COMMAND1
+```
+COMMAND1
 COMMAND2
 COMMAND3
 (
