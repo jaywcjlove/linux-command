@@ -51,16 +51,16 @@ ss [参数] [过滤]
 
 ### 实例  
 
-```
-ss -t -a    显示TCP连接
-ss -s       显示 Sockets 摘要
-ss -l       列出所有打开的网络连接端口
-ss -pl      查看进程使用的socket
-ss -lp | grep 3306  找出打开套接字/端口应用程序
+```bash
+ss -t -a    # 显示TCP连接
+ss -s       # 显示 Sockets 摘要
+ss -l       # 列出所有打开的网络连接端口
+ss -pl      # 查看进程使用的socket
+ss -lp | grep 3306  # 找出打开套接字/端口应用程序
 ss -u -a    显示所有UDP Sockets
-ss -o state established '( dport = :smtp or sport = :smtp )' 显示所有状态为established的SMTP连接
-ss -o state established '( dport = :http or sport = :http )' 显示所有状态为Established的HTTP连接
-ss -o state fin-wait-1 '( sport = :http or sport = :https )' dst 193.233.7/24   列举出处于 FIN-WAIT-1状态的源端口为 80或者 443，目标网络为 193.233.7/24所有 tcp套接字
+ss -o state established '( dport = :smtp or sport = :smtp )' # 显示所有状态为established的SMTP连接
+ss -o state established '( dport = :http or sport = :http )' # 显示所有状态为Established的HTTP连接
+ss -o state fin-wait-1 '( sport = :http or sport = :https )' dst 193.233.7/24  # 列举出处于 FIN-WAIT-1状态的源端口为 80或者 443，目标网络为 193.233.7/24所有 tcp套接字
 
 # ss 和 netstat 效率对比
 time netstat -at
@@ -84,7 +84,7 @@ ss src 192.168.119.103:25
 
 **将本地或者远程端口和一个数比较**
 
-```
+```bash
 # ss dport OP PORT 远程端口和一个数比较；
 # ss sport OP PORT 本地端口和一个数比较
 # OP 可以代表以下任意一个: 
@@ -108,7 +108,7 @@ ss -o state fin-wait-1 \( sport = :http or sport = :https \) dst 192.168.1/24
 
 **用TCP 状态过滤Sockets**
 
-```
+```bash
 ss -4 state closing
 # ss -4 state FILTER-NAME-HERE   
 # ss -6 state FILTER-NAME-HERE  
