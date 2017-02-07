@@ -79,7 +79,7 @@ curl(选项)(参数)
 
 <td>-C/--continue-at <offset></td>
 
-<td>断点续转</td>
+<td>断点续传</td>
 
 </tr>
 
