@@ -38,12 +38,9 @@ directory 每个文件或目录参数既可以是远程文件名也可以是本
 
 只对root用户生效
 
-1、在双方root用户根目录下建立rhosts文件，并将双方的hostname加进去。在此之前应在双方的`/etc/hosts`文件中加入对方的ip和hostname
-
-2、把rsh服务启动起来，redhat默认是不启动的。
-
-方法：用执行ntsysv命令，在rsh选项前用空格键选中，确定退出。然后执行`service xinetd restart`即可。
-
+1、在双方root用户根目录下建立rhosts文件，并将双方的hostname加进去。在此之前应在双方的`/etc/hosts`文件中加入对方的ip和hostname  
+2、把rsh服务启动起来，redhat默认是不启动的。  
+方法：用执行ntsysv命令，在rsh选项前用空格键选中，确定退出。然后执行`service xinetd restart`即可。  
 3、到`/etc/pam.d/`目录下，把rsh文件中的`auth required /lib/security/pam_securetty.so`一行用“#”注释掉即可。（只有注释掉这一行，才能用root用户登录）
 
  **将当前目录下的 test1 复制到名为 webserver1 的远程系统：** 
