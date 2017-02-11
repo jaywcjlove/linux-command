@@ -131,6 +131,7 @@ console.log("---->",comm.ls)
 
 ### 中国开源镜像站点
 
+- 阿里云开源镜像站：http://mirrors.aliyun.com/
 - 网易开源镜像站：http://mirrors.163.com/
 - 搜狐开源镜像站：http://mirrors.sohu.com/
 - 北京交通大学：http://mirror.bjtu.edu.cn/cn/ <教育网荐>
