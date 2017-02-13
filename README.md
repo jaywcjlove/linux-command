@@ -4,7 +4,13 @@ Linux Command
 
 [![](https://jaywcjlove.github.io/sb/ico/linux.svg)](https://jaywcjlove.github.io/linux-command/) [![](https://jaywcjlove.github.io/sb/ico/weibo.svg)](http://weibo.com/pc175)
 
+
 520多个 Linux 命令大全，内容包含 Linux 命令手册、详解、学习，值得收藏的 Linux 命令速查手册。请原谅我写了个爬虫，爬了他们家的数据[linuxde.net](http://man.linuxde.net)，同时进行了编辑，增加了一些数据。对他们的辛勤劳动表示敬意，个人希望能本地离线搜索，不喜欢广告，希望得到干净漂亮的预览界面，业余和工作时间需要使用大量的命令，所以干了一件看似比较愚蠢的事情，在回头有空的时候估计能做一个App？，或者是命令行帮助工具？但目前还没有计划...
+
+
+扫描二维码移动端使用
+
+[![Linux 命令大全](./qr.png)](https://jaywcjlove.github.io/linux-command/)
 
 预览搜索：**https://git.io/linux**
 
