@@ -101,7 +101,7 @@
                     if(self.isSreachIndexOF(arr[i].n,self.query)
                      || self.isSreachIndexOF(arr[i].d,self.query) 
                     ){
-                        if(count<show_list_count){
+                        if(count < show_list_count){
                             arrResultHTML.push(self.createKeyworldsHTML(arr[i],self.query,islist));
                             ++count;
                         }
@@ -121,6 +121,32 @@
                 myLi.innerHTML = '<span>'+this.query?'请尝试输入一些字符，进行搜索！'+'</span>':'没有搜索到任何内容，请尝试输入其它字符！';
                 elm.appendChild(myLi);
             }
+        },
+        // 选中搜索结果效果
+        selectedResult:function(type){
+            var items = this.elm_result.children;
+            var index = 0;
+            for(var i=0;i < items.length;i++){
+                if(items[i].className == 'ok'){
+                    items[i].className = '';
+                    if(type == 'up') index = i-1;
+                    else index = i+1;
+                    break;
+                };
+            };
+            if(items[index]) items[index].className = 'ok';
+        },
+        // 是否选中搜索结果
+        isSelectedResult:function(){
+            var items = this.elm_result.children;
+            var isSel = false;
+            for(var i=0;i < items.length;i++){
+                if(items[i].className == 'ok'){
+                    isSel = items[i];
+                    break;
+                };
+            };
+            return isSel;
         },
         init:function(){
             var self = this;
@@ -163,7 +189,17 @@
             // 输入Enter键
             this.bindEvent(document,'keyup',function(e){
                 if(e.key =='Enter'){
-                    self.elm_btn.click();
+                    var item = self.isSelectedResult();
+                    if(!item) return self.elm_btn.click();
+                    if(item.children[0]) {
+                        item.children[0].click();
+                    }
+                }else if(e.keyCode === 40){
+                    // ArrowDown
+                    self.selectedResult()
+                }else if(e.keyCode === 38){
+                    // ArrowUp
+                    self.selectedResult("up");
                 }
             })
 
