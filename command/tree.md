@@ -91,4 +91,13 @@ tree  /private/ -L 1
 └── var
 ```
 
+忽略文件夹
+
+```bash
+tree -I node_modules # 忽略当前目录文件夹node_modules
+tree -P node_modules # 列出当前目录文件夹node_modules的目录结构
+tree -P node_modules -L 2 # 显示目录node_modules两层的目录树结构
+tree -L 2 > /home/www/tree.txt # 当前目录结果存到 tree.txt 文件中
+```
+
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
