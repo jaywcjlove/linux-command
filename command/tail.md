@@ -39,7 +39,7 @@ tail(选项)(参数)
 
 ```
 tail file （显示文件file的最后10行）
-tail +20 file （显示文件file的内容，从第20行至文件末尾）
+tail -n +20 file （显示文件file的内容，从第20行至文件末尾）
 tail -c 10 file （显示文件file的最后10个字符）
 ```
 
