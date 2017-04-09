@@ -212,65 +212,13 @@ awk '{ print v1,v2 }' v1=$var1 v2=$var2 filename
 
 ### 算术运算符  
 
-<table style="width: 500px;" summary="运算符">
-
-<thead>
-
-<tr>
-
-<th>运算符</th>
-
-<th>描述</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr>
-
-<td>+ -</td>
-
-<td>加，减</td>
-
-</tr>
-
-<tr>
-
-<td>* / &</td>
-
-<td>乘，除与求余</td>
-
-</tr>
-
-<tr>
-
-<td>+ - !</td>
-
-<td>一元加，减和逻辑非</td>
-
-</tr>
-
-<tr>
-
-<td>^ ***</td>
-
-<td>求幂</td>
-
-</tr>
-
-<tr>
-
-<td>++ --</td>
-
-<td>增加或减少，作为前缀或后缀</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| 运算符 | 描述 | 
+| ----- | ---- | 
+| + - | 加，减 | 
+| * / & | 乘，除与求余 | 
+| + - ! | 一元加，减和逻辑非 |
+| ^ *** | 求幂 |
+| ++ -- | 增加或减少，作为前缀或后缀 |
 
 例：
 
@@ -283,33 +231,9 @@ awk 'BEGIN{a="b";print a++,++a;}'
 
 ### 赋值运算符  
 
-<table style="width: 500px;" summary="运算符">
-
-<thead>
-
-<tr>
-
-<th>运算符</th>
-
-<th>描述</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr>
-
-<td>= += -= *= /= %= ^= **=</td>
-
-<td>赋值语句</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| 运算符 | 描述 | 
+| ----- | ---- | 
+| = += -= *= /= %= ^= **= | 赋值语句 | 
 
 例：
 
@@ -319,41 +243,10 @@ a+=5; 等价于：a=a+5; 其它同类
 
 ### 逻辑运算符  
 
-<table style="width: 500px;" summary="运算符">
-
-<thead>
-
-<tr>
-
-<th>运算符</th>
-
-<th>描述</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr>
-
-<td>||</td>
-
-<td>逻辑或</td>
-
-</tr>
-
-<tr>
-
-<td>&&</td>
-
-<td>逻辑与</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| 运算符 | 描述 | 
+| ----- | ---- | 
+| `\|\|` | 逻辑或 | 
+| && | 逻辑与 | 
 
 例：
 
@@ -364,33 +257,9 @@ awk 'BEGIN{a=1;b=2;print (a>5 && b<=2),(a>5 || b<=2);}'
 
 ### 正则运算符  
 
-<table style="width: 500px;" summary="运算符">
-
-<thead>
-
-<tr>
-
-<th>运算符</th>
-
-<th>描述</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr>
-
-<td>~ ~!</td>
-
-<td>匹配正则表达式和不匹配正则表达式</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| 运算符 | 描述 | 
+| ----- | ---- | 
+| ~ ~! | 匹配正则表达式和不匹配正则表达式 | 
 
 例：
 
@@ -401,33 +270,9 @@ ok
 
 ### 关系运算符  
 
-<table style="width: 500px;" summary="运算符">
-
-<thead>
-
-<tr>
-
-<th>运算符</th>
-
-<th>描述</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr>
-
-<td>< <= > >= != ==</td>
-
-<td>关系运算符</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| 运算符 | 描述 | 
+| ----- | ---- | 
+| < <= > >= != == | 关系运算符 | 
 
 例：
 
@@ -440,57 +285,12 @@ ok
 
 ### 其它运算符  
 
-<table style="width: 500px;" summary="运算符">
-
-<thead>
-
-<tr>
-
-<th>运算符</th>
-
-<th>描述</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr>
-
-<td>$</td>
-
-<td>字段引用</td>
-
-</tr>
-
-<tr>
-
-<td>空格</td>
-
-<td>字符串连接符</td>
-
-</tr>
-
-<tr>
-
-<td>?:</td>
-
-<td>C条件表达式</td>
-
-</tr>
-
-<tr>
-
-<td>in</td>
-
-<td>数组中是否存在某键值</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| 运算符 | 描述 | 
+| ----- | ---- | 
+| $ | 字段引用 | 
+| 空格 | 字符串连接符 | 
+| ?: | C条件表达式 | 
+| in | 数组中是否存在某键值 | 
 
 例：
 
@@ -853,7 +653,7 @@ c
 
 以上出现奇怪问题，`tB[“c”]`没有定义，但是循环时候，发现已经存在该键值，它的值为空，这里需要注意，awk数组是关联数组，只要通过数组引用它的key，就会自动创建改序列。
 
-```
+```bash
 #正确判断方法：
 awk 'BEGIN{tB["a"]="a1";tB["b"]="b1";if( "c" in tB){print "ok";};for(k in tB){print k,tB[k];}}'  
 a a1
@@ -862,9 +662,9 @@ b b1
 
 `if(key in array)`通过这种方法判断数组中是否包含`key`键值。
 
-```
+```bash
 #删除键值：
-[chengmo@localhost ~]$ awk 'BEGIN{tB["a"]="a1";tB["b"]="b1";delete tB["a"];for(k in tB){print k,tB[k];}}'                     
+awk 'BEGIN{tB["a"]="a1";tB["b"]="b1";delete tB["a"];for(k in tB){print k,tB[k];}}'                     
 b b1
 ```
 
@@ -876,7 +676,7 @@ awk的多维数组在本质上是一维数组，更确切一点，awk在存储�
 
 类似一维数组的成员测试，多维数组可以使用`if ( (i,j) in array)`这样的语法，但是下标必须放置在圆括号中。类似一维数组的循环访问，多维数组使用`for ( item in array )`这样的语法遍历数组。与一维数组不同的是，多维数组必须使用`split()`函数来访问单独的下标分量。
 
-```
+```bash
 awk 'BEGIN{
 for(i=1;i<=9;i++){
   for(j=1;j<=9;j++){
@@ -901,7 +701,7 @@ for(i=1;i<=9;i++){
 
 另一种方法：
 
-```
+```bash
 awk 'BEGIN{
 for(i=1;i<=9;i++){
   for(j=1;j<=9;j++){
@@ -920,97 +720,18 @@ awk内置函数，主要分以下3种类似：算数函数、字符串函数、�
 
 ### 算术函数  
 
-<table height="241" width="907">
+| 格式 | 描述 |
+| ---- | ---- |
+| atan2( y, x ) | 返回 y/x 的反正切。 |
+| cos( x ) | 返回 x 的余弦；x 是弧度。 |
+| sin( x ) | 返回 x 的正弦；x 是弧度。 |
+| exp( x ) | 返回 x 幂函数。 |
+| log( x ) | 返回 x 的自然对数。 |
+| sqrt( x ) | 返回 x 平方根。 |
+| int( x ) | 返回 x 的截断至整数的值。 |
+| rand( ) | 返回任意数字 n，其中 0 <= n < 1。 |
+| srand( [expr] ) | 将 rand 函数的种子值设置为 Expr 参数的值，或如果省略 Expr 参数则使用某天的时间。返回先前的种子值。 |
 
-<thead>
-
-<tr>
-
-<th>格式</th>
-
-<th>描述</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr>
-
-<td>atan2( y, x )</td>
-
-<td>返回 y/x 的反正切。</td>
-
-</tr>
-
-<tr>
-
-<td>cos( x )</td>
-
-<td>返回 x 的余弦；x 是弧度。</td>
-
-</tr>
-
-<tr>
-
-<td>sin( x )</td>
-
-<td>返回 x 的正弦；x 是弧度。</td>
-
-</tr>
-
-<tr>
-
-<td>exp( x )</td>
-
-<td>返回 x 幂函数。</td>
-
-</tr>
-
-<tr>
-
-<td>log( x )</td>
-
-<td>返回 x 的自然对数。</td>
-
-</tr>
-
-<tr>
-
-<td>sqrt( x )</td>
-
-<td>返回 x 平方根。</td>
-
-</tr>
-
-<tr>
-
-<td>int( x )</td>
-
-<td>返回 x 的截断至整数的值。</td>
-
-</tr>
-
-<tr>
-
-<td>rand( )</td>
-
-<td>返回任意数字 n，其中 0 <= n < 1。</td>
-
-</tr>
-
-<tr>
-
-<td>srand( [expr] )</td>
-
-<td>将 rand 函数的种子值设置为 Expr 参数的值，或如果省略 Expr 参数则使用某天的时间。返回先前的种子值。</td>
-
-</tr>
-
-</tbody>
-
-</table>
 
 举例说明：
 
@@ -1035,113 +756,20 @@ awk 'BEGIN{srand();fr=int(100*rand());print fr;}'
 
 ### 字符串函数  
 
-<table width="100%">
+| 格式 | 描述 |
+| ---- | ---- |
+| gsub( Ere, Repl, [ In ] ) | 除了正则表达式所有具体值被替代这点，它和 sub 函数完全一样地执行。 |
+| sub( Ere, Repl, [ In ] ) | 用 Repl 参数指定的字符串替换 In 参数指定的字符串中的由 Ere 参数指定的扩展正则表达式的第一个具体值。sub 函数返回替换的数量。出现在 Repl 参数指定的字符串中的 &（和符号）由 In 参数指定的与 Ere 参数的指定的扩展正则表达式匹配的字符串替换。如果未指定 In 参数，缺省值是整个记录（$0 记录变量）。 |
+| index( String1, String2 ) | 在由 String1 参数指定的字符串（其中有出现 String2 指定的参数）中，返回位置，从 1 开始编号。如果 String2 参数不在 String1 参数中出现，则返回 0（零）。 |
+| length [(String)] | 返回 String 参数指定的字符串的长度（字符形式）。如果未给出 String 参数，则返回整个记录的长度（$0 记录变量）。 |
+| blength [(String)] | 返回 String 参数指定的字符串的长度（以字节为单位）。如果未给出 String 参数，则返回整个记录的长度（$0 记录变量）。 |
+| substr( String, M, [ N ] ) | 返回具有 N 参数指定的字符数量子串。子串从 String 参数指定的字符串取得，其字符以 M 参数指定的位置开始。M 参数指定为将 String 参数中的第一个字符作为编号 1。如果未指定 N 参数，则子串的长度将是 M 参数指定的位置到 String 参数的末尾 的长度。 |
+| match( String, Ere ) | 在 String 参数指定的字符串（Ere 参数指定的扩展正则表达式出现在其中）中返回位置（字符形式），从 1 开始编号，或如果 Ere 参数不出现，则返回 0（零）。RSTART 特殊变量设置为返回值。RLENGTH 特殊变量设置为匹配的字符串的长度，或如果未找到任何匹配，则设置为 -1（负一）。|
+| split( String, A, [Ere] ) | 将 String 参数指定的参数分割为数组元素 A[1], A[2], . . ., A[n]，并返回 n 变量的值。此分隔可以通过 Ere 参数指定的扩展正则表达式进行，或用当前字段分隔符（FS 特殊变量）来进行（如果没有给出 Ere 参数）。除非上下文指明特定的元素还应具有一个数字值，否则 A 数组中的元素用字符串值来创建。 |
+| tolower( String ) | 返回 String 参数指定的字符串，字符串中每个大写字符将更改为小写。大写和小写的映射由当前语言环境的 LC_CTYPE 范畴定义。 |
+| toupper( String ) | 返回 String 参数指定的字符串，字符串中每个小写字符将更改为大写。大写和小写的映射由当前语言环境的 LC_CTYPE 范畴定义。 |
+| sprintf(Format, Expr, Expr, . . . ) | 根据 Format 参数指定的 printf 子例程格式字符串来格式化 Expr 参数指定的表达式并返回最后生成的字符串。 |
 
-<thead>
-
-<tr>
-
-<th>格式</th>
-
-<th>描述</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr>
-
-<td>gsub( Ere, Repl, [ In ] )</td>
-
-<td>除了正则表达式所有具体值被替代这点，它和 sub 函数完全一样地执行。</td>
-
-</tr>
-
-<tr>
-
-<td>sub( Ere, Repl, [ In ] )</td>
-
-<td>用 Repl 参数指定的字符串替换 In 参数指定的字符串中的由 Ere 参数指定的扩展正则表达式的第一个具体值。sub 函数返回替换的数量。出现在 Repl 参数指定的字符串中的 &（和符号）由 In 参数指定的与 Ere 参数的指定的扩展正则表达式匹配的字符串替换。如果未指定 In 参数，缺省值是整个记录（$0 记录变量）。</td>
-
-</tr>
-
-<tr>
-
-<td>index( String1, String2 )</td>
-
-<td>在由 String1 参数指定的字符串（其中有出现 String2 指定的参数）中，返回位置，从 1 开始编号。如果 String2 参数不在 String1 参数中出现，则返回 0（零）。</td>
-
-</tr>
-
-<tr>
-
-<td>length [(String)]</td>
-
-<td>返回 String 参数指定的字符串的长度（字符形式）。如果未给出 String 参数，则返回整个记录的长度（$0 记录变量）。</td>
-
-</tr>
-
-<tr>
-
-<td>blength [(String)]</td>
-
-<td>返回 String 参数指定的字符串的长度（以字节为单位）。如果未给出 String 参数，则返回整个记录的长度（$0 记录变量）。</td>
-
-</tr>
-
-<tr>
-
-<td>substr( String, M, [ N ] )</td>
-
-<td>返回具有 N 参数指定的字符数量子串。子串从 String 参数指定的字符串取得，其字符以 M 参数指定的位置开始。M 参数指定为将 String 参数中的第一个字符作为编号 1。如果未指定 N 参数，则子串的长度将是 M 参数指定的位置到 String 参数的末尾 的长度。</td>
-
-</tr>
-
-<tr>
-
-<td>match( String, Ere )</td>
-
-<td>在 String 参数指定的字符串（Ere 参数指定的扩展正则表达式出现在其中）中返回位置（字符形式），从 1 开始编号，或如果 Ere 参数不出现，则返回 0（零）。RSTART 特殊变量设置为返回值。RLENGTH 特殊变量设置为匹配的字符串的长度，或如果未找到任何匹配，则设置为 -1（负一）。</td>
-
-</tr>
-
-<tr>
-
-<td>split( String, A, [Ere] )</td>
-
-<td>将 String 参数指定的参数分割为数组元素 A[1], A[2], . . ., A[n]，并返回 n 变量的值。此分隔可以通过 Ere 参数指定的扩展正则表达式进行，或用当前字段分隔符（FS 特殊变量）来进行（如果没有给出 Ere 参数）。除非上下文指明特定的元素还应具有一个数字值，否则 A 数组中的元素用字符串值来创建。</td>
-
-</tr>
-
-<tr>
-
-<td>tolower( String )</td>
-
-<td>返回 String 参数指定的字符串，字符串中每个大写字符将更改为小写。大写和小写的映射由当前语言环境的 LC_CTYPE 范畴定义。</td>
-
-</tr>
-
-<tr>
-
-<td>toupper( String )</td>
-
-<td>返回 String 参数指定的字符串，字符串中每个小写字符将更改为大写。大写和小写的映射由当前语言环境的 LC_CTYPE 范畴定义。</td>
-
-</tr>
-
-<tr>
-
-<td>sprintf(Format, Expr, Expr, . . . )</td>
-
-<td>根据 Format 参数指定的 printf 子例程格式字符串来格式化 Expr 参数指定的表达式并返回最后生成的字符串。</td>
-
-</tr>
-
-</tbody>
-
-</table>
 
 注：Ere都可以是正则表达式。
 
@@ -1198,105 +826,14 @@ awk 'BEGIN{info="this is a test";split(info,tA," ");print length(tA);for(k in tA
 
 其中格式化字符串包括两部分内容：一部分是正常字符，这些字符将按原样输出; 另一部分是格式化规定字符，以`"%"`开始，后跟一个或几个规定字符,用来确定输出内容格式。
 
-<table width="100%">
+| 格式 | 描述 | 格式 | 描述 |
+| ---- | ---- | ---- | ---- |
+| %d | 十进制有符号整数 | %u | 十进制无符号整数 |
+| %f | 浮点数 | %s | 字符串 |
+| %c | 单个字符 | %p | 指针的值 |
+| %e | 指数形式的浮点数 | %x | %X 无符号以十六进制表示的整数 |
+| %o | 无符号以八进制表示的整数 | %g | 自动选择合适的表示法 |
 
-<thead>
-
-<tr>
-
-<th>格式</th>
-
-<th>描述</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr>
-
-<td>%d</td>
-
-<td>十进制有符号整数</td>
-
-</tr>
-
-<tr>
-
-<td>%u</td>
-
-<td>十进制无符号整数</td>
-
-</tr>
-
-<tr>
-
-<td>%f</td>
-
-<td>浮点数</td>
-
-</tr>
-
-<tr>
-
-<td>%s</td>
-
-<td>字符串</td>
-
-</tr>
-
-<tr>
-
-<td>%c</td>
-
-<td>单个字符</td>
-
-</tr>
-
-<tr>
-
-<td>%p</td>
-
-<td>指针的值</td>
-
-</tr>
-
-<tr>
-
-<td>%e</td>
-
-<td>指数形式的浮点数</td>
-
-</tr>
-
-<tr>
-
-<td>%x</td>
-
-<td>%X 无符号以十六进制表示的整数</td>
-
-</tr>
-
-<tr>
-
-<td>%o</td>
-
-<td>无符号以八进制表示的整数</td>
-
-</tr>
-
-<tr>
-
-<td>%g</td>
-
-<td>自动选择合适的表示法</td>
-
-</tr>
-
-</tbody>
-
-</table>
 
 ```
 awk 'BEGIN{n1=124.113;n2=-1.224;n3=1.2345; printf("%.2f,%.2u,%.2g,%X,%on",n1,n2,n3,n1,n1);}'
@@ -1305,65 +842,13 @@ awk 'BEGIN{n1=124.113;n2=-1.224;n3=1.2345; printf("%.2f,%.2u,%.2g,%X,%on",n1,n2,
 
 ### 一般函数  
 
-<table width="100%">
-
-<thead>
-
-<tr>
-
-<th>格式</th>
-
-<th>描述</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr>
-
-<td>close( Expression )</td>
-
-<td>用同一个带字符串值的 Expression 参数来关闭由 print 或 printf 语句打开的或调用 getline 函数打开的文件或管道。如果文件或管道成功关闭，则返回 0；其它情况下返回非零值。如果打算写一个文件，并稍后在同一个程序中读取文件，则 close 语句是必需的。</td>
-
-</tr>
-
-<tr>
-
-<td>system(command )</td>
-
-<td>执行 Command 参数指定的命令，并返回退出状态。等同于 system 子例程。</td>
-
-</tr>
-
-<tr>
-
-<td>Expression | getline [ Variable ]</td>
-
-<td>从来自 Expression 参数指定的命令的输出中通过管道传送的流中读取一个输入记录，并将该记录的值指定给 Variable 参数指定的变量。如果当前未打开将 Expression 参数的值作为其命令名称的流，则创建流。创建的流等同于调用 popen 子例程，此时 Command 参数取 Expression 参数的值且 Mode 参数设置为一个是 r 的值。只要流保留打开且 Expression 参数求得同一个字符串，则对 getline 函数的每次后续调用读取另一个记录。如果未指定 Variable 参数，则 $0 记录变量和 NF 特殊变量设置为从流读取的记录。</td>
-
-</tr>
-
-<tr>
-
-<td>getline [ Variable ] < Expression</td>
-
-<td>从 Expression 参数指定的文件读取输入的下一个记录，并将 Variable 参数指定的变量设置为该记录的值。只要流保留打开且 Expression 参数对同一个字符串求值，则对 getline 函数的每次后续调用读取另一个记录。如果未指定 Variable 参数，则 $0 记录变量和 NF 特殊变量设置为从流读取的记录。</td>
-
-</tr>
-
-<tr>
-
-<td>getline [ Variable ]</td>
-
-<td>将 Variable 参数指定的变量设置为从当前输入文件读取的下一个输入记录。如果未指定 Variable 参数，则 $0 记录变量设置为该记录的值，还将设置 NF、NR 和 FNR 特殊变量。</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| 格式 | 描述  |
+| ---- | ---- |
+| close( Expression ) | 用同一个带字符串值的 Expression 参数来关闭由 print 或 printf 语句打开的或调用 getline 函数打开的文件或管道。如果文件或管道成功关闭，则返回 0；其它情况下返回非零值。如果打算写一个文件，并稍后在同一个程序中读取文件，则 close 语句是必需的。 |
+| system(command ) | 执行 Command 参数指定的命令，并返回退出状态。等同于 system 子例程。|
+| Expression \| getline [ Variable ] | 从来自 Expression 参数指定的命令的输出中通过管道传送的流中读取一个输入记录，并将该记录的值指定给 Variable 参数指定的变量。如果当前未打开将 Expression 参数的值作为其命令名称的流，则创建流。创建的流等同于调用 popen 子例程，此时 Command 参数取 Expression 参数的值且 Mode 参数设置为一个是 r 的值。只要流保留打开且 Expression 参数求得同一个字符串，则对 getline 函数的每次后续调用读取另一个记录。如果未指定 Variable 参数，则 $0 记录变量和 NF 特殊变量设置为从流读取的记录。|
+| getline [ Variable ] < Expression | 从 Expression 参数指定的文件读取输入的下一个记录，并将 Variable 参数指定的变量设置为该记录的值。只要流保留打开且 Expression 参数对同一个字符串求值，则对 getline 函数的每次后续调用读取另一个记录。如果未指定 Variable 参数，则 $0 记录变量和 NF 特殊变量设置为从流读取的记录。 |
+| getline [ Variable ] | 将 Variable 参数指定的变量设置为从当前输入文件读取的下一个输入记录。如果未指定 Variable 参数，则 $0 记录变量设置为该记录的值，还将设置 NF、NR 和 FNR 特殊变量。 |
 
  **打开外部文件（close用法）** 
 
@@ -1403,58 +888,12 @@ b返回值，是执行结果。
 
 ### 时间函数  
 
-<table width="100%">
-
-<thead>
-
-<tr>
-
-<th>格式</th>
-
-<th>描述</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr>
-
-<td>函数名</td>
-
-<td>说明</td>
-
-</tr>
-
-<tr>
-
-<td>mktime( YYYY MM dd HH MM ss[ DST])</td>
-
-<td>生成时间格式</td>
-
-</tr>
-
-<tr>
-
-<td>strftime([format [, timestamp]])</td>
-
-<td>格式化时间输出，将时间戳转为时间字符串  
-具体格式，见下表.</td>
-
-</tr>
-
-<tr>
-
-<td>systime()</td>
-
-<td>得到时间戳,返回从1970年1月1日开始到当前时间(不计闰年)的整秒数</td>
-
-</tr>
-
-</tbody>
-
-</table>
+| 格式 | 描述  |
+| ---- | ---- |
+| 函数名 | 说明 |
+| mktime( YYYY MM dd HH MM ss[ DST]) | 生成时间格式 |
+| strftime([format [, timestamp]]) | 格式化时间输出，将时间戳转为时间字符串具体格式，见下表。 |
+| systime() | 得到时间戳，返回从1970年1月1日开始到当前时间(不计闰年)的整秒数 |
 
  **建指定时间(mktime使用）** 
 
@@ -1477,217 +916,30 @@ awk 'BEGIN{tstamp1=mktime("2001 01 01 12 12 12");tstamp2=systime();print tstamp2
 
  **strftime日期和时间格式说明符** 
 
-<table width="100%">
-
-<thead>
-
-<tr>
-
-<th>格式</th>
-
-<th>描述</th>
-
-</tr>
-
-</thead>
-
-<tbody>
-
-<tr>
-
-<td>%a</td>
-
-<td>星期几的缩写(Sun)</td>
-
-</tr>
-
-<tr>
-
-<td>%A</td>
-
-<td>星期几的完整写法(Sunday)</td>
-
-</tr>
-
-<tr>
-
-<td>%b</td>
-
-<td>月名的缩写(Oct)</td>
-
-</tr>
-
-<tr>
-
-<td>%B</td>
-
-<td>月名的完整写法(October)</td>
-
-</tr>
-
-<tr>
-
-<td>%c</td>
-
-<td>本地日期和时间</td>
-
-</tr>
-
-<tr>
-
-<td>%d</td>
-
-<td>十进制日期</td>
-
-</tr>
-
-<tr>
-
-<td>%D</td>
-
-<td>日期 08/20/99</td>
-
-</tr>
-
-<tr>
-
-<td>%e</td>
-
-<td>日期，如果只有一位会补上一个空格</td>
-
-</tr>
-
-<tr>
-
-<td>%H</td>
-
-<td>用十进制表示24小时格式的小时</td>
-
-</tr>
-
-<tr>
-
-<td>%I</td>
-
-<td>用十进制表示12小时格式的小时</td>
-
-</tr>
-
-<tr>
-
-<td>%j</td>
-
-<td>从1月1日起一年中的第几天</td>
-
-</tr>
-
-<tr>
-
-<td>%m</td>
-
-<td>十进制表示的月份</td>
-
-</tr>
-
-<tr>
-
-<td>%M</td>
-
-<td>十进制表示的分钟</td>
-
-</tr>
-
-<tr>
-
-<td>%p</td>
-
-<td>12小时表示法(AM/PM)</td>
-
-</tr>
-
-<tr>
-
-<td>%S</td>
-
-<td>十进制表示的秒</td>
-
-</tr>
-
-<tr>
-
-<td>%U</td>
-
-<td>十进制表示的一年中的第几个星期(星期天作为一个星期的开始)</td>
-
-</tr>
-
-<tr>
-
-<td>%w</td>
-
-<td>十进制表示的星期几(星期天是0)</td>
-
-</tr>
-
-<tr>
-
-<td>%W</td>
-
-<td>十进制表示的一年中的第几个星期(星期一作为一个星期的开始)</td>
-
-</tr>
-
-<tr>
-
-<td>%x</td>
-
-<td>重新设置本地日期(08/20/99)</td>
-
-</tr>
-
-<tr>
-
-<td>%X</td>
-
-<td>重新设置本地时间(12：00：00)</td>
-
-</tr>
-
-<tr>
-
-<td>%y</td>
-
-<td>两位数字表示的年(99)</td>
-
-</tr>
-
-<tr>
-
-<td>%Y</td>
-
-<td>当前月份</td>
-
-</tr>
-
-<tr>
-
-<td>%Z</td>
-
-<td>时区(PDT)</td>
-
-</tr>
-
-<tr>
-
-<td>%%</td>
-
-<td>百分号(%)</td>
-
-</tr>
-
-</tbody>
-
-</table>
-
+| 格式 | 描述  |
+| ---- | ---- |
+| %a | 星期几的缩写(Sun) |
+| %A | 星期几的完整写法(Sunday) |
+| %b | 月名的缩写(Oct) |
+| %B | 月名的完整写法(October) |
+| %c | 本地日期和时间 |
+| %d | 十进制日期 |
+| %D | 日期 08/20/99 |
+| %e | 日期，如果只有一位会补上一个空格 |
+| %H | 用十进制表示24小时格式的小时 |
+| %I | 用十进制表示12小时格式的小时 |
+| %j | 从1月1日起一年中的第几天 |
+| %m | 十进制表示的月份 |
+| %M | 十进制表示的分钟 |
+| %p | 12小时表示法(AM/PM) |
+| %S | 十进制表示的秒 |
+| %U | 十进制表示的一年中的第几个星期(星期天作为一个星期的开始) |
+| %w | 十进制表示的星期几(星期天是0) |
+| %W | 十进制表示的一年中的第几个星期(星期一作为一个星期的开始) |
+| %x | 重新设置本地日期(08/20/99) |
+| %X | 重新设置本地时间(12:00:00) |
+| %y | 两位数字表示的年(99) |
+| %Y | 当前月份 |
+| %% | 百分号(%) |
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
