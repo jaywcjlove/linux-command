@@ -37,5 +37,17 @@ BIOS-provided physical RAM map:
  BIOS-e820: 00000000e0000000 - 00000000e8000000 (reserved)
 ```
 
+查看硬盘基础信息
+
+```bash 
+dmesg | grep sda
+
+[    2.442555] sd 0:0:0:0: [sda] 488281250 512-byte logical blocks: (250 GB/232 GiB)
+[    2.442590] sd 0:0:0:0: [sda] Write Protect is off
+[    2.442592] sd 0:0:0:0: [sda] Mode Sense: 00 3a 00 00
+[    2.442607] sd 0:0:0:0: [sda] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[    2.447533]  sda: sda1
+[    2.448503] sd 0:0:0:0: [sda] Attached SCSI disk
+```
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
