@@ -212,5 +212,76 @@ Processor Information
         Characteristics: None
 ```
 
+查看内存的插槽数，已经使用多少插槽。每条内存多大，已使用内存多大
+
+```bash
+dmidecode|grep -P -A5 "Memory\s+Device"|grep Size|grep -v Range 
+
+#   Size: 2048 MB
+#   Size: 2048 MB
+#   Size: 4096 MB
+#   Size: No Module Installed
+```
+
+查看内存支持的最大内存容量
+
+```bash
+dmidecode|grep -P 'Maximum\s+Capacity'
+
+#  Maximum Capacity: 16 GB
+
+```
+
+查看内存的频率
+
+```bash
+dmidecode|grep -A16 "Memory Device"
+
+#   Memory Device
+#     Array Handle: 0x1000
+#     Error Information Handle: Not Provided
+#     Total Width: 72 bits
+#     Data Width: 64 bits
+#     Size: 2048 MB
+#     Form Factor: DIMM
+#     Set: 1
+#     Locator: DIMM_A1
+#     Bank Locator: Not Specified
+#     Type: DDR3
+#     Type Detail: Synchronous Unbuffered (Unregistered)
+#     Speed: 1333 MHz
+#     Manufacturer: 00CE000080CE
+#     Serial Number: 4830F3E1
+#     Asset Tag: 01093200
+#     Part Number: M391B5673EH1-CH9
+#   --
+#   Memory Device
+#     Array Handle: 0x1000
+#     Error Information Handle: Not Provided
+#     Total Width: 72 bits
+#     Data Width: 64 bits
+#     Size: 2048 MB
+#     Form Factor: DIMM
+#     Set: 1
+#     Locator: DIMM_A2
+#     Bank Locator: Not Specified
+#     Type: DDR3
+#     Type Detail: Synchronous Unbuffered (Unregistered)
+#     Speed: 1333 MHz
+#     Manufacturer: 00AD000080AD
+#     Serial Number: 1BA1F0B5
+#     Asset Tag: 01110900
+#     Part Number: HMT325U7BFR8C-H9
+#   --
+
+dmidecode|grep -A16 "Memory Device"|grep 'Speed'
+
+#  Speed: 1333 MHz
+#  Speed: 1333 MHz
+#  Speed: 1333 MHz
+#  Speed: Unknown
+
+```
+
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
