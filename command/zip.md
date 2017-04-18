@@ -77,5 +77,18 @@ zip -q -r html.zip html
 zip -q -r html.zip *
 ```
 
+### 问题解决
+
+CentOS7中命令找不到
+
+```
+-Bash: Unzip: Command Not Found
+```
+
+解决方法
+ 
+```bash
+yum install -y unzip zip
+```
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
