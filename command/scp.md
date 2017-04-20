@@ -58,8 +58,10 @@ scp -r root@10.10.10.10:/opt/soft/mongodb /opt/soft/
 
  **上传本地文件到远程机器指定目录** 
 
-```
+```bash
 scp /opt/soft/nginx-0.5.38.tar.gz root@10.10.10.10:/opt/soft/scptest
+# 添加断开 2222
+scp -rp -P 2222 /opt/soft/nginx-0.5.38.tar.gz root@10.10.10.10:/opt/soft/scptest
 ```
 
 复制本地`/opt/soft/`目录下的文件nginx-0.5.38.tar.gz到远程机器10.10.10.10的`opt/soft/scptest`目录。
