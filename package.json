@@ -1,0 +1,37 @@
+{
+  "name": "alfred-linux-command",
+  "version": "1.0.0",
+  "description": "Search through the Linux command.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "alfy-init",
+    "preuninstall": "alfy-cleanup"
+  },
+  "keywords": [
+    "linux",
+    "command",
+    "alfred",
+    "workflow",
+    "mdn",
+    "mozilla",
+    "developers",
+    "network",
+    "html",
+    "javascript",
+    "js"
+  ],
+  "files": [
+    "index.js",
+    "icon.png",
+    "info.plist"
+  ],
+  "engines": {
+    "node": ">=4"
+  },
+  "author": "kenny wang <wowohoo@qq.com>",
+  "license": "MIT",
+  "dependencies": {
+    "alfy": "^0.6.0"
+  }
+}
