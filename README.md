@@ -7,7 +7,7 @@ Linux Command
 
 520多个 Linux 命令大全，内容包含 Linux 命令手册、详解、学习，值得收藏的 Linux 命令速查手册。请原谅我写了个爬虫，爬了他们家的数据[linuxde.net](http://man.linuxde.net)，同时进行了编辑，增加了一些数据。对他们的辛勤劳动表示敬意，个人希望能本地离线搜索，不喜欢广告，希望得到干净漂亮的预览界面，业余和工作时间需要使用大量的命令，所以干了一件看似比较愚蠢的事情，在回头有空的时候估计能做一个App？，或者是命令行帮助工具？但目前还没有计划...
 
-[Github Web版](https://jaywcjlove.github.io/linux-command/) | [开源中国Web版](http://jslite.oschina.io/linux-command) | [Alfred 版本下载](https://github.com/jaywcjlove/linux-command/releases) | [Android版本实现](https://github.com/Ernest-su/LinuxCmd.git) 
+[Github Web版](https://jaywcjlove.github.io/linux-command/) | [开源中国Web版](http://jslite.oschina.io/linux-command) | [其它Web版](http://linux-command.composer-proxy.org/) | [Alfred 版本下载](https://github.com/jaywcjlove/linux-command/releases) | [Android版本实现](https://github.com/Ernest-su/LinuxCmd.git) 
 
 扫描二维码移动端预览搜索
 
@@ -42,6 +42,7 @@ Linux Command
  - [知识相关](#知识相关) 
  - [软件工具](#软件工具) 
  - [中国开源镜像站点](#中国开源镜像站点) 
+ - [游戏玩家发行版](#游戏玩家发行版) 
 
 
 ## Linux命令分类
@@ -145,16 +146,29 @@ console.log("---->",comm.ls)
 - 阿里云开源镜像站：http://mirrors.aliyun.com/
 - 网易开源镜像站：http://mirrors.163.com/
 - 搜狐开源镜像站：http://mirrors.sohu.com/
-- 北京交通大学：http://mirror.bjtu.edu.cn/ <教育网荐>
-- 兰州大学：http://mirror.lzu.edu.cn/ <西北高校FTP搜索引擎>
+- 北京交通大学：http://mirror.bjtu.edu.cn/ \<教育网荐\>
+- 兰州大学：http://mirror.lzu.edu.cn/ \<西北高校FTP搜索引擎\>
 - 厦门大学：http://mirrors.xmu.edu.cn/
 - 上海交通大学：http://ftp.sjtu.edu.cn/
 - 清华大学：http://mirrors.tuna.tsinghua.edu.cn/
   - http://mirrors6.tuna.tsinghua.edu.cn/
   - http://mirrors4.tuna.tsinghua.edu.cn/
 - 中国科学技术大学：http://mirrors.ustc.edu.cn/ 
-  - http://ipv4.ustc.edu.cn/ <教育网、电信>
-  - http://ipv6.ustc.edu.cn/ <IPv6 only>
+  - http://ipv4.ustc.edu.cn/ \<教育网、电信\>
+  - http://ipv6.ustc.edu.cn/ \<IPv6 only\>
 - 东北大学：http://mirror.neu.edu.cn/
 - 浙江大学：http://mirrors.zju.edu.cn/
 - 东软信息学院：http://mirrors.neusoft.edu.cn/
+
+### 游戏玩家发行版
+
+*面向游戏玩家的八款最佳 Linux 发行版，本文由开源中国整理[原文在这里](https://my.oschina.net/editorial-story/blog/888795)*
+
+- [SteamOS](http://store.steampowered.com/livingroom/SteamOS/) [官方文档](http://store.steampowered.com/steamos/buildyourown) [镜像下载](http://repo.steampowered.com/download/)
+- [Ubuntu GamePack](https://ualinux.com/en/ubuntu-gamepack) [下载地址](https://ualinux.com/en/ubuntu-gamepack)
+- [Fedora – Games Spin](https://www.oschina.net/p/fedora_linux) [下载地址](https://labs.fedoraproject.org/en/games/)
+- [SparkyLinux – GameOver Edition](https://www.oschina.net/p/sparkylinux) [下载地址](https://sparkylinux.org/download/#special)
+- [Lakka](http://www.lakka.tv/) [下载地址](http://www.lakka.tv/disclaimer/)
+- [Game Drift Linux](http://gamedrift.org/) [下载地址](http://gamedrift.org/Download.html)
+- [Solus](https://solus-project.com) [下载地址](https://solus-project.com/download/)
+- [Manjaro Gaming Edition (mGAMe)](https://sourceforge.net/projects/mgame/) [下载地址](https://sourceforge.net/projects/mgame/)
