@@ -2,3 +2,9 @@ build/
 node_modules/
 .deploy
 template/
+.DS_Store
+qr.png
+.gitattributes
+Linux.gif 
+alfred.png 
+command
