@@ -1,0 +1,13 @@
+
+<%- include('header',{src:""}); %>
+<%- include('search',{type: "list"}); %>
+
+<div class="hotlist">
+  <ul>
+  <%describe.arr.forEach(function(page,item){%>
+    <li><a href="c<%=page.p%>.html"><%=page.n%> - <%=page.d%></a></li>
+  <%});%>
+  </ul>
+</div>
+
+<%- include('footer'); %>

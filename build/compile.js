@@ -97,12 +97,19 @@ CreateDatajs('./.deploy/js/dt.js',function(dt_path,arr){
       n:'搜索',
       d:'最专业的Linux命令大全，内容包含Linux命令手册、详解、学习，值得收藏的Linux命令速查手册。'
     });
+
+    ReadTmpToHTML('/template/hot.ejs','/.deploy/hot.html',null,{
+      p:'/hot.html',
+      n:'搜索',
+      d:'最专业的Linux命令大全，内容包含Linux命令手册、详解、学习，值得收藏的Linux命令速查手册。',
+      arr:arr
+    });
     // 文章批量生成
     arr.forEach(function(itm,idx){
         var ejstpm = path.join('/template/',itm.p);
         var md_path = path.join('/command',itm.p);
         var dep = path.join('/.deploy/c',itm.p);      
-        ReadTmpToHTML('/template/details.ejs', dep+'.html' ,md_path+'.md', itm)
+        ReadTmpToHTML('/template/details.ejs', dep+'.html' ,md_path+'.md', itm ,arr)
     });
 
     console.log(success("  → "),arr.length)
@@ -164,8 +171,9 @@ function CreateJS(from_path,to_path){
  * @param {[type]} to_path   [生成到指定的位置]
  * @param {[type]} md_path   [Markdown的路径] // 给md地址就生产详情页面
  * @param {[type]} des_json   [页面信息 json 格式]
+ * @param {[type]} arr        []
  */
-function ReadTmpToHTML(from_path,to_path,md_path,des_json){
+function ReadTmpToHTML(from_path,to_path,md_path,des_json, total_pages){
     var tmp_path = path.join(path.dirname(__dirname),from_path);
     if(!exists(tmp_path))  return console.log("\n  → error: 模板文件 "+tmp_path+" 不存在")
     var tmp_str  = fs.readFileSync(tmp_path);
