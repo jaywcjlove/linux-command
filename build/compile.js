@@ -88,20 +88,20 @@ CreateDatajs('./.deploy/js/dt.js',function(dt_path,arr){
     // 首页生成
     ReadTmpToHTML('/template/index.ejs','/.deploy/index.html',null,{
       'p':'/index.html',
-      'n':'Linux命令搜索',
+      'n':'Linux命令搜索引擎',
       'd':'最专业的Linux命令大全，内容包含Linux命令手册、详解、学习，值得收藏的Linux命令速查手册。',
       'command_length':arr.length
     });
     ReadTmpToHTML('/template/list.ejs','/.deploy/list.html',null,{
       p:'/list.html',
       n:'搜索',
-      d:'最专业的Linux命令大全，内容包含Linux命令手册、详解、学习，值得收藏的Linux命令速查手册。'
+      d:'最专业的Linux命令大全，命令搜索引擎，内容包含Linux命令手册、详解、学习，值得收藏的Linux命令速查手册。'
     });
 
     ReadTmpToHTML('/template/hot.ejs','/.deploy/hot.html',null,{
       p:'/hot.html',
       n:'搜索',
-      d:'最专业的Linux命令大全，内容包含Linux命令手册、详解、学习，值得收藏的Linux命令速查手册。',
+      d:'最专业的Linux命令大全，命令搜索引擎，内容包含Linux命令手册、详解、学习，值得收藏的Linux命令速查手册。',
       arr:arr
     });
     // 文章批量生成
