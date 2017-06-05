@@ -132,7 +132,7 @@ v1=v2=v3
  **示例** 
 
 ```
-echo -e "line1 f2 f3nline2 f4 f5nline3 f6 f7" | awk '{print "Line No:"NR", No of fields:"NF, "$0="$0, "$1="$1, "$2="$2, "$3="$3}' 
+echo -e "line1 f2 f3\nline2 f4 f5\nline3 f6 f7" | awk '{print "Line No:"NR", No of fields:"NF, "$0="$0, "$1="$1, "$2="$2, "$3="$3}' 
 Line No:1, No of fields:3 $0=line1 f2 f3 $1=line1 $2=f2 $3=f3
 Line No:2, No of fields:3 $0=line2 f4 f5 $1=line2 $2=f4 $3=f5
 Line No:3, No of fields:3 $0=line3 f6 f7 $1=line3 $2=f6 $3=f7
