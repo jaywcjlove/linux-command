@@ -24,7 +24,7 @@ grep
 -G --basic-regexp   # 将范本样式视为普通的表示法来使用。
 -h --no-filename    # 在显示符合范本样式的那一列之前，不标示该列所属的文件名称。
 -H --with-filename  # 在显示符合范本样式的那一列之前，标示该列的文件名称。
--i --ignore-case    # 胡列字符大小写的差别。
+-i --ignore-case    # 忽略字符大小写的差别。
 -l --file-with-matches   # 列出文件内容符合指定的范本样式的文件名称。
 -L --files-without-match # 列出文件内容不符合指定的范本样式的文件名称。
 -n --line-number         # 在显示符合范本样式的那一列之前，标示出该列的编号。
