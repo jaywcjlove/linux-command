@@ -57,7 +57,7 @@ deplist：显示rpm软件包的所有依赖关系。
 
 **安装** 
 
-```
+```bash
 yum install              #全部安装
 yum install package1     #安装指定的安装包package1
 yum groupinsall group1   #安装程序组group1
@@ -65,7 +65,7 @@ yum groupinsall group1   #安装程序组group1
 
 **更新和升级** 
 
-```
+```bash
 yum update               #全部更新
 yum update package1      #更新指定程序包package1
 yum check-update         #检查可更新的程序
@@ -88,7 +88,7 @@ yum groupinfo group1   #显示程序组group1信息yum search string 根据关�
 
 **删除程序** 
 
-```
+```bash
 yum remove &#124; erase package1   #删除程序包package1
 yum groupremove group1             #删除程序组group1
 yum deplist package1               #查看程序package1依赖情况
@@ -96,7 +96,7 @@ yum deplist package1               #查看程序package1依赖情况
 
 **清除缓存** 
 
-```
+```bash
 yum clean packages       #清除缓存目录下的软件包
 yum clean headers        #清除缓存目录下的 headers
 yum clean oldheaders     #清除缓存目录下旧的 headers
