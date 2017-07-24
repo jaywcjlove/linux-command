@@ -75,7 +75,11 @@ yum groupupdate group1   #升级程序组group1
 
 **查找和显示** 
 
-```
+```bash
+# 检查 MySQL 是否已安装
+yum list installed | grep mysql
+yum list installed mysql*
+
 yum info package1      #显示安装包信息package1
 yum list               #显示所有已经安装和可以安装的程序包
 yum list package1      #显示指定程序包安装情况package1
