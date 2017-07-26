@@ -159,3 +159,27 @@ firewall-cmd --list-all
 firewall-cmd --direct -add-rule ipv4 filter INPUT 0 -p tcp --dport 9000 -j ACCEPT
 firewall-cmd --reload
 ```
+
+伪装 IP
+
+```bash
+firewall-cmd --query-masquerade # 检查是否允许伪装IP
+firewall-cmd --add-masquerade   # 允许防火墙伪装IP
+firewall-cmd --remove-masquerade# 禁止防火墙伪装IP
+```
+
+**端口转发**
+
+端口转发可以将指定地址访问指定的端口时，将流量转发至指定地址的指定端口。转发的目的如果不指定 ip 的话就默认为本机，如果指定了 ip 却没指定端口，则默认使用来源端口。
+如果配置好端口转发之后不能用，可以检查下面两个问题：
+1. 比如我将 80 端口转发至 8080 端口，首先检查本地的 80 端口和目标的 8080 端口是否开放监听了
+2. 其次检查是否允许伪装 IP，没允许的话要开启伪装 IP
+
+```bash
+firewall-cmd --add-forward-port=port=80:proto=tcp:toport=8080   # 将80端口的流量转发至8080
+firewall-cmd --add-forward-port=proto=80:proto=tcp:toaddr=192.168.1.0.1 # 将80端口的流量转发至192.168.0.1
+firewall-cmd --add-forward-port=proto=80:proto=tcp:toaddr=192.168.0.1:toport=8080 # 将80端口的流量转发至192.168.0.1的8080端口
+```
+
+1. 当我们想把某个端口隐藏起来的时候，就可以在防火墙上阻止那个端口访问，然后再开一个不规则的端口，之后配置防火墙的端口转发，将流量转发过去。
+2. 端口转发还可以做流量分发，一个防火墙拖着好多台运行着不同服务的机器，然后用防火墙将不同端口的流量转发至不同机器。
