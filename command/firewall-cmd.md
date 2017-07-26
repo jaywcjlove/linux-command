@@ -160,6 +160,20 @@ firewall-cmd --direct -add-rule ipv4 filter INPUT 0 -p tcp --dport 9000 -j ACCEP
 firewall-cmd --reload
 ```
 
+**控制端口 / 服务**
+
+可以通过两种方式控制端口的开放，一种是指定端口号另一种是指定服务名。虽然开放 http 服务就是开放了 80 端口，但是还是不能通过端口号来关闭，也就是说通过指定服务名开放的就要通过指定服务名关闭；通过指定端口号开放的就要通过指定端口号关闭。还有一个要注意的就是指定端口的时候一定要指定是什么协议，tcp 还是 udp。知道这个之后以后就不用每次先关防火墙了，可以让防火墙真正的生效。
+
+```bash
+firewall-cmd --add-service=mysql        # 开放mysql端口
+firewall-cmd --remove-service=http      # 阻止http端口
+firewall-cmd --list-services            # 查看开放的服务
+firewall-cmd --add-port=3306/tcp        # 开放通过tcp访问3306
+firewall-cmd --remove-port=80tcp        # 阻止通过tcp访问3306
+firewall-cmd --add-port=233/udp         # 开放通过udp访问233
+firewall-cmd --list-ports               # 查看开放的端口
+```
+
 伪装 IP
 
 ```bash
