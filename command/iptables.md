@@ -106,19 +106,38 @@ iptables -t 表名 <-A/I/D/R> 规则链名 [规则号] <-i/o 网卡名> -p 协�
 
 #### 列出已设置的规则
 
+> iptables -L [-t 表名] [链名]
+
+- 四个表名 `raw`，`nat`，`filter`，`mangle`
+- 五个规则链名 `INPUT`、`OUTPUT`、`FORWARD`、`PREROUTING`、`POSTROUTING`
+- filter表包含`INPUT`、`OUTPUT`、`FORWARD`三个规则链
+
 ```bash
 iptables -L -t nat                  # 列出 nat 上面的所有规则
 #            ^ -t 参数指定，必须是 raw， nat，filter，mangle 中的一个
 iptables -L -t nat  --line-numbers  # 规则带编号
 iptables -L INPUT
+
+iptables -L -nv  # 查看，这个列表看起来更详细
 ```
 
 #### 清除已有iptables规则
 
+```bash
+iptables -F INPUT  # 清空指定链 INPUT 上面的所有规则
+iptables -X INPUT  # 删除指定的链，这个链必须没有被其它任何规则引用，而且这条上必须没有任何规则。
+                   # 如果没有指定链名，则会删除该表中所有非内置的链。
+iptables -Z INPUT  # 把指定链，或者表中的所有链上的所有计数器清零。
 ```
-iptables -F
-iptables -X
-iptables -Z
+
+#### 删除一条规则
+
+```bash
+# 添加一条规则
+iptables -A INPUT -s 192.168.1.5 -j DROP
+
+# 删除上面添加的规则，删除用-D参数
+iptables -D INPUT -s 192.168.1.5 -j DROP
 ```
 
 #### 开放指定的端口
