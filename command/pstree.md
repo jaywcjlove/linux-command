@@ -41,9 +41,6 @@ pstree -p
 
 ```bash
 pstree  -a
-
-#  |-sshd(1221)-+-sshd(2768)---bash(2770)-+-grep(2810)
-#  |            `-sshd(2807)---sshd(2808)
 ```
 
 获取 SSH 会话的 PID
