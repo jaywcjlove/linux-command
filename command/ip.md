@@ -91,5 +91,11 @@ default via 112.124.15.247 dev eth1
 10.160.15.247 dev eth0 lladdr 00:00:0c:9f:f2:c0 STALE
 ```
 
+**获取主机所有网络接口**
+
+```
+ip link | grep ^[0-9] | awk -F: '{print $2}'
+```
+
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
