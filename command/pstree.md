@@ -39,9 +39,23 @@ pstree -p
 
 显示所有进程的所有详细信息，遇到相同的进程名可以压缩显示。
 
-```
+```bash
 pstree  -a
+
+#  |-sshd(1221)-+-sshd(2768)---bash(2770)-+-grep(2810)
+#  |            `-sshd(2807)---sshd(2808)
 ```
+
+获取 SSH 会话的 PID
+
+```
+pstree -p | grep ssh
+
+#  |-sshd(1221)-+-sshd(2768)---bash(2770)-+-grep(2810)
+#  |            `-sshd(2807)---sshd(2808)
+```
+
+从上方的输出中，你可以看到 sshd 进程与分支的树形图。sshd 的主进程是 sshd（1221），另两个分支分别为 sshd（2768） 和 sshd（2807）。
 
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
