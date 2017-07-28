@@ -35,7 +35,13 @@ help：显示网络对象支持的操作命令的帮助信息。
 
 ### 实例  
 
- **用ip命令显示网络设备的运行状态** 
+```bash
+ip route show # 显示系统路由
+ip route add default via 192.168.1.254   # 设置系统默认路由
+ip route delete 192.168.1.0/24 dev eth0 # 删除路由
+```
+
+**用ip命令显示网络设备的运行状态** 
 
 ```
 [root@localhost ~]# ip link list
@@ -47,7 +53,7 @@ help：显示网络对象支持的操作命令的帮助信息。
     link/ether 00:16:3e:00:1e:52 brd ff:ff:ff:ff:ff:ff
 ```
 
- **显示更加详细的设备信息** 
+**显示更加详细的设备信息** 
 
 ```
 [root@localhost ~]# ip -s link list
@@ -71,7 +77,7 @@ help：显示网络对象支持的操作命令的帮助信息。
     3486617396 9691081  0       0       0       0     
 ```
 
- **显示核心路由表** 
+**显示核心路由表** 
 
 ```
 [root@localhost ~]# ip route list 
@@ -83,7 +89,7 @@ help：显示网络对象支持的操作命令的帮助信息。
 default via 112.124.15.247 dev eth1
 ```
 
- **显示邻居表** 
+**显示邻居表** 
 
 ```
 [root@localhost ~]# ip neigh list
@@ -96,6 +102,5 @@ default via 112.124.15.247 dev eth1
 ```
 ip link | grep ^[0-9] | awk -F: '{print $2}'
 ```
-
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
