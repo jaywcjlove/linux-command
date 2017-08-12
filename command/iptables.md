@@ -18,13 +18,12 @@ Linux上常用的防火墙软件
     - [防火墙的策略](#防火墙的策略-1)
   - [实例](#实例)
     - [列出已设置的规则](#列出已设置的规则)
-    - [清除已有iptables规则](#清除已有iptables规则)
-    - [删除一条规则](#删除一条规则)
+    - [清除已有规则](#清除已有规则)
+    - [删除已添加的规则](#删除已添加的规则)
     - [开放指定的端口](#开放指定的端口)
     - [屏蔽IP](#屏蔽ip)
     - [指定数据包出去的网络接口](#指定数据包出去的网络接口)
-    - [查看已添加的iptables规则](#查看已添加的iptables规则)
-    - [删除已添加的iptables规则](#删除已添加的iptables规则)
+    - [查看已添加的规则](#查看已添加的规则)
     - [启动网络转发规则](#启动网络转发规则)
     - [端口映射](#端口映射)
     - [字符串匹配](#字符串匹配)
@@ -186,7 +185,7 @@ iptables -L INPUT
 iptables -L -nv  # 查看，这个列表看起来更详细
 ```
 
-#### 清除已有iptables规则
+#### 清除已有规则
 
 ```bash
 iptables -F INPUT  # 清空指定链 INPUT 上面的所有规则
@@ -195,14 +194,23 @@ iptables -X INPUT  # 删除指定的链，这个链必须没有被其它任何�
 iptables -Z INPUT  # 把指定链，或者表中的所有链上的所有计数器清零。
 ```
 
-#### 删除一条规则
+#### 删除已添加的规则
 
 ```bash
 # 添加一条规则
 iptables -A INPUT -s 192.168.1.5 -j DROP
+```
 
-# 删除上面添加的规则，删除用-D参数
-iptables -D INPUT -s 192.168.1.5 -j DROP
+将所有iptables以序号标记显示，执行：
+
+```
+iptables -L -n --line-numbers
+```
+
+比如要删除INPUT里序号为8的规则，执行：
+
+```bash
+iptables -D INPUT 8
 ```
 
 #### 开放指定的端口
@@ -237,7 +245,7 @@ iptables -I INPUT -s 123.45.6.0/24 -j DROP    #封IP段即从123.45.6.1到123.45
 iptables -A FORWARD -o eth0
 ```
 
-#### 查看已添加的iptables规则
+#### 查看已添加的规则
 
 ```
 iptables -L -n -v
@@ -255,20 +263,6 @@ Chain FORWARD (policy ACCEPT 0 packets, 0 bytes)
 Chain OUTPUT (policy ACCEPT 3382K packets, 1819M bytes)
  pkts bytes target     prot opt in     out     source               destination         
  5075  589K ACCEPT     all  --  *      lo      0.0.0.0/0            0.0.0.0/0  
-```
-
-#### 删除已添加的iptables规则
-
-将所有iptables以序号标记显示，执行：
-
-```
-iptables -L -n --line-numbers
-```
-
-比如要删除INPUT里序号为8的规则，执行：
-
-```bash
-iptables -D INPUT 8
 ```
 
 #### 启动网络转发规则
