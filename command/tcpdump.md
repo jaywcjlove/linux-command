@@ -1,11 +1,11 @@
 tcpdump
 ===
 
-一款sniffer工具
+一款sniffer工具，是Linux上的抓包工具，嗅探器。
 
 ## 补充说明
 
-**tcpdump命令** 是一款sniffer工具，它可以打印所有经过网络接口的数据包的头信息，也可以使用`-w`选项将数据包保存到文件中，方便以后分析。
+**tcpdump命令** 是一款抓包，嗅探器工具，它可以打印所有经过网络接口的数据包的头信息，也可以使用`-w`选项将数据包保存到文件中，方便以后分析。
 
 ### 语法  
 
@@ -97,6 +97,12 @@ tcpdump ip host ace and not helios
 tcpdump ip host 210.27.48.1 and ! 210.27.48.2
 ```
 
+抓取eth0网卡上的包，使用:
+
+```
+sudo tcpdump -i eth0
+```
+
 截获主机hostname发送的所有数据
 
 ```
@@ -148,6 +154,12 @@ tcpdump ip and not net localnet
 ```
 
 如果本地网络通过网关连到了另一网络，则另一网络并不能算作本地网络。
+
+抓取80端口的HTTP报文，以文本形式展示：
+
+```bash
+sudo tcpdump -i any port 80 -A
+```
 
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
