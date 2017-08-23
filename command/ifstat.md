@@ -19,8 +19,9 @@ wget http://gael.roualland.free.fr/ifstat/ifstat-1.1.tar.gz
 ```
 tar -zxvf ifstat-1.1.tar.gz
 cd ifstat-1.1
-./configure            #默认会安装到/usr/local/bin/目录中
-make ;make  install
+./configure            
+make
+make install # 默认会安装到/usr/local/bin/目录中
 ```
 
 注释：执行`which ifstat`输出`/usr/local/bin/ifstat`
