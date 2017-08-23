@@ -103,7 +103,7 @@ clone
 
 git clone支持多种协议，除了HTTP(s)以外，还支持SSH、Git、本地文件协议等，下面是一些例子。`git clone <版本库的网址> <本地目录名>`  
 
-```shell
+```bash
 $ git clone http[s]://example.com/path/to/repo.git/
 $ git clone ssh://example.com/path/to/repo.git/
 $ git clone git://example.com/path/to/repo.git/
