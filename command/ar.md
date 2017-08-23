@@ -15,7 +15,7 @@ ab(选项)(参数)
 
 ### 选项  
 
-指令参数 
+必要参数 
 
 ```
 -d 　删除备存文件中的成员文件。 
@@ -41,6 +41,50 @@ S 　不产生符号表。
 u 　只将日期较新文件插入备存文件中。 
 v 　程序执行时显示详细的信息。 
 V 　显示版本信息。
+```
+
+### 实例
+
+打包文件
+
+```
+[root@localhost ~]# ls   //显示当前目录文件   
+a.c	b.c d.c   install.log	  qte
+anaconda-ks.cfg c.c Desktop 
+
+[root@localhost ~]# ar rv one.bak a.c b.c //打包 a.c b.c文件 
+ar: 正在创建 one.bak
+a - a.c
+a - b.c
+```
+
+打包多个文件
+
+```
+[root@localhost ~]# ar rv two.bak *.c  //打包以.c结尾的文件  
+ar: 正在创建 two.bak
+a - a.c
+a - b.c
+a - c.c
+a - d.c
+```
+
+显示打包文件的内容
+
+```
+[root@localhost ~]# ar t two.bak    
+a.c
+b.c
+c.c
+d.c
+```
+
+删除打包文件的成员文件
+
+```
+[root@localhost ~]# ar d two.bak a.c b.c c.c  
+[root@localhost ~]# ar t two.bak       
+d.c
 ```
 
 
