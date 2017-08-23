@@ -34,12 +34,18 @@ which(选项)(参数)
 [root@localhost ~]# which pwd
 /bin/pwd
 
-[root@localhost ~]#  which adduser
+[root@localhost ~]# which adduser
 /usr/sbin/adduser
-
 ```
 
 说明：which是根据使用者所配置的 PATH 变量内的目录去搜寻可运行档的！所以，不同的 PATH 配置内容所找到的命令当然不一样的！
 
+用 which 去找出 cd
+
+```
+[root@localhost ~]# which cd
+cd: shell built-in command
+```
+cd 这个常用的命令竟然找不到啊！为什么呢？这是因为 cd 是bash 内建的命令！ 但是 which 默认是找 PATH 内所规范的目录，所以当然一定找不到的！
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
