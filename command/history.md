@@ -48,5 +48,19 @@ n：打印最近的n条历史命令。
   101  history 10
 ```
 
+列出最近3条记录
+
+```
+[root@localhost ~]# history 3
+   15  2017-08-26 11:44:35  root history 3
+   16  2017-08-26 11:44:37  root history n
+   17  2017-08-26 11:44:40  root history 3
+```
+
+清空历史记录
+
+```
+[root@localhost ~]# history -c
+```
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
