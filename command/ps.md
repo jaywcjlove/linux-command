@@ -82,5 +82,18 @@ X：采用旧式的Linux i386登陆格式显示程序状况。
 
 由于ps命令能够支持的系统类型相当的多，所以选项多的离谱！
 
+### 实例
+
+按内存资源的使用量对进程进行排序
+
+```
+ps aux | sort -rnk 4
+```
+
+按 CPU 资源的使用量对进程进行排序
+
+```
+ps aux | sort -nk 3
+```
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
