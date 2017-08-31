@@ -205,7 +205,10 @@ function ReadTmpToHTML(from_path,to_path,md_path,des_json, total_pages){
         marked(README_str.toString(),function(err,md_html){
             if (err) return console.log(error('  → '+md_path+" 转换成HTML失败!"));
 
-            html = html.replace('{{content}}',md_html);
+            html = html.split('{{content}}')
+            html.splice(1, 0, md_html);
+            html = html.join('')
+            // html = html.replace('{{content}}',md_html);
             fs.writeFileSync(new_to_path,html);
             console.log(success("  → ")+to_path + '');
         })
