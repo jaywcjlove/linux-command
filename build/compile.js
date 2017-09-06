@@ -266,6 +266,7 @@ function CreateDatajs(dt_path,callback){
         var title = str.match(/[^===]+(?=[===])/g);
 
         title = title[0]?title[0].replace(/\n/g,''):title[0];
+        title = title.replace(/\r/,'')
         // 命令名称
         json["n"] = title;
         // 命令路径
