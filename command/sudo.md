@@ -34,6 +34,27 @@ sudo(选项)(参数)
 
 ### 实例  
 
+```
+$ sudo su -
+# env | grep -E '(HOME|SHELL|USER|LOGNAME|^PATH|PWD|TEST_ETC|TEST_ZSH|TEST_PRO|TEST_BASH|TEST_HOME|SUDO)'
+```
+
+这个命令相当于使用root超级用户重新登录一次shell，只不过密码是使用的当前用户的密码。而且重要是，该命令会 **重新加载/etc/profile文件以及/etc/bashrc文件等系统配置文件，并且还会重新加载root用户的$SHELL环境变量所对应的配置文件** ，比如：root超级用户的$SHELL是/bin/bash，则会加载/root/.bashrc等配置。如果是/bin/zsh，则会加载/root/.zshrc等配置，执行后是完全的root环境。
+
+```
+$ sudo -i
+# env | grep -E '(HOME|SHELL|USER|LOGNAME|^PATH|PWD|TEST_ETC|TEST_ZSH|TEST_PRO|TEST_BASH|TEST_HOME|SUDO)'
+```
+
+这个命令基本与 `sudo su -` 相同，执行后也是root超级用户的环境，只不过是多了一些当前用户的信息。
+
+```
+$ sudo -s
+# env|grep -E '(HOME|SHELL|USER|LOGNAME|^PATH|PWD|TEST_ETC|TEST_ZSH|TEST_PRO|TEST_BASH|TEST_HOME|SUDO)'  --color
+```
+
+这个命令相当于 **以当前用户的$SHELL开启了一个root超级用户的no-login的shell，不会加载/etc/profile等系统配置** 。所以/etc/profile文件中定义的TEST_ETC环境变量就看不到了，但是会**加载root用户对应的配置文件**，比如root用户的$SHELL是/bin/zsh，那么会加载/root/.zshrc配置文件，执行完后，不会切换当前用户的目录。
+
 配置sudo必须通过编辑`/etc/sudoers`文件，而且只有超级用户才可以修改它，还必须使用visudo编辑。之所以使用visudo有两个原因，一是它能够防止两个用户同时修改它；二是它也能进行有限的语法检查。所以，即使只有你一个超级用户，你也最好用visudo来检查一下语法。
 
 visudo默认的是在vi里打开配置文件，用vi来修改文件。我们可以在编译时修改这个默认项。visudo不会擅自保存带有语法错误的配置文件，它会提示你出现的问题，并询问该如何处理，就像：
