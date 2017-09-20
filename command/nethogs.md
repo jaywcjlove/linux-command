@@ -15,22 +15,71 @@ nethogs
 
 本文为你介绍如何在Unix/Linux操作系统下如何安装和使用NetHogs按进程监控网络带宽使用率。
 
-### 在RHEL、CentOS和Fedora下安装NetHogs  
+
+### 语法  
+
+```
+nethogs（选项）（参数）
+```
+### 选项  
+
+```bash
+usage: nethogs [-V] [-h] [-b] [-d seconds] [-v mode] [-c count] [-t] [-p] [-s] [device [device [device ...]]]
+		-V : 打印版本。
+		-h : 打印此帮助。
+		-b : bughunt模式 - 暗示tracemode。
+		-d : 延迟更新刷新率（以秒为单位）。 默认值为1。
+		-v : 视图模式（0 = KB / s，1 =总KB，2 =总B，3 =总MB）。 默认值为0。
+		-c : 更新次数。 默认为0（无限制）。
+		-t : tracemode.
+		-p : 煽动混乱模式（不推荐）。
+		-s : 按发送列排序输出。
+   -a : 监控所有设备，甚至环回/停止。
+		device : 要监控的设备。 默认是所有接口启动和运行，不包括环回
+
+当nethogs运行时，按：
+  q：退出
+  s：按SENT流量排序
+  r：按RECEIVE流量排序
+  m：在总（KB，B，MB）和KB / s模式之间切换
+```
+
+其他参数和用法
+
+```
+-d : 刷新间隔
+-h : 帮助
+-p : promiscious 模式
+-t : trace模式 
+-V : 版本
+
+```
+
+**交互命令**
+
+以下是NetHogs的一些交互命令（键盘快捷键）
+
+*   m : 修改单位
+*   r : 按流量排序
+*   s : 按发送流量排序
+*   q : 退出命令提示符
+
+### 安装
+
+**在RHEL、CentOS和Fedora下安装NetHogs**
 
 要安装NetHogs，你必须要启用你所用Linux下的EPEL源。然后运行下面的yum命令下载安装NetHogs包。
 
 ```
 # yum install nethogs
-
 ```
 
-### 在Ubuntu、Linux mint和Debian下安装NetHogs  
+**在Ubuntu、Linux mint和Debian下安装NetHogs**
 
 键入apt-get命令安装NetHogs包：
 
 ```
 $ sudo apt-get install nethogs
-
 ```
 
 ### NetHogs用法  
@@ -92,26 +141,6 @@ $ sudo nethogs eth0
 $ sudo nethogs eth0 eth1
 
 ```
-
-其他参数和用法
-
-```
--d : 刷新间隔
--h : 帮助
--p : promiscious 模式
--t : trace模式 
--V : 版本
-
-```
-
-### 交互命令  
-
-以下是NetHogs的一些交互命令（键盘快捷键）
-
-*   m : 修改单位
-*   r : 按流量排序
-*   s : 按发送流量排序
-*   q : 退出命令提示符
 
 关于NetHogs命令行工具的完整参数列表，可以参考NetHogs的手册，使用方法是在终端里输入`man nethogs`或者`sudo man nethogs`，更多信息请参考NetHogs项目主页。
 
