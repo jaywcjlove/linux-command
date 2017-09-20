@@ -25,23 +25,23 @@ nethogs（选项）（参数）
 
 ```bash
 usage: nethogs [-V] [-h] [-b] [-d seconds] [-v mode] [-c count] [-t] [-p] [-s] [device [device [device ...]]]
-		-V : 打印版本。
-		-h : 打印此帮助。
-		-b : bughunt模式 - 暗示tracemode。
-		-d : 延迟更新刷新率（以秒为单位）。 默认值为1。
-		-v : 视图模式（0 = KB / s，1 =总KB，2 =总B，3 =总MB）。 默认值为0。
-		-c : 更新次数。 默认为0（无限制）。
-		-t : tracemode.
-		-p : 煽动混乱模式（不推荐）。
-		-s : 按发送列排序输出。
-   -a : 监控所有设备，甚至环回/停止。
-		device : 要监控的设备。 默认是所有接口启动和运行，不包括环回
+  -V : 打印版本。
+  -h : 打印此帮助。
+  -b : bughunt模式 - 暗示tracemode。
+  -d : 延迟更新刷新率（以秒为单位）。 默认值为1。
+  -v : 视图模式（0 = KB / s，1 =总KB，2 =总B，3 =总MB）。 默认值为0。
+  -c : 更新次数。 默认为0（无限制）。
+  -t : tracemode.
+  -p : 煽动混乱模式（不推荐）。
+  -s : 按发送列排序输出。
+  -a : 监控所有设备，甚至环回/停止。
+  device : 要监控的设备。 默认是所有接口启动和运行，不包括环回
 
 当nethogs运行时，按：
-  q：退出
-  s：按SENT流量排序
-  r：按RECEIVE流量排序
-  m：在总（KB，B，MB）和KB / s模式之间切换
+  q：退出
+  s：按SENT流量排序
+  r：按RECEIVE流量排序
+  m：在总（KB，B，MB）和KB / s模式之间切换
 ```
 
 其他参数和用法
