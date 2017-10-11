@@ -143,6 +143,8 @@ console.log("---->",comm.ls)
 
 #### Adobe软件的最佳替代品
 
+正在寻找 Adobe 的替代品的 Linux 用户吗? [原文在这里](https://linux.cn/article-8928-1.html)
+
 - [Evince (Adobe Acrobat Reader)](https://wiki.gnome.org/Apps/Evince) 一个“支持多种文档格式的文档查看器”，可以查看PDF，还支持各种漫画书格式（cbr、cbz、cb7 和 cbt）
 - [Pixlr (Adobe Photoshop)](https://pixlr.com/) 一个强大的图像编辑工具
 - [Inkscape (Adobe Illustrator)](https://inkscape.org/zh/) 一个专业的矢量图形编辑器
