@@ -141,6 +141,17 @@ console.log("---->",comm.ls)
 - [你要了解的11款面向Linux系统的一流备份实用工具](http://os.51cto.com/art/201603/508027.htm)
 - [16个很有用的在线工具](http://www.simlinux.com/archives/264.html)
 
+#### Adobe软件的最佳替代品
+
+- [Evince (Adobe Acrobat Reader)](https://wiki.gnome.org/Apps/Evince) 一个“支持多种文档格式的文档查看器”，可以查看PDF，还支持各种漫画书格式（cbr、cbz、cb7 和 cbt）
+- [Pixlr (Adobe Photoshop)](https://pixlr.com/) 一个强大的图像编辑工具
+- [Inkscape (Adobe Illustrator)](https://inkscape.org/zh/) 一个专业的矢量图形编辑器
+- [Pinegrow Web Editor (Adobe Dreamweaver)](https://pinegrow.com/) 一个可视化编辑制作 HTML 网站
+- [Scribus (Adobe InDesign)](https://www.scribus.net/) 一个开源电子杂志制作软件
+- [Webflow (Adobe Muse)](https://webflow.com/) 一款可以帮助用户不用编码就可以快速创建网站的谷歌浏览器插件。
+- [Tupi (Adobe Animate)](http://www.maefloresta.com/portal/) 一款可以创建HTML5动画的工具。
+- [Black Magic Fusion (Adobe After Effects)](https://www.blackmagicdesign.com) 一款先进的合成软件，它被广泛应用于视觉特效、广电影视设计、动态图形设计以及3D动画设计等领域。
+
 ### 中国开源镜像站点
 
 - 阿里云开源镜像站：http://mirrors.aliyun.com/
