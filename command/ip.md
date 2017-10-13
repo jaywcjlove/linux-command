@@ -11,11 +11,17 @@ ip
 
 ```
 ip(选项)(参数)
+Usage: ip [ OPTIONS ] OBJECT { COMMAND | help }
+       ip [ -force ] -batch filename
 ```
 
 ### 选项  
 
 ```
+OBJECT := { link | address | addrlabel | route | rule | neigh | ntable |
+       tunnel | tuntap | maddress | mroute | mrule | monitor | xfrm |
+       netns | l2tp | macsec | tcp_metrics | token }
+       
 -V：显示指令版本信息；
 -s：输出更详细的信息；
 -f：强制使用指定的协议族；
@@ -28,6 +34,14 @@ ip(选项)(参数)
 ### 参数  
 
 ```
+OPTIONS := { -V[ersion] | -s[tatistics] | -d[etails] | -r[esolve] |
+        -h[uman-readable] | -iec |
+        -f[amily] { inet | inet6 | ipx | dnet | bridge | link } |
+        -4 | -6 | -I | -D | -B | -0 |
+        -l[oops] { maximum-addr-flush-attempts } |
+        -o[neline] | -t[imestamp] | -ts[hort] | -b[atch] [filename] |
+        -rc[vbuf] [size] | -n[etns] name | -a[ll] }
+        
 网络对象：指定要管理的网络对象；
 具体操作：对指定的网络对象完成具体操作；
 help：显示网络对象支持的操作命令的帮助信息。
