@@ -16,28 +16,105 @@ ls（选项）（参数）
 ### 选项  
 
 ```
--a：显示所有档案及目录（ls内定将档案名或目录名称为“.”的视为隐藏，不会列出）；
--A：显示除隐藏文件“.”和“..”以外的所有文件列表；
--C：多列显示输出结果。这是默认选项；
--l：与“-C”选项功能相反，所有输出信息用单列格式输出，不输出为多列；
--F：在每个输出项后追加文件的类型标识符，具体含义：“*”表示具有可执行权限的普通文件，“/”表示目录，“@”表示符号链接，“|”表示命令管道FIFO，“=”表示sockets套接字。当文件为普通文件时，不输出任何标识符；
--b：将文件中的不可输出的字符以反斜线“”加字符编码的方式输出；
--c：与“-lt”选项连用时，按照文件状态时间排序输出目录内容，排序的依据是文件的索引节点中的ctime字段。与“-l”选项连用时，则排序的一句是文件的状态改变时间；
--d：仅显示目录名，而不显示目录下的内容列表。显示符号链接文件本身，而不显示其所指向的目录列表；
--f：此参数的效果和同时指定“aU”参数相同，并关闭“lst”参数的效果；
--i：显示文件索引节点号（inode）。一个索引节点代表一个文件；
---file-type：与“-F”选项的功能相同，但是不显示“*”；
--k：以KB（千字节）为单位显示文件大小；
--l：以长格式显示目录下的内容列表。输出的信息从左到右依次包括文件名，文件类型、权限模式、硬连接数、所有者、组、文件大小和文件的最后修改时间等；
--m：用“,”号区隔每个文件和目录的名称；
--n：以用户识别码和群组识别码替代其名称；
--r：以文件名反序排列并输出目录内容列表；
--s：显示文件和目录的大小，以区块为单位；
--t：用文件和目录的更改时间排序；
--L：如果遇到性质为符号链接的文件或目录，直接列出该链接所指向的原始文件或目录；
--R：递归处理，将指定目录下的所有文件及子目录一并处理；
---full-time：列出完整的日期与时间；
---color[=WHEN]：使用不同的颜色高亮显示不同类型的。
+
+-a, --all     不隐藏任何以. 开始的项目
+-A, --almost-all    列出除. 及.. 以外的任何项目
+    --author      与-l 同时使用时列出每个文件的作者
+-b, --escape      以八进制溢出序列表示不可打印的字符
+    --block-size=SIZE      scale sizes by SIZE before printing them; e.g.,
+                             '--block-size=M' prints sizes in units of
+                             1,048,576 bytes; see SIZE format below
+-B, --ignore-backups       do not list implied entries ending with ~
+-c                         with -lt: sort by, and show, ctime (time of last
+                             modification of file status information);
+                             with -l: show ctime and sort by name;
+                             otherwise: sort by ctime, newest first
+-C                         list entries by columns
+    --color[=WHEN]         colorize the output; WHEN can be 'never', 'auto',
+                             or 'always' (the default); more info below
+-d, --directory            list directories themselves, not their contents
+-D, --dired                generate output designed for Emacs' dired mode
+-f                         do not sort, enable -aU, disable -ls --color
+-F, --classify             append indicator (one of */=>@|) to entries
+    --file-type            likewise, except do not append '*'
+    --format=WORD          across -x, commas -m, horizontal -x, long -l,
+                             single-column -1, verbose -l, vertical -C
+    --full-time            like -l --time-style=full-iso
+-g        类似-l，但不列出所有者
+    --group-directories-first
+                           group directories before files;
+                             can be augmented with a --sort option, but any
+                             use of --sort=none (-U) disables grouping
+-G, --no-group    以一个长列表的形式，不输出组名
+-h, --human-readable    与-l 一起，以易于阅读的格式输出文件大小
+      (例如 1K 234M 2G)
+    --si      同上面类似，但是使用1000 为基底而非1024
+-H, --dereference-command-line
+                           follow symbolic links listed on the command line
+    --dereference-command-line-symlink-to-dir
+                           follow each command line symbolic link
+                             that points to a directory
+    --hide=PATTERN         do not list implied entries matching shell PATTERN
+                             (overridden by -a or -A)
+    --indicator-style=WORD  append indicator with style WORD to entry names:
+                             none (default), slash (-p),
+                             file-type (--file-type), classify (-F)
+-i, --inode                print the index number of each file
+-I, --ignore=PATTERN       do not list implied entries matching shell PATTERN
+-k, --kibibytes            default to 1024-byte blocks for disk usage
+-l        使用较长格式列出信息
+-L, --dereference   当显示符号链接的文件信息时，显示符号链接所指示
+      的对象而并非符号链接本身的信息
+-m        所有项目以逗号分隔，并填满整行行宽
+-n, --numeric-uid-gid   类似 -l，但列出UID 及GID 号
+-N, --literal     输出未经处理的项目名称 (如不特别处理控制字符)
+-o        类似 -l，但不列出有关组的信息
+-p,  --indicator-style=slash  对目录加上表示符号"/"
+-q, --hide-control-chars   print ? instead of nongraphic characters
+    --show-control-chars   show nongraphic characters as-is (the default,
+                             unless program is 'ls' and output is a terminal)
+-Q, --quote-name           enclose entry names in double quotes
+    --quoting-style=WORD   use quoting style WORD for entry names:
+                             literal, locale, shell, shell-always, c, escape
+-r, --reverse     逆序排列
+-R, --recursive   递归显示子目录
+-s, --size      以块数形式显示每个文件分配的尺寸
+-S                         sort by file size
+    --sort=WORD            sort by WORD instead of name: none (-U), size (-S),
+                             time (-t), version (-v), extension (-X)
+    --time=WORD            with -l, show time as WORD instead of default
+                             modification time: atime or access or use (-u)
+                             ctime or status (-c); also use specified time
+                             as sort key if --sort=time
+    --time-style=STYLE     with -l, show times using style STYLE:
+                             full-iso, long-iso, iso, locale, or +FORMAT;
+                             FORMAT is interpreted like in 'date'; if FORMAT
+                             is FORMAT1<newline>FORMAT2, then FORMAT1 applies
+                             to non-recent files and FORMAT2 to recent files;
+                             if STYLE is prefixed with 'posix-', STYLE
+                             takes effect only outside the POSIX locale
+-t                         sort by modification time, newest first
+-T, --tabsize=COLS         assume tab stops at each COLS instead of 8
+-u                         with -lt: sort by, and show, access time;
+                             with -l: show access time and sort by name;
+                             otherwise: sort by access time
+-U                         do not sort; list entries in directory order
+-v                         natural sort of (version) numbers within text
+-w, --width=COLS           assume screen width instead of current value
+-x                         list entries by lines instead of by columns
+-X                         sort alphabetically by entry extension
+-1                         list one file per line
+
+SELinux options:
+
+--lcontext                 Display security context.   Enable -l. Lines
+                           will probably be too wide for most displays.
+-Z, --context              Display security context so it fits on most
+                           displays.  Displays only mode, user, group,
+                           security context and file name.
+--scontext                 Display only security context and file name.
+    --help    显示此帮助信息并退出
+    --version   显示版本信息并退出
 ```
 
 ### 参数  
