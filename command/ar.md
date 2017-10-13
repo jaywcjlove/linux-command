@@ -11,37 +11,50 @@ ar
 
 ```
 ab(选项)(参数)
+Usage: ar [emulation options] [-]{dmpqrstx}[abcDfilMNoPsSTuvV] [--plugin <name>] [member-name] [count] archive-file file...
+       ar -M [<mri-脚本]
 ```
 
 ### 选项  
 
-必要参数 
 
 ```
--d 　删除备存文件中的成员文件。 
--m 　变更成员文件在备存文件中的次序。 
--p 　显示备存文件中的成员文件内容。 
--q 　将问家附加在备存文件末端。 
--r 　将文件插入备存文件中。 
--t 　显示备存文件中所包含的文件。 
--x 　自备存文件中取出成员文件。 
+d            - 从归档文件中删除文件
+m[ab]        - 在归档文件中移动文件
+p            - 打印在归档文件中找到的文件
+q[f]         - 将文件快速追加到归档文件中
+r[ab][f][u]  - 替换归档文件中已有的文件或加入新文件
+s            - act as ranlib
+t            - 显示归档文件的内容
+x[o]         - 从归档文件中分解文件
+特定命令修饰符：
+[a]          - 将文件置于 [成员名] 之后
+[b]          - 将文件置于 [成员名] 之前 (于 [i] 相同)
+[D]          - use zero for timestamps and uids/gids
+[U]          - use actual timestamps and uids/gids (default)
+[N]          - use instance [count] of name
+[f]          - truncate inserted file names
+[P]          - 在匹配时使用完整的路径名
+[o]          - 保留原来的日期
+[u]          - 只替换比当前归档内容更新的文件
+通用修饰符：
+[c]          - 不在必须创建库的时候给出警告
+[s]          - 创建归档索引 (cf. ranlib)
+[S]          - 不要创建符号表
+[T]          - 做一个压缩档案
+[v]          - 输出较多信息
+[V]          - 显示版本号
+@<file>      - 从<file>读取选项
+--target=BFDNAME - 将目标对象格式指定为BFDNAME
 ```
 
 选项参数 
 
 ```
-a    <成员文件> 　将文件插入备存文件中指定的成员文件之后。 
-b    <成员文件> 　将文件插入备存文件中指定的成员文件之前。 
-c 　建立备存文件。 
-f 　为避免过长的文件名不兼容于其他系统的ar指令指令，因此可利用此参数，截掉要放入备存文件中过长的成员文件名称。 
-i   <成员文件> 　将问家插入备存文件中指定的成员文件之前。 
-o 　保留备存文件中文件的日期。 
-s 　若备存文件中包含了对象模式，可利用此参数建立备存文件的符号表。 
-S 　不产生符号表。 
-u 　只将日期较新文件插入备存文件中。 
-v 　程序执行时显示详细的信息。 
-V 　显示版本信息。
+--plugin <p> - load the specified plugin
 ```
+
+ar：支持的目标： elf64-x86-64 elf32-i386 elf32-x86-64 a.out-i386-linux pei-i386 pei-x86-64 elf64-l1om elf64-k1om elf64-little elf64-big elf32-little elf32-big plugin srec symbolsrec verilog tekhex binary ihex
 
 ### 实例
 
