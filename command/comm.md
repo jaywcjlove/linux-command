@@ -13,27 +13,35 @@ comm
 
 ### 语法  
 
-```
-comm(选项)(参数)
+```bash
+comm [选项]... 文件1 文件2
 ```
 
 ### 选项  
 
 ```
--1：不显示在第一个文件出现的内容；
--2：不显示在第二个文件中出现的内容；
--3：不显示同时在两个文件中都出现的内容。
+如果不附带选项，程序会生成三列输出。
+第一列包含文件1 特有的行，
+第二列包含文件2 特有的行，
+而第三列包含两个文件共有的行。
 
---help 在线帮助。
---version 显示版本信息。
+  -1    不输出文件1 特有的行
+  -2    不输出文件2 特有的行
+  -3    不输出两个文件共有的行
+
+--check-order     检查输入是否被正确排序，即使所有输入行均成对
+--nocheck-order   不检查输入是否被正确排序
+--output-delimiter=STR  依照STR 分列
 ```
 
 ### 参数  
 
-*   文件1：指定要比较的第一个有序文件；
-*   文件2：指定要比较的第二个有序文件。
+* 文件1：指定要比较的第一个**有序**文件；
+* 文件2：指定要比较的第二个**有序**文件。
 
 ### 实例  
+
+文本 `aaa.txt` 内容
 
 ```
 [root@localhost text]# cat aaa.txt 
@@ -46,6 +54,8 @@ eee
 222
 ```
 
+文本 `bbb.txt` 内容
+
 ```
 [root@localhost text]# cat bbb.txt 
 bbb
@@ -56,8 +66,10 @@ ttt
 jjj
 ```
 
+两个文件之间的比较，如果没有排序需要带上`--nocheck-order`参数
+
 ```
-[root@localhost text]# comm aaa.txt bbb.txt 
+[root@localhost text]# comm --nocheck-order aaa.txt bbb.txt 
 aaa
                 bbb
                 ccc
