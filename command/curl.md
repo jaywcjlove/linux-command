@@ -239,10 +239,10 @@ X-Pingback: http://man.linuxde.net/xmlrpc.php
 **get请求**
 
 ```bash
-curl "http://www.baidu.com"    # 如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地
-curl -i "http://www.baidu.com" # 显示全部信息
-curl -l "http://www.baidu.com" # 只显示头部信息
-curl -v "http://www.baidu.com" # 显示get请求全过程解析
+curl "http://www.wangchujiang.com"    # 如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地
+curl -i "http://www.wangchujiang.com" # 显示全部信息
+curl -l "http://www.wangchujiang.com" # 只显示头部信息
+curl -v "http://www.wangchujiang.com" # 显示get请求全过程解析
 ```
 
 **post请求**
