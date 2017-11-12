@@ -236,5 +236,25 @@ Vary: Accept-Encoding
 X-Pingback: http://man.linuxde.net/xmlrpc.php
 ```
 
+**get请求 **
+
+```bash
+curl "http://www.baidu.com"    # 如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地
+curl -i "http://www.baidu.com" # 显示全部信息
+curl -l "http://www.baidu.com" # 只显示头部信息
+curl -v "http://www.baidu.com" # 显示get请求全过程解析
+```
+
+**post请求**
+
+```bash
+curl -d "param1=value1&param2=value2" "http://www.wangchujiang.com"
+```
+
+**json格式的post请求**
+
+```bash
+curl -l -H "Content-type: application/json" -X POST -d '{"phone":"13521389587","password":"test"}' http://wangchujiang.com/apis/users.json
+```
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
