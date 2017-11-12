@@ -121,7 +121,7 @@ curl(选项)(参数)
 
 ### 实例  
 
- **文件下载** 
+**文件下载** 
 
 curl命令可以用来执行下载、发送各种HTTP请求，指定HTTP头部等操作。如果系统没有curl可以使用`yum install curl`安装，也可以下载安装。curl是将下载文件输出到stdout，将进度信息输出到stderr，不显示进度信息使用`--silent`选项。
 
@@ -144,7 +144,7 @@ curl http://man.linuxde.net/test.iso -o filename.iso --progress
 ######################################### 100.0%
 ```
 
- **断点续传** 
+**断点续传** 
 
 curl能够从特定的文件偏移处继续下载，它可以通过指定一个便宜量来下载部分文件：
 
@@ -155,7 +155,7 @@ curl URL/File -C 偏移量
 curl -C -URL
 ```
 
- **使用curl设置参照页字符串** 
+**使用curl设置参照页字符串** 
 
 参照页是位于HTTP头部中的一个字符串，用来表示用户是从哪个页面到达当前页面的，如果用户点击网页A中的某个连接，那么用户就会跳转到B网页，网页B头部的参照页字符串就包含网页A的URL。
 
@@ -165,7 +165,7 @@ curl -C -URL
 curl --referer http://www.google.com http://man.linuxde.net
 ```
 
- **用curl设置cookies** 
+**用curl设置cookies** 
 
 使用`--cookie "COKKIES"`选项来指定cookie，多个cookie使用分号分隔：
 
@@ -179,7 +179,7 @@ curl http://man.linuxde.net --cookie "user=root;pass=123456"
 curl URL --cookie-jar cookie_file
 ```
 
- **用curl设置用户代理字符串** 
+**用curl设置用户代理字符串** 
 
 有些网站访问会提示只能使用IE浏览器来访问，这是因为这些网站设置了检查用户代理，可以使用curl把用户代理设置为IE，这样就可以访问了。使用`--user-agent`或者`-A`选项：
 
@@ -194,7 +194,7 @@ curl URL -A "Mozilla/5.0"
 curl -H "Host:man.linuxde.net" -H "accept-language:zh-cn" URL
 ```
 
- **curl的带宽控制和下载配额** 
+**curl的带宽控制和下载配额** 
 
 使用`--limit-rate`限制curl的下载速度：
 
@@ -212,7 +212,7 @@ curl URL --max-filesize bytes
 
 如果文件大小超出限制，命令则返回一个非0退出码，如果命令正常则返回0。
 
- **用curl进行认证** 
+**用curl进行认证** 
 
 使用curl选项 -u 可以完成HTTP或者FTP的认证，可以指定密码，也可以不指定密码在后续操作中输入密码：
 
@@ -221,7 +221,7 @@ curl -u user:pwd http://man.linuxde.net
 curl -u user http://man.linuxde.net
 ```
 
- **只打印响应头部信息** 
+**只打印响应头部信息** 
 
 通过`-I`或者`-head`可以只打印出HTTP头部信息：
 
@@ -236,7 +236,7 @@ Vary: Accept-Encoding
 X-Pingback: http://man.linuxde.net/xmlrpc.php
 ```
 
-**get请求 **
+**get请求**
 
 ```bash
 curl "http://www.baidu.com"    # 如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地
