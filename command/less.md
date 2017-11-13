@@ -30,5 +30,10 @@ less(选项)(参数)
 
 文件：指定要分屏显示内容的文件。
 
+## 实例
+
+```bash
+sudo less /var/log/shadowsocks.log
+```
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
