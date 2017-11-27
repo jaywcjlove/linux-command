@@ -12,11 +12,19 @@ Linux上常用的防火墙软件
 - [补充说明](#补充说明)
   - [语法](#语法)
   - [选项](#选项)
+- [基本参数](#基本参数)
     - [命令选项输入顺序](#命令选项输入顺序)
     - [工作机制](#工作机制)
     - [防火墙的策略](#防火墙的策略)
     - [防火墙的策略](#防火墙的策略-1)
   - [实例](#实例)
+    - [空当前的所有规则和计数](#空当前的所有规则和计数)
+    - [配置允许ssh端口连接](#配置允许ssh端口连接)
+    - [允许本地回环地址可以正常使用](#允许本地回环地址可以正常使用)
+    - [设置默认的规则](#设置默认的规则)
+    - [配置白名单](#配置白名单)
+    - [开启相应的服务端口](#开启相应的服务端口)
+    - [保存规则到配置文件中](#保存规则到配置文件中)
     - [列出已设置的规则](#列出已设置的规则)
     - [清除已有规则](#清除已有规则)
     - [删除已添加的规则](#删除已添加的规则)
@@ -185,6 +193,61 @@ iptables还支持自己定义链。但是自己定义的链，必须是跟某种
 
 
 ### 实例  
+
+#### 空当前的所有规则和计数
+
+```bash
+iptables -F  # 清空所有的防火墙规则
+iptables -X  # 删除用户自定义的空链
+iptables -Z  # 清空计数
+```
+
+#### 配置允许ssh端口连接
+
+```bash
+iptables -A INPUT -s 192.168.1.0/24 -p tcp --dport 22 -j ACCEPT  
+# 22为你的ssh端口， -s 192.168.1.0/24表示允许这个网段的机器来连接，其它网段的ip地址是登陆不了你的机器的。 -j ACCEPT表示接受这样的请求
+```
+
+#### 允许本地回环地址可以正常使用
+
+```bash
+iptables -A INPUT -i lo -j ACCEPT  
+#本地圆环地址就是那个127.0.0.1，是本机上使用的,它进与出都设置为允许
+iptables -A OUTPUT -o lo -j ACCEPT
+```
+
+#### 设置默认的规则
+
+```bash
+iptables -P INPUT DROP # 配置默认的不让进
+iptables -P FORWARD DROP # 默认的不允许转发
+iptables -P OUTPUT ACCEPT # 默认的可以出去
+```
+
+#### 配置白名单
+
+```bash
+iptables -A INPUT -p all -s 192.168.1.0/24 -j ACCEPT  # 允许机房内网机器可以访问
+iptables -A INPUT -p all -s 192.168.140.0/24 -j ACCEPT  # 允许机房内网机器可以访问
+iptables -A INPUT -p tcp -s 183.121.3.7 --dport 3380 -j ACCEPT # 允许183.121.3.7访问本机的3380端口
+```
+
+#### 开启相应的服务端口
+
+```bash
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT # 开启80端口，因为web对外都是这个端口
+iptables -A INPUT -p icmp --icmp-type 8 -j ACCEPT # 允许被ping
+iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT # 已经建立的连接得让它进来
+```
+
+#### 保存规则到配置文件中
+
+```bash
+cp /etc/sysconfig/iptables /etc/sysconfig/iptables.bak # 任何改动之前先备份，请保持这一优秀的习惯
+iptables-save > /etc/sysconfig/iptables 
+cat /etc/sysconfig/iptables
+```
 
 #### 列出已设置的规则
 
