@@ -69,7 +69,7 @@ OpenSSL实现了5种信息摘要算法，分别是MD2、MD5、MDC2、SHA（SHA1�
 # openssl sha1 -sign rsaprivate.pem -out rsasign.bin file.txt
 ```
 
-# 用sha1算法验证file.txt的数字签名rsasign.bin，验证的public key为RSA算法生成的rsapublic.pem。
+用sha1算法验证file.txt的数字签名rsasign.bin，验证的public key为RSA算法生成的rsapublic.pem。
 
 ```
 # openssl sha1 -verify rsapublic.pem -signature rsasign.bin file.txt
