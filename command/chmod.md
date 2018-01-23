@@ -95,4 +95,22 @@ ll -d f1  查看目录f1的属性
 ```
 
 
+将`/home/wwwroot/`里的所有文件和文件夹设置为`755`权限
+
+(1)直接指定路径修改
+
+```bash
+chmod -R  755 /home/wwwroot/*
+```
+
+(2)手动进入该目录修改权限（并显示详细过程）
+
+
+```bash
+cd /home/wwwroot
+chmod -Rv  755 *       #注意：“*”表示通配符，指的是所有文件和文件
+sudo chmod o+rw /shared #设置文件夹权限以保证其余用户可以访问它。
+```
+
+
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
