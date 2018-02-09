@@ -35,9 +35,20 @@ OpenSSL实现了5种信息摘要算法，分别是MD2、MD5、MDC2、SHA（SHA1�
 
 事实上，OpenSSL提供的CA应用程序就是一个小型的证书管理中心（CA），实现了证书签发的整个流程和证书管理的大部分机制。
 
-### 实例  
+### 实例
 
- **1、消息摘要算法应用例子** 
+**1、使用 openssl 生成密码**
+
+几乎所有 Linux 发行版都包含 openssl。我们可以利用它的随机功能来生成可以用作密码的随机字母字符串。
+
+```bash
+openssl rand -base64 10
+# nU9LlHO5nsuUvw==
+```
+
+nU9LlHO5nsuUvw==
+
+**2、消息摘要算法应用例子** 
 
 用SHA1算法计算文件file.txt的哈西值，输出到stdout：
 
@@ -75,7 +86,7 @@ OpenSSL实现了5种信息摘要算法，分别是MD2、MD5、MDC2、SHA（SHA1�
 # openssl sha1 -verify rsapublic.pem -signature rsasign.bin file.txt
 ```
 
- **2、对称加密应用例子** 
+ **3、对称加密应用例子** 
 
 对称加密应用例子，用DES3算法的CBC模式加密文件plaintext.doc，加密结果输出到文件ciphertext.bin。
 
@@ -107,7 +118,7 @@ OpenSSL实现了5种信息摘要算法，分别是MD2、MD5、MDC2、SHA（SHA1�
 # openssl rc5 -in plaintext.doc -out ciphertext.bin -S C62CB1D49F158ADC -iv E9EDACA1BD7090C6 -K 89D4B1678D604FAA3DBFFD030A314B29
 ```
 
- **3、Diffie-Hellman应用例子** 
+ **4、Diffie-Hellman应用例子** 
 
 使用生成因子2和随机的1024-bit的素数产生D0ffie-Hellman参数，输出保存到文件dhparam.pem
 
@@ -121,7 +132,7 @@ OpenSSL实现了5种信息摘要算法，分别是MD2、MD5、MDC2、SHA（SHA1�
 # openssl dhparam -in dhparam.pem -noout -C
 ```
 
- **4、DSA应用例子应用例子** 
+ **5、DSA应用例子应用例子** 
 
 生成1024位DSA参数集，并输出到文件dsaparam.pem。
 
@@ -147,7 +158,7 @@ OpenSSL实现了5种信息摘要算法，分别是MD2、MD5、MDC2、SHA（SHA1�
 # openssl dsa -in dsaprivatekey.pem -out dsaprivatekey.pem -des3 -passin
 ```
 
- **5、RSA应用例子** 
+ **6、RSA应用例子** 
 
 产生1024位RSA私匙，用3DES加密它，口令为trousers，输出到文件rsaprivatekey.pem
 
