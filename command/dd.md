@@ -53,74 +53,31 @@ skip=<区块数>：一开始读取时，跳过指定的区块数；
 
 块大小可以使用的计量单位表
 
-<table>
-
-<tbody>
-
-<tr>
-
-<td>单元大小</td>
-
-<td>代码</td>
-
-</tr>
-
-<tr>
-
-<td>字节（1B）</td>
-
-<td>c</td>
-
-</tr>
-
-<tr>
-
-<td>字节（2B）</td>
-
-<td>w</td>
-
-</tr>
-
-<tr>
-
-<td>块（512B）</td>
-
-<td>b</td>
-
-</tr>
-
-<tr>
-
-<td>千字节（1024B）</td>
-
-<td>k</td>
-
-</tr>
-
-<tr>
-
-<td>兆字节（1024KB）</td>
-
-<td>M</td>
-
-</tr>
-
-<tr>
-
-<td>吉字节（1024MB）</td>
-
-<td>G</td>
-
-</tr>
-
-</tbody>
-
-</table>
+单元大小 | 代码
+---- | ----
+字节（1B）| c
+字节（2B）| w
+块（512B）| b
+千字节（1024B） | k
+兆字节（1024KB）| M
+吉字节（1024MB）| G
 
 以上命令可以看出dd命令来测试内存操作速度：
 
 ```
 1048576 bytes (1.0 MB) copied, 0.006107 seconds, 172 MB/s
+```
+
+**生成随机字符串**
+
+我们甚至可以使用 /dev/urandom 设备配合 dd 命令 来获取随机字符串。
+
+```
+[root@localhost ~]# dd if=/dev/urandom bs=1 count=15|base64 -w 0
+15+0 records in
+15+0 records out
+15 bytes (15 B) copied, 0.000111993 s, 134 kB/s
+wFRAnlkXeBXmWs1MyGEs
 ```
 
 
