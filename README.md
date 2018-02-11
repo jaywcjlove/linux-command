@@ -18,7 +18,7 @@ Chrome 插件，可在[源码仓库](https://github.com/jaywcjlove/oscnews)预�
 
 [![Chrome Web Store 下载](http://jaywcjlove.github.io/sb/download/chrome-web-store.svg)](https://chrome.google.com/webstore/detail/oscnews/iheapfheanfjcemgneblljhaebonakbg)
 
-[![Chrome Web Store 下载](./chrome-extensions.png)](https://github.com/jaywcjlove/oscnews)
+[![Chrome Web Store 下载](./chrome-extensions.gif)](https://github.com/jaywcjlove/oscnews)
 
 扫描二维码移动端预览搜索
 
