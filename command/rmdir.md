@@ -33,11 +33,22 @@ rmdir(选项)(参数)
 
 ### 实例  
 
-删除子目录os_1和其父目录bin
+将工作目录下，名为 `www` 的子目录删除 :
 
+```bash
+rmdir www
 ```
-cd /usr/meng/test
-rmdir -p bin/os_1
+
+在工作目录下的 www 目录中，删除名为 Test 的子目录。若 Test 删除后，www 目录成为空目录，则 www 亦予删除。
+
+```bash
+rmdir -p www/Test
+```
+
+下面命令等价于 `rmdir a/b/c`, `rmdir a/b`, `rmdir a`
+
+```bash
+rmdir -p a/b/c
 ```
 
 
