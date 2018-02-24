@@ -45,5 +45,11 @@ rmdir www
 rmdir -p www/Test
 ```
 
+下面命令等价于 `rmdir a/b/c`, `rmdir a/b`, `rmdir a`
+
+```bash
+rmdir -p a/b/c
+```
+
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
