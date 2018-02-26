@@ -77,6 +77,11 @@ tar -tf all.tar
 # 这条命令是列出all.tar包中所有文件，-t是列出文件的意思
 ```
 
+```bash
+tar -cfv archive.tar foo bar  # 从文件foo和bar创建archive.tar。
+tar -tvf archive.tar         # 详细列出archive.tar中的所有文件。
+tar -xf archive.tar          # 从archive.tar提取所有文件。
+```
 
 #### zip格式
 
