@@ -1,10 +1,8 @@
+assets
 build/
-node_modules/
-.deploy
-template/
-.DS_Store
-qr.png
-.gitattributes
-Linux.gif 
-alfred.png 
 command
+node_modules/
+template/
+.deploy
+.DS_Store
+.gitattributes
