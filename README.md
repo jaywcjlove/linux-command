@@ -14,23 +14,29 @@ Linux Command
 
 [Github Web版](https://jaywcjlove.github.io/linux-command/) | [开源中国Web版](http://jaywcjlove.gitee.io/linux-command/) | [其它Web版](http://linux-command.composer-proxy.org/) | [Alfred 版本下载](https://github.com/jaywcjlove/linux-command/releases) | [Android版本实现](https://github.com/Ernest-su/LinuxCmd.git) | [Mac/Win/Linux](https://github.com/haloislet/linux-command) | [Chrome插件](https://github.com/jaywcjlove/oscnews)
 
-Chrome 插件，可在[源码仓库](https://github.com/jaywcjlove/oscnews)预览效果，[Github下载 oscnews.crx 文件](https://github.com/jaywcjlove/oscnews/releases) 或者[开源中国下载 oscnews.crx 文件](https://gitee.com/jaywcjlove/oscnews/releases) 也可通过 Chrome Web Store 下载：
+#### Chrome 插件
+
+可在[源码仓库](https://github.com/jaywcjlove/oscnews)预览效果，[Github下载 oscnews.crx 文件](https://github.com/jaywcjlove/oscnews/releases) 或者[开源中国下载 oscnews.crx 文件](https://gitee.com/jaywcjlove/oscnews/releases) 也可通过 Chrome Web Store 下载：
 
 [![Chrome Web Store 下载](http://jaywcjlove.github.io/sb/download/chrome-web-store.svg)](https://chrome.google.com/webstore/detail/oscnews/iheapfheanfjcemgneblljhaebonakbg)
 
-[![Chrome Web Store 下载](./chrome-extensions.gif)](https://github.com/jaywcjlove/oscnews)
+[![Chrome Web Store 下载](./assets/chrome-extensions.gif)](https://github.com/jaywcjlove/oscnews)
 
-扫描二维码移动端预览搜索
+#### 官方 Web 版本
 
-[![Linux 命令大全](./qr.png)](https://jaywcjlove.github.io/linux-command/)
+扫描二维码移动端预览搜索，也可通过二维码下面链接地址打开使用。
+
+[![Linux 命令大全](./assets/qr.png)](https://jaywcjlove.github.io/linux-command/)
 
 预览搜索：**https://git.io/linux**
 
-[![Linux 命令大全](./Linux.gif)](https://jaywcjlove.github.io/linux-command/)
+[![Linux 命令大全](./assets/Linux.gif)](https://jaywcjlove.github.io/linux-command/)
 
-[Alfred 版本下载](https://github.com/jaywcjlove/linux-command/releases) 
+#### Alfred 版本
 
-[![Linux 命令大全](./alfred.png)](https://github.com/jaywcjlove/linux-command/releases)
+[Alfred 版本下载](https://github.com/jaywcjlove/linux-command/releases)， 下图是界面效果。 
+
+[![Linux 命令大全](./assets/alfred.png)](https://github.com/jaywcjlove/linux-command/releases)
 
 ## 目录
 
@@ -58,7 +64,7 @@ Chrome 插件，可在[源码仓库](https://github.com/jaywcjlove/oscnews)预�
 
 ## Linux命令分类
 
-*这里存放Linux 命令大全并不全，你可以通过[linux-command](https://jaywcjlove.github.io/linux-command/)来搜索，它是把 [command](./command) 目录里面搜集的命令，生成了静态HTML并提供预览以及索引搜索。*
+*这里存放Linux 命令大全并不全，你可以通过[linux-command](https://jaywcjlove.github.io/linux-command/)来搜索，它是把 [command](./assets/command) 目录里面搜集的命令，生成了静态HTML并提供预览以及索引搜索。*
 
 ### 文件传输
 
