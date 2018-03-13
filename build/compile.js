@@ -110,7 +110,8 @@ CreateDatajs('./.deploy/js/dt.js',function(dt_path,arr){
     arr.forEach(function(itm,idx){
         var ejstpm = path.join('/template/',itm.p);
         var md_path = path.join('/command',itm.p);
-        var dep = path.join('/.deploy/c',itm.p);      
+        var dep = path.join('/.deploy/c',itm.p);
+        itm.command_length = arr.length;
         ReadTmpToHTML('/template/details.ejs', dep+'.html' ,md_path+'.md', itm ,arr)
     });
 
