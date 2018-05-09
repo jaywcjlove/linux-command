@@ -60,7 +60,7 @@ scp -r root@10.10.10.10:/opt/soft/mongodb /opt/soft/
 
 ```bash
 scp /opt/soft/nginx-0.5.38.tar.gz root@10.10.10.10:/opt/soft/scptest
-# 添加断开 2222
+# 指定端口 2222
 scp -rp -P 2222 /opt/soft/nginx-0.5.38.tar.gz root@10.10.10.10:/opt/soft/scptest
 ```
 
