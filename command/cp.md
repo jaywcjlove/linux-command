@@ -102,5 +102,12 @@ cp -rfb ./* ../backup
 # 将当前目录下所有文件，复制到当前目录的兄弟目录 backup 文件夹中
 ```
 
+拷贝目录下的隐藏文件如 `.babelrc`
+
+```bash
+cp -r aaa/.* ./bbb
+# 将 aaa 目录下的，所有`.`开头的文件，复制到 bbb 目录中。
+```
+
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
