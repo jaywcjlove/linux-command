@@ -107,6 +107,9 @@ cp -rfb ./* ../backup
 ```bash
 cp -r aaa/.* ./bbb
 # 将 aaa 目录下的，所有`.`开头的文件，复制到 bbb 目录中。
+
+cp -a aaa ./bbb/ 
+# 记住后面目录最好的'/' 带上 `-a` 参数
 ```
 
 
