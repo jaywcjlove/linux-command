@@ -133,8 +133,8 @@ console.log("---->",alias) // markdown string
 
 ### CDN
 
-https://unpkg.com/linux-command/dist/data.json 命令总 JSON 数据
-https://unpkg.com/linux-command/command/alias.md 对应命令详情（Markdown）数据
+https://unpkg.com/linux-command/dist/data.json 命令总 JSON 数据  
+https://unpkg.com/linux-command/command/alias.md 对应命令详情（Markdown）数据  
 
 
 ## Linux学习资源整理
