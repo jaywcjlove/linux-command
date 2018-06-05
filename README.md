@@ -114,6 +114,8 @@ archive、ctlinnd、elm、getlist、inncheck、mail、mailconf、mailq、message
 
 yes
 
+## 使用
+
 ### Node调用
 
 ```
@@ -125,7 +127,14 @@ npm install linux-command
 var comm = require("linux-command")
 console.log("---->",comm.ls)
 
+var alias = require("linux-command/command/alias.md")
+console.log("---->",alias) // markdown string
 ```
+
+### CDN
+
+https://unpkg.com/linux-command/dist/data.json 命令总 JSON 数据
+https://unpkg.com/linux-command/command/alias.md 对应命令详情（Markdown）数据
 
 
 ## Linux学习资源整理
