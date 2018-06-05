@@ -1,6 +1,5 @@
 assets
 build/
-command
 node_modules/
 template/
 .deploy
