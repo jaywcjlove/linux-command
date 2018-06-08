@@ -7,7 +7,7 @@ rsync
 
 **rsync命令** 是一个远程数据同步工具，可通过LAN/WAN快速同步多台主机间的文件。rsync使用所谓的“rsync算法”来使本地和远程两个主机之间的文件达到同步，这个算法只传送两个文件的不同部分，而不是每次都整份传送，因此速度相当快。 rsync是一个功能非常强大的工具，其命令也有很多功能特色选项，我们下面就对它的选项一一进行分析说明。
 
-### 语法  
+### 语法
 
 ```
 rsync [OPTION]... SRC DEST
@@ -27,7 +27,7 @@ rsync [OPTION]... rsync://[USER@]HOST[:PORT]/SRC [DEST]
 5.  从本地机器拷贝文件到远程rsync服务器中。当DST路径信息包含"::"分隔符时启动该模式。如：`rsync -av /databack root@192.168.78.192::www`
 6.  列远程机的文件列表。这类似于rsync传输，不过只要在命令中省略掉本地机信息即可。如：`rsync -v rsync://192.168.78.192/www`
 
-### 选项  
+### 选项
 
 ```
 -v, --verbose 详细模式输出。
@@ -93,9 +93,9 @@ rsync [OPTION]... rsync://[USER@]HOST[:PORT]/SRC [DEST]
 -h, --help 显示帮助信息。
 ```
 
-### 实例  
+### 实例
 
- **SSH方式** 
+ **SSH方式**
 
 首先在服务端启动ssh服务：
 
@@ -104,7 +104,7 @@ service sshd start
 启动 sshd： [确定]
 ```
 
- **使用rsync进行同步** 
+ **使用rsync进行同步**
 
 接下来就可以在客户端使用rsync命令来备份服务端上的数据了，SSH方式是通过系统用户来进行备份的，如下：
 
@@ -128,7 +128,7 @@ total size is 100663363 speedup is 1024.19
 
 上面的信息描述了整个的备份过程，以及总共备份数据的大小。
 
- **后台服务方式** 
+ **后台服务方式**
 
 启动rsync服务，编辑`/etc/xinetd.d/rsync`文件，将其中的`disable=yes`改为`disable=no`，并重启xinetd服务，如下：
 
@@ -221,6 +221,5 @@ c
 sent 258 bytes received 76 bytes 95.43 bytes/sec
 total size is 150995011 speedup is 452080.87
 ```
-
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

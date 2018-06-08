@@ -13,19 +13,19 @@ OpenSSL有两种运行模式：交互模式和批处理模式。
 
 OpenSSL整个软件包大概可以分成三个主要的功能部分：密码算法库、SSL协议库以及应用程序。OpenSSL的目录结构自然也是围绕这三个功能部分进行规划的。 
 
- **对称加密算法** 
+ **对称加密算法**
 
 OpenSSL一共提供了8种对称加密算法，其中7种是分组加密算法，仅有的一种流加密算法是RC4。这7种分组加密算法分别是AES、DES、Blowfish、CAST、IDEA、RC2、RC5，都支持电子密码本模式（ECB）、加密分组链接模式（CBC）、加密反馈模式（CFB）和输出反馈模式（OFB）四种常用的分组密码加密模式。其中，AES使用的加密反馈模式（CFB）和输出反馈模式（OFB）分组长度是128位，其它算法使用的则是64位。事实上，DES算法里面不仅仅是常用的DES算法，还支持三个密钥和两个密钥3DES算法。 
 
- **非对称加密算法** 
+ **非对称加密算法**
 
 OpenSSL一共实现了4种非对称加密算法，包括DH算法、RSA算法、DSA算法和椭圆曲线算法（EC）。DH算法一般用户密钥交换。RSA算法既可以用于密钥交换，也可以用于数字签名，当然，如果你能够忍受其缓慢的速度，那么也可以用于数据加密。DSA算法则一般只用于数字签名。 
 
- **信息摘要算法** 
+ **信息摘要算法**
 
 OpenSSL实现了5种信息摘要算法，分别是MD2、MD5、MDC2、SHA（SHA1）和RIPEMD。SHA算法事实上包括了SHA和SHA1两种信息摘要算法，此外，OpenSSL还实现了DSS标准中规定的两种信息摘要算法DSS和DSS1。 
 
- **密钥和证书管理** 
+ **密钥和证书管理**
 
 密钥和证书管理是PKI的一个重要组成部分，OpenSSL为之提供了丰富的功能，支持多种标准。 
 
@@ -48,7 +48,7 @@ openssl rand -base64 10
 
 nU9LlHO5nsuUvw==
 
-**2、消息摘要算法应用例子** 
+**2、消息摘要算法应用例子**
 
 用SHA1算法计算文件file.txt的哈西值，输出到stdout：
 
@@ -86,7 +86,7 @@ nU9LlHO5nsuUvw==
 # openssl sha1 -verify rsapublic.pem -signature rsasign.bin file.txt
 ```
 
- **3、对称加密应用例子** 
+ **3、对称加密应用例子**
 
 对称加密应用例子，用DES3算法的CBC模式加密文件plaintext.doc，加密结果输出到文件ciphertext.bin。
 
@@ -118,7 +118,7 @@ nU9LlHO5nsuUvw==
 # openssl rc5 -in plaintext.doc -out ciphertext.bin -S C62CB1D49F158ADC -iv E9EDACA1BD7090C6 -K 89D4B1678D604FAA3DBFFD030A314B29
 ```
 
- **4、Diffie-Hellman应用例子** 
+ **4、Diffie-Hellman应用例子**
 
 使用生成因子2和随机的1024-bit的素数产生D0ffie-Hellman参数，输出保存到文件dhparam.pem
 
@@ -132,7 +132,7 @@ nU9LlHO5nsuUvw==
 # openssl dhparam -in dhparam.pem -noout -C
 ```
 
- **5、DSA应用例子应用例子** 
+ **5、DSA应用例子应用例子**
 
 生成1024位DSA参数集，并输出到文件dsaparam.pem。
 
@@ -158,7 +158,7 @@ nU9LlHO5nsuUvw==
 # openssl dsa -in dsaprivatekey.pem -out dsaprivatekey.pem -des3 -passin
 ```
 
- **6、RSA应用例子** 
+ **6、RSA应用例子**
 
 产生1024位RSA私匙，用3DES加密它，口令为trousers，输出到文件rsaprivatekey.pem
 
@@ -220,5 +220,13 @@ cert.pem为X.509证书文件，用私匙key,pem为mail.txt签名，证书被包�
 # openssl smime -verify -in mail.sgn -out mail.txt
 ```
 
+更多实例:
+
+```
+openssl version -a
+openssl help
+openssl genrsa -aes128 -out fd.key 2048 # pem format
+openssl rsa -text -in fd.key
+```
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

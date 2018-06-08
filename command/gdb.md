@@ -25,7 +25,7 @@ gdb
 
 <td>file <文件名></td>
 
-<td>加载被调试的可执行程序文件。  
+<td>加载被调试的可执行程序文件。
 因为一般都在被调试程序所在目录下执行GDB，因而文本名不需要带路径。</td>
 
 <td>(gdb) file gdb-sample</td>
@@ -36,7 +36,7 @@ gdb
 
 <td>r</td>
 
-<td>Run的简写，运行被调试的程序。  
+<td>Run的简写，运行被调试的程序。
 如果此前没有下过断点，则执行完整个程序；如果有断点，则程序暂停在第一个可用断点处。</td>
 
 <td>(gdb) r</td>
@@ -55,17 +55,17 @@ gdb
 
 <tr>
 
-<td>b <行号>  
-b <函数名称>  
-b *<函数名称>  
+<td>b <行号>
+b <函数名称>
+b *<函数名称>
 b *<代码地址> d [编号]</td>
 
-<td>b: Breakpoint的简写，设置断点。两可以使用“行号”“函数名称”“执行地址”等方式指定断点位置。  
+<td>b: Breakpoint的简写，设置断点。两可以使用“行号”“函数名称”“执行地址”等方式指定断点位置。
 其中在函数名称前面加“*”符号表示将断点设置在“由编译器生成的prolog代码处”。如果不了解汇编，可以不予理会此用法。 d: Delete breakpoint的简写，删除指定编号的某个断点，或删除所有断点。断点编号从1开始递增。</td>
 
-<td>(gdb) b 8  
-(gdb) b main  
-(gdb) b *main  
+<td>(gdb) b 8
+(gdb) b main
+(gdb) b *main
 (gdb) b *0x804835c (gdb) d</td>
 
 </tr>
@@ -74,11 +74,11 @@ b *<代码地址> d [编号]</td>
 
 <td>s, n</td>
 
-<td>s: 执行一行源程序代码，如果此行代码中有函数调用，则进入该函数；  
-n: 执行一行源程序代码，此行代码中的函数调用也一并执行。 s 相当于其它调试器中的“Step Into (单步跟踪进入)”；  
+<td>s: 执行一行源程序代码，如果此行代码中有函数调用，则进入该函数；
+n: 执行一行源程序代码，此行代码中的函数调用也一并执行。 s 相当于其它调试器中的“Step Into (单步跟踪进入)”；
 n 相当于其它调试器中的“Step Over (单步跟踪)”。 这两个命令必须在有源代码调试信息的情况下才可以使用（GCC编译时使用“-g”参数）。</td>
 
-<td>(gdb) s  
+<td>(gdb) s
 (gdb) n</td>
 
 </tr>
@@ -89,7 +89,7 @@ n 相当于其它调试器中的“Step Over (单步跟踪)”。 这两个命�
 
 <td>si命令类似于s命令，ni命令类似于n命令。所不同的是，这两个命令（si/ni）所针对的是汇编指令，而s/n针对的是源代码。</td>
 
-<td>(gdb) si  
+<td>(gdb) si
 (gdb) ni</td>
 
 </tr>
@@ -100,7 +100,7 @@ n 相当于其它调试器中的“Step Over (单步跟踪)”。 这两个命�
 
 <td>Print的简写，显示指定变量（临时变量或全局变量）的值。</td>
 
-<td>(gdb) p i  
+<td>(gdb) p i
 (gdb) p nGlobalVar</td>
 
 </tr>
@@ -109,9 +109,9 @@ n 相当于其它调试器中的“Step Over (单步跟踪)”。 这两个命�
 
 <td>display ... undisplay <编号></td>
 
-<td>display，设置程序中断后欲显示的数据及其格式。  
-例如，如果希望每次程序中断后可以看到即将被执行的下一条汇编指令，可以使用命令  
-“display /i $pc”  
+<td>display，设置程序中断后欲显示的数据及其格式。
+例如，如果希望每次程序中断后可以看到即将被执行的下一条汇编指令，可以使用命令
+“display /i $pc”
 其中 $pc 代表当前汇编指令，/i 表示以十六进行显示。当需要关心汇编代码时，此命令相当有用。 undispaly，取消先前的display设置，编号从1开始递增。</td>
 
 <td>(gdb) display /i $pc (gdb) undisplay 1</td>
@@ -142,7 +142,7 @@ n 相当于其它调试器中的“Step Over (单步跟踪)”。 这两个命�
 
 <td>help [命令名称]</td>
 
-<td>GDB帮助命令，提供对GDB名种命令的解释说明。  
+<td>GDB帮助命令，提供对GDB名种命令的解释说明。
 如果指定了“命令名称”参数，则显示该命令的详细说明；如果没有指定参数，则分类显示所有GDB命令，供用户进一步浏览和查询。</td>
 
 <td>(gdb) help</td>
@@ -153,13 +153,13 @@ n 相当于其它调试器中的“Step Over (单步跟踪)”。 这两个命�
 
 </table>
 
-### 语法  
+### 语法
 
 ```
 gdb(选项)(参数)
 ```
 
-### 选项  
+### 选项
 
 ```
 -cd：设置工作目录；
@@ -169,11 +169,11 @@ gdb(选项)(参数)
 -s：设置读取的符号表文件。
 ```
 
-### 参数  
+### 参数
 
 文件：二进制可执行程序。
 
-### 实例  
+### 实例
 
 以下是linux下dgb调试的一个实例，先给出一个示例用的小程序，C语言代码：
 
@@ -457,5 +457,50 @@ eax 0xbffff6a4 -1073744220
 The program is running. exit anyway? (y or n)
 ```
 
+## 补充内容
+
+> gdb 教程：[慕课网-Linux C语言指针与内存-第三章](http://www.imooc.com/learn/394)
+
+如果删除源代码, 就无法显示行号等辅助信息了
+
+```
+gcc -g gdb.c -o gdb.out # -g 支持gdb调试; -o 输出, 默认为 a.out
+
+gdb gdb.out # 进入 gdb 调试环境
+enter # 继续执行上条命令
+l # 列出源代码, 默认 10 行, 按 l 继续
+
+start # 开始单步调试, 默认 main() 第一行
+p a # 查看 a 变量的值
+n # 继续到下一行
+s # 进入子函数
+bt # 查看函数栈
+f 1 # 切换函数栈
+
+q 退出调试
+```
+
+```c
+# 测试用代码
+#include <stdio.h>
+
+void change(int a, int b){
+    int tmp=a;
+    a=b; b=tmp;
+}
+
+void change2(int *a, int *b){
+    int tmp=*a;
+    *a=*b; *b=tmp;
+}
+
+int main(){
+    int a=5,b=3;
+    change(a,b);
+    printf("change:\na=%d\nb=%d\n", a,b);
+    change2(&a,&b);
+    printf("change2:\na=%d\nb=%d\n", a,b);
+}
+```
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

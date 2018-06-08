@@ -7,13 +7,13 @@ tree
 
 **tree命令** 以树状图列出目录的内容。
 
-### 语法  
+### 语法
 
 ```
 tree(选项)(参数)
 ```
 
-### 选项  
+### 选项
 
 ```bash
 ------- 列表选项 -------
@@ -73,7 +73,7 @@ tree(选项)(参数)
 --            # Options processing terminator.
 ```
 
-### 参数  
+### 参数
 
 目录：执行tree指令，它会列出指定目录下的所有文件，包括子目录里的文件。
 
@@ -101,7 +101,7 @@ tree -L 2 > /home/www/tree.txt # 当前目录结果存到 tree.txt 文件中
 ```
 
 忽略多个文件夹
- 
+
 ```bash
 tree -I 'node_modules|icon|font' -L 2
 ```

@@ -40,13 +40,13 @@ Linux上常用的防火墙软件
 
 <!-- /TOC -->
 
-### 语法  
+### 语法
 
 ```
 iptables(选项)(参数)
 ```
 
-### 选项  
+### 选项
 
 ```bash
 -t, --table table 对指定的表 table 进行操作， table 必须是 raw， nat，filter，mangle 中的一个。如果不指定此选项，默认的是 filter 表。
@@ -124,14 +124,14 @@ iptables -t 表名 <-A/I/D/R> 规则链名 [规则号] <-i/o 网卡名> -p 协�
 3. mangle功能:修改报文原数据，是5个链都可以做：PREROUTING，INPUT，FORWARD，OUTPUT，POSTROUTING
 
 我们修改报文原数据就是来修改TTL的。能够实现将数据包的元数据拆开，在里面做标记/修改内容的。而防火墙标记，其实就是靠mangle来实现的。
- 
+
 小扩展:
 
 - 对于filter来讲一般只能做在3个链上：INPUT ，FORWARD ，OUTPUT
 - 对于nat来讲一般也只能做在3个链上：PREROUTING ，OUTPUT ，POSTROUTING
 - 而mangle则是5个链都可以做：PREROUTING，INPUT，FORWARD，OUTPUT，POSTROUTING
- 
-iptables/netfilter（这款软件）是工作在用户空间的，它可以让规则进行生效的，本身不是一种服务，而且规则是立即生效的。而我们iptables现在被做成了一个服务，可以进行启动，停止的。启动，则将规则直接生效，停止，则将规则撤销。 
+
+iptables/netfilter（这款软件）是工作在用户空间的，它可以让规则进行生效的，本身不是一种服务，而且规则是立即生效的。而我们iptables现在被做成了一个服务，可以进行启动，停止的。启动，则将规则直接生效，停止，则将规则撤销。
 
 iptables还支持自己定义链。但是自己定义的链，必须是跟某种特定的链关联起来的。在一个关卡设定，指定当有数据的时候专门去找某个特定的链来处理，当那个链处理完之后，再返回。接着在特定的链中继续检查。
 
@@ -159,40 +159,40 @@ iptables还支持自己定义链。但是自己定义的链，必须是跟某种
 - **LOG** ：日志记录。
 
 ```bash
-                             ┏╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍┓                         
- ┌───────────────┐           ┃    Network    ┃                         
- │ table: filter │           ┗━━━━━━━┳━━━━━━━┛                         
- │ chain: INPUT  │◀────┐             │                                 
- └───────┬───────┘     │             ▼                                 
-         │             │   ┌───────────────────┐                       
-  ┌      ▼      ┐      │   │ table: nat        │                       
-  │local process│      │   │ chain: PREROUTING │                       
-  └             ┘      │   └─────────┬─────────┘                       
-         │             │             │                                 
+                             ┏╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍┓
+ ┌───────────────┐           ┃    Network    ┃
+ │ table: filter │           ┗━━━━━━━┳━━━━━━━┛
+ │ chain: INPUT  │◀────┐             │
+ └───────┬───────┘     │             ▼
+         │             │   ┌───────────────────┐
+  ┌      ▼      ┐      │   │ table: nat        │
+  │local process│      │   │ chain: PREROUTING │
+  └             ┘      │   └─────────┬─────────┘
+         │             │             │
          ▼             │             ▼              ┌─────────────────┐
 ┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅    │     ┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅      │table: nat       │
  Routing decision      └───── outing decision ─────▶│chain: PREROUTING│
 ┅┅┅┅┅┅┅┅┅┳┅┅┅┅┅┅┅┅┅          ┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅      └────────┬────────┘
-         │                                                   │         
-         ▼                                                   │         
- ┌───────────────┐                                           │         
- │ table: nat    │           ┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅               │         
- │ chain: OUTPUT │    ┌─────▶ outing decision ◀──────────────┘         
- └───────┬───────┘    │      ┅┅┅┅┅┅┅┅┳┅┅┅┅┅┅┅┅                         
-         │            │              │                                 
-         ▼            │              ▼                                 
- ┌───────────────┐    │   ┌────────────────────┐                       
- │ table: filter │    │   │ chain: POSTROUTING │                       
- │ chain: OUTPUT ├────┘   └──────────┬─────────┘                       
- └───────────────┘                   │                                 
-                                     ▼                                 
-                             ┏╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍┓                         
-                             ┃    Network    ┃                         
-                             ┗━━━━━━━━━━━━━━━┛                         
+         │                                                   │
+         ▼                                                   │
+ ┌───────────────┐                                           │
+ │ table: nat    │           ┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅┅               │
+ │ chain: OUTPUT │    ┌─────▶ outing decision ◀──────────────┘
+ └───────┬───────┘    │      ┅┅┅┅┅┅┅┅┳┅┅┅┅┅┅┅┅
+         │            │              │
+         ▼            │              ▼
+ ┌───────────────┐    │   ┌────────────────────┐
+ │ table: filter │    │   │ chain: POSTROUTING │
+ │ chain: OUTPUT ├────┘   └──────────┬─────────┘
+ └───────────────┘                   │
+                                     ▼
+                             ┏╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍┓
+                             ┃    Network    ┃
+                             ┗━━━━━━━━━━━━━━━┛
 ```
 
 
-### 实例  
+### 实例
 
 #### 空当前的所有规则和计数
 
@@ -205,14 +205,14 @@ iptables -Z  # 清空计数
 #### 配置允许ssh端口连接
 
 ```bash
-iptables -A INPUT -s 192.168.1.0/24 -p tcp --dport 22 -j ACCEPT  
+iptables -A INPUT -s 192.168.1.0/24 -p tcp --dport 22 -j ACCEPT
 # 22为你的ssh端口， -s 192.168.1.0/24表示允许这个网段的机器来连接，其它网段的ip地址是登陆不了你的机器的。 -j ACCEPT表示接受这样的请求
 ```
 
 #### 允许本地回环地址可以正常使用
 
 ```bash
-iptables -A INPUT -i lo -j ACCEPT  
+iptables -A INPUT -i lo -j ACCEPT
 #本地圆环地址就是那个127.0.0.1，是本机上使用的,它进与出都设置为允许
 iptables -A OUTPUT -o lo -j ACCEPT
 ```
@@ -245,7 +245,7 @@ iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT # 已经建立�
 
 ```bash
 cp /etc/sysconfig/iptables /etc/sysconfig/iptables.bak # 任何改动之前先备份，请保持这一优秀的习惯
-iptables-save > /etc/sysconfig/iptables 
+iptables-save > /etc/sysconfig/iptables
 cat /etc/sysconfig/iptables
 ```
 
@@ -331,19 +331,19 @@ iptables -A FORWARD -o eth0
 ```
 iptables -L -n -v
 Chain INPUT (policy DROP 48106 packets, 2690K bytes)
- pkts bytes target     prot opt in     out     source               destination         
- 5075  589K ACCEPT     all  --  lo     *       0.0.0.0/0            0.0.0.0/0           
+ pkts bytes target     prot opt in     out     source               destination
+ 5075  589K ACCEPT     all  --  lo     *       0.0.0.0/0            0.0.0.0/0
  191K   90M ACCEPT     tcp  --  *      *       0.0.0.0/0            0.0.0.0/0           tcp dpt:22
 1499K  133M ACCEPT     tcp  --  *      *       0.0.0.0/0            0.0.0.0/0           tcp dpt:80
 4364K 6351M ACCEPT     all  --  *      *       0.0.0.0/0            0.0.0.0/0           state RELATED,ESTABLISHED
- 6256  327K ACCEPT     icmp --  *      *       0.0.0.0/0            0.0.0.0/0           
+ 6256  327K ACCEPT     icmp --  *      *       0.0.0.0/0            0.0.0.0/0
 
 Chain FORWARD (policy ACCEPT 0 packets, 0 bytes)
- pkts bytes target     prot opt in     out     source               destination         
+ pkts bytes target     prot opt in     out     source               destination
 
 Chain OUTPUT (policy ACCEPT 3382K packets, 1819M bytes)
- pkts bytes target     prot opt in     out     source               destination         
- 5075  589K ACCEPT     all  --  *      lo      0.0.0.0/0            0.0.0.0/0  
+ pkts bytes target     prot opt in     out     source               destination
+ 5075  589K ACCEPT     all  --  *      lo      0.0.0.0/0            0.0.0.0/0
 ```
 
 #### 启动网络转发规则
@@ -371,14 +371,14 @@ iptables -A INPUT -p tcp -m string --algo kmp --string "test" -j REJECT --reject
 iptables -L
 
 # Chain INPUT (policy ACCEPT)
-# target     prot opt source               destination        
+# target     prot opt source               destination
 # REJECT     tcp  --  anywhere             anywhere            STRING match "test" ALGO name kmp TO 65535 reject-with tcp-reset
-#  
+#
 # Chain FORWARD (policy ACCEPT)
-# target     prot opt source               destination        
-#  
+# target     prot opt source               destination
+#
 # Chain OUTPUT (policy ACCEPT)
-# target     prot opt source               destination  
+# target     prot opt source               destination
 ```
 
 #### 阻止Windows蠕虫的攻击
@@ -393,5 +393,126 @@ iptables -I INPUT -j DROP -p tcp -s 0.0.0.0/0 -m string --algo kmp --string "cmd
 iptables -A INPUT -p tcp --syn -m limit --limit 5/second -j ACCEPT
 ```
 
+## 更多实例
+> 用iptables搭建一套强大的安全防护盾 http://www.imooc.com/learn/389
+
+iptables: linux 下应用层防火墙工具
+
+iptables 5链: 对应 Hook point
+netfilter: linux 操作系统核心层内部的一个数据包处理模块
+Hook point: 数据包在 netfilter 中的挂载点; `PRE_ROUTING / INPUT / OUTPUT / FORWARD / POST_ROUTING`
+
+iptables & netfilter
+![](http://7xq89b.com1.z0.glb.clouddn.com/netfilter&iptables.jpg)
+
+iptables 4表5链
+![](http://7xq89b.com1.z0.glb.clouddn.com/iptables-data-stream.jpg)
+
+iptables rules
+![](http://7xq89b.com1.z0.glb.clouddn.com/iptables-rules.jpg)
+
+- 4表
+
+**filter**: 访问控制 / 规则匹配
+**nat**: 地址转发
+ mangle / raw
+
+ - 规则
+
+数据访问控制: ACCEPT / DROP / REJECT
+数据包改写(nat -> 地址转换): snat / dnat
+信息记录: log
+
+## 使用场景实例
+- 场景一
+
+开放 tcp 10-22/80 端口
+开放 icmp
+其他未被允许的端口禁止访问
+
+存在的问题: 本机无法访问本机; 本机无法访问其他主机
+
+- 场景二
+
+ftp: 默认被动模式(服务器产生随机端口告诉客户端, 客户端主动连接这个端口拉取数据)
+vsftpd: 使 ftp 支持主动模式(客户端产生随机端口通知服务器, 服务器主动连接这个端口发送数据)
+
+- 场景三
+
+允许外网访问:
+web
+http -> 80/tcp; https -> 443/tcp
+mail
+smtp -> 25/tcp; smtps -> 465/tcp
+pop3 -> 110/tcp; pop3s -> 995/tcp
+imap -> 143/tcp
+
+内部使用:
+file
+nfs -> 123/udp
+samba -> 137/138/139/445/tcp
+ftp -> 20/21/tcp
+remote
+ssh -> 22/tcp
+sql
+mysql -> 3306/tcp
+oracle -> 1521/tcp
+
+- 场景四
+
+nat 转发
+
+- 场景五
+
+防CC攻击
+
+```
+iptables -L -F -A -D # list flush append delete
+# 场景一
+iptables -I INPUT -p tcp --dport 80 -j ACCEPT # 允许 tcp 80 端口
+iptables -I INPUT -p tcp --dport 10:22 -j ACCEPT # 允许 tcp 10-22 端口
+iptables -I INPUT -p icmp -j ACCEPT # 允许 icmp
+iptables -A INPUT -j REJECT # 添加一条规则, 不允许所有
+
+# 优化场景一
+iptables -I INPUT -i lo -j ACCEPT # 允许本机访问
+iptables -I INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT # 允许访问外网
+iptables -I INPUT -p tcp --dport 80 -s 10.10.188.233 -j ACCEPT # 只允许固定ip访问80
+
+# 场景二
+vi /etc/vsftpd/vsftpd.conf # 使用 vsftpd 开启 ftp 主动模式
+port_enable=yes
+connect_from_port_20=YES
+iptables -I INPUT -p tcp --dport 21 -j ACCEPT
+
+vi /etc/vsftpd/vsftpd.conf # 建议使用 ftp 被动模式
+pasv_min_port=50000
+pasv_max_port=60000
+iptables -I INPUT -p tcp --dport 21 -j ACCEPT
+iptables -I INPUT -p tcp --dport 50000:60000 -j ACCEPT
+
+# 还可以使用 iptables 模块追踪来自动开发对应的端口
+
+# 场景三
+iptables -I INPUT -i lo -j ACCEPT # 允许本机访问
+iptables -I INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT # 允许访问外网
+iptables -I INPUT -s 10.10.155.0/24 -j ACCEPT # 允许内网访问
+iptables -I INPUT -p tcp -m multiport --dports 80,1723 -j ACCEPT # 允许端口, 80 -> http, 1723 -> vpn
+iptables -A INPUT -j REJECT # 添加一条规则, 不允许所有
+
+iptables-save # 保存设置到配置文件
+
+# 场景四
+iptables -t nat -L # 查看 nat 配置
+
+iptables -t nat -A POST_ROUTING -s 10.10.177.0/24 -j SNAT --to 10.10.188.232 # SNAT
+vi /etc/sysconfig/network # 配置网关
+
+iptables -t nat -A POST_ROUTING -d 10.10.188.232 -p tcp --dport 80 -j DNAT --to 10.10.177.232:80 # DNAT
+
+#场景五
+iptables -I INPUT -p tcp --syn --dport 80 -m connlimit --connlimit-above 100 -j REJECT # 限制并发连接访问数
+iptables -I INPUT -m limit --limit 3/hour --limit-burst 10 -j ACCEPT # limit模块; --limit-burst 默认为5
+```
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
