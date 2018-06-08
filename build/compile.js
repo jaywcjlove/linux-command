@@ -276,6 +276,9 @@ function CreateDatajs(dt_path,callback){
         json["p"] = md_path.replace(/\.md$/,'').replace(path_md,'');
         // 命令描述
         var des = str.match(/\n==={1,}([\s\S]*?)##/i);
+        if (!des) {
+            console.log('格式错误:', error(md_path));
+        }
         des = des[1]?des[1].replace(/\n/g,''):des[1];
         des = des.replace(/\r/g,'')
         json["d"] = des;
@@ -289,10 +292,7 @@ function CreateDatajs(dt_path,callback){
     //生成数据文件
     fs.writeFile(dt_path, 'var linux_commands='+JSON.stringify(indexes) , 'utf8',function(err){
         console.log(success("\n  → ")+"生成数据成功！"+dt_path+" \n ");
-
-
         path_dist = path.join(path_dist,'data.json')
-
         fs.writeFile(path_dist, JSON.stringify(command_data) , 'utf8',function(err){
             console.log(success("\n  → ")+"生成数据成功！"+path_dist+" \n ");
             callback&&callback(dt_path,indexes);
