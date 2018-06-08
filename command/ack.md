@@ -8,6 +8,8 @@ ack
 ```bash
 # ubuntu下要安装ack-grep，因为在debian系中，ack这个名字被其他的软件占用了。
 sudo apt-get install ack-grep
+# alpine Linux-apk软件包管理器 安装 ack
+apk install ack
 ```
 
 ## 参数
