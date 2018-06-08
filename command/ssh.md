@@ -60,9 +60,9 @@ ssh-copy-id user@ip:port # 将当前用户的公钥复制到需要 ssh 的服务
 
 ### 背后故事
 
-> 英文：Tatu Ylonen
-> 编译：Linux中国/kenxx
-> 来源：https://linux.cn/article-8476-1.html
+> 英文：Tatu Ylonen  
+> 编译：Linux中国/kenxx  
+> 来源：https://linux.cn/article-8476-1.html  
 
 为什么 SSH（安全终端）的端口号是 22 呢，这不是一个巧合，这其中有个我（Tatu Ylonen，SSH 协议的设计者）未曾诉说的故事。
 
@@ -79,11 +79,11 @@ ssh-copy-id user@ip:port # 将当前用户的公钥复制到需要 ssh 的服务
 
 1995 年 7 月，就在我发布 ssh-1.0 前，我发送了一封邮件给 IANA：
 
-> From ylo Mon Jul 10 11:45:48 +0300 1995
-> From: Tatu Ylonen
-> To: Internet Assigned Numbers Authority
-> Subject: 请求取得一个端口号
-> Organization: 芬兰赫尔辛基理工大学
+> From ylo Mon Jul 10 11:45:48 +0300 1995  
+> From: Tatu Ylonen  
+> To: Internet Assigned Numbers Authority  
+> Subject: 请求取得一个端口号  
+> Organization: 芬兰赫尔辛基理工大学  
 >
 > 亲爱的机构成员：
 >
@@ -95,21 +95,21 @@ ssh-copy-id user@ip:port # 将当前用户的公钥复制到需要 ssh 的服务
 >
 > 软件中服务的名称叫 ssh（系 Secure Shell 的缩写）。
 >
-> 您最真诚的，
-> Tatu Ylonen
+> 您最真诚的，  
+> Tatu Ylonen 
 
 （LCTT 译注：DNS 协议中的 WKS 记录类型意即“众所周知的业务描述”，是类似于 A、MX 这样的 DNS 记录类型，用于描述某个 IP 所提供的服务，目前鲜见使用。参见： https://docs.oracle.com/cd/E19683-01/806-4077/dnsintro-154/index.html 。）
 
 第二天，我就收到了 Joyce 发来的邮件：
 
-> Date: Mon, 10 Jul 1995 15:35:33 -0700
-> From: jkrey@ISI.EDU
-> To: ylo@cs.hut.fi
-> Subject: 回复：请求取得一个端口号
-> Cc: iana@ISI.EDU
-> Tatu,
-> 我们将端口号 22 分配给 ssh 服务了，你目前是该服务的主要联系人。
-> Joyce
+> Date: Mon, 10 Jul 1995 15:35:33 -0700  
+> From: jkrey@ISI.EDU  
+> To: ylo@cs.hut.fi  
+> Subject: 回复：请求取得一个端口号  
+> Cc: iana@ISI.EDU  
+> Tatu,  
+> 我们将端口号 22 分配给 ssh 服务了，你目前是该服务的主要联系人。  
+> Joyce  
 
 这就搞定了！SSH 的端口正式使用 22！！！
 
