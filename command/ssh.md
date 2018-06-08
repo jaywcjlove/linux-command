@@ -7,13 +7,13 @@ openssh套件中的客户端连接工具
 
 **ssh命令** 是openssh套件中的客户端连接工具，可以给予ssh加密协议实现安全的远程登录服务器。
 
-### 语法  
+### 语法
 
 ```
 ssh(选项)(参数)
 ```
 
-### 选项  
+### 选项
 
 ```
 -1：强制使用ssh协议版本1；
@@ -38,7 +38,7 @@ ssh(选项)(参数)
 -y：开启信任X11转发功能。
 ```
 
-### 参数  
+### 参数
 
 *   远程主机：指定要连接的远程ssh服务器；
 *   指令：要在远程ssh服务器上执行的指令。
@@ -50,12 +50,18 @@ ssh(选项)(参数)
 ssh user1@172.24.210.101
 # 指定端口
 ssh -p 2211 root@140.206.185.170
+
+# ssh 大家族
+ssh user@ip -p22 # 默认用户名为当前用户名，默认端口为 22
+ssh-keygen # 为当前用户生成 ssh 公钥 + 私钥
+ssh-keygen -f keyfile -i -m key_format -e -m key_format # key_format: RFC4716/SSH2(default) PKCS8 PEM
+ssh-copy-id user@ip:port # 将当前用户的公钥复制到需要 ssh 的服务器的 ~/.ssh/authorized_keys，之后可以免密登录
 ```
 
 ### 背后故事
 
 > 英文：Tatu Ylonen
-> 编译：Linux中国/kenxx  
+> 编译：Linux中国/kenxx
 > 来源：https://linux.cn/article-8476-1.html
 
 为什么 SSH（安全终端）的端口号是 22 呢，这不是一个巧合，这其中有个我（Tatu Ylonen，SSH 协议的设计者）未曾诉说的故事。
@@ -73,37 +79,37 @@ ssh -p 2211 root@140.206.185.170
 
 1995 年 7 月，就在我发布 ssh-1.0 前，我发送了一封邮件给 IANA：
 
-> From ylo Mon Jul 10 11:45:48 +0300 1995  
-> From: Tatu Ylonen  
-> To: Internet Assigned Numbers Authority  
-> Subject: 请求取得一个端口号  
-> Organization: 芬兰赫尔辛基理工大学  
->   
-> 亲爱的机构成员：  
->   
-> 我写了个可以在不安全的网络环境中安全地从一台机器登录到另一台机器的程序。它主要是对现有的 telnet 协议以及 rlogin 协议的功能性提升和安全性改进。说的具体些，就是可以防御 IP、DNS > 或路由等欺骗行为。我打算将我的软件免费地发布在因特网上，以得到广泛地使用。  
->   
-> 我希望为该软件注册一个特权端口号，要是这个端口号在 1 到 255 > 之间就更好了，这样它就可以用在名字服务器的 WKS 字段中了。  
->   
-> 我在附件中附上了协议标准的草案。这个软件已经在本地运行了几个月了，我已准备在获得端口号后就发布。如果端口号分配一事安排的及时，我希望这周就将要发布的软件准备好。我目前在 beta 版测试时使用的端口号是 > 22，如果要是能够分配到这个端口，我就不用做什么更改了（目前这个端口在列表中还是空闲的）。  
->   
-> 软件中服务的名称叫 ssh（系 Secure Shell 的缩写）。  
->   
-> 您最真诚的，  
-> Tatu Ylonen  
+> From ylo Mon Jul 10 11:45:48 +0300 1995
+> From: Tatu Ylonen
+> To: Internet Assigned Numbers Authority
+> Subject: 请求取得一个端口号
+> Organization: 芬兰赫尔辛基理工大学
+>
+> 亲爱的机构成员：
+>
+> 我写了个可以在不安全的网络环境中安全地从一台机器登录到另一台机器的程序。它主要是对现有的 telnet 协议以及 rlogin 协议的功能性提升和安全性改进。说的具体些，就是可以防御 IP、DNS > 或路由等欺骗行为。我打算将我的软件免费地发布在因特网上，以得到广泛地使用。
+>
+> 我希望为该软件注册一个特权端口号，要是这个端口号在 1 到 255 > 之间就更好了，这样它就可以用在名字服务器的 WKS 字段中了。
+>
+> 我在附件中附上了协议标准的草案。这个软件已经在本地运行了几个月了，我已准备在获得端口号后就发布。如果端口号分配一事安排的及时，我希望这周就将要发布的软件准备好。我目前在 beta 版测试时使用的端口号是 > 22，如果要是能够分配到这个端口，我就不用做什么更改了（目前这个端口在列表中还是空闲的）。
+>
+> 软件中服务的名称叫 ssh（系 Secure Shell 的缩写）。
+>
+> 您最真诚的，
+> Tatu Ylonen
 
 （LCTT 译注：DNS 协议中的 WKS 记录类型意即“众所周知的业务描述”，是类似于 A、MX 这样的 DNS 记录类型，用于描述某个 IP 所提供的服务，目前鲜见使用。参见： https://docs.oracle.com/cd/E19683-01/806-4077/dnsintro-154/index.html 。）
 
 第二天，我就收到了 Joyce 发来的邮件：
 
-> Date: Mon, 10 Jul 1995 15:35:33 -0700  
-> From: jkrey@ISI.EDU  
-> To: ylo@cs.hut.fi  
-> Subject: 回复：请求取得一个端口号  
-> Cc: iana@ISI.EDU  
-> Tatu,  
-> 我们将端口号 22 分配给 ssh 服务了，你目前是该服务的主要联系人。  
-> Joyce  
+> Date: Mon, 10 Jul 1995 15:35:33 -0700
+> From: jkrey@ISI.EDU
+> To: ylo@cs.hut.fi
+> Subject: 回复：请求取得一个端口号
+> Cc: iana@ISI.EDU
+> Tatu,
+> 我们将端口号 22 分配给 ssh 服务了，你目前是该服务的主要联系人。
+> Joyce
 
 这就搞定了！SSH 的端口正式使用 22！！！
 

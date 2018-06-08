@@ -11,13 +11,13 @@ history
 
 历史命令是被保存在内存中的，当退出或者登录shell时，会自动保存或读取。在内存中，历史命令仅能够存储1000条历史命令，该数量是由环境变量`HISTSIZE`进行控制。
 
-### 语法  
+### 语法
 
 ```
 history(选项)(参数)
 ```
 
-### 选项  
+### 选项
 
 ```
 -c：清空当前历史命令；
@@ -26,11 +26,11 @@ history(选项)(参数)
 -w：将当前历史命令缓冲区命令写入历史命令文件中。
 ```
 
-### 参数  
+### 参数
 
 n：打印最近的n条历史命令。
 
-### 实例  
+### 实例
 
 使用history命令显示最近使用的10条历史命令，输入如下命令：
 
@@ -61,6 +61,17 @@ n：打印最近的n条历史命令。
 
 ```
 [root@localhost ~]# history -c
+```
+
+更多实例:
+
+```
+history -cw
+`~/.bash_history`: 保存历史命令
+`/etc/profile` -> HISSIZE: 历史命令保存数量
+推荐添加 h -> history, hsi -> history|grep 别名
+`!n`: 执行第 n 条历史命令
+`!xxx`: 执行最后一条 xxx 开头的命令
 ```
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

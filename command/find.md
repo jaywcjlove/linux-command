@@ -7,13 +7,13 @@ find
 
 **find命令** 用来在指定目录下查找文件。任何位于参数之前的字符串都将被视为欲查找的目录名。如果使用该命令时，不设置任何参数，则find命令将在当前目录下查找子目录与文件。并且将查找到的子目录和文件全部进行显示。
 
-### 语法  
+### 语法
 
 ```
 find(选项)(参数)
 ```
 
-### 选项  
+### 选项
 
 ```
 -amin<分钟>：查找在指定时间曾被存取过的文件或目录，单位以分钟计算；
@@ -73,7 +73,7 @@ find(选项)(参数)
 -xtype<文件类型>：此参数的效果和指定“-type”参数类似，差别在于它针对符号连接检查。
 ```
 
-### 参数  
+### 参数
 
 起始目录：查找文件的起始目录。
 
@@ -84,7 +84,7 @@ find(选项)(参数)
 find . -type f -name "*" | xargs grep "140.206.111.111"
 ```
 
-#### 根据文件或者正则表达式进行匹配  
+#### 根据文件或者正则表达式进行匹配
 
 列出当前目录及子目录下所有文件和文件夹
 
@@ -111,7 +111,7 @@ find . \( -name "*.txt" -o -name "*.pdf" \)
 
 或
 
-find . -name "*.txt" -o -name "*.pdf" 
+find . -name "*.txt" -o -name "*.pdf"
 ```
 
 匹配文件路径或者文件
@@ -132,7 +132,7 @@ find . -regex ".*\(\.txt\|\.pdf\)$"
 find . -iregex ".*\(\.txt\|\.pdf\)$"
 ```
 
-#### 否定参数  
+#### 否定参数
 
 找出/home下不是以.txt结尾的文件
 
@@ -140,7 +140,7 @@ find . -iregex ".*\(\.txt\|\.pdf\)$"
 find /home ! -name "*.txt"
 ```
 
-#### 根据文件类型进行搜索  
+#### 根据文件类型进行搜索
 
 ```
 find . -type 类型参数
@@ -156,7 +156,7 @@ find . -type 类型参数
 *    **s**  套接字
 *    **p**  Fifo
 
-#### 基于目录深度搜索  
+#### 基于目录深度搜索
 
 向下最大深度限制为3
 
@@ -170,7 +170,7 @@ find . -maxdepth 3 -type f
 find . -mindepth 2 -type f
 ```
 
-#### 根据文件时间戳进行搜索  
+#### 根据文件时间戳进行搜索
 
 ```
 find . -type f 时间戳
@@ -212,7 +212,7 @@ find . -type f -amin +10
 find . -type f -newer file.log
 ```
 
-#### 根据文件大小进行匹配  
+#### 根据文件大小进行匹配
 
 ```
 find . -type f -size 文件大小单元
@@ -245,7 +245,7 @@ find . -type f -size -10k
 find . -type f -size 10k
 ```
 
-#### 删除匹配文件  
+#### 删除匹配文件
 
 删除当前目录下所有.txt文件
 
@@ -253,7 +253,7 @@ find . -type f -size 10k
 find . -type f -name "*.txt" -delete
 ```
 
-#### 根据文件权限/所有权进行匹配  
+#### 根据文件权限/所有权进行匹配
 
 当前目录下搜索出权限为777的文件
 
@@ -279,7 +279,7 @@ find . -type f -user tom
 find . -type f -group sunk
 ```
 
-#### 借助`-exec`选项与其他命令结合使用  
+#### 借助`-exec`选项与其他命令结合使用
 
 找出当前目录下所有root的文件，并把所有权更改为用户tom
 
@@ -321,7 +321,7 @@ find . -type f -name "*.txt" -exec printf "File: %s\n" {} \;
 -exec ./text.sh {} \;
 ```
 
-#### 搜索但跳出指定的目录  
+#### 搜索但跳出指定的目录
 
 查找当前目录或者子目录下所有.txt文件，但是跳过子目录sk
 
@@ -329,7 +329,7 @@ find . -type f -name "*.txt" -exec printf "File: %s\n" {} \;
 find . -path "./sk" -prune -o -name "*.txt" -print
 ```
 
-#### find其他技巧收集  
+#### find其他技巧收集
 
 要列出所有长度为零的文件
 
@@ -371,6 +371,18 @@ find /data -owner bcotton
 
 ```bash
 find ~ -perm -o=r
+```
+
+删除 mac 下自动生成的文件
+
+```
+find ./ -name '__MACOSX' -depth -exec rm -rf {} \;
+```
+
+统计代码行数
+
+```
+find . -name "*.java"|xargs cat|grep -v ^$|wc -l # 代码行数统计, 排除空行
 ```
 
 

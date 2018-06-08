@@ -7,13 +7,13 @@ usermod
 
 **usermod命令** 用于修改用户的基本信息。usermod命令不允许你改变正在线上的使用者帐号名称。当usermod命令用来改变user id，必须确认这名user没在电脑上执行任何程序。你需手动更改使用者的crontab档。也需手动更改使用者的at工作档。采用NIS server须在server上更动相关的NIS设定。
 
-### 语法  
+### 语法
 
 ```
 usermod(选项)(参数)
 ```
 
-### 选项  
+### 选项
 
 ```
 -c<备注>：修改用户帐号的备注文字；
@@ -29,11 +29,11 @@ usermod(选项)(参数)
 -U:解除密码锁定。
 ```
 
-### 参数  
+### 参数
 
 登录名：指定要修改信息的用户登录名。
 
-### 实例  
+### 实例
 
 将newuser2添加到组staff中：
 
@@ -59,5 +59,12 @@ usermod -L newuser1
 usermod -U newuser1
 ```
 
+增加用户到用户组中:
+
+```
+apk add shadow # 安装 shadow 包, usermod 命令包含在 usermod 中
+
+usermod -aG group user # 添加用户到用户组中
+```
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

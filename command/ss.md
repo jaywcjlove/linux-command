@@ -1,7 +1,7 @@
 ss
 ===
 
-获取socket统计信息，iproute2 包附带的另一个工具，允许你查询 socket 的有关统计信息。
+比 netstat 好用的socket统计信息，iproute2 包附带的另一个工具，允许你查询 socket 的有关统计信息。
 
 ## 补充说明
 
@@ -11,14 +11,14 @@ ss
 
 天下武功唯快不破。ss快的秘诀在于，它利用到了TCP协议栈中tcp_diag。tcp_diag是一个用于分析统计的模块，可以获得Linux 内核中第一手的信息，这就确保了ss的快捷高效。当然，如果你的系统中没有tcp_diag，ss也可以正常运行，只是效率会变得稍慢。
 
-### 语法  
+### 语法
 
 ```
 ss [参数]
 ss [参数] [过滤]
 ```
 
-### 选项  
+### 选项
 
 ```
 -h, --help      帮助信息
@@ -49,7 +49,7 @@ ss [参数] [过滤]
        FILTER := [ state TCP-STATE ] [ EXPRESSION ]
 ```
 
-### 实例  
+### 实例
 
 ```bash
 ss -t -a    # 显示TCP连接
@@ -69,8 +69,8 @@ time ss
 # 匹配远程地址和端口号
 # ss dst ADDRESS_PATTERN
 ss dst 192.168.1.5
-ss dst 192.168.119.113:http 
-ss dst 192.168.119.113:smtp 
+ss dst 192.168.119.113:http
+ss dst 192.168.119.113:smtp
 ss dst 192.168.119.113:443
 
 # 匹配本地地址和端口号
@@ -87,22 +87,22 @@ ss src 192.168.119.103:25
 ```bash
 # ss dport OP PORT 远程端口和一个数比较；
 # ss sport OP PORT 本地端口和一个数比较
-# OP 可以代表以下任意一个: 
+# OP 可以代表以下任意一个:
 # <= or le : 小于或等于端口号
 # >= or ge : 大于或等于端口号
 # == or eq : 等于端口号
 # != or ne : 不等于端口号
 # < or gt : 小于端口号
 # > or lt : 大于端口号
-ss  sport = :http 
-ss  dport = :http 
-ss  dport \> :1024 
-ss  sport \> :1024 
-ss sport \< :32000 
-ss  sport eq :22 
-ss  dport != :22 
-ss  state connected sport = :http 
-ss \( sport = :http or sport = :https \) 
+ss  sport = :http
+ss  dport = :http
+ss  dport \> :1024
+ss  sport \> :1024
+ss sport \< :32000
+ss  sport eq :22
+ss  dport != :22
+ss  state connected sport = :http
+ss \( sport = :http or sport = :https \)
 ss -o state fin-wait-1 \( sport = :http or sport = :https \) dst 192.168.1/24
 ```
 
@@ -110,8 +110,8 @@ ss -o state fin-wait-1 \( sport = :http or sport = :https \) dst 192.168.1/24
 
 ```bash
 ss -4 state closing
-# ss -4 state FILTER-NAME-HERE   
-# ss -6 state FILTER-NAME-HERE  
+# ss -4 state FILTER-NAME-HERE
+# ss -6 state FILTER-NAME-HERE
 # FILTER-NAME-HERE 可以代表以下任何一个：
 # established、 syn-sent、 syn-recv、 fin-wait-1、 fin-wait-2、 time-wait、 closed、 close-wait、 last-ack、 listen、 closing、
 # all : 所有以上状态
@@ -121,20 +121,20 @@ ss -4 state closing
 # big : 和bucket相反.
 ```
 
- **显示ICP连接** 
+ **显示ICP连接**
 
 ```
 [root@localhost ~]# ss -t -a
-State       Recv-Q Send-Q                            Local Address:Port                                Peer Address:Port   
-LISTEN      0      0                                             *:3306                                           *:*       
-LISTEN      0      0                                             *:http                                           *:*       
-LISTEN      0      0                                             *:ssh                                            *:*       
-LISTEN      0      0                                     127.0.0.1:smtp                                           *:*       
-ESTAB       0      0                                112.124.15.130:42071                              42.156.166.25:http    
-ESTAB       0      0                                112.124.15.130:ssh                              121.229.196.235:33398 
+State       Recv-Q Send-Q                            Local Address:Port                                Peer Address:Port
+LISTEN      0      0                                             *:3306                                           *:*
+LISTEN      0      0                                             *:http                                           *:*
+LISTEN      0      0                                             *:ssh                                            *:*
+LISTEN      0      0                                     127.0.0.1:smtp                                           *:*
+ESTAB       0      0                                112.124.15.130:42071                              42.156.166.25:http
+ESTAB       0      0                                112.124.15.130:ssh                              121.229.196.235:33398
 ```
 
- **显示 Sockets 摘要** 
+ **显示 Sockets 摘要**
 
 ```
 [root@localhost ~]# ss -s
@@ -142,54 +142,54 @@ Total: 172 (kernel 189)
 TCP:   10 (estab 2, closed 4, orphaned 0, synrecv 0, timewait 0/0), ports 5
 
 Transport Total     ip        IPv6
-*         189       -         -        
-RAW       0         0         0        
-UDP       5         5         0        
-TCP       6         6         0        
-INET      11        11        0        
-FRAG      0         0         0   
+*         189       -         -
+RAW       0         0         0
+UDP       5         5         0
+TCP       6         6         0
+INET      11        11        0
+FRAG      0         0         0
 ```
 
 列出当前的established, closed, orphaned and waiting TCP sockets
 
- **列出所有打开的网络连接端口** 
+ **列出所有打开的网络连接端口**
 
 ```
 [root@localhost ~]# ss -l
-Recv-Q Send-Q                                 Local Address:Port                                     Peer Address:Port   
-0      0                                                  *:3306                                                *:*       
-0      0                                                  *:http                                                *:*       
-0      0                                                  *:ssh                                                 *:*       
-0      0                                          127.0.0.1:smtp                                                *:* 
+Recv-Q Send-Q                                 Local Address:Port                                     Peer Address:Port
+0      0                                                  *:3306                                                *:*
+0      0                                                  *:http                                                *:*
+0      0                                                  *:ssh                                                 *:*
+0      0                                          127.0.0.1:smtp                                                *:*
 ```
 
- **查看进程使用的socket** 
+ **查看进程使用的socket**
 
 ```
 [root@localhost ~]# ss -pl
-Recv-Q Send-Q                                          Local Address:Port                                              Peer Address:Port   
+Recv-Q Send-Q                                          Local Address:Port                                              Peer Address:Port
 0      0                                                           *:3306                                                         *:*        users:(("mysqld",1718,10))
 0      0                                                           *:http                                                         *:*        users:(("nginx",13312,5),("nginx",13333,5))
 0      0                                                           *:ssh                                                          *:*        users:(("sshd",1379,3))
 0      0                                                   127.0.0.1:smtp                                                         *:*        us
 ```
 
- **找出打开套接字/端口应用程序** 
+ **找出打开套接字/端口应用程序**
 
 ```
 [root@localhost ~]# ss -pl | grep 3306
 0      0                            *:3306                          *:*        users:(("mysqld",1718,10))
 ```
 
- **显示所有UDP Sockets** 
+ **显示所有UDP Sockets**
 
 ```
 [root@localhost ~]# ss -u -a
-State       Recv-Q Send-Q                                     Local Address:Port                                         Peer Address:Port   
-UNCONN      0      0                                                      *:syslog                                                  *:*       
-UNCONN      0      0                                         112.124.15.130:ntp                                                     *:*       
-UNCONN      0      0                                            10.160.7.81:ntp                                                     *:*       
-UNCONN      0      0                                              127.0.0.1:ntp                                                     *:*       
+State       Recv-Q Send-Q                                     Local Address:Port                                         Peer Address:Port
+UNCONN      0      0                                                      *:syslog                                                  *:*
+UNCONN      0      0                                         112.124.15.130:ntp                                                     *:*
+UNCONN      0      0                                            10.160.7.81:ntp                                                     *:*
+UNCONN      0      0                                              127.0.0.1:ntp                                                     *:*
 UNCONN      0      0                                                      *:ntp                                                     *:*
 ```
 

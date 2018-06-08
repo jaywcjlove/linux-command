@@ -1,19 +1,19 @@
 telnet
 ===
 
-登录远程主机和管理
+登录远程主机和管理(测试ip端口是否连通)
 
 ## 补充说明
 
 **telnet命令** 用于登录远程主机，对远程主机进行管理。telnet因为采用明文传送报文，安全性不好，很多Linux服务器都不开放telnet服务，而改用更安全的ssh方式了。但仍然有很多别的系统可能采用了telnet方式来提供远程登录，因此弄清楚telnet客户端的使用方式仍是很有必要的。
 
-### 语法  
+### 语法
 
 ```
 telnet(选项)(参数)
 ```
 
-### 选项  
+### 选项
 
 ```
 -8：允许使用8位字符资料，包括输入与输出；
@@ -36,12 +36,12 @@ telnet(选项)(参数)
 -X<认证形态>：关闭指定的认证形态。
 ```
 
-### 参数  
+### 参数
 
 *   远程主机：指定要登录进行管理的远程主机；
 *   端口：指定TELNET协议使用的端口号。
 
-### 实例  
+### 实例
 
 ```
 $ telnet 192.168.2.10
@@ -52,7 +52,7 @@ Escape character is '^]'.
     localhost (Linux release 2.6.18-274.18.1.el5 #1 SMP Thu Feb 9 12:45:44 EST 2012) (1)
 
 login: root
-Password: 
+Password:
 Login incorrect
 ```
 
@@ -79,59 +79,59 @@ telnet: Unable to connect to remote host
 service xinetd restart
 ```
 
-配置参数，通常的配置如下： 
+配置参数，通常的配置如下：
 
 ```
-service telnet 
-{ 
-    disable = no #启用 
-    flags = REUSE #socket可重用 
-    socket_type = stream #连接方式为TCP 
-    wait = no #为每个请求启动一个进程 
-    user = root #启动服务的用户为root 
-    server = /usr/sbin/in.telnetd #要激活的进程 
-    log_on_failure += USERID #登录失败时记录登录用户名 
-} 
+service telnet
+{
+    disable = no #启用
+    flags = REUSE #socket可重用
+    socket_type = stream #连接方式为TCP
+    wait = no #为每个请求启动一个进程
+    user = root #启动服务的用户为root
+    server = /usr/sbin/in.telnetd #要激活的进程
+    log_on_failure += USERID #登录失败时记录登录用户名
+}
 ```
 
-如果要配置允许登录的客户端列表，加入 
+如果要配置允许登录的客户端列表，加入
 ```
-only_from = 192.168.0.2 #只允许192.168.0.2登录 
+only_from = 192.168.0.2 #只允许192.168.0.2登录
 ```
-如果要配置禁止登录的客户端列表，加入 
+如果要配置禁止登录的客户端列表，加入
 ```
-no_access = 192.168.0.{2,3,4} #禁止192.168.0.2、192.168.0.3、192.168.0.4登录 
+no_access = 192.168.0.{2,3,4} #禁止192.168.0.2、192.168.0.3、192.168.0.4登录
 ```
-如果要设置开放时段，加入 
+如果要设置开放时段，加入
 ```
-access_times = 9:00-12:00 13:00-17:00 # 每天只有这两个时段开放服务（我们的上班时间：P） 
-```
-
-如果你有两个IP地址，一个是私网的IP地址如192.168.0.2，一个是公网的IP地址如218.75.74.83，如果你希望用户只能从私网来登录telnet服务，那么加入 
-```
-bind = 192.168.0.2 
+access_times = 9:00-12:00 13:00-17:00 # 每天只有这两个时段开放服务（我们的上班时间：P）
 ```
 
-各配置项具体的含义和语法可参考xined配置文件属性说明（man xinetd.conf） 
+如果你有两个IP地址，一个是私网的IP地址如192.168.0.2，一个是公网的IP地址如218.75.74.83，如果你希望用户只能从私网来登录telnet服务，那么加入
+```
+bind = 192.168.0.2
+```
+
+各配置项具体的含义和语法可参考xined配置文件属性说明（man xinetd.conf）
 
 配置端口，修改services文件：
 
 ```
-# vi /etc/services 
+# vi /etc/services
 ```
 
-找到以下两句 
+找到以下两句
 
 ```
-telnet 23/tcp 
-telnet 23/udp 
+telnet 23/tcp
+telnet 23/udp
 ```
 
-如果前面有#字符，就去掉它。telnet的默认端口是23，这个端口也是黑客端口扫描的主要对象，因此最好将这个端口修改掉，修改的方法很简单，就是将23这个数字修改掉，改成大一点的数字，比如61123。注意，1024以下的端口号是internet保留的端口号，因此最好不要用，还应该注意不要与其它服务的端口冲突。 
+如果前面有#字符，就去掉它。telnet的默认端口是23，这个端口也是黑客端口扫描的主要对象，因此最好将这个端口修改掉，修改的方法很简单，就是将23这个数字修改掉，改成大一点的数字，比如61123。注意，1024以下的端口号是internet保留的端口号，因此最好不要用，还应该注意不要与其它服务的端口冲突。
 
 启动服务：
 ```
-service xinetd restart 
+service xinetd restart
 ```
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -11,13 +11,13 @@ Linux下的归档使用工具，用来打包和备份。
 
 为什么要区分这两个概念呢？这源于Linux中很多压缩程序只能针对一个文件进行压缩，这样当你想要压缩一大堆文件时，你得先将这一大堆文件先打成一个包（tar命令），然后再用压缩程序进行压缩（gzip bzip2命令）。
 
-### 语法  
+### 语法
 
 ```
 tar(选项)(参数)
 ```
 
-### 选项  
+### 选项
 
 ```
 -A或--catenate：新增文件到以存在的备份文件；
@@ -45,11 +45,11 @@ tar(选项)(参数)
 --exclude=<范本样式>：排除符合范本样式的文件。
 ```
 
-### 参数  
+### 参数
 
 文件或目录：指定要打包的文件或目录列表。
 
-### 实例  
+### 实例
 
 ```bash
 - z：有gzip属性的
@@ -85,84 +85,84 @@ tar -xf archive.tar          # 从archive.tar提取所有文件。
 
 #### zip格式
 
-压缩： zip -r [目标文件名].zip [原文件/目录名]  
-解压： unzip [原文件名].zip  
-注：-r参数代表递归  
+压缩： zip -r [目标文件名].zip [原文件/目录名]
+解压： unzip [原文件名].zip
+注：-r参数代表递归
 
 #### tar格式（该格式仅仅打包，不压缩）
 
-打包：tar -cvf [目标文件名].tar [原文件名/目录名]  
-解包：tar -xvf [原文件名].tar  
-注：c参数代表create（创建），x参数代表extract（解包），v参数代表verbose（详细信息），f参数代表filename（文件名），所以f后必须接文件名。  
+打包：tar -cvf [目标文件名].tar [原文件名/目录名]
+解包：tar -xvf [原文件名].tar
+注：c参数代表create（创建），x参数代表extract（解包），v参数代表verbose（详细信息），f参数代表filename（文件名），所以f后必须接文件名。
 
 #### tar.gz格式
 
 方式一：利用前面已经打包好的tar文件，直接用压缩命令。
 
-压缩：gzip [原文件名].tar  
-解压：gunzip [原文件名].tar.gz  
+压缩：gzip [原文件名].tar
+解压：gunzip [原文件名].tar.gz
 
 方式二：一次性打包并压缩、解压并解包
 
-打包并压缩： tar -zcvf [目标文件名].tar.gz [原文件名/目录名]  
-解压并解包： tar -zxvf [原文件名].tar.gz  
-注：z代表用gzip算法来压缩/解压。  
+打包并压缩： tar -zcvf [目标文件名].tar.gz [原文件名/目录名]
+解压并解包： tar -zxvf [原文件名].tar.gz
+注：z代表用gzip算法来压缩/解压。
 
 #### tar.bz2格式
 
 方式一：利用已经打包好的tar文件，直接执行压缩命令：
 
-压缩：bzip2 [原文件名].tar  
-解压：bunzip2 [原文件名].tar.bz2  
-方式二：一次性打包并压缩、解压并解包  
+压缩：bzip2 [原文件名].tar
+解压：bunzip2 [原文件名].tar.bz2
+方式二：一次性打包并压缩、解压并解包
 
-打包并压缩： tar -jcvf [目标文件名].tar.bz2 [原文件名/目录名]  
-解压并解包： tar -jxvf [原文件名].tar.bz2  
-注：小写j代表用bzip2算法来压缩/解压。  
+打包并压缩： tar -jcvf [目标文件名].tar.bz2 [原文件名/目录名]
+解压并解包： tar -jxvf [原文件名].tar.bz2
+注：小写j代表用bzip2算法来压缩/解压。
 
 #### tar.xz格式
 
 方式一：利用已经打包好的tar文件，直接用压缩命令：
 
-压缩：xz [原文件名].tar  
-解压：unxz [原文件名].tar.xz  
-方式二：一次性打包并压缩、解压并解包  
+压缩：xz [原文件名].tar
+解压：unxz [原文件名].tar.xz
+方式二：一次性打包并压缩、解压并解包
 
-打包并压缩： tar -Jcvf [目标文件名].tar.xz [原文件名/目录名]  
-解压并解包： tar -Jxvf [原文件名].tar.xz  
-注：大写J代表用xz算法来压缩/解压。  
+打包并压缩： tar -Jcvf [目标文件名].tar.xz [原文件名/目录名]
+解压并解包： tar -Jxvf [原文件名].tar.xz
+注：大写J代表用xz算法来压缩/解压。
 
 #### tar.Z格式（已过时）
 
 方式一：利用已经打包好的tar文件，直接用压缩命令：
 
-压缩：compress [原文件名].tar  
-解压：uncompress [原文件名].tar.Z  
-方式二：一次性打包并压缩、解压并解包  
+压缩：compress [原文件名].tar
+解压：uncompress [原文件名].tar.Z
+方式二：一次性打包并压缩、解压并解包
 
-打包并压缩： tar -Zcvf [目标文件名].tar.Z [原文件名/目录名]  
-解压并解包： tar -Zxvf [原文件名].tar.Z  
-注：大写Z代表用ncompress算法来压缩/解压。另，ncompress是早期Unix系统的压缩格式，但由于ncompress的压缩率太低，现已过时。  
+打包并压缩： tar -Zcvf [目标文件名].tar.Z [原文件名/目录名]
+解压并解包： tar -Zxvf [原文件名].tar.Z
+注：大写Z代表用ncompress算法来压缩/解压。另，ncompress是早期Unix系统的压缩格式，但由于ncompress的压缩率太低，现已过时。
 
 #### jar格式
 
-压缩：jar -cvf [目标文件名].jar [原文件名/目录名]  
-解压：jar -xvf [原文件名].jar  
-注：如果是打包的是Java类库，并且该类库中存在主类，那么需要写一个META-INF/MANIFEST.MF配置文件，内容如下：  
+压缩：jar -cvf [目标文件名].jar [原文件名/目录名]
+解压：jar -xvf [原文件名].jar
+注：如果是打包的是Java类库，并且该类库中存在主类，那么需要写一个META-INF/MANIFEST.MF配置文件，内容如下：
 
-Manifest-Version: 1.0  
-Created-By: 1.6.0_27 (Sun Microsystems Inc.)  
-Main-class: the_name_of_the_main_class_should_be_put_here  
-然后用如下命令打包：  
+Manifest-Version: 1.0
+Created-By: 1.6.0_27 (Sun Microsystems Inc.)
+Main-class: the_name_of_the_main_class_should_be_put_here
+然后用如下命令打包：
 
 jar -cvfm [目标文件名].jar META-INF/MANIFEST.MF [原文件名/目录名]
 这样以后就能用“java -jar [文件名].jar”命令直接运行主类中的public static void main方法了。
 
 #### 7z格式
 
-压缩：7z a [目标文件名].7z [原文件名/目录名]  
-解压：7z x [原文件名].7z  
-注：这个7z解压命令支持rar格式，即：  
+压缩：7z a [目标文件名].7z [原文件名/目录名]
+解压：7z x [原文件名].7z
+注：这个7z解压命令支持rar格式，即：
 
 7z x [原文件名].rar
 
@@ -171,9 +171,9 @@ jar -cvfm [目标文件名].jar META-INF/MANIFEST.MF [原文件名/目录名]
  **将文件全部打包成tar包** ：
 
 ```
-tar -cvf log.tar log2012.log    仅打包，不压缩！ 
-tar -zcvf log.tar.gz log2012.log   打包后，以 gzip 压缩 
-tar -jcvf log.tar.bz2 log2012.log  打包后，以 bzip2 压缩 
+tar -cvf log.tar log2012.log    仅打包，不压缩！
+tar -zcvf log.tar.gz log2012.log   打包后，以 gzip 压缩
+tar -jcvf log.tar.bz2 log2012.log  打包后，以 bzip2 压缩
 ```
 
 在选项`f`之后的文件档名是自己取的，我们习惯上都用 .tar 来作为辨识。 如果加`z`选项，则以.tar.gz或.tgz来代表gzip压缩过的tar包；如果加`j`选项，则以.tar.bz2来作为tar包名。
@@ -216,13 +216,13 @@ tar -zcvpf log31.tar.gz log2014.log log2015.log log2016.log
 tar -N "2012/11/13" -zcvf log17.tar.gz test
 ```
 
- **备份文件夹内容是排除部分文件：** 
+ **备份文件夹内容是排除部分文件：**
 
 ```
 tar --exclude scf/service -zcvf scf.tar.gz scf/*
 ```
 
- **其实最简单的使用 tar 就只要记忆底下的方式即可：** 
+ **其实最简单的使用 tar 就只要记忆底下的方式即可：**
 
 ```
 压　缩：tar -jcv -f filename.tar.bz2 要被压缩的文件或目录名称

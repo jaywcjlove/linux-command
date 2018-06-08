@@ -9,13 +9,13 @@ yum
 
 yum提供了查找、安装、删除某一个、一组甚至全部软件包的命令，而且命令简洁而又好记。
 
-### 语法  
+### 语法
 
 ```
 yum(选项)(参数)
 ```
 
-### 选项  
+### 选项
 
 ```
 -h：显示帮助信息；
@@ -29,7 +29,7 @@ yum(选项)(参数)
 -C：完全从缓存中运行，而不去下载或者更新任何头文件。
 ```
 
-### 参数  
+### 参数
 
 ```
 install：安装rpm软件包；
@@ -47,7 +47,7 @@ localupdate：显示本地rpm软件包进行更新；
 deplist：显示rpm软件包的所有依赖关系。
 ```
 
-### 实例  
+### 实例
 
 部分常用的命令包括：
 
@@ -55,7 +55,7 @@ deplist：显示rpm软件包的所有依赖关系。
 *   安装yum图形窗口插件：`yum install yumex`
 *   查看可能批量安装的列表：`yum grouplist`
 
-**安装** 
+**安装**
 
 ```bash
 yum install              #全部安装
@@ -63,7 +63,7 @@ yum install package1     #安装指定的安装包package1
 yum groupinsall group1   #安装程序组group1
 ```
 
-**更新和升级** 
+**更新和升级**
 
 ```bash
 yum update               #全部更新
@@ -73,7 +73,7 @@ yum upgrade package1     #升级指定程序包package1
 yum groupupdate group1   #升级程序组group1
 ```
 
-**查找和显示** 
+**查找和显示**
 
 ```bash
 # 检查 MySQL 是否已安装
@@ -86,7 +86,7 @@ yum list package1      #显示指定程序包安装情况package1
 yum groupinfo group1   #显示程序组group1信息yum search string 根据关键字string查找安装包
 ```
 
-**删除程序** 
+**删除程序**
 
 ```bash
 yum remove &#124; erase package1   #删除程序包package1
@@ -94,12 +94,35 @@ yum groupremove group1             #删除程序组group1
 yum deplist package1               #查看程序package1依赖情况
 ```
 
-**清除缓存** 
+**清除缓存**
 
 ```bash
 yum clean packages       #清除缓存目录下的软件包
 yum clean headers        #清除缓存目录下的 headers
 yum clean oldheaders     #清除缓存目录下旧的 headers
+```
+
+**更多实例**
+
+```
+# yum
+/etc/yum.repos.d/       yum 源配置文件
+vi /etc/yum.repos.d/nginx.repo # 举个栗子: nginx yum源
+[nginx]
+name=nginx repo
+baseurl=http://nginx.org/packages/centos/6/$basearch/
+gpgcheck=0
+enabled=1
+
+# yum mirror
+mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.bak
+wget https://mirror.tuna.tsinghua.edu.cn/help/centos/
+yum makecache
+
+# 添加中文语言支持
+LANG=C # 原始语言
+LANG=zh_CN.utf8 # 切换到中文
+yum groupinstall "Chinese Support" # 添加中文语言支持
 ```
 
 
