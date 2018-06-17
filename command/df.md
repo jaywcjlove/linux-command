@@ -38,6 +38,12 @@ df(选项)(参数)
 
 文件：指定文件系统上的文件。
 
+### 大小格式
+
+显示值以 `--block-size` 和 `DF_BLOCK_SIZE`，`BLOCK_SIZE` 和 `BLOCKSIZE` 环境变量中的第一个可用 `SIZE` 为单位。 否则，单位默认为 `1024` 个字节（如果设置 `POSIXLY_CORRECT`，则为`512`）。
+
+SIZE是一个整数和可选单位（例如：10M是10 * 1024 * 1024）。 单位是K，M，G，T，P，E，Z，Y（1024的幂）或KB，MB，...（1000的幂）。
+
 ### 实例  
 
 查看系统磁盘设备，默认是KB为单位：
@@ -75,6 +81,14 @@ devpts                       0         0         0   -  /dev/pts
 tmpfs                  1032204         0   1032204   0% /dev/shm
 /dev/sdb1            2884284108 218826068 2518944764   8% /data1
 none                         0         0         0   -  /proc/sys/fs/binfmt_misc
+```
+
+显示 `public` 目录中的可用空间量，如以下输出中所示：
+
+```bash
+df public
+# Filesystem     1K-blocks     Used Available Use% Mounted on
+# /dev/loop0      18761008 15246924   2554392  86% /d Avail
 ```
 
 
