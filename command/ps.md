@@ -84,40 +84,23 @@ X：采用旧式的Linux i386登陆格式显示程序状况。
 
 ### 实例
 
-按内存资源的使用量对进程进行排序
-
 ```bash
-ps aux | sort -rnk 4
-```
-
-按 CPU 资源的使用量对进程进行排序
-
-```bash
-ps aux | sort -nk 3
-```
-
-显示所有进程信息
-
-```bash
-ps -A
-```
-
-显示指定用户信息
-
-```bash
-ps -u root
-```
-
-显示所有进程信息，连同命令行
-
-```bash
-ps -ef
-```
-
-ps 与grep 常用组合用法，查找特定进程
-
-```bash
-ps -ef|grep ssh
+ps axo pid,comm,pcpu # 查看进程的PID、名称以及CPU 占用率
+ps aux | sort -rnk 4 # 按内存资源的使用量对进程进行排序
+ps aux | sort -nk 3  # 按 CPU 资源的使用量对进程进行排序
+ps -A # 显示所有进程信息
+ps -u root # 显示指定用户信息
+ps -efL # 查看线程数
+ps -e -o "%C : %p :%z : %a"|sort -k5 -nr # 查看进程并按内存使用大小排列
+ps -ef # 显示所有进程信息，连同命令行
+ps -ef | grep ssh # ps 与grep 常用组合用法，查找特定进程
+ps -C nginx # 通过名字或命令搜索进程
+ps aux --sort=-pcpu,+pmem # CPU或者内存进行排序,-降序，+升序
+ps -f --forest -C nginx # 用树的风格显示进程的层次关系
+ps -o pid,uname,comm -C nginx # 显示一个父进程的子进程
+ps -e -o pid,uname=USERNAME,pcpu=CPU_USAGE,pmem,comm # 重定义标签
+ps -e -o pid,comm,etime # 显示进程运行的时间
+ps -aux | grep named # 查看named进程详细信息
 ```
 
 将目前属于您自己这次登入的 PID 与相关信息列示出来
