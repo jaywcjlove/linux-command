@@ -130,7 +130,7 @@ systemctl restart nfs-server.service
 6.查看所有已启动的服务
 
 ```
-systemctl list -units --type=service
+systemctl list-units --type=service
 ```
 
 开启防火墙22端口
