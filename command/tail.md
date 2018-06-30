@@ -37,11 +37,16 @@ tail(选项)(参数)
 
 ### 实例
 
+```bash
+tail file #（显示文件file的最后10行）
+tail -n +20 file #（显示文件file的内容，从第20行至文件末尾）
+tail -c 10 file #（显示文件file的最后10个字符）
+
+tail -25 mail.log # 显示 mail.log 最后的 25 行
+tail -f mail.log # 等同于--follow=descriptor，根据文件描述符进行追踪，当文件改名或被删除，追踪停止
+tail -F mail.log # 等同于--follow=name  --retry，根据文件名进行追踪，并保持重试，即该文件被删除或改名后，如果再次创建相同的文件名，会继续追踪
 ```
-tail file （显示文件file的最后10行）
-tail -n +20 file （显示文件file的内容，从第20行至文件末尾）
-tail -c 10 file （显示文件file的最后10个字符）
-```
+
 
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
