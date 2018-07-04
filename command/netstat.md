@@ -137,6 +137,12 @@ netstat -ap | grep ssh
 netstat -an | grep ':80'
 ```
 
+ **通过端口找进程ID**
+ 
+```bash
+netstat -anp|grep 8081 | grep LISTEN|awk '{printf $7}'|cut -d/ -f1
+```
+
  **显示网络接口列表** 
 
 ```
