@@ -23,6 +23,7 @@ scp(选项)(参数)
 -B：以批处理模式运行；
 -C：使用压缩；
 -F：指定ssh配置文件；
+-i：identity_file 从指定文件中读取传输时使用的密钥文件（例如亚马逊云pem），此参数直接传递给ssh；
 -l：指定宽带限制；
 -o：指定使用的ssh选项；
 -P：指定远程主机的端口号；
@@ -47,6 +48,13 @@ scp root@10.10.10.10:/opt/soft/nginx-0.5.38.tar.gz /opt/soft/
 ```
 
 从10.10.10.10机器上的`/opt/soft/`的目录中下载nginx-0.5.38.tar.gz 文件到本地`/opt/soft/`目录中。
+
+**从亚马逊云复制OpenVPN到本地目录** 
+
+```
+scp -i amazon.pem ubuntu@10.10.10.10:/usr/local/openvpn_as/etc/exe/openvpn-connect-2.1.3.110.dmg openvpn-connect-2.1.3.110.dmg
+```
+从10.10.10.10机器上下载openvpn安装文件到本地当前目录来。
 
  **从远处复制到本地** 
 
