@@ -66,7 +66,14 @@ ttt
 jjj
 ```
 
-两个文件之间的比较，如果没有排序需要带上`--nocheck-order`参数
+两个文件之间的比较，如果没有排序需要带上`--nocheck-order`参数， 没有带上参数将会收到提示，此命令重要之功能在于比较。
+
+```bash
+comm: 文件2 没有被正确排序
+comm: 文件1 没有被正确排序
+```
+
+比较结果
 
 ```
 [root@localhost text]# comm --nocheck-order aaa.txt bbb.txt 
@@ -86,7 +93,32 @@ eee
 
 输出的第一列只包含在aaa.txt中出现的行，第二列包含在bbb.txt中出现的行，第三列包含在aaa.txt和bbb.txt中相同的行。各列是以制表符（\t）作为定界符。
 
- **交集** 
+### 有序比较
+
+有序比较，先通过 sort 将文件内容排序
+
+```
+[root@localhost ~]# sort aaa.txt > aaa1.txt
+[root@localhost ~]# sort bbb.txt > bbb1.txt
+```
+
+有序比较结果：
+
+```
+[root@localhost ~]# comm aaa1.txt bbb1.txt
+111
+222
+		aaa
+		bbb
+		ccc
+ddd
+eee
+	hhh
+	jjj
+	ttt
+```
+
+### 交集
 
 打印两个文件的交集，需要删除第一列和第二列：
 
@@ -96,7 +128,7 @@ bbb
 ccc
 ```
 
- **求差** 
+**求差** 
 
 打印出两个文件中不相同的行，需要删除第三列：
 
@@ -115,7 +147,7 @@ jjj
 
 `sed 's/^\t//'` 是将制表符`\t`删除，以便把两列合并成一列。
 
- **差集** 
+### 差集
 
 通过删除不需要的列，可以得到aaa.txt和bbb.txt的差集：
 
