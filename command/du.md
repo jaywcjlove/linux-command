@@ -104,4 +104,10 @@ root@localhost [test]# du
 du -sh $dir
 ```
 
+显示当前目录下每个文件/文件夹的大小:
+
+```
+du -sh *
+```
+
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
