@@ -133,4 +133,10 @@ events/1      7 root  cwd       DIR                8,2     4096          2 /
 lsof -p $pid
 ```
 
+获取端口对应的进程ID=>pid
+
+```
+lsof -i:9981 -P -t -sTCP:LISTEN
+```
+
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

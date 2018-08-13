@@ -84,16 +84,107 @@ X：采用旧式的Linux i386登陆格式显示程序状况。
 
 ### 实例
 
-按内存资源的使用量对进程进行排序
+```bash
+ps axo pid,comm,pcpu # 查看进程的PID、名称以及CPU 占用率
+ps aux | sort -rnk 4 # 按内存资源的使用量对进程进行排序
+ps aux | sort -nk 3  # 按 CPU 资源的使用量对进程进行排序
+ps -A # 显示所有进程信息
+ps -u root # 显示指定用户信息
+ps -efL # 查看线程数
+ps -e -o "%C : %p :%z : %a"|sort -k5 -nr # 查看进程并按内存使用大小排列
+ps -ef # 显示所有进程信息，连同命令行
+ps -ef | grep ssh # ps 与grep 常用组合用法，查找特定进程
+ps -C nginx # 通过名字或命令搜索进程
+ps aux --sort=-pcpu,+pmem # CPU或者内存进行排序,-降序，+升序
+ps -f --forest -C nginx # 用树的风格显示进程的层次关系
+ps -o pid,uname,comm -C nginx # 显示一个父进程的子进程
+ps -e -o pid,uname=USERNAME,pcpu=CPU_USAGE,pmem,comm # 重定义标签
+ps -e -o pid,comm,etime # 显示进程运行的时间
+ps -aux | grep named # 查看named进程详细信息
+ps -o command -p 91730 | sed -n 2p # 通过进程id获取服务名称
+```
+
+将目前属于您自己这次登入的 PID 与相关信息列示出来
+
+```bash
+ps -l
+#  UID   PID  PPID        F CPU PRI NI       SZ    RSS WCHAN     S             ADDR TTY           TIME CMD
+#  501   566   559     4006   0  31  0  4317620    228 -      Ss                  0 ttys001    0:00.05 /App...cOS/iTerm2 --server /usr/bin/login -fpl kenny /Ap...s/MacOS/iTerm2 --launch_shel
+#  501   592   577     4006   0  31  0  4297048     52 -      S                   0 ttys001    0:00.63 -zsh
+```
+
+- F 代表这个程序的旗标 (flag)， 4 代表使用者为 super user
+- S 代表这个程序的状态 (STAT)，关于各 STAT 的意义将在内文介绍
+- UID 程序被该 UID 所拥有
+- PID 就是这个程序的 ID ！
+- PPID 则是其上级父程序的ID
+- C CPU 使用的资源百分比
+- PRI 这个是 Priority (优先执行序) 的缩写，详细后面介绍
+- NI 这个是 Nice 值，在下一小节我们会持续介绍
+- ADDR 这个是 kernel function，指出该程序在内存的那个部分。如果是个 running的程序，一般就是 "-"
+- SZ 使用掉的内存大小
+- WCHAN 目前这个程序是否正在运作当中，若为 - 表示正在运作
+- TTY 登入者的终端机位置
+- TIME 使用掉的 CPU 时间。
+- CMD 所下达的指令为何
+
+> 在预设的情况下， `ps` 仅会列出与目前所在的 `bash shell` 有关的 `PID` 而已，所以， 当我使用 `ps -l` 的时候，只有三个 PID。
+
+列出目前所有的正在内存当中的程序
+
+```bash
+ps aux
+
+# USER               PID  %CPU %MEM      VSZ    RSS   TT  STAT STARTED      TIME COMMAND
+# kenny             6155  21.3  1.7  7969944 284912   ??  S    二03下午 199:14.14 /Appl...OS/WeChat
+# kenny              559  20.4  0.8  4963740 138176   ??  S    二03下午  33:28.27 /Appl...S/iTerm2
+# _windowserver      187  18.0  0.6  7005748  95884   ??  Ss   二03下午 288:44.97 /Syst...Light.WindowServer -daemon
+# kenny             1408  10.7  2.1  5838592 347348   ??  S    二03下午 138:51.63 /Appl...nts/MacOS/Google Chrome
+# kenny              327   5.8  0.5  5771984  79452   ??  S    二03下午   2:51.58 /Syst...pp/Contents/MacOS/Finder
+```
+
+- USER：该 process 属于那个使用者账号的
+- PID ：该 process 的号码
+- %CPU：该 process 使用掉的 CPU 资源百分比
+- %MEM：该 process 所占用的物理内存百分比
+- VSZ ：该 process 使用掉的虚拟内存量 (Kbytes)
+- RSS ：该 process 占用的固定的内存量 (Kbytes)
+- TTY ：该 process 是在那个终端机上面运作，若与终端机无关，则显示 ?，另外， tty1-tty6 是本机上面的登入者程序，若为 pts/0 等等的，则表示为由网络连接进主机的程序。
+- STAT：该程序目前的状态，主要的状态有
+- R ：该程序目前正在运作，或者是可被运作
+- S ：该程序目前正在睡眠当中 (可说是 idle 状态)，但可被某些讯号 (signal) 唤醒。
+- T ：该程序目前正在侦测或者是停止了
+- Z ：该程序应该已经终止，但是其父程序却无法正常的终止他，造成 zombie (疆尸) 程序的状态
+- START：该 process 被触发启动的时间
+- TIME ：该 process 实际使用 CPU 运作的时间
+- COMMAND：该程序的实际指令
+
+列出类似程序树的程序显示
 
 ```
-ps aux | sort -rnk 4
+ps -axjf
+
+# USER               PID  PPID  PGID   SESS JOBC STAT   TT       TIME COMMAND            UID   C STIME   TTY
+# root                 1     0     1      0    0 Ss     ??   10:51.90 /sbin/launchd        0   0 二03下午 ??
+# root                50     1    50      0    0 Ss     ??    0:10.07 /usr/sbin/syslog     0   0 二03下午 ??
+# root                51     1    51      0    0 Ss     ??    0:29.90 /usr/libexec/Use     0   0 二03下午 ??
 ```
 
-按 CPU 资源的使用量对进程进行排序
+找出与 cron 与 syslog 这两个服务有关的 PID 号码
 
 ```
-ps aux | sort -nk 3
+ps aux | egrep '(cron|syslog)'
+
+# root                50   0.0  0.0  4305532   1284   ??  Ss   二03下午   0:10.08 /usr/sbin/syslogd
+# kenny            90167   0.0  0.0  4258468    184 s007  R+    9:23下午   0:00.00 egrep (cron|syslog)
 ```
+
+把所有进程显示出来，并输出到ps001.txt文件
+
+```
+ps -aux > ps001.txt
+```
+
+输出指定的字段
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

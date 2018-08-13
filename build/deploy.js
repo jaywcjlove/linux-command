@@ -15,7 +15,7 @@ if(fs.existsSync(deploy_path)){
     var load = loading('  Pushing code!!')
     load.start();
     ghpages.publish(deploy_path,{ 
-        repo: 'https://github.com/jaywcjlove/linux-command.git',
+        repo: 'git@github.com:jaywcjlove/linux-command.git',
         branch: 'gh-pages',
         message: 'Linux command index, Compiler generation page ' + new Date()
     }, function(err) { 
