@@ -7,13 +7,21 @@ Apache服务器的性能测试工具
 
 **ab命令** 是Apache的Web服务器的性能测试工具，它可以测试安装Web服务器每秒种处理的HTTP请求。
 
-### 语法  
+### 语法
 
 ```
 ab(选项)(参数)
+
+# 安装
+yum install httpd-tools
+apt install apache2-utils # ubuntu
+apk add apache2-utils # alpine
+
+# 示例
+ab -c 100 -n 10000 http://www.baidu.com # 并发100发送10000个请求
 ```
 
-### 选项  
+### 选项
 
 ```
 -A：指定连接服务器的基本的认证凭据；
@@ -35,7 +43,7 @@ ab(选项)(参数)
 -y：以表格方式输出时，设置表格属性。
 ```
 
-### 参数  
+### 参数
 
 主机：被测试主机。
 
