@@ -273,7 +273,7 @@ function CreateDatajs(dt_path,callback){
         // 命令名称
         json["n"] = title;
         // 命令路径
-        json["p"] = md_path.replace(/\.md$/,'').replace(path_md,'');
+        json["p"] = md_path.replace(/\.md$/, '').replace(path_md, '').replace(/\\/g, '/');
         // 命令描述
         var des = str.match(/\n==={1,}([\s\S]*?)##/i);
         if (!des) {
