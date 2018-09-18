@@ -14,6 +14,7 @@ Wildcards: 支持缩写  `*` 递归 匹配
 Pipes and Redirections: 使用 `^` 代表 stderr
 Autosuggestions: 自动建议, 可以使用 `Ctrl-f / ->` 来补全
 Tab Completions: 更强大的 tab 补全
+添加 Completions: 添加 completion 文件到 `~/.config/fish/completions/` 文件夹下, 可以参考 [docker-fish-completion](https://github.com/barnybug-archive/docker-fish-completion)
 Variables: 使用 set 设置
 Exit Status: 使用 `echo $status` 替代 `$?`
 Exports (Shell Variables)
