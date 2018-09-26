@@ -1,314 +1,311 @@
 @import('mixins/reset.styl')
-@import('mixins/highlight.styl')
+@import('mixins/css.styl')
 @import('mixins/markdown.styl')
 
 mq-mobile = "screen and (max-width: 479px)"
 
 a.github-corner { 
-    position fixed
-    z-index 9999
+  position: fixed
+  z-index: 9999
+  top: 0
+  right: 0
+  &:hover {
+    .octo-arm{
+      animation: octocat-wave 560ms ease-in-out
+    }
+  }
+  svg {
+    fill #f1f1f1
+    color #000
+    position absolute
     top 0
+    border 0
     right 0
-    &:hover{
-        .octo-arm{
-            animation:octocat-wave 560ms ease-in-out
-        }
-    }
-    svg{
-        fill #f1f1f1
-        color #000
-        position absolute
-        top 0
-        border 0
-        right 0
-        z-index 99
-        width 70px
-        height 70px
-    }
+    z-index 99
+    width 70px
+    height 70px
+  }
 }
-a{
-    transition: all .2s ease-in
+a {
+  transition: all .2s ease-in
 }
 
 @keyframes octocat-wave{
-    0%,100%{-webkit-transform:rotate(0);transform:rotate(0)}
-    20%,60%{-webkit-transform:rotate(-25deg);transform:rotate(-25deg)}
-    40%,80%{-webkit-transform:rotate(10deg);transform:rotate(10deg)}
+  0%,100%{-webkit-transform:rotate(0);transform:rotate(0)}
+  20%,60%{-webkit-transform:rotate(-25deg);transform:rotate(-25deg)}
+  40%,80%{-webkit-transform:rotate(10deg);transform:rotate(10deg)}
 }
 
-.header{
-    width 517px
-    margin 0 auto 0
-    padding 0 10px
-    .logo{
+.header {
+  width 517px
+  margin 0 auto 0
+  padding 0 10px
+  .logo {
+    text-align center
+    padding-top 50px
+    padding-bottom 50px
+  }
+  .box{
+    position relative
+  }
+  .search {
+    min-height 20px
+    position relative
+    display table
+    border-collapse separate
+    li,ul {
+      list-style none
+    }
+    #result {
+      .ok {
+        background:#f4f4f4;
+      }
+    }
+    .search-list {
+      position absolute
+      display none
+      z-index 999
+      box-shadow 1px 1px 3px #ededed
+      border 1px solid #d5d5d5
+      background #fff
+      min-width 100px
+      top 39px
+      width 100%
+      padding 5px
+      border-radius 5px 5px 5px 5px
+      li{
+        line-height 23px
+        span{
+          padding 0 8px
+          color #b9b9b9
+        }
+      }
+      a {
+        display block
+        padding 2px 6px 2px 6px
+        color #555555
+        &:hover {
+          background-color #f2f2f2
+        }
+        .kw {
+          color #f00
+          font-style inherit
+          font-weight bold
+        }
+      }
+    }
+    .query, .enter-input {
+      display table-cell
+      transition border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s
+    }
+    .query {
+      resize: none;
+      position relative
+      z-index 2
+      width 100%
+      height 40px
+      padding 6px 12px
+      font-size 14px
+      font-weight bold
+      line-height 1.42857143
+      color #555
+      background-color #fff
+      background-image none
+      border 1px solid $border-color
+      border-radius 5px 0 0 5px
+      -webkit-appearance: none;
+      &:focus {
+        z-index 99
+        border-color #66afe9
+        outline 0
+        box-shadow inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(102,175,233,0.6)
+      }
+    }
+    .enter-input {
+      width 1%
+      white-space nowrap
+      vertical-align middle
+      button {
+        margin 0
+        left -1px
+        position relative
+        z-index 5
+        display inline-block
+        padding 9px 23px
+        font-size 14px
+        font-weight bold
+        line-height 1.42857143
         text-align center
-        padding-top 50px
-        padding-bottom 50px
-    }
-    .box{
-        position relative
-    }
-    .search{
-        min-height 20px
-        position relative
-        display table
+        text-rendering auto
+        white-space nowrap
+        vertical-align middle
+        touch-action manipulation
+        cursor pointer
+        user-select none
+        background-image none
+        background-color #fff
+        border 1px solid transparent
         border-collapse separate
-        li,ul{
-            list-style none
+        border-radius 0 5px 5px 0
+        border-color $border-color
+        color #333
+        &:focus,&:active:focus{
+          outline thin dotted
+          outline 5px auto -webkit-focus-ring-color
+          outline-offset -2px
         }
-        #result{
-            .ok{
-                background:#f4f4f4;
-            }
+        &:active{
+          color #333
+          background-color #e6e6e6
+          border-color #b4b4b4
+          background-image none
+          box-shadow inset 0 8px 32px -8px rgba(0,0,0,0.3)
         }
-        .search-list{
-            position absolute
-            display none
-            z-index 999
-            box-shadow 1px 1px 3px #ededed
-            border 1px solid #d5d5d5
-            background #fff
-            min-width 100px
-            top 39px
-            width 100%
-            padding 5px
-            border-radius 5px 5px 5px 5px
-            li{
-                line-height 23px
-                span{
-                    padding 0 8px
-                    color #b9b9b9
-                }
-            }
-            a{
-                display block
-                padding 2px 6px 2px 6px
-                color #555555
-                &:hover{
-                    background-color #f2f2f2
-                }
-                .kw{
-                    color #f00
-                    font-style inherit
-                    font-weight bold
-                }
-            }
+        &:focus{
+          color #333
+          background-color #e6e6e6
+          border-color #999
+          text-decoration none
         }
-        .query,.enter-input{
-            display table-cell
-            transition border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s
+        &:hover{
+          color #333
+          background-color #e6e6e6
+          border-color #b4b4b4
         }
-        .query{
-            resize: none;
-            position relative
-            z-index 2
-            width 100%
-            height 40px
-            padding 6px 12px
-            font-size 14px
-            font-weight bold
-            line-height 1.42857143
-            color #555
-            background-color #fff
-            background-image none
-            border 1px solid $border-color
-            border-radius 5px 0 0 5px
-            -webkit-appearance: none;
-            &:focus{
-                z-index 99
-                border-color #66afe9
-                outline 0
-                box-shadow inset 0 1px 1px rgba(0,0,0,0.075),0 0 8px rgba(102,175,233,0.6)
-            }
-        }
-        .enter-input{
-            width 1%
-            white-space nowrap
-            vertical-align middle
-            button{
-                margin 0
-                left -1px
-                position relative
-                z-index 5
-                display inline-block
-                padding 9px 23px
-                font-size 14px
-                font-weight bold
-                line-height 1.42857143
-                text-align center
-                text-rendering auto
-                white-space nowrap
-                vertical-align middle
-                touch-action manipulation
-                cursor pointer
-                user-select none
-                background-image none
-                background-color #fff
-                border 1px solid transparent
-                border-collapse separate
-                border-radius 0 5px 5px 0
-                border-color $border-color
-                color #333
-                &:focus,&:active:focus{
-                    outline thin dotted
-                    outline 5px auto -webkit-focus-ring-color
-                    outline-offset -2px
-                }
-                &:active{
-                    color #333
-                    background-color #e6e6e6
-                    border-color #b4b4b4
-                    background-image none
-                    box-shadow inset 0 8px 32px -8px rgba(0,0,0,0.3)
-                }
-                &:focus{
-                    color #333
-                    background-color #e6e6e6
-                    border-color #999
-                    text-decoration none
-                }
-                &:hover{
-                    color #333
-                    background-color #e6e6e6
-                    border-color #b4b4b4
-                }
-            }
-        }
+      }
     }
+  }
 }
 
 .footer{
-    text-align center
-    padding-top 31px
-    color #616161
-    font-size 14px
-    font-weight 300
-    border-top: 1px solid #efefef;
-    padding-bottom: 50px;
-    &.footer_index {
-        border-top: 0
-    }
+  text-align center
+  padding-top 31px
+  color #616161
+  font-size 14px
+  font-weight 300
+  border-top: 1px solid #efefef;
+  padding-bottom: 50px;
+  &.footer_index {
+    border-top: 0
+  }
 }
 
 
-.header.header_list{
-    width auto
-    position fixed
-    width 100%
-    background #fff
-    z-index 99
+.header.header_list {
+  width auto
+  position fixed
+  width 100%
+  background #fff
+  z-index 99
 }
 
 .header_list{
-    padding 10px 10px 10px 13px 
-    border-bottom 1px solid #EEEEEE
-    .logo{
-        float left
-        padding-top 3px
-        padding-bottom 0
-        padding-right 24px
-        text-align left
-        svg{
-            height 37px
-            width 136px
-        }
+  padding 10px 10px 10px 13px 
+  border-bottom 1px solid #EEEEEE
+  .logo{
+    float left
+    padding-top 3px
+    padding-bottom 0
+    padding-right 24px
+    text-align left
+    svg{
+      height 37px
+      width 136px
     }
-    .search{
-        max-width 517px
-    }
-    .footer{
-        display none
-    }
+  }
+  .search{
+    max-width 517px
+  }
+  .footer{
+    display none
+  }
 }
 
 .search_list{
-    padding 79px 27px 
-    a{
-        font-size 16px
-        strong{
-            font-weight bold
-        }
-        .kw{
-            color #f00
-            font-style inherit
-            font-weight bold
-        }
-        &:hover{
-            .kw{
-                color #333
-            }
-        }
+  padding 79px 27px 
+  a{
+    font-size 16px
+    strong{
+      font-weight bold
     }
-    li{
-        padding 10px 0 10px 0
-        list-style-type none
-        p{
-            padding-top 5px
-            color #4F4F4F
-        }
+    .kw{
+      color #f00
+      font-style inherit
+      font-weight bold
     }
-
+    &:hover{
+      .kw{
+        color #333
+      }
+    }
+  }
+  li{
+    padding 10px 0 10px 0
+    list-style-type none
+    p {
+      padding-top 5px
+      color #4F4F4F
+    }
+  }
 }
 
 .hotlist{
-    padding 79px 27px 
-    a{
-        font-size 16px
-        strong{
-            font-weight bold
-        }
-        &:hover{
-        }
+  padding 79px 27px 
+  a{
+    font-size 16px
+    strong{
+      font-weight bold
     }
-    li{
-        padding 5px 0 5px 0
-        list-style-type none
-        p{
-            padding-top 5px
-            color #4F4F4F
-        }
+    &:hover{ }
+  }
+  li{
+    padding 5px 0 5px 0
+    list-style-type none
+    p{
+      padding-top 5px
+      color #4F4F4F
     }
-
+  }
 }
 
 
 @media mq-mobile{
-    .header{
-        width inherit
-        .search .enter-input {
-            button{
-                padding: 9px 14px;
-            }
-        }
+  .header{
+    width inherit
+    .search .enter-input {
+      button{
+        padding: 9px 14px;
+      }
     }
-    .header_list{
-        .logo svg{
-            width 96px
-        }
-        .search {
-            .query{
-                line-height 31px
-            }
-        }
+  }
+  .header_list{
+    .logo svg{
+      width 96px
     }
-    .header_list .logo{
-        float inherit
-        padding-right 10px
-        padding-top 8px
-        padding-bottom 14px
-        text-align center
+    .search {
+      .query{
+        line-height 31px
+      }
     }
-    div.markdown-body{
-        padding: 10px 10px 10px 13px;
+  }
+  .header_list .logo{
+    float inherit
+    padding-right 10px
+    padding-top 8px
+    padding-bottom 14px
+    text-align center
+  }
+  div.markdown-body{
+    padding: 10px 10px 10px 13px;
+  }
+  div.markdown-body .edit_btn + *{
+    margin-top: 0 !important;
+  }
+  div.markdown-body .edit_btn{
+    top: 9px;
+    a{
+      background #f1f1f1
+      color #a3a3a3
     }
-    div.markdown-body .edit_btn + *{
-        margin-top: 0 !important;
-    }
-    div.markdown-body .edit_btn{
-        top: 9px;
-        a{
-            background #f1f1f1
-            color #a3a3a3
-        }
-    }
+  }
 }
