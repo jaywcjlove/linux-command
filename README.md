@@ -5,7 +5,7 @@
 </p>
 
 Linux Command
---- 
+---
 
 [![](https://jaywcjlove.github.io/sb/ico/linux.svg)](https://jaywcjlove.github.io/linux-command/) [![](https://jaywcjlove.github.io/sb/ico/weibo.svg)](http://weibo.com/pc175)
 
@@ -34,13 +34,14 @@ Linux Command
 
 #### Alfred 版本
 
-[Alfred 版本下载](https://github.com/jaywcjlove/linux-command/releases)， 下图是界面效果。 
+[Alfred 版本下载](https://github.com/jaywcjlove/linux-command/releases)， 下图是界面效果。
 
 [![Linux 命令大全](./assets/alfred.png)](https://github.com/jaywcjlove/linux-command/releases)
 
 ## 目录
 
 - [Linux命令分类](#linux命令分类)
+  - [基础知识](#基础知识) base
   - [文件管理](#文件管理) File Management
   - [文件传输](#文件传输) File Transfer
   - [文档编辑](#文档编辑) File Editor
@@ -55,16 +56,20 @@ Linux Command
   - [其他命令](#其他命令) Misc Commands
 - [Node调用](#node调用)
 - [Linux学习资源整理](#linux学习资源整理)
- - [社区网站](#社区网站) 
- - [知识相关](#知识相关) 
- - [软件工具](#软件工具) 
- - [中国开源镜像站点](#中国开源镜像站点) 
- - [游戏玩家发行版](#游戏玩家发行版) 
+ - [社区网站](#社区网站)
+ - [知识相关](#知识相关)
+ - [软件工具](#软件工具)
+ - [中国开源镜像站点](#中国开源镜像站点)
+ - [游戏玩家发行版](#游戏玩家发行版)
 
 
 ## Linux命令分类
 
 *这里存放Linux 命令大全并不全，你可以通过[linux-command](https://jaywcjlove.github.io/linux-command/)来搜索，它是把 [command](./assets/command) 目录里面搜集的命令，生成了静态HTML并提供预览以及索引搜索。*
+
+### 基础知识
+
+- process: 进程相关基础知识
 
 ### 文件传输
 
@@ -133,8 +138,8 @@ console.log("---->",alias) // markdown string
 
 ### CDN
 
-https://unpkg.com/linux-command/dist/data.json 命令总 JSON 数据  
-https://unpkg.com/linux-command/command/alias.md 对应命令详情（Markdown）数据  
+https://unpkg.com/linux-command/dist/data.json 命令总 JSON 数据
+https://unpkg.com/linux-command/command/alias.md 对应命令详情（Markdown）数据
 
 
 ## Linux学习资源整理
@@ -188,7 +193,7 @@ https://unpkg.com/linux-command/command/alias.md 对应命令详情（Markdown�
 - 清华大学：http://mirrors.tuna.tsinghua.edu.cn/
   - http://mirrors6.tuna.tsinghua.edu.cn/
   - http://mirrors4.tuna.tsinghua.edu.cn/
-- 中国科学技术大学：http://mirrors.ustc.edu.cn/ 
+- 中国科学技术大学：http://mirrors.ustc.edu.cn/
   - http://ipv4.ustc.edu.cn/ \<教育网、电信\>
   - http://ipv6.ustc.edu.cn/ \<IPv6 only\>
 - 东北大学：http://mirror.neu.edu.cn/

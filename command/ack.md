@@ -31,15 +31,15 @@ ack官网列出了这工具的5大卖点：
 4. 非常轻便，移植性好。
 5. 免费且开源
 
-## 实例  
+## 实例
 
 在记忆的时候大体上可以分为这几个部分：
 
-> Searching 代码搜索  
-> Search output 搜索结果处理  
-> File presentation 文件展示  
-> File finding 文件查找  
-> File inclusion/exclusion 文件过滤  
+> Searching 代码搜索
+> Search output 搜索结果处理
+> File presentation 文件展示
+> File finding 文件查找
+> File inclusion/exclusion 文件过滤
 
 grep常用操作
 
