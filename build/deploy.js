@@ -2,7 +2,7 @@ const ghpages = require('gh-pages');
 const loading = require('loading-cli');
 const path = require('path');
 const fs = require('fs');
-const color = require('colors-cli/safe');
+const color = require('colors-cli/toxic');
 
 const deploy_path = path.join(process.cwd(), '.deploy');
 
