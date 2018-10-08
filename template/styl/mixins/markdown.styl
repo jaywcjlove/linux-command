@@ -2,7 +2,7 @@
 .markdown-body {
   padding 70px 35px 30px 35px
   word-wrap break-word
-  font-family "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif
+  font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
   font-size 14px
   line-height 1.6
   color #333
@@ -47,7 +47,6 @@
     position: relative
     background-color: #f7f7f9
     border-radius: 3px
-    font: "Source Code Pro", Consolas, Menlo, Monaco, "Courier New", monospace
     font-size: 0.93em
     -webkit-overflow-scrolling: touch
     code {
@@ -64,6 +63,7 @@
       white-space: inherit
       overflow-wrap: normal
       word-wrap: normal!important
+      font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
     }
   }
   .class-name {
@@ -208,5 +208,12 @@
   }
   .shebang, .important {
     color: #FF1717;
+  }
+  ul, ol {
+    padding-left: 2em;
+  }
+  p, blockquote, ul, ol, dl, table, pre {
+    margin-top: 0;
+    margin-bottom: 16px;
   }
 }
