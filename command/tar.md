@@ -182,6 +182,15 @@ tar -jcvf log.tar.bz2 log2012.log  打包后，以 bzip2 压缩
 
 在选项`f`之后的文件档名是自己取的，我们习惯上都用 .tar 来作为辨识。 如果加`z`选项，则以.tar.gz或.tgz来代表gzip压缩过的tar包；如果加`j`选项，则以.tar.bz2来作为tar包名。
 
+
+**解压目录**
+
+去掉第一层目录结构，要出除第二层，--strip-components 2
+
+```bash
+tar -xvf portal-web-v2.0.0.tar --strip-components 1  -C 指定目录
+```
+
 **查阅上述tar包内有哪些文件** ：
 
 ```
