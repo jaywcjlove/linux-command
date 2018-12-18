@@ -134,13 +134,13 @@ curl URL --silent
 使用选项`-O`将下载的数据写入到文件，必须使用文件的绝对地址：
 
 ```
-curl http://man.linuxde.net/text.iso --silent -O
+curl http://wangchujiang.com/text.iso --silent -O
 ```
 
 选项`-o`将下载数据写入到指定名称的文件中，并使用`--progress`显示进度条：
 
 ```
-curl http://man.linuxde.net/test.iso -o filename.iso --progress
+curl http://wangchujiang.com/test.iso -o filename.iso --progress
 ######################################### 100.0%
 ```
 
@@ -162,7 +162,7 @@ curl -C -URL
 使用`--referer`选项指定参照页字符串：
 
 ```
-curl --referer http://www.google.com http://man.linuxde.net
+curl --referer http://www.google.com http://wangchujiang.com
 ```
 
 **用curl设置cookies**
@@ -170,7 +170,7 @@ curl --referer http://www.google.com http://man.linuxde.net
 使用`--cookie "COKKIES"`选项来指定cookie，多个cookie使用分号分隔：
 
 ```
-curl http://man.linuxde.net --cookie "user=root;pass=123456"
+curl http://wangchujiang.com --cookie "user=root;pass=123456"
 ```
 
 将cookie另存为一个文件，使用`--cookie-jar`选项：
@@ -191,7 +191,7 @@ curl URL -A "Mozilla/5.0"
 其他HTTP头部信息也可以使用curl来发送，使用`-H`"头部信息" 传递多个头部信息，例如：
 
 ```
-curl -H "Host:man.linuxde.net" -H "accept-language:zh-cn" URL
+curl -H "Host:wangchujiang.com" -H "accept-language:zh-cn" URL
 ```
 
 **curl的带宽控制和下载配额**
@@ -217,8 +217,8 @@ curl URL --max-filesize bytes
 使用curl选项 -u 可以完成HTTP或者FTP的认证，可以指定密码，也可以不指定密码在后续操作中输入密码：
 
 ```
-curl -u user:pwd http://man.linuxde.net
-curl -u user http://man.linuxde.net
+curl -u user:pwd http://wangchujiang.com
+curl -u user http://wangchujiang.com
 ```
 
 **只打印响应头部信息**
@@ -226,14 +226,14 @@ curl -u user http://man.linuxde.net
 通过`-I`或者`-head`可以只打印出HTTP头部信息：
 
 ```
-[root@localhost text]# curl -I http://man.linuxde.net
+[root@localhost text]# curl -I http://wangchujiang.com
 HTTP/1.1 200 OK
 Server: nginx/1.2.5
 date: Mon, 10 Dec 2012 09:24:34 GMT
 Content-Type: text/html; charset=UTF-8
 Connection: keep-alive
 Vary: Accept-Encoding
-X-Pingback: http://man.linuxde.net/xmlrpc.php
+X-Pingback: http://wangchujiang.com/xmlrpc.php
 ```
 
 **get请求**

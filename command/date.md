@@ -145,7 +145,7 @@ date -s "20120523 01:01:01"    //这样可以设置全部时间
 #!/bin/bash
 
 start=$(date +%s)
-nmap man.linuxde.net &> /dev/null
+nmap wangchujiang.com &> /dev/null
 
 end=$(date +%s)
 difference=$(( end - start ))
