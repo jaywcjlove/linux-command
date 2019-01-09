@@ -5,7 +5,7 @@ usermod
 
 ## 补充说明
 
-**usermod命令** 用于修改用户的基本信息。usermod命令不允许你改变正在线上的使用者帐号名称。当usermod命令用来改变user id，必须确认这名user没在电脑上执行任何程序。你需手动更改使用者的crontab档。也需手动更改使用者的at工作档。采用NIS server须在server上更动相关的NIS设定。
+**usermod命令** 用于修改用户的基本信息。usermod 命令不允许你改变正在线上的使用者帐号名称。当 usermod 命令用来改变user id，必须确认这名user没在电脑上执行任何程序。你需手动更改使用者的 crontab 档。也需手动更改使用者的 at 工作档。采用 NIS server 须在server上更动相关的NIS设定。
 
 ### 语法
 
@@ -35,7 +35,7 @@ usermod(选项)(参数)
 
 ### 实例
 
-将newuser2添加到组staff中：
+将 newuser2 添加到组 staff 中：
 
 ```
 usermod -G staff newuser2
@@ -63,8 +63,9 @@ usermod -U newuser1
 
 ```
 apk add shadow # 安装 shadow 包, usermod 命令包含在 usermod 中
-
 usermod -aG group user # 添加用户到用户组中
 ```
+
+`-a` 参数表示附加，只和 `-G` 参数一同使用，表示将用户增加到组中。
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
