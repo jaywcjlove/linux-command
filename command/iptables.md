@@ -109,7 +109,7 @@ iptables -t 表名 <-A/I/D/R> 规则链名 [规则号] <-i/o 网卡名> -p 协�
 
 - **INPUT链** ：处理输入数据包。
 - **OUTPUT链** ：处理输出数据包。
-- **PORWARD链** ：处理转发数据包。
+- **FORWARD链** ：处理转发数据包。
 - **PREROUTING链** ：用于目标地址转换（DNAT）。
 - **POSTOUTING链** ：用于源地址转换（SNAT）。
 
