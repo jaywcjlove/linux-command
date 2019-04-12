@@ -1,6 +1,6 @@
 {
   "name": "linux-command",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Linux Command",
   "main": "dist/data.json",
   "scripts": {
@@ -8,6 +8,10 @@
     "build": "node build/build.js",
     "deploy": "node build/deploy.js"
   },
+  "files": [
+    "command",
+    "dist"
+  ],
   "keywords": [
     "cli",
     "Linux",
