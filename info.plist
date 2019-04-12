@@ -4,8 +4,6 @@
 <dict>
 	<key>bundleid</key>
 	<string>com.linux.command.keywords</string>
-	<key>category</key>
-	<string>Tools</string>
 	<key>connections</key>
 	<dict>
 		<key>AB769D13-5DB9-42BF-A314-2D07384CB3A4</key>
@@ -48,25 +46,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>browser</key>
-				<string></string>
-				<key>spaces</key>
-				<string></string>
-				<key>url</key>
-				<string>https://jaywcjlove.github.io/linux-command/c/{query}.html</string>
-				<key>utf8</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.openurl</string>
-			<key>uid</key>
-			<string>0E764AF0-9350-40B4-8A01-175FAD0D952D</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>autopaste</key>
 				<true/>
 				<key>clipboardtext</key>
@@ -86,10 +65,12 @@
 			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
-				<integer>36</integer>
+				<integer>62</integer>
 				<key>keyword</key>
 				<string>lc</string>
 				<key>queuedelaycustom</key>
@@ -103,7 +84,9 @@
 				<key>runningsubtext</key>
 				<string>正在搜索中...</string>
 				<key>script</key>
-				<string>./node_modules/.bin/run-node index.js {query}</string>
+				<string>/usr/local/bin/node &lt;&lt;-'CODE'
+require("./linux")("{query}");
+CODE</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -123,6 +106,25 @@
 			<string>C24D6FD9-17A8-47C0-B2FD-7F1323E47407</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://jaywcjlove.github.io/linux-command/c/{query}.html</string>
+				<key>utf8</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>0E764AF0-9350-40B4-8A01-175FAD0D952D</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 	</array>
 	<key>readme</key>

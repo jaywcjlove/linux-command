@@ -1,6 +1,6 @@
 {
   "name": "alfred-linux-command",
-  "version": "1.0.0",
+  "version": "1.2.2",
   "description": "Search through the Linux command.",
   "main": "index.js",
   "scripts": {
@@ -30,8 +30,5 @@
     "node": ">=4"
   },
   "author": "kenny wang <wowohoo@qq.com>",
-  "license": "MIT",
-  "dependencies": {
-    "alfy": "^0.6.0"
-  }
+  "license": "MIT"
 }
