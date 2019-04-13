@@ -23,22 +23,30 @@ npm install linux-command
 ```
 
 ```js
-var comm = require("linux-command")
-console.log("---->",comm.ls)
+var comm = require("linux-command");
+console.log("---->", comm.ls);
 
-var alias = require("linux-command/command/alias.md")
-console.log("---->",alias) // markdown string
+var alias = require("linux-command/command/alias.md");
+console.log("---->", alias); // markdown string
 ```
 
-你也可以通过 CDN 来访问索引数据，和对应的命令详细内容，我将更新内容定期发布版本，提供大家使用，UNPKG 带上版本号，将锁定版本访问，删除版本号请求数据，将会自动重定向最新版本。
+你也可以通过 CDN 来访问索引数据，和对应的命令详细内容，我将更新内容定期发布版本，提供大家使用，[UNPKG](https://unpkg.com/linux-command/) 带上版本号，将锁定版本访问，删除版本号请求数据，将会自动重定向最新版本。
 
-https://unpkg.com/linux-command/dist/data.json 命令索引 JSON 数据  
-https://unpkg.com/linux-command/command/alias.md 对应命令详情（Markdown）数据  
+```shell
+# 命令索引 JSON 数据
+https://unpkg.com/linux-command/dist/data.json
+# 对应命令详情（Markdown）数据
+https://unpkg.com/linux-command/command/<命令名称>.md
+```
 
 你也可以通过 Github 的 Raw 来，获取最新的内容
 
-https://raw.githubusercontent.com/jaywcjlove/linux-command/master/dist/data.json 命令索引 JSON 数据  
-https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/alias.md 对应命令详情（Markdown）数据  
+```shell
+# 命令索引 JSON 数据
+https://raw.githubusercontent.com/jaywcjlove/linux-command/master/dist/data.json
+# 对应命令详情（Markdown）数据
+https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命令名称>.md 
+```
 
 #### Chrome 插件
 
