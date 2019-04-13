@@ -14,6 +14,32 @@ Linux Command
 
 [Github Web](https://jaywcjlove.github.io/linux-command/) | [OSChina Web](http://jaywcjlove.gitee.io/linux-command/) | [Web 1](http://linux-command.composer-proxy.org/) | [Alfred](https://github.com/jaywcjlove/linux-command/releases) | [Krunner](https://github.com/roachsinai/krunner-linuxcommands) | [Android](https://github.com/Ernest-su/LinuxCmd.git) | [Mac/Win/Linux](https://github.com/haloislet/linux-command) | [Chrome Plugin](https://github.com/jaywcjlove/oscnews)
 
+## 开发使用
+
+可以通过 `npm` 安装 `linux-command` 包，包含所有命令的 markdown 文本，和一个[索引文件](dist/data.json)。
+
+```bash
+npm install linux-command
+```
+
+```js
+var comm = require("linux-command")
+console.log("---->",comm.ls)
+
+var alias = require("linux-command/command/alias.md")
+console.log("---->",alias) // markdown string
+```
+
+你也可以通过 CDN 来访问索引数据，和对应的命令详细内容，我将更新内容定期发布版本，提供大家使用，UNPKG 带上版本号，将锁定版本访问，删除版本号请求数据，将会自动重定向最新版本。
+
+https://unpkg.com/linux-command/dist/data.json 命令索引 JSON 数据  
+https://unpkg.com/linux-command/command/alias.md 对应命令详情（Markdown）数据  
+
+你也可以通过 Github 的 Raw 来回去最新的内容
+
+https://raw.githubusercontent.com/jaywcjlove/linux-command/master/dist/data.json 命令索引 JSON 数据  
+https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/alias.md 对应命令详情（Markdown）数据  
+
 #### Chrome 插件
 
 可在[源码仓库](https://github.com/jaywcjlove/oscnews)预览效果，[Github下载 oscnews.crx 文件](https://github.com/jaywcjlove/oscnews/releases) 或者[开源中国下载 oscnews.crx 文件](https://gitee.com/jaywcjlove/oscnews/releases) 也可通过 Chrome Web Store 下载：
@@ -113,29 +139,6 @@ archive、ctlinnd、elm、getlist、inncheck、mail、mailconf、mailq、message
 ### 其他命令
 
 yes
-
-## 使用
-
-### Node调用
-
-```
-npm install linux-command
-```
-
-
-```js
-var comm = require("linux-command")
-console.log("---->",comm.ls)
-
-var alias = require("linux-command/command/alias.md")
-console.log("---->",alias) // markdown string
-```
-
-### CDN
-
-https://unpkg.com/linux-command/dist/data.json 命令总 JSON 数据  
-https://unpkg.com/linux-command/command/alias.md 对应命令详情（Markdown）数据  
-
 
 ## Linux学习资源整理
 
