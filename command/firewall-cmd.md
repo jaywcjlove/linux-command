@@ -14,11 +14,9 @@ firewalld跟iptables比起来至少有两大好处：
 
 firewalld自身并不具备防火墙的功能，而是和iptables一样需要通过内核的netfilter来实现，也就是说firewalld和 iptables一样，他们的作用都是用于维护规则，而真正使用规则干活的是内核的netfilter，只不过firewalld和iptables的结 构以及使用方法不一样罢了。
 
-
-
- **命令格式** 
+**命令格式** 
  
-```
+```bash
 firewall-cmd [选项 ... ]
 ```
 
@@ -27,32 +25,25 @@ firewall-cmd [选项 ... ]
 通用选项
 
 ```bash
- -h, --help
-           显示帮助信息；
-
-       -V, --version
-           显示版本信息. （这个选项不能与其他选项组合）；
-
-       -q, --quiet
-           不打印状态消息；
-
+-h, --help    # 显示帮助信息；
+-V, --version # 显示版本信息. （这个选项不能与其他选项组合）；
+-q, --quiet   # 不打印状态消息；
 ```
 
 状态选项
 ```bash
-  --state              显示firewalld的状态；
-  --reload             不中断服务的重新加载；
-  --complete-reload    中断所有连接的重新加载；
-  --runtime-to-permanent
-                       将当前防火墙的规则永久保存；
-  --check-config       检查配置正确性；
+--state                # 显示firewalld的状态；
+--reload               # 不中断服务的重新加载；
+--complete-reload      # 中断所有连接的重新加载；
+--runtime-to-permanent # 将当前防火墙的规则永久保存；
+--check-config         # 检查配置正确性；
 ```
 
 日志选项
+
 ```bash
-  --get-log-denied     获取记录被拒绝的日志；
-  --set-log-denied=<value>
-                       设置记录被拒绝的日志，只能为 'all','unicast','broadcast','multicast','off' 其中的一个；
+--get-log-denied         # 获取记录被拒绝的日志；
+--set-log-denied=<value> # 设置记录被拒绝的日志，只能为 'all','unicast','broadcast','multicast','off' 其中的一个；
 ```
 
 ### 实例  
@@ -60,7 +51,6 @@ firewall-cmd [选项 ... ]
 ```bash
 # 安装firewalld
 yum install firewalld firewall-config
-
 
 systemctl start  firewalld # 启动
 systemctl status firewalld # 或者 firewall-cmd --state 查看状态
@@ -193,81 +183,83 @@ firewall-cmd --reload
 ```
 
 **自定义服务管理**
+
 选项
+
 ```bash
-  （末尾带有 [P only] 的话表示该选项除了与（--permanent）之外，不能与其他选项一同使用！）
-  --new-service=<服务名> 新建一个自定义服务 [P only]
-  --new-service-from-file=<文件名> [--name=<服务名>]
-                       从文件中读取配置用以新建一个自定义服务 [P only]
-  --delete-service=<服务名>
-                       删除一个已存在的服务 [P only]
-  --load-service-defaults=<服务名>
-                       Load icmptype default settings [P only]
-  --info-service=<服务名>
-                       显示该服务的相关信息
-  --path-service=<服务名>
-                       显示该服务的文件的相关路径 [P only]
-  --service=<服务名> --set-description=<描述>
-                       给该服务设置描述信息 [P only]
-  --service=<服务名> --get-description
-                       显示该服务的描述信息 [P only]
-  --service=<服务名> --set-short=<描述>
-                       给该服务设置一个简短的描述 [P only]
-  --service=<服务名> --get-short
-                       显示该服务的简短描述 [P only]
-                       
-  --service=<服务名> --add-port=<端口号>[-<端口号>]/<protocol>
-                       给该服务添加一个新的端口(端口段) [P only]
-                       
-  --service=<服务名> --remove-port=<端口号>[-<端口号>]/<protocol>
-                       从该服务上移除一个端口(端口段) [P only]
-                       
-  --service=<服务名> --query-port=<端口号>[-<端口号>]/<protocol>
-                       查询该服务是否添加了某个端口(端口段) [P only]
-                       
-  --service=<服务名> --get-ports
-                       显示该服务添加的所有端口 [P only]
-                       
-  --service=<服务名> --add-protocol=<protocol>
-                       为该服务添加一个协议 [P only]
-                       
-  --service=<服务名> --remove-protocol=<protocol>
-                       从该服务上移除一个协议 [P only]
-                       
-  --service=<服务名> --query-protocol=<protocol>
-                       查询该服务是否添加了某个协议 [P only]
-                       
-  --service=<服务名> --get-protocols
-                       显示该服务添加的所有协议 [P only]
-                       
-  --service=<服务名> --add-source-port=<端口号>[-<端口号>]/<protocol>
-                       添加新的源端口(端口段)到该服务 [P only]
-                       
-  --service=<服务名> --remove-source-port=<端口号>[-<端口号>]/<protocol>
-                       从该服务中删除源端口(端口段) [P only]
-                       
-  --service=<服务名> --query-source-port=<端口号>[-<端口号>]/<protocol>
-                       查询该服务是否添加了某个源端口(端口段) [P only]
-                       
-  --service=<服务名> --get-source-ports
-                       显示该服务所有源端口 [P only]
-                       
-  --service=<服务名> --add-module=<module>
-                       为该服务添加一个模块 [P only]
-  --service=<服务名> --remove-module=<module>
-                       为该服务移除一个模块 [P only]
-  --service=<服务名> --query-module=<module>
-                       查询该服务是否添加了某个模块 [P only]
-  --service=<服务名> --get-modules
-                       显示该服务添加的所有模块 [P only]
-  --service=<服务名> --set-destination=<ipv>:<address>[/<mask>]
-                       Set destination for ipv to address in service [P only]
-  --service=<服务名> --remove-destination=<ipv>
-                       Disable destination for ipv i service [P only]
-  --service=<服务名> --query-destination=<ipv>:<address>[/<mask>]
-                       Return whether destination ipv is set for service [P only]
-  --service=<服务名> --get-destinations
-                       List destinations in service [P only]
+（末尾带有 [P only] 的话表示该选项除了与（--permanent）之外，不能与其他选项一同使用！）
+--new-service=<服务名> 新建一个自定义服务 [P only]
+--new-service-from-file=<文件名> [--name=<服务名>]
+                      从文件中读取配置用以新建一个自定义服务 [P only]
+--delete-service=<服务名>
+                      删除一个已存在的服务 [P only]
+--load-service-defaults=<服务名>
+                      Load icmptype default settings [P only]
+--info-service=<服务名>
+                      显示该服务的相关信息
+--path-service=<服务名>
+                      显示该服务的文件的相关路径 [P only]
+--service=<服务名> --set-description=<描述>
+                      给该服务设置描述信息 [P only]
+--service=<服务名> --get-description
+                      显示该服务的描述信息 [P only]
+--service=<服务名> --set-short=<描述>
+                      给该服务设置一个简短的描述 [P only]
+--service=<服务名> --get-short
+                      显示该服务的简短描述 [P only]
+                      
+--service=<服务名> --add-port=<端口号>[-<端口号>]/<protocol>
+                      给该服务添加一个新的端口(端口段) [P only]
+                      
+--service=<服务名> --remove-port=<端口号>[-<端口号>]/<protocol>
+                      从该服务上移除一个端口(端口段) [P only]
+                      
+--service=<服务名> --query-port=<端口号>[-<端口号>]/<protocol>
+                      查询该服务是否添加了某个端口(端口段) [P only]
+                      
+--service=<服务名> --get-ports
+                      显示该服务添加的所有端口 [P only]
+                      
+--service=<服务名> --add-protocol=<protocol>
+                      为该服务添加一个协议 [P only]
+                      
+--service=<服务名> --remove-protocol=<protocol>
+                      从该服务上移除一个协议 [P only]
+                      
+--service=<服务名> --query-protocol=<protocol>
+                      查询该服务是否添加了某个协议 [P only]
+                      
+--service=<服务名> --get-protocols
+                      显示该服务添加的所有协议 [P only]
+                      
+--service=<服务名> --add-source-port=<端口号>[-<端口号>]/<protocol>
+                      添加新的源端口(端口段)到该服务 [P only]
+                      
+--service=<服务名> --remove-source-port=<端口号>[-<端口号>]/<protocol>
+                      从该服务中删除源端口(端口段) [P only]
+                      
+--service=<服务名> --query-source-port=<端口号>[-<端口号>]/<protocol>
+                      查询该服务是否添加了某个源端口(端口段) [P only]
+                      
+--service=<服务名> --get-source-ports
+                      显示该服务所有源端口 [P only]
+                      
+--service=<服务名> --add-module=<module>
+                      为该服务添加一个模块 [P only]
+--service=<服务名> --remove-module=<module>
+                      为该服务移除一个模块 [P only]
+--service=<服务名> --query-module=<module>
+                      查询该服务是否添加了某个模块 [P only]
+--service=<服务名> --get-modules
+                      显示该服务添加的所有模块 [P only]
+--service=<服务名> --set-destination=<ipv>:<address>[/<mask>]
+                      Set destination for ipv to address in service [P only]
+--service=<服务名> --remove-destination=<ipv>
+                      Disable destination for ipv i service [P only]
+--service=<服务名> --query-destination=<ipv>:<address>[/<mask>]
+                      Return whether destination ipv is set for service [P only]
+--service=<服务名> --get-destinations
+                      List destinations in service [P only]
 ```
 
 
