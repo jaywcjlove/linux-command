@@ -50,7 +50,7 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 
 #### Chrome 插件
 
-可在[源码仓库](https://github.com/jaywcjlove/oscnews)预览效果，[Github下载 oscnews.crx 文件](https://github.com/jaywcjlove/oscnews/releases) 或者[开源中国下载 oscnews.crx 文件](https://gitee.com/jaywcjlove/oscnews/releases) 也可通过 Chrome Web Store 下载：
+可在[源码仓库](https://github.com/jaywcjlove/oscnews)预览效果，[Github下载 crx 文件安装](https://github.com/jaywcjlove/oscnews/releases) 或者[开源中国下载 crx 文件安装](https://gitee.com/jaywcjlove/oscnews/releases) 也可通过 Chrome Web Store 下载：
 
 [![Chrome Web Store 下载](http://jaywcjlove.github.io/sb/download/chrome-web-store.svg)](https://chrome.google.com/webstore/detail/oscnews/iheapfheanfjcemgneblljhaebonakbg)
 
