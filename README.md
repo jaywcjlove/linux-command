@@ -35,7 +35,7 @@ console.log("---->",alias) // markdown string
 https://unpkg.com/linux-command/dist/data.json 命令索引 JSON 数据  
 https://unpkg.com/linux-command/command/alias.md 对应命令详情（Markdown）数据  
 
-你也可以通过 Github 的 Raw 来回去最新的内容
+你也可以通过 Github 的 Raw 来，获取最新的内容
 
 https://raw.githubusercontent.com/jaywcjlove/linux-command/master/dist/data.json 命令索引 JSON 数据  
 https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/alias.md 对应命令详情（Markdown）数据  
