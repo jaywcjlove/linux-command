@@ -58,7 +58,7 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 
 #### Web 版本
 
-[OSChina Web](http://jaywcjlove.gitee.io/linux-command/) | [Web 1](http://linux-command.composer-proxy.org/)
+[Github Web](http://jaywcjlove.gitee.io/linux-command/) | [OSChina Web](http://jaywcjlove.gitee.io/linux-command/) | [Web 1](http://linux-command.composer-proxy.org/)
 
 扫描二维码移动端预览搜索，也可通过二维码下面链接地址打开使用。
 
