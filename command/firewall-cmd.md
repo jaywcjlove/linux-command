@@ -19,7 +19,7 @@ firewalld自身并不具备防火墙的功能，而是和iptables一样需要通
  **命令格式** 
  
 ```
-firewall-cmd (选项)
+firewall-cmd [选项 ... ]
 ```
 
 ### 选项
