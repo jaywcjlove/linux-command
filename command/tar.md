@@ -104,9 +104,9 @@ tar -xf archive.tar          # 从archive.tar提取所有文件。
 
 方式二：一次性打包并压缩、解压并解包
 
-打包并压缩： tar -zcvf [目标文件名].tar.gz [原文件名/目录名]
-解压并解包： tar -zxvf [原文件名].tar.gz
-注：z代表用gzip算法来压缩/解压。
+打包并压缩： tar -zcvf [目标文件名].tar.gz [原文件名/目录名]  
+解压并解包： tar -zxvf [原文件名].tar.gz  
+注：z代表用gzip算法来压缩/解压。  
 
 #### tar.bz2格式
 
