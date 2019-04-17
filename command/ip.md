@@ -51,7 +51,7 @@ help：显示网络对象支持的操作命令的帮助信息。
 
 ```bash
 ip link show                     # 显示网络接口信息
-ip link set eth0 upi             # 开启网卡
+ip link set eth0 up             # 开启网卡
 ip link set eth0 down            # 关闭网卡
 ip link set eth0 promisc on      # 开启网卡的混合模式
 ip link set eth0 promisc offi    # 关闭网卡的混个模式
