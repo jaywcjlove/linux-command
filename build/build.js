@@ -48,8 +48,6 @@ marked.setOptions({
     let html = code;
     if (Prism.languages[lang]) {
       html = Prism.highlight(code, Prism.languages[lang], lang);
-    }
-    if (lang === 'markdown') {
       html.toString();
       html = html.replace(/\$/g, '&#36;')
     }
