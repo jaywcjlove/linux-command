@@ -9,7 +9,7 @@ grep
 
 ### 选项  
 
-```bash
+```shell
 -a --text  # 不要忽略二进制数据。
 -A <显示行数>   --after-context=<显示行数>   # 除了显示符合范本样式的那一行之外，并显示该行之后的内容。
 -b --byte-offset                           # 在显示符合范本样式的那一行之外，并显示该行之前的内容。
@@ -42,7 +42,7 @@ grep
 
 ### 规则表达式
 
-```bash
+```shell
 ^    # 锚定行的开始 如：'^grep'匹配所有以grep开头的行。    
 $    # 锚定行的结束 如：'grep$' 匹配所有以grep结尾的行。
 .    # 匹配一个非换行符的字符 如：'gr.p'匹配gr后接一个任意字符，然后是p。    
@@ -65,32 +65,32 @@ x\{m,n\}  # 重复字符x，至少m次，不多于n次，如：'o\{5,10\}'匹配
 
 在文件中搜索一个单词，命令会返回一个包含 **“match_pattern”** 的文本行：
 
-```bash
+```shell
 grep match_pattern file_name
 grep "match_pattern" file_name
 ```
 
 在多个文件中查找：
 
-```bash
+```shell
 grep "match_pattern" file_1 file_2 file_3 ...
 ```
 
 输出除之外的所有行  **-v**  选项：
 
-```bash
+```shell
 grep -v "match_pattern" file_name
 ```
 
 标记匹配颜色  **--color=auto**  选项：
 
-```bash
+```shell
 grep "match_pattern" file_name --color=auto
 ```
 
 使用正则表达式  **-E**  选项：
 
-```bash
+```shell
 grep -E "[1-9]+"
 # 或
 egrep "[1-9]+"
@@ -98,7 +98,7 @@ egrep "[1-9]+"
 
 只输出文件中匹配到的部分  **-o**  选项：
 
-```bash
+```shell
 echo this is a test line. | grep -o -E "[a-z]+\."
 line.
 
@@ -108,13 +108,13 @@ line.
 
 统计文件或者文本中包含匹配字符串的行数  **-c**  选项：
 
-```bash
+```shell
 grep -c "text" file_name
 ```
 
 输出包含匹配字符串的行数  **-n**  选项：
 
-```bash
+```shell
 grep "text" -n file_name
 # 或
 cat file_name | grep "text" -n
@@ -125,7 +125,7 @@ grep "text" -n file_1 file_2
 
 打印样式匹配所位于的字符或字节偏移：
 
-```bash
+```shell
 echo gun is not unix | grep -b -o "not"
 7:not
 #一行中字符串的字符便宜是从该行的第一个字符开始计算，起始值为0。选项  **-b -o**  一般总是配合使用。
@@ -133,7 +133,7 @@ echo gun is not unix | grep -b -o "not"
 
 搜索多个文件并查找匹配文本在哪些文件中：
 
-```bash
+```shell
 grep -l "text" file1 file2 file3...
 ```
 
@@ -141,21 +141,21 @@ grep -l "text" file1 file2 file3...
 
 在多级目录中对文本进行递归搜索：
 
-```bash
+```shell
 grep "text" . -r -n
 # .表示当前目录。
 ```
 
 忽略匹配样式中的字符大小写：
 
-```bash
+```shell
 echo "hello world" | grep -i "HELLO"
 # hello
 ```
 
 选项  **-e**  制动多个匹配样式：
 
-```bash
+```shell
 echo this is a text line | grep -e "is" -e "line" -o
 is
 line
@@ -170,7 +170,7 @@ echo aaa bbb ccc ddd eee | grep -f patfile -o
 
 在grep搜索结果中包括或者排除指定文件：
 
-```bash
+```shell
 # 只在目录中所有的.php和.html文件中递归搜索字符"main()"
 grep "main()" . -r --include *.{php,html}
 
@@ -184,7 +184,7 @@ grep "main()" . -r --exclude-from filelist
 
 使用0值字节后缀的grep与xargs：
 
-```bash
+```shell
 # 测试文件：
 echo "aaa" > file1
 echo "bbb" > file2
@@ -197,14 +197,14 @@ grep "aaa" file* -lZ | xargs -0 rm
 
 grep静默输出：
 
-```bash
+```shell
 grep -q "test" filename
 # 不会输出任何信息，如果命令运行成功返回0，失败则返回非0值。一般用于条件测试。
 ```
 
 打印出匹配文本之前或者之后的行：
 
-```bash
+```shell
 # 显示匹配某个结果之后的3行，使用 -A 选项：
 seq 10 | grep "5" -A 3
 5
