@@ -20,13 +20,14 @@ renderer.heading = (text, level) => {
 
 marked.setOptions({
   renderer: renderer,
+  pedantic: false,
   gfm: true,
   tables: true,
   breaks: false,
-  pedantic: false,
   sanitize: false,
   smartLists: true,
   smartypants: false,
+  xhtml: false,
   highlight: (code, lang, callback) => {
     if (/(tex)$/.test(lang)) lang = 'latex';
     if (/(h)$/.test(lang)) lang = 'c';
@@ -47,6 +48,10 @@ marked.setOptions({
     let html = code;
     if (Prism.languages[lang]) {
       html = Prism.highlight(code, Prism.languages[lang], lang);
+    }
+    if (lang === 'markdown') {
+      html.toString();
+      html = html.replace(/\$/g, '&#36;')
     }
     return callback('', html);
   }

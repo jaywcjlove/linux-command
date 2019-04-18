@@ -44,7 +44,7 @@ grep
 
 ```bash
 ^    # 锚定行的开始 如：'^grep'匹配所有以grep开头的行。    
-$    # 锚定行的结束 如：'grep$'匹配所有以grep结尾的行。    
+$    # 锚定行的结束 如：'grep$' 匹配所有以grep结尾的行。
 .    # 匹配一个非换行符的字符 如：'gr.p'匹配gr后接一个任意字符，然后是p。    
 *    # 匹配零个或多个先前字符 如：'*grep'匹配所有一个或多个空格后紧跟grep的行。    
 .*   # 一起用代表任意字符。   
@@ -65,110 +65,97 @@ x\{m,n\}  # 重复字符x，至少m次，不多于n次，如：'o\{5,10\}'匹配
 
 在文件中搜索一个单词，命令会返回一个包含 **“match_pattern”** 的文本行：
 
-```
+```bash
 grep match_pattern file_name
 grep "match_pattern" file_name
-
 ```
 
 在多个文件中查找：
 
-```
+```bash
 grep "match_pattern" file_1 file_2 file_3 ...
-
 ```
 
 输出除之外的所有行  **-v**  选项：
 
-```
+```bash
 grep -v "match_pattern" file_name
-
 ```
 
 标记匹配颜色  **--color=auto**  选项：
 
-```
+```bash
 grep "match_pattern" file_name --color=auto
-
 ```
 
 使用正则表达式  **-E**  选项：
 
-```
+```bash
 grep -E "[1-9]+"
-或
+# 或
 egrep "[1-9]+"
-
 ```
 
 只输出文件中匹配到的部分  **-o**  选项：
 
-```
+```bash
 echo this is a test line. | grep -o -E "[a-z]+\."
 line.
 
 echo this is a test line. | egrep -o "[a-z]+\."
 line.
-
 ```
 
 统计文件或者文本中包含匹配字符串的行数  **-c**  选项：
 
-```
+```bash
 grep -c "text" file_name
-
 ```
 
 输出包含匹配字符串的行数  **-n**  选项：
 
-```
+```bash
 grep "text" -n file_name
-或
+# 或
 cat file_name | grep "text" -n
 
 #多个文件
 grep "text" -n file_1 file_2
-
 ```
 
 打印样式匹配所位于的字符或字节偏移：
 
-```
+```bash
 echo gun is not unix | grep -b -o "not"
 7:not
-
 #一行中字符串的字符便宜是从该行的第一个字符开始计算，起始值为0。选项  **-b -o**  一般总是配合使用。
-
 ```
 
 搜索多个文件并查找匹配文本在哪些文件中：
 
-```
+```bash
 grep -l "text" file1 file2 file3...
-
 ```
 
 ### grep递归搜索文件  
 
 在多级目录中对文本进行递归搜索：
 
-```
+```bash
 grep "text" . -r -n
 # .表示当前目录。
-
 ```
 
 忽略匹配样式中的字符大小写：
 
-```
+```bash
 echo "hello world" | grep -i "HELLO"
-hello
-
+# hello
 ```
 
 选项  **-e**  制动多个匹配样式：
 
-```
+```bash
 echo this is a text line | grep -e "is" -e "line" -o
 is
 line
@@ -179,19 +166,18 @@ aaa
 bbb
 
 echo aaa bbb ccc ddd eee | grep -f patfile -o
-
 ```
 
 在grep搜索结果中包括或者排除指定文件：
 
-```
-#只在目录中所有的.php和.html文件中递归搜索字符"main()"
+```bash
+# 只在目录中所有的.php和.html文件中递归搜索字符"main()"
 grep "main()" . -r --include *.{php,html}
 
-#在搜索结果中排除所有README文件
+# 在搜索结果中排除所有README文件
 grep "main()" . -r --exclude "README"
 
-#在搜索结果中排除filelist文件列表里的文件
+# 在搜索结果中排除filelist文件列表里的文件
 grep "main()" . -r --exclude-from filelist
 
 ```
@@ -206,8 +192,7 @@ echo "aaa" > file3
 
 grep "aaa" file* -lZ | xargs -0 rm
 
-#执行后会删除file1和file3，grep输出用-Z选项来指定以0值字节作为终结符文件名（\0），xargs -0 读取输入并用0值字节终结符分隔文件名，然后删除匹配文件，-Z通常和-l结合使用。
-
+# 执行后会删除file1和file3，grep输出用-Z选项来指定以0值字节作为终结符文件名（\0），xargs -0 读取输入并用0值字节终结符分隔文件名，然后删除匹配文件，-Z通常和-l结合使用。
 ```
 
 grep静默输出：
