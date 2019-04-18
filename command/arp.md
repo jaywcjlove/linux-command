@@ -1,15 +1,15 @@
 arp
 ===
 
-arp 命令用于显示和修改 IP 到 MAC 转换表。ARP 是 Address Resolution Protocol，地址解析协议，是通过解析网络层地址来找寻数据链路层地址的一个网络协议包中极其重要的网络传输协议。而该命令可以显示和修改 arp 协议解析表中的缓冲数据。
+arp 命令用于显示和修改 IP 到 MAC 转换表。
 
 ## 补充说明
 
-**arp 命令** 用于操作主机的 arp 缓冲区，它可以显示 arp 缓冲区中的所有条目、删除指定的条目或者添加静态的 ip 地址与 MAC 地址对应关系。
+**arp 命令** 是 Address Resolution Protocol，地址解析协议，是通过解析网络层地址来找寻数据链路层地址的一个网络协议包中极其重要的网络传输协议。而该命令可以显示和修改 arp 协议解析表中的缓冲数据。
 
 ### 语法
 
-```
+```shell
 arp（选项）（参数）
 ```
 
@@ -34,7 +34,7 @@ arp（选项）（参数）
 
 显示arp 缓冲区内容
 
-```
+```shell
 [root@localhost ~]# arp -v
 Address                  HWtype  HWaddress           Flags Mask            Iface
 192.168.0.134            ether   00:21:5E:C7:4D:88   C                     eth1
@@ -44,11 +44,15 @@ Entries: 2      Skipped: 0      Found: 2
 
 添加静态 arp 映射
 
-    arp -s IP MAC-ADDRESS
-    arp -s 192.168.1.1 00:b1:b2:b3:b4:b5
+```shell
+arp -s IP MAC-ADDRESS
+arp -s 192.168.1.1 00:b1:b2:b3:b4:b5
+```
 
 删除 arp 缓存条目
 
-    arp -d 192.168.1.1
+```shell
+arp -d 192.168.1.1
+```
 
 <!-- Linux 命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
