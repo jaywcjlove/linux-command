@@ -29,9 +29,9 @@
     "fs-extra": "^7.0.0",
     "gh-pages": "^2.0.0",
     "loading-cli": "^1.0.8",
-    "marked": "^0.5.1",
+    "marked": "^0.6.2",
     "path": "^0.12.7",
-    "prismjs": "^1.15.0",
+    "prismjs": "^1.16.0",
     "stylus": "^0.54.5",
     "uglify-js": "^3.4.9"
   },
