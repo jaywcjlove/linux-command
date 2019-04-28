@@ -9,7 +9,7 @@ bzmore
 
 ### 语法  
 
-```
+```shell
 bzmore(参数)
 ```
 

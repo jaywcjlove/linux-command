@@ -9,7 +9,7 @@ getenforce
 
 ### 语法  
 
-```
+```shell
 getenforce
 ```
 
@@ -17,7 +17,7 @@ getenforce
 
 查看当前SELinux的应用模式。
 
-```bash
+```shell
 [root@localhost ~]# getenforce
 Enforcing
 ```

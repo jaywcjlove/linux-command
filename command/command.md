@@ -9,7 +9,7 @@ command
 
 ### 语法  
 
-```
+```shell
 command(参数)
 ```
 
@@ -21,13 +21,13 @@ command(参数)
 
 使用command命令调用执行`echo Linux`，输入如下命令：
 
-```
+```shell
 command echo Linux            #调用执行shell内部指令
 ```
 
 上面的命令执行后，将调用执行命令`echo Linux`，其执行结果如下：
 
-```
+```shell
 Linux
 ```
 

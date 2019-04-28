@@ -9,7 +9,7 @@ curl
 
 ### 语法
 
-```
+```shell
 curl(选项)(参数)
 ```
 
@@ -125,7 +125,7 @@ curl(选项)(参数)
 
 curl命令可以用来执行下载、发送各种HTTP请求，指定HTTP头部等操作。如果系统没有curl可以使用`yum install curl`安装，也可以下载安装。curl是将下载文件输出到stdout，将进度信息输出到stderr，不显示进度信息使用`--silent`选项。
 
-```
+```shell
 curl URL --silent
 ```
 
@@ -133,13 +133,13 @@ curl URL --silent
 
 使用选项`-O`将下载的数据写入到文件，必须使用文件的绝对地址：
 
-```
+```shell
 curl http://wangchujiang.com/text.iso --silent -O
 ```
 
 选项`-o`将下载数据写入到指定名称的文件中，并使用`--progress`显示进度条：
 
-```
+```shell
 curl http://wangchujiang.com/test.iso -o filename.iso --progress
 ######################################### 100.0%
 ```
@@ -148,7 +148,7 @@ curl http://wangchujiang.com/test.iso -o filename.iso --progress
 
 curl能够从特定的文件偏移处继续下载，它可以通过指定一个便宜量来下载部分文件：
 
-```
+```shell
 curl URL/File -C 偏移量
 
 #偏移量是以字节为单位的整数，如果让curl自动推断出正确的续传位置使用-C -：
@@ -161,7 +161,7 @@ curl -C -URL
 
 使用`--referer`选项指定参照页字符串：
 
-```
+```shell
 curl --referer http://www.google.com http://wangchujiang.com
 ```
 
@@ -169,13 +169,13 @@ curl --referer http://www.google.com http://wangchujiang.com
 
 使用`--cookie "COKKIES"`选项来指定cookie，多个cookie使用分号分隔：
 
-```
+```shell
 curl http://wangchujiang.com --cookie "user=root;pass=123456"
 ```
 
 将cookie另存为一个文件，使用`--cookie-jar`选项：
 
-```
+```shell
 curl URL --cookie-jar cookie_file
 ```
 
@@ -183,14 +183,14 @@ curl URL --cookie-jar cookie_file
 
 有些网站访问会提示只能使用IE浏览器来访问，这是因为这些网站设置了检查用户代理，可以使用curl把用户代理设置为IE，这样就可以访问了。使用`--user-agent`或者`-A`选项：
 
-```
+```shell
 curl URL --user-agent "Mozilla/5.0"
 curl URL -A "Mozilla/5.0"
 ```
 
 其他HTTP头部信息也可以使用curl来发送，使用`-H`"头部信息" 传递多个头部信息，例如：
 
-```
+```shell
 curl -H "Host:wangchujiang.com" -H "accept-language:zh-cn" URL
 ```
 
@@ -198,7 +198,7 @@ curl -H "Host:wangchujiang.com" -H "accept-language:zh-cn" URL
 
 使用`--limit-rate`限制curl的下载速度：
 
-```
+```shell
 curl URL --limit-rate 50k
 ```
 
@@ -206,7 +206,7 @@ curl URL --limit-rate 50k
 
 使用`--max-filesize`指定可下载的最大文件大小：
 
-```
+```shell
 curl URL --max-filesize bytes
 ```
 
@@ -216,7 +216,7 @@ curl URL --max-filesize bytes
 
 使用curl选项 -u 可以完成HTTP或者FTP的认证，可以指定密码，也可以不指定密码在后续操作中输入密码：
 
-```
+```shell
 curl -u user:pwd http://wangchujiang.com
 curl -u user http://wangchujiang.com
 ```
@@ -225,7 +225,7 @@ curl -u user http://wangchujiang.com
 
 通过`-I`或者`-head`可以只打印出HTTP头部信息：
 
-```
+```shell
 [root@localhost text]# curl -I http://wangchujiang.com
 HTTP/1.1 200 OK
 Server: nginx/1.2.5
@@ -238,7 +238,7 @@ X-Pingback: http://wangchujiang.com/xmlrpc.php
 
 **get请求**
 
-```bash
+```shell
 curl "http://www.wangchujiang.com"    # 如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地
 curl -i "http://www.wangchujiang.com" # 显示全部信息
 curl -l "http://www.wangchujiang.com" # 只显示头部信息
@@ -247,19 +247,19 @@ curl -v "http://www.wangchujiang.com" # 显示get请求全过程解析
 
 **post请求**
 
-```bash
+```shell
 curl -d "param1=value1&param2=value2" "http://www.wangchujiang.com"
 ```
 
 **json格式的post请求**
 
-```bash
+```shell
 curl -l -H "Content-type: application/json" -X POST -d '{"phone":"13521389587","password":"test"}' http://wangchujiang.com/apis/users.json
 ```
 
 **获取本机外网ip**
 
-```bash
+```shell
 curl ipecho.net/plain
 ```
 

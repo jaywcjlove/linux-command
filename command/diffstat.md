@@ -9,13 +9,13 @@ diffstat
 
 ### 语法  
 
-```
+```shell
 diffstat(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -n<文件名长度>：指定文件名长度，指定的长度必须大于或等于所有文件中最长的文件名；
 -p<文件名长度>：与-n参数相同，但此处的<文件名长度>包括了文件的路径；
 -w：指定要输出时栏位的宽度；
@@ -30,7 +30,7 @@ diffstat(选项)(参数)
 
 将目录"test1"和"test2"下的同名文件"testf.txt"使用diff命令进行比较。然后使用diffstat命令对结果进行统计显示，输入如下命令：
 
-```
+```shell
 diff test1 test2 | diffstat    #进行比较结果的统计显示
 ```
 
@@ -38,7 +38,7 @@ diff test1 test2 | diffstat    #进行比较结果的统计显示
 
 对于查看文件中的内容，用户可以通过cat命令进行查看即可，具体操作如下：
 
-```
+```shell
 cat test1/testf.txt           #查看test1/testf的内容
 abc
 def
@@ -59,7 +59,7 @@ mno
 
 从上面的文件内容显示，可以看到两个文件内容的差别。现在来运行刚才的命令，对文件比较的结果进行统计显示，结果如下：
 
-```
+```shell
 testfile | 2 +-             #统计信息输出显示
 1 file changed, 1 insertion(+), 1 deletion(-)
 ```

@@ -9,13 +9,13 @@ find
 
 ### 语法
 
-```
+```shell
 find(选项)(参数)
 ```
 
 ### 选项
 
-```
+```shell
 -amin<分钟>：查找在指定时间曾被存取过的文件或目录，单位以分钟计算；
 -anewer<参考文件或目录>：查找其存取时间较指定文件或目录的存取时间更接近现在的文件或目录；
 -atime<24小时数>：查找在指定时间曾被存取过的文件或目录，单位以24小时计算；
@@ -79,7 +79,7 @@ find(选项)(参数)
 
 ### 实例
 
-```bash
+```shell
 # 当前目录搜索所有文件，文件内容 包含 “140.206.111.111” 的内容
 find . -type f -name "*" | xargs grep "140.206.111.111"
 ```
@@ -88,25 +88,25 @@ find . -type f -name "*" | xargs grep "140.206.111.111"
 
 列出当前目录及子目录下所有文件和文件夹
 
-```
+```shell
 find .
 ```
 
 在`/home`目录下查找以.txt结尾的文件名
 
-```
+```shell
 find /home -name "*.txt"
 ```
 
 同上，但忽略大小写
 
-```
+```shell
 find /home -iname "*.txt"
 ```
 
 当前目录及子目录下查找所有以.txt和.pdf结尾的文件
 
-```
+```shell
 find . \( -name "*.txt" -o -name "*.pdf" \)
 
 或
@@ -116,19 +116,19 @@ find . -name "*.txt" -o -name "*.pdf"
 
 匹配文件路径或者文件
 
-```
+```shell
 find /usr/ -path "*local*"
 ```
 
 基于正则表达式匹配文件路径
 
-```
+```shell
 find . -regex ".*\(\.txt\|\.pdf\)$"
 ```
 
 同上，但忽略大小写
 
-```
+```shell
 find . -iregex ".*\(\.txt\|\.pdf\)$"
 ```
 
@@ -136,13 +136,13 @@ find . -iregex ".*\(\.txt\|\.pdf\)$"
 
 找出/home下不是以.txt结尾的文件
 
-```
+```shell
 find /home ! -name "*.txt"
 ```
 
 #### 根据文件类型进行搜索
 
-```
+```shell
 find . -type 类型参数
 ```
 
@@ -160,19 +160,19 @@ find . -type 类型参数
 
 向下最大深度限制为3
 
-```
+```shell
 find . -maxdepth 3 -type f
 ```
 
 搜索出深度距离当前目录至少2个子目录的所有文件
 
-```
+```shell
 find . -mindepth 2 -type f
 ```
 
 #### 根据文件时间戳进行搜索
 
-```
+```shell
 find . -type f 时间戳
 ```
 
@@ -184,37 +184,37 @@ UNIX/Linux文件系统每个文件都有三种时间戳：
 
 搜索最近七天内被访问过的所有文件
 
-```
+```shell
 find . -type f -atime -7
 ```
 
 搜索恰好在七天前被访问过的所有文件
 
-```
+```shell
 find . -type f -atime 7
 ```
 
 搜索超过七天内被访问过的所有文件
 
-```
+```shell
 find . -type f -atime +7
 ```
 
 搜索访问时间超过10分钟的所有文件
 
-```
+```shell
 find . -type f -amin +10
 ```
 
 找出比file.log修改时间更长的所有文件
 
-```
+```shell
 find . -type f -newer file.log
 ```
 
 #### 根据文件大小进行匹配
 
-```
+```shell
 find . -type f -size 文件大小单元
 ```
 
@@ -229,19 +229,19 @@ find . -type f -size 文件大小单元
 
 搜索大于10KB的文件
 
-```
+```shell
 find . -type f -size +10k
 ```
 
 搜索小于10KB的文件
 
-```
+```shell
 find . -type f -size -10k
 ```
 
 搜索等于10KB的文件
 
-```
+```shell
 find . -type f -size 10k
 ```
 
@@ -249,7 +249,7 @@ find . -type f -size 10k
 
 删除当前目录下所有.txt文件
 
-```
+```shell
 find . -type f -name "*.txt" -delete
 ```
 
@@ -257,25 +257,25 @@ find . -type f -name "*.txt" -delete
 
 当前目录下搜索出权限为777的文件
 
-```
+```shell
 find . -type f -perm 777
 ```
 
 找出当前目录下权限不是644的php文件
 
-```
+```shell
 find . -type f -name "*.php" ! -perm 644
 ```
 
 找出当前目录用户tom拥有的所有文件
 
-```
+```shell
 find . -type f -user tom
 ```
 
 找出当前目录用户组sunk拥有的所有文件
 
-```
+```shell
 find . -type f -group sunk
 ```
 
@@ -283,7 +283,7 @@ find . -type f -group sunk
 
 找出当前目录下所有root的文件，并把所有权更改为用户tom
 
-```
+```shell
 find .-type f -user root -exec chown tom {} \;
 ```
 
@@ -291,7 +291,7 @@ find .-type f -user root -exec chown tom {} \;
 
 找出自己家目录下所有的.txt文件并删除
 
-```
+```shell
 find $HOME/. -name "*.txt" -ok rm {} \;
 ```
 
@@ -299,25 +299,25 @@ find $HOME/. -name "*.txt" -ok rm {} \;
 
 查找当前目录下所有.txt文件并把他们拼接起来写入到all.txt文件中
 
-```
+```shell
 find . -type f -name "*.txt" -exec cat {} \;> all.txt
 ```
 
 将30天前的.log文件移动到old目录中
 
-```
+```shell
 find . -type f -mtime +30 -name "*.log" -exec cp {} old \;
 ```
 
 找出当前目录下所有.txt文件并以“File:文件名”的形式打印出来
 
-```
+```shell
 find . -type f -name "*.txt" -exec printf "File: %s\n" {} \;
 ```
 
 因为单行命令中-exec参数中无法使用多个命令，以下方法可以实现在-exec之后接受多条命令
 
-```
+```shell
 -exec ./text.sh {} \;
 ```
 
@@ -325,7 +325,7 @@ find . -type f -name "*.txt" -exec printf "File: %s\n" {} \;
 
 查找当前目录或者子目录下所有.txt文件，但是跳过子目录sk
 
-```
+```shell
 find . -path "./sk" -prune -o -name "*.txt" -print
 ```
 
@@ -333,13 +333,13 @@ find . -path "./sk" -prune -o -name "*.txt" -print
 
 要列出所有长度为零的文件
 
-```
+```shell
 find . -empty
 ```
 
 #### 其它实例
 
-```bash
+```shell
 find ~ -name '*jpg' # 主目录中找到所有的 jpg 文件。 -name 参数允许你将结果限制为与给定模式匹配的文件。
 find ~ -iname '*jpg' # -iname 就像 -name，但是不区分大小写
 find ~ ( -iname 'jpeg' -o -iname 'jpg' ) # 一些图片可能是 .jpeg 扩展名。幸运的是，我们可以将模式用“或”（表示为 -o）来组合。
@@ -349,7 +349,7 @@ find ~ \( -iname '*jpeg' -o -iname '*jpg' \) -type d # 也许你想找到那些�
 
 最近拍了很多照片，所以让我们把它缩小到上周更改的文件
 
-```bash
+```shell
 find ~ \( -iname '*jpeg' -o -iname '*jpg' \) -type f -mtime -7
 ```
 
@@ -357,31 +357,31 @@ find ~ \( -iname '*jpeg' -o -iname '*jpg' \) -type f -mtime -7
 
 但也许你不关心你的照片。也许你的磁盘空间不够用，所以你想在 log 目录下找到所有巨大的（让我们定义为“大于 1GB”）文件：
 
-```bash
+```shell
 find /var/log -size +1G
 ```
 
 或者，也许你想在 /data 中找到 bcotton 拥有的所有文件：
 
-```bash
+```shell
 find /data -owner bcotton
 ```
 
 你还可以根据权限查找文件。也许你想在你的主目录中找到对所有人可读的文件，以确保你不会过度分享。
 
-```bash
+```shell
 find ~ -perm -o=r
 ```
 
 删除 mac 下自动生成的文件
 
-```
+```shell
 find ./ -name '__MACOSX' -depth -exec rm -rf {} \;
 ```
 
 统计代码行数
 
-```
+```shell
 find . -name "*.java"|xargs cat|grep -v ^$|wc -l # 代码行数统计, 排除空行
 ```
 

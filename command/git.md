@@ -29,7 +29,7 @@ Git迅速成为最流行的分布式版本控制系统，尤其是2008年，GitH
 
 ### 语法  
 
-```
+```shell
 git [--version] [--help] [-C <path>] [-c name=value]
    [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
    [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
@@ -39,7 +39,7 @@ git [--version] [--help] [-C <path>] [-c name=value]
 
 ### 选项  
 
-```
+```shell
 add              将文件内容添加到索引
 bisect           通过二进制查找引入错误的更改
 branch           列出，创建或删除分支
@@ -89,7 +89,7 @@ remote
 
 push
 
-```bash
+```shell
 git push -u origin master # push同事设置默认跟踪分支  
 git push origin master  
 git push -f origin master # 强制推送文件，缩写 -f（全写--force）
@@ -103,7 +103,7 @@ clone
 
 git clone支持多种协议，除了HTTP(s)以外，还支持SSH、Git、本地文件协议等，下面是一些例子。`git clone <版本库的网址> <本地目录名>`  
 
-```bash
+```shell
 $ git clone http[s]://example.com/path/to/repo.git/
 $ git clone ssh://example.com/path/to/repo.git/
 $ git clone git://example.com/path/to/repo.git/
@@ -119,7 +119,7 @@ $ git clone rsync://example.com/path/to/repo.git/
 
 ## 修改项目中的个人信息
 
-```bash
+```shell
 git help config # 获取帮助信息，查看修改个人信息的参数  
 git config --global user.name "小弟调调"           # 修改全局名字
 git config --global user.email "wowohoo@qq.com"  # 修改全局邮箱
@@ -130,7 +130,7 @@ git config --list         # 查看配置的信息
 
 自动转换坑太大，提交到git是自动将换行符转换为lf 
 
-```bash
+```shell
 git config --global core.autocrlf input
 ```
 
@@ -140,7 +140,7 @@ git config --global core.autocrlf input
 
 这个密钥用来跟 github 通信，在本地终端里生成然后上传到 github
 
-```bash
+```shell
 ssh-keygen -t rsa -C 'wowohoo@qq.com' # 生成密钥  
 ssh-keygen -t rsa -C "wowohoo@qq.com" -f ~/.ssh/ww_rsa # 指定生成目录文件名字
 ssh -T git@github.com # 测试是否成功  
@@ -162,7 +162,7 @@ ssh -T git@github.com # 测试是否成功
 
 `vim ~/.ssh/config` #修改config文件，如果没有创建 `config`  
 
-```bash
+```shell
 Host jslite.github.com
   HostName github.com
   User git
@@ -184,7 +184,7 @@ Host work.github.com
 
 **4.测试**
 
-```bash
+```shell
 ssh -T git@jslite.github.com  # `@`后面跟上定义的Host  
 ssh -T work.github.com        # 通过别名测试
 ssh -i ~/公钥文件地址 Host别名  # 如 ssh -i ~/.ssh/work_rsa work.github.com
@@ -192,7 +192,7 @@ ssh -i ~/公钥文件地址 Host别名  # 如 ssh -i ~/.ssh/work_rsa work.github
 
 **5.使用**
 
-```bash
+```shell
 # 原来的写法
 git clone git@github.com:<jslite的用户名>/learngit.git
 # 现在的写法
@@ -204,7 +204,7 @@ git clone git@work.github.com:<work的用户名>/learngit.git
 
 如果你修改了id_rsa的名字，你需要将ssh key添加到SSH agent中，如：
 
-```bash
+```shell
 ssh-add ~/.ssh/jslite_rsa
 ssh-add -l  # 查看所有的key
 ssh-add -D  # 删除所有的key
@@ -213,14 +213,14 @@ ssh-add -d  ~/.ssh/jslite_rsa # 删除指定的key
 
 ### 免密码登录远程服务器
 
-```bash
+```shell
 $ ssh-keygen -t rsa -P '' -f ~/.ssh/aliyunserver.key
 $ ssh-copy-id -i ~/.ssh/aliyunserver.key.pub root@192.168.182.112 # 这里需要输入密码一次
 ```
 
 编辑 `~/.ssh/config`
 
-```bash
+```shell
 Host aliyun1
   HostName 192.168.182.112
   User root
@@ -232,13 +232,13 @@ Host aliyun1
 
 ### https协议下提交代码免密码
 
-```bash
+```shell
 git clone https://github.com/username/rep.git
 ```
 
 通过上面方式克隆可能需要密码，解决办法：进入当前克隆的项目 `vi rep/.git/config` 编辑 `config`, 按照下面方式修改，你就可以提交代码不用输入密码了。
 
-```diff
+```shell
 [core]
 	repositoryformatversion = 0
 	filemode = true
@@ -259,7 +259,7 @@ git clone https://github.com/username/rep.git
 
 **1. 增加3个远程库地址**
 
-```bash
+```shell
 git remote add origin https://github.com/JSLite/JSLite.git  
 git remote set-url --add origin https://gitlab.com/wang/JSLite.js.git  
 git remote set-url --add origin https://oschina.net/wang/JSLite.js.git  
@@ -267,7 +267,7 @@ git remote set-url --add origin https://oschina.net/wang/JSLite.js.git
 
 **2. 删除其中一个 set-url 地址**
 
-```bash
+```shell
 usage: git remote set-url [--push] <name> <newurl> [<oldurl>]
    or: git remote set-url --add <name> <newurl>
    or: git remote set-url --delete <name> <url>
@@ -277,7 +277,7 @@ usage: git remote set-url [--push] <name> <newurl> [<oldurl>]
 
 **3.推送代码**
 
-```bash
+```shell
 git push origin master
 git push -f origin master  # 强制推送  
 ```
@@ -287,7 +287,7 @@ git push -f origin master  # 强制推送
 只能拉取 `origin` 里的一个url地址，这个fetch-url  
 默认为你添加的到 `origin`的第一个地址  
 
-```bash
+```shell
 git pull origin master   
 git pull --all # 获取远程所有内容包括tag  
 git pull origin next:master # 取回origin主机的next分支，与本地的master分支合并  
@@ -301,7 +301,7 @@ git merge origin/next
 如果远程主机删除了某个分支，默认情况下，git pull 不会在拉取远程分支的时候，删除对应的本地分支。这是为了防止，由于其他人操作了远程主机，导致git pull不知不觉删除了本地分支。  
 但是，你可以改变这个行为，加上参数 -p 就会在本地删除远程已经删除的分支。  
 
-```bash
+```shell
 $ git pull -p
 # 等同于下面的命令
 $ git fetch --prune origin 
@@ -315,27 +315,27 @@ $ git fetch -p
 
 ### 修改远程仓库地址
 
-```bash
+```shell
 git remote remove origin  # 删除该远程路径  
 git remote add origin git@jslite.github.com:JSLite/JSLite.git  # 添加远程路径 
 ```
 
 ### 撤销远程记录
 
-```bash
+```shell
 git reset --hard HEAD~1 # 撤销一条记录   
 git push -f origin HEAD:master # 同步到远程仓库  
 ```
 
 ### 放弃本地的文件修改
 
-```bash
+```shell
 git reset --hard FETCH_HEAD # FETCH_HEAD表示上一次成功git pull之后形成的commit点。然后git pull
 ```
 
 `git reset --hard FETCH_HEAD` 出现错误
 
-```bash
+```shell
 git pull
 You are not currently on a branch, so I cannot use any
 'branch.<branchname>.merge' in your configuration file.
@@ -346,14 +346,14 @@ See git-pull(1) FOR details.
 
 解决方法：
 
-```bash
+```shell
 git checkout -b temp # 新建+切换到temp分支 
 git checkout master
 ```
 
 ### 最简单放弃本地修改内容
 
-```bash
+```shell
 # 如果有的修改以及加入暂存区的话
 git reset --hard 
 # 还原所有修改，不会删除新增的文件
@@ -364,13 +364,13 @@ git clean -xdf
 
 通过存储暂存区stash，在删除暂存区的方法放弃本地修改。
 
-```bash
+```shell
 git stash && git stash drop 
 ```
 
 ### 回滚到某个commit提交
 
-```bash
+```shell
 git revert HEAD~1 # 撤销一条记录 会弹出 commit 编辑
 git push # 提交回滚
 ```
@@ -378,7 +378,7 @@ git push # 提交回滚
 
 ### 回退到某一个版本
 
-```bash
+```shell
 git reset --hard <hash>
 # 例如 git reset --hard a3hd73r
 # --hard代表丢弃工作区的修改，让工作区与版本代码一模一样，与之对应，
@@ -387,14 +387,14 @@ git reset --hard <hash>
 
 ### 去掉某个commit
 
-```bash
+```shell
 # 实质是新建了一个与原来完全相反的commit，抵消了原来commit的效果
 git revert <commit-hash> 
 ```
 
 ### 新建一个空分支
 
-```bash
+```shell
 # 这种方式新建的分支(gh-pages)是没有 commit 记录的
 git checkout --orphan gh-pages
 # 删除新建的gh-pages分支原本的内容，如果不删除，提交将作为当前分支的第一个commit
@@ -405,7 +405,7 @@ git state
 
 ### 合并多个commit
 
-```bash
+```shell
 # 这个命令，将最近4个commit合并为1个，HEAD代表当前版本。
 # 将进入VIM界面，你可以修改提交信息。
 git rebase -i HEAD~4 
@@ -427,7 +427,7 @@ git push -f origin master
 
 ### 修改远程Commit记录
 
-```bash
+```shell
 git commit --amend
 # amend只能修改没有提交到线上的，最后一次commit记录
 git rebase -i HEAD~3
@@ -450,7 +450,7 @@ pick 6293516 feat(Divider): Add Divider component.
 
 保存并退出，会弹出下面提示
 
-```bash
+```shell
 # You can amend the commit now, with
 # 
 #   git commit --amend
@@ -473,7 +473,7 @@ git push -f origin master
 
 ### 添加忽略文件
 
-```
+```shell
 echo node_modules/ >> .gitignore
 ```
 
@@ -491,7 +491,7 @@ echo node_modules/ >> .gitignore
 
 在同步之前，需要创建一个远程点指向上游仓库(repo).如果你已经派生了一个原始仓库，可以按照如下方法做。
 
-```bash 
+```shell
 $ git remote -v
 # List the current remotes （列出当前远程仓库）
 # origin  https://github.com/user/repo.git (fetch)
@@ -510,7 +510,7 @@ $ git remote -v
 
 同步上游仓库到你的仓库需要执行两步：首先你需要从远程拉去，之后你需要合并你希望的分支到你的本地副本分支。从上游的存储库中提取分支以及各自的提交内容。 `master` 将被存储在本地分支机构 `upstream/master`
 
-```bash 
+```shell
 git fetch upstream
 # remote: Counting objects: 75, done.
 # remote: Compressing objects: 100% (53/53), done.
@@ -522,14 +522,14 @@ git fetch upstream
 
 检查你的 fork's 本地 `master` 分支
 
-```bash 
+```shell
 git checkout master
 # Switched to branch 'master'
 ```
 
 合并来自 `upstream/master` 的更改到本地 master  分支上。  这使你的前 fork's `master` 分支与上游资源库同步，而不会丢失你本地修改。  
 
-```bash 
+```shell
 git merge upstream/master
 # Updating a422352..5fdff0f
 # Fast-forward
@@ -547,7 +547,7 @@ git merge upstream/master
 
 注意参数，这个不是普通的clone，clone下来的仓库并不能参与开发
 
-```bash
+```shell
 git clone --bare https://github.com/user/repo.git
 cd repo.git
 ```
@@ -560,7 +560,7 @@ CORRECT_EMAIL更正的邮箱
 
 将下面代码复制放到命令行中执行
 
-```bash
+```shell
 git filter-branch -f --env-filter '
 OLD_EMAIL="wowohoo@qq.com"
 CORRECT_NAME="小弟调调"
@@ -580,7 +580,7 @@ fi
 
 执行过程
 
-```bash
+```shell
 Rewrite 160d4df2689ff6df3820563bfd13b5f1fb9ba832 (479/508) (16 seconds passed, remaining 0 predicted)
 Ref 'refs/heads/dev' was rewritten
 Ref 'refs/heads/master' was rewritten
@@ -590,19 +590,19 @@ Ref 'refs/heads/master' was rewritten
 
 同步到push远程git仓库
 
-```bash
+```shell
 git push --force --tags origin 'refs/heads/*'
 ```
 
 我还遇到了如下面错误，lab默认给master分支加了保护，不允许强制覆盖。`Project(项目)`->`Setting`->`Repository` 菜单下面的`Protected branches`把master的保护去掉就可以了。修改完之后，建议把master的保护再加回来，毕竟强推不是件好事。
 
-```bash
+```shell
 remote: GitLab: You are not allowed to force push code to a protected branch on this project.
 ```
 
 当上面的push 不上去的时候，先 `git pull` 确保最新代码
 
-```bash
+```shell
 git pull  --allow-unrelated-histories
 # 或者指定分枝
 git pull origin master --allow-unrelated-histories
@@ -611,7 +611,7 @@ git pull origin master --allow-unrelated-histories
 
 ### 查看某个文件历史
 
-```bash
+```shell
 git log --pretty=oneline 文件名  # 列出文件的所有改动历史  
 git show c178bf49   # 某次的改动的修改记录  
 git log -p c178bf49 # 某次的改动的修改记录  
@@ -621,7 +621,7 @@ git whatchanged 文件名  # 显示某个文件的每个版本提交信息：提
 
 ### 打造自己的git命令
 
-```sh
+```shell
 git config --global alias.st status
 git config --global alias.br branch
 git config --global alias.co checkout
@@ -630,13 +630,13 @@ git config --global alias.ci commit
 
 配置好后再输入git命令的时候就不用再输入一大段了，例如我们要查看状态，只需：
 
-```sh
+```shell
 git st
 ```
 
 ### 中文乱码的解决方案
 
-```bash
+```shell
 git config --global core.quotepath false
 ```
 
@@ -666,7 +666,7 @@ git config --global core.quotepath false
 
 ### push
 
-```bash
+```shell
 git push -u origin master # push同事设置默认跟踪分支  
 git push origin master  
 git push -f origin master # 强制推送文件，缩写 -f（全写--force）
@@ -680,7 +680,7 @@ git push -f origin master # 强制推送文件，缩写 -f（全写--force）
 
 git clone支持多种协议，除了HTTP(s)以外，还支持SSH、Git、本地文件协议等，下面是一些例子。`git clone <版本库的网址> <本地目录名>`  
 
-```bash
+```shell
 $ git clone http[s]://example.com/path/to/repo.git/
 $ git clone ssh://example.com/path/to/repo.git/
 $ git clone git://example.com/path/to/repo.git/
@@ -694,20 +694,20 @@ $ git clone rsync://example.com/path/to/repo.git/
 
 ### help
 
-```bash
+```shell
 git help config # 获取帮助信息  
 ```
 
 ### add
 
-```bash
+```shell
 git add *   # 跟踪新文件   
 git add -u [path]   # 添加[指定路径下]已跟踪文件   
 ```
 
 ### rm
 
-```bash
+```shell
 rm *&git rm *          # 移除文件  
 git rm -f *            # 移除文件  
 git rm --cached *      # 取消跟踪  
@@ -717,7 +717,7 @@ git log   # 查看提交记录
 
 ### commit
 
-```bash
+```shell
 git commit #提交更新   
 git commit -m 'message' #提交说明   
 git commit -a #跳过使用暂存区域，把所有已经跟踪过的文件暂存起来一并提交   
@@ -730,7 +730,7 @@ git commit -m '概要描述'$'\n\n''1.详细描述'$'\n''2.详细描述' #提交
 
 ### reset
 
-```bash
+```shell
 git reset HEAD *  # 取消已经暂存的文件   
 git reset --mixed HEAD * # 同上   
 git reset --soft HEAD *  # 重置到指定状态，不会修改索引区和工作树   
@@ -740,7 +740,7 @@ git reset -- files *     # 重置index区文件
 
 ### revert
 
-```bash
+```shell
 git revert HEAD   # 撤销前一次操作   
 git revert HEAD~  # 撤销前前一次操作   
 git revert commit # 撤销指定操作   
@@ -748,7 +748,7 @@ git revert commit # 撤销指定操作
 
 ### checkout
 
-```bash
+```shell
 git checkout -- file  # 取消对文件的修改（从暂存区——覆盖worktree file）  
 git checkout branch|tag|commit -- file_name  # 从仓库取出file覆盖当前分支   
 git checkout HEAD~1 [文件]  # 将会更新 working directory 去匹配某次 commit   
@@ -758,7 +758,7 @@ git checkout -b gh-pages  0c304c9  # 这个表示 从当前分支 commit 哈希�
 
 ### diff
 
-```bash
+```shell
 git diff file     # 查看指定文件的差异   
 git diff --stat   # 查看简单的diff结果   
 git diff  # 比较Worktree和Index之间的差异   
@@ -773,7 +773,7 @@ git diff master...test    # 你想找出‘master’,‘test’的共有 父分�
 
 ### stash
 
-```bash
+```shell
 git stash # 将工作区现场（已跟踪文件）储藏起来，等以后恢复后继续工作。   
 git stash list  # 查看保存的工作现场   
 git stash apply # 恢复工作现场   
@@ -784,20 +784,20 @@ git stash apply stash@{0} # 恢复指定的工作现场，当你保存了不只�
 
 ### merge
 
-```bash
+```shell
 git merge --squash test # 合并压缩，将test上的commit压缩为一条   
 ```
 
 ### cherry-pick
 
-```bash
+```shell
 git cherry-pick commit    # 拣选合并，将commit合并到当前分支   
 git cherry-pick -n commit # 拣选多个提交，合并完后可以继续拣选下一个提交   
 ```
 
 ### rebase
 
-```bash
+```shell
 git rebase master   # 将master分之上超前的提交，变基到当前分支  
 git rebase --onto master 169a6  # 限制回滚范围，rebase当前分支从169a6以后的提交  
 git rebase --interactive # 交互模式，修改commit   
@@ -810,7 +810,7 @@ git rebase --abort       # 取消合并
 
 ### 删除
 
-```bash
+```shell
 git push origin :branchName  # 删除远程分支  
 git push origin --delete new # 删除远程分支new   
 git branch -d branchName     # 删除本地分支，强制删除用-D  
@@ -821,7 +821,7 @@ git remote prune origin # 远程删除了，本地还能看到远程存在，这
 
 ### 提交
 
-```bash
+```shell
 git push -u origin branchName # 提交分支到远程origin主机中  
 ```
 
@@ -831,7 +831,7 @@ git push -u origin branchName # 提交分支到远程origin主机中
 
 ### 分支合并
 
-```bash
+```shell
 git merge branchName      # 合并分支 - 将分支branchName和当前所在分支合并   
 git merge origin/master   # 在本地分支上合并远程分支。   
 git rebase origin/master  # 在本地分支上合并远程分支。   
@@ -844,7 +844,7 @@ git merge test            # 将test分支合并到当前分支
 
 ### 查看
 
-```bash
+```shell
 git branch      # 列出本地分支   
 git branch -r   # 列出远端分支   
 git branch -a   # 列出所有分支   
@@ -856,7 +856,7 @@ git remote show origin  # 可以查看remote地址，远程分支
 
 ### 新建
 
-```bash
+```shell
 git branch test # 新建test分支  
 git branch newBrach 3defc69 # 指定哈希3defc69，新建分支名字为newBrach
 git checkout -b newBrach origin/master # 取回远程主机的更新以后，在它的基础上创建一个新的分支  
@@ -865,14 +865,14 @@ git checkout -b newBrach 3defc69 # 以哈希值3defc69，新建 newBrach 分支�
 
 ### 连接
 
-```bash
+```shell
 git branch --set-upstream dev origin/dev     # 将本地dev分支与远程dev分支之间建立链接  
 git branch --set-upstream master origin/next # 手动建立追踪关系  
 ```
 
 ### 分支切换
 
-```bash
+```shell
 git checkout test     # 切换到test分支   
 git checkout -b test  # 新建+切换到test分支   
 git checkout -b test dev # 基于dev新建test分支，并切换   
@@ -880,7 +880,7 @@ git checkout -b test dev # 基于dev新建test分支，并切换
 
 ## 远端
 
-```bash
+```shell
 git fetch <远程主机名> <分支名>   # fetch取回所有分支（branch）的更新  
 git fetch origin remotebranch[:localbranch]   #  从远端拉去分支[到本地指定分支]   
 git merge origin/branch   # 合并远端上指定分支   
@@ -895,13 +895,13 @@ git checkout -b [--track] test origin/dev # 基于远端dev分支，新建本地
 
 克隆项目同时克隆submodule
 
-```bash
+```shell
 git clone https://github.com/jaywcjlove/handbook.git --depth=1 --recurse-submodules
 ```
 
 克隆项目，之后再手动克隆 submodule 子项目
 
-```bash
+```shell
 git submodule add --force '仓库地址' '路径'
 # 其中，仓库地址是指子模块仓库地址，路径指将子模块放置在当前工程下的路径。
 # 注意：路径不能以 / 结尾（会造成修改不生效）、不能是现有工程已有的目录（不能順利 Clone）
@@ -912,7 +912,7 @@ git submodule update --init --recursive  # 下载的工程带有submodule
 
 当使用`git clone`下来的工程中带有submodule时，初始的时候，submodule的内容并不会自动下载下来的，此时，只需执行如下命令：
 
-```bash
+```shell
 git submodule foreach git pull  # submodule 里有其他的 submodule 一次更新
 git submodule foreach git pull origin master # submodule更新
 
@@ -922,7 +922,7 @@ git submodule foreach --recursive git submodule update
 
 ## 删除文件
 
-```bash
+```shell
 git rm -rf node_modules/
 ```
 
@@ -930,7 +930,7 @@ git rm -rf node_modules/
 
 git是一个分布式代码管理工具，所以可以支持多个仓库，在git里，服务器上的仓库在本地称之为remote。个人开发时，多源用的可能不多，但多源其实非常有用。  
 
-```bash
+```shell
 git remote add origin1 git@github.com:yanhaijing/data.js.git  
 git remote    # 显示全部源  
 git remote -v # 显示全部源+详细信息  
@@ -943,7 +943,7 @@ git remote show origin  # 查看指定源的全部信息
 
 当开发到一定阶段时，给程序打标签是非常棒的功能。  
 
-```bash
+```shell
 git tag -a v0.1 -m 'my version 1.4' # 新建带注释标签   
 git push origin --tags              # 一次性推送所有分支 
 git push origin v1.5                # 推送单个tag到orgin源上 
@@ -961,7 +961,7 @@ git --git-dir='<绝对地址>/.git' describe --tags HEAD # 查看本地版本信
 
 ## 日志log
 
-```bash
+```shell
 git config format.pretty oneline  #显示历史记录时，每个提交的信息只显示一行   
 git config color.ui true #彩色的 git 输出   
 git log #查看最近的提交日志   
@@ -995,14 +995,14 @@ git config --global format.pretty '%h : %s - %ad' --date=short #日期YYYY-MM-DD
 
 ## 重写历史
 
-```bash
+```shell
 git commit --amend    # 改变最近一次提交  
 git rebase -i HEAD~3  # 修改最近三次的提交说明，或者其中任意一次  
 git commit --amend    # 保存好了，这些指示很明确地告诉了你该干什么  
 git rebase --continue # 修改提交说明，退出编辑器。  
 ```
 
-```bash
+```shell
 pick f7f3f6d changed my name a bit
 pick 310154e updated README formatting and added blame
 pick a5f4a0d added cat-file
@@ -1026,7 +1026,7 @@ rm -rf repo.git
 
 ## 其它
 
-```bash
+```shell
 git help *  # 获取命令的帮助信息  
 git status  # 获取当前的状态，非常有用，因为git会提示接下来的能做的操作  
 ```
@@ -1042,7 +1042,7 @@ git status  # 获取当前的状态，非常有用，因为git会提示接下来
 
 解决github push错误的办法：
 
-```bash
+```shell
 #vim 编辑器打开 当前项目中的config文件
 vim .git/config
 
@@ -1059,13 +1059,13 @@ vim .git/config
 
 在查看状态的时候 git status 如果是中文就显示下面的情况
 
-```bash
+```shell
 \344\272\247\345\223\201\351\234\200\346\261\202
 ```
 
 解决这个问题方法是：
 
-```bash
+```shell
 git config --global core.quotepath false
 ```
 

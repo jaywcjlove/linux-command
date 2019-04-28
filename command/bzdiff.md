@@ -9,7 +9,7 @@ bzdiff
 
 ### 语法  
 
-```
+```shell
 bzdiff(参数)
 ```
 

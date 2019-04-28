@@ -13,13 +13,13 @@ DMI充当了管理工具和系统层之间接口的角色。它建立了标准�
 
 ### 语法  
 
-```
+```shell
 dmidecode [选项]
 ```
 
 ### 选项  
 
-```
+```shell
 -d：(default:/dev/mem)从设备文件读取信息，输出内容与不加参数标准输出相同。
 -h：显示帮助信息。
 -s：只显示指定DMI字符串的信息。(string)
@@ -116,7 +116,7 @@ dmidecode [选项]
 
 ### 实例  
 
-```bash
+```shell
 dmidecode -t 1  # 查看服务器信息
 dmidecode | grep 'Product Name' # 查看服务器型号 
 dmidecode |grep 'Serial Number' # 查看主板的序列号 
@@ -133,7 +133,7 @@ cat /proc/scsi/scsi # 查看服务器硬盘信息
 
 不带选项执行dmidecode命令通常会输出所有的硬件信息。dmidecode命令有个很有用的选项-t，可以按指定类型输出相关信息，假如要获得处理器方面的信息，则可以执行：
 
-```
+```shell
 [root@localhost ~]# dmidecode -t processor
 # dmidecode 2.11
 SMBIOS 2.5 present.
@@ -221,7 +221,7 @@ Processor Information
 
 查看内存的插槽数，已经使用多少插槽。每条内存多大，已使用内存多大
 
-```bash
+```shell
 dmidecode|grep -P -A5 "Memory\s+Device"|grep Size|grep -v Range 
 
 #   Size: 2048 MB
@@ -232,16 +232,15 @@ dmidecode|grep -P -A5 "Memory\s+Device"|grep Size|grep -v Range
 
 查看内存支持的最大内存容量
 
-```bash
+```shell
 dmidecode|grep -P 'Maximum\s+Capacity'
 
 #  Maximum Capacity: 16 GB
-
 ```
 
 查看内存的频率
 
-```bash
+```shell
 dmidecode|grep -A16 "Memory Device"
 
 #   Memory Device
@@ -288,7 +287,7 @@ dmidecode|grep -A16 "Memory Device"|grep 'Speed'
 #  Speed: 1333 MHz
 #  Speed: Unknown
 
-```
+```shell
 
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -9,13 +9,13 @@ bmodinfo
 
 ### 语法  
 
-```
+```shell
 bmodinfo(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -a：显示模块作者；
 -d：显示模块的描述信息；
 -l：显示模块的许可信息；
@@ -32,7 +32,7 @@ bmodinfo(选项)(参数)
 
 显示sg模块的信息：
 
-```
+```shell
 [root@localhost ~]# modinfo sg
 filename:    /lib/modules/2.6.9-42.ELsmp/kernel/drivers/scsi/sg.ko
 author:     Douglas Gilbert

@@ -9,13 +9,13 @@ depmod
 
 ### 语法  
 
-```
+```shell
 depmod(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 -a或--all：分析所有可用的模块；
 -d或debug：执行排错模式；
 -e：输出无法参照的符号；
@@ -29,7 +29,7 @@ depmod(选项)
 
 ### 实例  
 
-```
+```shell
 depmod -b /home/windsome/EMMA3PF-KernelSource-20080626/install_pos -e -F ./boot/System.map -v 2.6.18_pro500-bcm91250-mips2_fp_be -A -a
 ```
 
@@ -39,7 +39,7 @@ depmod -b /home/windsome/EMMA3PF-KernelSource-20080626/install_pos -e -F ./boot/
 
 编译linux过程及执行depmod的例子：
 
-```
+```shell
 genkernel.sh (at linux-2.6.18_pro500)
 #######
 export INSTALL_ROOT_EMMA3PF="/home/windsome/EMMA3PF-KernelSource-20080626/install_pos"

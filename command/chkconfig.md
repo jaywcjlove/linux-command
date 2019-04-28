@@ -9,13 +9,13 @@ chkconfig
 
 ### 语法  
 
-```bash
+```shell
 chkconfig(选项)
 ```
 
 ### 选项  
 
-```bash
+```shell
 --add：增加所指定的系统服务，让chkconfig指令得以管理它，并同时在系统启动的叙述文件内增加相关数据；
 --del：删除所指定的系统服务，不再由chkconfig指令管理，并同时在系统启动的叙述文件内删除相关数据；
 --level<等级代号>：指定读系统服务要在哪一个执行等级中开启或关毕。
@@ -48,7 +48,7 @@ chkconfig(选项)
 
 例如random.init包含三行：
 
-```bash
+```shell
 # chkconfig: 2345 20 80
 # description: Saves and restores system entropy pool for \
 # higher quality random number generation.
@@ -56,7 +56,7 @@ chkconfig(选项)
 
 ### 实例  
 
-```bash
+```shell
 chkconfig --list             #列出所有的系统服务。
 chkconfig --add httpd        #增加httpd服务。
 chkconfig --del httpd        #删除httpd服务。

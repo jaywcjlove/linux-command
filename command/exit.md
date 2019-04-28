@@ -9,7 +9,7 @@ exit
 
 ### 语法  
 
-```
+```shell
 exit(参数)
 ```
 
@@ -21,20 +21,20 @@ exit(参数)
 
 退出当前shell：
 
-```
+```shell
 [root@localhost ~]# exit
 logout
 ```
 
 在脚本中，进入脚本所在目录，否则退出：
 
-```
+```shell
 cd $(dirname $0) || exit 1
 ```
 
 在脚本中，判断参数数量，不匹配就打印使用方式，退出：
 
-```
+```shell
 if [ "$#" -ne "2" ]; then
     echo "usage: $0 <area> <hours>"
     exit 2
@@ -43,13 +43,13 @@ fi
 
 在脚本中，退出时删除临时文件：
 
-```
+```shell
 trap "rm -f tmpfile; echo Bye." EXIT
 ```
 
 检查上一命令的退出码：
 
-```
+```shell
 ./mycommand.sh
 EXCODE=$?
 if [ "$EXCODE" == "0" ]; then

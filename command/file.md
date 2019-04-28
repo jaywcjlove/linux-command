@@ -9,13 +9,13 @@ file
 
 ### 语法  
 
-```
+```shell
 file(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -b：列出辨识结果时，不显示文件名称；
 -c：详细显示指令执行过程，便于排错或分析程序执行的情形；
 -f<名称文件>：指定名称文件，其内容有一个或多个文件名称时，让file依序辨识这些文件，格式为每列一个文件名称；
@@ -33,7 +33,7 @@ file(选项)(参数)
 
 显示文件类型
 
-```
+```shell
 [root@localhost ~]# file install.log
 install.log: UTF-8 Unicode text
 
@@ -45,12 +45,11 @@ install.log: text/plain; charset=utf-8
 
 [root@localhost ~]# file -b -i install.log
 text/plain; charset=utf-8
-
 ```
 
 显示符号链接的文件类型
 
-```
+```shell
 [root@localhost ~]# ls -l /var/mail
 lrwxrwxrwx 1 root root 10 08-13 00:11 /var/mail -> spool/mail
 
@@ -65,7 +64,6 @@ lrwxrwxrwx 1 root root 10 08-13 00:11 /var/mail -> spool/mail
 
 [root@localhost ~]# file -L /var/spool/mail
 /var/spool/mail: directory
-
 ```
 
 

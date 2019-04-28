@@ -9,13 +9,13 @@ dos2unix
 
 ### 语法
 
-```
+```shell
 dos2unix [-hkqV] [-c convmode] [-o file ...] [-n infile outfile ...]
 ```
 
 ### 选项
 
-```
+```shell
 -k：保持输出文件的日期不变
 -q：安静模式，不提示任何警告信息。
 -V：查看版本
@@ -32,26 +32,26 @@ dos2unix [-hkqV] [-c convmode] [-o file ...] [-n infile outfile ...]
 
 最简单的用法就是dos2unix直接跟上文件名：
 
-```
+```shell
 dos2unix file
 ```
 
 如果一次转换多个文件，把这些文件名直接跟在dos2unix之后。（注：也可以加上`-o`参数，也可以不加，效果一样）
 
-```
+```shell
 dos2unix file1 file2 file3
 dos2unix -o file1 file2 file3
 ```
 
 上面在转换时，都会直接在原来的文件上修改，如果想把转换的结果保存在别的文件，而源文件不变，则可以使用`-n`参数。
 
-```
+```shell
 dos2unix oldfile newfile
 ```
 
 如果要保持文件时间戳不变，加上`-k`参数。所以上面几条命令都是可以加上`-k`参数来保持文件时间戳的。
 
-```
+```shell
 dos2unix -k file
 dos2unix -k file1 file2 file3
 dos2unix -k -o file1 file2 file3
@@ -60,7 +60,7 @@ dos2unix -k -n oldfile newfile
 
 转换当前目录下所有文件
 
-```
+```shell
 find -type f | xargs dos2unix
 ```
 

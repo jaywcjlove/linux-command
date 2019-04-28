@@ -9,13 +9,13 @@ arch
 
 ### 语法  
 
-```
+```shell
 arch
 ```
 
 ### 实例  
 
-```
+```shell
 arch
 x86_64
 ```

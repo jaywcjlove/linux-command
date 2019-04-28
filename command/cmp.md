@@ -9,13 +9,13 @@ cmp
 
 ### 语法  
 
-```
+```shell
 cmp(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -c或--print-chars：除了标明差异处的十进制字码之外，一并显示该字符所对应字符；
 -i<字符数目>或--ignore-initial=<字符数目>：指定一个数目；
 -l或——verbose：标示出所有不一样的地方；
@@ -32,13 +32,13 @@ cmp(选项)(参数)
 
 使用cmp命令比较文件"testfile"和文件"testfile1"两个文件，则输入下面的命令：
 
-```
+```shell
 cmp testfile testfile1            #比较两个指定的文件
 ```
 
 在上述指令执行之前，使用cat命令查看两个指定的文件内容，如下所示：
 
-```
+```shell
 cat testfile                    #查看文件内容  
 Absncn 50                       #显示文件“testfile”  
 Asldssja 60  
@@ -52,7 +52,7 @@ Jslkadjls 85
 
 然后，再执行cmp命令，并返回比较结果，具体如下所示：
 
-```
+```shell
 cmp testfile testfile1       #比较两个文件  
 testfile testfile1           #有差异：第8字节，第2行  
 ```

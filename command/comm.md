@@ -13,13 +13,13 @@ comm
 
 ### 语法  
 
-```bash
+```shell
 comm [选项]... 文件1 文件2
 ```
 
 ### 选项  
 
-```
+```shell
 如果不附带选项，程序会生成三列输出。
 第一列包含文件1 特有的行，
 第二列包含文件2 特有的行，
@@ -43,7 +43,7 @@ comm [选项]... 文件1 文件2
 
 文本 `aaa.txt` 内容
 
-```
+```shell
 [root@localhost text]# cat aaa.txt 
 aaa
 bbb
@@ -56,7 +56,7 @@ eee
 
 文本 `bbb.txt` 内容
 
-```
+```shell
 [root@localhost text]# cat bbb.txt 
 bbb
 ccc
@@ -68,14 +68,14 @@ jjj
 
 两个文件之间的比较，如果没有排序需要带上`--nocheck-order`参数， 没有带上参数将会收到提示，此命令重要之功能在于比较。
 
-```bash
+```shell
 comm: 文件2 没有被正确排序
 comm: 文件1 没有被正确排序
 ```
 
 比较结果
 
-```
+```shell
 [root@localhost text]# comm --nocheck-order aaa.txt bbb.txt 
 aaa
                 bbb
@@ -97,14 +97,14 @@ eee
 
 有序比较，先通过 sort 将文件内容排序
 
-```
+```shell
 [root@localhost ~]# sort aaa.txt > aaa1.txt
 [root@localhost ~]# sort bbb.txt > bbb1.txt
 ```
 
 有序比较结果：
 
-```
+```shell
 [root@localhost ~]# comm aaa1.txt bbb1.txt
 111
 222
@@ -122,7 +122,7 @@ eee
 
 打印两个文件的交集，需要删除第一列和第二列：
 
-```
+```shell
 [root@localhost text]# comm aaa.txt bbb.txt -1 -2
 bbb
 ccc
@@ -132,7 +132,7 @@ ccc
 
 打印出两个文件中不相同的行，需要删除第三列：
 
-```
+```shell
 [root@localhost text]# comm aaa.txt bbb.txt -3 | sed 's/^\t//'
 aaa
 aaa
@@ -153,7 +153,7 @@ jjj
 
 aaa.txt的差集
 
-```
+```shell
 [root@localhost text]# comm aaa.txt bbb.txt -2 -3
 aaa
 ddd
@@ -164,7 +164,7 @@ eee
 
 bbb.txt的差集
 
-```
+```shell
 [root@localhost text]# comm aaa.txt bbb.txt -1 -3
 aaa
 hhh

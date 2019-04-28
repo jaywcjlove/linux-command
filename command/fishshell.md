@@ -5,7 +5,7 @@ fishshell
 
 ## 安装
 
-```bash
+```shell
 # Ubuntu 和 Debian 的安装方法。
 sudo apt-get install fish
 # Mac 的安装方法。
@@ -16,7 +16,7 @@ brew install fish
 
 由于 `Fish` 的语法与 `Bash` 有很大差异，`Bash` 脚本一般不兼容。因此，建议不要将 `Fish` 设为默认 `Shell`，而是每次手动启动它。
 
-```bash
+```shell
 # 安装完成后，就可以启动 Fish。
 $ fish
 # 使用过程中，如果需要帮助，可以输入 help 命令
@@ -25,7 +25,7 @@ $ help
 
 ## 彩色显示
 
-```bash
+```shell
 # 无效命令为红色
 $ mkd
 # 有效命令为蓝色
@@ -38,7 +38,7 @@ $ cat ~/somefi
 
 Fish 会自动在光标后面给出建议，表示可能的选项，颜色为灰色。如果采纳建议，可以按下 `→` 或 `Control + F` 。如果只采纳一部分，可以按下 `Alt + →`。
 
-```bash
+```shell
 $ /bin/hostname # 命令建议
 $ grep --ignore-case # 参数建议
 $ ls node_modules # 路径建议
@@ -54,7 +54,7 @@ $ ls node_modules # 路径建议
 
 ### if 语句
 
-```bash
+```shell
 if grep fish /etc/shells
     echo Found fish
 else if grep bash /etc/shells
@@ -66,7 +66,7 @@ end
 
 ### switch 语句
 
-```bash
+```shell
 switch (uname)
 case Linux
     echo Hi Tux!
@@ -81,7 +81,7 @@ end
 
 ### while 循环
 
-```bash
+```shell
 while true
     echo "Loop forever"
 end
@@ -89,7 +89,7 @@ end
 
 ### for 循环
 
-```bash
+```shell
 for file in *.txt
     cp $file $file.bak
 end
@@ -99,7 +99,7 @@ end
 
 `Fish` 的函数用来封装命令，或者为现有的命令起别名。
 
-```bash
+```shell
 function ll
     ls -lhG $argv
 end
@@ -107,7 +107,7 @@ end
 
 上面代码定义了一个 `ll` 函数。命令行执行这个函数以后，就可以用 `ll` 命令替代 `ls -lhG`。其中，变量 `$argv` 表示函数的参数。
 
-```bash
+```shell
 function ls
     command ls -hG $argv
 end
@@ -119,7 +119,7 @@ end
 
 `fish_prompt` 函数用于定义命令行提示符（prompt）。
 
-```bash
+```shell
 function fish_prompt
   set_color purple
   date "+%m/%d/%y"
@@ -140,7 +140,7 @@ end
 
 Fish 的配置文件是 `~/.config/fish/config.fish`，每次 `Fish` 启动，就会自动加载这个文件。Fish 还提供 Web 界面配置该文件。
 
-```bash
+```shell
 $ fish_config # 浏览器打开 Web 界面配置
 ```
 
@@ -164,7 +164,7 @@ Startup (Where's .bashrc?): `~/.config/fish/config.fish`，更好的方式是 au
 Autoloading Functions: ` ~/.config/fish/functions/.`  
 Universal Variables：a variable whose value is shared across all instances of fish  
 
-```bash
+```shell
 set name 'czl' # 设置变量，替代 name=czl
 echo $name
 echo $status # exit status，替代 $?

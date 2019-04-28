@@ -9,13 +9,13 @@ Linux系统下光盘刻录功能命令
 
 ### 语法  
 
-```
+```shell
 cdrecord(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -v：显示刻录光盘的详细过程；
 -eject：刻录完成后弹出光盘；
 speed=<刻录倍速>：指定光盘刻录的倍速；
@@ -31,7 +31,7 @@ ISO文件：指定刻录光盘使用的ISO映像文件。
 
 查看系统所有 CD-R(w) 设备：
 
-```
+```shell
 cdrecord -scanbus
 scsibus0:
   0,0,0     0) *
@@ -42,19 +42,19 @@ scsibus0:
 
 用iso文件刻录一张光盘：
 
-```
+```shell
 cdrecord -v -eject speed=4 dev=0,3,0 backup.iso
 ```
 
 参数解释
 
-*   -v：显示刻录光盘的详细过程
-*   -eject：刻完自动弹出光盘
-*   speed=4 dev=0,3,0：四速刻录到HP CD-writer设备上。
+* -v：显示刻录光盘的详细过程
+* -eject：刻完自动弹出光盘
+* speed=4 dev=0,3,0：四速刻录到HP CD-writer设备上。
 
 擦写光驱：
 
-```
+```shell
 cdrecord --dev=0,3,0 --blank=fast
 ```
 

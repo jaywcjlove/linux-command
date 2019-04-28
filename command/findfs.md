@@ -9,7 +9,7 @@ findfs
 
 ### 语法  
 
-```
+```shell
 findfs(参数)
 ```
 
@@ -21,7 +21,7 @@ findfs(参数)
 
 通过卷标名查找对应的文件系统：
 
-```
+```shell
 findfs LABEL=/boot
 /dev/hda1
 ```

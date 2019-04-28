@@ -11,7 +11,7 @@ dstat
 
  **方法一** 
 
-```
+```shell
 yum install -y dstat
 ```
 
@@ -19,7 +19,7 @@ yum install -y dstat
 
 官网下载地址：http://dag.wieers.com/rpm/packages/dstat
 
-```
+```shell
 wget http://dag.wieers.com/rpm/packages/dstat/dstat-0.6.7-1.rh7.rf.noarch.rpm
 rpm -ivh dstat-0.6.7-1.rh7.rf.noarch.rpm
 ```
@@ -30,7 +30,7 @@ rpm -ivh dstat-0.6.7-1.rh7.rf.noarch.rpm
 
 直接使用dstat，默认使用的是`-cdngy`参数，分别显示cpu、disk、net、page、system信息，默认是1s显示一条信息。可以在最后指定显示一条信息的时间间隔，如`dstat 5`是没5s显示一条，`dstat 5 10`表示没5s显示一条，一共显示10条。
 
-```
+```shell
 [root@iZ23uulau1tZ ~]# dstat
 ----total-cpu-usage---- -dsk/total- -net/total- ---paging-- ---system--
 usr sys idl wai hiq siq| read  writ| recv  send|  in   out | int   csw
@@ -51,13 +51,13 @@ usr sys idl wai hiq siq| read  writ| recv  send|  in   out | int   csw
 
 ### 语法  
 
-```
+```shell
 dstat [-afv] [options..] [delay [count]]
 ```
 
 ### 常用选项  
 
-```
+```shell
 -c：显示CPU系统占用，用户占用，空闲，等待，中断，软件中断等信息。
 -C：当有多个CPU时候，此参数可按需分别显示cpu状态，例：-C 0,1 是显示cpu0和cpu1的信息。
 -d：显示磁盘读写数据大小。
@@ -85,7 +85,7 @@ dstat [-afv] [options..] [delay [count]]
 
 如想监控swap，process，sockets，filesystem并显示监控的时间：
 
-```
+```shell
 [root@iZ23uulau1tZ ~]# dstat -tsp --socket --fs
 ----system---- ----swap--- ---procs--- ------sockets------ --filesystem-
   date/time   | used  free|run blk new|tot tcp udp raw frg|files  inodes
@@ -99,7 +99,7 @@ dstat [-afv] [options..] [delay [count]]
 
 若要将结果输出到文件可以加`--output filename`：
 
-```
+```shell
 [root@iZ23uulau1tZ ~]# dstat -tsp --socket --fs --output /tmp/ds.csv
 ----system---- ----swap--- ---procs--- ------sockets------ --filesystem-
   date/time   | used  free|run blk new|tot tcp udp raw frg|files  inodes
@@ -117,7 +117,7 @@ dstat [-afv] [options..] [delay [count]]
 
 下面这些插件并不是都可以直接使用的，有的还依赖其他包，如想监控mysql，必须要装python连接mysql的一些包。
 
-```
+```shell
 [root@iZ23uulau1tZ ~]# dstat --list
 internal:
         aio, cpu, cpu24, disk, disk24, disk24old, epoch, fs, int, int24, io, ipc, load, lock, mem, net, page, page24, proc, raw, socket, swap, swapold, sys, tcp, time, udp, unix, vm

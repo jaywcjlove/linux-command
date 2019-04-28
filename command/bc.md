@@ -9,13 +9,13 @@ bc
 
 ### 语法  
 
-```
+```shell
 bc(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -i：强制进入交互式模式；
 -l：定义使用的标准数学库；
 -w：对POSIX bc的扩展给出警告信息；
@@ -32,7 +32,7 @@ bc(选项)(参数)
 
 算术操作高级运算bc命令它可以执行浮点运算和一些高级函数：
 
-```
+```shell
 echo "1.212*3" | bc 
 3.636
 
@@ -40,7 +40,7 @@ echo "1.212*3" | bc
 
 设定小数精度（数值范围）
 
-```
+```shell
 echo "scale=2;3/8" | bc
 0.37
 
@@ -50,7 +50,7 @@ echo "scale=2;3/8" | bc
 
 进制转换
 
-```
+```shell
 #!/bin/bash
 abc=192
 echo "obase=2;$abc" | bc
@@ -59,7 +59,7 @@ echo "obase=2;$abc" | bc
 
 执行结果为：11000000，这是用bc将十进制转换成二进制。
 
-```
+```shell
 #!/bin/bash
 abc=11000000
 echo "obase=10;ibase=2;$abc" | bc
@@ -70,7 +70,7 @@ echo "obase=10;ibase=2;$abc" | bc
 
 计算平方和平方根：
 
-```
+```shell
 echo "10^10" | bc
 echo "sqrt(100)" | bc
 ```

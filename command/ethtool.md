@@ -9,7 +9,7 @@ ethtool命令用于获取以太网卡的配置信息，或者修改这些配置�
 
 ### 语法  
 
-```
+```shell
 ethtool [ -a | -c | -g | -i | -d | -k | -r | -S |] ethX
 ethtool [-A] ethX [autoneg on|off] [rx on|off] [tx on|off]
 ethtool [-C] ethX [adaptive-rx on|off] [adaptive-tx on|off] [rx-usecs N] [rx-frames N] [rx-usecs-irq N] [rx-frames-irq N] [tx-usecs N] [tx-frames N] [tx-usecs-irq N] [tx-frames-irq N] [stats-block-usecs N][pkt-rate-low N][rx-usecs-low N] [rx-frames-low N] [tx-usecs-low N] [tx-frames-lowN] [pkt-rate-high N] [rx-usecs-high N] [rx-frames-high N] [tx-usecs-high N] [tx-frames-high N] [sample-interval N]
@@ -25,7 +25,7 @@ ethtool [-s] ethX [speed 10|100|1000] [duplex half|full] [autoneg on|off] [port 
 
 ### 选项  
 
-```
+```shell
 -a 查看网卡中 接收模块RX、发送模块TX和Autonegotiate模块的状态：启动on 或 停用off。
 -A 修改网卡中 接收模块RX、发送模块TX和Autonegotiate模块的状态：启动on 或 停用off。
 -c display the Coalesce information of the specified ethernet card。
@@ -200,45 +200,44 @@ driver: bnx2 version: 1.4.30 firmware-version: 1.8.0.5 bus-info: 0000:09:00.0
 
 查看机器上网卡的速度：百兆还是千兆，请输入：
 
-```
+```shell
 ethool eth0
 ```
 
 操作完毕后，输出信息中`Speed:`这一项就指示了网卡的速度。停止网卡的发送模块TX，请输入：
 
-```
+```shell
 ethtool -A tx off eth0
 ```
 
 操作完毕后，可输入`ethtool -a eth0`，查看tx模块是否已被停止。查看网卡eth0采用了何种驱动，请输入：
 
-```
+```shell
 ethtool -i eth0
 ```
 
 操作完毕后，显示 driver: bnx2；version: 1.4.30 等信息。关闭网卡对收到的数据包的校验功能，请输入：
 
-```
+```shell
 ethtool -K eth0 rx off
 ```
 
 操作完毕后，可输入`ethtool –k eth0`，查看校验功能是否已被停止。如果机器上安装了两块网卡，那么eth0对应着哪块网卡呢？输入：
 
-```
+```shell
 ethtool -p eth0 10
 ```
 
 操作完毕后，看哪块网卡的led灯在闪，eth0就对应着哪块网卡。查看网卡，在接收/发送数据时，有没有出错？请输入：
 
-```
+```shell
 ethtool –S eth0
 ```
 
 将千兆网卡的速度降为百兆，请输入：
 
-```
-ethtool -s eth0 speed 100   
-
+```shell
+ethtool -s eth0 speed 100
 ```
 
 

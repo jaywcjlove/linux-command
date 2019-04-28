@@ -9,13 +9,13 @@ dhcrelay
 
 ### 语法  
 
-```
+```shell
 dhcrelay [选项] [DHCP服务器]
 ```
 
 ### 选项  
 
-```
+```shell
 -c <跳数> 当转发数据包时，dhcrelay丢弃已经达到一个最大跳数的数据包。默认值是10，最大值是255
 -4 运行dhcrelay命令作为DHCPv4/BOOTP中继代理。这是默认操作模式
 -6 运行dhcrelay命令作为DHCPv6中继代理
@@ -29,7 +29,7 @@ dhcrelay [选项] [DHCP服务器]
 
 指定DHCP服务器的位置。
 
-```bash
+```shell
 [root@localhost ~]# dhcrelay 192.168.0.2
 Internet Systems Consortium DHCP Relay Agent4.1.1-P1
 Copyright 2004-2010 Internet SystemsConsortium.

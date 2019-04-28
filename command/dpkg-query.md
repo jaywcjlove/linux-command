@@ -9,13 +9,13 @@ Debian Linux中软件包的查询工具
 
 ### 语法  
 
-```
+```shell
 dpkg-query(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -l：列出符合匹配模式的软件包；
 -s：查询软件包的状态信息；
 -L：显示软件包所安装的文件列表；
@@ -33,37 +33,37 @@ dpkg-query(选项)(参数)
 
 查找文件file1在哪个包里安装：
 
-```
+```shell
 dpkg-query -S file1
 ```
 
 列出ubuntu下所安装软件列表：
 
-```
+```shell
 dpkg-query -W --showformat='${Package} ${Version}\n' > filename
 ```
 
 查看软件包详细信息：
 
-```
+```shell
 dpkg-query -s capistrano
 ```
 
 查看软件包安装时安装到系统的文件列表：
 
-```
+```shell
 dpkg-query -L capistrano
 ```
 
 列出所有安装的包：
 
-```
+```shell
 dpkg-query -l
 ```
 
 查看软件包的确切状态（是否安装）以及版本号：
 
-```
+```shell
 dpkg-query -W -f='${Status} ${Version}\n' apache-perl
 ```
 

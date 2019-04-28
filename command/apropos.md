@@ -11,13 +11,13 @@ apropos
 
 ### 语法  
 
-```
+```shell
 apropos [-dalhvV] -e|-[w|-r] [-s section] [-m system[,...]] [-M path] [-L locale] -C [file] keyword ...
 ```
 
 ### 选项  
 
-```
+```shell
 -d, --debug：输出调试信息。
 -v, --verbose：输出详细的警告信息。
 -r, -- regex：将每个keyword作为正则表达式解释。这是默认行为。每个keyword将匹配手册页和描述。
@@ -40,7 +40,7 @@ apropos [-dalhvV] -e|-[w|-r] [-s section] [-m system[,...]] [-M path] [-L locale
 
 ### 实例  
 
-```
+```shell
 [root@localhost ~]# man -k who
 at.allow [at]        (5)  - determine who can submit jobs via at or batch
 at.deny [at]         (5)  - determine who can submit jobs via at or batch
@@ -66,7 +66,7 @@ whoami               (1)  - print effective userid
 
 查找手册页名字和描述中包含emacs和vi的手册页：
 
-```
+```shell
 apropos -a emacs vi
 ```
 

@@ -9,13 +9,13 @@ finger
 
 ### 语法  
 
-```
+```shell
 finger(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -l：列出该用户的帐号名称，真实姓名，用户专属目录，登入所用的Shell，登入时间，转信地址，电子邮件状态，还有计划文件和方案文件内容；
 -m：排除查找用户的真实姓名；
 -s：列出该用户的帐号名称，真实姓名，登入终端机，闲置时间，登入时间以及地址和电话；
@@ -32,7 +32,7 @@ finger(选项)(参数)
 
 在计算机上使用finger：
 
-```
+```shell
 [root@localhost root]# finger
 login Name Tty Idle Login time Office Office Phone
 root root tty1 2 Dec 18 13

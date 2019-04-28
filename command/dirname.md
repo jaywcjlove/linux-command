@@ -9,20 +9,20 @@ dirname
 
 ### 语法  
 
-```
+```shell
 dirname(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 --help：显示帮助；
 --version：显示版本号。
 ```
 
 ### 实例  
 
-```
+```shell
 dirname //
 结果为 /
 

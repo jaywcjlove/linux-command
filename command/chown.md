@@ -11,13 +11,13 @@ chown
 
 ### 语法  
 
-```
+```shell
 chown(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -c或——changes：效果类似“-v”参数，但仅回报更改的部分；
 -f或--quite或——silent：不显示错误信息；
 -h或--no-dereference：只对符号连接的文件作修改，而不更改其他任何相关文件；
@@ -38,7 +38,7 @@ chown(选项)(参数)
 
 将目录`/usr/meng`及其下面的所有文件、子目录的文件主改成 liu：
 
-```
+```shell
 chown -R liu /usr/meng
 ```
 

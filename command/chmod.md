@@ -27,7 +27,7 @@ chmod(选项)(参数)
 
 ### 选项  
 
-```bash
+```shell
 u  # 操作对象简称，用户user，文件或目录的所有者。
 g  # 操作对象简称，同组用户group，文件或目录所属群组
 o  # 操作对象简称，其它用户others
@@ -65,7 +65,7 @@ Linux用 户分为：拥有者、组群(Group)、其他（other），Linux系统
 
 linux文件的用户权限的分析图
 
-```bash
+```shell
   -rw-r--r--   1 user  staff   651 Oct 12 12:53 .gitmodules
 # ↑╰┬╯╰┬╯╰┬╯
 # ┆ ┆  ┆  ╰┈ 0 其他人
@@ -80,7 +80,7 @@ r=读取属性　　//值＝4
 w=写入属性　　//值＝2  
 x=执行属性　　//值＝1
 
-```bash
+```shell
 chmod u+x,g+w f01　　# 为文件f01设置自己可以执行，组员可以写入的权限
 chmod u=rwx,g=rw,o=r f01
 chmod 764 f01
@@ -89,7 +89,7 @@ chmod a+x f01　　    # 对文件f01的u,g,o都设置可执行属性
 
 文件的属主和属组属性设置
 
-```bash
+```shell
 chown user:market f01　　# 把文件f01给uesr，添加到market组
 ll -d f1  查看目录f1的属性
 ```
@@ -99,14 +99,14 @@ ll -d f1  查看目录f1的属性
 
 (1)直接指定路径修改
 
-```bash
+```shell
 chmod -R  755 /home/wwwroot/*
 ```
 
 (2)手动进入该目录修改权限（并显示详细过程）
 
 
-```bash
+```shell
 cd /home/wwwroot
 chmod -Rv  755 *       #注意：“*”表示通配符，指的是所有文件和文件
 sudo chmod o+rw /shared #设置文件夹权限以保证其余用户可以访问它。

@@ -9,13 +9,13 @@ emacs
 
 ### 语法  
 
-```
+```shell
 emacs(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 +<行号>：启动emacs编辑器，并将光标移动到制定行号的行；
 -q：启动emacs编辑器，而不加载初始化文件；
 -u<用户>：启动emacs编辑器时，加载指定用户的初始化文件；
@@ -33,7 +33,7 @@ emacs(选项)(参数)
 
 基本命令
 
-```
+```shell
 C-x C-c : 退出Emacs
 C-x C-f : 打开一个文件，如果文件不存在，则创建一个文件
 C-g : 取消未完成的命令
@@ -41,14 +41,14 @@ C-g : 取消未完成的命令
 
 编辑
 
-```
+```shell
 C-z (redefined): Undo；原来C-z是挂起Emacs（然后用fg命令调出）；C-x u 是默认的命令； 移动一下光标，再C-z就可以redo
 M-d : 删除光标后的词语
 ```
 
 移动光标
 
-```
+```shell
 C-v : 向前翻页
 M-v : 向后翻页
 M-r : 将光标移动到屏幕中间那行
@@ -71,7 +71,7 @@ C-l : 重绘屏幕，效果就是当前编辑行移动窗口中央
 
 Buffer 相关
 
-```
+```shell
 C-x k : 关闭当前buffer
 C-x b : 切换到前一个编辑的buffer
 C-x C-b : 列出当前所有buffer
@@ -82,7 +82,7 @@ C-x C-w : 文件另存为
 
 拷贝与粘贴
 
-```
+```shell
 M-space (redefined): 设置mark; C-@ 是默认命令
 C-w (redefined) : 剪切一块区域；如果没有设置mark，则是剪切一行
 M-w (redefined) : 拷贝一块区域；如果没有设置mark, 则是拷贝一行
@@ -93,7 +93,7 @@ C-x r k : 执行矩形区域的剪切
 C-x r y : 执行矩形区域的粘贴
 ```
 
-```
+```shell
 窗口操作
 C-x 0 : 关闭当前窗口
 C-x 1 : 将当前窗口最大化
@@ -111,7 +111,7 @@ ESC C-v : 在其它窗口进行卷屏操作
 
 搜索和替换
 
-```
+```shell
 C-s : 向前搜索（增量式搜索）；连续C-s，跳到下一个搜索到的目标
 C-s RET : 普通搜索
 C-r : 向前搜索
@@ -122,7 +122,7 @@ M-x replace-string : 普通替换
 
 Tags
 
-```
+```shell
 M-! etags .c .h : 创建TAGS文件
 M-. : 跳到tag所在位置
 M-x list-tags : 列出tags
@@ -130,14 +130,14 @@ M-x list-tags : 列出tags
 
 书签
 
-```
+```shell
 C-x r m : 设置书签bookmark
 C-x r b : 跳到bookmark处
 ```
 
 帮助
 
-```
+```shell
 C-h ? : 查看帮助信息
 C-h f : 查看一个函数
 C-h v : 查看一个变量
@@ -148,7 +148,7 @@ C-h i : 看Info
 
 其它
 
-```
+```shell
 C-M-\ : 对选中区域，按照某种格式(比如C程序)进行格式化
 C-x h : 全部选中
 M-! : 执行外部shell命令

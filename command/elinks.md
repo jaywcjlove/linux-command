@@ -9,13 +9,13 @@ elinks
 
 ### 语法  
 
-```
+```shell
 elinks(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -anonymous：是否使用匿名帐号方式；
 -auto-submit：对于偶然遇到的第一个表单是否自动提交；
 -config-dir：指定elinks指令运行时读取和写入自身的配置和运行状态的存放目录；

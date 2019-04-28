@@ -9,7 +9,7 @@ chcon
 
 ### 语法  
 
-```
+```shell
 chcon [选项]... 环境 文件...
 chcon [选项]... [-u 用户] [-r 角色] [-l 范围] [-t 类型] 文件...
 chcon [选项]... --reference=参考文件 文件...
@@ -17,7 +17,7 @@ chcon [选项]... --reference=参考文件 文件...
 
 ### 选项  
 
-```
+```shell
 -h, --no-dereference：影响符号连接而非引用的文件。
     --reference=参考文件：使用指定参考文件的安全环境，而非指定值。
 -R, --recursive：递归处理所有的文件及子目录。
@@ -30,7 +30,7 @@ chcon [选项]... --reference=参考文件 文件...
 
 以下选项是在指定了`-R`选项时被用于设置如何穿越目录结构体系。如果您指定了多于一个选项，那么只有最后一个会生效。
 
-```
+```shell
 -H：如果命令行参数是一个通到目录的符号链接，则遍历符号链接。
 -L：遍历每一个遇到的通到目录的符号链接。
 -P：不遍历任何符号链接（默认）。
@@ -42,32 +42,32 @@ chcon [选项]... --reference=参考文件 文件...
 
 如果你想把这个ftp共享给匿名用户的话，需要开启以下：
 
-```
+```shell
 chcon -R -t public_content_t /var/ftp
 ```
 
 如果你想让你设置的FTP目录可以上传文件的话，SELINUX需要设置：
 
-```
+```shell
 chcon -t public_content_rw_t /var/ftp/incoming
 ```
 
 允许用户HHTP访问其家目录，该设定限仅于用户的家目录主页：
 
-```
+```shell
 setsebool -P httpd_enable_homedirs 1
 chcon -R -t httpd_sys_content_t ~user/public_html
 ```
 
 如果你希望将samba目录共享给其他用户，你需要设置：
 
-```
+```shell
 chcon -t samba_share_t /directory
 ```
 
 共享rsync目录时：
 
-```
+```shell
 chcon -t public_content_t /directories
 ```
 

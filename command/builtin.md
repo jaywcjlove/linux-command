@@ -9,7 +9,7 @@ builtin
 
 ### 语法  
 
-```
+```shell
 builtin(参数)
 ```
 
@@ -21,8 +21,8 @@ shell内部命令：指定需要执行的shell内部命令。
 
 使用builtin命令执行shell内部命alias显示命令别名，输入如下命令：
 
-```
-builtin alias                 #执行shell内部指令
+```shell
+builtin alias                 # 执行shell内部指令
 alias cp='cp -i'
 alias l.='ls -d .* --color=tty'
 alias ll='ls -l --color=tty'

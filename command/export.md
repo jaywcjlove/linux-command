@@ -11,13 +11,13 @@ export
 
 ### 语法  
 
-```
+```shell
 export(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -f：代表[变量名称]中为函数名称；
 -n：删除指定的变量。变量实际上并未删除，只是不会输出到后续指令的执行环境中；
 -p：列出所有的shell赋予程序的环境变量。
@@ -31,7 +31,7 @@ export(选项)(参数)
 
 一般来说，配置交叉编译工具链的时候需要指定编译工具的路径，此时就需要设置环境变量。查看已经存在的环境变量：
 
-```
+```shell
 [root@localhost ~]# export
 declare -x G_BROKEN_FILENAMES="1"
 declare -x HISTSIZE="1000"

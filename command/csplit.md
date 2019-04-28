@@ -9,13 +9,13 @@ csplit
 
 ### 语法  
 
-```
+```shell
 csplit(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -b<输出格式>或--suffix-format=<输出格式>：预设的输出格式其文件名称为xx00，xx01等，用户可以通过改变<输出格式>来改变输出的文件名；
 -f<输出字首字符串>或--prefix=<输出字首字符串>：预设的输出字首字符串其文件名为xx00，xx01等，如果制定输出字首字符串为“hello”，则输出的文件名称会变成hello00，hello、01......
 -k或--keep-files：保留文件，就算发生错误或中断执行，与不能删除已经输出保存的文件；
@@ -33,7 +33,7 @@ csplit(选项)(参数)
 
 示例测试文件 server.log
 
-```
+```shell
 cat server.log
 SERVER-1
 [con] 10.10.10.1 suc
@@ -54,7 +54,7 @@ SERVER-3
 
 需要将server.log分割成server1.log、server2.log、server3.log，这些文件的内容分别取自原文件中不同的SERVER部分：
 
-```
+```shell
 [root@localhost split]# csplit server.log /SERVER/ -n2 -s {*} -f server -b "%02d.log"; rm server00.log
 [root@localhost split]# ls
 server01.log  server02.log  server03.log  server.log
@@ -62,7 +62,7 @@ server01.log  server02.log  server03.log  server.log
 
  **命令详细说明：** 
 
-```
+```shell
 /[正则表达式]/   #匹配文本样式，比如/SERVER/，从第一行到包含SERVER的匹配行。
 {*}     #表示根据匹配重复执行分割，直到文件尾停止，使用{整数}的形式指定分割执行的次数。
 -s      #静默模式，不打印其他信息。

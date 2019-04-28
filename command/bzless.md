@@ -9,7 +9,7 @@ bzless
 
 ### 语法  
 
-```
+```shell
 bzless(参数)
 ```
 

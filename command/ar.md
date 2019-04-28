@@ -18,7 +18,7 @@ Usage: ar [emulation options] [-]{dmpqrstx}[abcDfilMNoPsSTuvV] [--plugin <name>]
 ### 选项  
 
 
-```
+```shell
 d            - 从归档文件中删除文件
 m[ab]        - 在归档文件中移动文件
 p            - 打印在归档文件中找到的文件
@@ -50,7 +50,7 @@ x[o]         - 从归档文件中分解文件
 
 选项参数 
 
-```
+```shell
 --plugin <p> - load the specified plugin
 ```
 
@@ -60,12 +60,12 @@ ar：支持的目标： elf64-x86-64 elf32-i386 elf32-x86-64 a.out-i386-linux pe
 
 打包文件
 
-```
-[root@localhost ~]# ls   //显示当前目录文件   
+```shell
+[root@localhost ~]# ls   # 显示当前目录文件   
 a.c	b.c d.c   install.log	  qte
 anaconda-ks.cfg c.c Desktop 
 
-[root@localhost ~]# ar rv one.bak a.c b.c //打包 a.c b.c文件 
+[root@localhost ~]# ar rv one.bak a.c b.c  # 打包 a.c b.c文件 
 ar: 正在创建 one.bak
 a - a.c
 a - b.c
@@ -73,8 +73,8 @@ a - b.c
 
 打包多个文件
 
-```
-[root@localhost ~]# ar rv two.bak *.c  //打包以.c结尾的文件  
+```shell
+[root@localhost ~]# ar rv two.bak *.c  // 打包以.c结尾的文件  
 ar: 正在创建 two.bak
 a - a.c
 a - b.c
@@ -84,7 +84,7 @@ a - d.c
 
 显示打包文件的内容
 
-```
+```shell
 [root@localhost ~]# ar t two.bak    
 a.c
 b.c
@@ -94,7 +94,7 @@ d.c
 
 删除打包文件的成员文件
 
-```
+```shell
 [root@localhost ~]# ar d two.bak a.c b.c c.c  
 [root@localhost ~]# ar t two.bak       
 d.c

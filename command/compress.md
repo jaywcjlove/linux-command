@@ -9,13 +9,13 @@ compress
 
 ### 语法  
 
-```
+```shell
 compress(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -f：不提示用户，强制覆盖掉目标文件；
 -c：将结果送到标准输出，无文件被改变；
 -r：递归的操作方式；
@@ -33,31 +33,31 @@ compress(选项)(参数)
 
 将`/etc/man.config`复到`/tmp` ，并加以压缩
 
-```
+```shell
 [root@localhost ~]# cd /tmp
 [root@localhost tmp]# cp /etc/man.config .
 [root@localhost tmp]# compress man.config
 [root@localhost tmp]# ls -l
 ```
 
-```
+```shell
 -rw-r--r-- 1 root root 2605 Jul 27 11:43 man.config.Z
 ```
 
 将刚刚的压缩档解开
 
-```
+```shell
 [root@localhost tmp]# compress -d man.config.Z
 ```
 
 将 man.config 压缩成另外一个文件来备份
 
-```
+```shell
 [root@localhost tmp]# compress -c man.config > man.config.back.Z
 [root@localhost tmp]# ll man.config*
 ```
 
-```
+```shell
 -rw-r--r-- 1 root root 4506 Jul 27 11:43 man.config
 -rw-r--r-- 1 root root 2605 Jul 27 11:46 man.config.back.Z
 ```

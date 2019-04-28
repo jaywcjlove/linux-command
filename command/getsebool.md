@@ -9,13 +9,13 @@ getsebool
 
 ### 语法  
 
-```
+```shell
 getsebool [-a] [布尔值条款]
 ```
 
 ### 选项  
 
-```
+```shell
 -a：列出目前系统上面的所有布尔值条款设置为开启或关闭值。
 ```
 
@@ -23,7 +23,7 @@ getsebool [-a] [布尔值条款]
 
 查询本系统内所有的布尔值设置状况：
 
-```
+```shell
 getsebool -a
 NetworkManager_disable_trans --> off
 allow_console_login --> off
@@ -34,10 +34,9 @@ allow_daemons_dump_core --> on
 
 查询httpd_enable_homedirs是否为关闭，若没关闭，请关闭它：
 
-```
+```shell
 getsebool httpd_enable_homedirs
-setsebool -P httpd_enable_homedirs=0    //0是关闭  1是开启
-
+setsebool -P httpd_enable_homedirs=0    # 0是关闭  1是开启
 ```
 
 

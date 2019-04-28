@@ -9,19 +9,19 @@ awk
 
 ## awk命令格式和选项  
 
- **语法形式** 
+**语法形式** 
 
-```
+```shell
 awk [options] 'script' var=value file(s)
 awk [options] -f scriptfile var=value file(s)
 ```
 
- **常用命令选项** 
+**常用命令选项** 
 
-*    **-F fs   ** fs指定输入分隔符，fs可以是字符串或正则表达式，如-F:
-*    **-v var=value   ** 赋值一个用户定义变量，将外部变量传递给awk
-*    **-f scripfile  ** 从脚本文件中读取awk命令
-*    **-m[fr] val   ** 对val值设置内在限制，-mf选项限制分配给val的最大块数目；-mr选项限制记录的最大数目。这两个功能是Bell实验室版awk的扩展功能，在标准awk中不适用。
+*  **-F fs** fs指定输入分隔符，fs可以是字符串或正则表达式，如-F:
+*  **-v var=value** 赋值一个用户定义变量，将外部变量传递给awk
+*  **-f scripfile** 从脚本文件中读取awk命令
+*  **-m[fr] val** 对val值设置内在限制，-mf选项限制分配给val的最大块数目；-mr选项限制记录的最大数目。这两个功能是Bell实验室版awk的扩展功能，在标准awk中不适用。
 
 ## awk模式和操作  
 
@@ -31,36 +31,36 @@ awk脚本是由模式和操作组成的。
 
 模式可以是以下任意一个：
 
-*   /正则表达式/：使用通配符的扩展集。
-*   关系表达式：使用运算符进行操作，可以是字符串或数字的比较测试。
-*   模式匹配表达式：用运算符`~`（匹配）和`!~`（不匹配）。
-*   BEGIN语句块、pattern语句块、END语句块：参见awk的工作原理
+* /正则表达式/：使用通配符的扩展集。
+* 关系表达式：使用运算符进行操作，可以是字符串或数字的比较测试。
+* 模式匹配表达式：用运算符`~`（匹配）和`!~`（不匹配）。
+* BEGIN语句块、pattern语句块、END语句块：参见awk的工作原理
 
 ### 操作  
 
 操作由一个或多个命令、函数、表达式组成，之间由换行符或分号隔开，并位于大括号内，主要部分是：
 
-*   变量或数组赋值
-*   输出命令
-*   内置函数
-*   控制流语句
+* 变量或数组赋值
+* 输出命令
+* 内置函数
+* 控制流语句
 
 ## awk脚本基本结构  
 
-```
+```shell
 awk 'BEGIN{ print "start" } pattern{ commands } END{ print "end" }' file
 ```
 
 一个awk脚本通常由：BEGIN语句块、能够使用模式匹配的通用语句块、END语句块3部分组成，这三个部分是可选的。任意一个部分都可以不出现在脚本中，脚本通常是被 **单引号** 或 **双引号** 中，例如：
 
-```
+```shell
 awk 'BEGIN{ i=0 } { i++ } END{ print i }' filename
 awk "BEGIN{ i=0 } { i++ } END{ print i }" filename
 ```
 
 ### awk的工作原理  
 
-```
+```shell
 awk 'BEGIN{ commands } pattern{ commands } END{ commands }'
 ```
 
@@ -76,7 +76,7 @@ awk 'BEGIN{ commands } pattern{ commands } END{ commands }'
 
  **示例** 
 
-```
+```shell
 echo -e "A line 1nA line 2" | awk 'BEGIN{ print "Start" } { print } END{ print "End" }'
 Start
 A line 1
@@ -86,14 +86,14 @@ End
 
 当使用不带参数的`print`时，它就打印当前行，当`print`的参数是以逗号进行分隔时，打印时则以空格作为定界符。在awk的print语句块中双引号是被当作拼接符使用，例如：
 
-```
+```shell
 echo | awk '{ var1="v1"; var2="v2"; var3="v3"; print var1,var2,var3; }' 
 v1 v2 v3
 ```
 
 双引号拼接使用：
 
-```
+```shell
 echo | awk '{ var1="v1"; var2="v2"; var3="v3"; print var1"="var2"="var3; }'
 v1=v2=v3
 ```
@@ -104,7 +104,7 @@ v1=v2=v3
 
 说明：[A][N][P][G]表示第一个支持变量的工具，[A]=awk、[N]=nawk、[P]=POSIXawk、[G]=gawk
 
-```
+```shell
  **$n**  当前记录的第n个字段，比如n为1表示第一个字段，n为2表示第二个字段。 
  **$0**  这个变量包含执行过程中当前行的文本内容。
 [N]  **ARGC**  命令行参数的数目。
@@ -129,9 +129,9 @@ v1=v2=v3
 [N]  **SUBSEP**  数组下标分隔符（默认值是34）。
 ```
 
- **示例** 
+**示例** 
 
-```
+```shell
 echo -e "line1 f2 f3\nline2 f4 f5\nline3 f6 f7" | awk '{print "Line No:"NR", No of fields:"NF, "$0="$0, "$1="$1, "$2="$2, "$3="$3}' 
 Line No:1, No of fields:3 $0=line1 f2 f3 $1=line1 $2=f2 $3=f3
 Line No:2, No of fields:3 $0=line2 f4 f5 $1=line2 $2=f4 $3=f5
@@ -140,13 +140,13 @@ Line No:3, No of fields:3 $0=line3 f6 f7 $1=line3 $2=f6 $3=f7
 
 使用`print $NF`可以打印出一行中的最后一个字段，使用`$(NF-1)`则是打印倒数第二个字段，其他以此类推：
 
-```
+```shell
 echo -e "line1 f2 f3n line2 f4 f5" | awk '{print $NF}'
 f3
 f5
 ```
 
-```
+```shell
 echo -e "line1 f2 f3n line2 f4 f5" | awk '{print $(NF-1)}'
 f2
 f4
@@ -155,13 +155,13 @@ f4
 
 打印每一行的第二和第三个字段：
 
-```
+```shell
 awk '{ print $2,$3 }' filename
 ```
 
 统计文件中的行数：
 
-```
+```shell
 awk 'END{ print NR }' filename
 ```
 
@@ -169,7 +169,7 @@ awk 'END{ print NR }' filename
 
 一个每一行中第一个字段值累加的例子：
 
-```
+```shell
 seq 5 | awk 'BEGIN{ sum=0; print "总和：" } { print $1"+"; sum+=$1 } END{ print "等于"; print sum }' 
 总和：
 1+
@@ -185,14 +185,14 @@ seq 5 | awk 'BEGIN{ sum=0; print "总和：" } { print $1"+"; sum+=$1 } END{ pri
 
 借助 **`-v`选项** ，可以将外部值（并非来自stdin）传递给awk：
 
-```
+```shell
 VAR=10000
 echo | awk -v VARIABLE=$VAR '{ print VARIABLE }'
 ```
 
 另一种传递外部变量方法：
 
-```
+```shell
 var1="aaa"
 var2="bbb"
 echo | awk '{ print v1,v2 }' v1=$var1 v2=$var2
@@ -200,7 +200,7 @@ echo | awk '{ print v1,v2 }' v1=$var1 v2=$var2
 
 当输入来自于文件时使用：
 
-```
+```shell
 awk '{ print v1,v2 }' v1=$var1 v2=$var2 filename
 ```
 
@@ -208,7 +208,7 @@ awk '{ print v1,v2 }' v1=$var1 v2=$var2 filename
 
 ## 查找进程pid
 
-```
+```shell
 netstat -antup | grep 7770 | awk '{ print $NF NR}' | awk '{ print $1}'
 ```
 
@@ -228,7 +228,7 @@ netstat -antup | grep 7770 | awk '{ print $NF NR}' | awk '{ print $1}'
 
 例：
 
-```
+```shell
 awk 'BEGIN{a="b";print a++,++a;}'
 0 2
 ```
@@ -243,7 +243,7 @@ awk 'BEGIN{a="b";print a++,++a;}'
 
 例：
 
-```
+```shell
 a+=5; 等价于：a=a+5; 其它同类
 ```
 
@@ -256,7 +256,7 @@ a+=5; 等价于：a=a+5; 其它同类
 
 例：
 
-```
+```shell
 awk 'BEGIN{a=1;b=2;print (a>5 && b<=2),(a>5 || b<=2);}'
 0 1
 ```
@@ -269,7 +269,7 @@ awk 'BEGIN{a=1;b=2;print (a>5 && b<=2),(a>5 || b<=2);}'
 
 例：
 
-```
+```shell
 awk 'BEGIN{a="100testa";if(a ~ /^100*/){print "ok";}}'
 ok
 ```
@@ -282,7 +282,7 @@ ok
 
 例：
 
-```
+```shell
 awk 'BEGIN{a=11;if(a >= 9){print "ok";}}'
 ok
 ```
@@ -300,12 +300,12 @@ ok
 
 例：
 
-```
+```shell
 awk 'BEGIN{a="b";print a=="b"?"ok":"err";}'
 ok
 ```
 
-```
+```shell
 awk 'BEGIN{a="b";arr[0]="b";arr[1]="c";print (a in arr);}'
 0
 ```
@@ -326,7 +326,7 @@ awk 'BEGIN{a="b";arr[0]="b";arr["b"]="c";print (a in arr);}'
 
 awk中`next`语句使用：在循环逐行匹配，如果遇到next，就会跳过当前行，直接忽略下面语句。而进行下一行匹配。next语句一般用于多行合并：
 
-```
+```shell
 cat text.txt
 a
 b
@@ -343,7 +343,7 @@ awk 'NR%2==1{next}{print NR,$0;}' text.txt
 
 分析发现需要将包含有“web”行进行跳过，然后需要将内容与下面行合并为一行：
 
-```
+```shell
 cat text.txt
 web01[192.168.2.100]
 httpd            ok
@@ -374,26 +374,26 @@ getline语法：getline var，变量var包含了特定行的内容。
 
 awk getline从整体上来说，用法说明：
 
-*    **当其左右无重定向符`|`或`<`时：** getline作用于当前文件，读入当前文件的第一行给其后跟的变量`var`或`$0`（无变量），应该注意到，由于awk在处理getline之前已经读入了一行，所以getline得到的返回结果是隔行的。
-*    **当其左右有重定向符`|`或`<`时：** getline则作用于定向输入文件，由于该文件是刚打开，并没有被awk读入一行，只是getline读入，那么getline返回的是该文件的第一行，而不是隔行。
+* **当其左右无重定向符`|`或`<`时：** getline作用于当前文件，读入当前文件的第一行给其后跟的变量`var`或`$0`（无变量），应该注意到，由于awk在处理getline之前已经读入了一行，所以getline得到的返回结果是隔行的。
+* **当其左右有重定向符`|`或`<`时：** getline则作用于定向输入文件，由于该文件是刚打开，并没有被awk读入一行，只是getline读入，那么getline返回的是该文件的第一行，而不是隔行。
 
- **示例：** 
+**示例：** 
 
 执行linux的`date`命令，并通过管道输出给`getline`，然后再把输出赋值给自定义变量out，并打印它：
 
-```
+```shell
 awk 'BEGIN{ "date" | getline out; print out }' test
 ```
 
 执行shell的date命令，并通过管道输出给getline，然后getline从管道中读取并将输入赋值给out，split函数把变量out转化成数组mon，然后打印数组mon的第二个元素：
 
-```
+```shell
 awk 'BEGIN{ "date" | getline out; split(out,mon); print mon[2] }' test
 ```
 
 命令ls的输出传递给geline作为输入，循环使getline从ls的输出中读取一行，并把它打印到屏幕。这里没有输入文件，因为BEGIN块在打开输入文件前执行，所以可以忽略输入文件。
 
-```
+```shell
 awk 'BEGIN{ while( "ls" | getline) print }'
 ```
 
@@ -401,7 +401,7 @@ awk 'BEGIN{ while( "ls" | getline) print }'
 
 awk中允许在程序中关闭一个输入或输出文件，方法是使用awk的close语句。
 
-```
+```shell
 close("filename")
 ```
 
@@ -411,9 +411,9 @@ filename可以是getline打开的文件，也可以是stdin，包含文件名的
 
 awk中允许用如下方式将结果输出到一个文件：
 
-```
+```shell
 echo | awk '{printf("hello word!n") > "datafile"}'
-或
+# 或
 echo | awk '{printf("hello word!n") >> "datafile"}'
 ```
 
@@ -421,9 +421,9 @@ echo | awk '{printf("hello word!n") >> "datafile"}'
 
 默认的字段定界符是空格，可以使用`-F "定界符"`  明确指定一个定界符：
 
-```
+```shell
 awk -F: '{ print $NF }' /etc/passwd
-或
+# 或
 awk 'BEGIN{ FS=":" } { print $NF }' /etc/passwd
 ```
 
@@ -435,7 +435,7 @@ awk 'BEGIN{ FS=":" } { print $NF }' /etc/passwd
 
 ### 条件判断语句  
 
-```
+```shell
 if(表达式)
   语句1
 else
@@ -444,7 +444,7 @@ else
 
 格式中语句1可以是多个语句，为了方便判断和阅读，最好将多个语句用{}括起来。awk分枝结构允许嵌套，其格式为：
 
-```
+```shell
 if(表达式)
   {语句1}
 else if(表达式)
@@ -455,7 +455,7 @@ else
 
 示例：
 
-```
+```shell
 awk 'BEGIN{
 test=100;
 if(test>90){
@@ -478,14 +478,14 @@ very good
 
 #### while语句  
 
-```
+```shell
 while(表达式)
   {语句}
 ```
 
 示例：
 
-```
+```shell
 awk 'BEGIN{
 test=100;
 total=0;
@@ -504,14 +504,14 @@ for循环有两种格式：
 
 格式1：
 
-```
+```shell
 for(变量 in 数组)
   {语句}
 ```
 
 示例：
 
-```
+```shell
 awk 'BEGIN{
 for(k in ENVIRON){
   print k"="ENVIRON[k];
@@ -532,14 +532,14 @@ SSH_CLIENT=192.168.1.21 53087 22
 
 格式2：
 
-```
+```shell
 for(变量;条件;表达式)
   {语句}
 ```
 
 示例：
 
-```
+```shell
 awk 'BEGIN{
 total=0;
 for(i=0;i<=100;i++){
@@ -552,14 +552,14 @@ print total;
 
 #### do循环  
 
-```
+```shell
 do
 {语句} while(条件)
 ```
 
 例子：
 
-```
+```shell
 awk 'BEGIN{ 
 total=0;
 i=0;
@@ -571,10 +571,10 @@ do {total+=i;i++;} while(i<=100)
 
 ### 其他语句  
 
-*    **break**  当 break 语句用于 while 或 for 语句时，导致退出程序循环。
-*    **continue**  当 continue 语句用于 while 或 for 语句时，使程序循环移动到下一个迭代。
-*    **next**  能能够导致读入下一个输入行，并返回到脚本的顶部。这可以避免对当前输入行执行其他的操作过程。
-*    **exit**  语句使主输入循环退出并将控制转移到END,如果END存在的话。如果没有定义END规则，或在END中应用exit语句，则终止脚本的执行。
+* **break**  当 break 语句用于 while 或 for 语句时，导致退出程序循环。
+* **continue**  当 continue 语句用于 while 或 for 语句时，使程序循环移动到下一个迭代。
+* **next**  能能够导致读入下一个输入行，并返回到脚本的顶部。这可以避免对当前输入行执行其他的操作过程。
+* **exit**  语句使主输入循环退出并将控制转移到END,如果END存在的话。如果没有定义END规则，或在END中应用exit语句，则终止脚本的执行。
 
 ## 数组应用  
 
@@ -584,14 +584,14 @@ do {total+=i;i++;} while(i<=100)
 
 数字做数组索引（下标）：
 
-```
+```shell
 Array[1]="sun"
 Array[2]="kai"
 ```
 
 字符串做数组索引（下标）：
 
-```
+```shell
 Array["first"]="www"
 Array"[last"]="name"
 Array["birth"]="1987"
@@ -601,32 +601,32 @@ Array["birth"]="1987"
 
  **读取数组的值** 
 
-```
+```shell
 { for(item in array) {print array[item]}; }       #输出的顺序是随机的
 { for(i=1;i<=len;i++) {print array[i]}; }         #Len是数组的长度
 ```
 
 ### 数组相关函数  
 
- **得到数组长度：** 
+**得到数组长度：** 
 
-```
+```shell
 awk 'BEGIN{info="it is a test";lens=split(info,tA," ");print length(tA),lens;}'
 4 4
 ```
 
 length返回字符串以及数组长度，split进行分割字符串为数组，也会返回分割得到数组长度。
 
-```
+```shell
 awk 'BEGIN{info="it is a test";split(info,tA," ");print asort(tA);}'
 4
 ```
 
 asort对数组进行排序，返回数组长度。
 
- **输出数组内容（无序，有序输出）：** 
+**输出数组内容（无序，有序输出）：** 
 
-```
+```shell
 awk 'BEGIN{info="it is a test";split(info,tA," ");for(k in tA){print k,tA[k];}}'
 4 test
 1 it
@@ -636,7 +636,7 @@ awk 'BEGIN{info="it is a test";split(info,tA," ");for(k in tA){print k,tA[k];}}'
 
 `for…in`输出，因为数组是关联数组，默认是无序的。所以通过`for…in`得到是无序的数组。如果需要得到有序数组，需要通过下标获得。
 
-```
+```shell
 awk 'BEGIN{info="it is a test";tlen=split(info,tA," ");for(k=1;k<=tlen;k++){print k,tA[k];}}'
 1 it
 2 is
@@ -646,10 +646,10 @@ awk 'BEGIN{info="it is a test";tlen=split(info,tA," ");for(k=1;k<=tlen;k++){prin
 
 注意：数组下标是从1开始，与C数组不一样。
 
- **判断键值存在以及删除键值：** 
+**判断键值存在以及删除键值：** 
 
-```
-#错误的判断方法：
+```shell
+# 错误的判断方法：
 awk 'BEGIN{tB["a"]="a1";tB["b"]="b1";if(tB["c"]!="1"){print "no found";};for(k in tB){print k,tB[k];}}' 
 no found
 a a1
@@ -659,8 +659,8 @@ c
 
 以上出现奇怪问题，`tB[“c”]`没有定义，但是循环时候，发现已经存在该键值，它的值为空，这里需要注意，awk数组是关联数组，只要通过数组引用它的key，就会自动创建改序列。
 
-```bash
-#正确判断方法：
+```shell
+# 正确判断方法：
 awk 'BEGIN{tB["a"]="a1";tB["b"]="b1";if( "c" in tB){print "ok";};for(k in tB){print k,tB[k];}}'  
 a a1
 b b1
@@ -668,7 +668,7 @@ b b1
 
 `if(key in array)`通过这种方法判断数组中是否包含`key`键值。
 
-```bash
+```shell
 #删除键值：
 awk 'BEGIN{tB["a"]="a1";tB["b"]="b1";delete tB["a"];for(k in tB){print k,tB[k];}}'                     
 b b1
@@ -682,7 +682,7 @@ awk的多维数组在本质上是一维数组，更确切一点，awk在存储�
 
 类似一维数组的成员测试，多维数组可以使用`if ( (i,j) in array)`这样的语法，但是下标必须放置在圆括号中。类似一维数组的循环访问，多维数组使用`for ( item in array )`这样的语法遍历数组。与一维数组不同的是，多维数组必须使用`split()`函数来访问单独的下标分量。
 
-```bash
+```shell
 awk 'BEGIN{
 for(i=1;i<=9;i++){
   for(j=1;j<=9;j++){
@@ -707,7 +707,7 @@ for(i=1;i<=9;i++){
 
 另一种方法：
 
-```bash
+```shell
 awk 'BEGIN{
 for(i=1;i<=9;i++){
   for(j=1;j<=9;j++){
@@ -741,7 +741,7 @@ awk内置函数，主要分以下3种类似：算数函数、字符串函数、�
 
 举例说明：
 
-```
+```shell
 awk 'BEGIN{OFMT="%.3f";fs=sin(1);fe=exp(10);fl=log(10);fi=int(3.1415);print fs,fe,fl,fi;}'
 0.841 22026.466 2.303 3
 
@@ -751,7 +751,7 @@ OFMT 设置输出数据格式是保留3位小数。
 
 获得随机数：
 
-```
+```shell
 awk 'BEGIN{srand();fr=int(100*rand());print fr;}'
 78
 awk 'BEGIN{srand();fr=int(100*rand());print fr;}'
@@ -779,9 +779,9 @@ awk 'BEGIN{srand();fr=int(100*rand());print fr;}'
 
 注：Ere都可以是正则表达式。
 
- **gsub,sub使用** 
+**gsub,sub使用** 
 
-```
+```shell
 awk 'BEGIN{info="this is a test2010test!";gsub(/[0-9]+/,"!",info);print info}'
 this is a test!test!
 ```
@@ -790,32 +790,32 @@ this is a test!test!
 
  **查找字符串（index使用）** 
 
-```
+```shell
 awk 'BEGIN{info="this is a test2010test!";print index(info,"test")?"ok":"no found";}'
 ok
 ```
 
 未找到，返回0
 
- **正则表达式匹配查找(match使用）** 
+**正则表达式匹配查找(match使用）** 
 
 ```
 awk 'BEGIN{info="this is a test2010test!";print match(info,/[0-9]+/)?"ok":"no found";}'
 ok
 ```
 
- **截取字符串(substr使用）** 
+**截取字符串(substr使用）** 
 
-```
+```shell
 [wangsl@centos5 ~]$ awk 'BEGIN{info="this is a test2010test!";print substr(info,4,10);}'
 s is a tes
 ```
 
 从第 4个 字符开始，截取10个长度字符串
 
- **字符串分割（split使用）** 
+**字符串分割（split使用）** 
 
-```
+```shell
 awk 'BEGIN{info="this is a test";split(info,tA," ");print length(tA);for(k in tA){print k,tA[k];}}'
 4
 4 test
@@ -826,7 +826,7 @@ awk 'BEGIN{info="this is a test";split(info,tA," ");print length(tA);for(k in tA
 
 分割info，动态创建数组tA，这里比较有意思，`awk for …in`循环，是一个无序的循环。 并不是从数组下标1…n ，因此使用时候需要注意。
 
- **格式化字符串输出（sprintf使用）** 
+**格式化字符串输出（sprintf使用）** 
 
 格式化字符串格式：
 
@@ -841,7 +841,7 @@ awk 'BEGIN{info="this is a test";split(info,tA," ");print length(tA);for(k in tA
 | %o | 无符号以八进制表示的整数 | %g | 自动选择合适的表示法 |
 
 
-```
+```shell
 awk 'BEGIN{n1=124.113;n2=-1.224;n3=1.2345; printf("%.2f,%.2u,%.2g,%X,%on",n1,n2,n3,n1,n1);}'
 124.11,18446744073709551615,1.2,7C,174
 ```
@@ -856,34 +856,34 @@ awk 'BEGIN{n1=124.113;n2=-1.224;n3=1.2345; printf("%.2f,%.2u,%.2g,%X,%on",n1,n2,
 | getline [ Variable ] < Expression | 从 Expression 参数指定的文件读取输入的下一个记录，并将 Variable 参数指定的变量设置为该记录的值。只要流保留打开且 Expression 参数对同一个字符串求值，则对 getline 函数的每次后续调用读取另一个记录。如果未指定 Variable 参数，则 $0 记录变量和 NF 特殊变量设置为从流读取的记录。 |
 | getline [ Variable ] | 将 Variable 参数指定的变量设置为从当前输入文件读取的下一个输入记录。如果未指定 Variable 参数，则 $0 记录变量设置为该记录的值，还将设置 NF、NR 和 FNR 特殊变量。 |
 
- **打开外部文件（close用法）** 
+**打开外部文件（close用法）** 
 
-```
+```shell
 awk 'BEGIN{while("cat /etc/passwd"|getline){print $0;};close("/etc/passwd");}'
 root:x:0:0:root:/root:/bin/bash
 bin:x:1:1:bin:/bin:/sbin/nologin
 daemon:x:2:2:daemon:/sbin:/sbin/nologin
 ```
 
- **逐行读取外部文件(getline使用方法）** 
+**逐行读取外部文件(getline使用方法）** 
 
-```
+```shell
 awk 'BEGIN{while(getline < "/etc/passwd"){print $0;};close("/etc/passwd");}'
 root:x:0:0:root:/root:/bin/bash
 bin:x:1:1:bin:/bin:/sbin/nologin
 daemon:x:2:2:daemon:/sbin:/sbin/nologin
 ```
 
-```
+```shell
 awk 'BEGIN{print "Enter your name:";getline name;print name;}'
 Enter your name:
 chengmo
 chengmo
 ```
 
- **调用外部应用程序(system使用方法）** 
+**调用外部应用程序(system使用方法）** 
 
-```
+```shell
 awk 'BEGIN{b=system("ls -al");print b;}'
 total 42092
 drwxr-xr-x 14 chengmo chengmo     4096 09-30 17:47 .
@@ -901,26 +901,26 @@ b返回值，是执行结果。
 | strftime([format [, timestamp]]) | 格式化时间输出，将时间戳转为时间字符串具体格式，见下表。 |
 | systime() | 得到时间戳，返回从1970年1月1日开始到当前时间(不计闰年)的整秒数 |
 
- **建指定时间(mktime使用）** 
+**建指定时间(mktime使用）** 
 
-```
+```shell
 awk 'BEGIN{tstamp=mktime("2001 01 01 12 12 12");print strftime("%c",tstamp);}'
 2001年01月01日 星期一 12时12分12秒
 ```
 
-```
+```shell
 awk 'BEGIN{tstamp1=mktime("2001 01 01 12 12 12");tstamp2=mktime("2001 02 01 0 0 0");print tstamp2-tstamp1;}'
 2634468
 ```
 
 求2个时间段中间时间差，介绍了strftime使用方法
 
-```
+```shell
 awk 'BEGIN{tstamp1=mktime("2001 01 01 12 12 12");tstamp2=systime();print tstamp2-tstamp1;}' 
 308201392
 ```
 
- **strftime日期和时间格式说明符** 
+**strftime日期和时间格式说明符** 
 
 | 格式 | 描述  |
 | ---- | ---- |

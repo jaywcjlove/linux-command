@@ -9,7 +9,7 @@ atop
 
 ## 语法  
 
-```
+```shell
 atop(选项)(参数)
 ```
 
@@ -83,13 +83,13 @@ swin、swout字段：换入和换出内存页数
 
 其实atop开发者已经提供了以上日志保存方式，相应的atop.daily脚本可以在源码目录下找到。在atop.daily脚本中，我们可以通过修改INTERVAL变量改变atop信息采样周期(默认为10分钟)；通过修改以下命令中的数值改变日志保存天数(默认为28天)：
 
-```
+```shell
 (sleep 3; find $LOGPATH -name 'atop_*' -mtime +28 -exec rm {} \; )& 
 ```
 
 最后，我们修改cron文件，每天凌晨执行atop.daily脚本：
 
-```
+```shell
 0 0 * * * root /etc/cron.daily/atop.daily
 ```
 

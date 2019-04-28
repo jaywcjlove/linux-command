@@ -9,13 +9,13 @@ arping
 
 ### 语法  
 
-```
+```shell
 arping(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -b：用于发送以太网广播帧（FFFFFFFFFFFF）。arping一开始使用广播地址，在收到响应后就使用unicast地址。
 -q：quiet output不显示任何信息；
 -f：表示在收到第一个响应报文后就退出；
@@ -31,7 +31,7 @@ arping(选项)(参数)
 
 ### 实例  
 
-```
+```shell
 [root@localhost ~]# arping www.baidu.com 
 ARPING 220.181.111.147 from 173.231.43.132 eth0
 Unicast reply from 220.181.111.147 00:D0:03:[bc:48:00]  1.666ms

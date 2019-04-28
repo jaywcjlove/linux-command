@@ -9,13 +9,13 @@ dircolors
 
 ### 语法  
 
-```
+```shell
 dircolors(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -b或--sh或--bourne-shell：显示在Boume shell中，将LS_COLORS设为目前预设置的shell指令；
 -c或--csh或--c-shell：显示在C shell中，将LS_COLORS设为目前预设置的shell指令；
 -p或--print-database：显示预设置；
@@ -29,7 +29,7 @@ dircolors(选项)(参数)
 
 ### 实例  
 
-```
+```shell
 [root@localhost ~]# dircolors -p
 # Configuration file for dircolors, a utility to help you set the
 # LS_COLORS environment variable used by GNU ls with the --color option.

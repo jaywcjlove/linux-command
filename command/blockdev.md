@@ -9,13 +9,13 @@ blockdev
 
 ### 语法  
 
-```
+```shell
 blockdev(选项)(参数)
 ```
 
 选项
 
-```
+```shell
 -V：打印版本号并退出；
 -q：安静模式；
 -v：详细信息模式；
@@ -35,19 +35,19 @@ blockdev(选项)(参数)
 
 设置设备为只读：
 
-```
+```shell
 blockdev --setro /dev/hda4
 ```
 
 读取设备是否为只读：
 
-```
+```shell
 blockdev --getro /dev/hda4
 ```
 
 设置设别为可读写：
 
-```
+```shell
 blockdev --setrw /dev/hda4
 ```
 

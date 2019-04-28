@@ -9,7 +9,7 @@ bzcat
 
 ### 语法  
 
-```
+```shell
 bzcat(参数)
 ```
 
@@ -21,7 +21,7 @@ bzcat(参数)
 
 将`/tmp/man.config`以bzip2格式压缩：
 
-```
+```shell
 bzip2 -z man.config
 ```
 
@@ -29,7 +29,7 @@ bzip2 -z man.config
 
 将上面的压缩文件内容读出来：
 
-```
+```shell
 bzcat man.config.bz2
 ```
 

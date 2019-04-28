@@ -5,13 +5,13 @@ dhcpd
 
 ### 语法  
 
-```
+```shell
 dhcpd [选项] [网络接口]
 ```
 
 ### 选项  
 
-```
+```shell
 -p <端口> 指定dhcpd监听的端口
 -f 作为前台进程运行dhcpd
 -d 启用调试模式
@@ -31,7 +31,7 @@ dhcpd [选项] [网络接口]
 
 对DHCP服务器进行排错。
 
-```bash
+```shell
 [root@localhost ~]# dhcpd
 InternetSystems Consortium DHCP Server 4.1.1-P1
 Copyright2004-2010 Internet Systems Consortium.

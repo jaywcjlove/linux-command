@@ -9,13 +9,13 @@ bunzip2
 
 ### 语法  
 
-```
+```shell
 bunzip2(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -f或--force：解压缩时，若输出的文件与现有文件同名时，预设不会覆盖现有的文件；
 -k或——keep：在解压缩后，预设会删除原来的压缩文件。若要保留压缩文件，请使用此参数；
 -s或——small：降低程序执行时，内存的使用量；
@@ -31,7 +31,7 @@ bunzip2(选项)(参数)
 
 将`/opt`目录下的etc.zip、var.zip和backup.zip进行压缩，设置压缩率为最高，同时在压缩完毕后不删除原始文件，显示压缩过程的详细信息。
 
-```
+```shell
 bzip2 -9vk /opt/etc.zip /opt/var.zip /opt/backup.zip
 ```
 

@@ -5,7 +5,7 @@ Alpine Linux 下的包管理工具
 
 ## 使用实例
 
-```bash
+```shell
 apk install xxx
 apk search xxx # 支持正则
 apk info xxx # 查看包的详细信息
@@ -18,7 +18,7 @@ apk del openssh openntp vim
 
 upgrade命令升级系统已安装的所以软件包（一般包括内核），当然也可指定仅升级部分软件包（通过-u或–upgrade选择指定）。
 
-```bash
+```shell
 apk update # 更新最新本地镜像源
 apk upgrade # 升级软件
 apk add --upgrade busybox # 指定升级部分软件包
@@ -26,7 +26,7 @@ apk add --upgrade busybox # 指定升级部分软件包
 
 ### 搜索
 
-```bash
+```shell
 apk search # 查找所以可用软件包
 apk search -v # 查找所以可用软件包及其描述内容
 apk search -v 'acf*' # 通过软件包名称查找软件包
@@ -37,7 +37,7 @@ apk search -v -d 'docker' # 通过描述文件查找特定的软件包
 
 info命令用于显示软件包的信息。
 
-```bash
+```shell
 apk info # 列出所有已安装的软件包
 apk info -a zlib # 显示完整的软件包信息
 apk info --who-owns /sbin/lbu # 显示指定文件属于的包
@@ -47,7 +47,7 @@ apk info --who-owns /sbin/lbu # 显示指定文件属于的包
 
 还是蛮喜欢 alpine 的，简单纯粹
 
-```bash
+```shell
 apk add iproute2 # ss vs netstat
 ss -ptl
 apk add drill # drill vs nslookup&dig

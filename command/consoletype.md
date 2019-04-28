@@ -9,13 +9,13 @@ consoletype
 
 ### 语法  
 
-```
+```shell
 consoletype
 ```
 
 ### 实例  
 
-```
+```shell
 [root@localhost ~]# consoletype
 pty
 ```

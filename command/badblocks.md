@@ -9,13 +9,13 @@ badblocks
 
 ### 语法  
 
-```
+```shell
 badblock(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -b<区块大小>：指定磁盘的区块大小，单位为字节；
 -o<输出文件>：将检查的结果写入指定的输出文件；
 -s：在检查时显示进度；
@@ -25,21 +25,21 @@ badblock(选项)(参数)
 
 ### 参数  
 
-*   磁盘装置：指定要检查的磁盘装置；
-*   磁盘区块数：指定磁盘装置的区块总数；
-*   启始区块：指定要从哪个区块开始检查。
+* 磁盘装置：指定要检查的磁盘装置；
+* 磁盘区块数：指定磁盘装置的区块总数；
+* 启始区块：指定要从哪个区块开始检查。
 
 ### 实例  
 
-badblocks以4096的一个block，每一个block检查16次，将结果输出到“hda-badblocks-list”文件里。
+badblocks以 4096 的一个block，每一个block检查16次，将结果输出到“hda-badblocks-list”文件里。
 
-```
+```shell
 badblocks -b 4096 -c 16 /dev/hda1 -o hda-badblocks-list
 ```
 
 hda-badblocks-list是个文本文件，内容如下：
 
-```
+```shell
 cat hda-badblocks-list
 51249
 51250
@@ -53,7 +53,7 @@ cat hda-badblocks-list
 
 可以针对可疑的区块多做几次操作。下面，badblocks以4096字节为一个“block”,每一个“block”检查1次, 将结果输出到“hda-badblocks-list.1”文件中，由第51000 block开始，到63000 block结束。
 
-```
+```shell
 badblocks -b 4096 -c 1 /dev/hda1 -o hda-badblocks-list.1 63000 51000
 ```
 
@@ -61,7 +61,7 @@ badblocks -b 4096 -c 1 /dev/hda1 -o hda-badblocks-list.1 63000 51000
 
 ### 其他  
 
- **1、fsck使用badblocks的信息** 
+**1、fsck使用badblocks的信息** 
 
 badblocks只会在日志文件中标记出坏道的信息，但若希望在检测磁盘时也能跳过这些坏块不检测，可以使用fsck的-l参数：
 
@@ -69,11 +69,11 @@ badblocks只会在日志文件中标记出坏道的信息，但若希望在检�
 fsck.ext3 -l /tmp/hda-badblock-list.final /dev/hda1
 ```
 
- **2、在创建文件系统前检测坏道** 
+**2、在创建文件系统前检测坏道** 
 
 badblocks可以随e2fsck和mke2fs的-c删除一起运行（对ext3文件系统也一样），在创建文件系统前就先检测坏道信息：
 
-```
+```shell
 mkfs.ext3 -c /dev/hda1
 ```
 

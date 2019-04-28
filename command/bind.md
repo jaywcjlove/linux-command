@@ -9,13 +9,13 @@ bind
 
 ### 语法  
 
-```
+```shell
 bind(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 -d：显示按键配置的内容；
 -f<按键配置文件>：载入指定的按键配置文件；
 -l：列出所有的功能；
@@ -26,13 +26,13 @@ bind(选项)
 
 ### 实例  
 
-```
+```shell
 bind -x '"\C-l":ls -l'    #直接按 CTRL+L 就列出目录
 ```
 
 其中keyseq可以使用`showkey -a`命令来获取：
 
-```
+```shell
 [root@localhost ~]# showkey -a
 
 Press any keys - Ctrl-D will terminate this program

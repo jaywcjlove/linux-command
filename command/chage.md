@@ -9,13 +9,13 @@ chage
 
 ### 语法  
 
-```
+```shell
 chage [选项] 用户名
 ```
 
 ### 选项  
 
-```
+```shell
 -m：密码可更改的最小天数。为零时代表任何时候都可以更改密码。
 -M：密码保持有效的最大天数。
 -w：用户密码到期前，提前收到警告信息的天数。
@@ -29,7 +29,7 @@ chage [选项] 用户名
 
 可以编辑`/etc/login.defs`来设定几个参数，以后设置口令默认就按照参数设定为准：
 
-```
+```shell
 PASS_MAX_DAYS   99999
 PASS_MIN_DAYS   0
 PASS_MIN_LEN    5
@@ -38,7 +38,7 @@ PASS_WARN_AGE   7
 
 当然在`/etc/default/useradd`可以找到如下2个参数进行设置：
 
-```
+```shell
 # useradd defaults file
 GROUP=100
 HOME=/home
@@ -53,7 +53,7 @@ CREATE_MAIL_SPOOL=yes
 
 我的服务器root帐户密码策略信息如下：
 
-```
+```shell
 [root@linuxde ~]# chage -l root
 最近一次密码修改时间                    ： 3月 12, 2013
 密码过期时间                            ：从不
@@ -66,7 +66,7 @@ CREATE_MAIL_SPOOL=yes
 
 我可以通过如下命令修改我的密码过期时间：
 
-```
+```shell
 [root@linuxde ~]# chage -M 60 root
 [root@linuxde ~]# chage -l root
 最近一次密码修改时间                          ： 3月 12, 2013
@@ -80,7 +80,7 @@ CREATE_MAIL_SPOOL=yes
 
 然后通过如下命令设置密码失效时间：
 
-```
+```shell
 [root@linuxde ~]# chage -I 5 root
 [root@linuxde ~]# chage -l root
 最近一次密码修改时间                          ： 3月 12, 2013

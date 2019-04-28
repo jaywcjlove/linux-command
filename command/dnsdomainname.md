@@ -9,17 +9,19 @@ dnsdomainname
 
 ### 语法  
 
-```
+```shell
 dnsdomainname(选项)
 ```
 
 ### 选项  
 
+```shell
 -v：详细信息模式，输出指令执行的详细信息。
+```
 
 ### 实例  
 
-```
+```shell
 [root@AY1307311912260196fcZ ~]# dnsdomainname -v
 gethostname()=`AY1307311912260196fcZ'
 Resolving `AY1307311912260196fcZ' ...

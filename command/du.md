@@ -9,13 +9,13 @@ du
 
 ### 语法
 
-```
+```shell
 du [选项][文件]
 ```
 
 ### 选项
 
-```
+```shell
 -a或-all 显示目录中个别文件的大小。
 -b或-bytes 显示目录或文件大小时，以byte为单位。
 -c或--total 除了显示个别目录或文件的大小外，同时也显示所有目录或文件的总和。
@@ -37,7 +37,7 @@ du [选项][文件]
 
 显示目录或者文件所占空间：
 
-```
+```shell
 root@localhost [test]# du
 608 ./test6
 308 ./test4
@@ -57,14 +57,14 @@ root@localhost [test]# du
 
 显示指定文件所占空间：
 
-```
+```shell
 [root@localhost test]# du log2012.log
 300 log2012.log
 ```
 
 查看指定目录的所占空间：
 
-```
+```shell
 [root@localhost test]# du scf
 4 scf/lib
 4 scf/service/deploy/product
@@ -78,7 +78,7 @@ root@localhost [test]# du
 
 显示多个文件所占空间：
 
-```
+```shell
 [root@localhost test]# du log30.tar.gz log31.tar.gz
 4 log30.tar.gz
 4 log31.tar.gz
@@ -86,7 +86,7 @@ root@localhost [test]# du
 
 只显示总和的大小:
 
-```
+```shell
 [root@localhost test]# du -s
 1288 .
 
@@ -100,7 +100,7 @@ root@localhost [test]# du
 
 显示总和的大小且易读:
 
-```
+```shell
 du -sh $dir
 ```
 

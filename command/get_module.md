@@ -9,7 +9,7 @@ get_module
 
 ### 语法  
 
-```
+```shell
 get_module 模块名
 ```
 
@@ -17,7 +17,7 @@ get_module 模块名
 
 使用lsmod命令查看内核模块：
 
-```
+```shell
 lsmod | head -5
 Module                  Size  Used by
 ipv6                  272801  15
@@ -28,7 +28,7 @@ ip_conntrack_ftp       11569  0
 
 使用get_module命令查看模块详细信息：
 
-```
+```shell
 get_module ipv6
         refcnt               : 15
         srcversion           : 8CC9C024755B4483E56C0EF

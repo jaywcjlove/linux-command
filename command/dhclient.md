@@ -9,13 +9,13 @@ dhclient
 
 ### 语法  
 
-```
+```shell
 dhclient(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 0：指定dhcp客户端监听的端口号；
 -d：总是以前台方式运行程序；
 -q：安静模式，不打印任何错误的提示信息；
@@ -28,7 +28,7 @@ dhclient(选项)(参数)
 
 ### 实例  
 
-```
+```shell
 dhclient -r     #释放IP
 dhclient        #获取IP
 ```

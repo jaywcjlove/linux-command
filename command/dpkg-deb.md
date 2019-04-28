@@ -9,13 +9,13 @@ Debian Linux下的软件包管理工具
 
 ### 语法  
 
-```
+```shell
 dpkg-deb(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -c：显示软件包中的文件列表；
 -e：将主控信息解压；
 -f：把字段内容打印到标准输出；
@@ -35,25 +35,25 @@ dpkg-deb(选项)(参数)
 
 解压程序文件：
 
-```
+```shell
 dpkg-deb -x drcom-pum_1.0-0ubuntu1~ppa1~jaunty1_i386.deb drcom
 ```
 
 解压控制文件：
 
-```
+```shell
 dpkg-deb -e drcom-pum_1.0-0ubuntu1~ppa1~jaunty1_i386.deb drcom/DEBIAN
 ```
 
 打包生成deb文件：
 
-```
+```shell
 dpkg-deb -b drcom drcom_1.4.8.2_i386.deb
 ```
 
 查询deb包中的文件内容：
 
-```
+```shell
 dpkg-deb -c demo.deb
 ```
 

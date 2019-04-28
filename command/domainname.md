@@ -9,13 +9,13 @@ domainname
 
 ### 语法  
 
-```
+```shell
 domainname(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -v：详细信息模式；
 -F：指定读取域名信息的文件。
 ```
@@ -26,7 +26,7 @@ NIS域名：指定要设置的NIS域名。
 
 ### 实例  
 
-```
+```shell
 [root@AY1307311912260196fcZ ~]# domainname -v
 getdomainname()=`(none)'
 (none)

@@ -9,27 +9,27 @@ chroot
 
 在经过 chroot 命令之后，系统读取到的目录和文件将不在是旧系统根下的而是新根下（即被指定的新的位置）的目录结构和文件，因此它带来的好处大致有以下3个：
 
- **增加了系统的安全性，限制了用户的权力：** 
+**增加了系统的安全性，限制了用户的权力：** 
 
 在经过 chroot 之后，在新根下将访问不到旧系统的根目录结构和文件，这样就增强了系统的安全性。这个一般是在登录 (login) 前使用 chroot，以此达到用户不能访问一些特定的文件。
 
- **建立一个与原系统隔离的系统目录结构，方便用户的开发：** 
+**建立一个与原系统隔离的系统目录结构，方便用户的开发：** 
 
 使用 chroot 后，系统读取的是新根下的目录和文件，这是一个与原系统根下文件不相关的目录结构。在这个新的环境中，可以用来测试软件的静态编译以及一些与系统不相关的独立开发。
 
- **切换系统的根目录位置，引导 Linux 系统启动以及急救系统等：** 
+**切换系统的根目录位置，引导 Linux 系统启动以及急救系统等：** 
 
 chroot 的作用就是切换系统的根位置，而这个作用最为明显的是在系统初始引导磁盘的处理过程中使用，从初始 RAM 磁盘 (initrd) 切换系统的根位置并执行真正的 init。另外，当系统出现一些问题时，我们也可以使用 chroot 来切换到一个临时的系统。
 
 ### 语法  
 
-```
+```shell
 chroot(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 --help：在线帮助；
 --version：显示版本信息。
 ```
@@ -41,9 +41,9 @@ chroot(选项)(参数)
 
 ### 实例  
 
- **将target作为根目录（运行其中的`/bin/sh`）:** 
+**将target作为根目录（运行其中的`/bin/sh`）:** 
 
-```
+```shell
 chroot target /bin/sh
 ```
 
@@ -56,7 +56,7 @@ chroot target /bin/sh
 
 将target作为根目录(运行其中的`/bin/ls`):
 
-```
+```shell
 chroot target /bin/ls
 ```
 
@@ -68,13 +68,13 @@ chroot target /bin/ls
 
 准备chroot的根目录：
 
-```
+```shell
 mkdir newRoot
 ```
 
 编译自己的程序：
 
-```
+```shell
 gcc main.c
 ```
 
@@ -82,13 +82,13 @@ gcc main.c
 
 查看程序需要的库：
 
-```
+```shell
 ldd a.out
 ```
 
 输入之后，输出如下：
 
-```
+```shell
 linux-gate.so.1 = &gt;  (0xb8034000)
 libc.so.6 = &gt; /lib/tls/i686/cmov/libc.so.6 (0xb7eab000)
 /lib/ld-linux.so.2 (0xb801a000)
@@ -96,7 +96,7 @@ libc.so.6 = &gt; /lib/tls/i686/cmov/libc.so.6 (0xb7eab000)
 
 将程序需要的库和程序拷贝到新根目录下：
 
-```
+```shell
 cp a.out newRoot
 mkdir newRoot/lib
 cp /lib/tls/i686/cmov/libc.so.6 newRoot/lib
@@ -105,13 +105,13 @@ cp /lib/ld-linux.so.2 newRoot/lib
 
 这里newRoot内容将如下：
 
-```
+```shell
 a.out lib/
 ```
 
 使用chroot运行自己的程序：
 
-```
+```shell
 su
 chroot newRoot /a.out
 ```

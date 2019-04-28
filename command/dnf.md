@@ -19,293 +19,247 @@ DNF 并未默认安装在 RHEL 或 CentOS 7系统中，但是 Fedora 22 已经�
 
 在系统中执行以下命令：
 
-```
-# yum install epel-release
+```shell
+yum install epel-release
 ```
 
 或者
 
-```
-# yum install epel-release -y
+```shell
+yum install epel-release -y
 ```
 
 其实这里并没有强制使用”-y”的理由，相反的，在不使用”-y”的情况下，用户可以在安装过程中查看到底有哪些东西被安装进了系统。但对于没有这个需求的用户，您可以在 YUM 中使用”-y”参数来自动安装所有东西。
 
 2、使用 epel-release 依赖中的 YUM 命令来安装 DNF 包。在系统中执行以下命令：
 
-```
-# yum install dnf
+```shell
+yum install dnf
 ```
 
 然后， DNF 包管理器就被成功的安装到你的系统中了。接下来，是时候开始我们的教程了！在这个教程中，您将会学到27个用于 DNF 包管理器的命令。使用这些命令，你可以方便有效的管理您系统中的 RPM 软件包。现在，让我们开始学习 DNF 包管理器的27条常用命令吧！
 
- **查看 DNF 包管理器版本** 
+**查看 DNF 包管理器版本** 
 
 用处：该命令用于查看安装在您系统中的 DNF 包管理器的版本
 
-```
-# dnf –version
+```shell
+dnf –version
 ```
 
 !Check-DNF-Version
 
- **查看系统中可用的 DNF 软件库** 
+**查看系统中可用的 DNF 软件库** 
 
 用处：该命令用于显示系统中可用的 DNF 软件库
 
-```
-# dnf repolist
+```shell
+dnf repolist
 ```
 
-!Check-All-Enabled-Repositories
-
- **查看系统中可用和不可用的所有的 DNF 软件库** 
+**查看系统中可用和不可用的所有的 DNF 软件库** 
 
 用处：该命令用于显示系统中可用和不可用的所有的 DNF 软件库
 
-```
-# dnf repolist all
+```shell
+dnf repolist all
 ```
 
-!3
-
- **列出所有 RPM 包** 
+**列出所有 RPM 包** 
 
 用处：该命令用于列出用户系统上的所有来自软件库的可用软件包和所有已经安装在系统上的软件包
 
-```
-# dnf list
+```shell
+dnf list
 ```
 
-!4
-
- **列出所有安装了的 RPM 包** 
+**列出所有安装了的 RPM 包** 
 
 用处：该命令用于列出所有安装了的 RPM 包
 
-```
-# dnf list installed
+```shell
+dnf list installed
 ```
 
-!5
-
- **列出所有可供安装的 RPM 包** 
+**列出所有可供安装的 RPM 包** 
 
 用处：该命令用于列出来自所有可用软件库的可供安装的软件包
 
-```
-# dnf list available
+```shell
+dnf list available
 ```
 
-!6
-
- **搜索软件库中的 RPM 包** 
+**搜索软件库中的 RPM 包** 
 
 用处：当你不知道你想要安装的软件的准确名称时，你可以用该命令来搜索软件包。你需要在”search”参数后面键入软件的部分名称来搜索。（在本例中我们使用”nano”）
 
-```
-# dnf search nano
+```shell
+dnf search nano
 ```
 
-!7
-
- **查找某一文件的提供者** 
+**查找某一文件的提供者** 
 
 用处：当你想要查看是哪个软件包提供了系统中的某一文件时，你可以使用这条命令。（在本例中，我们将查找”/bin/bash”这个文件的提供者）
 
-```
-# dnf provides /bin/bash
+```shell
+dnf provides /bin/bash
 ```
 
-!8
-
- **查看软件包详情** 
+**查看软件包详情** 
 
 用处：当你想在安装某一个软件包之前查看它的详细信息时，这条命令可以帮到你。（在本例中，我们将查看”nano”这一软件包的详细信息）
 
-```
-# dnf info nano
+```shell
+dnf info nano
 ```
 
-!9
-
- **安装软件包** 
+**安装软件包** 
 
 用处：使用该命令，系统将会自动安装对应的软件及其所需的所有依赖（在本例中，我们将用该命令安装nano软件）
 
-```
-# dnf install nano
+```shell
+dnf install nano
 ```
 
-!10
-
- **升级软件包** 
+**升级软件包** 
 
 用处：该命令用于升级制定软件包（在本例中，我们将用命令升级”systemd”这一软件包）
 
-```
-# dnf update systemd
+```shell
+dnf update systemd
 ```
 
-!11
-
- **检查系统软件包的更新** 
+**检查系统软件包的更新** 
 
 用处：该命令用于检查系统中所有软件包的更新
 
-```
-# dnf check-update
+```shell
+dnf check-update
 ```
 
-!12
-
- **升级所有系统软件包** 
+**升级所有系统软件包** 
 
 用处：该命令用于升级系统中所有有可用升级的软件包
 
-```
-# dnf update 或 # dnf upgrade
+```shell
+dnf update 或 dnf upgrade
 ```
 
-!13
-
- **删除软件包** 
+**删除软件包** 
 
 用处：删除系统中指定的软件包（在本例中我们将使用命令删除”nano”这一软件包）
 
-```
-# dnf remove nano 或 # dnf erase nano
+```shell
+dnf remove nano 或 dnf erase nano
 ```
 
-!14
-
- **删除无用孤立的软件包** 
+**删除无用孤立的软件包** 
 
 用处：当没有软件再依赖它们时，某一些用于解决特定软件依赖的软件包将会变得没有存在的意义，该命令就是用来自动移除这些没用的孤立软件包。
 
-```
-# dnf autoremove
+```shell
+dnf autoremove
 ```
 
-!15
-
- **删除缓存的无用软件包** 
+**删除缓存的无用软件包** 
 
 用处：在使用 DNF 的过程中，会因为各种原因在系统中残留各种过时的文件和未完成的编译工程。我们可以使用该命令来删除这些没用的垃圾文件。
 
-```
-# dnf clean all
+```shell
+dnf clean all
 ```
 
-!16
-
- **获取有关某条命令的使用帮助** 
+**获取有关某条命令的使用帮助** 
 
 用处：该命令用于获取有关某条命令的使用帮助（包括可用于该命令的参数和该命令的用途说明）（本例中我们将使用命令获取有关命令”clean”的使用帮助）
 
-```
-# dnf help clean
+```shell
+dnf help clean
 ```
 
-!17
-
- **查看所有的 DNF 命令及其用途** 
+**查看所有的 DNF 命令及其用途** 
 
 用处：该命令用于列出所有的 DNF 命令及其用途
 
-```
-# dnf help
+```shell
+dnf help
 ```
 
-!18
-
- **查看 DNF 命令的执行历史** 
+**查看 DNF 命令的执行历史** 
 
 用处：您可以使用该命令来查看您系统上 DNF 命令的执行历史。通过这个手段您可以知道在自您使用 DNF 开始有什么软件被安装和卸载。
 
-```
-# dnf history
+```shell
+dnf history
 ```
 
-!19
-
- **查看所有的软件包组** 
+**查看所有的软件包组** 
 
 用处：该命令用于列出所有的软件包组
 
-```
-# dnf grouplist
+```shell
+dnf grouplist
 ```
 
-!20
-
- **安装一个软件包组** 
+**安装一个软件包组** 
 
 用处：该命令用于安装一个软件包组（本例中，我们将用命令安装”Educational Software”这个软件包组）
 
-```
-# dnf groupinstall ‘Educational Software’
+```shell
+dnf groupinstall ‘Educational Software’
 ```
 
-!21
-
- **升级一个软件包组中的软件包** 
+**升级一个软件包组中的软件包** 
 
 用处：该命令用于升级一个软件包组中的软件包（本例中，我们将用命令升级”Educational Software”这个软件包组中的软件）
 
-```
-# dnf groupupdate ‘Educational Software’
+```shell
+dnf groupupdate ‘Educational Software’
 ```
 
-!22
-
- **删除一个软件包组** 
+**删除一个软件包组** 
 
 用处：该命令用于删除一个软件包组（本例中，我们将用命令删除”Educational Software”这个软件包组）
 
-```
-# dnf groupremove ‘Educational Software’
+```shell
+dnf groupremove ‘Educational Software’
 ```
 
-!23
-
- **从特定的软件包库安装特定的软件** 
+**从特定的软件包库安装特定的软件** 
 
 用处：该命令用于从特定的软件包库安装特定的软件（本例中我们将使用命令从软件包库 epel 中安装 phpmyadmin 软件包）
 
-```
-# dnf –enablerepo=epel install phpmyadmin
+```shell
+dnf –enablerepo=epel install phpmyadmin
 ```
 
- **更新软件包到最新的稳定发行版** 
+**更新软件包到最新的稳定发行版** 
 
 用处：该命令可以通过所有可用的软件源将已经安装的所有软件包更新到最新的稳定发行版
 
-```
-# dnf distro-sync
+```shell
+dnf distro-sync
 ```
 
- **重新安装特定软件包** 
+**重新安装特定软件包** 
 
 用处：该命令用于重新安装特定软件包（本例中，我们将使用命令重新安装”nano”这个软件包）
 
-```
-# dnf reinstall nano
+```shell
+dnf reinstall nano
 ```
 
-!26
-
- **回滚某个特定软件的版本** 
+**回滚某个特定软件的版本** 
 
 用处：该命令用于降低特定软件包的版本（如果可能的话）（本例中，我们将使用命令降低”acpid”这个软件包的版本）
 
-```
-# dnf downgrade acpid
+```shell
+dnf downgrade acpid
 ```
 
 样例输出：
 
-```
+```shell
 Using metadata from Wed May 20 12:44:59 2015
 No match for available package: acpid-2.0.19-5.el7.x86_64
 Error: Nothing to do.

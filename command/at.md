@@ -11,13 +11,13 @@ at
 
 ### 语法  
 
-```
+```shell
 at(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -f：指定包含具体指令的任务文件；
 -q：指定新任务的队列名称；
 -l：显示待执行任务的列表；
@@ -33,7 +33,7 @@ at(选项)(参数)
 
 三天后的下午 5 点锺执行`/bin/ls`：
 
-```
+```shell
 [root@localhost ~]# at 5pm+3 days
 at> /bin/ls
 at> <EOT>
@@ -42,7 +42,7 @@ job 7 at 2013-01-08 17:00
 
 明天17点钟，输出时间到指定文件内：
 
-```
+```shell
 [root@localhost ~]# at 17:20 tomorrow
 at> date >/root/2013.log
 at> <EOT>
@@ -51,7 +51,7 @@ job 8 at 2013-01-06 17:20
 
 计划任务设定后，在没有执行之前我们可以用atq命令来查看系统没有执行工作任务：
 
-```
+```shell
 [root@localhost ~]# atq
 8       2013-01-06 17:20 a root
 7       2013-01-08 17:00 a root
@@ -59,7 +59,7 @@ job 8 at 2013-01-06 17:20
 
 删除已经设置的任务：
 
-```
+```shell
 [root@localhost ~]# atq
 8       2013-01-06 17:20 a root
 7       2013-01-08 17:00 a root
@@ -71,7 +71,7 @@ job 8 at 2013-01-06 17:20
 
 显示已经设置的任务内容：
 
-```
+```shell
 [root@localhost ~]# at -c 8
 #!/bin/sh
 # atrun uid=0 gid=0

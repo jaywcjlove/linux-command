@@ -11,13 +11,13 @@ linux shell命令执行时，shell总是先在自己的shell builtin中查找该
 
 ### 语法  
 
-```
+```shell
 enable(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -n：关闭指定的内部命令；
 -a：显示所有激活的内部命令；
 -f：从指定文件中读取内部命令。
@@ -31,7 +31,7 @@ enable(选项)(参数)
 
 使用enable命令显示所有激活的内部命令：
 
-```
+```shell
 [root@localhost ~]# enable -a
 enable .
 enable :

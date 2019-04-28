@@ -9,13 +9,13 @@ cp
 
 ### 语法  
 
-```
+```shell
 cp(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -a：此参数的效果和同时指定"-dpR"参数相同；
 -d：当复制符号连接时，把目标文件或目录也建立为符号连接，并指向与源文件或目录连接的原始文件或目录；
 -f：强行复制文件或目录，不论目标文件或目录是否已存在；
@@ -41,13 +41,13 @@ cp(选项)(参数)
 
 通常来说，参数 `-r` 也可用更详细的风格 `--recursive`。但是以简短的方式，也可以这么连用 `-ruv`。
 
-```
+```shell
 cp -r -u -v /usr/men/tmp ~/men/tmp
 ```
 
 版本备份 `--backup=numbered` 参数意思为“我要做个备份，而且是带编号的连续备份”。所以一个备份就是 1 号，第二个就是 2 号，等等。
 
-```bash
+```shell
 $ cp --force --backup=numbered test1.py test1.py
 $ ls
 test1.py test1.py.~1~ test1.py.~2~
@@ -55,7 +55,7 @@ test1.py test1.py.~1~ test1.py.~2~
 
 如果把一个文件复制到一个目标文件中，而目标文件已经存在，那么，该目标文件的内容将被破坏。此命令中所有参数既可以是绝对路径名，也可以是相对路径名。通常会用到点`.`或点点`..`的形式。例如，下面的命令将指定文件复制到当前目录下：
 
-```
+```shell
 cp ../mary/homework/assign .
 ```
 
@@ -63,25 +63,25 @@ cp ../mary/homework/assign .
 
 将文件file复制到目录`/usr/men/tmp`下，并改名为file1
 
-```
+```shell
 cp file /usr/men/tmp/file1
 ```
 
 将目录`/usr/men`下的所有文件及其子目录复制到目录`/usr/zh`中
 
-```
+```shell
 cp -r /usr/men /usr/zh
 ```
 
 交互式地将目录`/usr/men`中的以m打头的所有.c文件复制到目录`/usr/zh`中
 
-```
+```shell
 cp -i /usr/men m*.c /usr/zh
 ```
 
 我们在Linux下使用cp命令复制文件时候，有时候会需要覆盖一些同名文件，覆盖文件的时候都会有提示：需要不停的按Y来确定执行覆盖。文件数量不多还好，但是要是几百个估计按Y都要吐血了，于是折腾来半天总结了一个方法：
 
-```bash
+```shell
 cp aaa/* /bbb
 # 复制目录aaa下所有到/bbb目录下，这时如果/bbb目录下有和aaa同名的文件，需要按Y来确认并且会略过aaa目录下的子目录。
 
@@ -97,14 +97,14 @@ cp -r -a aaa/* /bbb
 
 递归强制复制目录到指定目录中覆盖已存在文件
 
-```bash
+```shell
 cp -rfb ./* ../backup
 # 将当前目录下所有文件，复制到当前目录的兄弟目录 backup 文件夹中
 ```
 
 拷贝目录下的隐藏文件如 `.babelrc`
 
-```bash
+```shell
 cp -r aaa/.* ./bbb
 # 将 aaa 目录下的，所有`.`开头的文件，复制到 bbb 目录中。
 

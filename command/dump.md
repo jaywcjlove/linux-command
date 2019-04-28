@@ -9,13 +9,13 @@ dump
 
 ### 语法  
 
-```
+```shell
 dump(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -0123456789：备份的层级；
 -b<区块大小>：指定区块的大小，单位为KB；
 -B<区块数目>：指定备份卷册的区块数目；
@@ -39,13 +39,13 @@ dump(选项)(参数)
 
 将`/home`目录所有内容备份到`/tmp/homeback.bak`文件中，备份层级为`0`并在`/etc/dumpdates`中记录相关信息：
 
-```
+```shell
 ‍dump -0u -f /tmp/homeback.bak /home
 ```
 
 将`/home`目录所有内容备份到`/tmp/homeback.bak`文件中，备份层级为`1`（只备份上次使用层次`0`备份后发生过改变的数据）并在`/etc/dumpdates`中记录相关信息：
 
-```
+```shell
 dump -1u -f /tmp/homeback.bak /home
 ```
 

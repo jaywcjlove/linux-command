@@ -9,13 +9,13 @@ ftp
 
 ### 语法  
 
-```
+```shell
 ftp(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -d：详细显示指令执行过程，便于排错或分析程序执行的情况；
 -i：关闭互动模式，不询问任何问题；
 -g：关闭本地主机文件名称支持特殊字符的扩充特性；
@@ -29,7 +29,7 @@ ftp(选项)(参数)
 
 ### 实例  
 
-```bash
+```shell
 ftp> ascii  # 设定以ASCII方式传送文件(缺省值) 
 ftp> bell   # 每完成一次文件传送,报警提示. 
 ftp> binary # 设定以二进制方式传送文件. 
@@ -68,7 +68,7 @@ ftp> ! # 从 ftp 子系统退出到外壳。
 
 关闭FTP连接
 
-```bash
+```shell
 bye
 exit
 quit
@@ -76,14 +76,14 @@ quit
 
 下载文件
 
-```bash
+```shell
 ftp> get readme.txt # 下载 readme.txt 文件
 ftp> mget *.txt     # 下载 
 ```
 
 上传文件
 
-```bash
+```shell
 ftp> put /path/readme.txt # 上传 readme.txt 文件
 ftp> mput *.txt           # 可以上传多个文件
 ```

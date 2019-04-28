@@ -11,13 +11,13 @@ env
 
 ### 语法  
 
-```
+```shell
 env(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -i：开始一个新的空的环境；
 -u<变量名>：从当前环境中删除指定的变量。
 ```
@@ -29,7 +29,7 @@ env(选项)(参数)
 
 ### 实例  
 
-```
+```shell
 [root@localhost ~]# env
 hostname=LinServ-1
 TERM=linux

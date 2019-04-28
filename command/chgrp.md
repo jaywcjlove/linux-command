@@ -11,13 +11,13 @@ chgrp
 
 ### 语法  
 
-```
+```shell
 chgrp [选项][组群][文件|目录]
 ```
 
 ### 选项  
 
-```
+```shell
 -R 递归式地改变指定目录及其下的所有子目录和文件的所属的组
 -c或——changes：效果类似“-v”参数，但仅回报更改的部分；
 -f或--quiet或——silent：不显示错误信息；
@@ -39,12 +39,13 @@ chgrp [选项][组群][文件|目录]
 
 将`/usr/meng`及其子目录下的所有文件的用户组改为mengxin
 
-```
+```shell
 chgrp -R mengxin /usr/meng
 ```
 
-更改文件ah的组群所有者为newuser
-```
+更改文件ah的组群所有者为 `newuser`
+
+```shell
 [root@rhel ~]# chgrp newuser ah
 ```
 

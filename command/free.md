@@ -9,13 +9,13 @@ free
 
 ### 语法  
 
-```
+```shell
 free(选项)
 ```
 
 ### 选项  
 
-```bash
+```shell
 -b # 以Byte为单位显示内存使用情况；
 -k # 以KB为单位显示内存使用情况；
 -m # 以MB为单位显示内存使用情况；
@@ -28,14 +28,14 @@ free(选项)
 
 ### 实例  
 
-```bash
+```shell
 free -t    # 以总和的形式显示内存的使用信息
 free -s 10 # 周期性的查询内存使用信息，每10s 执行一次命令
 ```
 
 显示内存使用情况
 
-```bash
+```shell
 free -m
              total       used       free     shared    buffers     cached
 Mem:          2016       1973         42          0        163       1497
@@ -45,7 +45,7 @@ Swap:         4094          0       4094
 
  **第一部分Mem行解释：** 
 
-```
+```shell
 total：内存总数；
 used：已经使用的内存数；
 free：空闲的内存数；
@@ -58,7 +58,7 @@ cached Page：缓存内存数。
 
  **第二部分(-/+ buffers/cache)解释:** 
 
-```
+```shell
 (-buffers/cache) used内存数：第一部分Mem行中的 used – buffers – cached
 (+buffers/cache) free内存数: 第一部分Mem行中的 free + buffers + cached
 ```
@@ -81,7 +81,7 @@ cached Page：缓存内存数。
 
 当可用内存少于额定值的时候，就会开会进行交换。如何看额定值：
 
-```bash
+```shell
 cat /proc/meminfo
 
 MemTotal:       16140816 kB

@@ -9,13 +9,13 @@ convertquota
 
 ### 语法  
 
-```
+```shell
 convertquota(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -u：仅转换用户磁盘配额数据文件；
 -g：仅转换组磁盘配额数据文件；
 -f：将老的磁盘配额文件转换为新的格式；
@@ -30,7 +30,7 @@ convertquota(选项)(参数)
 
 使用convertquota指令转换指定文件系统`/data`的磁盘配额数据文件。在命令行中输入下面的命令：
 
-```
+```shell
 convertquota -u /data     //转换文件系统"/data"上的用户磁盘配额文件
 ```
 

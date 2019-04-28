@@ -9,7 +9,7 @@ colrm
 
 ### 语法  
 
-```
+```shell
 colrm(参数)
 ```
 

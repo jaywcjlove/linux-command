@@ -9,7 +9,7 @@ bzgrep
 
 ### 语法  
 
-```
+```shell
 bzgrep(参数)
 ```
 

@@ -9,13 +9,13 @@ chpasswd
 
 ### 语法  
 
-```
+```shell
 chpasswd(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 -e：输入的密码是加密后的密文；
 -h：显示帮助信息并退出；
 -m：当被支持的密码未被加密时，使用MD5加密代替DES加密。
@@ -25,7 +25,7 @@ chpasswd(选项)
 
 先创建用户密码对应文件，格式为`username:password`，如`abc:abc123`，必须以这种格式来书写，并且不能有空行，保存成文本文件user.txt，然后执行chpasswd命令：
 
-```
+```shell
 chpasswd < user.txt
 ```
 

@@ -9,13 +9,13 @@ arpwatch
 
 ### 语法  
 
-```
+```shell
 arpwatch(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 -d：启动排错模式；
 -f<记录文件>：设置存储ARP记录的文件，预设为/var/arpwatch/arp.dat；
 -i<接口>：指定监听ARP的接口，预设的接口为eth0；

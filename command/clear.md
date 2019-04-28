@@ -9,7 +9,7 @@ clear
 
 ### 语法  
 
-```
+```shell
 clear
 ```
 

@@ -9,13 +9,13 @@ arpd
 
 ### 语法  
 
-```
+```shell
 arpd(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -l：将arp数据库输出到标准输出设备显示并退出；
 -f：指定读取和加载arpd数据库的文本文件，文件的格式与“-l”输出信息类似；
 -b：指定arpd数据库文件，默认的位置为“/var/lib/arpd.db”；
@@ -32,13 +32,13 @@ arpd(选项)(参数)
 
 启动arpd进程：
 
-```
+```shell
 arpd -b /var/tmp/arpd.db
 ```
 
 运行一段时间后，查看结果：
 
-```
+```shell
 arpd -l -b /var/tmp/arpd.db
 ```
 

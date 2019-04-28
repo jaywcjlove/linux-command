@@ -9,7 +9,7 @@ ftpcount
 
 语法：
 
-```
+```shell
 ftpcount
 ```
 
