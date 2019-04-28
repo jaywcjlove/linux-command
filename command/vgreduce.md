@@ -9,13 +9,13 @@ vgreduce
 
 ### 语法  
 
-```
+```shell
 vgreduce(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -a：如果命令行中没有指定要删除的物理卷，则删除所有的空物理卷；
 --removemissing：删除卷组中丢失的物理卷，使卷组恢复正常状态。
 ```
@@ -29,13 +29,13 @@ vgreduce(选项)(参数)
 
 使用vgreduce命令从卷组"vg2000"中移除物理卷`/dev/sdb2`。在命令行中输入下面的命令：
 
-```
+```shell
 [root@localhost ~]# vgreduce vg2000 /dev/sdb2    #将物理卷"/dev/sdb2"从卷组"vg2000"中删除
 ```
 
 输出信息如下：
 
-```
+```shell
 Removed "/dev/sdb2" from volume group "vg2000"
 ```
 

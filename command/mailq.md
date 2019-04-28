@@ -9,19 +9,19 @@ mailq
 
 ### 语法  
 
-```
+```shell
 mailq(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 -v：显示详细的信息。
 ```
 
 ### 实例  
 
-```
+```shell
 [root@localhost ~]# mailq -v
 /var/spool/mqueue is empty
                 Total requests: 0

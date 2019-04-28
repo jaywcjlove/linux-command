@@ -9,13 +9,13 @@ userdel
 
 ### 语法  
 
-```
+```shell
 userdel(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -f：强制删除用户，即使用户当前已登录；
 -r：删除用户的同时，删除与用户相关的所有文件。
 ```
@@ -28,9 +28,9 @@ userdel(选项)(参数)
 
 userdel命令很简单，比如我们现在有个用户linuxde，其家目录位于`/var`目录中，现在我们来删除这个用户：
 
-```
-userdel linuxde       //删除用户linuxde，但不删除其家目录及文件；
-userdel -r linuxde    //删除用户linuxde，其家目录及文件一并删除；
+```shell
+userdel linuxde       # 删除用户linuxde，但不删除其家目录及文件；
+userdel -r linuxde    # 删除用户linuxde，其家目录及文件一并删除；
 ```
 
 请不要轻易用`-r`选项；他会删除用户的同时删除用户所有的文件和目录，切记如果用户目录下有重要的文件，在删除前请备份。

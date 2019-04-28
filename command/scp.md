@@ -9,13 +9,13 @@ scp
 
 ### 语法  
 
-```
+```shell
 scp(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -1：使用ssh协议版本1；
 -2：使用ssh协议版本2；
 -4：使用ipv4；
@@ -43,7 +43,7 @@ scp(选项)(参数)
 
  **从远处复制文件到本地目录** 
 
-```
+```shell
 scp root@10.10.10.10:/opt/soft/nginx-0.5.38.tar.gz /opt/soft/
 ```
 
@@ -51,14 +51,14 @@ scp root@10.10.10.10:/opt/soft/nginx-0.5.38.tar.gz /opt/soft/
 
 **从亚马逊云复制OpenVPN到本地目录** 
 
-```
+```shell
 scp -i amazon.pem ubuntu@10.10.10.10:/usr/local/openvpn_as/etc/exe/openvpn-connect-2.1.3.110.dmg openvpn-connect-2.1.3.110.dmg
 ```
 从10.10.10.10机器上下载openvpn安装文件到本地当前目录来。
 
  **从远处复制到本地** 
 
-```
+```shell
 scp -r root@10.10.10.10:/opt/soft/mongodb /opt/soft/
 ```
 
@@ -66,7 +66,7 @@ scp -r root@10.10.10.10:/opt/soft/mongodb /opt/soft/
 
  **上传本地文件到远程机器指定目录** 
 
-```bash
+```shell
 scp /opt/soft/nginx-0.5.38.tar.gz root@10.10.10.10:/opt/soft/scptest
 # 指定端口 2222
 scp -rp -P 2222 /opt/soft/nginx-0.5.38.tar.gz root@10.10.10.10:/opt/soft/scptest
@@ -76,7 +76,7 @@ scp -rp -P 2222 /opt/soft/nginx-0.5.38.tar.gz root@10.10.10.10:/opt/soft/scptest
 
  **上传本地目录到远程机器指定目录** 
 
-```
+```shell
 scp -r /opt/soft/mongodb root@10.10.10.10:/opt/soft/scptest
 ```
 

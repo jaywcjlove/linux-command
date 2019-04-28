@@ -9,7 +9,7 @@ talk
 
 ### 语法  
 
-```
+```shell
 talk(参数)
 ```
 
@@ -22,13 +22,13 @@ talk(参数)
 
 例如登录在主机rs6000.cic.test.com上的用户jdx希望和登录在主机tirc.cs.test.com上的用户wangxz进行交谈，则可以输入下面的命令：
 
-```
+```shell
 talk wangxz@tirc.cs.test.com
 ```
 
 Internet上的相关程序（Talk Daemon）就会传送一条信息邀请wangxz来交谈，这时用户wangxz的屏幕上就会出现如下信息，并响铃提示：
 
-```
+```shell
 Message from Talk_Daemon@tirc.cs.test.com at 21:44 …
 talk: connection requested by jdx@rs6000.cic.test.com
 talk: respond with:  talk jdx@rs6000.cic.test.com
@@ -36,7 +36,7 @@ talk: respond with:  talk jdx@rs6000.cic.test.com
 
 这时，用户wangxz应该做的工作就是按照上面的信息提示，即输入linux中talk命令：
 
-```
+```shell
 talk jdx@rs6000.cic.test.com
 ```
 
@@ -44,25 +44,25 @@ talk jdx@rs6000.cic.test.com
 
 在用户进行输入时，可按 **BACKSPACE** 见来更正前一个字符，也可按 **CTRL+w** 来删除一个完整的单词，或者用 **CTRL+U** 来删除一整行，另外，用户还可以通过按 **CTRL+L** 来刷新屏幕。如果要结束交谈，可由任何一方按下 **CTRL+C** 来中断连接，但在结束对话前最好道声“再见”，并等待对方回应。linux中talk命令程序结束时，在屏幕上将回显示一条信息：
 
-```
+```shell
 [Connection closing. Exiting]
 ```
 
 并非每次要求对方交谈都能成功，有时对方没有登录，则linux中talk命令程序提示信息：
 
-```
+```shell
 [Your party is not logged on]
 ```
 
 并退出；如果对方已登录，但因某种原因（如不是正在使用机器）没有响应，那么linux中talk命令程序将会每隔10秒钟给他发一条邀请信息，同时在自己的屏幕上显示：
 
-```
+```shell
 [Ringing your party again]
 ```
 
 如果用户不愿等待，则可以按 **CTRL+C** 终止linux中talk命令程序。还有的时候系统可能出现下面的信息：
 
-```
+```shell
 [Checking for invitation on caller’s machine]
 ```
 
@@ -70,13 +70,13 @@ talk jdx@rs6000.cic.test.com
 
 如果用户在做某些紧急工作（如编辑邮件）时不希望被linux中talk命令的邀请打搅，他可以使用命令：
 
-```
+```shell
 mesg n
 ```
 
 来暂时拒绝交谈，这时如果有用户邀请他交谈，只能得到提示信息：
 
-```
+```shell
 [Your party is refusing messages]
 ```
 

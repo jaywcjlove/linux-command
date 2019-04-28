@@ -9,13 +9,13 @@ mii-tool
 
 ### 语法  
 
-```
+```shell
 usage: mii-tool [-VvRrwl] [-A media,... | -F media] [interface ...]
 ```
 
 ### 选项  
 
-```
+```shell
 -V 显示版本信息；
 -v 显示网络接口的信息；
 -R 重设MII到开启状态；
@@ -33,7 +33,7 @@ media: 100baseT4, 100baseTx-FD, 100baseTx-HD, 10baseT-FD, 10baseT-HD,
 
 查看网络接口的协商状态：
 
-```
+```shell
 [root@localhost ~]# mii-tool -v eth0
 eth0: negotiated 100baseTx-FD, link ok
   product info: vendor 00:50:ef, model 60 rev 8
@@ -52,7 +52,7 @@ eth0: negotiated 100baseTx-FD, link ok
 
 如果我们想把网络接口eth0改为1000Mb/s全双工的模式应该怎么办呢？
 
-```
+```shell
 [root@localhost ~]# mii-tool -F 100baseTx-FD
 [root@localhost ~]# mii-tool -v eth0
 eth0: 100 Mbit, full duplex, link ok
@@ -65,7 +65,7 @@ eth0: 100 Mbit, full duplex, link ok
 
 注：是不是已经改过来了？当然，我们也一样用ethtool工具来更改，比如执行下面的命令：
 
-```
+```shell
 [root@localhost ~]# ethtool -s eth0 speed 100 duplex full
 ```
 

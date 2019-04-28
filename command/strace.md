@@ -11,7 +11,7 @@ strace的最简单的用法就是执行一个指定的命令，在指定的命�
 
 ### 语法  
 
-```
+```shell
 strace  [  -dffhiqrtttTvxx  ] [ -acolumn ] [ -eexpr ] ...
     [ -ofile ] [-ppid ] ...  [ -sstrsize ] [ -uusername ]
     [ -Evar=val ] ...  [ -Evar  ]...
@@ -23,7 +23,7 @@ strace  -c  [ -eexpr ] ...  [ -Ooverhead ] [ -Ssortby ]
 
 ### 选项  
 
-```
+```shell
 -c 统计每一系统调用的所执行的时间,次数和出错的次数等.
 -d 输出strace关于标准错误的调试信息.
 -f 跟踪由fork调用所产生的子进程.
@@ -67,7 +67,7 @@ qualifier只能是 trace,abbrev,verbose,raw,signal,read,write其中之一.value�
 
 现在我们做一个很简单的程序来演示strace的基本用法。这个程序的C语言代码如下：
 
-```
+```shell
 # filename test.c
 #include <stdio.h>
 
@@ -82,13 +82,13 @@ int main()
 
 然后我们用`gcc -o test test.c`编译一下，得到一个可执行的文件test。然后用strace调用执行：
 
-```
+```shell
 strace ./test
 ```
 
 执行期间会要求你输入一个整数，我们输入99，最后得到如下的结果：
 
-```
+```shell
 // 直接执行test的结果
 oracle@orainst[orcl]:~ $./test
 
@@ -134,13 +134,13 @@ exit_group(0)                           = ?
 
 我们还是使用上面的那个test程序，来观察进程接收信号的情况。还是先`strace ./test`，等到等待输入的画面的时候不要输入任何东西，然后打开另外一个窗口，输入如下的命令
 
-```
+```shell
 killall test
 ```
 
 这时候就能看到我们的程序推出了，最后的trace结果如下：
 
-```
+```shell
 oracle@orainst[orcl]:~
 $strace ./test
 
@@ -176,12 +176,12 @@ strace -c ./test
 
 最后能得到这样的trace结果：
 
-```
+```shell
 oracle@orainst[orcl]:~
 $strace -c ./test
 ```
 
-```
+```shell
 execve("./test", ["./test"], [/* 41 vars */]) = 0
 % time     seconds  usecs/call     calls    errors syscall
 ------ ----------- ----------- --------- --------- ----------------
@@ -198,7 +198,6 @@ execve("./test", ["./test"], [/* 41 vars */]) = 0
   0.66    0.000002           2         1           set_thread_area
 ------ ----------- ----------- --------- --------- ----------------
 100.00    0.000305                    68        47 total
-
 ```
 
 这里很清楚的告诉你调用了那些系统函数，调用次数多少，消耗了多少时间等等这些信息，这个对我们分析一个程序来说是非常有用的。
@@ -211,7 +210,7 @@ execve("./test", ["./test"], [/* 41 vars */]) = 0
 
 参数-o用在将strace的结果输出到文件中，如果不指定-o参数的话，默认的输出设备是STDERR，也就是说使用”-o filename”和” 2>filename”的结果是一样的。
 
-```
+```shell
 # 这两个命令都是将strace结果输出到文件test.txt中
 strace -c -o test.txt ./test
 strace -c ./test  2>test.txt
@@ -221,7 +220,7 @@ strace -c ./test  2>test.txt
 
 strace可以使用参数-T将每个系统调用所花费的时间打印出来，每个调用的时间花销现在在调用行最右边的尖括号里面。
 
-```
+```shell
 oracle@orainst[orcl]:~
 $strace -T ./test
 
@@ -241,62 +240,37 @@ exit_group(0)                           = ?
 这是一个很有用的功能，strace会将每次系统调用的发生时间记录下来，只要使用-t/tt/ttt三个参数就可以看到效果了，具体的例子可以自己去尝试。
 
 <table>
-
 <thead>
-
 <tr>
-
 <th>参数名</th>
-
 <th>输出样式</th>
-
 <th>说明</th>
-
 </tr>
-
 </thead>
-
 <tbody>
-
 <tr>
-
 <td>-t</td>
-
 <td>10:33:04 exit_group(0)</td>
-
 <td>输出结果精确到秒</td>
-
 </tr>
-
 <tr>
-
 <td>-tt</td>
-
 <td>10:33:48.159682 exit_group(0)</td>
-
 <td>输出结果精确到微妙</td>
-
 </tr>
-
 <tr>
-
 <td>-ttt</td>
-
 <td>1262169244.788478 exit_group(0)</td>
-
 <td>精确到微妙，而且时间表示为unix时间戳</td>
-
 </tr>
-
 </tbody>
-
 </table>
 
  **截断输出** 
 
 -s参数用于指定trace结果的每一行输出的字符串的长度，下面看看test程序中-s参数对结果有什么影响，现指定-s为20，然后在read的是是很我们输入一个超过20个字符的数字串
 
-```
+```shell
 strace -s 20 ./test
 
 read(0, 2222222222222222222222222      // 我们输入的2一共有25个
@@ -307,7 +281,7 @@ read(0, 2222222222222222222222222      // 我们输入的2一共有25个
 
 strace不光能自己初始化一个进程进行trace，还能追踪现有的进程，参数-p就是取这个作用的，用法也很简单，具体如下。
 
-```
+```shell
 strace -p pid
 ```
 
@@ -317,7 +291,7 @@ strace -p pid
 
 我们先要得到lgwr进程的pid，运行下面的命令
 
-```
+```shell
 ps -ef|grep lgwr
 
 oracle    5912     1  0 Nov12 ?        00:14:56 ora_lgwr_orcl
@@ -325,26 +299,26 @@ oracle    5912     1  0 Nov12 ?        00:14:56 ora_lgwr_orcl
 
 得到lgwr的pid是5912，现在启动strace，然后将trace的几个输出到lgwr.txt文件中，执行下面的命令
 
-```
+```shell
 strace -tt -s 10 -o lgwr.txt -p 5912
 ```
 
 过一会之后停止strace，然后查看结果。由于输出的结果比较多，为了方便我们只看Oracle写入log文件时用的pwrite函数的调用
 
-```
+```shell
 grep pwrite\(20 lgwr.txt
 ```
 
 等等，为什么grep的时候用的是”pwrite(2″呢？，因为我知道我这个机器打开的当前的log文件的句柄编号都是2开始的。具体查找方法是先使用下面的语句找出当前活动的日志文件都有哪些：
 
-```
+```shell
 select member, v$log.status from v$log, v$logfile
 where v$log.group#=v$logfile.group#;
 ```
 
 得到
 
-```
+```shell
 MEMBER                                             STATUS
 -------------------------------------------------- ----------------
 /db/databases/orcl/redo-01-a/redo-t01-g03-m1.log    INACTIVE
@@ -359,13 +333,13 @@ MEMBER                                             STATUS
 
 然后到/proc中去找打开文件的句柄：
 
-```
+```shell
 ll /proc/.5912/fd/
 ```
 
 得到
 
-```
+```shell
 lrwx------    1 oracle   dba            64 Dec 30 10:55 18 -> /db/databases/orcl/redo-01-a/redo-t01-g01-m1.log
 lrwx------    1 oracle   dba            64 Dec 30 10:55 19 -> /db/databases/orcl/redo-03-a/redo-t01-g01-m2.log
 lrwx------    1 oracle   dba            64 Dec 30 10:55 20 -> /db/databases/orcl/redo-02-a/redo-t01-g02-m1.log
@@ -380,7 +354,7 @@ lrwx------    1 oracle   dba            64 Dec 30 10:55 25 -> /db/databases/orcl
 
 现在我们得到如下结果
 
-```
+```shell
 11:13:55.603245 pwrite(20, "\1\"\0\0J!"..., 1536, 4363264) = 1536
 11:13:55.603569 pwrite(21, "\1\"\0\0J!"..., 1536, 4363264) = 1536
 11:13:55.606888 pwrite(20, "\1\"\0\0M!"..., 1536, 4364800) = 1536

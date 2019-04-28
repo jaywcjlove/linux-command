@@ -9,13 +9,13 @@ ncftp
 
 ### 语法  
 
-```
+```shell
 ncftp(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -u：指定登录FTP服务器时使用的用户名；
 -p：指定登录FTP服务器时使用的密码；
 -P：如果FTP服务器没有使用默认的TCP协议的21端口，则使用此选项指定FTP服务器的端口号。
@@ -29,7 +29,7 @@ FTP服务器：指定远程FTP服务器的ip地址或主机名。
 
 ### 安装  
 
-```
+```shell
 wget ftp://ftp.ncftp.com/ncftp/ncftp-3.2.3-src.tar.gz
 tar zxvf ncftp-3.2.3-src.tar.gz
 cd ncftp-3.2.3/
@@ -41,7 +41,7 @@ make && make install
 
 将本地/etc/目录内的所有文件和目录，上传到FTP服务器的flv/games/目录内(如果不存在flv/games/目录则自动创建)。
 
-```
+```shell
 /usr/local/ncftp/bin/ncftpput -u koumm -p koumm -P 21 -m -R 192.168.162.137  flv/games/ /etc/*
 ```
 

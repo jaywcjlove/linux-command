@@ -9,7 +9,7 @@ newusers
 
 ### 语法  
 
-```
+```shell
 newusers(参数)
 ```
 
@@ -23,13 +23,13 @@ newusers(参数)
 
 用法很简单，newusers后面直接跟一个文件，文件格式和`/etc/passwd`的格式相同。
 
-```
+```shell
 用户名1:x:UID:GID:用户说明:用户的家目录:所用SHELL
 ```
 
 举例：
 
-```
+```shell
 jingang0:x:520:520::/home/jingang0:/sbin/nologin
 jingang1:x:521:521::/home/jingang1:/sbin/nologin
 ......
@@ -37,7 +37,7 @@ jingang1:x:521:521::/home/jingang1:/sbin/nologin
 
 值得一提的是关于SHELL类型，查看主机上所有SHELL，可以通过chsh来查看：
 
-```
+```shell
 [root@localhost beinan]# chsh --list
 /bin/sh
 /bin/bash

@@ -9,13 +9,13 @@ lp
 
 ### 语法  
 
-```
+```shell
 lp(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -E：与打印服务器连接时强制使用加密；
 -U：指定连接打印服务器时使用的用户名；
 -d：指定接收打印任务的目标打印机；
@@ -35,31 +35,31 @@ lp(选项)(参数)
 
 要在连接在设备dlp0上的打印机lp0上打印文件`/etc/motd`，请输入：
 
-```
+```shell
 lp /etc/motd
 ```
 
 要使用文件的一个副本打印`/etc/motd`文件的30个副本，并且要用邮件通知用户作业完成，请输入：
 
-```
+```shell
 lp -c -m -n30 -dlp0:lpd0 /etc/motd
 ```
 
 要使用后端标志-f和-a并带上作业标题blah打印`/etc/motd`文件，请输入：
 
-```
+```shell
 lp -t "blah" -o -f -o -a /etc/motd
 ```
 
 要排队MyFile文件并返回作业编号，请输入：
 
-```
+```shell
 lp myfile
 ```
 
 要排队MyFile文件并禁止作业编号，请输入：
 
-```
+```shell
 lp -s myfile
 ```
 

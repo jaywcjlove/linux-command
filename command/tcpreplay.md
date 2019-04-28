@@ -9,7 +9,7 @@ tcpreplay
 
 ### 选项  
 
-```
+```shell
 -A "<args>" 在使用 tcpdump 风格打印输出信息时，同时再调用tcpdump中的参数， 默认已经带有“-n,-l”，所以一般看到的都是ip地址，而没有主机名的打印，注意这个是在tcpreplay使用了-v参数时才能使用，不带-v不会报错，但是没有实际意义。格式：-vA “nnt”表示以tcpdump风格输出报文信息，并且不打印时间戳、主机名、端口服务名称。注意不要使用-c参数来指定打印的数据报文的个数，这样发送出去的报文也会变少。
 -c <cachefile> 双网卡回放报文必选参数，后面紧跟cache文件名，该文件为tcpprep根据对应的pcap文件构造出来。 
 -D 把应用层的数据，使用dump mode写入到指定文件中去，和-w、-W 参数一起使用。 
@@ -39,7 +39,6 @@ tcpreplay
 -v 每发送一个报文都以 tcpdump 的风格打印出对应的信息。
 -V 查看版本号。
 -w <file> 将主网卡发送的报文写入一个文件中，参数后紧跟文件名。
-
 ```
 
 ### 实例  
@@ -50,13 +49,13 @@ a、在客户端使用 ethereal 抓包，存为 ftp.pcap 文件。
 
 b、 将 ftp.pcap 文件进行 tcpprep 操作，制作 cache 文件。
 
-```
+```shell
 [root@A ~]# tcpprep -an client -i ftp.pcap -o ftp.cache –v 
 ```
 
 c、 将 DUT 设备的两个接口和 PC 的两个接口使用网线连接，使用 tcpreplay 重 放报文。注意防火墙的配置为网桥（透明）模式。 
 
-```
+```shell
 [root@A ~]# tcpreplay -c ftp.cache -i eth0 -j eth1 ftp.pcap -R –v 
 ```
 
@@ -68,7 +67,7 @@ a、在实验室 BT 下载一些台湾的娱乐节目和热门的大片，使用
 
 b、将 bt.pcap 文件进行 tcpprep 操作，制作 cache 文件。
 
-```
+```shell
  [root@A ~]# tcpprep -an client -i bt.pcap -o bt.cache -C "100M BT Packet" –v
 ```
 
@@ -76,7 +75,7 @@ b、将 bt.pcap 文件进行 tcpprep 操作，制作 cache 文件。
 
 c、使用 tcpreplay 重放报文。 
 
-```
+```shell
 [root@A ~]# tcpreplay -c bt.cache -i eth0 -j eth1 bt.pcap -v –R 
 ```
 
@@ -86,7 +85,7 @@ a、在 tftp 服务器上使用 ethereal 抓包，存为 tftp.pcap 文件。 
 
 b、将 pcap 文件进行 tcpprep 的操作，制作 cache 文件。 
 
-```
+```shell
 [root@A ~]# tcpprep -an server -i tftp.pcap -o tftp.cache –v 
 ```
 
@@ -94,7 +93,7 @@ b、将 pcap 文件进行 tcpprep 的操作，制作 cache 文件。 
 
 c、使用 tcpreplay 重放报文。 
 
-```
+```shell
 [root@A ~]# tcpreplay -c tftp.cache -i eth0 -j eth1 tftp.pcap –v
 ```
 

@@ -9,13 +9,13 @@ systool
 
 ### 语法  
 
-```
+```shell
 systool(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -a：显示被请求资源的属性；
 -b<总线>：显示指定总线的信息；
 -c<class>：显示指定类的信息；
@@ -35,7 +35,7 @@ systool(选项)(参数)
 
 ### 实例  
 
-```
+```shell
 [root@localhost ~]# systool
 Supported sysfs buses:
         acpi

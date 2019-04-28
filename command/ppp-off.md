@@ -9,7 +9,7 @@ ppp-off
 
 ### 语法  
 
-```
+```shell
 ppp-off
 ```
 

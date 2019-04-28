@@ -15,13 +15,13 @@ locate指令和find找寻档案的功能类似，但locate是透过update程序�
 
 ### 语法
 
-```
+```shell
 locate [选择参数] [样式]
 ```
 
 ### 选项
 
-```
+```shell
 -e 将排除在寻找的范围之外。
 -1 如果 是 1．则启动安全模式。在安全模式下，使用者不会看到权限无法看到 的档案。这会始速度减慢，因为 locate 必须至实际的档案系统中取得档案的  权限资料。
 -f 将特定的档案系统排除在外，例如我们没有到理要把 proc 档案系统中的档案  放在资料库中。
@@ -38,7 +38,7 @@ locate [选择参数] [样式]
 
 实例1：查找和pwd相关的所有文件
 
-```
+```shell
 root ~ # locate pwd
 /bin/pwd
 /etc/.pwd.lock
@@ -59,7 +59,7 @@ root ~ # locate pwd
 
 实例2： 搜索etc目录下所有以sh开头的文件
 
-```
+```shell
 root ~ # locate /etc/sh
 /etc/shadow
 /etc/shadow-
@@ -68,7 +68,7 @@ root ~ # locate /etc/sh
 
 实例3：搜索etc目录下，所有以m开头的文件
 
-```
+```shell
 root ~ # locate /etc/m
 /etc/magic
 /etc/magic.mime

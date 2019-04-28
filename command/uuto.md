@@ -9,7 +9,7 @@ uuto
 
 ### 语法  
 
-```
+```shell
 uuto [文件][目的]
 ```
 
@@ -18,7 +18,7 @@ uuto [文件][目的]
 
 将文件传送到远程 UUCP 主机 localhost 的 tmp 目录，在命令提示符中直接输入如下命令：
 
-```bash
+```shell
 uuto./testfile localhost/tmp # 将文件传送到远程UUCP 主机localhost的tmp目录 
 ```
 

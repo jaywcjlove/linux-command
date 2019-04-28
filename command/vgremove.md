@@ -9,13 +9,13 @@ vgremove
 
 ### 语法  
 
-```
+```shell
 vgremove(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -f：强制删除。
 ```
 
@@ -27,7 +27,7 @@ vgremove(选项)(参数)
 
 使用vgremove命令删除LVM卷组"vg1000"。在命令行中输入下面的命令：
 
-```
+```shell
 [root@localhost ~]# vgremove vg1000    #删除卷组"vg1000"
 Volume group "vg1000" successfully removed
 ```

@@ -13,13 +13,13 @@ pssh
 
  **yum方法** 
 
-```
+```shell
 yum install pssh
 ```
 
  **编译安装** 
 
-```
+```shell
 wget http://parallel-ssh.googlecode.com/files/pssh-2.3.1.tar.gz
 tar xf pssh-2.3.1.tar.gz
 cd pssh-2.3.1/
@@ -28,7 +28,7 @@ python setup.py install
 
 ### 选项  
 
-```
+```shell
 --version：查看版本
 --help：查看帮助，即此信息
 -h：主机文件列表，内容格式”[user@]host[:port]”
@@ -51,7 +51,7 @@ python setup.py install
 
 获取每台服务器的uptime：
 
-```
+```shell
 # pssh -h ip.txt -i uptime
 [1] 11:15:03 [SUCCESS] Mar.mars.he
 11:15:11 up 4 days, 16:25,  1 user,  load average: 0.00, 0.00, 0.00
@@ -63,7 +63,7 @@ python setup.py install
 
 查看每台服务器上mysql复制IO/SQL线程运行状态信息：
 
-```
+```shell
 # pssh -h IP.txt -i "/usr/local/mysql/bin/mysql -e 'show slave status \G'"|grep Running:
              Slave_IO_Running: yes
             Slave_SQL_Running: Yes
@@ -75,7 +75,7 @@ python setup.py install
 
 保存每台服务器运行的结果：
 
-```
+```shell
 # pssh -h IP.txt -i -o /tmp/pssh/ uptime
 [1] 11:19:47 [SUCCESS] Feb.mars.he
 11:19:55 up 4 days, 16:31,  2 users,  load average: 0.02, 0.03, 0.00
@@ -87,7 +87,7 @@ python setup.py install
 
 我们来看一下/tmp/pssh/下的文件及其内容
 
-```
+```shell
 # ll /tmp/pssh/
 总用量 12
 -rw-r--r--. 1 root root 70 12月  1 11:19 Feb.mars.he

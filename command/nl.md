@@ -9,13 +9,13 @@ nl
 
 ### 语法  
 
-```
+```shell
 nl (选项) (参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -b ：指定行号指定的方式，主要有两种：
     -b a ：表示不论是否为空行，也同样列出行号(类似 cat -n)；
     -b t ：如果有空行，空的那一行不要列出行号(默认值)；
@@ -33,7 +33,7 @@ nl (选项) (参数)
 
  **用 nl 列出 log2015.log 的内容** ：
 
-```
+```shell
 root@localhost [test]# nl log2015.log
 1 2015-01
 2 2015-02
@@ -45,7 +45,7 @@ root@localhost [test]# nl log2015.log
 
  **用 nl 列出 log2015.log 的内容，空本行也加上行号** ：
 
-```
+```shell
 [root@localhost test]# nl -b a log2015.log
 1 2015-01
 2 2015-02
@@ -56,7 +56,7 @@ root@localhost [test]# nl log2015.log
 
  **让行号前面自动补上0，统一输出格式：** 
 
-```
+```shell
 [root@localhost test]# nl -b a -n rz log2015.log
 000001 2015-01
 000002 2015-02

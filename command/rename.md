@@ -9,13 +9,13 @@ rename
 
 ### 语法  
 
-```
+```shell
 rename(参数)
 ```
 
 ### 参数  
 
-```
+```shell
 原字符串：将文件名需要替换的字符串；
 目标字符串：将文件名中含有的原字符替换成目标字符串；
 文件：指定要改变文件名的文件列表。
@@ -25,13 +25,13 @@ rename(参数)
 
 将main1.c重命名为main.c
 
-```
+```shell
 rename main1.c main.c main1.c
 ```
 
  **rename支持通配符** 
 
-```
+```shell
 ?  可替代单个字符
 *  可替代多个字符
 [charset]  可替代charset集中的任意单个字符
@@ -51,26 +51,26 @@ rename main1.c main.c main1.c
 
 字母的替换
 
-```
-rename "s/AA/aa/" *  //把文件名中的AA替换成aa
+```shell
+rename "s/AA/aa/" *  # 把文件名中的AA替换成aa
 ```
 
 修改文件的后缀
 
-```
-rename "s//.html//.php/" *     //把.html 后缀的改成 .php后缀
+```shell
+rename "s//.html//.php/" *     # 把.html 后缀的改成 .php后缀
 ```
 
 批量添加文件后缀
 
-```
-rename "s/$//.txt/" *     //把所有的文件名都以txt结尾
+```shell
+rename "s/$//.txt/" *  # 把所有的文件名都以txt结尾
 ```
 
 批量删除文件名
 
-```
-rename "s//.txt//" *      //把所有以.txt结尾的文件名的.txt删掉
+```shell
+rename "s//.txt//" *   # 把所有以.txt结尾的文件名的.txt删掉
 ```
 
 

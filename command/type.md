@@ -18,13 +18,13 @@ type
 
 ### 语法  
 
-```
+```shell
 type(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -t：输出“file”、“alias”或者“builtin”，分别表示给定的指令为“外部指令”、“命令别名”或者“内部指令”；
 -p：如果给出的指令为外部指令，则显示其绝对路径；
 -a：在环境变量“PATH”指定的路径中，显示给定指令的信息，包括命令别名。
@@ -36,7 +36,7 @@ type(选项)(参数)
 
 ### 实例  
 
-```
+```shell
 [root@localhost ~]# type ls
 ls is aliased to `ls --color=tty'
 

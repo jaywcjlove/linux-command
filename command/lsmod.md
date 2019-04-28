@@ -9,13 +9,13 @@ lsmod
 
 ### 语法  
 
-```
+```shell
 lsmod
 ```
 
 ### 实例  
 
-```
+```shell
 [root@LinServ-1 ~]# lsmod
 Module                  Size  Used by
 ipv6                  272801  15

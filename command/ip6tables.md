@@ -9,13 +9,13 @@ linux中防火墙软件
 
 ### 语法  
 
-```
+```shell
 ip6tables(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 -t<表>：指定要操纵的表；
 -A：向规则链中添加条目；
 -D：从规则链中删除条目；
@@ -39,7 +39,7 @@ ip6tables(选项)
 
 在命令行窗口输入下面的指令就可以查看当前的 IPv6 防火墙配置：
 
-```
+```shell
 ip6tables -nl --line-numbers
 ```
 
@@ -47,13 +47,13 @@ ip6tables -nl --line-numbers
 
 使用编辑器编辑`/etc/sysconfig/ip6tables`文件：
 
-```
+```shell
 vi /etc/sysconfig/ip6tables
 ```
 
 可能会看到下面的默认 ip6tables 规则：
 
-```
+```shell
 *filter
 :INPUT accept [0:0]
 :FORWARD ACCEPT [0:0]
@@ -79,7 +79,7 @@ COMMIT
 
 要开启 80 端口（HTTP 服务器端口），在 COMMIT 一行之前添加如下规则：
 
-```
+```shell
 -A RH-Firewall-1-INPUT -m tcp -p tcp --dport 80 -j ACCEPT
 ```
 
@@ -87,7 +87,7 @@ COMMIT
 
 要开启 53 端口（DNS 服务器端口），在 COMMIT 一行之前添加如下规则：
 
-```
+```shell
 -A RH-Firewall-1-INPUT -m tcp -p tcp --dport 53 -j ACCEPT
 -A RH-Firewall-1-INPUT -m udp -p tcp --dport 53 -j ACCEPT
 ```
@@ -96,26 +96,26 @@ COMMIT
 
 要开启 443 端口，在 COMMIT 一行之前添加如下规则：
 
-```
+```shell
 -A RH-Firewall-1-INPUT -m tcp -p tcp --dport 443 -j ACCEPT
 ```
 
 要开启 25 端口（SMTP 邮件服务器端口），在 COMMIT 一行之前添加如下规则：
 
-```
+```shell
 -A RH-Firewall-1-INPUT -m tcp -p tcp --dport 25 -j ACCEPT
 ```
 
 对于那些没有特定规则与之匹配的数据包，可能是我们不想要的，多半是有问题的。我们可能也希望在丢弃（DROP）之前记录它们。此时，可以将最后一行：
 
-```
+```shell
 -A RH-Firewall-1-INPUT -j REJECT --reject-with icmp6-adm-prohibited
 COMMIT
 ```
 
 改为：
 
-```
+```shell
 -A RH-Firewall-1-INPUT -j LOG
 -A RH-Firewall-1-INPUT -j DROP
 COMMIT
@@ -123,19 +123,19 @@ COMMIT
 
 保存并关闭该文件。然后重新启动 ip6tables 防火墙：
 
-```
+```shell
 # service ip6tables restart
 ```
 
 然后重新查看 ip6tables 规则，可以看到如下所示的输出：
 
-```
+```shell
 # ip6tables -vnL --line-numbers
 ```
 
 输出示例：
 
-```
+```shell
 Chain INPUT (policy ACCEPT 0 packets, 0 bytes)
 num   pkts bytes target     prot opt in     out     source               destination
 1    42237 3243K RH-Firewall-1-INPUT  all      *      *       ::/0                 ::/0
@@ -172,7 +172,7 @@ IPv4 通常默认即可保护内部局域网私有 IP 上的主机。但是 IPv6
 
 下面是一些比较常见的 ipv6-icmp 配置实例：
 
-```
+```shell
 :ICMPv6 - [0:0]
 # Approve certain ICMPv6 types and all outgoing ICMPv6
 # http://forum.linode.com/viewtopic.php?p=39840#39840

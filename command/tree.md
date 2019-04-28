@@ -9,13 +9,13 @@ tree
 
 ### 语法
 
-```
+```shell
 tree(选项)(参数)
 ```
 
 ### 选项
 
-```bash
+```shell
 ------- 列表选项 -------
 -a            # 显示所有文件和目录。
 -d            # 先是目录名称而非文件。
@@ -82,7 +82,7 @@ tree(选项)(参数)
 
 列出目录`/private/` 第一级文件名
 
-```bash
+```shell
 tree  /private/ -L 1
 /private/
 ├── etc
@@ -93,7 +93,7 @@ tree  /private/ -L 1
 
 忽略文件夹
 
-```bash
+```shell
 tree -I node_modules # 忽略当前目录文件夹node_modules
 tree -P node_modules # 列出当前目录文件夹node_modules的目录结构
 tree -P node_modules -L 2 # 显示目录node_modules两层的目录树结构
@@ -102,7 +102,7 @@ tree -L 2 > /home/www/tree.txt # 当前目录结果存到 tree.txt 文件中
 
 忽略多个文件夹
 
-```bash
+```shell
 tree -I 'node_modules|icon|font' -L 2
 ```
 

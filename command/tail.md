@@ -11,13 +11,13 @@ tail
 
 ### 语法
 
-```
+```shell
 tail(选项)(参数)
 ```
 
 ### 选项
 
-```
+```shell
 --retry：即是在tail命令启动时，文件不可访问或者文件稍后变得不可访问，都始终尝试打开文件。使用此选项时需要与选项“——follow=name”连用；
 -c<N>或——bytes=<N>：输出文件尾部的N（N为整数）个字节内容；
 -f<name/descriptor>或；--follow<nameldescript>：显示文件最新追加的内容。“name”表示以文件名的方式监视文件的变化。“-f”与“-fdescriptor”等效；
@@ -37,7 +37,7 @@ tail(选项)(参数)
 
 ### 实例
 
-```bash
+```shell
 tail file #（显示文件file的最后10行）
 tail -n +20 file #（显示文件file的内容，从第20行至文件末尾）
 tail -c 10 file #（显示文件file的最后10个字符）

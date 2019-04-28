@@ -11,13 +11,13 @@ useradd
 
 ### 语法  
 
-```
+```shell
 useradd(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -c<备注>：加上备注文字。备注文字会保存在passwd的备注栏位中；
 -d<登入目录>：指定用户登入时的启始目录；
 -D：变更预设值；
@@ -41,13 +41,13 @@ useradd(选项)(参数)
 
 新建用户加入组：
 
-```
+```shell
 useradd –g sales jack –G company,employees    //-g：加入主要组、-G：加入次要组
 ```
 
 建立一个新用户账户，并设置ID：
 
-```
+```shell
 useradd caojh -u 544
 ```
 

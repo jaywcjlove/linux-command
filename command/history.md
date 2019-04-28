@@ -13,13 +13,13 @@ history
 
 ### 语法
 
-```
+```shell
 history(选项)(参数)
 ```
 
 ### 选项
 
-```
+```shell
 -c：清空当前历史命令；
 -a：将历史命令缓冲区中命令写入历史命令文件中；
 -r：将历史命令文件中的命令读入当前历史命令缓冲区；
@@ -34,7 +34,7 @@ n：打印最近的n条历史命令。
 
 使用history命令显示最近使用的10条历史命令，输入如下命令：
 
-```
+```shell
 [root@localhost ~]# history 10
    92  ls
    93  cd ..
@@ -50,7 +50,7 @@ n：打印最近的n条历史命令。
 
 列出最近3条记录
 
-```
+```shell
 [root@localhost ~]# history 3
    15  2017-08-26 11:44:35  root history 3
    16  2017-08-26 11:44:37  root history n
@@ -59,13 +59,13 @@ n：打印最近的n条历史命令。
 
 清空历史记录
 
-```
+```shell
 [root@localhost ~]# history -c
 ```
 
 更多实例:
 
-```
+```shell
 history -cw
 `~/.bash_history`: 保存历史命令
 `/etc/profile` -> HISSIZE: 历史命令保存数量

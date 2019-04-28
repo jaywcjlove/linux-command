@@ -11,13 +11,13 @@ hwclock
 
 ### 语法  
 
-```
+```shell
 hwclock(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 --adjust：hwclock每次更改硬件时钟时，都会记录在/etc/adjtime文件中。使用--adjust参数，可使hwclock根据先前的记录来估算硬件时钟的偏差，并用来校正目前的硬件时钟；
 --debug：显示hwclock执行时详细的信息；
 --directisa：hwclock预设从/dev/rtc设备来存取硬件时钟。若无法存取时，可用此参数直接以I/O指令来存取硬件时钟；
@@ -34,27 +34,27 @@ hwclock(选项)
 
 设置硬件时间要依赖于操作系统时间，具体方法如下：
 
-```
+```shell
 hwclock –systohc
 hwclock --systohc –-utc
 ```
 
 不加任何参数使用hwclock，可以查看当前的硬件日期和时间。
 
-```
+```shell
 hwclock
 ```
 
 查看clock文件，确认是否设置了UTC：
 
-```
+```shell
 cat /etc/default/rcS 
 UTC=yes
 ```
 
 在其他一些版本的Linux（如RebHat）中可以这样查看：
 
-```
+```shell
 cat /etc/sysconfig/clock
 ZONE="America/Los_Angeles"
 UTC=false

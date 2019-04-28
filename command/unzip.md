@@ -9,13 +9,13 @@ unzip
 
 ### 语法
 
-```
+```shell
 unzip(选项)(参数)
 ```
 
 ### 选项
 
-```
+```shell
 -c：将解压缩的结果显示到屏幕上，并对字符做适当的转换；
 -f：更新现有的文件；
 -l：显示压缩文件内所包含的文件；
@@ -50,25 +50,25 @@ unzip(选项)(参数)
 
 将压缩文件text.zip在当前目录下解压缩。
 
-```
+```shell
 unzip test.zip
 ```
 
 将压缩文件text.zip在指定目录`/tmp`下解压缩，如果已有相同的文件存在，要求unzip命令不覆盖原先的文件。
 
-```
+```shell
 unzip -n test.zip -d /tmp
 ```
 
 查看压缩文件目录，但不解压。
 
-```
+```shell
 unzip -v test.zip
 ```
 
 将压缩文件test.zip在指定目录`/tmp`下解压缩，如果已有相同的文件存在，要求unzip命令覆盖原先的文件。
 
-```
+```shell
 unzip -o test.zip -d tmp/
 ```
 

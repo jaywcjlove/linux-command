@@ -9,13 +9,13 @@ usermod
 
 ### 语法
 
-```
+```shell
 usermod(选项)(参数)
 ```
 
 ### 选项
 
-```
+```shell
 -c<备注>：修改用户帐号的备注文字；
 -d<登入目录>：修改用户登入时的目录；
 -e<有效期限>：修改帐号的有效期限；
@@ -37,31 +37,31 @@ usermod(选项)(参数)
 
 将 newuser2 添加到组 staff 中：
 
-```
+```shell
 usermod -G staff newuser2
 ```
 
 修改newuser的用户名为newuser1：
 
-```
+```shell
 usermod -l newuser1 newuser
 ```
 
 锁定账号newuser1：
 
-```
+```shell
 usermod -L newuser1
 ```
 
 解除对newuser1的锁定：
 
-```
+```shell
 usermod -U newuser1
 ```
 
 增加用户到用户组中:
 
-```
+```shell
 apk add shadow # 安装 shadow 包, usermod 命令包含在 usermod 中
 usermod -aG group user # 添加用户到用户组中
 ```

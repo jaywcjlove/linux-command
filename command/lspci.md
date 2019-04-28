@@ -9,13 +9,13 @@ lspci
 
 ### 语法  
 
-```
+```shell
 lspci(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 -n：以数字方式显示PCI厂商和设备代码；
 -t：以树状结构显示PCI设备的层次关系，包括所有的总线、桥、设备以及它们之间的联接；
 -b：以总线为中心的视图；
@@ -27,7 +27,7 @@ lspci(选项)
 
 ### 实例  
 
-```
+```shell
 [root@localhost ~]# lspci
 00:00.0 host bridge: Intel Corporation 5500 I/O Hub to ESI Port (rev 22)
 00:01.0 PCI bridge: Intel Corporation 5520/5500/X58 I/O Hub PCI Express Root Port 1 (rev 22)

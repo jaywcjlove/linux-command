@@ -9,20 +9,20 @@ users
 
 ### 语法  
 
-```
+```shell
 users(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 --help：显示命令的帮助信息；
 --version：显示命令的版本信息。
 ```
 
 ### 实例  
 
-```
+```shell
 [root@localhost ~]# users
 root root
 ```

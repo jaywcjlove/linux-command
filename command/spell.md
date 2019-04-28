@@ -9,7 +9,7 @@ spell
 
 ### 语法  
 
-```
+```shell
 spell(参数)
 ```
 

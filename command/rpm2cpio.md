@@ -9,7 +9,7 @@ rpm2cpio
 
 ### 语法  
 
-```
+```shell
 rpm2cpio(参数)
 ```
 
@@ -19,7 +19,7 @@ rpm2cpio(参数)
 
 ### 实例  
 
-```
+```shell
 rpm2cpio ../libstdc++-4.3.0-8.i386.rpm | cpio -idv
 ```
 

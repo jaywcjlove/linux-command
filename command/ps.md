@@ -9,13 +9,13 @@ ps
 
 ### 语法
 
-```
+```shell
 ps(选项)
 ```
 
 ### 选项
 
-```
+```shell
 -a：显示所有终端机下执行的程序，除了阶段作业领导者之外。
 a：显示现行终端机下的所有程序，包括其他用户的程序。
 -A：显示所有程序。
@@ -84,7 +84,7 @@ X：采用旧式的Linux i386登陆格式显示程序状况。
 
 ### 实例
 
-```bash
+```shell
 ps axo pid,comm,pcpu # 查看进程的PID、名称以及CPU 占用率
 ps aux | sort -rnk 4 # 按内存资源的使用量对进程进行排序
 ps aux | sort -nk 3  # 按 CPU 资源的使用量对进程进行排序
@@ -106,7 +106,7 @@ ps -o command -p 91730 | sed -n 2p # 通过进程id获取服务名称
 
 将目前属于您自己这次登入的 PID 与相关信息列示出来
 
-```bash
+```shell
 ps -l
 #  UID   PID  PPID        F CPU PRI NI       SZ    RSS WCHAN     S             ADDR TTY           TIME CMD
 #  501   566   559     4006   0  31  0  4317620    228 -      Ss                  0 ttys001    0:00.05 /App...cOS/iTerm2 --server /usr/bin/login -fpl kenny /Ap...s/MacOS/iTerm2 --launch_shel
@@ -132,7 +132,7 @@ ps -l
 
 列出目前所有的正在内存当中的程序
 
-```bash
+```shell
 ps aux
 
 # USER               PID  %CPU %MEM      VSZ    RSS   TT  STAT STARTED      TIME COMMAND
@@ -161,7 +161,7 @@ ps aux
 
 列出类似程序树的程序显示
 
-```
+```shell
 ps -axjf
 
 # USER               PID  PPID  PGID   SESS JOBC STAT   TT       TIME COMMAND            UID   C STIME   TTY
@@ -172,7 +172,7 @@ ps -axjf
 
 找出与 cron 与 syslog 这两个服务有关的 PID 号码
 
-```
+```shell
 ps aux | egrep '(cron|syslog)'
 
 # root                50   0.0  0.0  4305532   1284   ??  Ss   二03下午   0:10.08 /usr/sbin/syslogd
@@ -181,7 +181,7 @@ ps aux | egrep '(cron|syslog)'
 
 把所有进程显示出来，并输出到ps001.txt文件
 
-```
+```shell
 ps -aux > ps001.txt
 ```
 

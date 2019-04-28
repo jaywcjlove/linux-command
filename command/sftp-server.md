@@ -9,7 +9,7 @@ sftp协议的服务器端程序
 
 ### 语法  
 
-```
+```shell
 sftp-server
 ```
 

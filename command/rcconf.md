@@ -9,13 +9,13 @@ Debian Linux下的运行等级服务配置工具
 
 ### 语法  
 
-```
+```shell
 rcconf(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 --help：打印帮助信息；
 --dialog：使用对话命令显示菜单；
 --notermcheck：不按照终端属性来设置窗口尺寸。

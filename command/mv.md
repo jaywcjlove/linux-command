@@ -16,13 +16,13 @@ mv命令可以用来将源文件移至一个目标文件中，或将一组文件
 
 ### 语法  
 
-```
+```shell
 mv(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 --backup=<备份模式>：若需覆盖文件，则覆盖前先行备份；
 -b：当文件存在时，覆盖前，为其创建一个备份；
 -f：若目标文件或目录与现有的文件或目录重复，则直接覆盖现有的文件或目录；
@@ -42,74 +42,74 @@ mv(选项)(参数)
 
 将目录`/usr/men`中的所有文件移到当前目录（用`.`表示）中：
 
-```
+```shell
 mv /usr/men/* .
 ```
 
 移动文件
 
-```
+```shell
 mv file_1.txt /home/office/
 ```
 
 移动多个文件
 
-```
+```shell
 mv file_2.txt file_3.txt file_4.txt /home/office/
 mv *.txt /home/office/
 ```
 
 移动目录
 
-```
+```shell
 mv directory_1/ /home/office/
 ```
 
 重命名文件或目录
 
-```bash
+```shellbash
 mv file_1.txt file_2.txt # 将文件file_1.txt改名为file_2.txt
 ```
 
 重命名目录
 
-```
+```shell
 mv directory_1/ directory_2/
 ```
 
 打印移动信息
 
-```bash
+```shellbash
 mv -v *.txt /home/office
 ```
 
 提示是否覆盖文件
 
-```
+```shell
 mv -i file_1.txt /home/office
 ```
 
 源文件比目标文件新时才执行更新
 
-```
+```shell
 mv -uv *.txt /home/office
 ```
 
 不要覆盖任何已存在的文件
 
-```
+```shell
 mv -vn *.txt /home/office
 ```
 
 复制时创建备份
 
-```
+```shell
 mv -bv *.txt /home/office
 ```
 
 无条件覆盖已经存在的文件
 
-```
+```shell
 mv -f *.txt /home/office
 ```
 

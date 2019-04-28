@@ -9,7 +9,7 @@ zfore
 
 ### 语法  
 
-```
+```shell
 zfore(参数)
 ```
 

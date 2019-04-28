@@ -13,13 +13,13 @@ Linux lilo已经成为所有 Linux 发行版的标准组成部分。作为一个
 
 ### 语法  
 
-```
+```shell
 lilo(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 -b<外围设备代号>：指定安装lilo之处的外围设备代号；
 -c：使用紧致映射模式；
 -C<配置文件>：指定lilo的配置文件；
@@ -51,7 +51,7 @@ lilo(选项)
 
 要将现有的 Linux 迁移到 LILO，首先必须获得最新版本的 LILO（见 参考资料）。在做任何其他事情之前，建议您确保在手边拥有一张 Linux 引导盘 —— 如果偶而弄错了某些地方，它可以提供很大的帮助，能够恢复到初始的 Linux 配置！将 LILO 安装到系统中之后，让它接管 MBR 非常简单。以 root 用户身份输入：
 
-```
+```shell
 /sbin/lilo -v -v
 ```
 
@@ -67,7 +67,7 @@ LILO 的配置都是通过位于 /etc/lilo.conf 的一个配置文件来完成�
 
 lilo.conf 示例文件：
 
-```
+```shell
 boot=/dev/hda
 map=/boot/map
 install=/boot/boot.b
@@ -103,7 +103,7 @@ other=/dev/hda
 
 在 lilo.conf 文件中可以使用很多其他参数，不过清单 1 中的参数就足以让机器可用了。要获得关于 lilo.conf 的这些以及其他参数的 进一步资料，请参考手册页（man lilo.conf）。由于在引导时不会读取 lilo.conf，所以，当这个文件有改动时，需要“更新”MBR。 如果不完成此步骤就重新引导，那么对 lilo.conf 的修改不会在启动中反映出来。与先前将 LILO 写入 MBR 类似，需要运行：
 
-```
+```shell
 /sbin/lilo -v -v
 ```
 

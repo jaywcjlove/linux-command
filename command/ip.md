@@ -9,7 +9,7 @@ ip
 
 ### 语法  
 
-```
+```shell
 ip(选项)(参数)
 Usage: ip [ OPTIONS ] OBJECT { COMMAND | help }
        ip [ -force ] -batch filename
@@ -17,7 +17,7 @@ Usage: ip [ OPTIONS ] OBJECT { COMMAND | help }
 
 ### 选项  
 
-```
+```shell
 OBJECT := { link | address | addrlabel | route | rule | neigh | ntable |
        tunnel | tuntap | maddress | mroute | mrule | monitor | xfrm |
        netns | l2tp | macsec | tcp_metrics | token }
@@ -33,7 +33,7 @@ OBJECT := { link | address | addrlabel | route | rule | neigh | ntable |
 
 ### 参数  
 
-```
+```shell
 OPTIONS := { -V[ersion] | -s[tatistics] | -d[etails] | -r[esolve] |
         -h[uman-readable] | -iec |
         -f[amily] { inet | inet6 | ipx | dnet | bridge | link } |
@@ -49,7 +49,7 @@ help：显示网络对象支持的操作命令的帮助信息。
 
 ### 实例  
 
-```bash
+```shellbash
 ip link show                     # 显示网络接口信息
 ip link set eth0 up             # 开启网卡
 ip link set eth0 down            # 关闭网卡
@@ -73,7 +73,7 @@ ip route delete 192.168.1.0/24 dev eth0 # 删除路由
 
 **用ip命令显示网络设备的运行状态** 
 
-```
+```shell
 [root@localhost ~]# ip link list
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 16436 qdisc noqueue
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -85,7 +85,7 @@ ip route delete 192.168.1.0/24 dev eth0 # 删除路由
 
 **显示更加详细的设备信息** 
 
-```
+```shell
 [root@localhost ~]# ip -s link list
 1: lo: <LOOPBACK,UP,LOWER_UP> mtu 16436 qdisc noqueue
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
@@ -109,7 +109,7 @@ ip route delete 192.168.1.0/24 dev eth0 # 删除路由
 
 **显示核心路由表** 
 
-```
+```shell
 [root@localhost ~]# ip route list 
 112.124.12.0/22 dev eth1  proto kernel  scope link  src 112.124.15.130
 10.160.0.0/20 dev eth0  proto kernel  scope link  src 10.160.7.81
@@ -121,7 +121,7 @@ default via 112.124.15.247 dev eth1
 
 **显示邻居表** 
 
-```
+```shell
 [root@localhost ~]# ip neigh list
 112.124.15.247 dev eth1 lladdr 00:00:0c:9f:f3:88 REACHABLE
 10.160.15.247 dev eth0 lladdr 00:00:0c:9f:f2:c0 STALE
@@ -129,7 +129,7 @@ default via 112.124.15.247 dev eth1
 
 **获取主机所有网络接口**
 
-```
+```shell
 ip link | grep ^[0-9] | awk -F: '{print $2}'
 ```
 

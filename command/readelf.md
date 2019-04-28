@@ -38,7 +38,7 @@ elf文件头描述elf文件的总体信息。包括：系统相关，类型相�
 
 ### 选项  
 
-```
+```shell
 -a 
 --all 显示全部信息,等价于 -h -l -S -s -r -d -V -A -I. 
 
@@ -116,7 +116,7 @@ elf文件头描述elf文件的总体信息。包括：系统相关，类型相�
 
 1)查看可执行程序的源代码如下： 
 
-```
+```shell
 root@localhost [test]$ cat main.cpp 
 #include <iostream> 
 using std::cout; 
@@ -138,14 +138,14 @@ void  my_print()
 
 2)编译如下： 
 
-```
+```shell
 [root@localhost test]$ g++ main.cpp -o main 
 [root@localhost test]$ g++ -g main.cpp -o main.debug 
 ```
 
 3)编译之后，查看生成的文件： 
 
-```
+```shell
 [root@localhost test]$ ls -l 
 总计 64 
 -rwxr-xr-x 1 quietheart quietheart  6700 07-07 18:04 main 
@@ -159,7 +159,7 @@ void  my_print()
 
 1)查看库的源代码如下： 
 
-```
+```shell
 //myfile.h 
 #ifndef __MYFILE_H 
 #define __MYFILE_H 
@@ -179,7 +179,7 @@ void printInfo()
 
 2)编译如下： 
 
-```
+```shell
 [root@localhost test]$ g++ -c myfile.cpp 
 [root@localhost test]$ g++ -shared -fPCI -o libmy.so myfile.o 
 [root@localhost test]$ ar -r libmy.a myfile.o 
@@ -192,7 +192,7 @@ ar: creating libmy.a
 
 总计 44 
 
-```
+```shell
 -rw-r--r-- 1 quietheart quietheart 2154 07-08 16:14 libmy.a 
 -rwxr-xr-x 1 quietheart quietheart 5707 07-08 16:08 libmy.so 
 -rwxr-xr-x 1 quietheart quietheart  117 07-08 16:06 myfile.cpp 
@@ -207,7 +207,7 @@ libmy.a  libmy.so  myfile.cpp  myfile.h  myfile.o
 
  **读取可执行文件形式的elf文件头信息：** 
 
-```
+```shell
 [root@localhost test]$ readelf -h main 
 ELF Header: 
   Magic:   7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00 
@@ -235,7 +235,7 @@ ELF Header:
 
  **读取目标文件形式的elf文件头信息：** 
 
-```
+```shell
 [root@localhost test]$ readelf -h myfile.o 
 ELF Header: 
   Magic:   7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00 
@@ -263,7 +263,7 @@ ELF Header:
 
  **读取静态库文件形式的elf文件头信息：** 
 
-```
+```shell
 [root@localhost test]$ readelf -h libmy.a 
 File: libmy.a(myfile.o) 
 ELF Header: 
@@ -292,7 +292,7 @@ ELF Header:
 
  **读取动态库文件形式的elf文件头信息：** 
 
-```
+```shell
 [root@localhost test]$ readelf -h libmy.so 
 ELF Header: 
   Magic:   7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00 
@@ -320,7 +320,7 @@ ELF Header:
 
  **查看可执行的elf文件程序头表信息：** 
 
-```
+```shell
 [root@localhost test]$ readelf -l main 
 Elf file type is EXEC (Executable file) 
 Entry point 0x8048580 
@@ -354,7 +354,7 @@ Section to Segment mapping:
 
  **查看目标文件的elf文件程序头表信息： ** 
 
-```
+```shell
 [root@localhost test]$ readelf -l myfile.o 
 There are no program headers in this file. 
 ```
@@ -363,7 +363,7 @@ There are no program headers in this file.
 
  **查看静态库文件的elf文件程序头表信息：** 
 
-```
+```shell
 [root@localhost test]$ readelf -l libmy.a 
 File: libmy.a(myfile.o) 
 There are no program headers in this file. 
@@ -373,7 +373,7 @@ There are no program headers in this file.
 
  **查看动态库文件的elf文件程序头表信息：** 
 
-```
+```shell
 [root@localhost test]$ readelf -l libmy.so 
 Elf file type is DYN (Shared object file) 
 Entry point 0x550 
@@ -400,7 +400,7 @@ Section to Segment mapping:
 
  **查看一个可执行的elf文件的节信息：** 
 
-```
+```shell
 [root@localhost test]$ readelf -S main 
 There are 29 section headers, starting at offset 0xca0: 
 Section Headers: 
@@ -444,7 +444,7 @@ Key to Flags:
 
  **查看一个包含调试信息的可执行的elf文件的节信息：** 
 
-```
+```shell
 [root@localhost test]$ readelf -S main.debug 
 There are 37 section headers, starting at offset 0x88c8: 
 
@@ -497,7 +497,7 @@ Key to Flags:
 
  **查看一个目标文件的elf文件的节信息：** 
 
-```
+```shell
 [root@localhost test]$ readelf -S myfile.o 
 There are 15 section headers, starting at offset 0x204: 
 
@@ -524,11 +524,11 @@ Key to Flags:
   O (extra OS processing required) o (OS specific), p (processor specific) 
 
 
-```
+```shell
 
  **查看一个静态库文件的elf文件的节信息：** 
 
-```
+```shell
 [root@localhost test]$ readelf -S libmy.a 
 File: libmy.a(myfile.o) 
 There are 15 section headers, starting at offset 0x204: 
@@ -558,7 +558,7 @@ Key to Flags:
 
  **查看一个动态库文件的elf文件的节信息：** 
 
-```
+```shell
 [root@localhost test]$ readelf -S libmy.so 
 There are 27 section headers, starting at offset 0xad0: 
 

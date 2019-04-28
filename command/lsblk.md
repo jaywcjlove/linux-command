@@ -9,29 +9,29 @@ lsblk
 
 ### 选项  
 
-```
--a, --all            显示所有设备。
--b, --bytes          以bytes方式显示设备大小。
--d, --nodeps         不显示 slaves 或 holders。
--D, --discard        print discard capabilities。
--e, --exclude <list> 排除设备 (default: RAM disks)。
--f, --fs             显示文件系统信息。
--h, --help           显示帮助信息。
--i, --ascii          use ascii characters only。
--m, --perms          显示权限信息。
--l, --list           使用列表格式显示。
--n, --noheadings     不显示标题。
--o, --output <list>  输出列。
--P, --pairs          使用key="value"格式显示。
--r, --raw            使用原始格式显示。
--t, --topology       显示拓扑结构信息。
+```shell
+-a, --all            # 显示所有设备。
+-b, --bytes          # 以bytes方式显示设备大小。
+-d, --nodeps         # 不显示 slaves 或 holders。
+-D, --discard        # print discard capabilities。
+-e, --exclude <list> # 排除设备 (default: RAM disks)。
+-f, --fs             # 显示文件系统信息。
+-h, --help           # 显示帮助信息。
+-i, --ascii          # use ascii characters only。
+-m, --perms          # 显示权限信息。
+-l, --list           # 使用列表格式显示。
+-n, --noheadings     # 不显示标题。
+-o, --output <list>  # 输出列。
+-P, --pairs          # 使用key="value"格式显示。
+-r, --raw            # 使用原始格式显示。
+-t, --topology       # 显示拓扑结构信息。
 ```
 
 ### 实例  
 
 lsblk命令默认情况下将以树状列出所有块设备。打开终端，并输入以下命令：
 
-```
+```shell
 lsblk
 
 NAME   MAJ:MIN rm   SIZE RO type mountpoint
@@ -57,19 +57,19 @@ sr0     11:0    1  1024M  0 rom
 
 默认选项不会列出所有空设备。要查看这些空设备，请使用以下命令：
 
-```
+```shell
 lsblk -a
 ```
 
 lsblk命令也可以用于列出一个特定设备的拥有关系，同时也可以列出组和模式。可以通过以下命令来获取这些信息：
 
-```
+```shell
 lsblk -m
 ```
 
 该命令也可以只获取指定设备的信息。这可以通过在提供给lsblk命令的选项后指定设备名来实现。例如，你可能对了解以字节显示你的磁盘驱动器大小比较感兴趣，那么你可以通过运行以下命令来实现：
 
-```
+```shell
 lsblk -b /dev/sda
 
 等价于
@@ -79,19 +79,19 @@ lsblk --bytes /dev/sda
 
 你也可以组合几个选项来获取指定的输出。例如，你也许想要以列表格式列出设备，而不是默认的树状格式。你可能也对移除不同栏目名称的标题感兴趣。可以将两个不同的选项组合，以获得期望的输出，命令如下：
 
-```
+```shell
 lsblk -nl
 ```
 
 要获取SCSI设备的列表，你只能使用-S选项。该选项是大写字母S，不能和-s选项混淆，该选项是用来以颠倒的顺序打印依赖的。
 
-```
+```shell
 lsblk -S
 ```
 
 lsblk列出SCSI设备，而-s是逆序选项（将设备和分区的组织关系逆转过来显示），其将给出如下输出。输入命令：
 
-```
+```shell
 lsblk -s
 ```
 

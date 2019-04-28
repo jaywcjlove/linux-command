@@ -11,13 +11,13 @@ yum提供了查找、安装、删除某一个、一组甚至全部软件包的�
 
 ### 语法
 
-```
+```shell
 yum(选项)(参数)
 ```
 
 ### 选项
 
-```
+```shell
 -h：显示帮助信息；
 -y：对所有的提问都回答“yes”；
 -c：指定配置文件；
@@ -31,7 +31,7 @@ yum(选项)(参数)
 
 ### 参数
 
-```
+```shell
 install：安装rpm软件包；
 update：更新rpm软件包；
 check-update：检查是否有可用的更新rpm软件包；
@@ -57,7 +57,7 @@ deplist：显示rpm软件包的所有依赖关系。
 
 **安装**
 
-```bash
+```shell
 yum install              #全部安装
 yum install package1     #安装指定的安装包package1
 yum groupinsall group1   #安装程序组group1
@@ -65,7 +65,7 @@ yum groupinsall group1   #安装程序组group1
 
 **更新和升级**
 
-```bash
+```shell
 yum update               #全部更新
 yum update package1      #更新指定程序包package1
 yum check-update         #检查可更新的程序
@@ -75,7 +75,7 @@ yum groupupdate group1   #升级程序组group1
 
 **查找和显示**
 
-```bash
+```shell
 # 检查 MySQL 是否已安装
 yum list installed | grep mysql
 yum list installed mysql*
@@ -88,7 +88,7 @@ yum groupinfo group1   #显示程序组group1信息yum search string 根据关�
 
 **删除程序**
 
-```bash
+```shell
 yum remove &#124; erase package1   #删除程序包package1
 yum groupremove group1             #删除程序组group1
 yum deplist package1               #查看程序package1依赖情况
@@ -96,7 +96,7 @@ yum deplist package1               #查看程序package1依赖情况
 
 **清除缓存**
 
-```bash
+```shell
 yum clean packages       #清除缓存目录下的软件包
 yum clean headers        #清除缓存目录下的 headers
 yum clean oldheaders     #清除缓存目录下旧的 headers
@@ -104,7 +104,7 @@ yum clean oldheaders     #清除缓存目录下旧的 headers
 
 **更多实例**
 
-```
+```shell
 # yum
 /etc/yum.repos.d/       yum 源配置文件
 vi /etc/yum.repos.d/nginx.repo # 举个栗子: nginx yum源

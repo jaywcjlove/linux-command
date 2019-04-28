@@ -9,13 +9,13 @@ lvextend
 
 ### 语法  
 
-```
+```shell
 lvextend(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -L：指定逻辑卷的大小，单位为“kKmMgGtT”字节；
 -l：指定逻辑卷的大小（LE数）。
 ```
@@ -28,13 +28,13 @@ lvextend(选项)(参数)
 
 使用lvextend命令为逻辑卷`/dev/vg1000/lvol0`增加100M空间。在命令行中输入下面的命令：
 
-```
+```shell
 [root@localhost ~]# lvextend -L +100M /dev/vg1000/lvol0    #为了解决增加100M空间
 ```
 
 输出信息如下：
 
-```
+```shell
 Extending logical volume lvol0 to 300.00 MB  
 Logical volume lvol0 successfully resized
 ```

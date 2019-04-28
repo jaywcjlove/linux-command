@@ -9,13 +9,13 @@ skill
 
 ### 语法  
 
-```
+```shell
 skill(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 -f：快速模式；
 -i：交互模式，每一步操作都需要确认；
 -v：冗余模式；
@@ -31,7 +31,7 @@ skill(选项)
 
 如果您发现了一个占用大量CPU和内存的进程，但又不想停止它，该怎么办？考虑下面的top命令输出：
 
-```
+```shell
 top -c -p 16514
 23:00:44  up 12 days,  2:04,  4 users,  load average: 0.47, 0.35, 0.31
 1 processes: 1 sleeping, 0 running, 0 zombie, 0 stopped
@@ -47,13 +47,13 @@ Swap: 2041192k av,   83160k used, 1958032k free                  799432k cached
 
 既然您确认进程16514占用了大量内存，您就可以使用skill命令“冻结”它，而不是停止它。
 
-```
+```shell
 skill -STOP 1
 ```
 
 之后，检查top输出：
 
-```
+```shell
 23:01:11  up 12 days,  2:05,  4 users,  load average: 1.20, 0.54, 0.38
 1 processes: 0 sleeping, 0 running, 0 zombie, 1 stopped
 CPU states:  cpu    user    nice  system    irq  softirq  iowait    idle
@@ -68,7 +68,7 @@ Swap: 2041192k av,   83152k used, 1958040k free                  851200k cached
 
 现在，CPU 从 0% 空闲变为 94% 空闲。该进程被有效冻结。过一段时间之后，您可能希望唤醒该进程：
 
-```
+```shell
 skill -CONT 16514
 ```
 
@@ -76,31 +76,31 @@ skill -CONT 16514
 
 此命令用途很广。如果您要停止 "oracle" 用户的所有进程，只需要一个命令即可实现：
 
-```
+```shell
 skill -STOP oracle
 ```
 
 可以使用用户、PID、命令或终端 id 作为参数。以下命令可停止所有 rman 命令。
 
-```
+```shell
 skill -STOP rman
 ```
 
 如您所见，skill 决定您输入的参数（进程 ID、用户 ID 或命令）并进行相应操作。这可能会导致在某些情况下出现这样的问题：您可能具有同名的用户和命令。最好的示例是 "oracle" 进程，通常由用户 "oracle" 运行。因此，当您希望停止名为 "oracle" 的进程时，可执行以下命令：
 
-```
+```shell
 skill -STOP oracle
 ```
 
 用户 "oracle" 的所有进程都停止，包括您可能要使用的会话。要非常明确地执行命令，您可以选择使用一个新参数指定参数的类型。要停止一个名为 oracle 的命令，可执行以下命令：
 
-```
+```shell
 skill -STOP -c oracle
 ```
 
 snice命令的功能与skill类似。但它用于降低进程的优先级，而不是停止进程。首先，检查 top 输出：
 
-```
+```shell
   PID USER     PRI  NI  SIZE  RSS SHARE STAT %CPU %MEM   TIME CPU COMMAND
     3 root      15   0     0    0     0 RW    0.0  0.0   0:00   0 kapmd
 13680 oracle    15   0 11336  10M  8820 T     0.0  1.0   0:00   0 oracle
@@ -114,7 +114,7 @@ snice命令的功能与skill类似。但它用于降低进程的优先级，而�
 
 现在，将 "oracle" 进程的优先级降低四个点。注意，该值越高，优先级越低。
 
-```
+```shell
 snice +4 -u oracle
   PID USER     PRI  NI  SIZE  RSS SHARE STAT %CPU %MEM   TIME CPU COMMAND
 16894 oracle    20   4 38904  32M 26248 D N   5.5  3.2   0:01   0 oracle

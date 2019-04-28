@@ -9,13 +9,13 @@ uniq
 
 ### 语法  
 
-```
+```shell
 uniq(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -c或——count：在每列旁边显示该行重复出现的次数；
 -d或--repeated：仅显示重复出现的行列；
 -f<栏位>或--skip-fields=<栏位>：忽略比较指定的栏位；
@@ -33,29 +33,28 @@ uniq(选项)(参数)
 
 删除重复行：
 
-```
+```shell
 uniq file.txt
 sort file.txt | uniq
 sort -u file.txt
-
 ```
 
 只显示单一行：
 
-```
+```shell
 uniq -u file.txt
 sort file.txt | uniq -u
 ```
 
 统计各行在文件中出现的次数：
 
-```
+```shell
 sort file.txt | uniq -c
 ```
 
 在文件中找出重复的行：
 
-```
+```shell
 sort file.txt | uniq -d
 ```
 

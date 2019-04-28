@@ -9,13 +9,13 @@ host
 
 ### 语法  
 
-```
+```shell
 host(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -a：显示详细的DNS信息；
 -c<类型>：指定查询类型，默认值为“IN“；
 -C：查询指定主机的完整的SOA记录；
@@ -34,7 +34,7 @@ host(选项)(参数)
 
 ### 实例  
 
-```
+```shell
 [root@localhost ~]# host www.jsdig.com 
 www.jsdig.com is an alias for host.1.jsdig.com.
 host.1.jsdig.com has address 100.42.212.8

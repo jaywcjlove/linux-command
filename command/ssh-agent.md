@@ -11,14 +11,14 @@ ssh密钥管理器
 
 ### 语法  
 
-```
+```shell
 ssh-agent [-c | -s] [-d] [-a bind_address] [-t life] [command [arg ...]]
 ssh-agent [-c | -s] -k
 ```
 
 ### 选项  
 
-```
+```shell
 -a bind_address：bind the agent to the UNIX-domain socket bind_address.
 -c：生成C-shell风格的命令输出。
 -d：调试模式。
@@ -31,7 +31,7 @@ ssh-agent [-c | -s] -k
 
 运行ssh-agent：
 
-```
+```shell
 ssh-agent
 ```
 

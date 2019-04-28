@@ -9,7 +9,7 @@ install
 
 ### 语法  
 
-```
+```shell
 install [OPTION]... [-T] SOURCE DEST
 install [OPTION]... SOURCE... DIRECTORY
 install [OPTION]... -t DIRECTORY SOURCE...
@@ -20,7 +20,7 @@ install [OPTION]... -d DIRECTORY...
 
 ### 选项  
 
-```
+```shell
 --backup[=CONTROL]：为每个已存在的目的地文件进行备份。
 -b：类似 --backup，但不接受任何参数。
 -c：(此选项不作处理)。
@@ -39,19 +39,19 @@ install [OPTION]... -d DIRECTORY...
 
 ### 实例  
 
-```
+```shell
 install -d [option] DIRECTORY [DIRECTORY...]
 ```
 
 支持多个，类似`mkdir -p`支持递归。例如：`install -d a/b/c e/f`结果和`mkdir -p a/b/c e/f`一样。
 
-```
+```shell
 install [option] SOURCE DEST
 ```
 
  **复制SOURCE文件（测试不能是目录）到DEST file（文件）：** 
 
-```
+```shell
 install a/e c
 结果类似：
 cp a/e c    #注意c必须是文件。
@@ -59,19 +59,19 @@ cp a/e c    #注意c必须是文件。
 
  **有用选项`-D`：** 
 
-```
+```shell
 install -D x a/b/c
 效果类似：
 mkdir -p a/b && cp x a/b/c
 ```
 
-```
+```shell
 install [option] SOURCE [SOURCE...] DIRECTORY
 ```
 
  **复制多个SOURCE文件到目的目录：** 
 
-```
+```shell
 install a/* d
 ```
 

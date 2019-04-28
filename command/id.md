@@ -11,13 +11,13 @@ id
 
 ### 语法  
 
-```
+```shell
 id [-gGnru]--[help][--version][用户名称]
 ```
 
 ### 选项  
 
-```
+```shell
 -g或--group 　 显示用户所属群组的ID。
 -G或--groups   显示用户所属附加群组的ID。
 -n或--name 　  显示用户，所属群组或附加群组的名称。
@@ -29,31 +29,31 @@ id [-gGnru]--[help][--version][用户名称]
 
 ### 实例  
 
-```
+```shell
 [root@localhost ~]# id
 uid=0(root) gid=0(root) groups=0(root),1(bin),2(daemon),3(sys),4(adm),6(disk),10(wheel)
 ```
 
 解释：用户root的UID号码 = 0，GID号码 = 0。用户root是下面组的成员：
 
-*   root组GID号是：0
-*   bin组GID号是：1
-*   daemon组GID号是：2
-*   sys组GID号是：3
-*   adm组GID号是：4
-*   disk组GID号是：6
-*   wheel组GID号是：10
+* root组GID号是：0
+* bin组GID号是：1
+* daemon组GID号是：2
+* sys组GID号是：3
+* adm组GID号是：4
+* disk组GID号是：6
+* wheel组GID号是：10
 
 打印用户名、UID 和该用户所属的所有组，要这么做，我们可以使用 -a 选项：
 
-```
+```shell
 [root@localhost ~]# id -a
 uid=0(root) gid=0(root) groups=0(root),1(bin),2(daemon),3(sys),4(adm),6(disk),10(wheel)
 ```
 
 输出所有不同的组ID ，有效的，真实的和补充的，我们可以使用 -G 选项来实现：
 
-```
+```shell
 [root@localhost ~]# id -G
 0 1 2 3 4 6 10
 ```
@@ -62,14 +62,14 @@ uid=0(root) gid=0(root) groups=0(root),1(bin),2(daemon),3(sys),4(adm),6(disk),10
 
 只输出有效的组ID，通过使用 -g 选项来只输出有效组ID：
 
-```
+```shell
 [root@localhost ~]# id -g
 0
 ```
 
 输出特定用户信息，我们可以输出特定的用户信息相关的UID和GID。只需要在id命令后跟上用户名：
 
-```
+```shell
 [root@localhost ~]# id www
 uid=500(www) gid=500(www) groups=500(www)
 ```

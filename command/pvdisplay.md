@@ -9,13 +9,13 @@ pvdisplay
 
 ### 语法  
 
-```
+```shell
 pvdisplay(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -s：以短格式输出；
 -m：显示PE到LE的映射。
 ```
@@ -28,13 +28,13 @@ pvdisplay(选项)(参数)
 
 使用pvdisplay命令显示指定的物理卷的基本信息。在命令行中输入下面的命令：
 
-```
+```shell
 [root@localhost ~]# pvdisplay /dev/sdb1    #显示物理卷基本信息
 ```
 
 输出信息如下：
 
-```
+```shell
 "/dev/sdb1" is a new physical volume of "101.94 MB"  
 --- NEW Physical volume ---  
 PV Name               /dev/sdb1  

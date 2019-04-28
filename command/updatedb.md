@@ -11,13 +11,13 @@ updatedb
 
 ### 语法  
 
-```
+```shell
 updatedb(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 -o<文件>：忽略默认的数据库文件，使用指定的slocate数据库文件；
 -U<目录>：更新指定目录的slocate数据库；
 -v：显示执行的详细过程。
@@ -27,7 +27,7 @@ updatedb(选项)
 
 实用updatedb命令的`-U`选项可以指定要更新slocate数据库的目录。
 
-```
+```shell
 updatedb -U /usr/local/  更新指定命令的slocate数据库
 ```
 

@@ -13,14 +13,14 @@ ss
 
 ### 语法
 
-```
+```shell
 ss [参数]
 ss [参数] [过滤]
 ```
 
 ### 选项
 
-```
+```shell
 -h, --help      帮助信息
 -V, --version   程序版本信息
 -n, --numeric   不解析服务名称
@@ -51,7 +51,7 @@ ss [参数] [过滤]
 
 ### 实例
 
-```bash
+```shell
 ss -t -a    # 显示TCP连接
 ss -s       # 显示 Sockets 摘要
 ss -l       # 列出所有打开的网络连接端口
@@ -84,7 +84,7 @@ ss src 192.168.119.103:25
 
 **将本地或者远程端口和一个数比较**
 
-```bash
+```shell
 # ss dport OP PORT 远程端口和一个数比较；
 # ss sport OP PORT 本地端口和一个数比较
 # OP 可以代表以下任意一个:
@@ -108,7 +108,7 @@ ss -o state fin-wait-1 \( sport = :http or sport = :https \) dst 192.168.1/24
 
 **用TCP 状态过滤Sockets**
 
-```bash
+```shell
 ss -4 state closing
 # ss -4 state FILTER-NAME-HERE
 # ss -6 state FILTER-NAME-HERE
@@ -123,7 +123,7 @@ ss -4 state closing
 
  **显示ICP连接**
 
-```
+```shell
 [root@localhost ~]# ss -t -a
 State       Recv-Q Send-Q                            Local Address:Port                                Peer Address:Port
 LISTEN      0      0                                             *:3306                                           *:*
@@ -136,7 +136,7 @@ ESTAB       0      0                                112.124.15.130:ssh          
 
  **显示 Sockets 摘要**
 
-```
+```shell
 [root@localhost ~]# ss -s
 Total: 172 (kernel 189)
 TCP:   10 (estab 2, closed 4, orphaned 0, synrecv 0, timewait 0/0), ports 5
@@ -154,7 +154,7 @@ FRAG      0         0         0
 
  **列出所有打开的网络连接端口**
 
-```
+```shell
 [root@localhost ~]# ss -l
 Recv-Q Send-Q                                 Local Address:Port                                     Peer Address:Port
 0      0                                                  *:3306                                                *:*
@@ -165,7 +165,7 @@ Recv-Q Send-Q                                 Local Address:Port                
 
  **查看进程使用的socket**
 
-```
+```shell
 [root@localhost ~]# ss -pl
 Recv-Q Send-Q                                          Local Address:Port                                              Peer Address:Port
 0      0                                                           *:3306                                                         *:*        users:(("mysqld",1718,10))
@@ -176,14 +176,14 @@ Recv-Q Send-Q                                          Local Address:Port       
 
  **找出打开套接字/端口应用程序**
 
-```
+```shell
 [root@localhost ~]# ss -pl | grep 3306
 0      0                            *:3306                          *:*        users:(("mysqld",1718,10))
 ```
 
  **显示所有UDP Sockets**
 
-```
+```shell
 [root@localhost ~]# ss -u -a
 State       Recv-Q Send-Q                                     Local Address:Port                                         Peer Address:Port
 UNCONN      0      0                                                      *:syslog                                                  *:*
@@ -195,7 +195,7 @@ UNCONN      0      0                                                      *:ntp 
 
 #### 出所有端口为 22（ssh）的连接
 
-```bash
+```shell
 ss state all sport = :ssh
 
 Netid State      Recv-Q Send-Q     Local Address:Port                      Peer Address:Port

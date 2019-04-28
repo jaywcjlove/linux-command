@@ -26,13 +26,13 @@ htop 官网：http://htop.sourceforge.net/
 
 ### 语法  
 
-```
+```shell
 htop
 ```
 
 ### 参数
 
-```
+```shell
 -C --no-color               使用单色配色方案
 -d --delay=DELAY            设置更新之间的延迟，在十秒
 -s --sort-key=COLUMN        纵列排序(try --sort-key=help for a list)
@@ -44,7 +44,7 @@ htop
 
 ### 选项  
 
-```
+```shell
 h,?     F1：查看htop使用说明
 S       F2：设置
 /       F3：搜索进程
@@ -76,7 +76,7 @@ T：按运行时间排序
 左右键或Home， End : 移动列表  
 Space(空格) : 标记/取消标记一个进程。命令可以作用于多个进程，例如 "kill"，将应用于所有已标记的进程  
 
-```
+```shell
 
 
 ### Htop设定

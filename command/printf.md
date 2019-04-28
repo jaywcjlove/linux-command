@@ -9,7 +9,7 @@ printf
 
 ### 语法  
 
-```
+```shell
 printf(选项)(参数)
 --help：在线帮助；
 --version：显示版本信息。
@@ -51,23 +51,21 @@ printf(选项)(参数)
 
 ### 实例  
 
-```
+```shell
 printf "hello world"
-
 ```
 
-```
+```shell
 #!/bin/bash
 
 printf "%-5s %-10s %-4s\n" NO Name Mark
 printf "%-5s %-10s %-4.2f\n" 01 Tom 90.3456
 printf "%-5s %-10s %-4.2f\n" 02 Jack 89.2345
 printf "%-5s %-10s %-4.2f\n" 03 Jeff 98.4323
-
 ```
 
-*   %-5s 格式为左对齐且宽度为5的字符串代替（-表示左对齐），不使用则是又对齐。
-*   %-4.2f 格式为左对齐宽度为4，保留两位小数。
+* %-5s 格式为左对齐且宽度为5的字符串代替（-表示左对齐），不使用则是又对齐。
+* %-4.2f 格式为左对齐宽度为4，保留两位小数。
 
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

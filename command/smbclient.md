@@ -9,13 +9,13 @@ smbclient
 
 ### 语法  
 
-```
+```shell
 smbclient(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -B<ip地址>：传送广播数据包时所用的IP地址；
 -d<排错层级>：指定记录文件所记载事件的详细程度；
 -E：将信息送到标准错误输出设备；
@@ -45,13 +45,13 @@ smb服务器：指定要连接的smb服务器。
 
  **列出某个IP地址所提供的共享文件夹** 
 
-```
+```shell
 smbclient -L 198.168.0.1 -U username%password
 ```
 
  **像ftp客户端一样使用smbclient** 
 
-```
+```shell
 smbclient //192.168.0.1/tmp  -U username%password
 ```
 
@@ -61,13 +61,13 @@ smbclient //192.168.0.1/tmp  -U username%password
 
  **直接一次性使用smbclient命令** 
 
-```
+```shell
 smbclient -c "ls"  //192.168.0.1/tmp  -U username%password
 ```
 
 和
 
-```
+```shell
 smbclient //192.168.0.1/tmp  -U username%password
 smb:/>ls
 ```
@@ -76,7 +76,7 @@ smb:/>ls
 
  **创建一个共享文件夹** 
 
-```
+```shell
 smbclient -c "mkdir share1" //192.168.0.1/tmp -U username%password
 ```
 

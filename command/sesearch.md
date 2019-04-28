@@ -9,13 +9,13 @@ sesearch
 
 ### 语法  
 
-```
+```shell
 sesearch [-a] [-s 主体类型] [-t 目标类型] [-b 布尔值]
 ```
 
 ### 选项  
 
-```
+```shell
 -a:列出该类型或布尔值的所有相关信息
 -t:后面还要接类型，例如 -t httpd_t
 -b:后面还要接布尔值的规则，例如 -b httpd_enable_ftp_server
@@ -25,19 +25,19 @@ sesearch [-a] [-s 主体类型] [-t 目标类型] [-b 布尔值]
 
 找出目标文件资源类型为`httpd_sys_content_t`的有关信息：
 
-```
+```shell
 sesearch -a -t httpd_sys_content_t
 ```
 
 找出主体进程为`httpd_t`且目标文件类型为httpd相关的所有信息：
 
-```
+```shell
 sesearch -s httpd_t -t httpd_* -a
 ```
 
 查看布尔值`httpd_enable_homedirs`设置了多少规则
 
-```
+```shell
 sesearch -b httpd_enable_homedirs -a
 ```
 

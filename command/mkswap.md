@@ -9,13 +9,13 @@ mkswap
 
 ### 语法  
 
-```
+```shell
 mkswap(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -c：建立交换区前，先检查是否有损坏的区块；
 -f：在SPARC电脑上建立交换区时，要加上此参数；
 -v0：建立旧式交换区，此为预设值；
@@ -30,7 +30,7 @@ mkswap(选项)(参数)
 
  **查看系统swap space大小：** 
 
-```
+```shell
 free -m
 total used free shared buffers cached
 Mem: 377 180 197 0 19 110
@@ -40,7 +40,7 @@ Swap: 572 0 572
 
  **查看当前的swap空间(file(s)/partition(s))：** 
 
-```
+```shell
 swapon -s
 
 等价于
@@ -56,19 +56,19 @@ cat /proc/swaps
 
 使用fdisk来创建交换分区（假设 /dev/sdb2 是创建的交换分区），使用 mkswap 命令来设置交换分区：
 
-```
+```shell
 mkswap /dev/sdb2
 ```
 
 启用交换分区：
 
-```
+```shell
 swapon /dev/sdb2
 ```
 
 写入`/etc/fstab`，以便在引导时启用：
 
-```
+```shell
 /dev/sdb2 swap swap defaults 0 0
 ```
 
@@ -76,25 +76,25 @@ swapon /dev/sdb2
 
 创建大小为512M的交换文件：
 
-```
+```shell
 dd if=/dev/zero of=/swapfile1 bs=1024 count=524288
 ```
 
 使用mkswap命令来设置交换文件：
 
-```
+```shell
 mkswap /swapfile1
 ```
 
 启用交换分区：
 
-```
+```shell
 swapon /swapfile1
 ```
 
 写入`/etc/fstab`，以便在引导时启用：
 
-```
+```shell
 /swapfile1 swap swap defaults 0 0
 ```
 
@@ -104,7 +104,7 @@ swapon /swapfile1
 
 禁用交换分区：
 
-```
+```shell
 swapoff /dev/sdb2
 ```
 

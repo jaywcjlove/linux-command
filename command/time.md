@@ -9,7 +9,7 @@ time
 
 ### 语法  
 
-```
+```shell
 time(参数)
 ```
 
@@ -21,14 +21,13 @@ time(参数)
 
 当测试一个程序或比较不同算法时，执行时间是非常重要的，一个好的算法应该是用时最短的。所有类UNIX系统都包含time命令，使用这个命令可以统计时间消耗。例如：
 
-```
+```shell
 [root@localhost ~]# time ls
 anaconda-ks.cfg  install.log  install.log.syslog  satools  text
 
 real    0m0.009s
 user    0m0.002s
 sys     0m0.007s
-
 ```
 
 输出的信息分别显示了该命令所花费的real时间、user时间和sys时间。
@@ -41,145 +40,83 @@ shell内建也有一个time命令，当运行time时候是调用的系统内建�
 
 使用`-o`选项将执行时间写入到文件中：
 
-```
+```shell
 /usr/bin/time -o outfile.txt ls
-
 ```
 
 使用`-a`选项追加信息：
 
-```
+```shell
 /usr/bin/time -a -o outfile.txt ls
-
 ```
 
 使用`-f`选项格式化时间输出：
 
-```
+```shell
 /usr/bin/time -f "time: %U" ls
-
 ```
 
 `-f`选项后的参数：
 
 <table border="1" cellpadding="0" cellspacing="0">
-
 <tbody>
-
 <tr>
-
 <th>参数</th>
-
 <th>描述</th>
-
 </tr>
-
 <tr>
-
 <td>%E</td>
-
 <td>real时间，显示格式为[小时:]分钟:秒</td>
-
 </tr>
-
 <tr>
-
 <td>%U</td>
-
 <td>user时间。</td>
-
 </tr>
-
 <tr>
-
 <td>%S</td>
-
 <td>sys时间。</td>
-
 </tr>
-
 <tr>
-
 <td>%C</td>
-
 <td>进行计时的命令名称和命令行参数。</td>
-
 </tr>
-
 <tr>
-
 <td>%D</td>
-
 <td>进程非共享数据区域，以KB为单位。</td>
-
 </tr>
-
 <tr>
-
 <td>%x</td>
-
 <td>命令退出状态。</td>
-
 </tr>
-
 <tr>
-
 <td>%k</td>
-
 <td>进程接收到的信号数量。</td>
-
 </tr>
-
 <tr>
-
 <td>%w</td>
-
 <td>进程被交换出主存的次数。</td>
-
 </tr>
-
 <tr>
-
 <td>%Z</td>
-
 <td>系统的页面大小，这是一个系统常量，不用系统中常量值也不同。</td>
-
 </tr>
-
 <tr>
-
 <td>%P</td>
-
 <td>进程所获取的CPU时间百分百，这个值等于user+system时间除以总共的运行时间。</td>
-
 </tr>
-
 <tr>
-
 <td>%K</td>
-
 <td>进程的平均总内存使用量（data+stack+text），单位是KB。</td>
-
 </tr>
-
 <tr>
-
 <td>%w</td>
-
 <td>进程主动进行上下文切换的次数，例如等待I/O操作完成。</td>
-
 </tr>
-
 <tr>
-
 <td>%c</td>
-
 <td>进程被迫进行上下文切换的次数（由于时间片到期）。</td>
-
 </tr>
-
 </tbody>
-
 </table>
 
 

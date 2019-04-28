@@ -9,13 +9,13 @@ seinfo
 
 ### 语法  
 
-```
+```shell
 seinfo（选项）
 ```
 
 ### 选项  
 
-```
+```shell
 -A：列出SELinux的状态、规则布尔值、身份识别、角色、类型等所有信息。
 -t：列出SELinux所有类型(type)的种类。
 -r：列出SELinux所有角色(role)的种类。
@@ -27,7 +27,7 @@ seinfo（选项）
 
 列出与httpd有关的规则：
 
-```
+```shell
 seinfo -b | grep httpd
 ```
 

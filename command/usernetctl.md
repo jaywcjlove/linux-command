@@ -9,7 +9,7 @@ usernetctl
 
 ### 语法  
 
-```
+```shell
 usernetctl(参数)
 ```
 

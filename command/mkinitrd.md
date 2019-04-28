@@ -11,13 +11,13 @@ mkinitrd
 
 ### 语法  
 
-```
+```shell
 mkinitrd(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -f：若指定的映像问家名称与现有文件重复，则覆盖现有的文件；
 -v：执行时显示详细的信息；
 --omit-scsi-modules：不要载入SCSI模块；
@@ -33,7 +33,7 @@ mkinitrd(选项)(参数)
 
 ### 实例  
 
-```
+```shell
 [root@localhost tmp]# mkinitrd -v -f myinitrd.img $(uname -r)
 Creating initramfs
 WARNING: using /tmp for temporary files

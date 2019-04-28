@@ -9,7 +9,7 @@ let
 
 ### 语法  
 
-```
+```shell
 let arg [arg ...]    #arg代表运算式
 ```
 
@@ -21,13 +21,13 @@ let arg [arg ...]    #arg代表运算式
 
 ### 实例  
 
-```
+```shell
 #!/bin/bash
 let a=5+4 b=9-3
 echo $a $b
 ```
 
-```
+```shell
 #!/bin/bash
 let "t1 = ((a = 5 + 3, b = 7 - 1, c = 15 - 4))"
 echo "t1 = $t1, a = $a, b = $b"

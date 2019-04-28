@@ -9,13 +9,13 @@ zip
 
 ### 语法
 
-```
+```shell
 zip(选项)(参数)
 ```
 
 ### 选项
 
-```
+```shell
 -A：调整可执行的自动解压缩文件；
 -b<工作目录>：指定暂时存放文件的目录；
 -c：替每个被压缩的文件加上注释；
@@ -61,25 +61,25 @@ zip(选项)(参数)
 
 将`/home/Blinux/html/`这个目录下所有文件和文件夹打包为当前目录下的html.zip：
 
-```
+```shell
 zip -q -r html.zip /home/Blinux/html
 ```
 
 上面的命令操作是将绝对地址的文件及文件夹进行压缩，以下给出压缩相对路径目录，比如目前在Bliux这个目录下，执行以下操作可以达到以上同样的效果：
 
-```
+```shell
 zip -q -r html.zip html
 ```
 
 比如现在我的html目录下，我操作的zip压缩命令是：
 
-```
+```shell
 zip -q -r html.zip *
 ```
 
 压缩效率选择:
 
-```
+```shell
 zip -9 # 1-9 faster->better
 ```
 
@@ -87,13 +87,13 @@ zip -9 # 1-9 faster->better
 
 CentOS7中命令找不到
 
-```
+```shell
 -Bash: Unzip: Command Not Found
 ```
 
 解决方法
 
-```bash
+```shell
 yum install -y unzip zip
 ```
 

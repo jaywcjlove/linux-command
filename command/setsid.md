@@ -9,13 +9,13 @@ setsid
 
 ### 语法  
 
-```
+```shell
 setsid[options] <program> [arguments ...]
 ```
 
 ### 选项  
 
-```
+```shell
 -c, --ctty   将控制终端设置为当前控制终端
 -f, --fork   总是 fork
 -w, --wait   等待程序退出，并使用相同的返回
@@ -26,7 +26,7 @@ setsid[options] <program> [arguments ...]
 
 可见 setsid 的使用也是非常方便的，也只需在要处理的命令前加上 setsid 即可
 
-```
+```shell
 [root@root ~]# setsid ping www.ibm.com
 [root@root ~]# ps -ef |grep www.ibm.com
 root 31094 1 0 07:28 ? 00:00:00 ping www.ibm.com

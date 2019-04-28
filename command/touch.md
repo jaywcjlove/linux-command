@@ -9,13 +9,13 @@ touch
 
 ### 语法  
 
-```
+```shell
 touch(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -a：或--time=atime或--time=access或--time=use  只更改存取时间；
 -c：或--no-create  不建立任何文件；
 -d：<时间日期> 使用指定的日期时间，而非现在的时间；
@@ -33,7 +33,7 @@ touch(选项)(参数)
 
 ### 实例  
 
-```
+```shell
 touch ex2
 ```
 

@@ -9,7 +9,7 @@ rsync
 
 ### 语法
 
-```
+```shell
 rsync [OPTION]... SRC DEST
 rsync [OPTION]... SRC [USER@]host:DEST
 rsync [OPTION]... [USER@]HOST:SRC DEST
@@ -29,7 +29,7 @@ rsync [OPTION]... rsync://[USER@]HOST[:PORT]/SRC [DEST]
 
 ### 选项
 
-```
+```shell
 -v, --verbose 详细模式输出。
 -q, --quiet 精简输出模式。
 -c, --checksum 打开校验开关，强制对文件传输进行校验。
@@ -99,7 +99,7 @@ rsync [OPTION]... rsync://[USER@]HOST[:PORT]/SRC [DEST]
 
 首先在服务端启动ssh服务：
 
-```
+```shell
 service sshd start
 启动 sshd： [确定]
 ```
@@ -108,7 +108,7 @@ service sshd start
 
 接下来就可以在客户端使用rsync命令来备份服务端上的数据了，SSH方式是通过系统用户来进行备份的，如下：
 
-```
+```shell
 rsync -vzrtopg --progress -e ssh --delete work@172.16.78.192:/www/* /databack/experiment/rsync
 work@172.16.78.192's password:
 receiving file list ...
@@ -132,7 +132,7 @@ total size is 100663363 speedup is 1024.19
 
 启动rsync服务，编辑`/etc/xinetd.d/rsync`文件，将其中的`disable=yes`改为`disable=no`，并重启xinetd服务，如下：
 
-```
+```shell
 vi /etc/xinetd.d/rsync
 
 #default: off
@@ -149,7 +149,7 @@ log_on_failure += USERID
 }
 ```
 
-```
+```shell
 /etc/init.d/xinetd restart
 停止 xinetd： [确定]
 启动 xinetd： [确定]
@@ -157,7 +157,7 @@ log_on_failure += USERID
 
 创建配置文件，默认安装好rsync程序后，并不会自动创建rsync的主配置文件，需要手工来创建，其主配置文件为“/etc/rsyncd.conf”，创建该文件并插入如下内容：
 
-```
+```shell
 vi /etc/rsyncd.conf
 
 uid=root
@@ -179,14 +179,14 @@ auth users=work
 
 创建密码文件，采用这种方式不能使用系统用户对客户端进行认证，所以需要创建一个密码文件，其格式为“username:password”，用户名可以和密码可以随便定义，最好不要和系统帐户一致，同时要把创建的密码文件权限设置为600，这在前面的模块参数做了详细介绍。
 
-```
+```shell
 echo "work:abc123" > /etc/rsyncd.passwd
 chmod 600 /etc/rsyncd.passwd
 ```
 
 备份，完成以上工作，现在就可以对数据进行备份了，如下：
 
-```
+```shell
 rsync -avz --progress --delete work@172.16.78.192::www /databack/experiment/rsync
 
 Password:
@@ -207,7 +207,7 @@ total size is 150995011 speedup is 1533.75
 
 恢复，当服务器的数据出现问题时，那么这时就需要通过客户端的数据对服务端进行恢复，但前提是服务端允许客户端有写入权限，否则也不能在客户端直接对服务端进行恢复，使用rsync对数据进行恢复的方法如下：
 
-```
+```shell
 rsync -avz --progress /databack/experiment/rsync/ work@172.16.78.192::www
 
 Password:

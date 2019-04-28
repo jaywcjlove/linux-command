@@ -9,13 +9,13 @@ pvcreate
 
 ### 语法  
 
-```
+```shell
 pvcreate(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -f：强制创建物理卷，不需要用户确认；
 -u：指定设备的UUID；
 -y：所有的问题都回答“yes”；
@@ -30,7 +30,7 @@ pvcreate(选项)(参数)
 
 查看磁盘信息：
 
-```
+```shell
 [root@localhost ~]# fdisk -l
 Disk /dev/hda: 41.1 GB, 41174138880 bytes
 255 heads, 63 sectors/track, 5005 cylinders
@@ -46,19 +46,18 @@ Units = cylinders of 16065 * 512 = 8225280 bytes
 /dev/hda7            2236        2418     1469916   8e  Linux LVM
 /dev/hda8            2419        2601     1469916   8e  Linux LVM
 /dev/hda9            2602        2784     1469916   8e  Linux LVM
-
 ```
 
 检查有无 PV 在系统上，然后将`/dev/hda6`到`/dev/hda9`建立成为PV格式
 
-```
+```shell
 [root@localhost ~]# pvscan
 No matching physical volumes found    #找不到任何的 PV 存在！
 ```
 
 将6-9分区转成pv，注意大括号的用途：
 
-```
+```shell
 [root@localhost ~]# pvcreate /dev/hda{6,7,8,9}
   Physical volume "/dev/hda6" successfully created
   Physical volume "/dev/hda7" successfully created
@@ -68,7 +67,7 @@ No matching physical volumes found    #找不到任何的 PV 存在！
 
 这就分別表示每个 PV 的信息与系统所有 PV 的信息：
 
-```
+```shell
 [root@localhost ~]# pvscan
   PV /dev/hda6         lvm2 [1.40 GB]
   PV /dev/hda7         lvm2 [1.40 GB]
@@ -79,7 +78,7 @@ No matching physical volumes found    #找不到任何的 PV 存在！
 
 更详细的列示出系统上面每个 PV 信息：
 
-```
+```shell
 [root@localhost ~]# pvdisplay
   "/dev/hda6" is a new physical volume of "1.40 GB"
   --- NEW Physical volume ---
@@ -97,15 +96,14 @@ No matching physical volumes found    #找不到任何的 PV 存在！
 
 删除物理卷：
 
-```
+```shell
 [root@localhost ~]# pvremove /dev/sdb2
 Labels on physical volume "/dev/sdb2" successfully wiped
-
 ```
 
 修改物理卷属性：
 
-```
+```shell
 [root@localhost ~]# pvchange -x n /dev/sdb1    #禁止分配指定物理卷上的PE
 Physical volume "/dev/sdb1" changed  
 1 physical volume changed / 0 physical volumes not changed 

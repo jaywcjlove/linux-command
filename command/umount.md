@@ -9,13 +9,13 @@ umount
 
 ### 语法  
 
-```
+```shell
 umount(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -a：卸除/etc/mtab中记录的所有文件系统；
 -h：显示帮助；
 -n：卸除时不要将信息存入/etc/mtab文件中；
@@ -35,21 +35,21 @@ umount(选项)(参数)
 
 通过设备名卸载
 
-```
+```shell
 umount -v /dev/sda1
 /dev/sda1 umounted
 ```
 
 通过挂载点卸载
 
-```
+```shell
 umount -v /mnt/mymount/
 /tmp/diskboot.img umounted
 ```
 
 如果设备正忙，卸载即告失败。卸载失败的常见原因是，某个打开的shell当前目录为挂载点里的某个目录：
 
-```
+```shell
 umount -v /mnt/mymount/
 umount: /mnt/mymount: device is busy
 umount: /mnt/mymount: device is busy
@@ -57,7 +57,7 @@ umount: /mnt/mymount: device is busy
 
 有时，导致设备忙的原因并不好找。碰到这种情况时，可以用lsof列出已打开文件，然后搜索列表查找待卸载的挂载点：
 
-```
+```shell
 lsof | grep mymount         查找mymount分区里打开的文件
 bash   9341  francois  cwd   DIR   8,1   1024    2 /mnt/mymount
 ```
@@ -66,13 +66,13 @@ bash   9341  francois  cwd   DIR   8,1   1024    2 /mnt/mymount
 
 对付系统文件正忙的另一种方法是执行延迟卸载：
 
-```
+```shell
 umount -vl /mnt/mymount/     执行延迟卸载
 ```
 
 延迟卸载（lazy unmount）会立即卸载目录树里的文件系统，等到设备不再繁忙时才清理所有相关资源。卸载可移动存储介质还可以用eject命令。下面这条命令会卸载cd并弹出CD：
 
-```
+```shell
 eject /dev/cdrom      卸载并弹出CD 
 ```
 

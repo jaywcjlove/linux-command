@@ -13,7 +13,7 @@ xargs 用作替换工具，读取输入数据重新格式化后输出。
 
 定义一个测试文件，内有多行文本数据：
 
-```
+```shell
 cat test.txt
 
 a b c d e f g
@@ -21,12 +21,11 @@ h i j k l m n
 o p q
 r s t
 u v w x y z
-
 ```
 
 多行输入单行输出：
 
-```
+```shell
 cat test.txt | xargs
 
 a b c d e f g h i j k l m n o p q r s t u v w x y z
@@ -35,7 +34,7 @@ a b c d e f g h i j k l m n o p q r s t u v w x y z
 #### 使用 -n 进行多行输出
 **-n 选项** 多行输出：
 
-```
+```shell
 cat test.txt | xargs -n3
 
 a b c
@@ -52,7 +51,7 @@ y z
 #### 使用 -d 分割输入
 **-d 选项** 可以自定义一个定界符：
 
-```
+```shell
 echo "nameXnameXnameXname" | xargs -dX
 
 name name name name
@@ -60,7 +59,7 @@ name name name name
 
 结合 **-n 选项** 使用：
 
-```
+```shell
 echo "nameXnameXnameXname" | xargs -dX -n2
 
 name name
@@ -72,40 +71,37 @@ name name
 
 假设一个命令为 sk.sh 和一个保存参数的文件 arg.txt：
 
-```
+```shell
 #!/bin/bash
 #sk.sh 命令内容，打印出所有参数。
 
 echo $*
-
 ```
 
 arg.txt 文件内容：
 
-```
+```shell
 cat arg.txt
 
 aaa
 bbb
 ccc
-
 ```
 
 #### 结合 -I 选项
 xargs 的一个 **选项 -I** ，使用 -I 指定一个替换字符串{}，这个字符串在 xargs 扩展时会被替换掉，当 -I 与 xargs 结合使用，每一个参数命令都会被执行一次：
 
-```
+```shell
 cat arg.txt | xargs -I {} ./sk.sh -p {} -l
 
 -p aaa -l
 -p bbb -l
 -p ccc -l
-
 ```
 
 复制所有图片文件到 /data/images 目录下：
 
-```
+```shell
 ls *.jpg | xargs -n1 -I cp {} /data/images
 ```
 
@@ -114,7 +110,7 @@ ls *.jpg | xargs -n1 -I cp {} /data/images
 
 用 rm 删除太多的文件时候，可能得到一个错误信息：`/bin/rm Argument list too long`. 用 `xargs` 去避免这个问题：
 
-```
+```shell
 find . -type f -name "*.log" -print0 | xargs -0 rm -f
 ```
 
@@ -122,15 +118,14 @@ xargs -0 将 `\0` 作为定界符。
 
 统计一个源代码目录中所有 php 文件的行数：
 
-```
+```shell
 find . -type f -name "*.php" -print0 | xargs -0 wc -l
 ```
 
 查找所有的 jpg 文件，并且压缩它们：
 
-```
+```shell
 find . -type f -name "*.jpg" -print | xargs tar -czvf images.tar.gz
-
 ```
 
 #### 打印出执行的命令
@@ -167,7 +162,7 @@ find . -type f -name "*.jpg" -print | xargs tar -czvf images.tar.gz
 
 假如你有一个文件包含了很多你希望下载的 URL，你能够使用 xargs 下载所有链接：
 
-```
+```shell
 cat url-list.txt | xargs wget -c
 ```
 
@@ -175,7 +170,7 @@ cat url-list.txt | xargs wget -c
 
 运行一个 shell 脚本时会启动另一个命令解释器.，就好像你的命令是在命令行提示下被解释的一样，类似于批处理文件里的一系列命令。每个 shell 脚本有效地运行在父 shell(parent shell) 的一个子进程里。这个父 shell 是指在一个控制终端或在一个 xterm 窗口中给你命令指示符的进程。
 
-```
+```shell
 cmd1 | ( cmd2; cmd3; cmd4 ) | cmd5
 ```
 
@@ -183,7 +178,7 @@ cmd1 | ( cmd2; cmd3; cmd4 ) | cmd5
 
 子 shell 可用于为一组命令设定临时的环境变量：
 
-```
+```shell
 COMMAND1
 COMMAND2
 COMMAND3

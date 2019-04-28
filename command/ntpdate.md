@@ -20,98 +20,55 @@ ntpdate
 
 ### 语法  
 
-```
+```shell
 ntpdate [ -b] [ -d] [ -s] [ -u] [ -aKeyid] [ -eAuthenticationDelay] [ -kKeyFile] [ -oVersion] [ -pSamples] [ -tTimeOut] Server...
 ```
 
 ### 选项  
 
 <table>
-
 <tbody>
-
 <tr>
-
 <td>-aKeyid</td>
-
 <td>使用 Keyid 来认证全部数据包。</td>
-
 </tr>
-
 <tr>
-
 <td>-b</td>
-
 <td>通过调用 settimeofday 子例程来增加时钟的时间。</td>
-
 </tr>
-
 <tr>
-
 <td>-d</td>
-
 <td>指定调试方式。判断 ntpdate 命令会产生什么结果（不产生实际的结果）。结果再现在屏幕上。这个标志使用无特权的端口。</td>
-
 </tr>
-
 <tr>
-
 <td>-eAuthenticationDelay</td>
-
 <td>指定延迟认证处理的时间秒数。</td>
-
 </tr>
-
 <tr>
-
 <td>-kKeyFile</td>
-
 <td>当不使用缺省值 /etc/ntp.keys 文件时，为包含密钥的文件指定一个不同的名称。 请参阅文件KeyFile的描述。</td>
-
 </tr>
-
 <tr>
-
 <td>-oVersion</td>
-
 <td>当轮询它的发出数据包时，指定使用的 NTP 版本实现。 Version 的值可以是 1，2，3。缺省值是 3。</td>
-
 </tr>
-
 <tr>
-
 <td>-pSamples</td>
-
 <td>指定从每个服务器获取的样本的数目。 Samples 的值在 1 和 8 之间，并包括 1 和 8。它的缺省值是 4。</td>
-
 </tr>
-
 <tr>
-
 <td>-s</td>
-
 <td>指定日志操作 syslog 设施的使用，而不是使用标准输出。 当运行 ntpdate 命令和 cron命令时，它是很有用的。</td>
-
 </tr>
-
 <tr>
-
 <td>-tTimeOut</td>
-
 <td>指定等待响应的时间。给定 TimeOut 的值四舍五入为 0.2 秒的倍数。缺省值是 1 秒。</td>
-
 </tr>
-
 <tr>
-
 <td>-u</td>
-
 <td>指定使用无特权的端口发送数据包。 当在一个对特权端口的输入流量进行阻拦的防火墙后是很有益的， 并希望在防火墙之外和主机同步。防火墙是一个系统或者计算机，它控制从外网对专用网的访问。</td>
-
 </tr>
-
 </tbody>
-
 </table>
 
 

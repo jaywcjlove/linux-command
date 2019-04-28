@@ -9,13 +9,13 @@ shell命令解释器
 
 ### 语法  
 
-```
+```shell
 bash [options] [file]
 ```
 
 ### 选项  
 
-```
+```shell
 -c string：命令从-c后的字符串读取。
 -i：实现脚本交互。
 -n：进行shell脚本的语法检查。
@@ -26,7 +26,7 @@ bash [options] [file]
 
 使用-x选项跟踪脚本调试shell脚本，能打印出所执行的每一行命令以及当前状态：
 
-```
+```shell
 [root@AY1307311912260196fcZ satools]# sh -x check_ssh_login.sh
 + DEFINE=30
 + cat /var/log/secure

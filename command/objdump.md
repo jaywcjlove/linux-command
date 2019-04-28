@@ -9,45 +9,38 @@ objdump
 
 ### 选项  
 
-```
---archive-headers 
--a 
-显示档案库的成员信息,类似ls -l将lib*.a的信息列出。 
+```shell
+-a --archive-headers 
+# 显示档案库的成员信息,类似ls -l将lib*.a的信息列出。 
 
--b bfdname 
---target=bfdname 
-指定目标码格式。这不是必须的，objdump能自动识别许多格式，比如： 
+-b bfdname --target=bfdname 
+# 指定目标码格式。这不是必须的，objdump能自动识别许多格式，比如： 
 
 objdump -b oasys -m vax -h fu.o 
-显示fu.o的头部摘要信息，明确指出该文件是Vax系统下用Oasys编译器生成的目标文件。objdump -i将给出这里可以指定的目标码格式列表。 
+# 显示fu.o的头部摘要信息，明确指出该文件是Vax系统下用Oasys编译器生成的目标文件。objdump -i将给出这里可以指定的目标码格式列表。 
 
--C 
---demangle 
-将底层的符号名解码成用户级名字，除了去掉所开头的下划线之外，还使得C++函数名以可理解的方式显示出来。 
-
+-C --demangle 
+# 将底层的符号名解码成用户级名字，除了去掉所开头的下划线之外，还使得C++函数名以可理解的方式显示出来。 
 --debugging 
 -g 
-显示调试信息。企图解析保存在文件中的调试信息并以C语言的语法显示出来。仅仅支持某些类型的调试信息。有些其他的格式被readelf -w支持。 
+# 显示调试信息。企图解析保存在文件中的调试信息并以C语言的语法显示出来。仅仅支持某些类型的调试信息。有些其他的格式被readelf -w支持。 
 
--e 
---debugging-tags 
-类似-g选项，但是生成的信息是和ctags工具相兼容的格式。 
-
+-e --debugging-tags 
+# 类似-g选项，但是生成的信息是和ctags工具相兼容的格式。 
 --disassemble 
 -d 
-从objfile中反汇编那些特定指令机器码的section。 
+# 从objfile中反汇编那些特定指令机器码的section。 
 
--D 
---disassemble-all 
-与 -d 类似，但反汇编所有section. 
+-D --disassemble-all 
+# 与 -d 类似，但反汇编所有section. 
 
 --prefix-addresses 
-反汇编的时候，显示每一行的完整地址。这是一种比较老的反汇编格式。 
+# 反汇编的时候，显示每一行的完整地址。这是一种比较老的反汇编格式。 
 
 -EB 
 -EL 
 --endian={big|little} 
-指定目标文件的小端。这个项将影响反汇编出来的指令。在反汇编的文件没描述小端信息的时候用。例如S-records. 
+# 指定目标文件的小端。这个项将影响反汇编出来的指令。在反汇编的文件没描述小端信息的时候用。例如S-records. 
 
 -f 
 --file-headers 
@@ -133,11 +126,11 @@ objdump -b oasys -m vax -h fu.o
 
 首先，在给出后面大部分测试所基于的源代码以及编译指令。 源代码如下： 
 
-```
+```shell
 root@localhost [test]# nl mytest.cpp 
 ```
 
-```
+```shell
 void printTest() {
     char a;
     a = 'a';
@@ -151,7 +144,7 @@ a+=2;
 
 对以上源代码进行编译，如下： 
 
-```
+```shell
 [root@localhost test]# g++ -c -g mytest.cpp 
 ```
 
@@ -159,7 +152,7 @@ a+=2;
 
  **查看当前使用的objdump的版本号： ** 
 
-```
+```shell
 [root@localhost test]# objdump -V 
 GNU objdump 2.17.50.0.6-14.el5 20061020 
 Copyright 2005 free Software Foundation, Inc. 
@@ -169,7 +162,7 @@ the GNU General Public License.  This program has absolutely no warranty.
 
  **查看档案库文件中的信息： ** 
 
-```
+```shell
 [root@localhost test]# objdump -a libmy2.a 
 In archive libmy2.a: 
 myfile.o:     file format elf32-i386 
@@ -180,7 +173,7 @@ rw-r--r-- 0/0    727 Jul 13 15:32 2011 mytest.o
 
  **这里，libmy2.a是一个使用ar命令将多个*.o目标文件打包而生成的静态库。命令的输出类似`ar -tv`，相比较`ar -tv`输出如下： ** 
 
-```
+```shell
 [root@localhost test]# ar -tv libmy2.a 
 rwxrwxrwx 0/0   2724 Nov 16 16:06 2009 myfile.o 
 rw-r--r-- 0/0    727 Jul 13 15:32 2011 mytest.o 
@@ -188,7 +181,7 @@ rw-r--r-- 0/0    727 Jul 13 15:32 2011 mytest.o
 
 显示可用的架构和目标结构列表： 
 
-```
+```shell
 [root@localhost test]# objdump -i 
 BFD header file version 2.17.50.0.6-14.el5 20061020 
 elf32-i386 
@@ -247,7 +240,7 @@ trad-core
 
  **显示mytest.o文件中的text段的内容： ** 
 
-```
+```shell
 [root@localhost test]# objdump --section=.text -s mytest.o 
 mytest.o:     file format elf32-i386 
 Contents of section .text: 
@@ -259,7 +252,7 @@ Contents of section .text:
 
  **反汇编mytest.o中的text段内容，并尽可能用源代码形式表示： ** 
 
-```
+```shell
 [root@localhost test]# objdump -j .text -S mytest.o 
 mytest.o:     file format elf32-i386 
 Disassembly of section .text: 
@@ -295,7 +288,7 @@ void printTest2()
 
  **反汇编出mytest.o的源代码: ** 
 
-```
+```shell
 [root@localhost test]# objdump -S mytest.o 
 mytest.o:     file format elf32-i386 
 
@@ -333,7 +326,7 @@ void printTest2()
 
  **显示文件的符号表入口: ** 
 
-```
+```shell
 [root@localhost test]# objdump -t mytest.o 
 mytest.o:     file format elf32-i386 
 
@@ -358,7 +351,7 @@ SYMBOL TABLE:
 
 这里，输出的信息类似`nm -s`命令的输出，相比较之下，nm命令的输出如下： 
 
-```
+```shell
 [root@localhost test]# nm -s mytest.o 
 0000000c T _Z10printTest2v 
 00000000 T _Z9printTestv 
@@ -367,7 +360,7 @@ SYMBOL TABLE:
 
  **显示文件的符号表入口，将底层符号解码并表示成用户级别: ** 
 
-```
+```shell
 [root@localhost test]# objdump -t -C mytest.o 
 mytest.o:     file format elf32-i386 
 SYMBOL TABLE: 
@@ -393,7 +386,7 @@ SYMBOL TABLE:
 
  **反汇编目标文件的特定机器码段： ** 
 
-```
+```shell
 [root@localhost test]# objdump -d mytest.o 
 mytest.o:     file format elf32-i386 
 Disassembly of section .text: 
@@ -420,7 +413,7 @@ Disassembly of section .text:
 
  **反汇编特定段，并将汇编代码对应的文件名称和行号对应上： ** 
 
-```
+```shell
 [root@localhost test]# objdump -d -l mytest.o
 mytest.o:     file format elf32-i386 
 Disassembly of section .text: 
@@ -456,7 +449,7 @@ _Z10printTest2v():
 
  **显示目标文件各个段的头部摘要信息： ** 
 
-```
+```shell
 [root@localhost test]# objdump -h mytest.o 
 mytest.o:     file format elf32-i386 
 

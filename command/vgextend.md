@@ -9,13 +9,13 @@ vgextend
 
 ### 语法  
 
-```
+```shell
 vgextend(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -d：调试模式；
 -t：仅测试。
 ```
@@ -29,13 +29,13 @@ vgextend(选项)(参数)
 
 使用vgextend命令向卷组"vg2000"中添加物理卷。在命令行中输入下面的命令：
 
-```
+```shell
 [root@localhost ~]# vgextend vg2000 /dev/sdb2     #将物理卷"/dev/sdb2"加入卷组"vg2000"
 ```
 
 输出信息如下：
 
-```
+```shell
 Volume group "vg2000" successfully extended
 ```
 

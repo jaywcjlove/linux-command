@@ -9,14 +9,14 @@ ifstat
 
 ### 下载  
 
-```
+```shell
 http://gael.roualland.free.fr/ifstat/  （官网）
 wget http://gael.roualland.free.fr/ifstat/ifstat-1.1.tar.gz
 ```
 
 ### 编译安装  
 
-```
+```shell
 tar -zxvf ifstat-1.1.tar.gz
 cd ifstat-1.1
 ./configure            
@@ -28,7 +28,7 @@ make install # 默认会安装到/usr/local/bin/目录中
 
 ### 选项  
 
-```
+```shell
 -l 监测环路网络接口（lo）。缺省情况下，ifstat监测活动的所有非环路网络接口。经使用发现，加上-l参数能监测所有的网络接口的信息，而不是只监测 lo的接口信息，也就是说，加上-l参数比不加-l参数会多一个lo接口的状态信息。
 -a 监测能检测到的所有网络接口的状态信息。使用发现，比加上-l参数还多一个plip0的接口信息，搜索一下发现这是并口（网络设备中有一 个叫PLIP (Parallel Line Internet Protocol). 它提供了并口...）
 -z 隐藏流量是无的接口，例如那些接口虽然启动了但是未用的
@@ -51,7 +51,7 @@ make install # 默认会安装到/usr/local/bin/目录中
 
 默认使用
 
-```
+```shell
 [root@localhost ifstat-1.1] #ifstat
        eth0                eth1       
  KB/s in  KB/s out   KB/s in  KB/s out
@@ -61,7 +61,7 @@ make install # 默认会安装到/usr/local/bin/目录中
 
 默认ifstat不监控回环接口，显示的流量单位是KB。
 
-```
+```shell
 [root@localhost ifstat-1.1]# ifstat -tT
   time           eth0                eth1                eth2                eth3               Total      
 HH:MM:ss   KB/s in  KB/s out   KB/s in  KB/s out   KB/s in  KB/s out   KB/s in  KB/s out   KB/s in  KB/s out
@@ -74,7 +74,7 @@ HH:MM:ss   KB/s in  KB/s out   KB/s in  KB/s out   KB/s in  KB/s out   KB/s in  
 
 监控所有网络接口
 
-```
+```shell
 [root@localhost ifstat-1.1] # ifstat -a
         lo                 eth0                eth1       
  KB/s in  KB/s out   KB/s in  KB/s out   KB/s in  KB/s out

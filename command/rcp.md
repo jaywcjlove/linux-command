@@ -9,13 +9,13 @@ rcp
 
 ### 语法  
 
-```
+```shell
 rcp(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -p：保留源文件或目录的属性，包括拥有者、所属群组、权限与时间；
 -r：递归处理，将指定目录下的文件与子目录一并处理；
 -x：加密两台Linux主机间传送的所有信息。
@@ -45,7 +45,7 @@ directory 每个文件或目录参数既可以是远程文件名也可以是本
 
  **将当前目录下的 test1 复制到名为 webserver1 的远程系统：** 
 
-```
+```shell
 rcp test1 webserver1:/home/root/test3
 ```
 
@@ -53,7 +53,7 @@ rcp test1 webserver1:/home/root/test3
 
  **还可以在目的目录中包含文件名。例如，将文件复制到名为 webserver1的系统中：** 
 
-```
+```shell
 rcp test1 webserver1:/home/root/test3
 ```
 
@@ -61,13 +61,13 @@ rcp test1 webserver1:/home/root/test3
 
  **从远程系统复制文件：要将远程系统中的文件复制到本地目录下：** 
 
-```
+```shell
 rcp remote_hostname:remote_file local_fileEnter
 ```
 
  **将远程系统 webserver1中的 test2 复制到当前目录：** 
 
-```
+```shell
 rcp webserver1:/home/root/test2 .Enter
 ```
 
@@ -75,13 +75,13 @@ rcp webserver1:/home/root/test2 .Enter
 
 如果希望用新名称复制文件，请提供目标文件名。如果希望将 test2 复制到本地系统中的其他目录下，请使用以下绝对或相对路径名：
 
-```
+```shell
 rcp webserver1:/home/root/test2 otherdir/ Enter
 ```
 
 或者，如果希望用其他文件名将文件复制到其他目录下：
 
-```
+```shell
 rcp webserver1:/home/root/test2 otherdir/otherfile Enter
 ```
 
@@ -89,7 +89,7 @@ rcp webserver1:/home/root/test2 otherdir/otherfile Enter
 
 要将本地目录及其文件和子目录复制到远程系统，请同时使用 rcp 和 -r（递归）选项。
 
-```
+```shell
 rcp -r local_dir remote_hostname:remote_dir Enter
 ```
 
@@ -97,7 +97,7 @@ rcp -r local_dir remote_hostname:remote_dir Enter
 
  **要将名为 work 的子目录完整地复制到 webserver1远程计算机中的主目录下名为 products 的目录，请键入以下内容：** 
 
-```
+```shell
 rcp -r work webserver1:/home/root/products Enter
 ```
 
@@ -109,13 +109,13 @@ rcp -r work webserver1:/home/root/products Enter
 
 要将远程目录及其所有文件和子目录复制到本地目录，请在以下语法中使用 rcp 和 -r（递归）选项。
 
-```
+```shell
 rcp –r remote_hostname:remote_dir local_dir Enter
 ```
 
 要将名为 work 的远程目录复制到当前目录，请键入以下内容：
 
-```
+```shell
 rcp –r webserver1:/home/root/work .Enter
 ```
 

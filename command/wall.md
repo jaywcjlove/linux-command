@@ -9,7 +9,7 @@ wall
 
 ### 语法  
 
-```
+```shell
 wall(参数)
 ```
 
@@ -19,7 +19,7 @@ wall(参数)
 
 ### 实例  
 
-```
+```shell
 [root@localhost ~]# wall this is a test line
 
 Broadcast message from root (pts/1) (Fri Dec 20 11:36:51 2013):

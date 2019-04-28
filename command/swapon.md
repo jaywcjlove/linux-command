@@ -9,13 +9,13 @@ swapon
 
 ### 语法  
 
-```
+```shell
 swapon(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -a：将/etc/fstab文件中所有设置为swap的设备，启动为交换区；
 -h：显示帮助；
 -p<优先顺序>：指定交换区的优先顺序；
@@ -29,7 +29,7 @@ swapon(选项)(参数)
 
 ### 实例  
 
-```
+```shell
 mkswap -c /dev/hdb4 （-c是检查有无坏块）
 swapon -v /dev/hdb4
 swapon -s

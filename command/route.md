@@ -11,13 +11,13 @@ route
 
 ### 语法  
 
-```
+```shell
 route(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -A：设置地址类型；
 -C：打印将Linux核心的路由缓存；
 -v：详细信息模式；
@@ -29,7 +29,7 @@ route(选项)(参数)
 
 ### 参数  
 
-```
+```shell
 Add：增加指定的路由记录；
 Del：删除指定的路由记录；
 Target：目的网络或目的主机；
@@ -43,7 +43,7 @@ dev：路由记录所表示的网络接口。
 
  **显示当前路由：** 
 
-```
+```shell
 [root@localhost ~]# route
 Kernel IP routing table
 Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
@@ -77,26 +77,26 @@ Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
 
  **添加网关/设置网关：** 
 
-```
+```shell
 route add -net 224.0.0.0 netmask 240.0.0.0 dev eth0    #增加一条到达244.0.0.0的路由。
 ```
 
  **屏蔽一条路由：** 
 
-```
+```shell
 route add -net 224.0.0.0 netmask 240.0.0.0 reject     #增加一条屏蔽的路由，目的地址为224.x.x.x将被拒绝。
 ```
 
  **删除路由记录：** 
 
-```
+```shell
 route del -net 224.0.0.0 netmask 240.0.0.0
 route del -net 224.0.0.0 netmask 240.0.0.0 reject
 ```
 
  **删除和添加设置默认网关：** 
 
-```
+```shell
 route del default gw 192.168.120.240
 route add default gw 192.168.120.240
 ```

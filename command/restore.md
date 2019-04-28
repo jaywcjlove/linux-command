@@ -9,13 +9,13 @@ restore
 
 ### 语法  
 
-```
+```shell
 restore(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 -b<区块大小>：设置区块大小，单位为Byte；
 -c：不检查倾倒操作的备份格式，仅准许读取使用旧格式的备份文件；
 -C：使用对比模式，将备份的文件与现行的文件相互对比；
@@ -35,19 +35,19 @@ restore(选项)
 
 ### 实例  
 
-```
+```shell
 dump -9 -u -f /dev/hda3 /home/frank/
 ```
 
 用restore命令来恢复备份：
 
-```
+```shell
 restore rf /dev/hda3 /home/frank
 ```
 
 用restore命令来查看备份文件里的文件列表：
 
-```
+```shell
 restore ft /dev/hda3
 ```
 

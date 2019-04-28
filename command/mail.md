@@ -9,13 +9,13 @@ mail
 
 ### 语法  
 
-```
+```shell
 mail(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -b<地址>：指定密件副本的收信人地址；
 -c<地址>：指定副本的收信人地址；
 -f<邮件文件>：读取指定邮件文件中的邮件；
@@ -36,7 +36,7 @@ mail(选项)(参数)
 
  **直接使用shell当编辑器** 
 
-```
+```shell
 mail -s "Hello from jsdig.com by shell" admin@jsdig.com
 hello,this is the content of mail.
 welcome to www.jsdig.com
@@ -46,7 +46,7 @@ welcome to www.jsdig.com
 
  **使用管道进行邮件发送** 
 
-```
+```shell
 echo "hello,this is the content of mail.welcome to www.jsdig.com" | mail -s "Hello from jsdig.com by pipe" admin@jsdig.com
 ```
 
@@ -54,7 +54,7 @@ echo "hello,this is the content of mail.welcome to www.jsdig.com" | mail -s "Hel
 
  **使用文件进行邮件发送** 
 
-```
+```shell
 mail -s "Hello from jsdig.com by file" admin@jsdig.com < mail.txt
 ```
 
@@ -64,7 +64,7 @@ mail -s "Hello from jsdig.com by file" admin@jsdig.com < mail.txt
 
 因为mail程序本身就是调用sendmail来进行邮件发送的，因此我们可以在mail命令中使用sendmail的参数进行配置，比如我想使用特定的发件人发送邮件，可以使用如下命令：
 
-```
+```shell
 mail -s "Hello from jsdig.com with sender" admin@jsdig.com -- -f user@jsdig.com<mail.txt
 ```
 
@@ -72,13 +72,13 @@ mail -s "Hello from jsdig.com with sender" admin@jsdig.com -- -f user@jsdig.com<
 
 很多情况下，我们也需要使用邮件来发送附件，在linux下使用mail命令发送附件也很简单，不过首先需要安装uuencode软件包，这个程序是对二进制文件进行编码使其适合通过邮件进行发送，在CentOS上安装该软件包如下：
 
-```
+```shell
 yum install sharutils
 ```
 
 安装完成后我们就可以来进行附件的发送了，使用如下命令：
 
-```
+```shell
 uuencode test.txt test | mail -s "hello,see the attachement" admin@jsdig.com<mail.txt
 ```
 

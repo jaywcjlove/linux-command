@@ -19,7 +19,7 @@ systemctl
 
 ### 实例
 
-```bash
+```shell
 systemctl start nfs-server.service . # 启动nfs服务
 systemctl enable nfs-server.service # 设置开机自启动
 systemctl disable nfs-server.service # 停止开机自启动
@@ -30,7 +30,7 @@ systemctl list-units --type=service # 查看所有已启动的服务
 
 开启防火墙22端口
 
-```
+```shell
 iptables -I INPUT -p tcp --dport 22 -j accept
 ```
 
@@ -42,7 +42,7 @@ iptables -I INPUT -p tcp --dport 22 -j accept
 
 彻底关闭防火墙：
 
-```bash
+```shell
 sudo systemctl status firewalld.service
 sudo systemctl stop firewalld.service          
 sudo systemctl disable firewalld.service

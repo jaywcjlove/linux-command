@@ -11,13 +11,13 @@ grpck命令检查数据是否正确存放，每条记录是否都包含足够的
 
 ### 语法  
 
-```
+```shell
 grpck(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 -r：只读模式；
 -s：排序组id。
 ```
@@ -26,24 +26,24 @@ grpck(选项)
 
 对组账号和影子文件进行验证：
 
-```
-grpck   //必须以管理员身份运行
-grpck /etc/group /etc/gshadow   //后面两句一样，如果没有输出信息，则表示没有错误。
+```shell
+grpck   # 必须以管理员身份运行
+grpck /etc/group /etc/gshadow   # 后面两句一样，如果没有输出信息，则表示没有错误。
 ```
 
 测试错误的实例：
 
-```
-**echo check_user:x: >> /etc/group    //添加一行错误的格式数据
+```shell
+**echo check_user:x: >> /etc/group    # 添加一行错误的格式数据
 cat /etc/group | grep check_user**
-check_user:x:  //这儿GID字段为空，是错误的。
+check_user:x:  # 这儿GID字段为空，是错误的。
 
  **grpck /etc/group** 
 invalid group file entry
-delete line 'check_user:x:'? y      //提示是否删除
-grpck: the files have been updated  //这时已经删除了错误的行，提示文件已经更新。
+delete line 'check_user:x:'? y      # 提示是否删除
+grpck: the files have been updated  # 这时已经删除了错误的行，提示文件已经更新。
 
- **cat /etc/group  | grep check_user   //没有查到，已经删除了。** 
+ **cat /etc/group  | grep check_user   # 没有查到，已经删除了。** 
 ```
 
 

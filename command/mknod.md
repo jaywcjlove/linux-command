@@ -9,13 +9,13 @@ mknod
 
 ### 语法  
 
-```
+```shell
 mknod(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -Z：设置安全的上下文；
 -m：设置权限模式；
 -help：显示帮助信息；
@@ -31,7 +31,7 @@ mknod(选项)(参数)
 
 ### 实例  
 
-```
+```shell
 ls -la /dev/ttyUSB*
 crw-rw—- 1 root dialout 188, 0 2008-02-13 18:32 /dev/ttyUSB0
 mknod /dev/ttyUSB32 c 188 32

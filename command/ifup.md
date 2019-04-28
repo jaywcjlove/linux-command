@@ -9,7 +9,7 @@ ifup
 
 ### 语法  
 
-```
+```shell
 ifup(参数)
 ```
 
@@ -19,7 +19,7 @@ ifup(参数)
 
 ### 实例  
 
-```
+```shell
 ifup eth0   #激活eth0
 ```
 

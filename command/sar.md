@@ -9,13 +9,13 @@ sar
 
 ### 语法  
 
-```
+```shell
 sar(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -A：显示所有的报告信息；
 -b：显示I/O速率；
 -B：显示换页状态；
@@ -41,7 +41,7 @@ sar(选项)(参数)
 
  **察看内存和交换空间的使用率：** 
 
-```
+```shell
 sar -r
 Linux 2.4.20-8 (www.jsdig.com)    20130503  
 12:00:01 AM kbmemfree kbmemused  %memused 
@@ -61,7 +61,7 @@ kbmemfree与kbmemused字段分别显示内存的未使用与已使用空间，�
 
  **观察系统部件10分钟，并对数据进行排序：** 
 
-```
+```shell
 sar -o temp 60 10
 ```
 

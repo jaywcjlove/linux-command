@@ -9,13 +9,13 @@ quotacheck
 
 ### 语法  
 
-```
+```shell
 quotacheck(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -a：扫描在/etc/fstab文件里，有加入quota设置的分区；
 -d：详细显示指令执行过程，便于排错或了解程序执行的情形；
 -g：扫描磁盘空间时，计算每个群组识别码所占用的目录和文件数目；
@@ -32,16 +32,15 @@ quotacheck(选项)(参数)
 
 将所有的在`/etc/mtab`内，含有quota支持的partition进行扫描：
 
-```
+```shell
 [root@linux ~]# quotacheck -avug
 quotacheck: Scanning /dev/hdb1 [/disk2] done
 quotacheck: Checked 3 directories and 4 files
-
 ```
 
 强制扫描已挂载的filesystem：
 
-```
+```shell
 [root@linux ~]# quotacheck -avug -m
 ```
 

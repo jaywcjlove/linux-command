@@ -9,13 +9,13 @@ shutdown
 
 ### 语法  
 
-```
+```shell
 shutdown(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -c：当执行“shutdown -h 11:50”指令时，只要按+键就可以中断关机的指令；
 -f：重新启动时不执行fsck；
 -F：重新启动时执行fsck；
@@ -35,13 +35,13 @@ shutdown(选项)(参数)
 
 指定现在立即关机：
 
-```
+```shell
 shutdown -h now
 ```
 
 指定5分钟后关机，同时送出警告信息给登入用户：
 
-```
+```shell
 shutdown +5 "System will shutdown after 5 minutes"
 ```
 

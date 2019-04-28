@@ -17,7 +17,7 @@ UNIX 系统上的 terminfo 数据库用于定义终端和打印机的属性及�
 
 在 UNIX shell 脚本中或在命令行中，移动光标或更改光标属性可能是非常有用的。有些情况下，您可能需要输入敏感信息（如密码），或在屏幕上两个不同的区域输入信息。在此类情况下，使用 tput 可能会对您有所帮助。
 
-```
+```shell
 tput clear # 清屏
 tput sc # 保存当前光标位置
 tput cup 10 13 # 将光标移动到 row col
@@ -37,31 +37,31 @@ exit 0
 
 另一种有用的光标定位技巧是移动光标，执行用于显示信息的命令，然后返回到前一光标位置：
 
-```
+```shell
 (tput sc ; tput cup 23 45 ; echo “Input from tput/echo at 23/45” ; tput rc)
 ```
 
 下面我们分析一下 subshell 命令：
 
-```
+```shell
 tput sc
 ```
 
 必须首先保存当前的光标位置。要保存当前的光标位置，请包括 sc 选项或“save cursor position”。
 
-```
+```shell
 tput cup 23 45
 ```
 
 在保存了光标位置后，光标坐标将移动到 (23,45)。
 
-```
+```shell
 echo “Input from tput/echo at 23/45”
 ```
 
 将信息显示到 stdout 中。
 
-```
+```shell
 tput rc
 ```
 
@@ -90,7 +90,7 @@ tput rc
 
 执行以下示例命令可以将背景颜色更改为黄色，将前景颜色更改为红色：
 
-```
+```shell
 tput setb 6 tput setf 4
 ```
 
@@ -104,7 +104,7 @@ tput setb 6 tput setf 4
 
 使输出的字符串有颜色，底色，加粗：
 
-```
+```shell
 #!/bin/bash
 printf $(tput setaf 2; tput bold)'color show\n\n'$(tput sgr0)
 
@@ -123,7 +123,7 @@ exit 0
 
 输出格式控制函数：
 
-```
+```shell
 #!/bin/bash
 
 # $1 str       print string
@@ -176,7 +176,7 @@ exit 0
 
 光标属性例子：
 
-```
+```shell
 #!/bin/bash
 # clear the screen
 tput clear

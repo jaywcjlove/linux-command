@@ -9,13 +9,13 @@ vgcreate
 
 ### 语法  
 
-```
+```shell
 vgcreate(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -l：卷组上允许创建的最大逻辑卷数；
 -p：卷组中允许添加的最大物理卷数；
 -s：卷组上的物理卷的PE大小。
@@ -30,13 +30,13 @@ vgcreate(选项)(参数)
 
 使用vgcreate命令创建卷组 "vg1000"，并且将物理卷`/dev/sdb1`和`/dev/sdb2`添加到卷组中。在命令行中输入下面的命令：
 
-```
+```shell
 [root@localhost ~]# vgcreate vg1000 /dev/sdb1 /dev/sdb2  #创建卷组"vg1000"
 ```
 
 输出信息如下：
 
-```
+```shell
 Volume group "vg1000" successfully created
 ```
 

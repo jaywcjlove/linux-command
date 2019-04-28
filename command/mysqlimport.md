@@ -9,13 +9,13 @@ mysqlimport
 
 ### 语法  
 
-```
+```shell
 mysqlimport(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -D：导入数据前清空表；
 -f：出现错误时继续处理剩余的操作；
 -h：MySQL服务器的ip地址或主机名；

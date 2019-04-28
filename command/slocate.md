@@ -9,13 +9,13 @@ slocate
 
 ### 语法  
 
-```
+```shell
 slocate [-u][--help][--version][-d <目录>][查找的文件]
 ```
 
 ### 选项  
 
-```
+```shell
 -d<目录>或--database=<目录> 　指定数据库所在的目录。
 -u 　更新slocate数据库。
 --help 　显示帮助。
@@ -26,13 +26,13 @@ slocate [-u][--help][--version][-d <目录>][查找的文件]
 
 使用指令"slocate"显示文件名中含有关键字"fdisk"的文件路径信息，输入如下命令：
 
-```
+```shell
 $ slocate fdisk #显示文件名中含有fdisk关键字的文件的路径信息 
 ```
 
 执行以上命令后，指令执行的输出信息如下：
 
-```
+```shell
 $ slocate fdisk #显示文件名中含有fdisk 关键字的文件的路径信息  
 /root/cfdisk        #搜索到的文件路径列表  
 /root/fdisk  

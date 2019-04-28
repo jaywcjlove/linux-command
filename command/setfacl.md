@@ -9,7 +9,7 @@ setfacl
 
 ### 选项  
 
-```
+```shell
 -b,--remove-all：删除所有扩展的acl规则，基本的acl规则(所有者，群组，其他）将被保留。
 -k,--remove-default：删除缺省的acl规则。如果没有缺省规则，将不提示。
 -n，--no-mask：不要重新计算有效权限。setfacl默认会重新计算ACL mask，除非mask被明确的制定。
@@ -24,7 +24,6 @@ setfacl
 --help：输出帮助信息。
 --：标识命令行参数结束，其后的所有参数都将被认为是文件名
 -：如果文件名是-，则setfacl将从标准输入读取文件名。
-
 ```
 
 *   选项`-m`和`-x`后边跟以acl规则。多条acl规则以逗号(,)隔开。选项`-M`和`-X`用来从文件或标准输入读取acl规则。
@@ -44,7 +43,7 @@ setfacl
 
 setfacl命令可以识别以下的规则格式：
 
-```
+```shell
 [d[efault]:] [u[ser]:]uid [:perms]  指定用户的权限，文件所有者的权限（如果uid没有指定）。
 [d[efault]:] g[roup]:gid [:perms]   指定群组的权限，文件所有群组的权限（如果gid未指定）
 [d[efault]:] m[ask][:] [:perms]     有效权限掩码
@@ -69,7 +68,7 @@ ACL是由一系列的Access Entry所组成的，每一条Access Entry定义了�
 
 我们先来看一下最重要的Entry tag type，它有以下几个类型：
 
-```
+```shell
 ACL_USER_OBJ：相当于Linux里file_owner的permission
 ACL_USER：定义了额外的用户可以对此文件拥有的permission
 ACL_GROUP_OBJ：相当于Linux里group的permission
@@ -80,7 +79,7 @@ ACL_OTHER：相当于Linux里other的permission
 
 让我们来据个例子说明一下，下面我们就用getfacl命令来查看一个定义好了的ACL文件：
 
-```
+```shell
 [root@localhost ~]# getfacl ./test.txt
 # file: test.txt
 # owner: root
@@ -94,7 +93,7 @@ mask::rw- other::r--
 
 前面三个以#开头的定义了文件名，file owner和group。这些信息没有太大的作用，接下来我们可以用`--omit-header`来省略掉。
 
-```
+```shell
 user::rw-       定义了ACL_USER_OBJ, 说明file owner拥有read and write permission
 user:john:rw-   定义了ACL_USER,这样用户john就拥有了对文件的读写权限,实现了我们一开始要达到的目的
 group::rw-      定义了ACL_GROUP_OBJ,说明文件的group拥有read and write permission
@@ -109,7 +108,7 @@ other::r--      定义了ACL_OTHER的权限为read
 
 首先我们还是要讲一下设置ACL文件的格式，从上面的例子中我们可以看到每一个Access Entry都是由三个被：号分隔开的字段所组成，第一个就是Entry tag type。
 
-```
+```shell
 user   对应了ACL_USER_OBJ和ACL_USER
 group  对应了ACL_GROUP_OBJ和ACL_GROUP
 mask   对应了ACL_MASK
@@ -122,7 +121,7 @@ other  对应了ACL_OTHER
 
 一开始文件没有ACL的额外属性：
 
-```
+```shell
 [root@localhost ~]# ls -l
 -rw-rw-r-- 1 root admin 0 Jul 3 22:06 test.txt
 
@@ -132,7 +131,7 @@ user::rw- group::rw- other::r--
 
 我们先让用户john拥有对test.txt文件的读写权限：
 
-```
+```shell
 [root@localhost ~]# setfacl -m user:john:rw- ./test.txt
 [root@localhost ~]# getfacl --omit-header ./test.txt
 user::rw-
@@ -144,7 +143,7 @@ other::r--
 
 这时我们就可以看到john用户在ACL里面已经拥有了对文件的读写权。这个时候如果我们查看一下linux的permission我们还会发现一个不一样的地方。
 
-```
+```shell
 [root@localhost ~]# ls -l ./test.txt
 -rw-rw-r--+ 1 root admin 0 Jul 3 22:06 ./test.txt
 ```
@@ -153,7 +152,7 @@ other::r--
 
 接下来我们来设置dev组拥有read permission：
 
-```
+```shell
 [root@localhost ~]# setfacl -m group:dev:r-- ./test.txt
 [root@localhost ~]# getfacl --omit-header ./test.txt
 user::rw-
@@ -172,14 +171,14 @@ other::r--
 
 让我们来看下面这个例子：
 
-```
+```shell
 [root@localhost ~]# ls -l
 -rwxrw-r-- 1 root admin 0 Jul 3 23:10 test.sh
 ```
 
 这里说明test.sh文件只有file owner: root拥有read, write, execute/search permission。admin组只有read and write permission，现在我们想让用户john也对test.sh具有和root一样的permission。
 
-```
+```shell
 [root@localhost ~]# setfacl -m user:john:rwx ./test.sh
 [root@localhost ~]# getfacl --omit-header ./test.sh
 user::rwx user:john:rwx
@@ -190,7 +189,7 @@ other::r--
 
 这里我们看到john已经拥有了rwx的permission，mask值也被设定为rwx，那是因为它规定了`ACL_USER`，`ACL_GROUP`和`ACL_GROUP_OBJ`的最大值，现在我们再来看test.sh的Linux permission，它已经变成了：
 
-```
+```shell
 [root@localhost ~]# ls -l
 -rwxrwxr--+ 1 root admin 0 Jul 3 23:10 test.sh
 ```
@@ -201,7 +200,7 @@ other::r--
 
 下面我们再来继续看一个例子，假如现在我们设置test.sh的mask为read only，那么admin组的用户还会有write permission吗？
 
-```
+```shell
 [root@localhost ~]# setfacl -m mask::r-- ./test.sh
 [root@localhost ~]# getfacl --omit-header ./test.sh
 user::rwx
@@ -215,7 +214,7 @@ other::r--
 
 这时我们再来查看test.sh的Linux file permission时它的group permission也会显示其mask的值(i.e. r--)
 
-```
+```shell
 [root@localhost ~]# ls -l
 -rwxr--r--+ 1 root admin 0 Jul 3 23:10 test.sh
 ```
@@ -226,13 +225,13 @@ other::r--
 
 同样我们来做一个试验说明，比如现在root用户建立了一个dir目录：
 
-```
+```shell
 [root@localhost ~]# mkdir dir
 ```
 
 他希望所有在此目录下建立的文件都可以被john用户所访问，那么我们就应该对dir目录设置Default ACL。
 
-```
+```shell
 [root@localhost ~]# setfacl -d -m user:john:rw ./dir
 [root@localhost ~]# getfacl --omit-header ./dir
 user::rwx
@@ -247,7 +246,7 @@ default: other::r-x
 
 这里我们可以看到ACL定义了default选项，john用户拥有了default的read, write, excute/search permission。所有没有定义的default都将从file permission里copy过来，现在root用户在dir下建立一个test.txt文件。
 
-```
+```shell
 [root@localhost ~]# touch ./dir/test.txt
 [root@localhost ~]# ls -l ./dir/test.txt
 -rw-rw-r--+ 1 root root 0 Jul 3 23:46 ./dir/test.txt
@@ -272,7 +271,7 @@ mv命令将会默认地移动文件的ACL属性，同样如果操作不允许的
 
 如果你的文件系统不支持ACL的话，你也许需要重新mount你的file system：
 
-```
+```shell
 mount -o remount, acl [mount point]
 ```
 

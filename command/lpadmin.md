@@ -9,13 +9,13 @@ lpadmin
 
 ### 语法  
 
-```
+```shell
 lpadmin(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -c：将打印机加入类；
 -i：为打印机设置“system V”风格的接口脚本；
 -m：从mode目录设置一个标准的“system V”接口脚本或“PPD”文件；

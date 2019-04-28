@@ -9,13 +9,13 @@ pvscan
 
 ### 语法  
 
-```
+```shell
 pvscan(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 -d：调试模式；
 -e：仅显示属于输出卷组的物理卷；
 -n：仅显示不属于任何卷组的物理卷；
@@ -27,13 +27,13 @@ pvscan(选项)
 
 使用pvscan命令扫描当前系统中所有硬盘的物理卷，在命令行中输入下面的命令：
 
-```
+```shell
 [root@localhost ~]# pvscan     #扫描所有硬盘上的物理卷 
 ```
 
 输出信息如下：
 
-```
+```shell
 PV /dev/sdb1         lvm2 [101.94 MB]  
 PV /dev/sdb2         lvm2 [101.98 MB]  
 Total: 2 [203.92 MB] / in use: 0 [0   ] / in no VG: 2 [203.92  

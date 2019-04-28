@@ -13,7 +13,7 @@ apache服务器创建密码认证文件
 
 ### 选项  
 
-```
+```shell
 -c：创建一个加密文件；
 -n：不更新加密文件，只将加密后的用户名密码显示在屏幕上；
 -m：默认采用MD5算法对密码进行加密；
@@ -33,7 +33,7 @@ apache服务器创建密码认证文件
 
  **利用htpasswd命令添加用户** 
 
-```
+```shell
 htpasswd -bc .passwd www.jsdig.com php
 ```
 
@@ -41,7 +41,7 @@ htpasswd -bc .passwd www.jsdig.com php
 
  **在原有密码文件中增加下一个用户** 
 
-```
+```shell
 htpasswd -b .passwd Jack 123456
 ```
 
@@ -49,7 +49,7 @@ htpasswd -b .passwd Jack 123456
 
  **不更新密码文件，只显示加密后的用户名和密码** 
 
-```
+```shell
 htpasswd -nb Jack 123456
 ```
 
@@ -57,13 +57,13 @@ htpasswd -nb Jack 123456
 
  **利用htpasswd命令删除用户名和密码** 
 
-```
+```shell
 htpasswd -D .passwd Jack
 ```
 
  **利用htpasswd命令修改密码** 
 
-```
+```shell
 htpasswd -D .passwd Jack
 htpasswd -b .passwd Jack 123456
 ```

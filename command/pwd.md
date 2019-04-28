@@ -9,21 +9,20 @@ pwd
 
 ### 语法  
 
-```
+```shell
 pwd（选项）
 ```
 
 ### 选项  
 
-```
+```shell
 --help：显示帮助信息；
 --version：显示版本信息。
-
 ```
 
 ### 实例  
 
-```
+```shell
 [root@localhost ~]# pwd
 /root
 ```

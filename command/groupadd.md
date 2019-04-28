@@ -9,13 +9,13 @@ groupadd
 
 ### 语法  
 
-```
+```shell
 groupadd(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -g：指定新建工作组的id；
 -r：创建系统工作组，系统工作组的组ID小于500；
 -K：覆盖配置文件“/ect/login.defs”；
@@ -30,7 +30,7 @@ groupadd(选项)(参数)
 
 建立一个新组，并设置组ID加入系统：
 
-```
+```shell
 groupadd -g 344 jsdigname
 ```
 

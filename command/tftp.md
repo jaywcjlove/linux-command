@@ -11,13 +11,13 @@ TFTP是用来下载远程文件的最简单网络协议，它其于UDP协议而�
 
 ### 语法  
 
-```
+```shell
 tftp(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -c：指定与tftp服务器连接成功后，立即要执行的指令；
 -m：指定文件传输模式。可以是ASCII或者Binary；
 -v：显示指令详细执行过程；
@@ -36,7 +36,7 @@ tftp(选项)(参数)
 
 如果能上网，通过yum安装：
 
-```
+```shell
 yum install xinetd
 yum install tftp
 yum install tftp-server
@@ -44,7 +44,7 @@ yum install tftp-server
 
 如果不能上网，可以直接安装提供的rpm包：
 
-```
+```shell
 rpm -ivh xinetd-2.3.14-18.fc9.i386.rpm
 rpm -ivh tftp-0.48-3.fc9.i386.rpm
 rpm -ivh tftp-server-0.48-3.fc9.i386.rpm
@@ -54,7 +54,7 @@ rpm -ivh tftp-server-0.48-3.fc9.i386.rpm
 
 修改/etc/xinetd.d/tftp文件，将其中的disable=yes改为disable=no。主要是设置TFTP服务器的根目录，开启服务。修改后的文件如下：
 
-```
+```shell
 service tftp
 {
        socket_type           =dgram
@@ -74,8 +74,8 @@ service tftp
 
  **3、启动tftp服务器并关闭防火墙** 
 
-```
-/etc/init.d/iptables stop        //关闭防火墙
+```shell
+/etc/init.d/iptables stop        # 关闭防火墙
 sudo /sbin/service xinetd start
 或
 service xinetd restart
@@ -86,7 +86,7 @@ service xinetd restart
 
 4、查看tftp服务是否开启
 
-```
+```shell
 netstat -a | grep tftp
 ```
 
@@ -96,7 +96,7 @@ netstat -a | grep tftp
 
 复制一个文件到tftp服务器目录，然后在主机启动tftp软件，进行简单测试。
 
-```
+```shell
 tftp 192.168.1.2
 tftp>get <download file> 
 
@@ -106,7 +106,7 @@ tftp>q
 
  **6、tftp命令用法如下** 
 
-```
+```shell
 tftp your-ip-address
 ```
 
@@ -135,13 +135,13 @@ tftp your-ip-address
 
 命令格式为：
 
-```
+```shell
 tftp [option] ... host [port]
 ```
 
 如果要下载或上传文件的话是一定要用这些option的。
 
-```
+```shell
 -g 表示下载文件 (get)
 -p 表示上传文件 (put)
 -l 表示本地文件名 (local file)
@@ -150,7 +150,7 @@ tftp [option] ... host [port]
 
 例如，要从远程主机192.168.1.2上下载 embedexpert，则应输入以下命令
 
-```
+```shell
 tftp -g -r embedexpert 192.168.1.2
 ```
 

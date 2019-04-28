@@ -9,13 +9,13 @@ strings
 
 ### 语法  
 
-```
+```shell
 strings [ -a ] [ - ] [ -o ] [ -t Format ] [ -n Number ] [ -Number ]  [file ... ]
 ```
 
 ### 选项  
 
-```
+```shell
 -a --all：扫描整个文件而不是只扫描目标文件初始化和装载段
 -f –print-file-name：在显示字符串前先显示文件名
 -n –bytes=[number]：找到并且输出所有NUL终止符序列
@@ -31,19 +31,19 @@ strings [ -a ] [ - ] [ -o ] [ -t Format ] [ -n Number ] [ -Number ]  [file ... ]
 
 列出ls中所有的ASCII文本：
 
-```
+```shell
 strings /bin/ls
 ```
 
 列出ls中所有的ASCII文本：
 
-```
+```shell
 cat /bin/ls strings
 ```
 
 查找ls中包含libc的字符串，不区分大小写：
 
-```
+```shell
 strings /bin/ls | grep -i libc
 ```
 

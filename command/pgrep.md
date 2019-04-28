@@ -9,13 +9,13 @@ pgrep
 
 ### 语法  
 
-```
+```shell
 pgrep(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -o：仅显示找到的最小（起始）进程号；
 -n：仅显示找到的最大（结束）进程号；
 -l：显示进程名称；
@@ -31,7 +31,7 @@ pgrep(选项)(参数)
 
 ### 实例  
 
-```
+```shell
 pgrep -lo httpd
 4557 httpd
  [root@localhost ~]# pgrep -ln httpd

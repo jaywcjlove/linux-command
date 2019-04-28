@@ -9,13 +9,13 @@ uupick
 
 ### 语法  
 
-```
+```shell
 uupick [-v][-I<配置文件>][-s<主机>][-x<层级>][--help]
 ```
 
 ### 选项  
 
-```
+```shell
 -I<配置文件>或--config<配置文件> 指定配置文件。
 -s<主机>或--system<主机> 处理由指定主机传送过来的文件。
 -v或--version 显示版本信息。
@@ -26,7 +26,7 @@ uupick [-v][-I<配置文件>][-s<主机>][-x<层级>][--help]
 
 处理由主机localhost传送过来的文件。在命令行直接输入如下命令：
 
-```
+```shell
 uupick-s localhost
 ```
 

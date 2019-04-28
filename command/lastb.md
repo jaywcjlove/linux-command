@@ -9,13 +9,13 @@ lastb
 
 ### 语法  
 
-```
+```shell
 lastb(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -a：把从何处登入系统的主机名称或ip地址显示在最后一行；
 -d：将IP地址转换成主机名称；
 -f<记录文件>：指定记录文件；
@@ -33,20 +33,20 @@ lastb(选项)(参数)
 
 首次运行lastb命令会报下的错误：
 
-```
+```shell
 lastb: /var/log/btmp: No such file or directory
 Perhaps this file was removed by the operator to prevent logging lastb info.
 ```
 
 只需建立这个不存在的文件即可。
 
-```
+```shell
 touch /var/log/btmp
 ```
 
 使用ssh的登录失败不会记录在btmp文件中。
 
-```
+```shell
 lastb | head
 root     ssh:notty    110.84.129.3     Tue Dec 17 06:19 - 06:19  (00:00)
 root     ssh:notty    110.84.129.3     Tue Dec 17 04:05 - 04:05  (00:00)

@@ -9,13 +9,13 @@ ping
 
 ### 语法  
 
-```
+```shell
 ping(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -d：使用Socket的SO_DEBUG功能；
 -c<完成次数>：设置完成要求回应的次数；
 -f：极限检测；
@@ -38,7 +38,7 @@ ping(选项)(参数)
 
 ### 实例  
 
-```
+```shell
 [root@AY1307311912260196fcZ ~]# ping www.jsdig.com
 PING host.1.jsdig.com (100.42.212.8) 56(84) bytes of data.
 64 bytes from 100-42-212-8.static.webnx.com (100.42.212.8): icmp_seq=1 ttl=50 time=177 ms

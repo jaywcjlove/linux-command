@@ -9,13 +9,13 @@ hostname
 
 ### 语法
 
-```
+```shell
 hostname(选项)(参数)
 ```
 
 ### 选项
 
-```
+```shell
 -v：详细信息模式；
 -a：显示主机别名；
 -d：显示DNS域名；
@@ -31,7 +31,7 @@ hostname(选项)(参数)
 
 ### 实例
 
-```
+```shell
 [root@AY1307311912260196fcZ ~]# hostname
 AY1307311912260196fcZ
 

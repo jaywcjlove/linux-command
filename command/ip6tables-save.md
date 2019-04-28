@@ -9,13 +9,13 @@ ip6tables-save
 
 ### 语法  
 
-```
+```shell
 ip6tables-save(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 -c：指定在保存iptables表时，保存当前的数据包计数器和字节计数器值；
 -t：指定要保存的表的名称。
 ```

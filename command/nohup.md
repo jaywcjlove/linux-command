@@ -15,7 +15,7 @@ nohup(选项)(参数)
 
 ### 选项  
 
-```
+```shell
 --help：在线帮助；
 --version：显示版本信息。
 ```
@@ -29,7 +29,7 @@ nohup(选项)(参数)
 
 使用nohup命令提交作业，如果使用nohup命令提交作业，那么在缺省情况下该作业的所有输出都被重定向到一个名为nohup.out的文件中，除非另外指定了输出文件：
 
-```
+```shell
 nohup command > myout.file 2>&1 &
 ```
 
@@ -37,13 +37,13 @@ nohup command > myout.file 2>&1 &
 
 该指令表示不做挂断操作，后台下载
 
-```bash
+```shell
 nohup wget site.com/file.zip
 ```
 
 下面命令，会在同一个目录下生成一个名称为 `nohup.out` 的文件，其中包含了正在运行的程序的输出内容
 
-```bash
+```shell
 nohup ping -c 10 baidu.com
 ```
 

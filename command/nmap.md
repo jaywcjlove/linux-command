@@ -9,13 +9,13 @@ nmap
 
 ### 语法  
 
-```
+```shell
 nmap(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -O：激活操作探测；
 -P0：值进行扫描，不ping主机；
 -PT：是同TCP的ping；
@@ -50,13 +50,13 @@ ip地址：指定待扫描报文中的TCP地址。
 
  **安装nmap** 
 
-```
+```shell
 yum install nmap
 ```
 
  **使用nmap扫描www.jsdig.com的开放端口** 
 
-```
+```shell
 [root@localhost ~]# nmap www.jsdig.com
 
 Starting Nmap 4.11 ( http://www.insecure.org/nmap/ ) at 2013-12-28 00:06 CST

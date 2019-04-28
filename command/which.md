@@ -9,13 +9,13 @@ which
 
 ### 语法  
 
-```
+```shell
 which(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -n<文件名长度>：制定文件名长度，指定的长度必须大于或等于所有文件中最长的文件名；
 -p<文件名长度>：与-n参数相同，但此处的<文件名长度>包含了文件的路径；
 -w：指定输出时栏位的宽度；
@@ -30,7 +30,7 @@ which(选项)(参数)
 
 查找文件、显示命令路径：
 
-```
+```shell
 [root@localhost ~]# which pwd
 /bin/pwd
 
@@ -42,7 +42,7 @@ which(选项)(参数)
 
 用 which 去找出 cd
 
-```
+```shell
 [root@localhost ~]# which cd
 cd: shell built-in command
 ```

@@ -9,13 +9,13 @@ openssh套件中的客户端连接工具
 
 ### 语法
 
-```
+```shell
 ssh(选项)(参数)
 ```
 
 ### 选项
 
-```
+```shell
 -1：强制使用ssh协议版本1；
 -2：强制使用ssh协议版本2；
 -4：强制使用IPv4地址；
@@ -45,7 +45,7 @@ ssh(选项)(参数)
 
 ### 实例
 
-```bash
+```shell
 # ssh 用户名@远程服务器地址
 ssh user1@172.24.210.101
 # 指定端口
@@ -153,14 +153,14 @@ iptables 是一款内建在 Linux 内核的宿主防火墙。通常配置用于�
 
 如果服务器上启用了 iptables，使用下面的命令将可以允许进入的 SSH 访问，当然命令需要以 root 身份运行。
 
-```
+```shell
 iptables -A INPUT -p tcp --dport 22 -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
 iptables -A OUTPUT -p tcp --sport 22 -m conntrack --ctstate ESTABLISHED -j ACCEPT
 ```
 
 如果你想将上述命令创建的规则持久地保存，在某些系统版本中，可使用如下命令：
 
-```
+```shell
 service iptables save
 ```
 

@@ -9,14 +9,14 @@ kill
 
 ### 语法
 
-```
+```shell
 kill(选项)(参数)
 xkill # 图形化关闭程序
 ```
 
 ### 选项
 
-```
+```shell
 -a：当处理当前进程时，不限制命令名和进程号的对应关系；
 -l <信息编号>：若不加<信息编号>选项，则-l参数会列出全部的信息名称；
 -p：指定kill 命令只打印相关进程的进程号，而不发送任何信号；
@@ -32,7 +32,7 @@ xkill # 图形化关闭程序
 
 列出所有信号名称：
 
-```
+```shell
  kill -l
  1) SIGHUP       2) SIGINT       3) SIGQUIT      4) SIGILL
  5) SIGTRAP      6) SIGABRT      7) SIGBUS       8) SIGFPE
@@ -54,7 +54,7 @@ xkill # 图形化关闭程序
 
 只有第9种信号(SIGKILL)才可以无条件终止进程，其他信号进程都有权利忽略， **下面是常用的信号：**
 
-```
+```shell
 HUP     1    终端断线
 INT     2    中断（同 Ctrl + C）
 QUIT    3    退出（同 Ctrl + \）
@@ -66,7 +66,7 @@ STOP   19    暂停（同 Ctrl + Z）
 
 先用ps查找进程，然后用kill杀掉：
 
-```
+```shell
 ps -ef | grep vim
 root      3268  2884  0 16:21 pts/1    00:00:00 vim install.log
 root      3370  2822  0 16:21 pts/0    00:00:00 grep vim

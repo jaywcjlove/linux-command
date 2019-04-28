@@ -5,7 +5,7 @@ supervisord
 
 ## 安装
 
-```bash
+```shell
 # 安装 supervisord
 apt-get install supervisor
 ```
@@ -14,7 +14,7 @@ apt-get install supervisor
 
 生成配置文件 `/etc/supervisord.conf`
 
-```bash
+```shell
 [program:app]
 command=/usr/bin/gunicorn -w 1 wsgiapp:application
 directory=/srv/www
@@ -23,7 +23,7 @@ user=www-data
 
 supervisord: 启动 supervisor 服务
 
-```bash
+```shell
 supervisorctl start app
 supervisorctl stop app
 supervisorctl reload # 修改/添加配置文件需要执行这个

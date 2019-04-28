@@ -9,13 +9,13 @@ mtools
 
 ### 语法  
 
-```
+```shell
 mtools(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 -a：长文件名重复时自动更改目标文件的长文件名；
 -A：短文件名重复但长文件名不同时自动更改目标文件的短文件名；
 -o：长文件名重复时，将目标文件覆盖现有的文件；
@@ -32,14 +32,13 @@ mtools(选项)
 
 使用mtools命令显示其支持的所有的指令，输入如下命令：
 
-```
+```shell
 [root@localhost ~]# mtools     #显示所有支持的指令名称
 Supported commands:
 mattrib, mbadblocks, mcat, mcd, mclasserase, mcopy, mdel, mdeltree
 mdir, mdoctorfat, mdu, mformat, minfo, mlabel, mmd, mmount
 mpartition, mrd, mread, mmove, mren, mshowfat, mtoolstest, mtype
 mwrite, mzip
-
 ```
 
 如上所示，其显示的所有命令均为mtools工具所支持的。

@@ -13,35 +13,34 @@ iotop使用Python语言编写而成，要求Python2.5（及以上版本）和Lin
 
  **Ubuntu** 
 
-```
+```shell
 apt-get install iotop
 ```
 
  **CentOS** 
 
-```
+```shell
 yum install iotop
 ```
 
  **编译安装** 
 
-```
+```shell
 wget http://guichaz.free.fr/iotop/files/iotop-0.4.4.tar.gz    
 tar zxf iotop-0.4.4.tar.gz    
 python setup.py build    
-python setup.py install    
-
+python setup.py install
 ```
 
 ### 语法  
 
-```
+```shell
 iotop（选项）
 ```
 
 ### 选项  
 
-```
+```shell
 -o：只显示有io操作的进程
 -b：批量显示，无交互，主要用作记录到文件。
 -n NUM：显示NUM次，主要用于非交互式模式。
@@ -63,7 +62,7 @@ iotop（选项）
 
 直接执行iotop就可以看到效果了：
 
-```
+```shell
 Total DISK read:       0.00 B/s | Total DISK write:       0.00 B/s
   TID  PRIO  USER     DISK READ  DISK WRITE  SWAPIN     IO>    command
     1 be/4 root        0.00 B/s    0.00 B/s  0.00 %  0.00 % init [3]

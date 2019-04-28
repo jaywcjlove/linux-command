@@ -9,13 +9,13 @@ ypdomainname
 
 ### 语法  
 
-```
+```shell
 ypdomainname(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 -v：详细信息模式。
 ```
 

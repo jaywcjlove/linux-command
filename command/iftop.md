@@ -9,13 +9,13 @@ iftop
 
 ### 语法  
 
-```
+```shell
 iftop(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 iftop: display bandwidth usage on an interface by host
 
 Synopsis: iftop -h | [-npblNBP] [-i interface] [-f filter code]
@@ -49,7 +49,6 @@ Synopsis: iftop -h | [-npblNBP] [-i interface] [-f filter code]
    The following options are only available in combination with -t
    -s num              print one single text output afer num seconds, then quit
    -L num              number of lines to print
-
 ```
 
 ### 界面说明
@@ -63,9 +62,7 @@ Synopsis: iftop -h | [-npblNBP] [-i interface] [-f filter code]
 
 ### 实例  
 
-
-
-```bash
+```shell
 iftop           # 默认是监控第一块网卡的流量
 iftop -i eth1   # 监控eth1
 iftop -n        # 直接显示IP, 不进行DNS反解析

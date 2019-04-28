@@ -13,13 +13,13 @@ rmdir
 
 ### 语法  
 
-```
+```shell
 rmdir(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -p或--parents：删除指定目录后，若该目录的上层目录已变成空目录，则将其一并删除；
 --ignore-fail-on-non-empty：此选项使rmdir命令忽略由于删除非空目录时导致的错误信息；
 -v或-verboes：显示命令的详细执行过程；
@@ -35,19 +35,19 @@ rmdir(选项)(参数)
 
 将工作目录下，名为 `www` 的子目录删除 :
 
-```bash
+```shell
 rmdir www
 ```
 
 在工作目录下的 www 目录中，删除名为 Test 的子目录。若 Test 删除后，www 目录成为空目录，则 www 亦予删除。
 
-```bash
+```shell
 rmdir -p www/Test
 ```
 
 下面命令等价于 `rmdir a/b/c`, `rmdir a/b`, `rmdir a`
 
-```bash
+```shell
 rmdir -p a/b/c
 ```
 

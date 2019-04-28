@@ -9,13 +9,13 @@ help
 
 ### 语法  
 
-```
+```shell
 help(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -s：输出短格式的帮助信息。仅包括命令格式。
 ```
 
@@ -27,7 +27,7 @@ help(选项)(参数)
 
 使用help命令显示shell内部shopt命令的帮助信息，输入如下命令：
 
-```
+```shell
 help shopt                #获取shopt命令的帮助信息
 shopt: shopt [-pqsu] [-o long-option] optname [optname...]
     Toggle the values of variables controlling optional behavior.

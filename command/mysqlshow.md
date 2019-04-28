@@ -9,13 +9,13 @@ mysqlshow
 
 ### 语法  
 
-```
+```shell
 mysqlshow(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -h：MySQL服务器的ip地址或主机名；
 -u：连接MySQL服务器的用户名；
 -p：连接MySQL服务器的密码；

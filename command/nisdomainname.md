@@ -9,13 +9,13 @@ nisdomainname
 
 ### 语法  
 
-```
+```shell
 nisdomainname(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 -v：详细信息模式。
 ```
 

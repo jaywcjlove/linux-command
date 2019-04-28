@@ -9,16 +9,16 @@ pvremove
 
 ### 语法  
 
-```
+```shell
 pvremove(选项)(参数)
 ```
 
 ### 选项  
 
-```
--d：调试模式；
--f：强制删除；
--y：对提问回答“yes”。
+```shell
+-d # 调试模式；
+-f # 强制删除；
+-y # 对提问回答“yes”。
 ```
 
 ### 参数  
@@ -29,10 +29,9 @@ pvremove(选项)(参数)
 
 使用pvremove指令删除物理卷`/dev/sdb2`。在命令行中输入下面的命令：
 
-```
-pvremove /dev/sdb2 #删除物理卷
+```shell
+pvremove /dev/sdb2 # 删除物理卷
 Labels on physical volume "/dev/sdb2" successfully wiped
-
 ```
 
 

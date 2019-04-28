@@ -9,13 +9,13 @@ pvck
 
 ### 语法  
 
-```
+```shell
 pvck(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -d：调试模式；
 -v：详细信息模式；
 --labelsector：指定LVE卷标所在扇区。
@@ -29,7 +29,7 @@ pvck(选项)(参数)
 
 使用pvck命令检查物理卷`/dev/sdb1`。在命令行中输入下面的命令：
 
-```
+```shell
 pvck -v /dev/sdb1    #检查物理卷元数据
 Scanning /dev/sdb1  
 Found label on /dev/sdb1, sector 1, type=LVM2 001  

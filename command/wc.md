@@ -9,7 +9,7 @@ wc
 
 ### 语法  
 
-```
+```shell
 wc(选项)(参数)
 wc [选项]... [文件]...
 wc [选项]... --files0-from=F
@@ -17,7 +17,7 @@ wc [选项]... --files0-from=F
 
 ### 选项  
 
-```bash
+```shell
 -c # 统计字节数，或--bytes或——chars：只显示Bytes数；。
 -l # 统计行数，或——lines：只显示列数；。
 -m # 统计字符数。这个标志不能与 -c 标志一起使用。
@@ -33,7 +33,7 @@ wc [选项]... --files0-from=F
 
 ## 例子
 
-```bash
+```shell
 wc -l *       # 统计当前目录下的所有文件行数
 wc -l *.js    # 统计当前目录下的所有 .js 后缀的文件行数
 find  . * | xargs wc -l # 当前目录以及子目录的所有文件行数 
@@ -42,7 +42,7 @@ wc test.txt   # 查看文件的字节数、字数、行数
 
 查看文件的字节数、字数、行数
 
-```bash
+```shell
 wc test.txt
 # 输出结果
 7     8     70     test.txt
@@ -51,7 +51,7 @@ wc test.txt
 
 用wc命令怎么做到只打印统计数字不打印文件名
 
-```bash
+```shell
 wc -l test.txt 
 # 输出结果
 7 test.txt
@@ -59,7 +59,7 @@ wc -l test.txt
 
 用来统计当前目录下的文件数
 
-```bash
+```shell
 ls -l | wc -l
 # 输出结果
 8

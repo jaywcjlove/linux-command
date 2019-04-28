@@ -9,7 +9,7 @@ volname
 
 ### 语法  
 
-```
+```shell
 volname(参数)
 ```
 

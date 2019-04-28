@@ -9,13 +9,13 @@ samba用户和密码管理工具
 
 ### 语法  
 
-```
+```shell
 smbpasswd(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -a：向smbpasswd文件中添加用户；
 -c：指定samba的配置文件；
 -x：从smbpasswd文件中删除用户；

@@ -9,13 +9,13 @@ ntsysv
 
 ### 语法  
 
-```
+```shell
 ntsysv(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 --leve：指定运行等级；
 --back：在互动式界面里，显示Back钮，而非cancel钮。
 ```
@@ -24,7 +24,7 @@ ntsysv(选项)
 
 输入ntsysv命令后，出现一个交互式的管理菜单，如下：
 
-```
+```shell
 !ntsysv
 ```
 

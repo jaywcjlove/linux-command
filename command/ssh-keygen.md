@@ -9,13 +9,13 @@ ssh-keygen
 
 ### 语法  
 
-```
+```shell
 ssh-keygen(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 -b：指定密钥长度；
 -e：读取openssh的私钥或者公钥文件；
 -C：添加注释；

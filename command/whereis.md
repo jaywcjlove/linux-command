@@ -13,13 +13,13 @@ whereis命令只能用于程序名的搜索，而且只搜索二进制文件（�
 
 ### 语法  
 
-```
+```shell
 whereis(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -b：只查找二进制文件；
 -B<目录>：只在设置的目录下查找二进制文件；
 -f：不显示文件名前的路径名称；
@@ -38,7 +38,7 @@ whereis(选项)(参数)
 
 将相关的文件都查找出来
 
-```
+```shell
 [root@localhost ~]# whereis tomcat
 tomcat:
 
@@ -50,7 +50,7 @@ svn: /usr/bin/svn /usr/local/svn /usr/share/man/man1/svn.1.gz
 
 只将二进制文件查找出来 
 
-```
+```shell
 [root@localhost ~]# whereis -b svn
 svn: /usr/bin/svn /usr/local/svn
 
@@ -59,7 +59,6 @@ svn: /usr/share/man/man1/svn.1.gz
 
 [root@localhost ~]# whereis -s svn
 svn:
-
 ```
 
 说明：`whereis -m svn`查出说明文档路径，`whereis -s svn`找source源文件。

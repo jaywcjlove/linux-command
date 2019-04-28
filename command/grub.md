@@ -9,13 +9,13 @@ grub
 
 ### 语法  
 
-```
+```shell
 grub(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 --batch：打开批处理模式；
 --boot-drive=<驱动器>：指定stage2的引导驱动器；
 --config-file<配置文件>：指定stage2的配置文件；
@@ -57,7 +57,7 @@ grub(选项)
 
 依次输入命令：
 
-```
+```shell
 root (hd0,1)   /* 假设 /dev/hda2 是你的 /boot 所在的分区 */
 kernel /boot/vmlinuz-2.6.15-26-386 ro dev=/dev/hda3    /* 假设 /dev/hda3 是你的 / 所在的分区 */
 initrd /boot/initrd.img-2.6.15-26-386

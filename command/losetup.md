@@ -9,14 +9,14 @@ losetup
 
 ### 语法  
 
-```
+```shell
 losetup [ -e encryption ] [ -o offset ] loop_device file
 losetup [ -d ] loop_device
 ```
 
 ### 选项  
 
-```
+```shell
 -a 显示所有循环设备的状态。
 -d 卸除设备。
 -e <加密选项> 启动加密编码 。
@@ -41,19 +41,19 @@ losetup [ -d ] loop_device
 
 创建空的磁盘镜像文件，这里创建一个1.44M的软盘：
 
-```
+```shell
 dd if=/dev/zero of=floppy.img bs=512 count=2880
 ```
 
 使用 losetup将磁盘镜像文件虚拟成快设备：
 
-```
+```shell
 losetup /dev/loop1 floppy.img
 ```
 
 挂载块设备：
 
-```
+```shell
 mount /dev/loop0 /tmp
 ```
 
@@ -61,7 +61,7 @@ mount /dev/loop0 /tmp
 
 卸载loop设备：
 
-```
+```shell
 umount /tmp
 losetup -d /dev/loop1
 ```

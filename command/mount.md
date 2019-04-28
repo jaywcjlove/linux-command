@@ -9,7 +9,7 @@ mount
 
 ### 语法  
 
-```
+```shell
 mount [-hV]
 mount -a [-fFnrsvw] [-t vfstype]
 mount [-fnrsvw] [-o options [,...]] device | dir
@@ -18,7 +18,7 @@ mount [-fnrsvw] [-t vfstype] [-o options] device dir
 
 ### 选项  
 
-```
+```shell
 -V：显示程序版本
 -h：显示辅助讯息
 -v：显示较讯息，通常和 -f 用来除错。
@@ -50,19 +50,19 @@ mount [-fnrsvw] [-t vfstype] [-o options] device dir
 
 将 `/dev/hda1` 挂在 `/mnt` 之下。
 
-```
+```shell
 #mount /dev/hda1 /mnt
 ```
 
 将 `/dev/hda1` 用唯读模式挂在 `/mnt` 之下。
 
-```
+```shell
 #mount -o ro /dev/hda1 /mnt
 ```
 
 将 `/tmp/image.iso` 这个光碟的 `image` 档使用 `loop` 模式挂在 `/mnt/cdrom` 之下。用这种方法可以将一般网络上可以找到的 `Linux` 光 碟 ISO 档在不烧录成光碟的情况下检视其内容。
 
-```
+```shell
 #mount -o loop /tmp/image.iso /mnt/cdrom
 ```
 

@@ -9,13 +9,13 @@ pwck
 
 ### 语法  
 
-```
+```shell
 pwck(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -q：仅报告错误信息；
 -s：以用户id排序文件“/etc/passwd”和“/etc/shadow”;
 -r：只读方式运行指令。
@@ -28,7 +28,7 @@ pwck(选项)(参数)
 
 ### 实例  
 
-```
+```shell
 pwck /etc/passwd
 user 'lp': directory '/var/spool/lpd' does not exist
 user 'news': directory '/var/spool/news' does not exist

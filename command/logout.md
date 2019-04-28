@@ -9,7 +9,7 @@ logout
 
 ### 语法  
 
-```
+```shell
 logout
 ```
 

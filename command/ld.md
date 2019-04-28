@@ -9,14 +9,14 @@ ld
 
 ### 语法  
 
-```
+```shell
 ld(选项)(参数)
 ld [options] objfile ...
 ```
 
 ### 选项  
 
-```
+```shell
 -o：指定输出文件名；
 -e：指定程序的入口符号。
 ```
@@ -29,7 +29,7 @@ ld [options] objfile ...
 
 这告诉ld通过将文件“/lib/crt0.o”与“hello.o”和库“libc.a”链接起来，生成一个名为output的文件，该文件将来自标准搜索目录。
 
-```bash
+```shell
 ld -o <output> /lib/crt0.o hello.o -lc
 ld -o output /lib/crt0.o hello.o -lc
 ```

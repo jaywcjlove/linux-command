@@ -9,13 +9,13 @@ ssh-copy-id
 
 ### 语法  
 
-```
+```shell
 ssh-copy-id [-i [identity_file]] [user@]machine
 ```
 
 ### 选项  
 
-```
+```shell
 -i：指定公钥文件
 ```
 
@@ -23,7 +23,7 @@ ssh-copy-id [-i [identity_file]] [user@]machine
 
 1、把本地的ssh公钥文件安装到远程主机对应的账户下：
 
-```
+```shell
 ssh-copy-id user@server
 ssh-copy-id -i ~/.ssh/id_rsa.pub user@server
 ```

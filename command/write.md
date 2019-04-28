@@ -9,13 +9,13 @@ write
 
 ### 语法  
 
-```
+```shell
 write(参数)
 ```
 
 ### 参数  
 
-```
+```shell
 用户：指定要接受信息的登录用户；
 登陆终端：指定接收信息的用户的登录终端。
 ```
@@ -24,7 +24,7 @@ write(参数)
 
 传信息给Rollaend，此时Rollaend只有一个连线 : 
 
-```
+```shell
 write Rollaend
 ```
 
@@ -32,7 +32,7 @@ write Rollaend
 
 传信息给Rollaend、Rollaend的连线有pts/2、pts/3：
 
-```
+```shell
 write Rollaend pts/2
 ```
 

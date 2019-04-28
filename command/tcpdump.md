@@ -9,13 +9,13 @@ tcpdump
 
 ### 语法  
 
-```
+```shell
 tcpdump(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 -a：尝试将网络和广播地址转换成名称；
 -c<数据包数目>：收到指定的数据包数目后，就停止进行倾倒操作；
 -d：把编译过的数据包编码转换成可阅读的格式，并倾倒到标准输出；
@@ -47,13 +47,13 @@ tcpdump(选项)
 
  **直接启动tcpdump将监视第一个网络接口上所有流过的数据包** 
 
-```
+```shell
 tcpdump
 ```
 
  **监视指定网络接口的数据包** 
 
-```
+```shell
 tcpdump -i eth1
 ```
 
@@ -63,55 +63,55 @@ tcpdump -i eth1
 
 打印所有进入或离开sundown的数据包。
 
-```
+```shell
 tcpdump host sundown
 ```
 
 也可以指定ip,例如截获所有210.27.48.1 的主机收到的和发出的所有的数据包
 
-```
+```shell
 tcpdump host 210.27.48.1
 ```
 
 打印helios 与 hot 或者与 ace 之间通信的数据包
 
-```
+```shell
 tcpdump host helios and \( hot or ace \)
 ```
 
 截获主机210.27.48.1 和主机210.27.48.2 或210.27.48.3的通信
 
-```
+```shell
 tcpdump host 210.27.48.1 and \ (210.27.48.2 or 210.27.48.3 \)
 ```
 
 打印ace与任何其他主机之间通信的IP 数据包, 但不包括与helios之间的数据包.
 
-```
+```shell
 tcpdump ip host ace and not helios
 ```
 
 如果想要获取主机210.27.48.1除了和主机210.27.48.2之外所有主机通信的ip包，使用命令：
 
-```
+```shell
 tcpdump ip host 210.27.48.1 and ! 210.27.48.2
 ```
 
 抓取eth0网卡上的包，使用:
 
-```
+```shell
 sudo tcpdump -i eth0
 ```
 
 截获主机hostname发送的所有数据
 
-```
+```shell
 tcpdump -i eth0 src host hostname
 ```
 
 监视所有送到主机hostname的数据包
 
-```
+```shell
 tcpdump -i eth0 dst host hostname
 ```
 
@@ -119,13 +119,13 @@ tcpdump -i eth0 dst host hostname
 
 如果想要获取主机210.27.48.1接收或发出的telnet包，使用如下命令
 
-```
+```shell
 tcpdump tcp port 23 host 210.27.48.1
 ```
 
 对本机的udp 123 端口进行监视 123 为ntp的服务端口
 
-```
+```shell
 tcpdump udp port 123
 ```
 
@@ -133,7 +133,7 @@ tcpdump udp port 123
 
 打印本地主机与Berkeley网络上的主机之间的所有通信数据包
 
-```
+```shell
 tcpdump net ucb-ether
 ```
 
@@ -141,7 +141,7 @@ ucb-ether此处可理解为“Berkeley网络”的网络地址，此表达式最
 
 打印所有通过网关snup的ftp数据包
 
-```
+```shell
 tcpdump 'gateway snup and (port ftp or ftp-data)'
 ```
 
@@ -149,7 +149,7 @@ tcpdump 'gateway snup and (port ftp or ftp-data)'
 
 打印所有源地址或目标地址是本地主机的IP数据包
 
-```
+```shell
 tcpdump ip and not net localnet
 ```
 
@@ -157,7 +157,7 @@ tcpdump ip and not net localnet
 
 抓取80端口的HTTP报文，以文本形式展示：
 
-```bash
+```shell
 sudo tcpdump -i any port 80 -A
 ```
 

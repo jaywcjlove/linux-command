@@ -9,28 +9,28 @@ lscpu
 
 ### 语法  
 
-```
+```shell
 lscpu [选项]
 ```
 
 ### 选项  
 
-```
- -a, --all               打印在线和离线CPU（默认为-e）
- -b, --online            仅打印在线CPU（-p的默认值）
- -c, --offline           打印离线CPU
- -e, --extended[=<list>] 打印出一个扩展的可读格式
- -p, --parse[=<list>]    打印出可解析的格式
- -s, --sysroot <dir>     将指定的目录用作系统根目录
- -x, --hex               打印十六进制掩码，而不是CPU列表
+```shell
+ -a, --all               # 打印在线和离线CPU（默认为-e）
+ -b, --online            # 仅打印在线CPU（-p的默认值）
+ -c, --offline           # 打印离线CPU
+ -e, --extended[=<list>] # 打印出一个扩展的可读格式
+ -p, --parse[=<list>]    # 打印出可解析的格式
+ -s, --sysroot <dir>     # 将指定的目录用作系统根目录
+ -x, --hex               # 打印十六进制掩码，而不是CPU列表
 
- -h, --help     显示此帮助并退出
- -V, --version  输出版本信息并退出
+ -h, --help     # 显示此帮助并退出
+ -V, --version  # 输出版本信息并退出
 ```
 
 ### 参数  
 
-```bash
+```shell
 可用列：
            CPU  逻辑CPU编号
           CORE  逻辑核心号码
@@ -46,7 +46,7 @@ lscpu [选项]
 
 ### 例子
 
-```bash
+```shell
 [root@localhost ~]# lscpu
 Architecture:          x86_64
 CPU op-mode(s):        32-bit, 64-bit

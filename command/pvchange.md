@@ -9,13 +9,13 @@ pvchange
 
 ### 语法  
 
-```
+```shell
 pvchange(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -u：生成新的UUID；
 -x：是否允许分配PE。
 ```
@@ -28,13 +28,13 @@ pvchange(选项)(参数)
 
 使用pvchange命令禁止分配指定物理卷上的PE。在命令行中输入下面的命令：
 
-```
+```shell
 pvchange -x n /dev/sdb1     #禁止分配"/dev/sdb1"上的PE
 ```
 
 输出信息如下：
 
-```
+```shell
 Physical volume "/dev/sdb1" changed  
 1 physical volume changed / 0 physical volumes not changed
 ```

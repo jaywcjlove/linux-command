@@ -9,13 +9,13 @@ iostat
 
 ### 语法  
 
-```
+```shell
 iostat(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -c：仅显示CPU使用情况；
 -d：仅显示设备利用率；
 -k：显示状态以千字节每秒为单位，而不使用块每秒；
@@ -35,7 +35,7 @@ iostat(选项)(参数)
 
 用`iostat -x /dev/sda1`来观看磁盘I/O的详细情况：
 
-```
+```shell
 iostat -x /dev/sda1 
 Linux 2.6.18-164.el5xen (localhost.localdomain)
 2010年03月26日  
@@ -54,131 +54,68 @@ sda1                0.02          0.08
 详细说明：第二行是系统信息和监测时间，第三行和第四行显示CPU使用情况（具体内容和mpstat命令相同）。这里主要关注后面I/O输出的信息，如下所示：
 
 <table>
-
 <tbody>
-
 <tr>
-
 <th>标示</th>
-
 <th>说明</th>
-
 </tr>
-
 <tr>
-
 <td>Device</td>
-
 <td>监测设备名称</td>
-
 </tr>
-
 <tr>
-
 <td>rrqm/s</td>
-
 <td>每秒需要读取需求的数量</td>
-
 </tr>
-
 <tr>
-
 <td>wrqm/s</td>
-
 <td>每秒需要写入需求的数量</td>
-
 </tr>
-
 <tr>
-
 <td>r/s </td>
-
 <td>每秒实际读取需求的数量</td>
-
 </tr>
-
 <tr>
-
 <td>w/s</td>
-
 <td>每秒实际写入需求的数量</td>
-
 </tr>
-
 <tr>
-
 <td>rsec/s</td>
-
 <td>每秒读取区段的数量</td>
-
 </tr>
-
 <tr>
-
 <td>wsec/s</td>
-
 <td>每秒写入区段的数量</td>
-
 </tr>
-
 <tr>
-
 <td>rkB/s</td>
-
 <td>每秒实际读取的大小，单位为KB</td>
-
 </tr>
-
 <tr>
-
 <td>wkB/s</td>
-
 <td>每秒实际写入的大小，单位为KB</td>
-
 </tr>
-
 <tr>
-
 <td>avgrq-sz</td>
-
 <td>需求的平均大小区段</td>
-
 </tr>
-
 <tr>
-
 <td>avgqu-sz</td>
-
 <td>需求的平均队列长度</td>
-
 </tr>
-
 <tr>
-
 <td>await</td>
-
 <td>等待I/O平均的时间（milliseconds）</td>
-
 </tr>
-
 <tr>
-
 <td>svctm</td>
-
 <td>I/O需求完成的平均时间</td>
-
 </tr>
-
 <tr>
-
 <td>%util</td>
-
 <td>被I/O需求消耗的CPU百分比</td>
-
 </tr>
-
 </tbody>
-
 </table>
 
 

@@ -9,13 +9,13 @@ whois 客户端服务
 
 ### 语法  
 
-```
+```shell
 jwhois [选项]
 ```
 
 ### 选项  
 
-```
+```shell
 --version                  display version number and patch level
 --help                     display this help
 -v, --verbose              verbose debug output
@@ -37,16 +37,16 @@ jwhois [选项]
 
 显示指定用户信息：
 
-```
-# jwhois root
+```shell
+ jwhois root
 
-//查找root用户信息
+# 查找root用户信息
 ```
 
 查询域名信息：
 
-```
-[root@localhost ~]# jwhois linuxde.net
+```shell
+[root@localhost ~] jwhois linuxde.net
 [Querying whois.verisign-grs.com]
 [Redirected to whois.west263.com]
 [Querying whois.west263.com]

@@ -9,13 +9,13 @@ popd
 
 ### 语法  
 
-```
+```shell
 pushd(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 +N：将第N个目录删除（从左边数起，数字从0开始）；
 -N：将第N个目录删除（从右边数起，数字从0开始）；
 -n：将目录出栈时，不切换目录。
@@ -23,7 +23,7 @@ pushd(选项)(参数)
 
 ### 实例  
 
-```
+```shell
 root@Mylinux:/tmp/dir4# popd（相当于popd +0）
 /tmp/dir3 /tmp/dir2 /tmp/dir1 ~
 

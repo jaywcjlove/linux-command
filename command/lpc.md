@@ -9,13 +9,13 @@ lpc
 
 ### 语法  
 
-```
+```shell
 lpc
 ```
 
 ### 实例  
 
-```
+```shell
 [root@localhost ~]# lpc
 lpc> ?         
 命令可能是缩写。命令是：

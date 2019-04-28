@@ -9,24 +9,24 @@ nmcli
 
 ### 语法  
 
-```bash
+```shell
 nmcli [OPTIONS] OBJECT { COMMAND | help }
 ```
 
 ### 选项  
 
-```bash
+```shell
 OPTIONS
-  -t[erse]                                   terse output 简洁的输出
-  -p[retty]                                  pretty output 漂亮的输出
-  -m[ode] tabular|multiline                  output mode  输出模式
-  -f[ields] <field1,field2,...>|all|common   specify fields to output 指定要输出的字段
-  -e[scape] yes|no                           escape columns separators in values 在值中转义列分隔符
-  -n[ocheck]                                 不要检查nmcli和NetworkManager版本
-  -a[sk]                                     要求缺少参数
-  -w[ait] <seconds>                          设置超时等待整理操作
-  -v[ersion]                                 显示程序版本
-  -h[elp]                                    打印此帮助
+  -t[erse]                                  # terse output 简洁的输出
+  -p[retty]                                 # pretty output 漂亮的输出
+  -m[ode] tabular|multiline                 # output mode  输出模式
+  -f[ields] <field1,field2,...>|all|common  # specify fields to output 指定要输出的字段
+  -e[scape] yes|no                          # escape columns separators in values 在值中转义列分隔符
+  -n[ocheck]                                # 不要检查nmcli和NetworkManager版本
+  -a[sk]                                    # 要求缺少参数
+  -w[ait] <seconds>                         # 设置超时等待整理操作
+  -v[ersion]                                # 显示程序版本
+  -h[elp]                                   # 打印此帮助
 
 OBJECT
   g[eneral]       NetworkManager的一般状态和操作
@@ -39,7 +39,7 @@ OBJECT
 
 ### 实例  
 
-```bash
+```shell
 nmcli connection show           # 查看当前连接状态
 nmcli connection reload         # 重启服务
 nmcli connection show -active   # 显示活动的连接

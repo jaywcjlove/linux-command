@@ -9,13 +9,13 @@ vgchange
 
 ### 语法  
 
-```
+```shell
 vgchange(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -a：设置卷组的活动状态。
 ```
 
@@ -27,13 +27,13 @@ vgchange(选项)(参数)
 
 使用vgchange命令将卷组状态改为活动的。在命令行中输入下面的命令：
 
-```
+```shell
 [root@localhost ~]# vgchange -ay vg1000     #将卷组"vg1000"设置为活动状态
 ```
 
 输出信息如下：
 
-```
+```shell
 1 logical volume(s) in volume group "vg1000" now active
 ```
 

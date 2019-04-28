@@ -11,13 +11,13 @@ lsusb命令是一个学习USB驱动开发，认识USB设备的助手，推荐大
 
 ### 语法  
 
-```
+```shell
 lsusb(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 -v：显示USB设备的详细信息；
 -s<总线：设备号>仅显示指定的总线和（或）设备号的设备；
 -d<厂商：产品>：仅显示指定厂商和产品编号的设备；
@@ -29,7 +29,7 @@ lsusb(选项)
 
 插入usb鼠标后执行lsusb的输出内容如下:
 
-```
+```shell
 Bus 005 Device 001: id 0000:0000 
 Bus 001 Device 001: ID 0000:0000 
 Bus 004 Device 001: ID 0000:0000 
@@ -48,7 +48,7 @@ Bus 002 Device 001: ID 0000:0000
 
 表示系统给usb鼠标分配的设备号(devnum)，同时也可以看到该鼠标是插入到了第二个usb主控制器
 
-```
+```shell
 006        usb_device.devnum
 /sys/devices/pci0000:00/0000:00:1d.1/usb2/2-2/devnum
 ```
@@ -57,7 +57,7 @@ Bus 002 Device 001: ID 0000:0000
 
 表示usb设备的ID（这个ID由芯片制造商设置，可以唯一表示该设备）
 
-```
+```shell
 15d9    usb_device_descriptor.idVendor
 0a37    usb_device_descriptor.idProduct
 /sys/devices/pci0000:00/0000:00:1d.1/usb2/2-2/idVendor
@@ -68,8 +68,8 @@ Bus 002 Device 001: ID 0000:0000**
 
 表示002号usb主控制器上接入了两个设备:
 
-*   一个是usb根Hub -- 001 
-*   一个是usb鼠标  -- 006
+* 一个是usb根Hub -- 001 
+* 一个是usb鼠标  -- 006
 
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

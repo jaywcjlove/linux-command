@@ -9,13 +9,13 @@ pushd
 
 ### 语法  
 
-```
+```shell
 pushd(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -n：只加入目录到堆叠中，不进行cd操作；
 +n：删除从左到右的第n个目录，数字从0开始；
 -n：删除从右到左的第n个目录，数字从0开始；
@@ -27,7 +27,7 @@ pushd(选项)(参数)
 
 ### 实例  
 
-```
+```shell
 root@Mylinux:/tmp/dir4# pushd /tmp/dir3
 /tmp/dir3 /tmp/dir4 /tmp/dir1 ~
 

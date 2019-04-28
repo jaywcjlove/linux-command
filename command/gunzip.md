@@ -9,13 +9,13 @@ gunzip
 
 ### 语法  
 
-```
+```shell
 gunzip(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -a或——ascii：使用ASCII文字模式；
 -c或--stdout或--to-stdout：把解压后的文件输出到标准输出设备；
 -f或-force：强行解开压缩文件，不理会文件名称或硬连接是否存在以及该文件是否为符号连接；
@@ -40,14 +40,14 @@ gunzip(选项)(参数)
 
 首先将`/etc`目录下的所有文件以及子目录进行压缩，备份压缩包etc.zip到`/opt`目录，然后对etc.zip文件进行gzip压缩，设置gzip的压缩级别为9。
 
-```
+```shell
 zip –r /opt/etc.zip /etc
 gzip -9v /opt/etc.zip
 ```
 
 查看上述etc.zip.gz文件的压缩信息。
 
-```
+```shell
 gzip -l /opt/etc.zip.gz
 compressed        uncompressed ratio uncompressed_name
 11938745            12767265   6.5% /opt/etc.zip
@@ -55,7 +55,7 @@ compressed        uncompressed ratio uncompressed_name
 
 解压上述etc.zip.gz文件到当前目录。
 
-```
+```shell
 [root@mylinux ~]#gzip –d /opt/etc.zip.gz 
 或者执行
 [root@mylinux ~]#gunzip /opt/etc.zip.gz

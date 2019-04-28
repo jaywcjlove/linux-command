@@ -9,7 +9,7 @@ indent
 
 ### 语法  
 
-```
+```shell
 indent(选项)(源文件)
 或
 indent（选项)(源文件)(-o 目标文件)
@@ -17,7 +17,7 @@ indent（选项)(源文件)(-o 目标文件)
 
 ### 选项  
 
-```
+```shell
 -bad：在声明区加上空白行；
 -bap：添加空白行；
 -bbb：在注释后面添加空白行；
@@ -77,7 +77,7 @@ indent（选项)(源文件)(-o 目标文件)
 
 使用indent命令将C语言源文件"test.c"中所有的sizeof后面添加一个空格，输入如下命令：
 
-```
+```shell
 indent -bs /home/rootlocal/桌面/test.c
 ```
 

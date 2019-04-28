@@ -19,13 +19,13 @@ GNU's Screen 官方站点：http://www.gnu.org/software/screen/
 
 ### 语法  
 
-```
+```shell
 # screen -AmRvx -[ls -wipe][-d <作业名称>][-h <行数>][-r <作业名称>][-s ][-S <作业名称>]
 ```
 
 ### 选项  
 
-```
+```shell
 -A 　将所有的视窗都调整为目前终端机的大小。
 -d <作业名称> 　将指定的screen作业离线。
 -h <行数> 　指定视窗的缓冲区行数。
@@ -42,7 +42,7 @@ GNU's Screen 官方站点：http://www.gnu.org/software/screen/
 
 ### 常用screen参数  
 
-```
+```shell
 screen -S yourname -> 新建一个叫yourname的session
 screen -ls -> 列出当前所有的session
 screen -r yourname -> 回到yourname这个session
@@ -52,7 +52,7 @@ screen -d -r yourname -> 结束当前session并回到yourname这个session
 
 在每个screen session 下，所有命令都以 ctrl+a(C-a) 开始。
 
-```
+```shell
 C-a ? -> 显示所有键绑定信息
 C-a c -> 创建一个新的运行shell的窗口并切换到该窗口
 C-a n -> Next，切换到下一个 window 
@@ -86,7 +86,7 @@ C-a ] -> paste，把刚刚在 copy mode 选定的内容贴上
 
 流行的Linux发行版（例如Red Hat Enterprise Linux）通常会自带screen实用程序，如果没有的话，可以从GNU screen的官方网站下载。
 
-```
+```shell
 [root@TS-DEV ~]# yum install screen
 [root@TS-DEV ~]# rpm -qa|grep screen
 screen-4.0.3-4.el5
@@ -97,13 +97,13 @@ screen-4.0.3-4.el5
 
 安装完成后，直接敲命令screen就可以启动它。但是这样启动的screen会话没有名字，实践上推荐为每个screen会话取一个名字，方便分辨：
 
-```
+```shell
 [root@TS-DEV ~]# screen -S david 
 ```
 
 screen启动后，会创建第一个窗口，也就是窗口No. 0，并在其中打开一个系统默认的shell，一般都会是bash。所以你敲入命令screen之后，会立刻又返回到命令提示符，仿佛什么也没有发生似的，其实你已经进入Screen的世界了。当然，也可以在screen命令之后加入你喜欢的参数，使之直接打开你指定的程序，例如：
 
-```
+```shell
 [root@TS-DEV ~]# screen vi david.txt
 ```
 
@@ -113,7 +113,7 @@ screen创建一个执行vi david.txt的单窗口会话，退出vi 将退出该�
 
 打开多个窗口后，可以使用快捷键C-a w列出当前所有窗口。如果使用文本终端，这个列表会列在屏幕左下角，如果使用X环境下的终端模拟器，这个列表会列在标题栏里。窗口列表的样子一般是这样：
 
-```
+```shell
 0$ bash  1-$ bash  2*$ bash  
 ```
 
@@ -125,7 +125,7 @@ Screen默认会为窗口命名为编号和窗口中运行程序名的组合，�
 
 你可以不中断screen窗口中程序的运行而暂时断开（detach）screen会话，并在随后时间重新连接（attach）该会话，重新控制各窗口中运行的程序。例如，我们打开一个screen窗口编辑/tmp/david.txt文件：
 
-```
+```shell
 [root@TS-DEV ~]# screen vi /tmp/david.txt
 ```
 
@@ -133,19 +133,16 @@ Screen默认会为窗口命名为编号和窗口中运行程序名的组合，�
 
 暂时中断会话
 
-!
 
 半个小时之后回来了，找到该screen会话：
 
-```
+```shell
 [root@TS-DEV ~]# screen -ls
 ```
 
-!
-
 重新连接会话：
 
-```
+```shell
 [root@TS-DEV ~]# screen -r 12865
 ```
 
@@ -153,13 +150,11 @@ Screen默认会为窗口命名为编号和窗口中运行程序名的组合，�
 
 当然，如果你在另一台机器上没有分离一个Screen会话，就无从恢复会话了。这时可以使用下面命令强制将这个会话从它所在的终端分离，转移到新的终端上来：
 
-!
 
  **清除dead 会话** 
 
 如果由于某种原因其中一个会话死掉了（例如人为杀掉该会话），这时screen -list会显示该会话为dead状态。使用screen -wipe命令清除该会话：
 
-!
 
  **关闭或杀死窗口** 
 
@@ -175,7 +170,7 @@ Screen默认会为窗口命名为编号和窗口中运行程序名的组合，�
 
 还有一种比较好玩的会话恢复，可以实现会话共享。假设你在和朋友在不同地点以相同用户登录一台机器，然后你创建一个screen会话，你朋友可以在他的终端上命令：
 
-```
+```shell
 [root@TS-DEV ~]# screen -x
 ```
 
@@ -191,7 +186,7 @@ Screen允许使用快捷键C-a s锁定会话。锁定以后，再进行任何输
 
 在Screen会话之外，可以通过screen命令操作一个Screen会话，这也为使用Screen作为脚本程序增加了便利。关于Screen在脚本中的应用超出了入门的范围，这里只看一个例子，体会一下在会话之外对Screen的操作：
 
-```
+```shell
 [root@TS-DEV ~]# screen -S sandy -X screen ping www.baidu.com
 ```
 
@@ -203,15 +198,12 @@ Screen允许使用快捷键C-a s锁定会话。锁定以后，再进行任何输
 
 可以用C-a X快捷键关闭当前焦点所在的屏幕区块，也可以用C-a Q关闭除当前区块之外其他的所有区块。关闭的区块中的窗口并不会关闭，还可以通过窗口切换找到它。
 
-!
-
  **C/P模式和操作** 
 
 screen的另一个很强大的功能就是可以在不同窗口之间进行复制粘贴了。使用快捷键C-a <Esc>或者C-a [可以进入copy/paste模式，这个模式下可以像在vi中一样移动光标，并可以使用空格键设置标记。其实在这个模式下有很多类似vi的操作，譬如使用/进行搜索，使用y快速标记一行，使用w快速标记一个单词等。关于C/P模式下的高级操作，其文档的这一部分有比较详细的说明。
 
 一般情况下，可以移动光标到指定位置，按下空格设置一个开头标记，然后移动光标到结尾位置，按下空格设置第二个标记，同时会将两个标记之间的部分储存在copy/paste buffer中，并退出copy/paste模式。在正常模式下，可以使用快捷键C-a ]将储存在buffer中的内容粘贴到当前窗口。
 
-!
 
  **更多screen功能** 
 

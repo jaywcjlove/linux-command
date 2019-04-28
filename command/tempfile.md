@@ -13,13 +13,13 @@ shell中给临时文件命名
 
 用tempfile命令为一个临时文件命名：
 
-```
+```shell
 temp_file_name=$(tempfile)
 ```
 
 用一个加带了随机数的文件名作为临时文件命名：
 
-```
+```shell
 temp_file_name="/tmp/file_$RANDOM"
 ```
 
@@ -29,7 +29,7 @@ $RANDOM是一个返回随机数的环境变量。
 
 如果没有tempfile命令的Linux发行版，也可以使用自己的临时文件名：
 
-```
+```shell
 temp_file_name="/tmp/file.$"
 ```
 

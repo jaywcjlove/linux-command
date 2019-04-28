@@ -9,13 +9,13 @@ rpmverify
 
 ### 语法  
 
-```
+```shell
 rpmverify(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 -Va：验证所有软件包；
 -V<软件包>f：验证指定软件包；
 --nomd5：不验证软件包的md5摘要。

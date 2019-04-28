@@ -9,13 +9,13 @@ MySQL服务器管理客户端
 
 ### 语法  
 
-```
+```shell
 mysqladmin(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -h：MySQL服务器主机名或ip地址；
 -u：连接MySQL服务器的用户名；
 -p：连接MySQL服务器的密码；
@@ -28,7 +28,7 @@ mysqladmin(选项)(参数)
 
  **mysqladmin支持下列命令：** 
 
-```
+```shell
 create databasename：创建一个新数据库；
 drop databasename：删除一个数据库及其所有表；
 extended-status：给出服务器的一个扩展状态消息；

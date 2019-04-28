@@ -7,7 +7,7 @@ lsb_release
 
 LSB是Linux Standard Base的缩写， **lsb_release命令** 用来显示LSB和特定版本的相关信息。如果使用该命令时不带参数，则默认加上-v参数。
 
-```
+```shell
 -v 显示版本信息。
 -i 显示发行版的id。
 -d 显示该发行版的描述信息。
@@ -25,7 +25,7 @@ LSB是Linux Standard Base的缩写， **lsb_release命令** 用来显示LSB和�
 
 redhat和fedora系统中，还支持一个参数：
 
-```
+```shell
 -s, --short  输出简短的描述信息。
 ```
 

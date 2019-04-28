@@ -9,13 +9,13 @@ service
 
 ### 语法  
 
-```
+```shell
 service(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -h：显示帮助信息；
 --status-all：显示所服务的状态。
 ```
@@ -29,7 +29,7 @@ service(选项)(参数)
 
 当修改了主机名、ip地址等信息时，经常需要把网络重启使之生效。
 
-```
+```shell
 service network status
 配置设备：
 lo eth0
@@ -46,7 +46,7 @@ service network restart
 
 重启mysql
 
-```
+```shell
 service mysqld status
 mysqld (pid 1638) 正在运行...
 

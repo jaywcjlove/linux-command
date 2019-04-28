@@ -9,13 +9,13 @@ uncompress
 
 ### 语法  
 
-```
+```shell
 uncompress(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -f：不提示用户，强制覆盖掉目标文件；
 -c：将结果送到标准输出，无文件被改变；
 -r：递归的操作方式。
@@ -29,13 +29,13 @@ uncompress(选项)(参数)
 
 先创建一个.Z压缩文件
 
-```
+```shell
 compress FileName
 ```
 
 解压：
 
-```
+```shell
 uncompress FileName.Z
 ```
 

@@ -9,18 +9,18 @@ pwunconv
 
 ### 语法  
 
-```
+```shell
 pwunconv
 ```
 
 ### 实例  
 
-```
-pwunconv     //关闭影子密码
-cat /etc/passwd | grep test     //发现密码已经在passwd文件中了
+```shell
+pwunconv     # 关闭影子密码
+cat /etc/passwd | grep test     # 发现密码已经在passwd文件中了
 test:$6$nYOEWamm$bz07nlv/.RgJufb3FAqJJeULfwybzgxmrWqbk7O4vI0KsT6N.ujrh6dDIUcAJdfjksyuyAFDPIngZeD3cgcf.0:3001:3001::/home/test:/bin/sh
 
-ls /etc/shadow     //查看影子文件，提示没有这个文件或目录
+ls /etc/shadow     # 查看影子文件，提示没有这个文件或目录
 ls: cannot access /etc/shadow: No such file or directory
 ```
 

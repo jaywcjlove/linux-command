@@ -9,13 +9,13 @@ insmod
 
 ### 语法  
 
-```
+```shell
 insmod(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -f：不检查目前kernel版本与模块编译时的kernel版本是否一致，强制将模块载入；
 -k：将模块设置为自动卸除；
 -m：输出模块的载入信息；
@@ -35,7 +35,7 @@ insmod(选项)(参数)
 
 加载RAID1阵列级别模块，如下所示：
 
-```
+```shell
 [root@localhost boot]# insmod /lib/modules/2.6.
 18-8.el5/kernel/drivers/md/raid1.ko  
 

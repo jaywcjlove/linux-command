@@ -11,13 +11,13 @@ gzip是在Linux系统中经常使用的一个对文件进行压缩和解压缩�
 
 ### 语法
 
-```
+```shell
 gzip(选项)(参数)
 ```
 
 ### 选项
 
-```
+```shell
 -a或——ascii：使用ASCII文字模式；
 -d或--decompress或----uncompress：解开压缩文件；
 -f或——force：强行压缩文件。不理会文件名称或硬连接是否存在以及该文件是否为符号连接；
@@ -46,31 +46,31 @@ gzip(选项)(参数)
 
 把test6目录下的每个文件压缩成.gz文件
 
-```
+```shell
 gzip *
 ```
 
 把上例中每个压缩的文件解压，并列出详细的信息
 
-```
+```shell
 gzip -dv *
 ```
 
 详细显示例1中每个压缩的文件的信息，并不解压
 
-```
+```shell
 gzip -l *
 ```
 
 压缩一个tar备份文件，此时压缩文件的扩展名为.tar.gz
 
-```
+```shell
 gzip -r log.tar
 ```
 
 递归的压缩目录
 
-```
+```shell
 gzip -rv test6
 ```
 
@@ -78,7 +78,7 @@ gzip -rv test6
 
 递归地解压目录
 
-```
+```shell
 gzip -dr test6
 ```
 

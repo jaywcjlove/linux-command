@@ -9,13 +9,13 @@ ipcs
 
 ### 语法  
 
-```
+```shell
 ipcs(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 -a：显示全部可显示的信息；
 -q：显示活动的消息队列信息；
 -m：显示活动的共享内存信息；
@@ -24,7 +24,7 @@ ipcs(选项)
 
 ### 实例  
 
-```
+```shell
 ipcs -a
 ------ Shared Memory Segments --------
 key        shmid      owner      perms      bytes      nattch     status      

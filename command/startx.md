@@ -9,7 +9,7 @@ startx
 
 ### 语法  
 
-```
+```shell
 startx(参数)
 ```
 
@@ -22,37 +22,37 @@ startx(参数)
 
 要在工作站上或 X 终端上启动 X 会话，请输入：
 
-```
+```shell
 startx
 ```
 
 要在工作站上强制启动 X 会话，请输入： 
 
-```
+```shell
 startx -w
 ```
 
 要为 X 终端启动 X 会话，并注销用户的 telnet 会话，请输入：
 
-```
+```shell
 startx; kill -9 $
 ```
 
 要使用 .xinitrc 脚本启动 X 会话，请输入：
 
-```
+```shell
 startx -x .xinitrc
 ```
 
 要使用 mwm 窗口管理器启动 X 会话，请输入：
 
-```
+```shell
 startx -m mwm
 ```
 
 但是，如果找到启动脚本文件，则忽略`-w`选项。在启动脚本中，启动窗口管理器、装入X资源以及产生X客户机是用户的责任。以下是.xsession脚本的一个示例。
 
-```
+```shell
 #!/bin/csh
  (mwm &)
  xrdb -load .Xdefaults
@@ -71,7 +71,7 @@ startx -m mwm
 
 以下是启动X会话一贯使用的文件名。
 
-```
+```shell
 $HOME/.xerrors 其中，startx 用来重定向错误消息。在缺省情况下，startx 将错误重定向至用户主目录中的 .xerrors 文件中。
 $HOME/.Xinit,  
 $HOME/.xinit,  

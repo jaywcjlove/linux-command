@@ -9,13 +9,13 @@ slabtop
 
 ### 语法  
 
-```
+```shell
 slabtop(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 --delay=n, -d n：每n秒更新一次显示的信息，默认是每3秒；
 --sort=S, -s S：指定排序标准进行排序（排序标准，参照下面或者man手册）；
 --once, -o：显示一次后退出；
@@ -46,7 +46,7 @@ Linux 所使用的 slab 分配器的基础是 Jeff Bonwick 为 SunOS 操作系�
 
 ### 实例  
 
-```
+```shell
 slabtop
 
  Active / Total Objects (% used)    : 897519 / 1245930 (72.0%)

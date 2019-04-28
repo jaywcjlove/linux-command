@@ -13,19 +13,19 @@ VirtualBox是一款功能强大的x86虚拟机软件，它不仅具有丰富的�
 
  **在Ubuntu中安装vdfuse，打开终端，输入：** 
 
-```
+```shell
 sudo apt-get install virtualbox-fuse
 ```
 
 ### 语法  
 
-```
+```shell
 vdfuse [options] -f image-file mountpoint
 ```
 
 ### 选项  
 
-```
+```shell
 -h 帮助
 -r 只读
 -t 类型 (VDI, VMDK, VHD, or raw; default: auto)
@@ -43,13 +43,13 @@ vdfuse [options] -f image-file mountpoint
 
 使用如下如下语句挂载.vdi文件：
 
-```
+```shell
 sudo vdfuse -f /path/to/file.vdi /path/to/mountpoint
 ```
 
 `/path/to/mountpoint`应该包含如下文件EntireDisk、Partition1等，如果只有一个文件，你可能需要这样挂载：
 
-```
+```shell
 mount /path/to/mountpoint/Partition1 /path/to/someother/mountpoint
 ```
 

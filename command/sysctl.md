@@ -9,13 +9,13 @@ sysctl
 
 ### 语法  
 
-```
+```shell
 sysctl(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -n：打印值时不打印关键字；
 -e：忽略未知关键字错误；
 -N：仅打印名称；
@@ -41,7 +41,7 @@ sysctl kern.maxproc kern.maxproc: 1044
 
 要设置一个指定的变量，直接用`variable=value`这样的语法：
 
-```
+```shell
 sysctl kern.maxfiles=5000
 kern.maxfiles: 2088 -> 5000
 ```
@@ -50,7 +50,7 @@ kern.maxfiles: 2088 -> 5000
 
 sysctl变量的设置通常是字符串、数字或者布尔型。（布尔型用 1 来表示'yes'，用 0 来表示'no'）。
 
-```
+```shell
 sysctl -w kernel.sysrq=0
 sysctl -w kernel.core_uses_pid=1
 sysctl -w net.ipv4.conf.default.accept_redirects=0
@@ -71,7 +71,7 @@ sysctl -w net.ipv4.tcp_sack=1
 
 如果该文件为空，则输入以下内容，否则请根据情况自己做调整：
 
-```
+```shell
 # Controls source route verification
 # Default should work for all interfaces
 net.ipv4.conf.default.rp_filter = 1
@@ -173,14 +173,14 @@ net.core.optmem_max = 40960
 
 如果希望屏蔽别人 ping 你的主机，则加入以下代码：
 
-```
+```shell
 # Disable ping requests
 net.ipv4.icmp_echo_ignore_all = 1
 ```
 
 编辑完成后，请执行以下命令使变动立即生效：
 
-```
+```shell
 /sbin/sysctl -p
 /sbin/sysctl -w net.ipv4.route.flush=1
 ```

@@ -11,13 +11,13 @@ lsof
 
 ### 语法
 
-```
+```shell
 lsof(选项)
 ```
 
 ### 选项
 
-```
+```shell
 -a：列出打开文件存在的进程；
 -c<进程名>：列出指定进程所打开的文件；
 -g：列出GID号进程详情；
@@ -34,7 +34,7 @@ lsof(选项)
 
 ### 实例
 
-```
+```shell
 lsof
 command     PID USER   FD      type             DEVICE     SIZE       NODE NAME
 init          1 root  cwd       DIR                8,2     4096          2 /
@@ -129,13 +129,13 @@ events/1      7 root  cwd       DIR                8,2     4096          2 /
 
 列出指定进程号所打开的文件:
 
-```
+```shell
 lsof -p $pid
 ```
 
 获取端口对应的进程ID=>pid
 
-```
+```shell
 lsof -i:9981 -P -t -sTCP:LISTEN
 ```
 

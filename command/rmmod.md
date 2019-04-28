@@ -9,13 +9,13 @@ rmmod
 
 ### 语法  
 
-```
+```shell
 rmmod(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -v：显示指令执行的详细信息；
 -f：强制移除模块，使用此选项比较危险；
 -w：等待着，直到模块能够被除时在移除模块；
@@ -30,7 +30,7 @@ rmmod(选项)(参数)
 
 用rmmod命令主要用于卸载正在使用的Linux内核模块，与`modprobe -r`命令相似，如下所示：
 
-```
+```shell
 [root@localhost boot]# lsmod | grep raid1
 raid1                  25153  0
 

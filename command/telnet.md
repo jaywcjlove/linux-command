@@ -9,13 +9,13 @@ telnet
 
 ### 语法
 
-```
+```shell
 telnet(选项)(参数)
 ```
 
 ### 选项
 
-```
+```shell
 -8：允许使用8位字符资料，包括输入与输出；
 -a：尝试自动登入远端系统；
 -b<主机别名>：使用别名指定远端主机名称；
@@ -43,7 +43,7 @@ telnet(选项)(参数)
 
 ### 实例
 
-```
+```shell
 $ telnet 192.168.2.10
 Trying 192.168.2.10...
 Connected to 192.168.2.10 (192.168.2.10).
@@ -58,7 +58,7 @@ Login incorrect
 
 一般情况下不允许root从远程登录，可以先用普通账号登录，然后再用su -切到root用户。
 
-```
+```shell
 $ telnet 192.168.188.132
 Trying 192.168.188.132...
 telnet: connect to address 192.168.188.132: Connection refused
@@ -75,13 +75,13 @@ telnet: Unable to connect to remote host
 
 **启动telnet服务**
 
-```
+```shell
 service xinetd restart
 ```
 
 配置参数，通常的配置如下：
 
-```
+```shell
 service telnet
 {
     disable = no #启用
@@ -116,13 +116,13 @@ bind = 192.168.0.2
 
 配置端口，修改services文件：
 
-```
+```shell
 # vi /etc/services
 ```
 
 找到以下两句
 
-```
+```shell
 telnet 23/tcp
 telnet 23/udp
 ```

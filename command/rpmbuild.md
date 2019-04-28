@@ -9,13 +9,13 @@ rpmbuild
 
 ### 语法  
 
-```
+```shell
 rpmbuild(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 --initdb：初始化RPM数据库；
 --rebuilddb：从已安装的包头文件，方向重建RPM数据库；
 -ba：创建二进制和源代码包；
@@ -25,7 +25,7 @@ rpmbuild(选项)
 
 ### 实例  
 
-```
+```shell
 rpmbuild -ba 'spec文件路径'
 ```
 

@@ -9,13 +9,13 @@ w
 
 ### 语法  
 
-```
+```shell
 w(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
  -h, --no-header     不打印头信息；
  -u, --no-current    当显示当前进程和cpu时间时忽略用户名；
  -s, --short         使用短输出格式；
@@ -33,7 +33,7 @@ w(选项)(参数)
 
 ### 实例  
 
-```
+```shell
 w
  20:39:37 up 136 days,  3:58,  1 user,  load average: 0.00, 0.00, 0.00
 USER     TTY      FROM              login@   IDLE   JCPU   PCPU WHAT

@@ -9,7 +9,7 @@ grpconv
 
 ### 语法  
 
-```
+```shell
 grpconv
 ```
 
@@ -17,21 +17,21 @@ grpconv
 
 设置cdy组密码
 
-```
+```shell
 groupmod --password 123456 cdy
 cat /etc/group | grep cdy
-cdy:123456:1000:     //看出密码是123456
+cdy:123456:1000:     # 看出密码是123456
 ```
 
 启动影子系统
 
-```
+```shell
 grpconv
 cat /etc/group |  grep cdy
-cdy:x:1000:      //看出密码段已经被x替代
+cdy:x:1000:      # 看出密码段已经被x替代
 
 cat /etc/gshadow | grep cdy
-cdy:123456::      //已经移到影子文件了
+cdy:123456::      # 已经移到影子文件了
 ```
 
 注：gshadow, shadow只有root权限才可以查看。

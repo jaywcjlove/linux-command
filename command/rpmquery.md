@@ -9,13 +9,13 @@ rpmquery
 
 ### 语法  
 
-```
+```shell
 rpmquery(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 -qf：查询指定的文件所属的软件包；
 -q：查询指定的软件包是否被安装；
 -qc：查询软件包中的配置文件；
@@ -27,7 +27,7 @@ rpmquery(选项)
 
 使用rpmquery命令查询指定文件所属的软件包：
 
-```
+```shell
 [root@localhost ~]# rpmquery -qf /usr/bin/htpasswd
 httpd-2.2.3-81.el5.centos
 ```

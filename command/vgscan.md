@@ -9,13 +9,13 @@ vgscan
 
 ### 语法  
 
-```
+```shell
 vgscan(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 -d：调试模式；
 --ignorerlockingfailure：忽略锁定失败的错误。
 ```
@@ -24,13 +24,13 @@ vgscan(选项)
 
 使用vgscan命令扫描系统中所有的卷组。在命令行中输入下面的命令：
 
-```
+```shell
 [root@localhost ~]# vgscan     #扫描并显示LVM卷组列表
 ```
 
 输出信息如下：
 
-```
+```shell
 Found volume group "vg2000" using metadata type lvm2  
 Found volume group "vg1000" using metadata type lvm2 
 ```

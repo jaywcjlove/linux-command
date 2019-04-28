@@ -11,13 +11,13 @@ lastlog文件在每次有用户登录时被查询。可以使用lastlog命令检
 
 ### 语法  
 
-```
+```shell
 lastlog(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 -b<天数>：显示指定天数前的登录信息；
 -h：显示召集令的帮助信息；
 -t<天数>：显示指定天数以来的登录信息；
@@ -26,7 +26,7 @@ lastlog(选项)
 
 ### 实例  
 
-```
+```shell
 lastlog
 Username         Port     From             Latest
 root             pts/0    221.6.45.34      Tue Dec 17 09:40:48 +0800 2013

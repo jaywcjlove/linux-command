@@ -9,13 +9,13 @@ vgdisplay
 
 ### 语法  
 
-```
+```shell
 vgdisplay(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -A：仅显示活动卷组的属性；
 -s：使用短格式输出的信息。
 ```
@@ -28,13 +28,13 @@ vgdisplay(选项)(参数)
 
 使用vgdisplay命令显示存在的卷组"vg1000"的属性。在命令行中输入下面的命令：
 
-```
+```shell
 [root@localhost ~]# vgdisplay vg1000     #显示卷组"vg1000"的属性
 ```
 
 输出信息如下：
 
-```
+```shell
   --- Volume group ---  
   VG Name               vg1000  
 ......省略部分输出内容......  

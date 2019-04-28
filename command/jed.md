@@ -9,13 +9,13 @@ jed
 
 ### 语法  
 
-```
+```shell
 jed(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -2：显示上下两个编辑区；
 -batch：以批处理模式来执行；
 -f<函数>：执行Slang函数；
@@ -33,7 +33,7 @@ jed(选项)(参数)
 
 以上下两个编辑区的方式，开启 mysource.c 原始代码文件。若要切换编辑区，可利用稍后介绍的命令，开启操作命令，开启功能表后，按 3 ，再按 2 ，即可切换编辑区：
 
-```
+```shell
 jed -2 mysource.c
 ```
 
@@ -41,7 +41,7 @@ jed -2 mysource.c
 
 有些Emacs的组合键和jed菜单组合键冲突例如Alt+f在Emacs中应该是“前进一个单词”，而在jed中则是“文件菜单” 想使用Emacs风格的组合键的话，编辑`/usr/share/jed/lib/menus.slc`找到如下段落：
 
-```
+```shell
 unsetsetkey ("selectmenubar", "\em");
 unsetsetkey ("@\emF", "\ef");
 unsetsetkey ("@\emE", "\ee");
@@ -59,7 +59,7 @@ unset_setkey ("@\emy", "\ey");
 
  **文件** 
 
-```
+```shell
 /usr/share/jed/lib/*.sl 这是默认的运行jed slang的文件。
 /usr/share/jed/lib/site.sl 这是默认的启动文件。
 /etc/jed.rc 这是全局系统配置文件。

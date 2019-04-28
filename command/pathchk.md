@@ -9,13 +9,13 @@ pathchk
 
 ### 语法  
 
-```
+```shell
 pathchk(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -p：检查大多数的POSIX系统；
 -P：检查空名字和“-”开头的文件；
 --portability：检查所有的POSIX系统，等同于“-P-p”选项；

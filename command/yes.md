@@ -9,7 +9,7 @@ yes
 
 ### 语法  
 
-```
+```shell
 yes(参数)
 ```
 
@@ -19,7 +19,7 @@ yes(参数)
 
 ### 实例  
 
-```
+```shell
 [root@localhost ~]# yes testline
 
 testline

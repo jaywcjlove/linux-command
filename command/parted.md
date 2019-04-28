@@ -9,13 +9,13 @@ parted
 
 ### 语法  
 
-```
+```shellshell
 parted(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shellshell
 -h：显示帮助信息；
 -i：交互式模式；
 -s：脚本模式，不提示用户；
@@ -40,7 +40,7 @@ parted(选项)(参数)
 *   绿色代表你需要使用的命令。
 *   红色代表你需要注意到的输出信息，在后续需要使用。
 
-```
+```shell
 [root@localhost ~]# fdisk -l
 Disk /dev/sda: 35.8 GB, 35862976512 bytes
 255 heads, 63 sectors/track, 4360 cylinders
@@ -55,7 +55,7 @@ Units = cylinders of 16065 * 512 = 8225280 bytes
 Disk /dev/sdb doesn't contain a valid partition table
 ```
 
-```
+```shell
 [root@localhost ~]# parted /dev/sdb
 GNU Parted Copyright (C) 1998 - 2004 free Software Foundation, Inc.
 This program is free software, covered by the GNU General Public License.
@@ -75,12 +75,11 @@ Minor   起始点       终止点 文件系统   名称                 标志
 Minor   起始点       终止点 文件系统   名称                 标志
 1          0.017   2047.983
 (parted)quit
-
 ```
 
 如果必要，不要忘记更新`/etc/fstab`。
 
-```
+```shell
 [root@localhost ~]# fdisk -l
 Disk /dev/sda: 35.8 GB, 35862976512 bytes
 255 heads, 63 sectors/track, 4360 cylinders
@@ -102,7 +101,7 @@ Partition 1 has different physical/logical endings:
      phys=(1023, 254, 63) logical=(261, 21, 16)
 ```
 
-```
+```shell
 [root@localhost ~]# mkfs.ext3 /dev/sdb1
 mke2fs 1.35 (28-Feb-2004)
 Filesystem label=
@@ -125,7 +124,7 @@ This filesystem will be automatically checked every 28 mounts or
 180 days, whichever comes first.  Use tune2fs -c or -i to override.
 ```
 
-```
+```shell
 [root@localhost ~]# mount /dev/sdb1 /mnt
 [root@localhost ~]# df -h
 Filesystem            容量  已用 可用 已用% 挂载点

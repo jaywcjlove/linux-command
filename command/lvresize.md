@@ -9,13 +9,13 @@ lvresize
 
 ### 语法  
 
-```
+```shell
 lvresize(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -L：指定逻辑卷的大小，单位为“kKmMgGtT”字节；
 -l：指定逻辑卷的大小（LE数）。
 ```
@@ -28,13 +28,13 @@ lvresize(选项)(参数)
 
 使用lvresize命令调整最大的逻辑卷大小。在命令行中输入下面的命令：
 
-```
+```shell
 [root@localhost ~]# lvresize -L +200M /dev/vg1000/lvol0     #将逻辑卷空间增加200M
 ```
 
 输出信息如下：
 
-```
+```shell
 Extending logical volume lvol0 to 280.00 MB
 Logical volume lvol0 successfully resized
 ```

@@ -9,13 +9,13 @@ uname
 
 ### 语法
 
-```
+```shell
 uname(选项)
 ```
 
 ### 选项
 
-```
+```shell
 -a或--all：显示全部的信息；
 -m或--machine：显示电脑类型；
 -n或-nodename：显示在网络上的主机名称；
@@ -33,7 +33,7 @@ uname(选项)
 
 使用uname命令查看全部信息：
 
-```
+```shell
 [root@localhost ~]# uname    #单独使用uname命令时相当于uname -s
 Linux
 

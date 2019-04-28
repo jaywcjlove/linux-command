@@ -9,13 +9,13 @@ tac
 
 ### 语法  
 
-```
+```shell
 tac(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -a或——append：将内容追加到文件的末尾；
 -i或——ignore-interrupts：忽略中断信号。
 ```

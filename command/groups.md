@@ -9,13 +9,13 @@ groups
 
 ### 语法  
 
-```
+```shell
 groups(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -help：显示命令的帮助信息；
 --version：显示命令的版本信息。
 ```
@@ -28,7 +28,7 @@ groups(选项)(参数)
 
 显示linux用户所属的组
 
-```
+```shell
 groups linux
 linux : linux adm dialout cdrom plugdev lpadmin admin sambashare
 ```

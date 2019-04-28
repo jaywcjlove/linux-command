@@ -13,7 +13,7 @@ pstack
 
 pstree以树结构显示进程
 
-```
+```shell
 pstree -p work | grep ad
 sshd(22669)---bash(22670)---ad_preprocess(4551)-+-{ad_preprocess}(4552)
                                                 |-{ad_preprocess}(4553)
@@ -25,7 +25,7 @@ sshd(22669)---bash(22670)---ad_preprocess(4551)-+-{ad_preprocess}(4552)
 
 work为工作用户，-p为显示进程识别码，ad_preprocess共启动了6个子线程，加上主线程共7个线程。
 
-```
+```shell
 ps -Lf 4551
 UID        PID  PPID   LWP  C NLWP STIME TTY      stat   time CMD
 work      4551 22670  4551  2    7 16:30 pts/2    Sl+    0:02 ./ad_preprocess
@@ -41,7 +41,7 @@ work      4551 22670  4557  0    7 16:30 pts/2    Sl+    0:00 ./ad_preprocess
 
 pstack显示每个进程的栈跟踪：
 
-```
+```shell
 pstack 4551
 Thread 7 (Thread 1084229984 (LWP 4552)):
 #0  0x000000302afc63dc in epoll_wait () from /lib64/tls/libc.so.6

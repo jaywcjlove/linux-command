@@ -9,13 +9,13 @@ logger
 
 ### 语法  
 
-```
+```shell
 logger [options] [message]
 ```
 
 ### 选项  
 
-```
+```shell
  -T, --tcp             使用流连接(TCP)
  -d, --udp             使用数据报(UDP)
  -i, --id              逐行记录每一次logger的进程ID
@@ -34,7 +34,7 @@ logger [options] [message]
 
 ### 例子
 
-```
+```shell
 logger -p syslog.info "backup.sh is starting"
 ```
 

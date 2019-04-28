@@ -9,13 +9,13 @@ pvs
 
 ### 语法  
 
-```
+```shell
 pvs(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 --noheadings：不输出标题头；
 --nosuffix：不输出空间大小的单位。
 ```
@@ -28,13 +28,13 @@ pvs(选项)(参数)
 
 使用pvs命令显示系统中所有物理卷的信息报表。在命令行中输入下面的命令：
 
-```
-pvs                    #输出物理卷信息报表 
+```shell
+pvs # 输出物理卷信息报表 
 ```
 
 输出信息如下：
 
-```
+```shell
 PV         VG     fmt  Attr PSize   PFree  
 /dev/sdb1  vg1000 lvm2 --   100.00M 100.00M  
 /dev/sdb2         lvm2 --   101.98M 101.98M

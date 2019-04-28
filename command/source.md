@@ -9,7 +9,7 @@ source
 
 ### 语法  
 
-```
+```shell
 source [文件名] [参数]
 ```
 
@@ -17,7 +17,7 @@ source [文件名] [参数]
 
 读取和执行/root/.bash_profile文件。
 
-```bash
+```shell
 [root@localhost ~]# source ~/.bash_profile
 ```
 

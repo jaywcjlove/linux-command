@@ -9,13 +9,13 @@ logname
 
 ### 语法  
 
-```
+```shell
 logname(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 --help：在线帮助；
 --vesion：显示版本信息。
 ```

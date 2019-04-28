@@ -9,13 +9,13 @@ watch
 
 ### 语法
 
-```
+```shell
 watch(选项)(参数)
 ```
 
 ### 选项
 
-```bash
+```shell
 -n # 或--interval  watch缺省每2秒运行一下程序，可以用-n或-interval来指定间隔的时间。
 -d # 或--differences  用-d或--differences 选项watch 会高亮显示变化的区域。 而-d=cumulative选项会把变动过的地方(不管最近的那次有没有变动)都高亮显示出来。
 -t # 或-no-title  会关闭watch命令在顶部的时间间隔,命令，当前时间的输出。
@@ -28,7 +28,7 @@ watch(选项)(参数)
 
 ### 实例
 
-```bash
+```shell
 watch -n 1 -d netstat -ant       # 命令：每隔一秒高亮显示网络链接数的变化情况
 watch -n 1 -d 'pstree|grep http' # 每隔一秒高亮显示http链接数的变化情况。 后面接的命令若带有管道符，需要加''将命令区域归整。
 watch 'netstat -an | grep:21 | \ grep<模拟攻击客户机的IP>| wc -l' # 实时查看模拟攻击客户机建立起来的连接数

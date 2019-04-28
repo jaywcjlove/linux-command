@@ -9,13 +9,13 @@ swapoff
 
 ### 语法  
 
-```
+```shell
 swapoff(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -a：关闭配置文件“/etc/fstab”中所有的交换空间。
 ```
 
@@ -27,7 +27,7 @@ swapoff(选项)(参数)
 
 关闭交换分区
 
-```
+```shell
 swapoff /dev/sda2
 ```
 

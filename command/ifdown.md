@@ -9,7 +9,7 @@ ifdown
 
 ### 语法  
 
-```
+```shell
 ifdown(参数)
 ```
 
@@ -19,7 +19,7 @@ ifdown(参数)
 
 ### 实例  
 
-```
+```shell
 ifdown eth0  #禁用eth0
 ```
 

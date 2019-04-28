@@ -9,13 +9,13 @@ poweroff
 
 ### 语法  
 
-```
+```shel
 poweroff [选项]
 ```
 
 ### 选项  
 
-```
+```shel
 -n 关闭之前不同步
 -p 当被称为halt时关闭电源
 -v 增加输出，包括消息
@@ -28,7 +28,7 @@ poweroff [选项]
 
 关闭Linux系统。
 
-```bash
+```shell
 [root@localhost ~]# poweroff
 ```
 

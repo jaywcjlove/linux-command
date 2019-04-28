@@ -9,13 +9,13 @@ setpci
 
 ### 语法  
 
-```
+```shell
 setpci(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -v：显示指令执行的细节信息；
 -f：当没有任何操作需要完成时，不显示任何信息；
 -D：测试模式，并不真正将配置信息写入寄存器；
@@ -34,7 +34,7 @@ Linux下调节笔记本屏幕亮度方法：
 
 首先进入终端输入lspci命令，列出各种设备的地址：
 
-```
+```shell
 lspci
 00:00.0 host bridge: Intel Corporation Mobile 945GM/PM/GMS, 943/940GML and 945GT Express Memory Controller Hub (rev 03)
 00:02.0 VGA compatible controller: Intel Corporation Mobile 945GM/GMS, 943/940GML Express Integrated Graphics Controller (rev 03)
@@ -47,7 +47,7 @@ lspci
 
 发现00:02.0是VGA设备，于是我们修改它的属性：
 
-```
+```shell
 sudo setpci -s 00:02.0 F4.B=FF
 ```
 
@@ -62,7 +62,7 @@ sudo setpci -s 00:02.0 F4.B=FF
 
 我这里00是最暗，FF是最亮，不同的电脑可能不一样。比如说我嫌FF太闪眼了，我就可以：
 
-```
+```shell
 sudo setpci -s 00:02.0 F4.B=CC
 ```
 

@@ -9,7 +9,7 @@ groupdel
 
 ### 语法  
 
-```
+```shell
 groupdel(参数)
 ```
 
@@ -19,7 +19,7 @@ groupdel(参数)
 
 ### 实例  
 
-```
+```shell
 groupadd damon  //创建damon工作组
 groupdel damon  //删除这个工作组
 ```

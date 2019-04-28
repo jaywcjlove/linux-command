@@ -9,20 +9,20 @@ pwconv
 
 ### 语法  
 
-```
+```shell
 pwconv
 ```
 
 ### 实例  
 
-```
+```shell
 cat /etc/passwd | grep test
 test:x:3001:3001::/home/test:/bin/sh
 ```
 
 此时可以发现密码段是x
 
-```
+```shell
 cat /etc/shadow | grep test
 test:$6$nYOEWamm$bz07nlv/.RgJufb3FAqJJeULfwybzgxmrWqbk7O4vI0KsT6N.ujrh6dDIUcAJdfjksyuyAFDPIngZeD3cgcf.0:15022:0:99999:7:::
 ```

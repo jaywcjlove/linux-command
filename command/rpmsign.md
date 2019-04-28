@@ -9,13 +9,13 @@ rpmsign
 
 ### 语法  
 
-```
+```shell
 rpmsign(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 --addsign：为自动软件包添加签名；
 --checksig：验证软件包签名；
 --delsign：删除软件包签名；

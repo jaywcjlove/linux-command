@@ -9,7 +9,7 @@ ispell
 
 ### 语法  
 
-```
+```shell
 ispell(参数)
 ```
 

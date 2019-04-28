@@ -13,39 +13,39 @@ speedtest-cli需要在python 2.4-3.4的环境下，安装方法都很简单，�
 
  **pip方式** 
 
-```
+```shell
 ＃ pip install speedtest－cli
 ```
 
  **easy_install方式** 
 
-```
+```shell
 ＃ easy_install speedtest-cli
 ```
 
  **github＋pip方式** 
 
-```
+```shell
 ＃ pip install git+https://github.com/sivel/speedtest-cli.git
 ```
 
 或者
 
-```
+```shell
 ＃ git clone https://github.com/sivel/speedtest-cli.git
 ＃ python speedtest-cli/setup.py install
 ```
 
  **下载脚本方式** 
 
-```
+```shell
 ＃ wget -O speedtest-cli https://raw.github.com/sivel/spe ... er/speedtest_cli.py
 ＃ chmod +x speedtest-cli
 ```
 
 或者
 
-```
+```shell
 ＃ curl -o speedtest-cli https://raw.github.com/sivel/spe ... er/speedtest_cli.py
 ＃ chmod +x speedtest-cli
 ```
@@ -54,7 +54,7 @@ speedtest-cli需要在python 2.4-3.4的环境下，安装方法都很简单，�
 
 ### 用法  
 
-```
+```shell
 -h, --help       show this help message and exit
 --share          分享你的网速，该命令会在speedtest网站上生成网速测试结果的图片。
 --simple         Suppress verbose output, only show basic information
@@ -69,7 +69,7 @@ speedtest-cli需要在python 2.4-3.4的环境下，安装方法都很简单，�
 
 列出所有在中国的测试服务器：
 
-```
+```shell
 [root@li229-122 ~]# speedtest-cli --list | grep China
 1185) China Unicom (Changchun, China) [10534.35 km]
 3784) China Mobile (Urumqi, China) [10581.15 km]
@@ -92,11 +92,11 @@ speedtest-cli需要在python 2.4-3.4的环境下，安装方法都很简单，�
 
  **结果解释** 
 
-```
+```shell
 3633) China Telecom (Shanghai, China) [11983.37 km]
 ```
 
-```
+```shell
 3633: 服务器id
 china telecom：isp，这里是中国电信
 shanghai,china ：服务器所在地址
@@ -105,7 +105,7 @@ shanghai,china ：服务器所在地址
 
  **外网速度测试** 
 
-```
+```shell
 [root@li229-122 ~]# speedtest-cli --server=3633 --share
 Retrieving speedtest.net configuration...
 Retrieving speedtest.net server list...

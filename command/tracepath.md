@@ -9,7 +9,7 @@ tracepath
 
 ### 语法  
 
-```
+```shell
 tracepath(参数)
 ```
 
@@ -20,7 +20,7 @@ tracepath(参数)
 
 ### 实例  
 
-```
+```shell
 tracepath www.58.com
  1:  192.168.2.10 (192.168.2.10)                           20.150ms pmtu 1500
  1:  unknown (192.168.2.1)                                  9.343ms

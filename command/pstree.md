@@ -9,13 +9,13 @@ pstree
 
 ### 语法  
 
-```
+```shell
 pstree(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 -a：显示每个程序的完整指令，包含路径，参数或是常驻服务的标示；
 -c：不使用精简标示法；
 -G：使用VT100终端机的列绘图字符；
@@ -33,19 +33,19 @@ pstree(选项)
 
 显示当前所有进程的进程号和进程id
 
-```
+```shell
 pstree -p
 ```
 
 显示所有进程的所有详细信息，遇到相同的进程名可以压缩显示。
 
-```bash
+```shellbash
 pstree  -a
 ```
 
 获取 SSH 会话的 PID
 
-```
+```shell
 pstree -p | grep ssh
 
 #  |-sshd(1221)-+-sshd(2768)---bash(2770)-+-grep(2810)

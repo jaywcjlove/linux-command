@@ -9,7 +9,7 @@ kernelversion
 
 ### 语法  
 
-```
+```shell
 kernelversion
 ```
 

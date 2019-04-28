@@ -18,13 +18,13 @@ more
 
 ### 语法  
 
-```
+```shell
 more(语法)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -<数字>：指定每屏显示的行数；
 -d：显示“[press space to continue,'q' to quit.]”和“[Press 'h' for instructions]”；
 -c：不进行滚屏操作。每次刷新这个屏幕；
@@ -41,13 +41,13 @@ more(语法)(参数)
 
 显示文件file的内容，但在显示之前先清屏，并且在屏幕的最下方显示完核的百分比。
 
-```
+```shell
 more -dc file
 ```
 
 显示文件file的内容，每10行显示一次，而且在显示之前先清屏。
 
-```
+```shell
 more -c -10 file
 ```
 

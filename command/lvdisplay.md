@@ -9,7 +9,7 @@ lvdisplay
 
 ### 语法  
 
-```
+```shell
 lvdisplay(参数)
 ```
 
@@ -21,13 +21,13 @@ lvdisplay(参数)
 
 使用lvdisplay命令显示指定逻辑卷的属性。在命令行中输入下面的命令：
 
-```
+```shell
 [root@localhost ~]# lvdisplay /dev/vg1000/lvol0     #显示逻辑卷属性
 ```
 
 输出信息如下：
 
-```
+```shell
   --- Logical volume ---  
   LV Name                /dev/vg1000/lvol0  
 ......省略部分输出内容......  

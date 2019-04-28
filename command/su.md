@@ -9,13 +9,13 @@ su
 
 ### 语法  
 
-```
+```shell
 su(选项)(参数)
 ```
 
 ### 选项  
 
-```
+```shell
 -c<指令>或--command=<指令>：执行完指定的指令后，即恢复原来的身份；
 -f或——fast：适用于csh与tsch，使shell不用去读取启动文件；
 -l或——login：改变身份时，也同时变更工作目录，以及HOME,SHELL,USER,logname。此外，也会变更PATH变量；
@@ -33,19 +33,19 @@ su(选项)(参数)
 
 变更帐号为root并在执行ls指令后退出变回原使用者：
 
-```
+```shell
 su -c ls root
 ```
 
 变更帐号为root并传入`-f`选项给新执行的shell：
 
-```
+```shell
 su root -f
 ```
 
 变更帐号为test并改变工作目录至test的家目录：
 
-```
+```shell
 su -test
 ```
 

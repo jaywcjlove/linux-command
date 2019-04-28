@@ -17,18 +17,17 @@ syslog
 
 要向syslog文件/var/log/messages中记录日志信息：
 
-```
+```shell
 logger this is a test log line
 
 输出：
 tail -n 1 messages
 Jan  5 10:07:03 localhost root: this is a test log line
-
 ```
 
 如果要记录特定的标记（tag）可以使用：
 
-```
+```shell
 logger -t TAG this is a test log line
 
 输出：

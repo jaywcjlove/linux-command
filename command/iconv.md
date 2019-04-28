@@ -9,13 +9,13 @@ iconv
 
 ### 语法  
 
-```
+```shell
 iconv -f encoding [-t encoding] [inputfile]... 
 ```
 
 ### 选项  
 
-```
+```shell
 -f encoding :把字符从encoding编码开始转换。 
 -t encoding :把字符转换到encoding编码。 
 -l :列出已知的编码字符集合 
@@ -30,13 +30,13 @@ iconv -f encoding [-t encoding] [inputfile]...
 
 列出当前支持的字符编码： 
 
-```
+```shell
 iconv -l 
 ```
 
 将文件file1转码，转后文件输出到fil2中： 
 
-```
+```shell
 iconv file1 -f EUC-JP-MS -t UTF-8 -o file2 
 ```
 

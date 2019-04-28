@@ -9,13 +9,13 @@ logwatch
 
 ### 语法  
 
-```
+```shell
 logwatch(选项)
 ```
 
 ### 选项  
 
-```
+```shell
 --detail<报告详细程度>：指定日志报告的详细程度；
 --logfile<日志文件>：仅处理指定的日志文件；
 --service<服务名>：仅处理指定服务的日志文件；
@@ -35,19 +35,19 @@ logwatch(选项)
 
 检查你的主机上是否已经存在Logwatch（Redhat默认已经安装了Logwatch，不过版本比较旧）：
 
-```
+```shell
 rpm -qa logwatch
 ```
 
 如果主机上没有logwatch，则执行：
 
-```
+```shell
 rpm -Ivh logwatch***.rpm
 ```
 
 如果有老版本的logwatch，则执行：
 
-```
+```shell
 rpm -Uvh logwatch***.rpm
 ```
 
@@ -62,7 +62,7 @@ rpm -Uvh logwatch***.rpm
 
 如果没有设置logwatch.conf也没关系，可以直接在命令行下设置。
 
-```
+```shell
 logwatch --detail High --Service All --range All --print    基本就可以显示出所有日志的情况了
 logwatch --service sshd --detail High                       只看sshd的日志情况
 ```

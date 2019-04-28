@@ -11,13 +11,13 @@ whatis命令在用`catman -w`命令创建的数据库中查找command参数指�
 
 ### 语法  
 
-```
+```shell
 whatis
 ```
 
 ### 实例  
 
-```
+```shell
 [root@localhost ~]# whatis ls
 ls                   (1)  - list directory contents
 ls                   (1p)  - list directory contents
