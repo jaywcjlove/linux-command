@@ -102,14 +102,15 @@
         }
       }
       resultData.sort(function (a, b) {
-        // if (a.nIdx === -1 || b.nIdx === -1) {
-        //   return 1;
-        // }
         return a.nIdx - b.nIdx
       }).sort(function(a, b) {
         return a.n.length - b.n.length;
+      }).sort(function (a, b) {
+        if (b.n.indexOf(self.query) < 0) {
+          return -1;
+        }
+        return a.n.indexOf(self.query) - b.n.indexOf(self.query);
       });
-      console.log('resultData:', resultData)
       resultData = resultData.slice(0, show_list_count);
 
       for (i = 0; i < resultData.length; i++) {
