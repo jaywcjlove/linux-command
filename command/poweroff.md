@@ -9,13 +9,13 @@ poweroff
 
 ### 语法  
 
-```shel
+```shell
 poweroff [选项]
 ```
 
 ### 选项  
 
-```shel
+```shell
 -n 关闭之前不同步
 -p 当被称为halt时关闭电源
 -v 增加输出，包括消息
