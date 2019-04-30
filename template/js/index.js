@@ -40,7 +40,6 @@
       }
     },
     isSreachIndexOF: function (oldstr, kw) {
-      var istrue = -1;
       if (!oldstr || !kw) return -1;
       return oldstr.toLowerCase().indexOf(kw.toLowerCase());
     },
@@ -103,11 +102,14 @@
         }
       }
       resultData.sort(function (a, b) {
-        if (a.nIdx === -1 || b.nIdx === -1) {
-          return 1;
-        }
+        // if (a.nIdx === -1 || b.nIdx === -1) {
+        //   return 1;
+        // }
         return a.nIdx - b.nIdx
+      }).sort(function(a, b) {
+        return a.n.length - b.n.length;
       });
+      console.log('resultData:', resultData)
       resultData = resultData.slice(0, show_list_count);
 
       for (i = 0; i < resultData.length; i++) {
