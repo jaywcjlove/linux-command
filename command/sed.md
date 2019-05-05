@@ -104,7 +104,7 @@ sed 's/book/books/' file
 
 sed -n 's/test/TEST/p' file
 
-直接编辑文件 **选项-i** ，会匹配file文件中每一行的第一个book替换为books：
+直接编辑文件 **选项-i** ，会匹配file文件中每一行的所有book替换为books：
 
 ```shell
 sed -i 's/book/books/g' file
