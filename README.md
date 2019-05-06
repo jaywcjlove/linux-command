@@ -110,7 +110,7 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 
 ### 文件传输
 
-bye、ftp、ftpcount、ftpshut、ftpwho、ncftp、tftp、uucico、uucp、uupick、uuto
+bye、ftp、ftpcount、ftpshut、ftpwho、ncftp、tftp、uucico、uucp、uupick、uuto、scp
 
 ### 备份压缩
 
