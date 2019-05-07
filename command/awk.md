@@ -77,7 +77,7 @@ awk 'BEGIN{ commands } pattern{ commands } END{ commands }'
  **示例** 
 
 ```shell
-echo -e "A line 1nA line 2" | awk 'BEGIN{ print "Start" } { print } END{ print "End" }'
+echo -e "A line 1\nA line 2" | awk 'BEGIN{ print "Start" } { print } END{ print "End" }'
 Start
 A line 1
 A line 2
