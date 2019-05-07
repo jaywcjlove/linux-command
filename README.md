@@ -138,7 +138,7 @@ adduser、chfn、chsh、date、exit、finger、free、fwhois、gitps、groupdel�
 
 ### 文档编辑
 
-col、colrm、comm、csplit、ed、egrep、ex、fgrep、fmt、fold、grep、ispell、jed、joe、join、look、mtype、pico、rgrep、sed、sort、spell、tr、uniq、wc
+col、colrm、comm、csplit、ed、egrep、ex、fgrep、fmt、fold、grep、ispell、jed、joe、join、look、mtype、pico、rgrep、sed、sort、spell、tr、uniq、vi、wc
 
 ### 网络通讯
 
