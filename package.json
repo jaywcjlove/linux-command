@@ -6,7 +6,8 @@
   "scripts": {
     "start": "npm run build && npm run deploy",
     "build": "node build/build.js",
-    "deploy": "node build/deploy.js"
+    "deploy": "node build/deploy.js",
+    "dash": "npm run build && node build/dash.js"
   },
   "files": [
     "command",
@@ -32,6 +33,7 @@
     "marked": "^0.6.2",
     "path": "^0.12.7",
     "prismjs": "^1.16.0",
+    "sqlite3": "^4.0.6",
     "stylus": "^0.54.5",
     "uglify-js": "^3.4.9"
   },
