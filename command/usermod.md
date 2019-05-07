@@ -17,7 +17,8 @@ usermod(选项)(参数)
 
 ```shell
 -c<备注>：修改用户帐号的备注文字；
--d<登入目录>：修改用户登入时的目录；
+-d<登入目录>：修改用户登入时的目录，只是修改/etc/passwd中用户的家目录配置信息，不会自动创建新的家目录，通常和-m一起使用；
+-m<移动用户家目录>:移动用户家目录到新的位置，不能单独使用，一般与-d一起使用。
 -e<有效期限>：修改帐号的有效期限；
 -f<缓冲天数>：修改在密码过期后多少天即关闭该帐号；
 -g<群组>：修改用户所属的群组；
@@ -67,5 +68,16 @@ usermod -aG group user # 添加用户到用户组中
 ```
 
 `-a` 参数表示附加，只和 `-G` 参数一同使用，表示将用户增加到组中。
+
+修改用户家目录：
+```
+[root@node-1 ~]# useradd lutixiaya
+[root@node-1 ~]# ls /home
+lutixiaya
+[root@node-1 ~]# usermod -md /data/new_home lutixiaya
+[root@node-1 ~]# ls /home/
+[root@node-1 ~]# ls /data/
+new_home
+```
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
