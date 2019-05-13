@@ -85,7 +85,7 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 - [Linux命令分类](#linux命令分类)
   - [文件管理](#文件管理) File Management
   - [文件传输](#文件传输) File Transfer
-  - [文档编辑](#文档编辑) File Editor
+  - [文本处理](#文本处理) File Editor
   - [备份压缩](#备份压缩) File Compression
   - [系统管理](#系统管理) System Management
   - [系统设置](#系统设置) System Settings
@@ -136,7 +136,7 @@ alias、apmd、aumix、bind、chkconfig、chroot、clock、crontab、declare、d
 
 adduser、chfn、chsh、date、exit、finger、free、fwhois、gitps、groupdel、groupmod、halt、id、kill、last、lastb、login、logname、logout、logrotate、newgrp、nice、procinfo、ps、pstree、reboot、renice、rlogin、rsh、rwho、screen、shutdown、sliplogin、su、sudo、suspend、swatch、tload、top、uname、useradd、userconf、userdel、usermod、vlock、w、who、whoami、whois
 
-### 文档编辑
+### 文本处理
 
 col、colrm、comm、csplit、ed、egrep、ex、fgrep、fmt、fold、grep、ispell、jed、joe、join、look、mtype、pico、rgrep、sed、sort、spell、tr、uniq、vi、wc
 
