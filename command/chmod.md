@@ -90,7 +90,7 @@ chmod a+x f01　　    # 对文件f01的u,g,o都设置可执行属性
 文件的属主和属组属性设置
 
 ```shell
-chown user:market f01　　# 把文件f01给uesr，添加到market组
+chown user:market f01　　# 把文件f01给user，添加到market组
 ll -d f1  查看目录f1的属性
 ```
 
