@@ -300,7 +300,7 @@ find $HOME/. -name "*.txt" -ok rm {} \;
 查找当前目录下所有.txt文件并把他们拼接起来写入到all.txt文件中
 
 ```shell
-find . -type f -name "*.txt" -exec cat {} \;> all.txt
+find . -type f -name "*.txt" -exec cat {} \;> /all.txt
 ```
 
 将30天前的.log文件移动到old目录中
