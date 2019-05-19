@@ -152,5 +152,19 @@ difference=$(( end - start ))
 echo $difference seconds.
 ```
 
+当你考虑输出带有时间的字符串时，例如（Current time: 2019/05/19）：
+
+最常用的方法：
+
+```shell
+echo -e "Current time: $(date +"%Y%m%d")"
+```
+
+另一种方法：
+```shell
+suffix='Current time:'
+#和echo的用法差不多，注意如果换成单引号就不能替换变量了。
+date +"${suffix} %Y/%m/%d"
+```
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
