@@ -11,7 +11,10 @@ ls
 
 ```shell
 ls [选项] [文件名...]
-   [-1abcdfgiklmnopqrstuxABCDFGLNQRSUX] [-w cols] [-T cols] [-I pattern] [--full-time] [--format={long,verbose,commas,across,vertical,single-col‐umn}] [--sort={none,time,size,extension}] [--time={atime,access,use,ctime,status}] [--color[={none,auto,always}]] [--help] [--version] [--]
+   [-1abcdfgiklmnopqrstuxABCDFGLNQRSUX] [-w cols] [-T cols] [-I pattern] [--full-time] 
+   [--format={long,verbose,commas,across,vertical,single-col‐umn}] 
+   [--sort={none,time,size,extension}] [--time={atime,access,use,ctime,status}] 
+   [--color[={none,auto,always}]] [--help] [--version] [--]
 ```
 
 ### 选项  
