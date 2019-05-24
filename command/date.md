@@ -157,7 +157,7 @@ echo $difference seconds.
 最常用的方法：
 
 ```shell
-echo -e "Current time: $(date +"%Y%m%d")"
+echo "Current time: $(date +"%Y/%m/%d")"
 ```
 
 另一种方法：
