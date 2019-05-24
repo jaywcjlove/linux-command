@@ -373,16 +373,14 @@ sed [options] -f scriptfile file(s)
 ```shell
 sed -n 'p;n' test.txt  #奇数行
 sed -n 'n;p' test.txt  #偶数行
-
-```shell
+```
 
 方法2：
 
 ```shell
 sed -n '1~2p' test.txt  #奇数行
 sed -n '2~2p' test.txt  #偶数行
-
-```shell
+```
 
 ### 打印匹配字符串的下一行  
 
@@ -390,8 +388,7 @@ sed -n '2~2p' test.txt  #偶数行
 grep -A 1 SCC URFILE
 sed -n '/SCC/{n;p}' URFILE
 awk '/SCC/{getline; print}' URFILE
-
-```shell
+```
 
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
