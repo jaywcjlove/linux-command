@@ -1,7 +1,7 @@
 tmux
 ===
 
-Tmux是一个优秀的终端复用软件，类似GNU Screen，但来自于OpenBSD，采用BSD授权。
+Tmux是一个优秀的终端复用软件，类似GNU Screen，但来自于OpenBSD，采用BSD授权
 
 ## 补充说明
 
