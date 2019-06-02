@@ -3,13 +3,13 @@ dhcpd
 
 运行DHCP服务器。
 
-### 语法  
+### 语法
 
 ```shell
 dhcpd [选项] [网络接口]
 ```
 
-### 选项  
+### 选项
 
 ```shell
 -p <端口> 指定dhcpd监听的端口
@@ -45,12 +45,12 @@ Listening onLPF/eth0/00:0c:29:fc:2f:e5/192.168.0.0/24
 Sendingon  LPF/eth0/00:0c:29:fc:2f:e5/192.168.0.0/24
 Sendingon   Socket/fallback/fallback-net
 [root@rhel~]# There's already a DHCP server running.
- 
+
 This versionof ISC DHCP is based on the release available
 onftp.isc.org.  Features have been addedand other changes
 have beenmade to the base software release in order to make
 it workbetter with this distribution.
- 
+
 exiting.
 ```
 

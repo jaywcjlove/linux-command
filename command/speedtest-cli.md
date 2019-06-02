@@ -7,23 +7,23 @@ speedtest-cli
 
 **speedtest-cli** 是一个使用python编写的命令行脚本，通过调用speedtest.net测试上下行的接口来完成速度测试，最后我会测试运维生存时间所在服务器的外网速度。项目地址：https://github.com/sivel/speedtest-cli
 
-### 安装speedtest－cli  
+### 安装speedtest－cli
 
 speedtest-cli需要在python 2.4-3.4的环境下，安装方法都很简单，自己选择以下最适合你的一种。
 
- **pip方式** 
+ **pip方式**
 
 ```shell
 ＃ pip install speedtest－cli
 ```
 
- **easy_install方式** 
+ **easy_install方式**
 
 ```shell
 ＃ easy_install speedtest-cli
 ```
 
- **github＋pip方式** 
+ **github＋pip方式**
 
 ```shell
 ＃ pip install git+https://github.com/sivel/speedtest-cli.git
@@ -36,7 +36,7 @@ speedtest-cli需要在python 2.4-3.4的环境下，安装方法都很简单，�
 ＃ python speedtest-cli/setup.py install
 ```
 
- **下载脚本方式** 
+ **下载脚本方式**
 
 ```shell
 ＃ wget -O speedtest-cli https://raw.github.com/sivel/spe ... er/speedtest_cli.py
@@ -52,7 +52,7 @@ speedtest-cli需要在python 2.4-3.4的环境下，安装方法都很简单，�
 
 直接下载脚本，给予执行权限即可。
 
-### 用法  
+### 用法
 
 ```shell
 -h, --help       show this help message and exit
@@ -65,7 +65,7 @@ speedtest-cli需要在python 2.4-3.4的环境下，安装方法都很简单，�
 --version        Show the version number and exit
 ```
 
-### 实例  
+### 实例
 
 列出所有在中国的测试服务器：
 
@@ -90,7 +90,7 @@ speedtest-cli需要在python 2.4-3.4的环境下，安装方法都很简单，�
 1890) Telin (Hong Kong, China) [13088.37 km]
 ```
 
- **结果解释** 
+ **结果解释**
 
 ```shell
 3633) China Telecom (Shanghai, China) [11983.37 km]
@@ -103,7 +103,7 @@ shanghai,china ：服务器所在地址
 11983.37 km：两台服务器地理位置之间距离，我这台机器在美国，和上海相距11983.37公里，很远呐.
 ```
 
- **外网速度测试** 
+ **外网速度测试**
 
 ```shell
 [root@li229-122 ~]# speedtest-cli --server=3633 --share

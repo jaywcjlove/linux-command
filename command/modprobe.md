@@ -9,13 +9,13 @@ modprobe
 
 modprobe可载入指定的个别模块，或是载入一组相依的模块。modprobe会根据depmod所产生的相依关系，决定要载入哪些模块。若在载入过程中发生错误，在modprobe会卸载整组的模块。
 
-### 语法  
+### 语法
 
 ```shell
 modprobe(选项)(参数)
 ```
 
-### 选项  
+### 选项
 
 ```shell
 -a或--all：载入全部的模块；
@@ -29,13 +29,13 @@ modprobe(选项)(参数)
 -help：显示帮助。
 ```
 
-### 参数  
+### 参数
 
 模块名：要加载或移除的模块名称。
 
-### 实例  
+### 实例
 
- **查看modules的配置文件：** 
+ **查看modules的配置文件：**
 
 ```shell
 modprobe -c
@@ -47,7 +47,7 @@ modprobe -c
 alias symbol:ip_conntrack_unregister_notifier ip_conntrack
 ```
 
- **列出内核中所有已经或者未挂载的所有模块：** 
+ **列出内核中所有已经或者未挂载的所有模块：**
 
 ```shell
 modprobe -l
@@ -59,7 +59,7 @@ modprobe -l
 /lib/modules/2.6.18-348.6.1.el5/kernel/net/netfilter/xt_statistic.ko
 ```
 
- **挂载vfat模块：** 
+ **挂载vfat模块：**
 
 ```shell
 modprobe vfat
@@ -67,7 +67,7 @@ modprobe vfat
 
 这里，使用格式`modprobe 模块名`来挂载一个模块。挂载之后，用lsmod可以查看已经挂载的模块。模块名是不能带有后缀的，我们通过`modprobe -l`所看到的模块，都是带有`.ko`或`.o`后缀。
 
- **移除已经加载的模块：** 
+ **移除已经加载的模块：**
 
 ```shell
 modprobe -r 模块名

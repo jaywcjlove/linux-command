@@ -11,13 +11,13 @@ comm
 *   求差：打印出指定文件所包含的且不相同的行。
 *   差集：打印出包含在一个文件中，但不包含在其他指定文件中的行。
 
-### 语法  
+### 语法
 
 ```shell
 comm [选项]... 文件1 文件2
 ```
 
-### 选项  
+### 选项
 
 ```shell
 如果不附带选项，程序会生成三列输出。
@@ -34,17 +34,17 @@ comm [选项]... 文件1 文件2
 --output-delimiter=STR  依照STR 分列
 ```
 
-### 参数  
+### 参数
 
 * 文件1：指定要比较的第一个**有序**文件；
 * 文件2：指定要比较的第二个**有序**文件。
 
-### 实例  
+### 实例
 
 文本 `aaa.txt` 内容
 
 ```shell
-[root@localhost text]# cat aaa.txt 
+[root@localhost text]# cat aaa.txt
 aaa
 bbb
 ccc
@@ -57,7 +57,7 @@ eee
 文本 `bbb.txt` 内容
 
 ```shell
-[root@localhost text]# cat bbb.txt 
+[root@localhost text]# cat bbb.txt
 bbb
 ccc
 aaa
@@ -76,7 +76,7 @@ comm: 文件1 没有被正确排序
 比较结果
 
 ```shell
-[root@localhost text]# comm --nocheck-order aaa.txt bbb.txt 
+[root@localhost text]# comm --nocheck-order aaa.txt bbb.txt
 aaa
                 bbb
                 ccc
@@ -128,7 +128,7 @@ bbb
 ccc
 ```
 
-**求差** 
+**求差**
 
 打印出两个文件中不相同的行，需要删除第三列：
 

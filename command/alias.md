@@ -9,13 +9,13 @@ alias
 
 alias命令的作用只局限于该次登入的操作。若要每次登入都能够使用这些命令别名，则可将相应的alias命令存放到bash的初始化文件`/etc/bashrc`中。
 
-### 语法  
+### 语法
 
 ```shell
 alias(选项)(参数)
 ```
 
-### 选项  
+### 选项
 
 ```shell
 -c string 如果有 -c 选项，那么命令将从 string 中读取。如果 string 后面有参数 (argument)，它们将用于给位置参数 (positional
@@ -73,13 +73,13 @@ Bash 也解释一些多字节的选项。在命令行中，这些选项必须置
       在标准输出显示此 bash 的版本信息并成功退出。
 ```
 
-### 参数  
+### 参数
 
 命令别名设置：定义命令别名，格式为“命令别名=‘实际命令’”。
 
-### 实例  
+### 实例
 
-**alias 的基本使用方法为：** 
+**alias 的基本使用方法为：**
 
 ```
 alias 新的命令='原命令 -选项/参数'
@@ -89,10 +89,10 @@ alias 新的命令='原命令 -选项/参数'
 
 要删除一个别名，可以使用 unalias 命令，如 unalias l。
 
-**查看系统已经设置的别名：** 
+**查看系统已经设置的别名：**
 
 ```shell
-[root@localhost ~]# 
+[root@localhost ~]#
 [root@localhost ~]# alias
 alias cp='cp -i'
 alias egrep='egrep --color=auto'
@@ -104,7 +104,7 @@ alias ls='ls --color=auto'
 alias mv='mv -i'
 alias rm='rm -i'
 alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'
-[root@localhost ~]# 
+[root@localhost ~]#
 
 ```
 ### 命令别名永久生效
@@ -148,10 +148,10 @@ CentOS系统下的创建自定义命令其实比较简单，使用的命令就�
 
 假定系统操作员希望进行如下操作：
 
-1.进入目录 `/root`  
-2.查看目录下文件  
-3.切换回根目录  
- 
+1.进入目录 `/root`
+2.查看目录下文件
+3.切换回根目录
+
 通常这需要三条命令 `cd /root`, `ls`, `cd /` ，如果需要经常使用那么我们可以通过自定义命令的方式用一条命令完成全部操作。
 
 #### 四、 操作过程

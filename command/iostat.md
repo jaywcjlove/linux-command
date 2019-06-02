@@ -7,13 +7,13 @@ iostat
 
 **iostat命令** 被用于监视系统输入输出设备和CPU的使用情况。它的特点是汇报磁盘活动统计情况，同时也会汇报出CPU使用情况。同vmstat一样，iostat也有一个弱点，就是它不能对某个进程进行深入分析，仅对系统的整体情况进行分析。
 
-### 语法  
+### 语法
 
 ```shell
 iostat(选项)(参数)
 ```
 
-### 选项  
+### 选项
 
 ```shell
 -c：仅显示CPU使用情况；
@@ -26,29 +26,29 @@ iostat(选项)(参数)
 -x：显示扩展状态。
 ```
 
-### 参数  
+### 参数
 
 *   间隔时间：每次报告的间隔时间（秒）；
 *   次数：显示报告的次数。
 
-### 实例  
+### 实例
 
 用`iostat -x /dev/sda1`来观看磁盘I/O的详细情况：
 
 ```shell
-iostat -x /dev/sda1 
+iostat -x /dev/sda1
 Linux 2.6.18-164.el5xen (localhost.localdomain)
-2010年03月26日  
+2010年03月26日
 
-avg-cpu:  %user   %nice %system %iowait 
-%steal   %idle  
-            0.11    0.02    0.18    0.35   
-0.03    99.31  
+avg-cpu:  %user   %nice %system %iowait
+%steal   %idle
+            0.11    0.02    0.18    0.35
+0.03    99.31
 
-Device:         tps   Blk_read/s    Blk_wrtn/s  
-Blk_read   Blk_wrtn  
-sda1                0.02          0.08       
-0.00          2014               4 
+Device:         tps   Blk_read/s    Blk_wrtn/s
+Blk_read   Blk_wrtn
+sda1                0.02          0.08
+0.00          2014               4
 ```
 
 详细说明：第二行是系统信息和监测时间，第三行和第四行显示CPU使用情况（具体内容和mpstat命令相同）。这里主要关注后面I/O输出的信息，如下所示：

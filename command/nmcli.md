@@ -7,13 +7,13 @@ nmcli
 
 **nmcli命令** 是 NetworkManager client 网络管理客户端。
 
-### 语法  
+### 语法
 
 ```shell
 nmcli [OPTIONS] OBJECT { COMMAND | help }
 ```
 
-### 选项  
+### 选项
 
 ```shell
 OPTIONS
@@ -37,7 +37,7 @@ OBJECT
   a[gent]         NetworkManager秘密代理或polkit代理
 ```
 
-### 实例  
+### 实例
 
 ```shell
 nmcli connection show           # 查看当前连接状态
@@ -48,7 +48,7 @@ nmcli device status             # 显示设备状态
 nmcli device show eno16777736   # 显示指定接口属性
 nmcli device show               # 显示全部接口属性
 nmcli con up static             # 启用static连接配置
-nmcli con up default            # 启用default连接配置 
+nmcli con up default            # 启用default连接配置
 nmcli con add help              # 查看帮助
 
 ```

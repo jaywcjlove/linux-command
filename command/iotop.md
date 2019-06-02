@@ -9,36 +9,36 @@ iotop
 
 iotop使用Python语言编写而成，要求Python2.5（及以上版本）和Linux kernel2.6.20（及以上版本）。iotop提供有源代码及rpm包，可从其官方主页下载。
 
-### 安装  
+### 安装
 
- **Ubuntu** 
+ **Ubuntu**
 
 ```shell
 apt-get install iotop
 ```
 
- **CentOS** 
+ **CentOS**
 
 ```shell
 yum install iotop
 ```
 
- **编译安装** 
+ **编译安装**
 
 ```shell
-wget http://guichaz.free.fr/iotop/files/iotop-0.4.4.tar.gz    
-tar zxf iotop-0.4.4.tar.gz    
-python setup.py build    
+wget http://guichaz.free.fr/iotop/files/iotop-0.4.4.tar.gz
+tar zxf iotop-0.4.4.tar.gz
+python setup.py build
 python setup.py install
 ```
 
-### 语法  
+### 语法
 
 ```shell
 iotop（选项）
 ```
 
-### 选项  
+### 选项
 
 ```shell
 -o：只显示有io操作的进程
@@ -49,7 +49,7 @@ iotop（选项）
 -u USER：监控的进程用户。
 ```
 
- **iotop常用快捷键：** 
+ **iotop常用快捷键：**
 
 1.  左右箭头：改变排序方式，默认是按IO排序。
 2.  r：改变排序顺序。
@@ -58,7 +58,7 @@ iotop（选项）
 5.  a：显示累积使用量。
 6.  q：退出。
 
-### 实例  
+### 实例
 
 直接执行iotop就可以看到效果了：
 

@@ -17,14 +17,14 @@ sudo apt-get install pv
 yum install pv
 ```
 
-### 语法  
+### 语法
 
 ```shell
 pv(选项)(参数)
 pv [OPTION] [FILE]...
 ```
 
-### 选项  
+### 选项
 
 ```shell
 -p, --progress           show progress bar
@@ -69,7 +69,7 @@ pv [OPTION] [FILE]...
 ```
 
 
-### 实例  
+### 实例
 
 我们（在 linux 上使用命令行的用户）的大多数使用场景都会用到的命令是从一个 USB 驱动器拷贝电影文件到你的电脑。如果你使用 cp 来完成上面的任务，你会什么情况都不清楚，直到整个复制过程结束或者出错。
 
@@ -81,7 +81,7 @@ linux [master●] % pv ~/Downloads/CentOS-7-x86_64-Minimal-1511.iso > ~/Desktop/
 
 # -L 可以让你修改 pv 命令的传输速率。
 # 使用 -L 选项来限制传输速率为2MB/s。
-pv -L 2m /media/himanshu/1AC2-A8E3/fNf.mkv > ./Desktop/fnf.mkv 
+pv -L 2m /media/himanshu/1AC2-A8E3/fNf.mkv > ./Desktop/fnf.mkv
 ```
 
 
@@ -90,7 +90,7 @@ pv -L 2m /media/himanshu/1AC2-A8E3/fNf.mkv > ./Desktop/fnf.mkv
 echo "Tecmint[dot]com is a community of Linux Nerds and Geeks" | pv -qL 10
 
 # 压缩文件展示进度信息
-pv /media/himanshu/1AC2-A8E3/fnf.mkv | gzip > ./Desktop/fnf.log.gz 
+pv /media/himanshu/1AC2-A8E3/fnf.mkv | gzip > ./Desktop/fnf.log.gz
 
 
 # 用 dd 命令将 iso 写入磁盘，pv来实现进度条的显示

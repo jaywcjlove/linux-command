@@ -7,13 +7,13 @@ pvcreate
 
 **pvcreate命令** 用于将物理硬盘分区初始化为物理卷，以便LVM使用。
 
-### 语法  
+### 语法
 
 ```shell
 pvcreate(选项)(参数)
 ```
 
-### 选项  
+### 选项
 
 ```shell
 -f：强制创建物理卷，不需要用户确认；
@@ -22,11 +22,11 @@ pvcreate(选项)(参数)
 -Z：是否利用前4个扇区。
 ```
 
-### 参数  
+### 参数
 
 物理卷：指定要创建的物理卷对应的设备文件名。
 
-### 实例  
+### 实例
 
 查看磁盘信息：
 
@@ -105,8 +105,8 @@ Labels on physical volume "/dev/sdb2" successfully wiped
 
 ```shell
 [root@localhost ~]# pvchange -x n /dev/sdb1    #禁止分配指定物理卷上的PE
-Physical volume "/dev/sdb1" changed  
-1 physical volume changed / 0 physical volumes not changed 
+Physical volume "/dev/sdb1" changed
+1 physical volume changed / 0 physical volumes not changed
 ```
 
 

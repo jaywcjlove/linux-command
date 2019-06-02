@@ -35,13 +35,13 @@ bzip2 采用 32 位 CRC 校验码作自我检查，以确认解压后的文件�
 
 返回值：正常退出返回 0， 出现环境问题返回 1 （文件未找到，非法的选项，I/O错误等）， 返回 2 表明压缩文件损坏，出现导致 bzip2 紧急退出的内部一致性错误（例如缺陷）时返回 3。
 
-### 语法  
+### 语法
 
 ```shell
 bzip2 [ -cdfkqstvzVL123456789 ] [ filenames ...  ]
 ```
 
-### 选项  
+### 选项
 
 ```shell
 -c --stdout
@@ -88,13 +88,13 @@ bzip2 [ -cdfkqstvzVL123456789 ] [ filenames ...  ]
     # 及其以上版本采用了改进的算法而与这些选项无关。
 ```
 
-### 参数  
+### 参数
 
 文件：指定要压缩的文件。
 
-### 实例  
+### 实例
 
-**压缩指定文件filename:** 
+**压缩指定文件filename:**
 
 ```shell
 bzip2 filename
@@ -104,7 +104,7 @@ bzip2 -z filename
 
 这里，压缩的时候不会输出，会将原来的文件filename给删除，替换成filename.bz2.如果以前有filename.bz2则不会替换并提示错误（如果想要替换则指定-f选项，例如`bzip2 -f filename`；如果filename是目录则也提醒错误不做任何操作；如果filename已经是压过的了有bz2后缀就提醒一下，不再压缩，没有bz2后缀会再次压缩。
 
-**解压指定的文件filename.bz2:** 
+**解压指定的文件filename.bz2:**
 
 ```shell
 bzip2 -d filename.bz2
@@ -114,7 +114,7 @@ bunzip2 filename.bz2
 
 这里，解压的时候没标准输出，会将原来的文件filename.bz2给替换成filename。如果以前有filename则不会替换并提示错误（如果想要替换则指定`-f`选项，例如`bzip2 -df filename.bz2`。
 
-**压缩解压的时候将结果也输出：** 
+**压缩解压的时候将结果也输出：**
 
 ```shell
 $bzip2 -v filename
@@ -128,7 +128,7 @@ filename:  0.119:1, 67.200 bits/byte, -740.00% saved, 5 in, 42 out.
 
 这里，加上`-v`选项就会输出了,只用压缩举例了，解压的时候同理`bzip2 -dv filename.bz2`不再举例了。
 
-**模拟解压实际并不解压：** 
+**模拟解压实际并不解压：**
 
 ```shell
 bzip2 -tv filename.bz2
@@ -142,7 +142,7 @@ filename.bz2: ok
 
 这里，`-t`指定要进行模拟解压，不实际生成结果，也就是说类似检查文件,当然就算目录下面有filename也不会有什么错误输出了，因为它根本不会真的解压文件。为了在屏幕上输出，这里加上`-v`选项了,如果是真的解压`bzip2 -dv filename.bz2`则输出的是把"ok"替换成了"done"。
 
-**压缩解压的时候，除了生成结果文件，将原来的文件也保存:** 
+**压缩解压的时候，除了生成结果文件，将原来的文件也保存:**
 
 ```shell
 bzip2 -k filename
@@ -150,7 +150,7 @@ bzip2 -k filename
 
 这里，加上`-k`就保存原始的文件了，否则原始文件会被结果文件替代。只用压缩举例了，解压的时候同理`$bzip2 -dk filename.bz2`不再举例了。
 
-**解压到标准输出：** 
+**解压到标准输出：**
 
 ```shell
 bzip2 -dc filename.bz2
@@ -164,7 +164,7 @@ hahahhaahahha
 
 这里，使用`-c`指定到标准输出，输出的是文件filename的内容，不会将filename.bz2删除。
 
-**压缩到标准输出：** 
+**压缩到标准输出：**
 
 ```shell
 bzip2 -c filename
@@ -174,7 +174,7 @@ bzip2: For help, type: `bzip2 --help'.
 
 这里，使用`-c`指定压缩到标准输出不删除原有文件，不同的是，压缩后的文件无法输出到标准输出。
 
-**使用bzip2的时候将所有后面的看作文件(即使文件名以'-'开头)：** 
+**使用bzip2的时候将所有后面的看作文件(即使文件名以'-'开头)：**
 
 ```shell
 bzip2 -- -myfilename

@@ -7,13 +7,13 @@ MySQL数据库中备份工具
 
 **mysqldump命令** 是mysql数据库中备份工具，用于将MySQL服务器中的数据库以标准的sql语言的方式导出，并保存到文件中。
 
-### 语法  
+### 语法
 
 ```shell
 mysqldump(选项)
 ```
 
-### 选项  
+### 选项
 
 ```shell
 --add-drop-table：在每个创建数据库表语句前添加删除数据库表的语句；
@@ -34,23 +34,23 @@ mysqldump(选项)
 --user：连接MySQL服务器的用户名。
 ```
 
-### 实例  
+### 实例
 
- **导出整个数据库** 
+ **导出整个数据库**
 
 ```shell
 mysqldump -u 用户名 -p 数据库名 > 导出的文件名
 mysqldump -u linuxde -p smgp_apps_linuxde > linuxde.sql
 ```
 
- **导出一个表** 
+ **导出一个表**
 
 ```shell
 mysqldump -u 用户名 -p 数据库名 表名> 导出的文件名
 mysqldump -u linuxde -p smgp_apps_linuxde users > linuxde_users.sql
 ```
 
- **导出一个数据库结构** 
+ **导出一个数据库结构**
 
 ```shell
 mysqldump -u linuxde -p -d --add-drop-table smgp_apps_linuxde > linuxde_db.sql

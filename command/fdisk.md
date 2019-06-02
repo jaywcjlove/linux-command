@@ -7,13 +7,13 @@ fdisk
 
 **fdisk命令** 用于观察硬盘实体使用情况，也可对硬盘分区。它采用传统的问答式界面，而非类似DOS fdisk的cfdisk互动式操作界面，因此在使用上较为不便，但功能却丝毫不打折扣。
 
-### 语法  
+### 语法
 
 ```shell
 fdisk(选项)(参数)
 ```
 
-### 选项  
+### 选项
 
 ```shell
  -b <大小>             扇区大小(512、1024、2048或4096)
@@ -26,11 +26,11 @@ fdisk(选项)(参数)
  -S <数字>             指定每个磁道的扇区数
 ```
 
-### 参数  
+### 参数
 
 设备文件：指定要进行分区或者显示分区的硬盘设备文件。
 
-### 实例  
+### 实例
 
 首先选择要进行操作的磁盘：
 
@@ -116,7 +116,7 @@ Command (m for help): n  //再建立一个分区
 Command action
    e   extended
    p   primary partition (1-4)
-p 
+p
 Partition number (1-4): 2  //分区号为2
 First cylinder (101-391, default 101):
 Using default value 101
@@ -177,7 +177,7 @@ Command action
 l //选择逻辑分区
 First cylinder (126-391, default 126):
 Using default value 126
-Last cylinder or +size or +sizeM or +sizeK (126-391, default 391): +400M    
+Last cylinder or +size or +sizeM or +sizeK (126-391, default 391): +400M
 
 Command (m for help): n
 Command action
@@ -244,7 +244,7 @@ Maximum filesystem blocks=209715200
 Superblock backups stored on blocks:
         32768, 98304, 163840
 
-Writing inode tables: done                           
+Writing inode tables: done
 Writing superblocks and filesystem accounting information: done
 
 This filesystem will be automatically checked every 32 mounts or
@@ -270,7 +270,7 @@ Maximum filesystem blocks=444596224
 Superblock backups stored on blocks:
         32768, 98304, 163840, 229376, 294912
 
-Writing inode tables: done                           
+Writing inode tables: done
 Creating journal (8192 blocks): done
 Writing superblocks and filesystem accounting information: done
 

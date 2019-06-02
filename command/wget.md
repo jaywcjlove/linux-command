@@ -18,13 +18,13 @@ wget支持HTTP，HTTPS和FTP协议，可以使用HTTP代理。所谓的自动下
 5. **程序小，完全免费** 程序小可以考虑不计，因为现在的硬盘实在太大了；完全免费就不得不考虑了，即使网络上有很多所谓的免费软件，但是，这些软件的广告却不是我们喜欢的。
 
 
-### 语法  
+### 语法
 
 ```shell
 wget [参数] [URL地址]
 ```
 
-### 选项  
+### 选项
 
 ```shell
 启动参数：
@@ -129,13 +129,13 @@ FTP 选项参数：
 wget -S –-spider url 不下载只显示过程
 ```
 
-### 参数  
+### 参数
 
 URL：下载指定的URL地址。
 
-### 实例  
+### 实例
 
-**使用wget下载单个文件** 
+**使用wget下载单个文件**
 
 ```shell
 wget http://www.jsdig.com/testfile.zip
@@ -143,7 +143,7 @@ wget http://www.jsdig.com/testfile.zip
 
 以下的例子是从网络下载一个文件并保存在当前目录，在下载的过程中会显示进度条，包含（下载完成百分比，已经下载的字节，当前下载速度，剩余下载时间）。
 
-**下载并以不同的文件名保存** 
+**下载并以不同的文件名保存**
 
 ```shell
 wget -O wordpress.zip http://www.jsdig.com/download.aspx?id=1080
@@ -165,7 +165,7 @@ wget http://www.jsdig.com/download?id=1
 wget -O wordpress.zip http://www.jsdig.com/download.aspx?id=1080
 ```
 
-**wget限速下载** 
+**wget限速下载**
 
 ```shell
 wget --limit-rate=300k http://www.jsdig.com/testfile.zip
@@ -173,7 +173,7 @@ wget --limit-rate=300k http://www.jsdig.com/testfile.zip
 
 当你执行wget的时候，它默认会占用全部可能的宽带下载。但是当你准备下载一个大文件，而你还需要下载其它文件时就有必要限速了。
 
-**使用wget断点续传** 
+**使用wget断点续传**
 
 ```shell
 wget -c http://www.jsdig.com/testfile.zip
@@ -181,7 +181,7 @@ wget -c http://www.jsdig.com/testfile.zip
 
 使用`wget -c`重新启动下载中断的文件，对于我们下载大文件时突然由于网络等原因中断非常有帮助，我们可以继续接着下载而不是重新下载一个文件。需要继续中断的下载时可以使用`-c`参数。
 
-**使用wget后台下载** 
+**使用wget后台下载**
 
 ```shell
 wget -b http://www.jsdig.com/testfile.zip
@@ -196,7 +196,7 @@ Output will be written to `wget-log'.
 tail -f wget-log
 ```
 
-**伪装代理名称下载** 
+**伪装代理名称下载**
 
 ```shell
 wget --user-agent="Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.16 (KHTML, like Gecko) Chrome/10.0.648.204 Safari/534.16" http://www.jsdig.com/testfile.zip
@@ -204,7 +204,7 @@ wget --user-agent="Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/5
 
 有些网站能通过根据判断代理名称不是浏览器而拒绝你的下载请求。不过你可以通过`--user-agent`参数伪装。
 
-**测试下载链接** 
+**测试下载链接**
 
 当你打算进行定时下载，你应该在预定时间测试下载链接是否有效。我们可以增加`--spider`参数进行检查。
 
@@ -237,7 +237,7 @@ Remote file does not exist -- broken link!!!
 *   间隔检测网站是否可用
 *   检查网站页面的死链接
 
-**增加重试次数** 
+**增加重试次数**
 
 ```shell
 wget --tries=40 URL
@@ -245,7 +245,7 @@ wget --tries=40 URL
 
 如果网络有问题或下载一个大文件也有可能失败。wget默认重试20次连接下载文件。如果需要，你可以使用`--tries`增加重试次数。
 
-**下载多个文件** 
+**下载多个文件**
 
 ```shell
 wget -i filelist.txt
@@ -263,7 +263,7 @@ url4
 
 接着使用这个文件和参数`-i`下载。
 
-**镜像网站** 
+**镜像网站**
 
 ```shell
 wget --mirror -p --convert-links -P ./LOCAL URL
@@ -276,7 +276,7 @@ wget --mirror -p --convert-links -P ./LOCAL URL
 *   `--convert-links`下载后，转换成本地的链接。
 *   `-P ./LOCAL`保存所有文件和目录到本地指定目录。
 
-**过滤指定格式下载** 
+**过滤指定格式下载**
 
 ```shell
 wget --reject=gif ur
@@ -284,7 +284,7 @@ wget --reject=gif ur
 
 下载一个网站，但你不希望下载图片，可以使用这条命令。
 
-**把下载信息存入日志文件** 
+**把下载信息存入日志文件**
 
 ```shell
 wget -o download.log URL
@@ -292,7 +292,7 @@ wget -o download.log URL
 
 不希望下载信息直接显示在终端而是在一个日志文件，可以使用。
 
-**限制总下载文件大小** 
+**限制总下载文件大小**
 
 ```shell
 wget -Q5m -i filelist.txt
@@ -300,7 +300,7 @@ wget -Q5m -i filelist.txt
 
 当你想要下载的文件超过5M而退出下载，你可以使用。注意：这个参数对单个文件下载不起作用，只能递归下载时才有效。
 
-**下载指定格式文件** 
+**下载指定格式文件**
 
 ```shell
 wget -r -A.pdf url
@@ -312,7 +312,7 @@ wget -r -A.pdf url
 *   下载一个网站的所有视频。
 *   下载一个网站的所有PDF文件。
 
-**FTP下载** 
+**FTP下载**
 
 ```shell
 wget ftp-url

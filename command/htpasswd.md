@@ -7,11 +7,11 @@ apache服务器创建密码认证文件
 
 **htpasswd命令** 是Apache的Web服务器内置工具，用于创建和更新储存用户名、域和用户基本认证的密码文件。
 
-### 语法  
+### 语法
 
-### htpasswd(选项)(参数)  
+### htpasswd(选项)(参数)
 
-### 选项  
+### 选项
 
 ```shell
 -c：创建一个加密文件；
@@ -24,14 +24,14 @@ apache服务器创建密码认证文件
 -D：删除指定的用户。
 ```
 
-### 参数  
+### 参数
 
 *   用户：要创建或者更新密码的用户名；
 *   密码：用户的新密码。
 
-### 实例  
+### 实例
 
- **利用htpasswd命令添加用户** 
+ **利用htpasswd命令添加用户**
 
 ```shell
 htpasswd -bc .passwd www.jsdig.com php
@@ -39,7 +39,7 @@ htpasswd -bc .passwd www.jsdig.com php
 
 在bin目录下生成一个.passwd文件，用户名www.jsdig.com，密码：php，默认采用MD5加密方式。
 
- **在原有密码文件中增加下一个用户** 
+ **在原有密码文件中增加下一个用户**
 
 ```shell
 htpasswd -b .passwd Jack 123456
@@ -47,7 +47,7 @@ htpasswd -b .passwd Jack 123456
 
 去掉`-c`选项，即可在第一个用户之后添加第二个用户，依此类推。
 
- **不更新密码文件，只显示加密后的用户名和密码** 
+ **不更新密码文件，只显示加密后的用户名和密码**
 
 ```shell
 htpasswd -nb Jack 123456
@@ -55,13 +55,13 @@ htpasswd -nb Jack 123456
 
 不更新.passwd文件，只在屏幕上输出用户名和经过加密后的密码。
 
- **利用htpasswd命令删除用户名和密码** 
+ **利用htpasswd命令删除用户名和密码**
 
 ```shell
 htpasswd -D .passwd Jack
 ```
 
- **利用htpasswd命令修改密码** 
+ **利用htpasswd命令修改密码**
 
 ```shell
 htpasswd -D .passwd Jack

@@ -7,13 +7,13 @@ crontab
 
 **crontab命令** 被用来提交和管理用户的需要周期性执行的任务，与windows下的计划任务类似，当安装完成操作系统后，默认会安装此服务工具，并且会自动启动crond进程，crond进程每分钟会定期检查是否有要执行的任务，如果有要执行的任务，则自动执行该任务。
 
-### 语法  
+### 语法
 
 ```shell
 crontab(选项)(参数)
 ```
 
-### 选项  
+### 选项
 
 ```shell
 -e：编辑该用户的计时器设置；
@@ -22,11 +22,11 @@ crontab(选项)(参数)
 -u<用户名称>：指定要设定计时器的用户名称。
 ```
 
-### 参数  
+### 参数
 
 crontab文件：指定包含待执行任务的crontab文件。
 
-### 知识扩展  
+### 知识扩展
 
 Linux下的任务调度分为两类： **系统任务调度** 和 **用户任务调度** 。
 
@@ -78,7 +78,7 @@ minute   hour   day   month   week   command     顺序：分 时 日 月 周
 *   中杠（-）：可以用整数之间的中杠表示一个整数范围，例如“2-6”表示“2,3,4,5,6”
 *   正斜线（/）：可以用正斜线指定时间的间隔频率，例如“0-23/2”表示每两小时执行一次。同时正斜线可以和星号一起使用，例如*/10，如果用在minute字段，表示每十分钟执行一次。
 
-**crond服务** 
+**crond服务**
 
 ```shell
 /sbin/service crond start    # 启动服务
@@ -111,7 +111,7 @@ ntsysv
 chkconfig –level 35 crond on
 ```
 
-### 实例  
+### 实例
 
 每1分钟执行一次command
 
@@ -143,13 +143,13 @@ chkconfig –level 35 crond on
 3,15 8-11 * * 1 command
 ```
 
-每晚的21:30重启smb 
+每晚的21:30重启smb
 
 ```shell
 30 21 * * * /etc/init.d/smb restart
 ```
 
-每月1、10、22日的4 : 45重启smb 
+每月1、10、22日的4 : 45重启smb
 
 ```shell
 45 4 1,10,22 * * /etc/init.d/smb restart
@@ -161,19 +161,19 @@ chkconfig –level 35 crond on
 10 1 * * 6,0 /etc/init.d/smb restart
 ```
 
-每天18 : 00至23 : 00之间每隔30分钟重启smb 
+每天18 : 00至23 : 00之间每隔30分钟重启smb
 
 ```shell
 0,30 18-23 * * * /etc/init.d/smb restart
 ```
 
-每星期六的晚上11:00 pm重启smb 
+每星期六的晚上11:00 pm重启smb
 
 ```shell
 0 23 * * 6 /etc/init.d/smb restart
 ```
 
-每一小时重启smb 
+每一小时重启smb
 
 ```shell
 * */1 * * * /etc/init.d/smb restart
@@ -185,7 +185,7 @@ chkconfig –level 35 crond on
 * 23-7/1 * * * /etc/init.d/smb restart
 ```
 
-每月的4号与每周一到周三的11点重启smb 
+每月的4号与每周一到周三的11点重启smb
 
 ```shell
 0 11 4 * mon-wed /etc/init.d/smb restart

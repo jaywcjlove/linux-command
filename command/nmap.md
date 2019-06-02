@@ -7,13 +7,13 @@ nmap
 
 **nmap命令** 是一款开放源代码的网络探测和安全审核工具，它的设计目标是快速地扫描大型网络。
 
-### 语法  
+### 语法
 
 ```shell
 nmap(选项)(参数)
 ```
 
-### 选项  
+### 选项
 
 ```shell
 -O：激活操作探测；
@@ -42,19 +42,19 @@ nmap(选项)(参数)
 --send-eth/--send-ip 使用原始以太网发送/构造指定IP发送
 ```
 
-### 参数  
+### 参数
 
 ip地址：指定待扫描报文中的TCP地址。
 
-### 实例  
+### 实例
 
- **安装nmap** 
+ **安装nmap**
 
 ```shell
 yum install nmap
 ```
 
- **使用nmap扫描www.jsdig.com的开放端口** 
+ **使用nmap扫描www.jsdig.com的开放端口**
 
 ```shell
 [root@localhost ~]# nmap www.jsdig.com

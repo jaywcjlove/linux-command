@@ -7,13 +7,13 @@ rename
 
 **rename命令** 用字符串替换的方式批量改变文件名。
 
-### 语法  
+### 语法
 
 ```shell
 rename(参数)
 ```
 
-### 参数  
+### 参数
 
 ```shell
 原字符串：将文件名需要替换的字符串；
@@ -21,7 +21,7 @@ rename(参数)
 文件：指定要改变文件名的文件列表。
 ```
 
-### 实例  
+### 实例
 
 将main1.c重命名为main.c
 
@@ -29,7 +29,7 @@ rename(参数)
 rename main1.c main.c main1.c
 ```
 
- **rename支持通配符** 
+ **rename支持通配符**
 
 ```shell
 ?  可替代单个字符
@@ -47,7 +47,7 @@ rename main1.c main.c main1.c
 
 如果使用`rename foo0 foo foo0[2]*`，从foo0200到foo0278的所有文件都被重命名为foo200到foo278，文件名中的foo0被替换为foo。
 
- **rename支持正则表达式** 
+ **rename支持正则表达式**
 
 字母的替换
 

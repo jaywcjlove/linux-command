@@ -7,13 +7,13 @@ linux中防火墙软件
 
 **ip6tables命令** 和iptables一样，都是linux中防火墙软件，不同的是ip6tables采用的TCP/ip协议为IPv6。
 
-### 语法  
+### 语法
 
 ```shell
 ip6tables(选项)
 ```
 
-### 选项  
+### 选项
 
 ```shell
 -t<表>：指定要操纵的表；
@@ -35,7 +35,7 @@ ip6tables(选项)
 -c<计数器>：在执行插入操作（insert），追加操作（append），替换操作（replace）时初始化包计数器和字节计数器。
 ```
 
-### 实例  
+### 实例
 
 在命令行窗口输入下面的指令就可以查看当前的 IPv6 防火墙配置：
 
@@ -43,7 +43,7 @@ ip6tables(选项)
 ip6tables -nl --line-numbers
 ```
 
- **/etc/sysconfig/ip6tables文件** 
+ **/etc/sysconfig/ip6tables文件**
 
 使用编辑器编辑`/etc/sysconfig/ip6tables`文件：
 
@@ -162,11 +162,11 @@ num   pkts bytes target     prot opt in     out     source               destina
 14      18  4196 REJECT     all      *      *       ::/0                 ::/0
 ```
 
- **IPv6 私有 IP** 
+ **IPv6 私有 IP**
 
 IPv4 通常默认即可保护内部局域网私有 IP 上的主机。但是 IPv6 的地址非常丰富，不再需要使用类似 NAT 等协议的私有网络。这样一来，所有的内部主机都可以拥有公网 IP 而直接连接到互联网，也就同时暴露于互联网上的各种威胁之中了。那么，如何配置 IPv6 防火墙使其默认将除了 ping6 请求之外的所有输入数据包都丢弃呢？可以使用FC00::/7 前缀来标识本地 IPv6 单播地址。
 
- **允许特定的 ICMPv6 通信** 
+ **允许特定的 ICMPv6 通信**
 
 使用 IPv6 的时候需要允许比 IPv4 更多类型的 ICMP 通信以保证路由和 IP 地址自动配置等功能正常工作。有时候，如果你的规则设置太过苛刻，可能都无法分配到正确的 IPv6 地址。当然，不使用 DHCP 而是手动配置 IP 地址的除外。
 

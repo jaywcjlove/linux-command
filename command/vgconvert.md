@@ -7,29 +7,29 @@ vgconvert
 
 **vgconvert命令** 用于转换指定LVM卷组的元数据格式，通常将“LVM1”格式的卷组转换为“LVM2”格式。转换卷组元数据前必须保证卷组处于非活动状态，否则无法完成转换操作。
 
-### 语法  
+### 语法
 
 ```shell
 vgconvert(选项)(参数)
 ```
 
-### 选项  
+### 选项
 
 ```shell
 -M：要转换的卷组格式。
 ```
 
-### 参数  
+### 参数
 
 卷组：指定要转换格式的卷组。
 
-### 实例  
+### 实例
 
 转换卷组元数据格式前，使用vgchange命令将卷组设置为非活动状态。在命令行中输入下面的命令：
 
 ```shell
 [root@localhost lvm]# vgchange -an vg1000    #设置卷组状态为非活动状态
-0 logical volume(s) in volume group "vg1000" now active 
+0 logical volume(s) in volume group "vg1000" now active
 
 ```shell
 

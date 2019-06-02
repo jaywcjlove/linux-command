@@ -7,7 +7,7 @@ setfacl
 
 **setfacl命令** 是用来在命令行里设置ACL（访问控制列表）。在命令行里，一系列的命令跟随以一系列的文件名。
 
-### 选项  
+### 选项
 
 ```shell
 -b,--remove-all：删除所有扩展的acl规则，基本的acl规则(所有者，群组，其他）将被保留。
@@ -35,11 +35,11 @@ setfacl
 
 当在不支持ACLs的文件系统上使用setfacl命令时，setfacl将修改文件权限位。如果acl规则并不完全匹配文件权限位，setfacl将会修改文件权限位使其尽可能的反应acl规则，并会向standard error发送错误消息，以大于0的状态返回。
 
- **权限** 
+ **权限**
 
 文件的所有者以及有`CAP_FOWNER`的用户进程可以设置一个文件的acl。（在目前的linux系统上，root用户是唯一有`CAP_FOWNER`能力的用户）
 
- **ACL规则** 
+ **ACL规则**
 
 setfacl命令可以识别以下的规则格式：
 
@@ -52,7 +52,7 @@ setfacl命令可以识别以下的规则格式：
 
 恰当的acl规则被用在修改和设定的操作中，对于uid和gid，可以指定一个数字，也可指定一个名字。perms域是一个代表各种权限的字母的组合：读`-r`写`-w`执行`-x`，执行只适合目录和一些可执行的文件。pers域也可设置为八进制格式。
 
- **自动创建的规则** 
+ **自动创建的规则**
 
 最初的，文件目录仅包含3个基本的acl规则。为了使规则能正常执行，需要满足以下规则。
 
@@ -60,7 +60,7 @@ setfacl命令可以识别以下的规则格式：
 *   任何一条包含指定的用户名或群组名的规则必须包含有效的权限组合。
 *   任何一条包含缺省规则的规则在使用时，缺省规则必须存在。
 
- **ACL的名词定义** 
+ **ACL的名词定义**
 
 先来看看在ACL里面每一个名词的定义，这些名词我大多从man page上摘下来虽然有些枯燥,但是对于理解下面的内容还是很有帮助的。
 
@@ -104,7 +104,7 @@ other::r--      定义了ACL_OTHER的权限为read
 
 从这里我们就可以看出ACL提供了我们可以定义特定用户和用户组的功能，那么接下来我们就来看一下如何设置一个文件的ACL：
 
- **如何设置ACL文件** 
+ **如何设置ACL文件**
 
 首先我们还是要讲一下设置ACL文件的格式，从上面的例子中我们可以看到每一个Access Entry都是由三个被：号分隔开的字段所组成，第一个就是Entry tag type。
 
@@ -165,7 +165,7 @@ other::r--
 
 到这里就完成了我们上面讲到的要求，是不是很简单呢。
 
- **ACL_MASK和Effective permission** 
+ **ACL_MASK和Effective permission**
 
 这里需要重点讲一下`ACL_MASK`，因为这是掌握ACL的另一个关键，在Linux file permission里面大家都知道比如对于`rw-rw-r--`来说, 当中的那个`rw-`是指文件组的permission. 但是在ACL里面这种情况只是在`ACL_MASK`不存在的情况下成立。如果文件有ACL_MASK值，那么当中那个`rw-`代表的就是mask值而不再是group permission了。
 
@@ -219,7 +219,7 @@ other::r--
 -rwxr--r--+ 1 root admin 0 Jul 3 23:10 test.sh
 ```
 
- **Default ACL** 
+ **Default ACL**
 
 上面我们所有讲的都是Access ACL，也就是对文件而言。下面我简单讲一下Default ACL。Default ACL是指对于一个目录进行Default ACL设置，并且在此目录下建立的文件都将继承此目录的ACL。
 
@@ -261,13 +261,13 @@ other::r--
 
 这里我们看到在dir下建立的文件john用户自动就有了read and write permission，
 
- **ACL相关命令** 
+ **ACL相关命令**
 
 前面的例子中我们都注意到了getfacl命令是用来读取文件的ACL，setfacl是用来设定文件的Acess ACL。这里还有一个chacl是用来改变文件和目录的Access ACL and Default ACL，它的具体参数大家可以去看man page。我只想提及一下`chacl -B`。它可以彻底删除文件或者目录的ACL属性(包括Default ACL)，比如你即使用了`setfacl -x`删除了所有文件的ACL属性，那个+号还是会出现在文件的末尾，所以正确的删除方法应该是用`chacl -B`用cp来复制文件的时候我们现在可以加上`-p`选项。这样在拷贝文件的时候也将拷贝文件的ACL属性，对于不能拷贝的ACL属性将给出警告。
 
 mv命令将会默认地移动文件的ACL属性，同样如果操作不允许的情况下会给出警告。
 
- **需要注意的几点** 
+ **需要注意的几点**
 
 如果你的文件系统不支持ACL的话，你也许需要重新mount你的file system：
 

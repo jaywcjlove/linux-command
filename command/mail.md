@@ -7,13 +7,13 @@ mail
 
 **mail命令** 是命令行的电子邮件发送和接收工具。操作的界面不像elm或pine那么容易使用，但功能非常完整。
 
-### 语法  
+### 语法
 
 ```shell
 mail(选项)(参数)
 ```
 
-### 选项  
+### 选项
 
 ```shell
 -b<地址>：指定密件副本的收信人地址；
@@ -28,13 +28,13 @@ mail(选项)(参数)
 -v：执行时，显示详细的信息。
 ```
 
-### 参数  
+### 参数
 
 邮件地址：收信人的电子邮箱地址。
 
-### 实例  
+### 实例
 
- **直接使用shell当编辑器** 
+ **直接使用shell当编辑器**
 
 ```shell
 mail -s "Hello from jsdig.com by shell" admin@jsdig.com
@@ -44,7 +44,7 @@ welcome to www.jsdig.com
 
 第一行是输入的命令，`-s`表示邮件的主题，后面的`admin@jsdig.com`则是邮件的接收人，输入完这行命令后回车，会进入邮件正文的编写，我们可以输入任何文字，比如上面的两行。当邮件正文输入完成后，需要按 **CTRL+D** 结束输入，此时会提示你输入Cc地址，即邮件抄送地址，没有直接回车就完成了邮件的发送。
 
- **使用管道进行邮件发送** 
+ **使用管道进行邮件发送**
 
 ```shell
 echo "hello,this is the content of mail.welcome to www.jsdig.com" | mail -s "Hello from jsdig.com by pipe" admin@jsdig.com
@@ -52,7 +52,7 @@ echo "hello,this is the content of mail.welcome to www.jsdig.com" | mail -s "Hel
 
 使用管道直接敲入这行命令即可完成邮件的发送，其中echo后的是邮件正文。
 
- **使用文件进行邮件发送** 
+ **使用文件进行邮件发送**
 
 ```shell
 mail -s "Hello from jsdig.com by file" admin@jsdig.com < mail.txt

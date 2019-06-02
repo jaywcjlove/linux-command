@@ -7,18 +7,18 @@ startx
 
 **startx命令** 用来启动X Window，实际上启动X Window的程序为xinit。
 
-### 语法  
+### 语法
 
 ```shell
 startx(参数)
 ```
 
-### 参数  
+### 参数
 
 *   客户端及选项：X客户端及选项；
 *   服务器及选项：X服务器及选项。
 
-### 实例  
+### 实例
 
 要在工作站上或 X 终端上启动 X 会话，请输入：
 
@@ -26,7 +26,7 @@ startx(参数)
 startx
 ```
 
-要在工作站上强制启动 X 会话，请输入： 
+要在工作站上强制启动 X 会话，请输入：
 
 ```shell
 startx -w
@@ -73,12 +73,12 @@ startx -m mwm
 
 ```shell
 $HOME/.xerrors 其中，startx 用来重定向错误消息。在缺省情况下，startx 将错误重定向至用户主目录中的 .xerrors 文件中。
-$HOME/.Xinit,  
-$HOME/.xinit,  
-$HOME/.Xinitrc,  
-$HOME/.xinitrc,  
+$HOME/.Xinit,
+$HOME/.xinit,
+$HOME/.Xinitrc,
+$HOME/.xinitrc,
 $HOME/.xsession 作为包含 shell 命令的“启动文件”来启动窗口管理器、装入 X 资源并产生 X 客户机。
-$HOME/.Xdefaults,  
+$HOME/.Xdefaults,
 $HOME/.xresources 作为装入的 X 资源文件来设置 X 客户机的用户首选项。
 $HOME/.mwmrc mwm 配置文件。
 $HOME/.twmrc twm 配置文件。

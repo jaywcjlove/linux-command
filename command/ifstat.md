@@ -7,26 +7,26 @@ ifstat
 
 **ifstat命令** 就像iostat/vmstat描述其它的系统状况一样，是一个统计网络接口活动状态的工具。ifstat工具系统中并不默认安装，需要自己下载源码包，重新编译安装，使用过程相对比较简单。
 
-### 下载  
+### 下载
 
 ```shell
 http://gael.roualland.free.fr/ifstat/  （官网）
 wget http://gael.roualland.free.fr/ifstat/ifstat-1.1.tar.gz
 ```
 
-### 编译安装  
+### 编译安装
 
 ```shell
 tar -zxvf ifstat-1.1.tar.gz
 cd ifstat-1.1
-./configure            
+./configure
 make
 make install # 默认会安装到/usr/local/bin/目录中
 ```
 
 注释：执行`which ifstat`输出`/usr/local/bin/ifstat`
 
-### 选项  
+### 选项
 
 ```shell
 -l 监测环路网络接口（lo）。缺省情况下，ifstat监测活动的所有非环路网络接口。经使用发现，加上-l参数能监测所有的网络接口的信息，而不是只监测 lo的接口信息，也就是说，加上-l参数比不加-l参数会多一个lo接口的状态信息。
@@ -47,13 +47,13 @@ make install # 默认会安装到/usr/local/bin/目录中
 -d 指定一个驱动来收集状态信息
 ```
 
-### 实例  
+### 实例
 
 默认使用
 
 ```shell
 [root@localhost ifstat-1.1] #ifstat
-       eth0                eth1       
+       eth0                eth1
  KB/s in  KB/s out   KB/s in  KB/s out
     0.07      0.20      0.00      0.00
     0.07      0.15      0.58      0.00
@@ -63,7 +63,7 @@ make install # 默认会安装到/usr/local/bin/目录中
 
 ```shell
 [root@localhost ifstat-1.1]# ifstat -tT
-  time           eth0                eth1                eth2                eth3               Total      
+  time           eth0                eth1                eth2                eth3               Total
 HH:MM:ss   KB/s in  KB/s out   KB/s in  KB/s out   KB/s in  KB/s out   KB/s in  KB/s out   KB/s in  KB/s out
 16:53:04      0.84      0.62   1256.27   1173.05      0.12      0.18      0.00      0.00   1257.22   1173.86
 16:53:05      0.57      0.40      0.57      0.76      0.00      0.00      0.00      0.00      1.14      1.17
@@ -76,7 +76,7 @@ HH:MM:ss   KB/s in  KB/s out   KB/s in  KB/s out   KB/s in  KB/s out   KB/s in  
 
 ```shell
 [root@localhost ifstat-1.1] # ifstat -a
-        lo                 eth0                eth1       
+        lo                 eth0                eth1
  KB/s in  KB/s out   KB/s in  KB/s out   KB/s in  KB/s out
     0.00      0.00      0.28      0.58      0.06      0.06
     0.00      0.00      1.41      1.13      0.00      0.00

@@ -351,4 +351,4 @@ ctrl+b d        #    脱离当前会话；这样可以暂时返回Shell界面，
 
 ## 参考资料
 
-- tmux 官网下载地址：http://tmux.github.io/ 
+- tmux 官网下载地址：http://tmux.github.io/

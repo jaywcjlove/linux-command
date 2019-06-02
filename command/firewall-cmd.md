@@ -14,8 +14,8 @@ firewalld跟iptables比起来至少有两大好处：
 
 firewalld自身并不具备防火墙的功能，而是和iptables一样需要通过内核的netfilter来实现，也就是说firewalld和 iptables一样，他们的作用都是用于维护规则，而真正使用规则干活的是内核的netfilter，只不过firewalld和iptables的结 构以及使用方法不一样罢了。
 
-**命令格式** 
- 
+**命令格式**
+
 ```shell
 firewall-cmd [选项 ... ]
 ```
@@ -47,7 +47,7 @@ firewall-cmd [选项 ... ]
 --set-log-denied=<value> # 设置记录被拒绝的日志，只能为 'all','unicast','broadcast','multicast','off' 其中的一个；
 ```
 
-### 实例  
+### 实例
 
 ```shell
 # 安装firewalld
@@ -90,7 +90,7 @@ firewall-cmd --complete-reload
 # 将接口添加到区域，默认接口都在public
 firewall-cmd --zone=public --add-interface=eth0
 # 永久生效再加上 --permanent 然后reload防火墙
- 
+
 # 设置默认接口区域，立即生效无需重启
 firewall-cmd --set-default-zone=public
 
@@ -100,10 +100,10 @@ firewall-cmd --zone=dmz --list-ports
 # 加入一个端口到区域：
 firewall-cmd --zone=dmz --add-port=8080/tcp
 # 若要永久生效方法同上
- 
+
 # 打开一个服务，类似于将端口可视化，服务需要在配置文件中添加，/etc/firewalld 目录下有services文件夹，这个不详细说了，详情参考文档
 firewall-cmd --zone=work --add-service=smtp
- 
+
 # 移除服务
 firewall-cmd --zone=work --remove-service=smtp
 
@@ -132,7 +132,7 @@ firewall-cmd --permanent --zone=internal --change-interface=enp03s
 服务管理
 
 ```shell
-# 显示服务列表  
+# 显示服务列表
 Amanda, FTP, Samba和TFTP等最重要的服务已经被FirewallD提供相应的服务，可以使用如下命令查看：
 
 firewall-cmd --get-services
@@ -208,43 +208,43 @@ firewall-cmd --reload
                       给该服务设置一个简短的描述 [P only]
 --service=<服务名> --get-short
                       显示该服务的简短描述 [P only]
-                      
+
 --service=<服务名> --add-port=<端口号>[-<端口号>]/<protocol>
                       给该服务添加一个新的端口(端口段) [P only]
-                      
+
 --service=<服务名> --remove-port=<端口号>[-<端口号>]/<protocol>
                       从该服务上移除一个端口(端口段) [P only]
-                      
+
 --service=<服务名> --query-port=<端口号>[-<端口号>]/<protocol>
                       查询该服务是否添加了某个端口(端口段) [P only]
-                      
+
 --service=<服务名> --get-ports
                       显示该服务添加的所有端口 [P only]
-                      
+
 --service=<服务名> --add-protocol=<protocol>
                       为该服务添加一个协议 [P only]
-                      
+
 --service=<服务名> --remove-protocol=<protocol>
                       从该服务上移除一个协议 [P only]
-                      
+
 --service=<服务名> --query-protocol=<protocol>
                       查询该服务是否添加了某个协议 [P only]
-                      
+
 --service=<服务名> --get-protocols
                       显示该服务添加的所有协议 [P only]
-                      
+
 --service=<服务名> --add-source-port=<端口号>[-<端口号>]/<protocol>
                       添加新的源端口(端口段)到该服务 [P only]
-                      
+
 --service=<服务名> --remove-source-port=<端口号>[-<端口号>]/<protocol>
                       从该服务中删除源端口(端口段) [P only]
-                      
+
 --service=<服务名> --query-source-port=<端口号>[-<端口号>]/<protocol>
                       查询该服务是否添加了某个源端口(端口段) [P only]
-                      
+
 --service=<服务名> --get-source-ports
                       显示该服务所有源端口 [P only]
-                      
+
 --service=<服务名> --add-module=<module>
                       为该服务添加一个模块 [P only]
 --service=<服务名> --remove-module=<module>

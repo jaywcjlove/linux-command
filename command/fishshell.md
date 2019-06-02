@@ -31,7 +31,7 @@ $ mkd
 # 有效命令为蓝色
 $ mkdir
 # 有效路径会有下划线。如果没有下划线，你就知道这个路径不存在。
-$ cat ~/somefi 
+$ cat ~/somefi
 ```
 
 ## 自动建议
@@ -133,7 +133,7 @@ end
 
 ```
 02/06/13
-/home/tutorial > 
+/home/tutorial >
 ```
 
 ## 配置
@@ -144,25 +144,25 @@ Fish 的配置文件是 `~/.config/fish/config.fish`，每次 `Fish` 启动，�
 $ fish_config # 浏览器打开 Web 界面配置
 ```
 
-Running Commands: 兼容 bash 等shell的命令执行方式  
-Getting Help: `help/man cmd -> browser/terminal`  
-Syntax Highlighting: 实时检查命令是否正确  
-Wildcards: 支持缩写  `*` 递归 匹配  
-Pipes and Redirections: 使用 `^` 代表 stderr  
-Autosuggestions: 自动建议, 可以使用 `Ctrl-f / ->` 来补全  
-Tab Completions: 更强大的 tab 补全  
-Variables: 使用 set 设置  
-Exit Status: 使用 `echo $status` 替代 `$?`  
-Exports (Shell Variables)  
-Lists: all variables in fish are really lists  
-Command Substitutions: 使用 `(cmd)` 来执行命令, 而不是 反引号、`$()`  
-Combiners (And, Or, Not): 不支持使用符合来表示逻辑运算  
-Functions：使用 `$argv` 替代 `$1`  
-Conditionals (If, Else, Switch) / Functions / Loops: 更人性化的写法(参考 py)  
-Prompt: `function fish_prompt` 实现  
-Startup (Where's .bashrc?): `~/.config/fish/config.fish`，更好的方式是 autoloading-function、universal-variables  
-Autoloading Functions: ` ~/.config/fish/functions/.`  
-Universal Variables：a variable whose value is shared across all instances of fish  
+Running Commands: 兼容 bash 等shell的命令执行方式
+Getting Help: `help/man cmd -> browser/terminal`
+Syntax Highlighting: 实时检查命令是否正确
+Wildcards: 支持缩写  `*` 递归 匹配
+Pipes and Redirections: 使用 `^` 代表 stderr
+Autosuggestions: 自动建议, 可以使用 `Ctrl-f / ->` 来补全
+Tab Completions: 更强大的 tab 补全
+Variables: 使用 set 设置
+Exit Status: 使用 `echo $status` 替代 `$?`
+Exports (Shell Variables)
+Lists: all variables in fish are really lists
+Command Substitutions: 使用 `(cmd)` 来执行命令, 而不是 反引号、`$()`
+Combiners (And, Or, Not): 不支持使用符合来表示逻辑运算
+Functions：使用 `$argv` 替代 `$1`
+Conditionals (If, Else, Switch) / Functions / Loops: 更人性化的写法(参考 py)
+Prompt: `function fish_prompt` 实现
+Startup (Where's .bashrc?): `~/.config/fish/config.fish`，更好的方式是 autoloading-function、universal-variables
+Autoloading Functions: ` ~/.config/fish/functions/.`
+Universal Variables：a variable whose value is shared across all instances of fish
 
 ```shell
 set name 'czl' # 设置变量，替代 name=czl

@@ -7,7 +7,7 @@ ar
 
 **ar命令** 是一个建立或修改备存文件，或是从备存文件中抽取文件的工具，ar可让您集合许多文件，成为单一的备存文件。在备存文件中，所有成员文件皆保有原来的属性与权限
 
-### 语法  
+### 语法
 
 ```shell
 ar [-]{dmpqrtx}[abcfilNoPsSuvV] [membername] [count] archive files...
@@ -15,7 +15,7 @@ Usage: ar [emulation options] [-]{dmpqrstx}[abcDfilMNoPsSTuvV] [--plugin <name>]
        ar -M [<mri-脚本]
 ```
 
-### 选项  
+### 选项
 
 ```shell
 ar 允许你 在第一个 命令行 参数中 以任意 顺序 混合 指定 操作码p 和修饰符mod .
@@ -73,7 +73,7 @@ b      增加 文件到 档案中 已有 成员 之前  , 如果 使用了 修�
 
 c      建立    档案.  指定的 档案 archive 始终 会被建立, 如果 你要求 执行的是 更新, 通过 此修饰符 建立 档案时 会给出 一个
       警告.
-      
+
 f      截短 档案成员的 名字.  ar 通常 允许 任意 长度的 文件名, 但这会 导致 与某些 系统上的 ar 出现 兼容性  问题,  使用  f
       修饰符 可以 在往档案中 追加 文件时 把名字 截短.
 
@@ -104,7 +104,7 @@ v      使用本修饰符可以进行 冗余的 操作。附加了此修饰符�
 V      显示 ar 的版本号。
 ```
 
-选项参数 
+选项参数
 
 ```shell
 --plugin <p> - load the specified plugin
@@ -117,11 +117,11 @@ ar：支持的目标： elf64-x86-64 elf32-i386 elf32-x86-64 a.out-i386-linux pe
 打包文件
 
 ```shell
-[root@localhost ~]# ls   # 显示当前目录文件   
+[root@localhost ~]# ls   # 显示当前目录文件
 a.c	b.c d.c   install.log	  qte
-anaconda-ks.cfg c.c Desktop 
+anaconda-ks.cfg c.c Desktop
 
-[root@localhost ~]# ar rv one.bak a.c b.c  # 打包 a.c b.c文件 
+[root@localhost ~]# ar rv one.bak a.c b.c  # 打包 a.c b.c文件
 ar: 正在创建 one.bak
 a - a.c
 a - b.c
@@ -130,7 +130,7 @@ a - b.c
 打包多个文件
 
 ```shell
-[root@localhost ~]# ar rv two.bak *.c  // 打包以.c结尾的文件  
+[root@localhost ~]# ar rv two.bak *.c  // 打包以.c结尾的文件
 ar: 正在创建 two.bak
 a - a.c
 a - b.c
@@ -141,7 +141,7 @@ a - d.c
 显示打包文件的内容
 
 ```shell
-[root@localhost ~]# ar t two.bak    
+[root@localhost ~]# ar t two.bak
 a.c
 b.c
 c.c
@@ -151,8 +151,8 @@ d.c
 删除打包文件的成员文件
 
 ```shell
-[root@localhost ~]# ar d two.bak a.c b.c c.c  
-[root@localhost ~]# ar t two.bak       
+[root@localhost ~]# ar d two.bak a.c b.c c.c
+[root@localhost ~]# ar t two.bak
 d.c
 ```
 

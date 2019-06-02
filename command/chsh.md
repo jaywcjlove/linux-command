@@ -7,13 +7,13 @@ chsh
 
 **chsh命令** 用来更换登录系统时使用的shell。若不指定任何参数与用户名称，则chsh会以应答的方式进行设置。
 
-### 语法  
+### 语法
 
 ```shell
 chsh(选项)(参数)
 ```
 
-### 选项  
+### 选项
 
 ```shell
 -s<shell 名称>或--shell<shell 名称>：更改系统预设的shell环境。；
@@ -22,13 +22,13 @@ chsh(选项)(参数)
 -v或-version：显示版本信息。
 ```
 
-### 参数  
+### 参数
 
 用户名：要改变默认shell的用户。
 
-### 实例  
+### 实例
 
- **查看系统安装了哪些shell的两种方法：** 
+ **查看系统安装了哪些shell的两种方法：**
 
 第一种：
 
@@ -52,7 +52,7 @@ chsh(选项)(参数)
 
 其实`chsh -l`也是来查看这个文件。
 
- **查看当前正在使用的shell：** 
+ **查看当前正在使用的shell：**
 
 ```shell
 [rocrocket@localhost ~]$ echo $SHELL
@@ -61,7 +61,7 @@ chsh(选项)(参数)
 
 注意SHELL一定要是大写。可以看到，目前使用的shell是`/bin/bash`
 
- **把我的shell改成zsh：** 
+ **把我的shell改成zsh：**
 
 ```shell
 [rocrocket@localhost ~]$ chsh -s /bin/zsh
@@ -80,7 +80,7 @@ rocrocket:x:500:500:rocrocket,China:/rocrocket/PSB/home:/bin/zsh
 
 你可以发现输出内容的最后部分已经变成了`/bin/zsh`了，下次重启的时候，linux就会读取这一命令来启动shell了！
 
- **把shell修改回/bin/bash：** 
+ **把shell修改回/bin/bash：**
 
 ```shell
 [rocrocket@localhost ~]$ chsh -s /bin/bash

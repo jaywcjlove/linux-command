@@ -7,17 +7,17 @@ rev
 
 **rev命令** 将文件中的每行内容以字符为单位反序输出，即第一个字符最后输出，最后一个字符最先输出，依次类推。
 
-### 语法  
+### 语法
 
 ```shell
 rev(参数)
 ```
 
-### 参数  
+### 参数
 
 文件：指定要反序显示内容的文件。
 
-### 实例  
+### 实例
 
 ```shell
 [root@localhost ~]# cat iptables.bak
@@ -35,7 +35,7 @@ rev(参数)
 COMMIT
 # Completed on Thu Dec 26 21:25:15 2013
 
-[root@localhost ~]# rev iptables.bak 
+[root@localhost ~]# rev iptables.bak
 3102 51:52:12 62 ceD uhT no 5.3.1v evas-selbatpi yb detareneG #
 retlif*
 ]6760962:31184[ PORD TUPNI:

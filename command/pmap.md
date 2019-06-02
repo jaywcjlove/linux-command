@@ -7,13 +7,13 @@ pmap
 
 **pmap命令** 用于报告进程的内存映射关系，是Linux调试及运维一个很好的工具。
 
-### 语法  
+### 语法
 
 ```shell
 pmap(选项)(参数)
 ```
 
-### 选项  
+### 选项
 
 ```shell
 -x：显示扩展格式；
@@ -22,18 +22,18 @@ pmap(选项)(参数)
 -V：显示指定版本。
 ```
 
-### 参数  
+### 参数
 
 进程号：指定需要显示内存映射关系的进程号，可以是多个进程号。
 
-### 实例  
+### 实例
 
 ```shell
 pidof nginx
 13312 5371
 
 pmap -x 5371
-5371:   nginx: worker process                
+5371:   nginx: worker process
 Address           Kbytes     RSS   Dirty Mode   Mapping
 0000000000400000     564     344       0 r-x--  nginx
 000000000068c000      68      68      60 rw---  nginx

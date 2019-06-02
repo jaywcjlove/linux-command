@@ -44,7 +44,7 @@ iptables -I INPUT -p tcp --dport 22 -j accept
 
 ```shell
 sudo systemctl status firewalld.service
-sudo systemctl stop firewalld.service          
+sudo systemctl stop firewalld.service
 sudo systemctl disable firewalld.service
 ```
 

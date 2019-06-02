@@ -11,13 +11,13 @@ DMI（Desktop Management Interface,DMI）就是帮助收集电脑系统信息的
 
 DMI充当了管理工具和系统层之间接口的角色。它建立了标准的可管理系统更加方便了电脑厂商和用户对系统的了解。DMI的主要组成部分是Management Information Format(MIF)数据库。这个数据库包括了所有有关电脑系统和配件的信息。通过DMI，用户可以获取序列号、电脑厂商、串口信息以及其它系统配件信息。
 
-### 语法  
+### 语法
 
 ```shell
 dmidecode [选项]
 ```
 
-### 选项  
+### 选项
 
 ```shell
 -d：(default:/dev/mem)从设备文件读取信息，输出内容与不加参数标准输出相同。
@@ -30,7 +30,7 @@ dmidecode [选项]
 -V：显示版本信息。
 ```
 
- **dmidecode参数string及type列表：** 
+ **dmidecode参数string及type列表：**
 
 （1）Valid string keywords are：
 
@@ -114,16 +114,16 @@ dmidecode [选项]
 *   Additional Information
 *   Onboard Device
 
-### 实例  
+### 实例
 
 ```shell
 dmidecode -t 1  # 查看服务器信息
-dmidecode | grep 'Product Name' # 查看服务器型号 
-dmidecode |grep 'Serial Number' # 查看主板的序列号 
+dmidecode | grep 'Product Name' # 查看服务器型号
+dmidecode |grep 'Serial Number' # 查看主板的序列号
 dmidecode -t 2  # 查看主板信息
-dmidecode -s system-serial-number # 查看系统序列号 
-dmidecode -t memory # 查看内存信息 
-dmidecode -t 11 # 查看OEM信息 
+dmidecode -s system-serial-number # 查看系统序列号
+dmidecode -t memory # 查看内存信息
+dmidecode -t 11 # 查看OEM信息
 dmidecode -t 17 # 查看内存条数
 dmidecode -t 16 # 查询内存信息
 dmidecode -t 4  # 查看CPU信息
@@ -222,7 +222,7 @@ Processor Information
 查看内存的插槽数，已经使用多少插槽。每条内存多大，已使用内存多大
 
 ```shell
-dmidecode|grep -P -A5 "Memory\s+Device"|grep Size|grep -v Range 
+dmidecode|grep -P -A5 "Memory\s+Device"|grep Size|grep -v Range
 
 #   Size: 2048 MB
 #   Size: 2048 MB

@@ -7,17 +7,17 @@ ls
 
 **ls命令** 用来显示目标列表，在Linux中是使用率较高的命令。ls命令的输出信息可以进行彩色加亮显示，以分区不同类型的文件。
 
-### 语法  
+### 语法
 
 ```shell
 ls [选项] [文件名...]
-   [-1abcdfgiklmnopqrstuxABCDFGLNQRSUX] [-w cols] [-T cols] [-I pattern] [--full-time] 
-   [--format={long,verbose,commas,across,vertical,single-col‐umn}] 
-   [--sort={none,time,size,extension}] [--time={atime,access,use,ctime,status}] 
+   [-1abcdfgiklmnopqrstuxABCDFGLNQRSUX] [-w cols] [-T cols] [-I pattern] [--full-time]
+   [--format={long,verbose,commas,across,vertical,single-col‐umn}]
+   [--sort={none,time,size,extension}] [--time={atime,access,use,ctime,status}]
    [--color[={none,auto,always}]] [--help] [--version] [--]
 ```
 
-### 选项  
+### 选项
 
 ```shell
 -C     # 多列输出，纵向排序。
@@ -107,7 +107,7 @@ ls [选项] [文件名...]
 # BEGn 和 ENDn 是无符号整数，记录每个文件名的起始、结束位置在输出中的位置（
 #        字节偏移量）。这使得          Emacs          易于找到文件名，即使文件名包含空格或换行等非正
 #        常字符也无需特异的搜索。
-# 
+#
 # 如果目录是递归列出的（“ -R ”选项），每个子目录后列出类似一行：
        # //SUBDIRED//  BEG1 END1 ...  【译注：我测试了 TurboLinux4.0 和 RedHat6.1 ，发现它们都是在 “
        # //DIRED//     BEG1...     ”之后列出“     //SUBDIRED//     BEG1     ...      ”，也即只有一个
@@ -168,11 +168,11 @@ none # 不使用颜色，这是缺省项。
        # 不能恰当的生成文件时，这个选项会提供帮助。
 ```
 
-### 参数  
+### 参数
 
 目录：指定要显示列表的目录，也可以是具体的文件。
 
-### 实例  
+### 实例
 
 ```shell
 $ ls       # 仅列出当前目录可见文件
