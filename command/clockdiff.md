@@ -7,14 +7,14 @@ clockdiff
 
 在ip报文的首部和ICMP报文的首部都可以放入时间戳数据。 **clockdiff** 程序正是使用时间戳来测算目的主机和本地主机的系统时间差。
 
-### 选项  
+###  选项
 
 ```shell
 -o：使用IP时间戳选项来测量系统时间差。时间戳只用3个。
 -o1：使用IP时间戳选项来测量系统时间差。用4个时间戳。如果-o和-o1都没有设置，那么就是用ICMP时间戳来测试系统时间差。
 ```
 
-### 实例  
+###  实例
 
 ```shell
 lixi@lixi-desktop:~$ ping -T tsandaddr www.ustc.edu.cn -c 1

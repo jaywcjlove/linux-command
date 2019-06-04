@@ -7,13 +7,13 @@ rpmverify
 
 **rpmverify命令** 用来验证已安装的rpm软件包的正确性。
 
-### 语法  
+###  语法
 
 ```shell
 rpmverify(选项)
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -Va：验证所有软件包；

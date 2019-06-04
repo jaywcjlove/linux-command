@@ -7,7 +7,7 @@ ip
 
 **ip命令** 用来显示或操纵Linux主机的路由、网络设备、策略路由和隧道，是Linux下较新的功能强大的网络配置工具。
 
-### 语法  
+###  语法 
 
 ```shell
 ip(选项)(参数)
@@ -15,7 +15,7 @@ Usage: ip [ OPTIONS ] OBJECT { COMMAND | help }
        ip [ -force ] -batch filename
 ```
 
-### 选项  
+###  选项 
 
 ```shell
 OBJECT := { link | address | addrlabel | route | rule | neigh | ntable |
@@ -31,7 +31,7 @@ OBJECT := { link | address | addrlabel | route | rule | neigh | ntable |
 -r：显示主机时，不使用IP地址，而使用主机的域名。
 ```
 
-### 参数  
+###  参数 
 
 ```shell
 OPTIONS := { -V[ersion] | -s[tatistics] | -d[etails] | -r[esolve] |
@@ -47,7 +47,7 @@ OPTIONS := { -V[ersion] | -s[tatistics] | -d[etails] | -r[esolve] |
 help：显示网络对象支持的操作命令的帮助信息。
 ```
 
-### 实例  
+###  实例 
 
 ```shellbash
 ip link show                     # 显示网络接口信息

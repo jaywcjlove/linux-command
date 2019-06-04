@@ -7,7 +7,7 @@ getenforce
 
 **grename命令** 可以重命名卷组的名称。
 
-### 语法  
+###  语法
 
 ```shell
 getenforce

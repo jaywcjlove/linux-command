@@ -7,13 +7,13 @@ linux中防火墙软件
 
 **ip6tables命令** 和iptables一样，都是linux中防火墙软件，不同的是ip6tables采用的TCP/ip协议为IPv6。
 
-### 语法  
+###  语法
 
 ```shell
 ip6tables(选项)
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -t<表>：指定要操纵的表；
@@ -35,7 +35,7 @@ ip6tables(选项)
 -c<计数器>：在执行插入操作（insert），追加操作（append），替换操作（replace）时初始化包计数器和字节计数器。
 ```
 
-### 实例  
+###  实例
 
 在命令行窗口输入下面的指令就可以查看当前的 IPv6 防火墙配置：
 

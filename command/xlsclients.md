@@ -7,13 +7,13 @@ xlsclients
 
 **xlsclients命令** 用来列出显示器中的客户端应用程序。
 
-### 语法  
+###  语法
 
 ```shell
 xlsclients(选项)
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -a：列出所有显示器的客户端应用程序信息；

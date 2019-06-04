@@ -7,13 +7,13 @@ chkconfig
 
 **chkconfig命令** 检查、设置系统的各种服务。这是Red Hat公司遵循GPL规则所开发的程序，它可查询操作系统在每一个执行等级中会执行哪些系统服务，其中包括各类常驻服务。谨记chkconfig不是立即自动禁止或激活一个服务，它只是简单的改变了符号连接。
 
-### 语法  
+###  语法 
 
 ```shell
 chkconfig(选项)
 ```
 
-### 选项  
+###  选项 
 
 ```shell
 --add：增加所指定的系统服务，让chkconfig指令得以管理它，并同时在系统启动的叙述文件内增加相关数据；
@@ -54,7 +54,7 @@ chkconfig(选项)
 # higher quality random number generation.
 ```
 
-### 实例  
+###  实例 
 
 ```shell
 chkconfig --list             #列出所有的系统服务。

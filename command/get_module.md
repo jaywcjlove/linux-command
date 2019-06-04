@@ -7,13 +7,13 @@ get_module
 
 **get_module命令** 用于获取Linux内核模块的详细信息。
 
-### 语法  
+###  语法
 
 ```shell
 get_module 模块名
 ```
 
-### 实例  
+###  实例
 
 使用lsmod命令查看内核模块：
 

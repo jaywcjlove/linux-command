@@ -11,7 +11,7 @@ iperf分为两种版本，Unix/Linux版和Windows版，Unix/Linux版更新比较
 
 Linux版本下载地址：http://code.google.com/p/iperf/downloads/list
 
-### 安装iperf  
+### 安装iperf
 
 对于windows版的iperf，直接将解压出来的iperf.exe和cygwin1.dll复制到%systemroot%目录即可，对于linux版的iperf，请使用如下命令安装：
 
@@ -23,7 +23,7 @@ make
 make install
 ```
 
-### 选项  
+### 选项
 
 <table>
 <tbody>
@@ -189,7 +189,7 @@ $ iperf -c <server address> -F <file-name></td>
 </tbody>
 </table>
 
-### 实例  
+### 实例
 
 带宽测试通常采用UDP模式，因为能测出极限带宽、时延抖动、丢包率。在进行测试时，首先以链路理论带宽作为数据发送速率进行测试，例如，从客户端到服务器之间的链路的理论带宽为100Mbps，先用`-b 100M`进行测试，然后根据测试结果（包括实际带宽，时延抖动和丢包率），再以实际带宽作为数据发送速率进行测试，会发现时延抖动和丢包率比第一次好很多，重复测试几次，就能得出稳定的实际带宽。
 

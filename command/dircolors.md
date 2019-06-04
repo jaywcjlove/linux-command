@@ -7,13 +7,13 @@ dircolors
 
 **dircolors命令** 设置ls命令在显示目录或文件时所用的色彩。dircolors可根据[色彩配置文件]来设置LS_COLORS环境变量或是显示设置LS_COLORS环境变量的命令。
 
-### 语法  
+###  语法
 
 ```shell
 dircolors(选项)(参数)
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -b或--sh或--bourne-shell：显示在Boume shell中，将LS_COLORS设为目前预设置的shell指令；
@@ -23,11 +23,11 @@ dircolors(选项)(参数)
 -version：显示版本信息。
 ```
 
-### 参数  
+###  参数
 
 文件：指定用来设置颜色的文件。
 
-### 实例  
+###  实例
 
 ```shell
 [root@localhost ~]# dircolors -p

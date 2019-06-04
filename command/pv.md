@@ -17,14 +17,14 @@ sudo apt-get install pv
 yum install pv
 ```
 
-### 语法  
+###  语法
 
 ```shell
 pv(选项)(参数)
 pv [OPTION] [FILE]...
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -p, --progress           show progress bar
@@ -69,7 +69,7 @@ pv [OPTION] [FILE]...
 ```
 
 
-### 实例  
+###  实例
 
 我们（在 linux 上使用命令行的用户）的大多数使用场景都会用到的命令是从一个 USB 驱动器拷贝电影文件到你的电脑。如果你使用 cp 来完成上面的任务，你会什么情况都不清楚，直到整个复制过程结束或者出错。
 

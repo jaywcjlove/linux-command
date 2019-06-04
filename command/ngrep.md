@@ -7,7 +7,7 @@ ngrep
 
 **ngrep命令** 是grep命令的网络版，他力求更多的grep特征，用于搜寻指定的数据包。正由于安装ngrep需用到libpcap库， 所以支持大量的操作系统和网络协议。能识别TCP、UDP和ICMP包，理解bpf的过滤机制。
 
-### 安装  
+###  安装
 
 ngrep命令的下载地址：http://ngrep.sourceforge.net/，libpcap下载地址：http://www.tcpdump.org/。先用`yum install libpcap`完全安装libpcap，注意有时候用libpcap安装包安装的不完整会影响ngrep的使用。
 
@@ -31,7 +31,7 @@ ngrep的安装就是 configure/make/make install 三部曲。
 
 在安装后输入ngrep来验证下安装是否成功。
 
-### 语法  
+###  语法
 
 ```shell
 ngrep <-LhNXViwqpevxlDtTRM> <-IO pcap_dump> <-n num> <-d dev> <-A num>
@@ -39,7 +39,7 @@ ngrep <-LhNXViwqpevxlDtTRM> <-IO pcap_dump> <-n num> <-d dev> <-A num>
 <-P char> <-F file> <match expression> <bpf filter>
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -e # 显示空数据包
@@ -70,7 +70,7 @@ ngrep <-LhNXViwqpevxlDtTRM> <-IO pcap_dump> <-n num> <-d dev> <-A num>
 -L # 查询网卡接口
 ```
 
-### 实例  
+###  实例
 
 捕捉cloudian：18080端口的request和response，`-W byline`用来解析包中的换行符，否则包里的所有数据都是连续的，可读性差。`-d lo`是监听本地网卡：
 

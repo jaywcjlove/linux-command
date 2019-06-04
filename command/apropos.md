@@ -9,13 +9,13 @@ apropos
 
 如果你不知道完成某个特定任务所需要命令的名称，可以使用一个关键字通过Linux apropos实用程序来搜索它。该实用程序可以搜索关键字并且显示所有包含匹配项的man页面的简短描述。另外，使用man实用程序和-k（关键字）选项，可以得到和用Linux apropos实用程序相同的结果（实际上是相同的命令）。
 
-### 语法  
+###  语法
 
 ```shell
 apropos [-dalhvV] -e|-[w|-r] [-s section] [-m system[,...]] [-M path] [-L locale] -C [file] keyword ...
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -d, --debug：输出调试信息。
@@ -34,11 +34,11 @@ apropos [-dalhvV] -e|-[w|-r] [-s section] [-m system[,...]] [-M path] [-L locale
 -V, --version：打印版本信息并退出。
 ```
 
-### 返回值  
+###  返回值
 
 返回0表示成功，1表示用法、语法或配置文件错误，2表示操作错误，16表示没有找到匹配的内容。
 
-### 实例  
+###  实例
 
 ```shell
 [root@localhost ~]# man -k who

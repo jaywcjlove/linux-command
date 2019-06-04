@@ -7,13 +7,13 @@ lnstat
 
 **lnstat命令** 用来显示Linux系统的网路状态。
 
-### 语法  
+###  语法
 
 ```shell
 lnstat(选项)
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -h：显示帮助信息；

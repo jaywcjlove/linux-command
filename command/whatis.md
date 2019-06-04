@@ -9,13 +9,13 @@ whatis
 
 whatis命令在用`catman -w`命令创建的数据库中查找command参数指定的命令、系统调用、库函数或特殊文件名。whatis命令显示手册部分的页眉行。然后可以发出man命令以获取附加的信息。whatis命令等同于使用`man -f`命令。
 
-### 语法  
+###  语法
 
 ```shell
 whatis
 ```
 
-### 实例  
+###  实例
 
 ```shell
 [root@localhost ~]# whatis ls

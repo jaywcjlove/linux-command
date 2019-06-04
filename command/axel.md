@@ -7,7 +7,7 @@ axel
 
 **axel** 是Linux下一个不错的HTTP/ftp高速下载工具。支持多线程下载、断点续传，且可以从多个地址或者从一个地址的多个连接来下载同一个文件。适合网速不给力时多线程下载提高下载速度。比如在国内VPS或服务器上下载lnmp一键安装包用Axel就比wget快。
 
-### 安装  
+###  安装
 
 CentOS安装Axel：
 
@@ -33,13 +33,13 @@ Debian/Ubuntu安装Axel：
 apt-get install axel
 ```
 
-### 语法  
+###  语法
 
 ```shell
 axel [options] url1 [url2] [url...]
 ```
 
-### 选项  
+###  选项
 
 ```shell
 --max-speed=x , -s x         # 最高速度x
@@ -56,7 +56,7 @@ axel [options] url1 [url2] [url...]
 --version ，-V               # 版本信息
 ```
 
-### 实例  
+###  实例
 
 如下载lnmp安装包指定10个线程，存到 `/tmp/`：
 

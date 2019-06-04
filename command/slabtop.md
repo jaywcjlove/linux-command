@@ -7,13 +7,13 @@ slabtop
 
 **slabtop命令** 以实时的方式显示内核“slab”缓冲区的细节信息。
 
-### 语法  
+###  语法
 
 ```shell
 slabtop(选项)
 ```
 
-### 选项  
+###  选项
 
 ```shell
 --delay=n, -d n：每n秒更新一次显示的信息，默认是每3秒；
@@ -36,7 +36,7 @@ slabtop(选项)
 *   s: sort by object size
 *   u: sort by cache utilization
 
-### 知识扩展  
+###  知识扩展
 
 内核的模块在分配资源的时候，为了提高效率和资源的利用率，都是透过slab来分配的。通过slab的信息，再配合源码能粗粗了解系统的运行情况，比如说什么资源有没有不正常的多，或者什么资源有没有泄漏。linux系统透过/proc/slabinfo来向用户暴露slab的使用情况。
 
@@ -44,7 +44,7 @@ Linux 所使用的 slab 分配器的基础是 Jeff Bonwick 为 SunOS 操作系�
 
 保存着监视系统中所有活动的 slab 缓存的信息的文件为/proc/slabinfo。
 
-### 实例  
+###  实例
 
 ```shell
 slabtop

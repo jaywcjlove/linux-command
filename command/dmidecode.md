@@ -11,13 +11,13 @@ DMI（Desktop Management Interface,DMI）就是帮助收集电脑系统信息的
 
 DMI充当了管理工具和系统层之间接口的角色。它建立了标准的可管理系统更加方便了电脑厂商和用户对系统的了解。DMI的主要组成部分是Management Information Format(MIF)数据库。这个数据库包括了所有有关电脑系统和配件的信息。通过DMI，用户可以获取序列号、电脑厂商、串口信息以及其它系统配件信息。
 
-### 语法  
+###  语法 
 
 ```shell
 dmidecode [选项]
 ```
 
-### 选项  
+###  选项 
 
 ```shell
 -d：(default:/dev/mem)从设备文件读取信息，输出内容与不加参数标准输出相同。
@@ -114,7 +114,7 @@ dmidecode [选项]
 *   Additional Information
 *   Onboard Device
 
-### 实例  
+###  实例 
 
 ```shell
 dmidecode -t 1  # 查看服务器信息

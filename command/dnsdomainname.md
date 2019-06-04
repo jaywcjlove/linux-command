@@ -7,19 +7,19 @@ dnsdomainname
 
 **dnsdomainname命令** 用于定义DNS系统中FQDN名称中的域名。
 
-### 语法  
+###  语法
 
 ```shell
 dnsdomainname(选项)
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -v：详细信息模式，输出指令执行的详细信息。
 ```
 
-### 实例  
+###  实例
 
 ```shell
 [root@AY1307311912260196fcZ ~]# dnsdomainname -v

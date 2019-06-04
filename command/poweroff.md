@@ -7,13 +7,13 @@ poweroff
 
 **grename命令** 可以重命名卷组的名称。
 
-### 语法  
+###  语法
 
 ```shell
 poweroff [选项]
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -n 关闭之前不同步

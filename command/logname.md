@@ -7,13 +7,13 @@ logname
 
 **logname命令** 用来显示用户名称。
 
-### 语法  
+###  语法
 
 ```shell
 logname(选项)
 ```
 
-### 选项  
+###  选项
 
 ```shell
 --help：在线帮助；

@@ -7,13 +7,13 @@ quotacheck
 
 **quotacheck命令** 通过扫描指定的文件系统，获取磁盘的使用情况，创建、检查和修复磁盘配额（quota）文件。执行quotacheck指令，扫描挂入系统的分区，并在各分区的文件系统根目录下产生quota.user和quota.group文件，设置用户和群组的磁盘空间限制。
 
-### 语法  
+###  语法
 
 ```shell
 quotacheck(选项)(参数)
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -a：扫描在/etc/fstab文件里，有加入quota设置的分区；
@@ -24,11 +24,11 @@ quotacheck(选项)(参数)
 -v：显示指令执行过程。
 ```
 
-### 参数  
+###  参数
 
 文件系统：指定要扫描的文件系统。
 
-### 实例  
+###  实例
 
 将所有的在`/etc/mtab`内，含有quota支持的partition进行扫描：
 

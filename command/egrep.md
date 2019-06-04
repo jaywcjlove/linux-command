@@ -7,13 +7,13 @@ egrep
 
 **egrep命令** 用于在文件内查找指定的字符串。egrep执行效果与`grep -E`相似，使用的语法及参数可参照grep指令，与grep的不同点在于解读字符串的方法。egrep是用extended regular expression语法来解读的，而grep则用basic regular expression 语法解读，extended regular expression比basic regular expression的表达更规范。
 
-### 语法  
+###  语法
 
 ```shell
 egrep(选项)(查找模式)(文件名1，文件名2，……)
 ```
 
-### 实例  
+###  实例
 
 显示文件中符合条件的字符。例如，查找当前目录下所有文件中包含字符串"Linux"的文件，可以使用如下命令：
 

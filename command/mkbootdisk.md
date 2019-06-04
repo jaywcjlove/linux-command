@@ -7,13 +7,13 @@ mkbootdisk
 
 **mkbootdisk命令** 用来为当前运行的系统创建能够单独使用的系统引导软盘，以便在系统出现故障时能够启动操作进行适当的修复工作。
 
-### 语法  
+###  语法
 
 ```shell
 mkbootdisk(选项)(参数)
 ```
 
-### 选项  
+###  选项
 
 ```shell
 --device<设备>：指定设备；
@@ -23,11 +23,11 @@ mkbootdisk(选项)(参数)
 --version：显示版本信息。
 ```
 
-### 参数  
+###  参数
 
 内核：指定内核版本。
 
-### 实例  
+###  实例
 
 ```shell
 mkbootdisk --device /dev/fd0 `uname -r`

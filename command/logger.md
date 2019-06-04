@@ -7,13 +7,13 @@ logger
 
 **logger命令** 是用于往系统中写入日志，他提供一个shell命令接口到syslog系统模块
 
-### 语法  
+###  语法
 
 ```shell
 logger [options] [message]
 ```
 
-### 选项  
+###  选项
 
 ```shell
  -T, --tcp             使用流连接(TCP)

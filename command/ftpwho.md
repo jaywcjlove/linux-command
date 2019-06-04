@@ -7,13 +7,13 @@ ftpwho
 
 **ftpwho命令** ftp服务器套件proftpd的工作指令，用于显示当前每个ftp会话信息。
 
-### 语法  
+###  语法
 
 ```shell
 ftpwho(选项)
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -h：显示帮助信息；

@@ -7,14 +7,14 @@ clock
 
 **clock命令**用于调整 RTC 时间。 RTC 是电脑内建的硬件时间，执行这项指令可以显示现在时刻，调整硬件时钟的时间，将系统时间设成与硬件时钟之时间一致，或是把系统时间回存到硬件时钟。
 
-### 语法  
+###  语法
 
 ```shell
 clock [--adjust][--debug][--directisa][--getepoch][--hctosys][--set --date="<日期时间>"]
 [--setepoch --epoch=< >][--show][--systohc][--test][--utc][--version]
 ```
 
-### 选项  
+###  选项
 
 ```shell
 --adjust 　第一次使用"--set"或"--systohc"参数设置硬件时钟，会在/etc目录下产生一个名称为adjtime的文件。当再次使用这两个参数调整硬件时钟，此文件便会记录两次调整间之差异，日后执行clock指令加上"--adjust"参数时，程序会自动根 据记录文件的数值差异，计算出平均值，自动调整硬件时钟的时间。

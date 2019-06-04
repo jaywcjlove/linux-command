@@ -7,13 +7,13 @@ dmesg
 
 **dmesg命令** 被用于检查和控制内核的环形缓冲区。kernel会将开机信息存储在ring buffer中。您若是开机时来不及查看信息，可利用dmesg来查看。开机信息保存在`/var/log/dmesg`文件里。
 
-### 语法  
+###  语法 
 
 ```shell
 dmesg(选项)
 ```
 
-### 选项  
+###  选项 
 
 ```shell
 -c：显示信息后，清除ring buffer中的内容；
@@ -21,7 +21,7 @@ dmesg(选项)
 -n：设置记录信息的层级。
 ```
 
-### 实例  
+###  实例 
 
 ```shell
 [root@localhost ~]# dmesg | head

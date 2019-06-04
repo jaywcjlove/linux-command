@@ -9,13 +9,13 @@ dd
 
 建议在有需要的时候使用dd 对物理磁盘操作，如果是文件系统的话还是使用tar backup cpio等其他命令更加方便。另外，使用dd对磁盘操作时，最好使用块设备文件。
 
-### 语法  
+###  语法 
 
 ```shell
 dd(选项)
 ```
 
-### 选项  
+###  选项 
 
 ```shell
 bs=<字节数>：将ibs（输入）与obs（输出）设成指定的字节数；
@@ -31,7 +31,7 @@ skip=<区块数>：一开始读取时，跳过指定的区块数；
 --version：显示版本信息。
 ```
 
-### 实例  
+###  实例 
 
 ```shell
 [root@localhost text]# dd if=/dev/zero of=sun.txt bs=1M count=1

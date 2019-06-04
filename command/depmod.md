@@ -7,13 +7,13 @@ depmod
 
 **depmod命令** 可产生模块依赖的映射文件，在构建嵌入式系统时，需要由这个命令来生成相应的文件，由modprobe使用。
 
-### 语法  
+###  语法
 
 ```shell
 depmod(选项)
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -a或--all：分析所有可用的模块；
@@ -27,7 +27,7 @@ depmod(选项)
 --help：显示帮助。
 ```
 
-### 实例  
+###  实例
 
 ```shell
 depmod -b /home/windsome/EMMA3PF-KernelSource-20080626/install_pos -e -F ./boot/System.map -v 2.6.18_pro500-bcm91250-mips2_fp_be -A -a

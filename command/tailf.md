@@ -12,13 +12,13 @@ tailf和tail -f的区别
 1. tailf 总是从文件开头一点一点的读， 而tail -f 则是从文件尾部开始读
 2. tailf check文件增长时，使用的是文件名， 用stat系统调用；而tail -f 则使用的是已打开的文件描述符； 注：tail 也可以做到类似跟踪文件名的效果； 但是tail总是使用fstat系统调用，而不是stat系统调用；结果就是：默认情况下，当tail的文件被偷偷删除时，tail是不知道的，而tailf是知道的。
 
-### 语法  
+###  语法
 
 ```shell
 tailf logfile # 动态跟踪日志文件logfile，最初的时候打印文件的最后10行内容。
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -n, --lines NUMBER  # 输出最后数行
@@ -27,7 +27,7 @@ tailf logfile # 动态跟踪日志文件logfile，最初的时候打印文件的
 -h, --help          # 显示帮助并退出
 ```
 
-### 参数  
+###  参数
 
 目标：指定目标日志。
 

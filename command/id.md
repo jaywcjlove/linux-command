@@ -9,13 +9,13 @@ id
 
 当我们想知道某个用户的UID和GID时id命令是非常有用的。一些程序可能需要UID/GID来运行。id使我们更加容易地找出用户的UID以GID而不必在`/etc/group`文件中搜寻。如往常一样，你可以在控制台输入`man id`进入id的手册页来获取更多的详情。
 
-### 语法  
+###  语法
 
 ```shell
 id [-gGnru]--[help][--version][用户名称]
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -g或--group 　 显示用户所属群组的ID。
@@ -27,7 +27,7 @@ id [-gGnru]--[help][--version][用户名称]
 -version 　    显示版本信息。
 ```
 
-### 实例  
+###  实例
 
 ```shell
 [root@localhost ~]# id

@@ -7,13 +7,13 @@ iconv
 
 **iconv命令** 是用来转换文件的编码方式的，比如它可以将UTF8编码的转换成GB18030的编码，反过来也行。JDK中也提供了类似的工具native2ascii。Linux下的iconv开发库包括iconv_open,iconv_close,iconv等C函数，可以用来在C/C++程序中很方便的转换字符编码，这在抓取网页的程序中很有用处，而iconv命令在调试此类程序时用得着。
 
-### 语法  
+###  语法
 
 ```shell
 iconv -f encoding [-t encoding] [inputfile]... 
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -f encoding :把字符从encoding编码开始转换。 
@@ -26,7 +26,7 @@ iconv -f encoding [-t encoding] [inputfile]...
 -f和-t所能指定的合法字符在-l选项的命令里面都列出来了。 
 ```
 
-### 实例  
+###  实例
 
 列出当前支持的字符编码： 
 

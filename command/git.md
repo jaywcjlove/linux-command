@@ -27,7 +27,7 @@ Git迅速成为最流行的分布式版本控制系统，尤其是2008年，GitH
 
 [Git常用命令清单](https://github.com/jaywcjlove/handbook/blob/master/other/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%B8%85%E5%8D%95.md)
 
-### 语法  
+###  语法
 
 ```shell
 git [--version] [--help] [-C <path>] [-c name=value]
@@ -37,7 +37,7 @@ git [--version] [--help] [-C <path>] [-c name=value]
    <command> [<args>]
 ```
 
-### 选项  
+###  选项
 
 ```shell
 add              将文件内容添加到索引

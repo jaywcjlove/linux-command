@@ -7,20 +7,20 @@ iptables-save
 
 **iptables-save命令** 用于将linux内核中的iptables表导出到标准输出设备商，通常，使用shell中I/O重定向功能将其输出保存到指定文件中。
 
-### 语法  
+###  语法
 
 ```shell
 iptables-save(选项)
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -c：指定要保存的iptables表时，保存当权的数据包计算器和字节计数器的值；
 -t：指定要保存的表的名称。
 ```
 
-### 实例  
+###  实例
 
 ```shell
 [root@localhost ~]# iptables-save -t filter > iptables.bak

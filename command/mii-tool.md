@@ -7,13 +7,13 @@ mii-tool
 
 **mii-tool命令** 是用于查看、管理介质的网络接口的状态，有时网卡需要配置协商方式，比如10/100/1000M的网卡半双工、全双工、自动协商的配置。但大多数的网络设备是不用我们来修改协商，因为大多数网络设置接入的时候，都采用自动协商来解决相互通信的问题。不过自动协商也不是万能的，有时也会出现错误，比如丢包率比较高，这时就要我们来指定网卡的协商方式。mii-tool就是能指定网卡的协商方式。下面我们说一说mii-tool的用法。
 
-### 语法  
+###  语法
 
 ```shell
 usage: mii-tool [-VvRrwl] [-A media,... | -F media] [interface ...]
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -V 显示版本信息；
@@ -29,7 +29,7 @@ media: 100baseT4, 100baseTx-FD, 100baseTx-HD, 10baseT-FD, 10baseT-HD,
         (to advertise both HD and FD) 100baseTx, 10baseT
 ```
 
-### 实例  
+###  实例
 
 查看网络接口的协商状态：
 

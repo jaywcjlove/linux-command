@@ -7,13 +7,13 @@ nologin
 
 **nologin命令** 可以实现礼貌地拒绝用户登录系统，同时给出信息。如果尝试以这类用户登录，就在log里添加记录，然后在终端输出This account is currently not available信息，就是这样。一般设置这样的帐号是给启动服务的账号所用的，这只是让服务启动起来，但是不能登录系统。
 
-### 语法  
+###  语法
 
 ```shell
 nologin
 ```
 
-### 实例  
+###  实例
 
 Linux禁止用户登录：
 

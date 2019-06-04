@@ -11,23 +11,23 @@ nslookup4有两种工作模式，即“交互模式”和“非交互模式”�
 
 进入交互模式，直接输入nslookup命令，不加任何参数，则直接进入交互模式，此时nslookup会连接到默认的域名服务器（即`/etc/resolv.conf`的第一个dns地址）。或者输入`nslookup -nameserver/ip`。进入非交互模式，就直接输入`nslookup 域名`就可以了。
 
-### 语法  
+###  语法
 
 ```shell
 nslookup(选项)(参数)
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -sil：不显示任何警告信息。
 ```
 
-### 参数  
+###  参数
 
 域名：指定要查询域名。
 
-### 实例  
+###  实例
 
 ```shell
 [root@localhost ~]# nslookup www.jsdig.com

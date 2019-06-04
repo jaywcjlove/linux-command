@@ -7,13 +7,13 @@ restorecon
 
 **restorecon命令** 用来恢复SELinux文件属性即恢复文件的安全上下文。
 
-### 语法  
+###  语法
 
 ```shell
 restorecon [-iFnrRv] [-e excludedir ] [-o filename ] [-f filename | pathname...]
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -i：忽略不存在的文件。
@@ -26,7 +26,7 @@ restorecon [-iFnrRv] [-e excludedir ] [-o filename ] [-f filename | pathname...]
 -F：强制恢复文件安全语境。
 ```
 
-### 实例  
+###  实例
 
 假设CentOS安装了apache，网页默认的主目录是`/var/www/html`，我们经常遇到这样的问题，在其他目录中创建了一个网页文件，然后用mv移动到网页默认目录`/var/www/html`中，但是在浏览器中却打不开这个文件，这很可能是因为这个文件的SELinux配置信息是继承原来那个目录的，与`/var/www/html`目录不同，使用mv移动的时候，这个SELinux配置信息也一起移动过来了，从而导致无法打开页面，具体请看下面的实例：
 

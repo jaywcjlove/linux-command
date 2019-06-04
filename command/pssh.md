@@ -7,7 +7,7 @@ pssh
 
 **pssh命令** 是一个python编写可以在多台服务器上执行命令的工具，同时支持拷贝文件，是同类工具中很出色的，类似pdsh，个人认为相对pdsh更为简便，使用必须在各个服务器上配置好密钥认证访问。
 
-### 安装pssh  
+### 安装pssh
 
 在CentOS系统环境下，介绍yum的安装和源码安装的方式：
 
@@ -26,7 +26,7 @@ cd pssh-2.3.1/
 python setup.py install
 ```
 
-### 选项  
+### 选项
 
 ```shell
 --version：查看版本
@@ -47,7 +47,7 @@ python setup.py install
 -P：打印出服务器返回信息
 ```
 
-### 实例  
+### 实例
 
 获取每台服务器的uptime：
 

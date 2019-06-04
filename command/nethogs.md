@@ -16,12 +16,12 @@ nethogs
 本文为你介绍如何在Unix/Linux操作系统下如何安装和使用NetHogs按进程监控网络带宽使用率。
 
 
-### 语法  
+###  语法 
 
 ```shell
 nethogs（选项）（参数）
 ```
-### 选项  
+###  选项 
 
 ```shell
 usage: nethogs [-V] [-h] [-b] [-d seconds] [-v mode] [-c count] [-t] [-p] [-s] [device [device [device ...]]]
@@ -81,7 +81,7 @@ yum install nethogs
 $ sudo apt-get install nethogs
 ```
 
-### NetHogs用法  
+###  NetHogs用法 
 
 在基于RedHat系统下键入如下命令启动NetHogs工具。
 
@@ -101,7 +101,7 @@ Ubuntu 12.10 下的NetHogs预览
 
 正如上图所示，send列和received列显示的是按照每个进程的流量统计。总的收发数据带宽在最下方，而且可以用交互命令控制排序，下面将要讨论这些交互命令。
 
-### NetHogs 命令行参数  
+###  NetHogs 命令行参数 
 
 以下就是NetHogs命令行的参数，用-d来添加刷新频率参数，device name 用来检测给定的某个或者某些设备的带宽（默认是eth0）。例如：设置5秒钟的刷新频率，键入如下命令即可：
 

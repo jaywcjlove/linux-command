@@ -7,13 +7,13 @@ whois 客户端服务
 
 **jwhois**  searches Whois servers for the object on the command line.The host to query is taken from a global configuration file, a configuration file specified on the command line, or selected directly on the command line.
 
-### 语法  
+###  语法
 
 ```shell
 jwhois [选项]
 ```
 
-### 选项  
+###  选项
 
 ```shell
 --version                  display version number and patch level
@@ -33,7 +33,7 @@ jwhois [选项]
 
 > 注：以上英文部分寻求网友协助翻译，翻译结果可发送至 sa(at)linuxde.net，谢谢！
 
-### 实例  
+###  实例
 
 显示指定用户信息：
 

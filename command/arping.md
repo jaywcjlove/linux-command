@@ -7,13 +7,13 @@ arping
 
 **arping命令** 是用于发送arp请求到一个相邻主机的工具，arping使用arp数据包，通过ping命令检查设备上的硬件地址。能够测试一个ip地址是否是在网络上已经被使用，并能够获取更多设备信息。功能类似于ping。
 
-### 语法  
+###  语法
 
 ```shell
 arping(选项)(参数)
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -b：用于发送以太网广播帧（FFFFFFFFFFFF）。arping一开始使用广播地址，在收到响应后就使用unicast地址。
@@ -25,11 +25,11 @@ arping(选项)(参数)
 -I interface：设置ping使用的网络接口。
 ```
 
-### 参数  
+###  参数
 
 目的主机：指定发送ARP报文的目的主机。
 
-### 实例  
+###  实例
 
 ```shell
 [root@localhost ~]# arping www.baidu.com 

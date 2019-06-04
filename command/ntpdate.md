@@ -18,13 +18,13 @@ ntpdate
 
 你必须有 root 权限才能在主机上运行这个命令。
 
-### 语法  
+###  语法
 
 ```shell
 ntpdate [ -b] [ -d] [ -s] [ -u] [ -aKeyid] [ -eAuthenticationDelay] [ -kKeyFile] [ -oVersion] [ -pSamples] [ -tTimeOut] Server...
 ```
 
-### 选项  
+###  选项
 
 <table>
 <tbody>

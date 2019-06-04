@@ -17,13 +17,13 @@ screen
 
 GNU's Screen 官方站点：http://www.gnu.org/software/screen/
 
-### 语法  
+###  语法
 
 ```shell
 # screen -AmRvx -[ls -wipe][-d <作业名称>][-h <行数>][-r <作业名称>][-s ][-S <作业名称>]
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -A 　将所有的视窗都调整为目前终端机的大小。
@@ -40,7 +40,7 @@ GNU's Screen 官方站点：http://www.gnu.org/software/screen/
 -wipe 　检查目前所有的screen作业，并删除已经无法使用的screen作业。
 ```
 
-### 常用screen参数  
+###  常用screen参数
 
 ```shell
 screen -S yourname -> 新建一个叫yourname的session
@@ -80,7 +80,7 @@ C-a  -> 进入 copy mode，在 copy mode 下可以回滚、搜索、复制就像
 C-a ] -> paste，把刚刚在 copy mode 选定的内容贴上
 ```
 
-### 使用 screen  
+###  使用 screen
 
  **安装screen** 
 
@@ -164,7 +164,7 @@ Screen默认会为窗口命名为编号和窗口中运行程序名的组合，�
 
 除了依次退出/杀死当前Screen会话中所有窗口这种方法之外，还可以使用快捷键C-a :，然后输入quit命令退出Screen会话。需要注意的是，这样退出会杀死所有窗口并退出其中运行的所有程序。其实C-a :这个快捷键允许用户直接输入的命令有很多，包括分屏可以输入split等，这也是实现Screen功能的一个途径，不过个人认为还是快捷键比较方便些。
 
-### screen 高级应用   
+###  screen 高级应用 
 
  **会话共享** 
 

@@ -7,13 +7,13 @@ setsid
 
 **setsid命令** 子进程从父进程继承了：SessionID、进程组ID和打开的终端。子进程如果要脱离这些，代码中可通过调用setsid来实现。，而命令行或脚本中可以通过使用命令setsid来运行程序实现。setsid帮助一个进程脱离从父进程继承而来的已打开的终端、隶属进程组和隶属的会话。
 
-### 语法  
+###  语法
 
 ```shell
 setsid[options] <program> [arguments ...]
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -c, --ctty   将控制终端设置为当前控制终端

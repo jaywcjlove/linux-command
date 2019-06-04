@@ -7,13 +7,13 @@ rpmbuild
 
 **rpmbuild命令** 被用于创建rpm的二进制软件包和源码软件包。
 
-### 语法  
+###  语法
 
 ```shell
 rpmbuild(选项)
 ```
 
-### 选项  
+###  选项
 
 ```shell
 --initdb：初始化RPM数据库；
@@ -23,7 +23,7 @@ rpmbuild(选项)
 -bs：创建源代码包。
 ```
 
-### 实例  
+###  实例
 
 ```shell
 rpmbuild -ba 'spec文件路径'

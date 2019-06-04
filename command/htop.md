@@ -24,7 +24,7 @@ top缺点：
 
 htop 官网：http://htop.sourceforge.net/
 
-### 语法  
+###  语法
 
 ```shell
 htop
@@ -42,7 +42,7 @@ htop
 -v --version                打印版本信息
 ```
 
-### 选项  
+###  选项
 
 ```shell
 h,?     F1：查看htop使用说明

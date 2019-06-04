@@ -7,7 +7,7 @@ ar
 
 **ar命令** 是一个建立或修改备存文件，或是从备存文件中抽取文件的工具，ar可让您集合许多文件，成为单一的备存文件。在备存文件中，所有成员文件皆保有原来的属性与权限
 
-### 语法  
+###  语法
 
 ```shell
 ar [-]{dmpqrtx}[abcfilNoPsSuvV] [membername] [count] archive files...
@@ -15,7 +15,7 @@ Usage: ar [emulation options] [-]{dmpqrstx}[abcDfilMNoPsSTuvV] [--plugin <name>]
        ar -M [<mri-脚本]
 ```
 
-### 选项  
+###  选项
 
 ```shell
 ar 允许你 在第一个 命令行 参数中 以任意 顺序 混合 指定 操作码p 和修饰符mod .

@@ -7,13 +7,13 @@ rpmdb
 
 **rpmdb命令** 用于初始化和重建rpm数据库。
 
-### 语法  
+###  语法
 
 ```shell
 rpmdb(选项)
 ```
 
-### 选项  
+###  选项
 
 ```shell
 --initdb：初始化RPM数据库；
