@@ -1,7 +1,7 @@
 poweroff
 ===
 
-关闭Linux系统，关闭记录会被写入到/var/log/wtmp日志文件中。
+关闭Linux系统，关闭记录会被写入到/var/log/wtmp日志文件中
 
 ## 补充说明
 
