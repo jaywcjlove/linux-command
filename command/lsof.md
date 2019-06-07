@@ -139,4 +139,10 @@ lsof -p $pid
 lsof -i:9981 -P -t -sTCP:LISTEN
 ```
 
+列出打开文件的进程:
+
+```shell
+lsof $filename
+```
+
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
