@@ -51,6 +51,8 @@ function
 backslash \
 ```
 
+内建命令的帮助信息请参考 'help' 命令
+
 ###  实例
 
 使用builtin命令执行bash内建命令alias：
