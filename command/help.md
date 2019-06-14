@@ -42,23 +42,7 @@ A：因为除了bash内建的echo，GNU/linux的coreutils包里也有该命令�
 
 PS：当你在shell脚本里定义了一个叫 'echo' 的函数，那么调用的时候优先级会如何呢？
 
-```shell
-#!/bin/bash
-#type也是内建命令
-type -t echo
-echo(){
-    printf "123\n"
-}
-type -t echo
-```
-
-```shell
-#输出结果
-builtin
-function
-```
-
-函数优先于内建命令，内建命令优先于外部命令。
+请参考 'builtin' 命令
 
 Q：我需要获得更多的bash的相关帮助信息
 

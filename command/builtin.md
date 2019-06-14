@@ -1,25 +1,61 @@
 builtin
 ===
 
-执行shell内部命令
+执行bash内建命令。
 
 ## 补充说明
 
-**builtin命令** 用于执行指定的shell内部命令，并返回内部命令的返回值。builtin命令在使用时，将不能够再使用Linux中的外部命令。当系统中定义了与shell内部命令相同的函数时，使用builtin显式地执行shell内部命令，从而忽略定义的shell函数。
+**builtin命令** 用于执行指定的bash内建命令，并返回内部命令的返回值。builtin命令在使用时，Linux中同名的外部命令及同名的shell函数失效。
 
 ###  语法
 
 ```shell
-builtin(参数)
+builtin(bash内建命令)(参数)
 ```
 
 ###  参数
 
-shell内部命令：指定需要执行的shell内部命令。
+bash内建命令：指定需要执行的bash内建命令。
+
+（可选）参数：传递给bash内建命令的参数。
+
+###  提示
+
+**同名情况下的优先级顺序**
+
+builtin 内建命令 > 函数 > 内建命令 > 外部命令
+
+```shell
+#!/bin/bash
+#此时内建命令优先使用
+echo "the Great Wall"
+#调用内建命令type，显示命令的类型
+type -t echo
+#定义 echo 函数
+echo(){
+    printf "123\n"
+}
+#此时同名函数优先使用
+echo
+type -t echo
+#此时内建命令优先使用
+builtin echo -e "backslash \\"
+```
+
+```shell
+#输出结果
+the Great Wall
+builtin
+123
+function
+backslash \
+```
+
+内建命令的帮助信息请参考 'help' 命令
 
 ###  实例
 
-使用builtin命令执行shell内部命alias显示命令别名，输入如下命令：
+使用builtin命令执行bash内建命令alias：
 
 ```shell
 builtin alias                 # 执行shell内部指令
