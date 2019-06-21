@@ -1,4 +1,5 @@
-## export
+export
+===
 
 为shell变量或函数设置导出属性。
 
