@@ -1,96 +1,114 @@
 enable
 ===
 
-启动或关闭shell内建命令
+启动或禁用shell内建命令
 
-## 补充说明
 
-**enable命令** 用于临时关闭或者激活指定的shell内部命令。若要执行的文件名称与shell内建命令相同，可用`enable -n`来关闭shell内建命令。若不加`-n`选项，enable可重新启动关闭的命令。
+### 概要
 
-linux shell命令执行时，shell总是先在自己的shell builtin中查找该命令，如果找到则执行该命令；如果找不到该命令，则会从环境变量$PATH指定的路径中依次去查找待执行的命令。因为了解了这一点，所以看起来好像没有办法编写用户自己的命令来替代shell builtin命令。幸运的是，有了enable命令我们就能做到了。
+enable [-a] [-dnps] [-f filename] [name ...]
 
-###  语法
+### 主要用途
 
-```shell
-enable(选项)(参数)
+- 禁用一到多个内建命令。
+
+- 启用一到多个内建命令。
+
+- 直接调用与禁用的内建命令同名且在`$PATH`路径下找到的外部命令。
+
+- 打印所有内建命令，无论是否禁用。
+- 打印处于启用状态的内建命令。
+- 打印处于禁用状态的内建命令。
+
+- 打印处于启用状态的posix标准内建命令。
+- 打印处于禁用状态的posix标准内建命令。
+- 打印posix标准内建命令，无论是否禁用。
+
+- 从动态库中加载内建命令。
+- 移除从动态库中加载的内建命令。
+
+#### 选项
+
+-a 打印所有内建命令，无论是否禁用。
+
+-d 移除从动态库中加载的内建命令。
+
+-n 禁用内建命令或显示已禁用的内建命令。
+
+-p 以可复用格式打印。
+
+-s 只显示处于启动状态的posix标准内建命令。
+
+-f 动态库中加载内建命令。
+
+-ns 打印处于禁用状态的posix标准内建命令。
+
+-as 打印posix标准内建命令，无论是否禁用。
+
+#### 参数
+
+filename：动态库文件名。
+
+name（可选）：内建命令，可以为多个。
+
+#### 返回值
+
+enable返回成功，除非name不是内建命令或有错误发生。
+
+### 例子（以下内容限于篇幅不再列出返回值部分）
+
+```
+#posix special builtin
+#假设没有任何内建命令被禁用
+#禁用两个posix标准内建命令
+enable -n set source
+#打印处于禁用状态的posix标准内建命令
+enable -ns
+#打印posix标准内建命令，无论是否禁用。
+enable -as
+#打印处于启用状态的posix标准内建命令
+enable -s
 ```
 
-###  选项
-
-```shell
--n：关闭指定的内部命令；
--a：显示所有激活的内部命令；
--f：从指定文件中读取内部命令。
 ```
-
-###  参数
-
-内部命令：指定要关闭或激活的内部命令。
-
-###  实例
-
-使用enable命令显示所有激活的内部命令：
-
-```shell
-[root@localhost ~]# enable -a
-enable .
-enable :
-enable alias
-enable bg
-enable bind
-enable break
-enable builtin
-enable caller
-enable cd
-enable command
-enable compgen
-enable complete
-enable continue
-enable declare
-enable dirs
-enable disown
-enable echo
-enable enable
-enable eval
-enable exec
-enable exit
-enable export
-enable false
-enable fc
-enable fg
-enable getopts
-enable hash
-enable help
-enable history
-enable jobs
-enable kill
-enable let
-enable local
-enable logout
-enable popd
-enable printf
-enable pushd
+#假设没有任何内建命令被禁用
+#禁用一到多个内建命令
+enable -n echo pwd
+#打印所有内建命令，无论是否禁用。
+enable -a
+#打印处于启用状态的内建命令
+enable
+#打印处于禁用状态的内建命令
+enable -n
+#启用一到多个内建命令
 enable pwd
-enable read
-enable readonly
-enable return
-enable set
-enable shift
-enable shopt
-enable source
-enable suspend
-enable test
-enable times
-enable trap
-enable true
-enable type
-enable typeset
-enable ulimit
-enable umask
-enable unalias
-enable unset
-enable wait
 ```
 
+### Q&A
+
+Q：请问`-f`，`-d`，`-p`的演示呢？
+
+A：说明一下，`-f`与`-d`限于个人能力没有找到合适的例子，如果您有更好的例子欢迎提pr；
+经过我验证`-p`选项是否使用好像没有区别，可以比较```enable -p|cat -A```和```enable|cat -A``` 有什么区别。（注：`cat -A`用于显示不可见字符）
+
+Q：是否可以禁用`enable`自己？之后还能禁用或启用内建命令吗？
+
+A：可以；不能。
+
+### 注意
+
+> linux shell命令执行时，shell总是先在自己的shell builtin中查找该命令，如果找到则执行该命令；如果找不到该命令，则会从环境变量`$PATH`指定的路径中依次去查找待执行的命令。看起来好像没有办法编写用户自己的命令来替代shell builtin命令。幸运的是，有了`enable`命令我们就能做到了。
+
+1. 关于同名命令调用的优先级的知识，请先参考`builtin`命令的*提示*部分，然后继续阅读下面部分；
+
+  当内建命令`echo`没有禁用时，如果要调用外部命令`echo`，只能这样写`/usr/bin/echo`；
+
+  当我们禁用了`echo`后，优先级顺序变成了这样：
+
+  函数 > 外部命令
+
+  如果执行命令的环境没有`echo`函数，那么调用的`echo`就是外部命令。
+
+2. 该命令是bash内建命令，相关的帮助信息请查看 `help` 命令。
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
