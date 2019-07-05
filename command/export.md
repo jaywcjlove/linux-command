@@ -101,12 +101,12 @@ export LD_LIBRARY_PATH=$(pwd):${LD_LIBRARY_PATH}
 
 #### Q：对变量或函数设置导出属性有什么用？  
 
-A：它们会成为环境变量，可以在脚本中访问它们，尤其是脚本中调用的子进程需要时。（ **参考链接4** ）
+A：它们会成为环境变量，可以在脚本中访问它们，尤其是脚本中调用的子进程需要时。（ **[参考链接4][4]** ）
 
 #### Q：如果我编写的脚本修改了已有的环境变量的值，那么执行它会在当前终端生效吗？会影响之前以及之后打开的终端吗？  
 
 A：只有通过`source`方式调用的脚本会生效，您可以查看`source`命令获得更多信息；其他方式只是在子shell中执行。
-之前的不会影响，之后的除非是修改了`~/.bashrc`这种启动终端时加载的脚本。（ **参考链接1** ）
+之前的不会影响，之后的除非是修改了`~/.bashrc`这种启动终端时加载的脚本。（ **[参考链接1][1]** ）
 
 #### Q：我脚本文件中调用`~/.bashrc`中定义的函数和变量。为什么在新打开的终端中通过 `sh` 方式调用该脚本或直接运行
 
@@ -115,7 +115,7 @@ A：请在`~/.bashrc`文件中增加export它们的语句。另请参阅 **知�
 
 #### Q：数组和关联数组也可以设置导出属性吗？
 
-A：是可以的（如果你的bash支持它们），不过有些问题（ **参考链接2** ）。
+A：是可以的（如果你的bash支持它们），不过有些问题（ **[参考链接2][2]** ）。
 
 #### Q：为什么我在查看变量或函数导出属性的时候显示的开头是`declare`？  
 
@@ -146,10 +146,10 @@ A：因为`declare`也能够设置变量或函数的导出属性，详见`declar
 
 ### 参考链接
 
-1. [关于bashrc profile文件的讨论](https://www.cnblogs.com/hongzg1982/articles/2101792.html)
-2. [关于export数组的讨论](https://stackoverflow.com/questions/5564418/exporting-an-array-in-bash-script)
-3. [export -pf用法](https://unix.stackexchange.com/questions/22796/can-i-export-functions-in-bash)
-4. [环境变量和shell变量的区别](https://askubuntu.com/questions/26318/environment-variable-vs-shell-variable-whats-the-difference)
+1. [关于bashrc profile文件的讨论][1]
+2. [关于export数组的讨论][2]
+3. [export -pf用法][3]
+4. [环境变量和shell变量的区别][4]
 
 ### 扩展阅读
 
@@ -179,5 +179,9 @@ declare -x TERM="linux"
 declare -x USER="root"
 ```
 
+[1]: https://www.cnblogs.com/hongzg1982/articles/2101792.html
+[2]: https://stackoverflow.com/questions/5564418/exporting-an-array-in-bash-script
+[3]: https://unix.stackexchange.com/questions/22796/can-i-export-functions-in-bash
+[4]: https://askubuntu.com/questions/26318/environment-variable-vs-shell-variable-whats-the-difference
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
