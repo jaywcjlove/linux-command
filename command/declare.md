@@ -41,7 +41,7 @@ declare [-aAfFgilnrtux] [-p] [name[=value] ...]
 -l 增加小写属性，变量的值将转换为小写。
 +l 删除小写属性。
 -n 增加引用属性（如果该选项存在）。
-+n 删除引用属性。
++n 删除引用属性（如果该选项存在）。
 -r 增加只读属性。
 -t 增加追踪属性。
 +t 删除追踪属性。
@@ -78,17 +78,11 @@ declare -p b
 declare +i b
 # 显示属性，返回 declare -- b="5"。
 declare -p b
-
-# 变量大小写属性设置的作用。
+# 根据变量属性强制转换值的英文大小写。
 declare -u uc_var='abc'
 declare -l lc_var='ABC'
-# 查看变量的值。
+# 显示'ABC abc';
 echo "${uc_var} ${lc_var}"
-# 返回 'ABC abc';
-# 根据变量属性强制转换值的英文大小写。
-
-# 导出属性的相关内容请查看'export'命令。
-# 只读属性的相关内容请查看'readonly'命令。
 ```
 
 ```shell
@@ -109,23 +103,22 @@ test
 # declare -- b="3"
 # declare -- c="3"
 
-#定义函数外的全局变量
+# 定义函数外的全局变量
 declare a=3
 b=3
 declare –p a b
-# 返回结果。
+# 返回结果如下。
 # declare -- a="3"
 # declare -- b="3"
 
-#定义局部变量
+# 定义局部变量
 function test2(){
   local -i a=3
   declare -i b=3
 }
 test2
-echo "${a} ${b}"
 # 没有该变量（已经被销毁了）
-
+echo "${a} ${b}"
 # 因此，我们日常脚本中最常见的类似于'a=3'实际上是声明并赋值了一个全局变量。
 # 在接下来的 **讨论** 环节会延伸讨论全局和局部变量问题。
 ```
@@ -140,20 +133,18 @@ season=('Spring' 'Summer' 'Autumn' 'Winter')
 declare -ar season
 # 显示所有数组。
 declare -a
-
 # 定义关联数组。
+
 declare -A fruits=(['apple']='red' ['banana']='yellow')
 # 显示所有关联数组。
 declare -A
 ```
 
 ```shell
-# 显示所有变量的属性和值并显示函数的定义，输出很长；）
+# 显示所有变量的属性和值并显示函数的定义，输出很长。
 declare
-
 # 显示所有变量的属性和值。
 declare -p
-
 # 显示所有全局变量的属性和值。
 declare -g
 ```
@@ -161,19 +152,15 @@ declare -g
 ```shell
 # 显示全部函数名和函数定义。
 declare -f
-
 # 只显示全部函数名。
 declare -F
 
 # 定义两个函数。
 function func_a(){ echo $(date +"%F %T"); }
 function func_b(){ cd /; ls -lh --sort=time; }
-
 # 显示一到多个函数名和函数定义。
 declare -f func_a func_b
-
-# 只显示一到多个函数名。
-# 验证某个名称是否已经定义为函数时有用。
+# 只显示一到多个函数名，验证某个名称是否已经定义为函数时有用。
 declare -F func_a func_b
 # 最好不要让函数名和变量名相同。
 ```
@@ -216,6 +203,11 @@ declare -F func_a func_b
    有多种原因导致`declare`失败，关于这些情况可以参考[bash在线文档declare部分\(最新版\)](https://www.gnu.org/software/bash/manual/bash.html#index-declare)，或执行 `info bash`
    查看`declare`部分最后一大串`an attempt is`开头的句子。
    
+### 注意
 
+1. 该命令是bash内建命令，相关的帮助信息请查看`help`命令。
+2. 导出属性的相关介绍请查看'export'命令。
+3. 只读属性的相关介绍请查看'readonly'命令。
+4. 引用属性的相关介绍请查看'unset'命令的例子部分。
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
