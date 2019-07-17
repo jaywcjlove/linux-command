@@ -1,0 +1,71 @@
+NAME
+       unrar - extract files from rar archives
+
+SYNOPSIS
+       unrar <command> [-<switch 1> -<switch N>] archive [files...] [path...]
+
+DESCRIPTION
+       This manual page documents briefly the unrar command.
+       This  manual  page was written for the Debian GNU/Linux distribution because the original program does
+       not have a manual page.
+       Commands and options described here are as of unrar 2.02.
+
+OPTIONS
+       After the program name comes a command and then optional switches with dashes before them.  A  summary
+       of commands is included below.  For a complete description, run unrar without options.
+
+       e      Extract files to current directory.
+
+       l      List archive content.
+
+       p      Print file to stdout.
+
+       t      Test archive files.
+
+       v      Verbosely list archive.
+
+       x      Extract files with full path.
+
+SWITCHES
+       NOTE: Every switch must be separated by a whitespace. You cannot put them together.
+
+       -av-   Disable Authenticity Verification check.
+
+       -c-    Disable comments show.
+
+       -f     Freshen files.
+
+       -kb    Keep broken extracted files.
+
+       -ierr  Send all messages to stderr.
+
+       -inul  Disable all messages.
+
+       -o+    Overwrite existing files.
+
+       -o-    Do not overwrite existing files.
+
+       -p<password>
+              Set password.
+
+       -p-    Do not query password.
+
+       -r     Recurse subdirectories.
+
+       -u     Update files.
+
+       -v     List all volumes.
+
+       -x<file>
+              Exclude specified file.
+
+       -x@<list>
+              Exclude files in specified list file.
+
+       -x@    Read file names to exclude from stdin.
+
+       -y     Assume Yes on all queries.
+
+AUTHOR
+       This  manual  page  was  written by Petr Cech <cech@debian.org> according to "unrar -h" for the Debian
+       GNU/Linux system (but may be used by others).
