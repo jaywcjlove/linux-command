@@ -9,9 +9,6 @@ SYNOPSIS
 
 DESCRIPTION
 描述
-      
-       本手册页是为Debian GNU / Linux发行版编写的，因为原始程序可以
-       没有手册页。
        
        This manual page documents briefly the unrar command.
         本手册页简要介绍了unrar命令。
