@@ -52,7 +52,8 @@ wc test.txt
 用wc命令怎么做到只打印统计数字不打印文件名
 
 ```shell
-wc -l test.txt 
+num=(wc -l test.txt)
+echo num
 # 输出结果
 7 test.txt
 ```
