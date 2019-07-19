@@ -6,7 +6,7 @@ unrar
 ###  语法
 
 ```shell
-rar [选项] [文件名...]
+unrar [选项][switch 命令] [文件名...][路径]
    unrar <command> [-<switch 1> -<switch N>] archive [files...] [path...]
 ```
 
@@ -21,7 +21,7 @@ rar [选项] [文件名...]
        -x    #使用完整路径提取文件。
 ```
 
-### SWITCHES
+### SWITCHES  开关设置
 
 ```shell
        注意：每个开关必须用空格分隔。你不能把它们放在一起。
