@@ -25,16 +25,16 @@ rar [选项] [文件名...]
 
 ```shell
        注意：每个开关必须用空格分隔。你不能把它们放在一起。
-       -av-   #禁用真实性验证检查。
-       -c-    #禁用评论显示
-       -f     #刷新文件
-       -kb    #保留破碎的提取文件
-       -ierr  #将所有消息发送给stderr。
-       -inul  #禁用所有消息。
-       -o+    #  覆盖现有文件。
-       -o-    #不要覆盖现有文件
+       -av-   	#禁用真实性验证检查。
+			 -c-         #禁用评论显示
+       -f           #刷新文件
+       -kb       #保留破碎的提取文件
+       -ierr      #将所有消息发送给stderr。
+       -inul     #禁用所有消息。
+       -o+        #覆盖现有文件。
+       -o-         #不要覆盖现有文件
        -p<password>
-              #设置密码。
+                      #设置密码。
        -p-    #不查询密码
        -r    # 递归子目录。
        -u     #更新文件。
@@ -57,7 +57,7 @@ rar [选项] [文件名...]
 unrar x test.rar
 ```
 
-###AUTHOR
+### AUTHOR
 
 ```shell
        This  manual  page  was  written by Petr Cech <cech@debian.org> according to "unrar -h" for the Debian
