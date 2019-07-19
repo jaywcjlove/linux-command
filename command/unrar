@@ -1,107 +1,65 @@
-名称
-NAME
-       unrar - extract files from rar archives
-       unrar  - 从rar档案中提取文件
+unrar
+===
 
-SYNOPSIS
-概要
-       unrar <command> [-<switch 1> -<switch N>] archive [files...] [path...]
+解压rar文件命令，从rar档案中提取文件
 
-DESCRIPTION
-描述
-       
-       This manual page documents briefly the unrar command.
-        本手册页简要介绍了unrar命令。
-       This  manual  page was written for the Debian GNU/Linux distribution because the original program does
-       not have a manual page.
-       此手册页是为DebianGNU/Linux发行版编写的，因为原始程序没有手册页。
-       Commands and options described here are as of unrar 2.02.
-       此处描述的命令和选项与unrar 2.02相同。
+###  语法
 
-OPTIONS
-OPTIONS
+```shell
+rar [选项] [文件名...]
+   unrar <command> [-<switch 1> -<switch N>] archive [files...] [path...]
+```
 
-       After the program name comes a command and then optional switches with dashes before them.  A  summary
-       of commands is included below.  For a complete description, run unrar without options.
-       程序名称后出现一个命令，然后在它们之前带有破折号的可选开关。命令摘要如下。有关完整说明，请运行unrar而不选择任何选项。
+###  选项
 
-       e      Extract files to current directory.
-       e      将文件解压缩到当前目录。
+```shell
+      - e      #将文件解压缩到当前目录。
+       -l       # 列出存档内容。
+       -p      #将文件打印到标准输出。
+       -t        #测试存档文件。
+       -v       #详细列出存档。
+       -x       #使用完整路径提取文件。
+```
 
-       l      List archive content.
-              列出存档内容。
+###SWITCHES
 
-       p      Print file to stdout.
-              将文件打印到标准输出。
-
-       t      Test archive files.
-              测试存档文件。
-
-       v      Verbosely list archive.
-              详细列出存档。
-
-       x      Extract files with full path.
-              使用完整路径提取文件。
-
-SWITCHES
-       NOTE: Every switch must be separated by a whitespace. You cannot put them together.
+```shell
        注意：每个开关必须用空格分隔。你不能把它们放在一起。
-
-       -av-   Disable Authenticity Verification check.
-                     禁用真实性验证检查。
-
-       -c-    Disable comments show.
-              禁用评论显示
-
-       -f     Freshen files.
-              刷新文件
-
-       -kb    Keep broken extracted files.
-              保留破碎的提取文件
-
-       -ierr  Send all messages to stderr.
-              将所有消息发送给stderr。
-
-       -inul  Disable all messages.
-                     禁用所有消息。
-
-       -o+    Overwrite existing files.
-                     覆盖现有文件。
-
-       -o-    Do not overwrite existing files.
-                     不要覆盖现有文件
-
+       -av-   #禁用真实性验证检查。
+       -c-    #禁用评论显示
+       -f     #刷新文件
+       -kb    #保留破碎的提取文件
+       -ierr  #将所有消息发送给stderr。
+       -inul  #禁用所有消息。
+       -o+    #  覆盖现有文件。
+       -o-    #不要覆盖现有文件
        -p<password>
-              Set password.
-              设置密码。
-
-       -p-    Do not query password.
-                     不查询密码
-              
-
-       -r     Recurse subdirectories.
-              Recurse子目录。
-
-       -u     Update files.
-                     更新文件。
-
-       -v     List all volumes.
-                     列出所有卷。
-
+              #设置密码。
+       -p-    #不查询密码
+       -r    # 递归子目录。
+       -u     #更新文件。
+       -v     # 列出所有卷。
        -x<file>
-              Exclude specified file.
-                     排除指定的文件。
-
+              # 排除指定的文件。
        -x@<list>
-              Exclude files in specified list file.
-              排除指定列表文件中的文件。
+              #排除指定列表文件中的文件。
+       -x@    # 读取要从stdin中排除的文件名。
+       -y     #对所有查询都假设为是。
+```
 
-       -x@    Read file names to exclude from stdin.
-                     读取要从stdin中排除的文件名。
+###  参数
+目录：指定要显示列表的目录，也可以是具体的文件。
+###  实例
 
-       -y     Assume Yes on all queries.
-                对所有查询都假设为是。
+将压缩文件text.rar在当前目录下解压缩,并解压完整路径。
 
-AUTHOR
+```shell
+unrar x test.rar
+```
+
+###AUTHOR
+
+```shell
        This  manual  page  was  written by Petr Cech <cech@debian.org> according to "unrar -h" for the Debian
        GNU/Linux system (but may be used by others).
+```
