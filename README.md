@@ -226,3 +226,10 @@ yes
 - [Game Drift Linux](http://gamedrift.org/) [下载地址](http://gamedrift.org/Download.html)
 - [Solus](https://solus-project.com) [下载地址](https://solus-project.com/download/)
 - [Manjaro Gaming Edition (mGAMe)](https://sourceforge.net/projects/mgame/) [下载地址](https://sourceforge.net/projects/mgame/)
+
+
+## Team
+
+[![小弟调调™](https://github.com/jaywcjlove.png?size=100)](https://github.com/jaywcjlove) | [![ZhuangZhu-74](https://github.com/ZhuangZhu-74.png?size=100)](https://github.com/ZhuangZhu-74) | [![Huck Huang](https://github.com/huckhuang.png?size=100)](https://github.com/huckhuang)
+---|---|---
+[小弟调调™](http://wangchujiang.com) | [ZhuangZhu-74](https://github.com/ZhuangZhu-74) | [Huck Huang](https://github.com/huckhuang)
