@@ -12,7 +12,7 @@ Linux Command
 
 550 多个 Linux 命令，内容包含 Linux 命令手册、详解、学习，值得收藏的 Linux 命令速查手册。请原谅我写了个爬虫，爬了他们家的数据 [linuxde.net](http://man.linuxde.net) ，同时进行了编辑，增加了一些数据。对他们的辛勤劳动表示敬意，个人希望能本地离线搜索，不喜欢广告，希望得到干净漂亮的预览界面，业余和工作时间需要使用大量的命令，所以干了一件看似比较愚蠢的事情，在回头有空的时候估计能做一个App？或者是命令行帮助工具？但目前还没有计划...
 
-[Web](#web-版本) | [Dash](#dash-版本) | [Alfred](#alfred-版本) | [Krunner](https://github.com/roachsinai/krunner-linuxcommands) | [Android](https://github.com/Ernest-su/LinuxCmd.git) | [Mac/Win/Linux](https://github.com/haloislet/linux-command) | [Chrome Plugin](#chrome-插件)
+[Web](#web-版本) | [Dash](#dash-版本) | [Alfred](#alfred-版本) | [Krunner](https://github.com/roachsinai/krunner-linuxcommands) | [Android](https://github.com/Ernest-su/LinuxCmd.git) | [Mac/Win/Linux](https://github.com/haloislet/linux-command) | [Chrome Plugin](#chrome-插件) | [命令行工具](#命令行工具)
 
 ## 开发使用
 
@@ -58,7 +58,7 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 
 #### Web 版本
 
-[Github Web](http://jaywcjlove.github.io/linux-command/) | [OSChina Web](http://jaywcjlove.gitee.io/linux-command/) | [Web 1](http://linux-command.composer-proxy.org/)
+[Github Web](http://jaywcjlove.github.io/linux-command/) | [OSChina Web](http://jaywcjlove.gitee.io/linux-command/)
 
 扫描二维码移动端预览搜索，也可通过二维码下面链接地址打开使用。
 
@@ -79,6 +79,10 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 由 [**@SHANG殇**](https://github.com/xinshangshangxin) 提供的 `Dash` 版本 [#91](https://github.com/jaywcjlove/linux-command/pull/91)，可配合 `alfred` 玩耍，下载 [linux-command.docset.zip](https://github.com/jaywcjlove/linux-command/releases) 文件解压，点击安装即可。
 
 [![](https://user-images.githubusercontent.com/8779091/57193499-5b475d00-6f6e-11e9-879d-e7e8fdc40ced.gif)](https://github.com/jaywcjlove/linux-command/releases)
+
+#### 命令行工具
+
+由 [**@陈键冬**](https://github.com/chenjiandongx) 提供的 `命令行` 版本 [#129](https://github.com/jaywcjlove/linux-command/issues/129)，可以进入 [@chenjiandongx/how](https://github.com/chenjiandongx/how) 仓库查看使用方法。
 
 ## 目录
 
