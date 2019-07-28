@@ -14,6 +14,7 @@ Linux Command
 
 [Web](#web-版本) | [Dash](#dash-版本) | [Alfred](#alfred-版本) | [CLI](#CLI-版本) | [Krunner](https://github.com/roachsinai/krunner-linuxcommands) | [Android](https://github.com/Ernest-su/LinuxCmd.git) | [Mac/Win/Linux](https://github.com/haloislet/linux-command) | [Chrome Plugin](#chrome-插件)
 
+
 ## 开发使用
 
 可以通过 `npm` 安装 [`linux-command`](https://www.npmjs.com/package/linux-command) 包，包含所有命令的 markdown 文本，和一个[索引文件](dist/data.json)。
@@ -58,7 +59,7 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 
 #### Web 版本
 
-[Github Web](http://jaywcjlove.github.io/linux-command/) | [OSChina Web](http://jaywcjlove.gitee.io/linux-command/) | [Web 1](http://linux-command.composer-proxy.org/)
+[Github Web](http://jaywcjlove.github.io/linux-command/) | [OSChina Web](http://jaywcjlove.gitee.io/linux-command/)
 
 扫描二维码移动端预览搜索，也可通过二维码下面链接地址打开使用。
 
@@ -83,6 +84,10 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 #### CLI 版本
 
 CLI 版本由 [@chenjiandongx](https://github.com/chenjiandongx) 提供，项目地址 [chenjiandongx/how](https://github.com/chenjiandongx/how)。
+
+#### 命令行工具
+
+由 [**@陈键冬**](https://github.com/chenjiandongx) 提供的 `命令行` 版本 [#129](https://github.com/jaywcjlove/linux-command/issues/129)，可以进入 [@chenjiandongx/how](https://github.com/chenjiandongx/how) 仓库查看使用方法。
 
 ## 目录
 
