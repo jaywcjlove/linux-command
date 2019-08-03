@@ -11,7 +11,7 @@
     this.root_path = (function () {
       var elm_path = $$('current_path');
       var url = window.location.origin + window.location.pathname;
-      return elm_path ? url.replace(/\/(c\/)?\w+\.html/, '').replace(/\/$/, '') : '';
+      return elm_path ? url.replace(/\/(c\/)?(\w|-)+\.html/, '').replace(/\/$/, '') : '';
     })();
 
     this.query = '';     //
