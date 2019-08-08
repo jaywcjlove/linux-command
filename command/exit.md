@@ -1,29 +1,42 @@
 exit
 ===
 
-退出当前的shell
+退出当前的shell。
 
-## 补充说明
-
-**exit命令** 同于退出shell，并返回给定值。在shell脚本中可以终止当前脚本执行。执行exit可使shell以指定的状态值退出。若不设置状态值参数，则shell以预设值退出。状态值0代表执行成功，其他值代表执行失败。
-
-###  语法
+## 概要
 
 ```shell
-exit(参数)
+exit [n]
 ```
 
-###  参数
+## 主要用途
 
-返回值：指定shell返回值。
+- 执行exit可使shell以指定的状态值退出。若不设置参数，则以最后一条命令的返回值作为exit的返回值退出。
 
-###  实例
+## 参数
+
+n（可选）：指定的shell返回值（整数）。
+
+## 返回值
+
+返回值为你指定的参数n的值，如果你指定的参数大于255或小于0，那么会通过加或减256的方式使得返回值总是处于0到255之间。
+
+## 例子
 
 退出当前shell：
 
 ```shell
 [root@localhost ~]# exit
 logout
+```
+
+也可以使用`ctrl+d`退出当前终端，下面列出了打开或关闭该功能的方法：
+
+```shell
+# 打开ctrl+d退出终端
+set -o ignoreeof
+# 关闭ctrl+d退出终端
+set +o ignoreeof
 ```
 
 在脚本中，进入脚本所在目录，否则退出：
@@ -57,5 +70,8 @@ if [ "$EXCODE" == "0" ]; then
 fi
 ```
 
+### 注意
+
+1.	该命令是bash内建命令，相关的帮助信息请查看`help`命令。
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
