@@ -1,93 +1,179 @@
 printf
 ===
 
-格式化并输出结果
+格式化并输出结果。
 
-## 补充说明
+## 目录
 
-**printf命令** 格式化并输出结果到标准输出。
+- [bash内建命令](#内建命令)
+- [GNU coreutils中的命令](#外部命令)
 
-###  语法
+## 内建命令
+
+#### 概要
 
 ```shell
-printf(选项)(参数)
---help：在线帮助；
---version：显示版本信息。
+printf [-v var] format [arguments]
 ```
 
-###  参数
+#### 主要用途
 
-*   输出格式：指定数据输出时的格式；
-*   输出字符串：指定要输出的数据。
+- 格式化参数并输出。
 
- **格式替代符** 
-
-*   %b 相对应的参数被视为含有要被处理的转义序列之字符串。
-*   %c ASCII字符。显示相对应参数的第一个字符
-*   %d, %i 十进制整数
-*   %e, %E, %f 浮点格式
-*   %g %e或%f转换，看哪一个较短，则删除结尾的零
-*   %G %E或%f转换，看哪一个较短，则删除结尾的零
-*   %o 不带正负号的八进制值
-*   %s 字符串
-*   %u 不带正负号的十进制值
-*   %x 不带正负号的十六进制值，使用a至f表示10至15
-*   %X 不带正负号的十六进制值，使用A至F表示10至15
-*   %% 字面意义的%
-
- **转义序列** 
-
-*   \a 警告字符，通常为ASCII的BEL字符
-*   \b 后退
-*   \c 抑制（不显示）输出结果中任何结尾的换行字符（只在%b格式指示符控制下的参数字符串中有效），而且，任何留在参数里的字符、任何接下来的参数以及任何留在格式字符串中的字符，都被忽略
-*   \f 换页（formfeed）
-*   \n 换行
-*   \r 回车（Carriage return）
-*   \t 水平制表符
-*   \v 垂直制表符
-*   \\\\ 一个字面上的反斜杠字符
-*   \ddd 表示1到3位数八进制值的字符，仅在格式字符串中有效
-*   \0ddd 表示1到3位的八进制值字符
-
-###  实例
+#### 选项
 
 ```shell
-printf "hello world"
+-v var：将结果输出到变量var中而不是输出到标准输出。
 ```
 
+#### 参数
+
+format：输出格式。
+
+arguments：一到多个参数。
+
 ```shell
-#!/bin/bash
+注意：按原文来翻译确实如此，但是有可能您安装的coreutils版本的外部命令printf已经支持(%b %q)中的部分或全部，请自行确认。
+转义序列：除了支持printf(1)和printf(3)的转义序列，内建printf还支持以下转义序列：
+
+%b	     展开参数中的反斜杠转义字符。
+%q	     将参数扩起以用作shell输入。
+%(fmt)T  根据strftime(3)中的转义字符来输出日期时间字符串。
+```
+
+#### 返回值
+
+返回状态为成功除非给出了非法选项、写错误、赋值错误。
+
+#### 例子
+
+```shell
+# %-5s 格式为左对齐且宽度为5的字符串代替（'-'表示左对齐），不使用则默认右对齐。
+# %-4.2f 格式为左对齐宽度为4，保留两位小数。
 
 printf "%-5s %-10s %-4s\n" NO Name Mark
 printf "%-5s %-10s %-4.2f\n" 01 Tom 90.3456
 printf "%-5s %-10s %-4.2f\n" 02 Jack 89.2345
 printf "%-5s %-10s %-4.2f\n" 03 Jeff 98.4323
+
+# 输出
+NO    Name       Mark
+01    Tom        90.35
+02    Jack       89.23
+03    Jeff       98.43
+
+
+# %b %q %(fmt)T 的例子。
+# see it again with a newline.
+printf "%s\n" 'hello world'
+# 展开换行符，和上面的结果一样。
+printf "%b" 'hello world\n'
+
+printf '%q\n' 'a b c'
+# 输出
+a\ b\ c
+
+# %z为时区，%n为换行符。
+printf "%(%F %T %z%n)T"
+# 输出
+2019-09-10 01:48:07 +0000
 ```
 
-* %-5s 格式为左对齐且宽度为5的字符串代替（-表示左对齐），不使用则是右对齐。
-* %-4.2f 格式为左对齐宽度为4，保留两位小数。
+#### 注意
 
-### 按行打印数组和关联数组的下标及值
+1. 该命令是bash内建命令，相关的帮助信息请查看`help`命令。
+
+
+## 外部命令
+
+#### 概要
 
 ```shell
-#!/bin/bash
-#声明数组（array）可以不加 'declare -a' 或 'local -a'（在函数内声明的局部变量）
-array1=('line1' 'line2')
-#声明关联数组（也就是字典）必须加 'declare -A' 或 'local -A'（在函数内声明的局部变量）
-declare -A assoc_array1=(['key1']='value1' ['key2']='value2')
-
-printf "%s\n" ${array1[@]}
-#line1
-#line2
-printf "%s\n" ${!array1[@]}
-#0
-#1
-printf "%s\n" ${assoc_array1[@]}
-#value2
-#value1
-printf "%s\n" ${!assoc_array1[@]}
-#key2
-#key1
+printf FORMAT [ARGUMENT]...
+printf OPTION
 ```
+
+#### 主要用途
+
+- 格式化参数并输出。
+
+
+#### 选项
+
+```shell
+--help 显示帮助信息并退出。
+--version 显示版本信息并退出。
+```
+
+#### 参数
+
+format：输出格式。
+
+arguments：一到多个参数。
+
+```shell
+在这里忽略了（%b %q），如果你安装的coreutils版本支持它们，那么请参考上面的例子。
+支持的转义序列：
+
+\"          双引号
+\\          反斜杠
+\a          响铃
+\b          退格
+\c          截断输出
+\e          退出
+\f          翻页
+\n          换行
+\r          回车
+\t          水平制表符
+\v          竖直制表符
+\NNN        八进制数 (1到3位数字)
+\xHH        十六进制数 (1到2位数字)
+\uHHHH      Unicode字符附加4位十六进制数字
+\UHHHHHHHH  Unicode字符附加8位十六进制数字
+%%          百分号
+
+以及'diouxXfeEgGcs'中的一个结尾的C格式规范，将被转换为正确的类型并处理可变宽度。
+```
+
+#### 例子
+
+```shell
+# 使用 /usr/bin/printf 确保调用的不是内建命令。
+# 当然，在你关闭内建printf以及确认当前环境没有printf函数的情况下，可直接使用printf，详见末尾"注意"的链接。
+
+# 按行打印数组和关联数组的下标及值。
+
+# 声明数组可以不加'declare -a'或'local -a'（在函数内声明的局部变量）。
+arr=('line1' 'line2')
+/usr/bin/printf "%s\n" ${!arr[@]}
+# 输出下标
+0
+1
+/usr/bin/printf "%s\n" ${arr[@]}
+# 输出值
+line1
+line2
+
+#声明关联数组（也就是字典）必须加'declare -A'或'local -A'（在函数内声明的局部变量）。
+declare -A assoc_arr=(['key1']='value1' ['key2']='value2')
+/usr/bin/printf "%s\n" ${!assoc_arr[@]}
+# 输出键。
+key2
+key1
+/usr/bin/printf "%s\n" ${assoc_arr[@]}
+# 输出值。
+value2
+value1
+```
+
+#### 返回值
+
+返回状态为成功除非给出了非法选项等。
+
+#### 注意
+
+1. 该命令是`GNU coreutils`包中的命令，相关的帮助信息请查看`man -s 1 printf`或`info coreutils 'pwd invocation'`。
+
+2. 启动或关闭内建命令请查看`enable`命令，关于同名优先级的问题请查看`builtin`命令的例子部分的相关讨论。
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
