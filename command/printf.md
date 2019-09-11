@@ -33,11 +33,10 @@ format：输出格式。
 arguments：一到多个参数。
 
 ```shell
-注意：按原文来翻译确实如此，但是有可能您安装的coreutils版本的外部命令printf已经支持(%b %q)中的部分或全部，请自行确认。
 转义序列：除了支持printf(1)和printf(3)的转义序列，内建printf还支持以下转义序列：
 
-%b	     展开参数中的反斜杠转义字符。
-%q	     将参数扩起以用作shell输入。
+%b       展开参数中的反斜杠转义字符。
+%q       将参数扩起以用作shell输入。
 %(fmt)T  根据strftime(3)中的转义字符来输出日期时间字符串。
 ```
 
@@ -175,5 +174,16 @@ value1
 1. 该命令是`GNU coreutils`包中的命令，相关的帮助信息请查看`man -s 1 printf`或`info coreutils 'pwd invocation'`。
 
 2. 启动或关闭内建命令请查看`enable`命令，关于同名优先级的问题请查看`builtin`命令的例子部分的相关讨论。
+
+3. 我通过和`bug-bash@gnu.org`的交流，得到了关于这几个格式说明符`%b %q %(fmt)T`的解释：
+   > printf(1)中的%b格式说明符是printf(3)支持的格式之外增加的一个POSIX特性。
+   >
+   > %q和%T说明符是非标准的，并且不受所有独立实现的printf的支持。
+   
+   更多细节请参考链接：
+   - [POSIX printf](https://pubs.opengroup.org/onlinepubs/9699919799/utilities/printf.html)
+   `APPLICATION USAGE`段落的第五节。
+   - [POSIX printf格式说明符](https://pubs.opengroup.org/onlinepubs/9699919799/functions/printf.html)
+   的`Description`段落。
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
