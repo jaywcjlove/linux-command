@@ -106,48 +106,17 @@ path=$1
 * `--timefmt`是指定时间的输出格式。
 * `--format`指定文件变化的详细信息。
 
-### # 可监听的事件
+### 可监听的事件
 
-<table border="0" height="193" style="width: 100%;" width="74">
-<tbody>
-<tr>
-<th>事件</th>
-<th>描述</th>
-</tr>
-<tr>
-<td>access</td>
-<td> **访问** ，读取文件。</td>
-</tr>
-<tr>
-<td>modify</td>
-<td> **修改** ，文件内容被修改。</td>
-</tr>
-<tr>
-<td>attrib</td>
-<td> **属性** ，文件元数据被修改。</td>
-</tr>
-<tr>
-<td>move</td>
-<td> **移动** ，对文件进行移动操作。</td>
-</tr>
-<tr>
-<td>create</td>
-<td> **创建** ，生成新文件</td>
-</tr>
-<tr>
-<td>open</td>
-<td> **打开** ，对文件进行打开操作。</td>
-</tr>
-<tr>
-<td>close</td>
-<td> **关闭** ，对文件进行关闭操作。</td>
-</tr>
-<tr>
-<td>delete</td>
-<td> **删除** ，文件被删除。</td>
-</tr>
-</tbody>
-</table>
-
+事件 | 描述
+--- | ---
+access | **访问** ，读取文件。
+modify | **修改** ，文件内容被修改。
+attrib | **属性** ，文件元数据被修改。
+move | **移动** ，对文件进行移动操作。
+create | **创建** ，生成新文件
+open | **打开** ，对文件进行打开操作。
+close | **关闭** ，对文件进行关闭操作。
+delete | **删除** ，文件被删除。
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

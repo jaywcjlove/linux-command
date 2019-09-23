@@ -239,32 +239,11 @@ exit_group(0)                           = ?
 
 这是一个很有用的功能，strace会将每次系统调用的发生时间记录下来，只要使用-t/tt/ttt三个参数就可以看到效果了，具体的例子可以自己去尝试。
 
-<table>
-<thead>
-<tr>
-<th>参数名</th>
-<th>输出样式</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>-t</td>
-<td>10:33:04 exit_group(0)</td>
-<td>输出结果精确到秒</td>
-</tr>
-<tr>
-<td>-tt</td>
-<td>10:33:48.159682 exit_group(0)</td>
-<td>输出结果精确到微妙</td>
-</tr>
-<tr>
-<td>-ttt</td>
-<td>1262169244.788478 exit_group(0)</td>
-<td>精确到微妙，而且时间表示为unix时间戳</td>
-</tr>
-</tbody>
-</table>
+参数名 | 输出样式 | 说明
+--- | --- | ---
+-t | 10:33:04 exit_group(0) | 输出结果精确到秒
+-tt | 10:33:48.159682 exit_group(0) | 输出结果精确到微妙
+-ttt | 1262169244.788478 exit_group(0) | 精确到微妙，而且时间表示为unix时间戳
 
  **截断输出** 
 
