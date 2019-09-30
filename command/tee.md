@@ -1,62 +1,62 @@
 tee
 ===
 
-把数据重定向到给定文件和屏幕上
+从标准输入读取数据并重定向到标准输出和文件。
 
-## 补充说明
-
-**tee命令** 用于将数据重定向到文件，另一方面还可以提供一份重定向数据的副本作为后续命令的stdin。简单的说就是把数据重定向到给定文件和屏幕上。
-
-存在缓存机制，每1024个字节将输出一次。若从管道接收输入数据，应该是缓冲区满，才将数据转存到指定的文件中。若文件内容不到1024个字节，则接收完从标准输入设备读入的数据后，将刷新一次缓冲区，并转存数据到指定文件。
-
-###  语法
+## 概要
 
 ```shell
-tee(选项)(参数)
+tee [OPTION]... [FILE]...
 ```
 
-###  选项
+## 主要用途
+
+- 需要同时查看数据内容并输出到文件时使用。
+
+## 参数
+
+FILE（可选）：要输出的文件，可以为一或多个。
+
+## 选项 
 
 ```shell
--a：向文件中重定向时使用追加模式；
--i：忽略中断（interrupt）信号。
+长选项与短选项等价
+
+-a, --append               追加到文件中而不是覆盖。
+-i, --ignore-interrupts    忽略中断信号（Ctrl+c中断操作无效）。
+-p                         诊断写入非管道的错误。
+--output-error[=MODE]      设置写错误时的行为，请查看下方的MODE部分。
+--help                     显示帮助信息并退出。
+--version                  显示版本信息并退出。
+
+MODE决定了当出现写错误时的输出行为，可用的MODE如下：
+
+'warn'           当写入到任何输出报错时诊断。
+'warn-nopipe'    当写入到任何输出（而不是管道）报错时诊断。
+'exit'           当写入到任何输出报错时退出。
+'exit-nopipe'    当写入到任何输出（而不是管道）报错时退出。
+
+-p选项的指定的默认MODE为'warn-nopipe'。
+当'--output-error'没有在选项中时，默认的操作是当写入到管道报错时立刻退出，诊断错误信息并写入到非管道输出。
 ```
 
-###  参数
+## 返回值
 
-文件：指定输出重定向的文件。
+返回状态为成功除非给出了非法选项或非法参数。
 
-在终端打印stdout同时重定向到文件中：
+## 例子 
 
 ```shell
-ls | tee out.txt
-1.sh
-1.txt
-2.txt
-eee.tst
-EEE.tst
-one
-out.txt
-string2
-www.pdf
-WWW.pdf
-WWW.pef
+# 将进程信息通过管道输出到标准输出（终端）并覆盖写入到文件中。
+ps -ef |tee info_a.log info_b.log
+
+# 将进程信息通过管道输出到标准输出（终端）并追加写入到文件中。
+ps -ef |tee -a info_a.log info_b.log
 ```
 
-```shell
-[root@localhost text]# ls | tee out.txt | cat -n
-     1  1.sh
-     2  1.txt
-     3  2.txt
-     4  eee.tst
-     5  EEE.tst
-     6  one
-     7  out.txt
-     8  string2
-     9  www.pdf
-    10  WWW.pdf
-    11  WWW.pef
-```
+### 注意
 
+1. 该命令是`GNU coreutils`包中的命令，相关的帮助信息请查看`man -s 1 tee`或`info coreutils 'tee invocation'`。
+2. 存在缓存机制，每1024个字节将输出一次。若从管道接收输入数据，应该是缓冲区满，才将数据转存到指定的文件中。若文件内容不到1024个字节，则接收从标准输入设备读入的数据后，将刷新一次缓冲区，并转存数据到指定文件。
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
