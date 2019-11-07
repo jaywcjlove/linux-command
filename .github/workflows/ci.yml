@@ -1,5 +1,5 @@
 name: GitHub Actions Build and Deploy linux-command
-on: [push, pull_request]
+on: [push]
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
