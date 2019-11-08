@@ -139,10 +139,10 @@ Amanda, FTP, Samba和TFTP等最重要的服务已经被FirewallD提供相应的�
 firewall-cmd --get-services
 
 # 允许SSH服务通过
-firewall-cmd --enable service=ssh
+firewall-cmd --new-service=ssh
 
 # 禁止SSH服务通过
-firewall-cmd --disable service=ssh
+firewall-cmd --delete-service=ssh
 
 # 打开TCP的8080端口
 firewall-cmd --enable ports=8080/tcp
