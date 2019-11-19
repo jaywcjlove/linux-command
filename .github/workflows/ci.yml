@@ -23,7 +23,7 @@ jobs:
     #       ${{ runner.os }}-node-
 
     - run: npm install
-    - run: npm run start
+    - run: npm run build
 
     - name: Build and Deploy
       uses: peaceiris/actions-gh-pages@v2.5.0
