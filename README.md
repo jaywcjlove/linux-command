@@ -82,7 +82,8 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 
 #### 命令行工具
 
-由 [**@陈键冬**](https://github.com/chenjiandongx) 提供的 `命令行` 版本 [#129](https://github.com/jaywcjlove/linux-command/issues/129)，可以进入 [@chenjiandongx/how](https://github.com/chenjiandongx/how) 仓库查看使用方法。
+- [`@chenjiandongx/how`](https://github.com/chenjiandongx/how) Python 版 [#129](https://github.com/jaywcjlove/linux-command/issues/129)，由 [**@陈键冬**](https://github.com/chenjiandongx) 提供。
+- [`@chenjiandongx/pls`](https://github.com/chenjiandongx/pls) Golang 版 [#129](https://github.com/jaywcjlove/linux-command/issues/129)，由 [**@陈键冬**](https://github.com/chenjiandongx) 提供。
 
 ## 目录
 
