@@ -6,11 +6,11 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-    <meta name="description" content="who:显示目前登录系统的用户信息 - 最专业的Linux命令大全，内容包含Linux命令手册、详解、学习，值得收藏的Linux命令速查手册。">
-    <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,who,显示目前登录系统的用户信息">
-    <title>who 命令，Linux who 命令详解：显示目前登录系统的用户信息 -  Linux 命令搜索引擎</title>
+    <meta name="description" content="shuf:产生随机的排列。 - 最专业的Linux命令大全，内容包含Linux命令手册、详解、学习，值得收藏的Linux命令速查手册。">
+    <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,shuf,产生随机的排列。">
+    <title>shuf 命令，Linux shuf 命令详解：产生随机的排列。 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1582878826637">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1582878826293">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -26,7 +26,7 @@
         </ul>
         <input type="text" class="query" id="query" autocomplete="off" autofocus="autofocus" placeholder="Linux 命令搜索"/>
         <div class="enter-input">
-            <input type="hidden" id="current_path" value="/c/who.html">
+            <input type="hidden" id="current_path" value="/c/shuf.html">
             <button id="search_btn">搜索</button>
         </div>
     </div>
@@ -35,40 +35,57 @@
 <div class="markdown-body">
 
 <span class="edit_btn">
-<a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/who.md">纠正错误</a> 
+<a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/shuf.md">纠正错误</a> 
 <span class="split"></span>
-<a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/who.md">添加实例</a>
+<a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/shuf.md">添加实例</a>
 </span>
 
-<h1 id="who">who</h1><p>显示目前登录系统的用户信息</p>
-<h2 id="补充说明">补充说明</h2><p><strong>who命令</strong> 是显示目前登录系统的用户信息。执行who命令可得知目前有那些用户登入系统，单独执行who命令会列出登入帐号，使用的终端机，登入时间以及从何处登入或正在使用哪个X显示器。</p>
-<h3 id="语法">语法</h3><pre><code class="language-shell">who<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span></code></pre>
-<h3 id="选项">选项</h3><pre><code class="language-shell">-H或--heading：显示各栏位的标题信息列；
--i或-u或--idle：显示闲置时间，若该用户在前一分钟之内有进行任何动作，将标示成<span class="token string">"."</span>号，如果该用户已超过24小时没有任何动作，则标示出<span class="token string">"old"</span>字符串；
--m：此参数的效果和指定<span class="token string">"am i"</span>字符串相同；
--q或--count：只显示登入系统的帐号名称和总人数；
--s：此参数将忽略不予处理，仅负责解决who指令其他版本的兼容性问题；
--w或-T或--mesg或--message或--writable：显示用户的信息状态栏；
---help：在线帮助；
---version：显示版本信息。</code></pre>
-<h3 id="参数">参数</h3><p>文件：指定查询文件。</p>
-<h3 id="实例">实例</h3><pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># who</span>
-root     pts/0        2013-08-19 15:04 <span class="token punctuation">(</span>192.168.0.134<span class="token punctuation">)</span>
-root     pts/1        2013-12-20 10:37 <span class="token punctuation">(</span>180.111.155.40<span class="token punctuation">)</span>
-
-<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># who -q</span>
-root root
-<span class="token comment"># users=2</span>
-
-<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># who -H</span>
-NAME     LINE         <span class="token function">time</span>             COMMENT
-root     pts/0        2013-08-19 15:04 <span class="token punctuation">(</span>192.168.0.134<span class="token punctuation">)</span>
-root     pts/1        2013-12-20 10:37 <span class="token punctuation">(</span>180.111.155.40<span class="token punctuation">)</span>
-
-<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># who -w</span>
-root     + pts/0        2013-08-19 15:04 <span class="token punctuation">(</span>192.168.0.134<span class="token punctuation">)</span>
-root     + pts/1        2013-12-20 10:37 <span class="token punctuation">(</span>180.111.155.40<span class="token punctuation">)</span></code></pre>
+<h1 id="shuf">shuf</h1><p>产生随机的排列。</p>
+<h2 id="概要">概要</h2><pre><code class="language-shell">shuf <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. <span class="token punctuation">[</span>FILE<span class="token punctuation">]</span>
+shuf -e <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. <span class="token punctuation">[</span>ARG<span class="token punctuation">]</span><span class="token punctuation">..</span>.
+shuf -i LO-HI <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>.</code></pre>
+<h2 id="主要用途">主要用途</h2><ul>
+<li>将输入的内容随机排列并输出。</li>
+<li>当没有文件或文件为<code>-</code>时，读取标准输入。</li>
+</ul>
+<h2 id="选项">选项</h2><pre><code class="language-shell">-e, --echo                  将每个ARG视为输入行。
+-i, --input-range<span class="token operator">=</span>LO-HI     将数字范围LO（最低）到HI（最高）之间的作为输入行。
+-n, --head-count<span class="token operator">=</span>COUNT      只输出前COUNT行。
+-o, --output<span class="token operator">=</span>FILE           将结果写入到文件而不是标准输出。
+    --random-source<span class="token operator">=</span>FILE    将FILE中内容作为随机数据源。
+-r, --repeat                输出行可以重复。
+-z, --zero-terminated       行终止符为NUL（空字符）而不是默认的换行符。
+--help                      显示帮助信息并退出。
+--version                   显示版本信息并退出。</code></pre>
+<h2 id="参数">参数</h2><p>FILE（可选）：要处理的文件，可以为任意数量。</p>
+<p>ARG（可选）：作为输入行的字符串，可以为任意数量。</p>
+<h2 id="返回值">返回值</h2><p>返回0表示成功，返回非0值表示失败。</p>
+<h2 id="例子">例子</h2><pre><code class="language-shell"><span class="token comment"># 模拟硬币抛掷，获取前10个结果：</span>
+<span class="token punctuation">[</span>user2@pc ~<span class="token punctuation">]</span>&#36; <span class="token function">head</span> -r -n 10 -e <span class="token string">"正面"</span> -e <span class="token string">"反面"</span>
+反面
+正面
+正面
+正面
+反面
+反面
+反面
+正面
+正面
+正面</code></pre>
+<pre><code class="language-shell"><span class="token comment"># 体彩超级大乐透：</span>
+<span class="token punctuation">[</span>user2@pc ~<span class="token punctuation">]</span>&#36; shuf -i 1-35 -n 5<span class="token operator">|</span><span class="token function">sort</span> -n <span class="token operator">&amp;&amp;</span> shuf -i 1-12 -n 2<span class="token operator">|</span><span class="token function">sort</span> -n
+4
+17
+20
+29
+31
+6
+11</code></pre>
+<h3 id="注意">注意</h3><ol>
+<li>该命令是<code>GNU coreutils</code>包中的命令，更多详细的帮助信息请查看<code>man -s 1 shuf</code>，<code>info coreutils &#39;shuf invocation&#39;</code>。</li>
+</ol>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+
 </div>
 
 <div class="footer ">
@@ -90,7 +107,7 @@ root     + pts/1        2013-12-20 10:37 <span class="token punctuation">(</span
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1582878826638"></script>
-<script type="text/javascript" src="../js/index.js?v=1582878826638"></script>
+<script type="text/javascript" src="../js/dt.js?v=1582878826293"></script>
+<script type="text/javascript" src="../js/index.js?v=1582878826293"></script>
 </body>
 </html>
