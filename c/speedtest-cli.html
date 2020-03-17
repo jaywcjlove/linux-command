@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,speedtest-cli,命令行下测试服务器外网速度">
     <title>speedtest-cli 命令，Linux speedtest-cli 命令详解：命令行下测试服务器外网速度 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584350099710">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584405945714">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -59,49 +59,49 @@
 <pre><code class="language-shell">＃ <span class="token function">curl</span> -o speedtest-cli https://raw.github.com/sivel/spe <span class="token punctuation">..</span>. er/speedtest_cli.py
 ＃ <span class="token function">chmod</span> +x speedtest-cli</code></pre>
 <p>直接下载脚本，给予执行权限即可。</p>
-<h3 id="用法">用法</h3><pre><code class="language-shell">-h, --help       show this <span class="token function">help</span> message and <span class="token keyword">exit</span>
+<h3 id="用法">用法</h3><pre><code class="language-shell">-h, --help       show this <span class="token builtin class-name">help</span> message and <span class="token builtin class-name">exit</span>
 --share          分享你的网速，该命令会在speedtest网站上生成网速测试结果的图片。
 --simple         Suppress verbose output, only show basic information
 --list           根据距离显示speedtest.net的测试服务器列表。
 --server<span class="token operator">=</span>SERVER  指定列表中id的服务器来做测试。
 --mini<span class="token operator">=</span>MINI      URL of the Speedtest Mini server
---source<span class="token operator">=</span>SOURCE  Source <span class="token function">ip</span> address to bind to
---version        Show the version number and <span class="token keyword">exit</span></code></pre>
+--source<span class="token operator">=</span>SOURCE  Source <span class="token function">ip</span> address to <span class="token builtin class-name">bind</span> to
+--version        Show the version number and <span class="token builtin class-name">exit</span></code></pre>
 <h3 id="实例">实例</h3><p>列出所有在中国的测试服务器：</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@li229-122 ~<span class="token punctuation">]</span><span class="token comment"># speedtest-cli --list | grep China</span>
-1185<span class="token punctuation">)</span> China Unicom <span class="token punctuation">(</span>Changchun, China<span class="token punctuation">)</span> <span class="token punctuation">[</span>10534.35 km<span class="token punctuation">]</span>
-3784<span class="token punctuation">)</span> China Mobile <span class="token punctuation">(</span>Urumqi, China<span class="token punctuation">)</span> <span class="token punctuation">[</span>10581.15 km<span class="token punctuation">]</span>
-2667<span class="token punctuation">)</span> Beijing Normal University <span class="token punctuation">(</span>Beijing, China<span class="token punctuation">)</span> <span class="token punctuation">[</span>11117.03 km<span class="token punctuation">]</span>
-2529<span class="token punctuation">)</span> Beijing Normal University <span class="token punctuation">(</span>Beijing, China<span class="token punctuation">)</span> <span class="token punctuation">[</span>11117.03 km<span class="token punctuation">]</span>
-2816<span class="token punctuation">)</span> Capital Online Data <span class="token function">service</span> <span class="token punctuation">(</span>Beijing, China<span class="token punctuation">)</span> <span class="token punctuation">[</span>11117.03 km<span class="token punctuation">]</span>
-4354<span class="token punctuation">)</span> SXmobile <span class="token punctuation">(</span>Taiyuan, China<span class="token punctuation">)</span> <span class="token punctuation">[</span>11383.17 km<span class="token punctuation">]</span>
-3973<span class="token punctuation">)</span> China Telecom <span class="token punctuation">(</span>Lanzhou, China<span class="token punctuation">)</span> <span class="token punctuation">[</span>11615.43 km<span class="token punctuation">]</span>
-3633<span class="token punctuation">)</span> China Telecom <span class="token punctuation">(</span>Shanghai, China<span class="token punctuation">)</span> <span class="token punctuation">[</span>11983.37 km<span class="token punctuation">]</span>
-3927<span class="token punctuation">)</span> China Mobile Jiangsu Co., Ltd. <span class="token punctuation">(</span>Suzhou, China<span class="token punctuation">)</span> <span class="token punctuation">[</span>11989.27 km<span class="token punctuation">]</span>
-2461<span class="token punctuation">)</span> China Unicom <span class="token punctuation">(</span>Chengdu, China<span class="token punctuation">)</span> <span class="token punctuation">[</span>12213.35 km<span class="token punctuation">]</span>
-1028<span class="token punctuation">)</span> Shepherd Software <span class="token punctuation">(</span>Xiamen, China<span class="token punctuation">)</span> <span class="token punctuation">[</span>12785.57 km<span class="token punctuation">]</span>
-1628<span class="token punctuation">)</span> Xiamen Guangdian Xinxu <span class="token punctuation">(</span>Xiamen, China<span class="token punctuation">)</span> <span class="token punctuation">[</span>12785.57 km<span class="token punctuation">]</span>
-3891<span class="token punctuation">)</span> GZinternet <span class="token punctuation">(</span>Guangzhou, China<span class="token punctuation">)</span> <span class="token punctuation">[</span>13005.36 km<span class="token punctuation">]</span>
-3871<span class="token punctuation">)</span> SZWCDMA <span class="token punctuation">(</span>Shenzhen, China<span class="token punctuation">)</span> <span class="token punctuation">[</span>13059.20 km<span class="token punctuation">]</span>
-3819<span class="token punctuation">)</span> SZU <span class="token punctuation">(</span>Shenzhen, China<span class="token punctuation">)</span> <span class="token punctuation">[</span>13059.20 km<span class="token punctuation">]</span>
-1536<span class="token punctuation">)</span> STC <span class="token punctuation">(</span>Hong Kong, China<span class="token punctuation">)</span> <span class="token punctuation">[</span>13088.37 km<span class="token punctuation">]</span>
-1890<span class="token punctuation">)</span> Telin <span class="token punctuation">(</span>Hong Kong, China<span class="token punctuation">)</span> <span class="token punctuation">[</span>13088.37 km<span class="token punctuation">]</span></code></pre>
+<span class="token number">1185</span><span class="token punctuation">)</span> China Unicom <span class="token punctuation">(</span>Changchun, China<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token number">10534.35</span> km<span class="token punctuation">]</span>
+<span class="token number">3784</span><span class="token punctuation">)</span> China Mobile <span class="token punctuation">(</span>Urumqi, China<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token number">10581.15</span> km<span class="token punctuation">]</span>
+<span class="token number">2667</span><span class="token punctuation">)</span> Beijing Normal University <span class="token punctuation">(</span>Beijing, China<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token number">11117.03</span> km<span class="token punctuation">]</span>
+<span class="token number">2529</span><span class="token punctuation">)</span> Beijing Normal University <span class="token punctuation">(</span>Beijing, China<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token number">11117.03</span> km<span class="token punctuation">]</span>
+<span class="token number">2816</span><span class="token punctuation">)</span> Capital Online Data <span class="token function">service</span> <span class="token punctuation">(</span>Beijing, China<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token number">11117.03</span> km<span class="token punctuation">]</span>
+<span class="token number">4354</span><span class="token punctuation">)</span> SXmobile <span class="token punctuation">(</span>Taiyuan, China<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token number">11383.17</span> km<span class="token punctuation">]</span>
+<span class="token number">3973</span><span class="token punctuation">)</span> China Telecom <span class="token punctuation">(</span>Lanzhou, China<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token number">11615.43</span> km<span class="token punctuation">]</span>
+<span class="token number">3633</span><span class="token punctuation">)</span> China Telecom <span class="token punctuation">(</span>Shanghai, China<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token number">11983.37</span> km<span class="token punctuation">]</span>
+<span class="token number">3927</span><span class="token punctuation">)</span> China Mobile Jiangsu Co., Ltd. <span class="token punctuation">(</span>Suzhou, China<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token number">11989.27</span> km<span class="token punctuation">]</span>
+<span class="token number">2461</span><span class="token punctuation">)</span> China Unicom <span class="token punctuation">(</span>Chengdu, China<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token number">12213.35</span> km<span class="token punctuation">]</span>
+<span class="token number">1028</span><span class="token punctuation">)</span> Shepherd Software <span class="token punctuation">(</span>Xiamen, China<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token number">12785.57</span> km<span class="token punctuation">]</span>
+<span class="token number">1628</span><span class="token punctuation">)</span> Xiamen Guangdian Xinxu <span class="token punctuation">(</span>Xiamen, China<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token number">12785.57</span> km<span class="token punctuation">]</span>
+<span class="token number">3891</span><span class="token punctuation">)</span> GZinternet <span class="token punctuation">(</span>Guangzhou, China<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token number">13005.36</span> km<span class="token punctuation">]</span>
+<span class="token number">3871</span><span class="token punctuation">)</span> SZWCDMA <span class="token punctuation">(</span>Shenzhen, China<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token number">13059.20</span> km<span class="token punctuation">]</span>
+<span class="token number">3819</span><span class="token punctuation">)</span> SZU <span class="token punctuation">(</span>Shenzhen, China<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token number">13059.20</span> km<span class="token punctuation">]</span>
+<span class="token number">1536</span><span class="token punctuation">)</span> STC <span class="token punctuation">(</span>Hong Kong, China<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token number">13088.37</span> km<span class="token punctuation">]</span>
+<span class="token number">1890</span><span class="token punctuation">)</span> Telin <span class="token punctuation">(</span>Hong Kong, China<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token number">13088.37</span> km<span class="token punctuation">]</span></code></pre>
 <p> <strong>结果解释</strong> </p>
-<pre><code class="language-shell">3633<span class="token punctuation">)</span> China Telecom <span class="token punctuation">(</span>Shanghai, China<span class="token punctuation">)</span> <span class="token punctuation">[</span>11983.37 km<span class="token punctuation">]</span></code></pre>
-<pre><code class="language-shell">3633: 服务器id
+<pre><code class="language-shell"><span class="token number">3633</span><span class="token punctuation">)</span> China Telecom <span class="token punctuation">(</span>Shanghai, China<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token number">11983.37</span> km<span class="token punctuation">]</span></code></pre>
+<pre><code class="language-shell"><span class="token number">3633</span>: 服务器id
 china telecom：isp，这里是中国电信
 shanghai,china ：服务器所在地址
-11983.37 km：两台服务器地理位置之间距离，我这台机器在美国，和上海相距11983.37公里，很远呐.</code></pre>
+<span class="token number">11983.37</span> km：两台服务器地理位置之间距离，我这台机器在美国，和上海相距11983.37公里，很远呐.</code></pre>
 <p> <strong>外网速度测试</strong> </p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@li229-122 ~<span class="token punctuation">]</span><span class="token comment"># speedtest-cli --server=3633 --share</span>
 Retrieving speedtest.net configuration<span class="token punctuation">..</span>.
 Retrieving speedtest.net server list<span class="token punctuation">..</span>.
-Testing from Linode <span class="token punctuation">(</span>173.255.219.122<span class="token punctuation">)</span><span class="token punctuation">..</span>.
-Hosted by China Telecom <span class="token punctuation">(</span>Shanghai<span class="token punctuation">)</span> <span class="token punctuation">[</span>11983.37 km<span class="token punctuation">]</span>: 23.603 ms
+Testing from Linode <span class="token punctuation">(</span><span class="token number">173.255</span>.219.122<span class="token punctuation">)</span><span class="token punctuation">..</span>.
+Hosted by China Telecom <span class="token punctuation">(</span>Shanghai<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token number">11983.37</span> km<span class="token punctuation">]</span>: <span class="token number">23.603</span> ms
 Testing download speed<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>
-Download: 24.84 Mbit/s
+Download: <span class="token number">24.84</span> Mbit/s
 Testing upload speed<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>
-Upload: 4.57 Mbit/s
+Upload: <span class="token number">4.57</span> Mbit/s
 Share results: http://www.speedtest.net/result/3240988007.png</code></pre>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 </div>
@@ -125,7 +125,7 @@ Share results: http://www.speedtest.net/result/3240988007.png</code></pre>
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1584350099711"></script>
-<script type="text/javascript" src="../js/index.js?v=1584350099711"></script>
+<script type="text/javascript" src="../js/dt.js?v=1584405945715"></script>
+<script type="text/javascript" src="../js/index.js?v=1584405945715"></script>
 </body>
 </html>

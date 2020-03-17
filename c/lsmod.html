@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,lsmod,显示已载入系统的模块">
     <title>lsmod 命令，Linux lsmod 命令详解：显示已载入系统的模块 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584350099174">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584405944855">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -45,78 +45,78 @@
 <h3 id="语法">语法</h3><pre><code class="language-shell">lsmod</code></pre>
 <h3 id="实例">实例</h3><pre><code class="language-shell"><span class="token punctuation">[</span>root@LinServ-1 ~<span class="token punctuation">]</span><span class="token comment"># lsmod</span>
 Module                  Size  Used by
-ipv6                  272801  15
-xfrm_nalgo             13381  1 ipv6
-crypto_api             12609  1 xfrm_nalgo
-ip_conntrack_ftp       11569  0
-xt_limit                6721  2
-xt_state                6209  2
-ip_conntrack           53665  2 ip_conntrack_ftp,xt_state
-nfnetlink              10713  1 ip_conntrack
-xt_tcpudp               7105  6
-xt_multiport            7233  1
-iptable_filter          7105  1
-ip_tables              17029  1 iptable_filter
-x_tables               17349  5 xt_limit,xt_state,xt_tcpudp,xt_multiport,ip_tables
-dm_mirror              24393  0
-dm_multipath           27213  0
-scsi_dh                12481  1 dm_multipath
-video                  21193  0
-backlight              10049  1 video
-sbs                    18533  0
-power_meter            16461  0
-hwmon                   7365  1 power_meter
-i2c_ec                  9025  1 sbs
-dell_wmi                8401  0
-wmi                    12137  1 dell_wmi
-button                 10705  0
-battery                13637  0
-asus_acpi              19289  0
-ac                      9157  0
-lp                     15849  0
-snd_hda_intel         401453  0
-snd_seq_dummy           7877  0
-snd_seq_oss            32577  0
-snd_seq_midi_event     11073  1 snd_seq_oss
-snd_seq                49585  5 snd_seq_dummy,snd_seq_oss,snd_seq_midi_event
-snd_seq_device         11725  3 snd_seq_dummy,snd_seq_oss,snd_seq
-snd_pcm_oss            42817  0
-snd_mixer_oss          19009  1 snd_pcm_oss
-snd_pcm                72517  2 snd_hda_intel,snd_pcm_oss
-ide_cd                 40161  0
-snd_timer              24517  2 snd_seq,snd_pcm
-tpm_tis                16713  0
-r8169                  43077  0
-snd_page_alloc         14281  2 snd_hda_intel,snd_pcm
-tpm                    19041  1 tpm_tis
-i2c_i801               12737  0
-mii                     9409  1 r8169
-serio_raw              10693  0
-i2c_core               24897  2 i2c_ec,i2c_i801
-snd_hwdep              12869  1 snd_hda_intel
-tpm_bios               11073  1 tpm
-cdrom                  36577  1 ide_cd
-pcspkr                  7105  0
-parport_pc             29669  1
-sg                     36973  0
-snd                    57797  9 snd_hda_intel,snd_seq_oss,snd_seq,snd_seq_device,snd_pcm_oss,snd_mixer_oss,snd_pcm,snd_timer,snd_hwdep
-parport                37513  2 lp,parport_pc
-soundcore              11553  1 snd
-dm_raid45              67273  0
-dm_message              6977  1 dm_raid45
-dm_region_hash         15681  1 dm_raid45
-dm_log                 14785  3 dm_mirror,dm_raid45,dm_region_hash
-dm_mod                 63993  4 dm_mirror,dm_multipath,dm_raid45,dm_log
-dm_mem_cache            9537  1 dm_raid45
-ata_piix               23749  4
-libata                158085  1 ata_piix
-sd_mod                 25409  6
-scsi_mod              144277  4 scsi_dh,sg,libata,sd_mod
-ext3                  126281  3
-jbd                    57705  1 ext3
-uhci_hcd               25421  0
-ohci_hcd               24937  0
-ehci_hcd               34509  0</code></pre>
+ipv6                  <span class="token number">272801</span>  <span class="token number">15</span>
+xfrm_nalgo             <span class="token number">13381</span>  <span class="token number">1</span> ipv6
+crypto_api             <span class="token number">12609</span>  <span class="token number">1</span> xfrm_nalgo
+ip_conntrack_ftp       <span class="token number">11569</span>  <span class="token number">0</span>
+xt_limit                <span class="token number">6721</span>  <span class="token number">2</span>
+xt_state                <span class="token number">6209</span>  <span class="token number">2</span>
+ip_conntrack           <span class="token number">53665</span>  <span class="token number">2</span> ip_conntrack_ftp,xt_state
+nfnetlink              <span class="token number">10713</span>  <span class="token number">1</span> ip_conntrack
+xt_tcpudp               <span class="token number">7105</span>  <span class="token number">6</span>
+xt_multiport            <span class="token number">7233</span>  <span class="token number">1</span>
+iptable_filter          <span class="token number">7105</span>  <span class="token number">1</span>
+ip_tables              <span class="token number">17029</span>  <span class="token number">1</span> iptable_filter
+x_tables               <span class="token number">17349</span>  <span class="token number">5</span> xt_limit,xt_state,xt_tcpudp,xt_multiport,ip_tables
+dm_mirror              <span class="token number">24393</span>  <span class="token number">0</span>
+dm_multipath           <span class="token number">27213</span>  <span class="token number">0</span>
+scsi_dh                <span class="token number">12481</span>  <span class="token number">1</span> dm_multipath
+video                  <span class="token number">21193</span>  <span class="token number">0</span>
+backlight              <span class="token number">10049</span>  <span class="token number">1</span> video
+sbs                    <span class="token number">18533</span>  <span class="token number">0</span>
+power_meter            <span class="token number">16461</span>  <span class="token number">0</span>
+hwmon                   <span class="token number">7365</span>  <span class="token number">1</span> power_meter
+i2c_ec                  <span class="token number">9025</span>  <span class="token number">1</span> sbs
+dell_wmi                <span class="token number">8401</span>  <span class="token number">0</span>
+wmi                    <span class="token number">12137</span>  <span class="token number">1</span> dell_wmi
+button                 <span class="token number">10705</span>  <span class="token number">0</span>
+battery                <span class="token number">13637</span>  <span class="token number">0</span>
+asus_acpi              <span class="token number">19289</span>  <span class="token number">0</span>
+ac                      <span class="token number">9157</span>  <span class="token number">0</span>
+lp                     <span class="token number">15849</span>  <span class="token number">0</span>
+snd_hda_intel         <span class="token number">401453</span>  <span class="token number">0</span>
+snd_seq_dummy           <span class="token number">7877</span>  <span class="token number">0</span>
+snd_seq_oss            <span class="token number">32577</span>  <span class="token number">0</span>
+snd_seq_midi_event     <span class="token number">11073</span>  <span class="token number">1</span> snd_seq_oss
+snd_seq                <span class="token number">49585</span>  <span class="token number">5</span> snd_seq_dummy,snd_seq_oss,snd_seq_midi_event
+snd_seq_device         <span class="token number">11725</span>  <span class="token number">3</span> snd_seq_dummy,snd_seq_oss,snd_seq
+snd_pcm_oss            <span class="token number">42817</span>  <span class="token number">0</span>
+snd_mixer_oss          <span class="token number">19009</span>  <span class="token number">1</span> snd_pcm_oss
+snd_pcm                <span class="token number">72517</span>  <span class="token number">2</span> snd_hda_intel,snd_pcm_oss
+ide_cd                 <span class="token number">40161</span>  <span class="token number">0</span>
+snd_timer              <span class="token number">24517</span>  <span class="token number">2</span> snd_seq,snd_pcm
+tpm_tis                <span class="token number">16713</span>  <span class="token number">0</span>
+r8169                  <span class="token number">43077</span>  <span class="token number">0</span>
+snd_page_alloc         <span class="token number">14281</span>  <span class="token number">2</span> snd_hda_intel,snd_pcm
+tpm                    <span class="token number">19041</span>  <span class="token number">1</span> tpm_tis
+i2c_i801               <span class="token number">12737</span>  <span class="token number">0</span>
+mii                     <span class="token number">9409</span>  <span class="token number">1</span> r8169
+serio_raw              <span class="token number">10693</span>  <span class="token number">0</span>
+i2c_core               <span class="token number">24897</span>  <span class="token number">2</span> i2c_ec,i2c_i801
+snd_hwdep              <span class="token number">12869</span>  <span class="token number">1</span> snd_hda_intel
+tpm_bios               <span class="token number">11073</span>  <span class="token number">1</span> tpm
+cdrom                  <span class="token number">36577</span>  <span class="token number">1</span> ide_cd
+pcspkr                  <span class="token number">7105</span>  <span class="token number">0</span>
+parport_pc             <span class="token number">29669</span>  <span class="token number">1</span>
+sg                     <span class="token number">36973</span>  <span class="token number">0</span>
+snd                    <span class="token number">57797</span>  <span class="token number">9</span> snd_hda_intel,snd_seq_oss,snd_seq,snd_seq_device,snd_pcm_oss,snd_mixer_oss,snd_pcm,snd_timer,snd_hwdep
+parport                <span class="token number">37513</span>  <span class="token number">2</span> lp,parport_pc
+soundcore              <span class="token number">11553</span>  <span class="token number">1</span> snd
+dm_raid45              <span class="token number">67273</span>  <span class="token number">0</span>
+dm_message              <span class="token number">6977</span>  <span class="token number">1</span> dm_raid45
+dm_region_hash         <span class="token number">15681</span>  <span class="token number">1</span> dm_raid45
+dm_log                 <span class="token number">14785</span>  <span class="token number">3</span> dm_mirror,dm_raid45,dm_region_hash
+dm_mod                 <span class="token number">63993</span>  <span class="token number">4</span> dm_mirror,dm_multipath,dm_raid45,dm_log
+dm_mem_cache            <span class="token number">9537</span>  <span class="token number">1</span> dm_raid45
+ata_piix               <span class="token number">23749</span>  <span class="token number">4</span>
+libata                <span class="token number">158085</span>  <span class="token number">1</span> ata_piix
+sd_mod                 <span class="token number">25409</span>  <span class="token number">6</span>
+scsi_mod              <span class="token number">144277</span>  <span class="token number">4</span> scsi_dh,sg,libata,sd_mod
+ext3                  <span class="token number">126281</span>  <span class="token number">3</span>
+jbd                    <span class="token number">57705</span>  <span class="token number">1</span> ext3
+uhci_hcd               <span class="token number">25421</span>  <span class="token number">0</span>
+ohci_hcd               <span class="token number">24937</span>  <span class="token number">0</span>
+ehci_hcd               <span class="token number">34509</span>  <span class="token number">0</span></code></pre>
 <ul>
 <li>第1列：表示模块的名称。</li>
 <li>第2列：表示模块的大小。</li>
@@ -146,7 +146,7 @@ ehci_hcd               34509  0</code></pre>
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1584350099174"></script>
-<script type="text/javascript" src="../js/index.js?v=1584350099174"></script>
+<script type="text/javascript" src="../js/dt.js?v=1584405944855"></script>
+<script type="text/javascript" src="../js/index.js?v=1584405944855"></script>
 </body>
 </html>

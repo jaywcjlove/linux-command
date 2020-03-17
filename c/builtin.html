@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,builtin,执行bash内建命令。">
     <title>builtin 命令，Linux builtin 命令详解：执行bash内建命令。 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584350098384">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584405943587">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -41,7 +41,7 @@
 </span>
 
 <h1 id="builtin">builtin</h1><p>执行bash内建命令。</p>
-<h2 id="概要">概要</h2><pre><code class="language-shell"><span class="token function">builtin</span> <span class="token punctuation">[</span>shell-builtin <span class="token punctuation">[</span>arg <span class="token punctuation">..</span>.<span class="token punctuation">]</span><span class="token punctuation">]</span></code></pre>
+<h2 id="概要">概要</h2><pre><code class="language-shell"><span class="token builtin class-name">builtin</span> <span class="token punctuation">[</span>shell-builtin <span class="token punctuation">[</span>arg <span class="token punctuation">..</span>.<span class="token punctuation">]</span><span class="token punctuation">]</span></code></pre>
 <h2 id="主要用途">主要用途</h2><ul>
 <li>用于执行指定的bash内建命令。</li>
 <li><code>builtin</code>命令调用的bash内建命令优先于同名的外部命令及同名的shell函数。</li>
@@ -53,28 +53,28 @@
 <p>builtin 内建命令 &gt; 函数 &gt; 内建命令 &gt; 外部命令</p>
 <pre><code class="language-shell"><span class="token comment"># 关于外部命令优先级最高的情况请参考enable命令。</span>
 <span class="token comment"># 此时内建命令优先使用</span>
-<span class="token keyword">echo</span> <span class="token string">"the Great Wall"</span>
+<span class="token builtin class-name">echo</span> <span class="token string">"the Great Wall"</span>
 <span class="token comment"># 调用内建命令type，返回命令的类型（builtin）</span>
-<span class="token function">type</span> -t <span class="token keyword">echo</span>
+<span class="token builtin class-name">type</span> -t <span class="token builtin class-name">echo</span>
 <span class="token comment"># 定义 echo 函数</span>
-echo<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
-    <span class="token function">printf</span> <span class="token string">"123\n"</span>
+<span class="token function-name function">echo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token builtin class-name">printf</span> <span class="token string">"123<span class="token entity" title="\n">\n</span>"</span>
 <span class="token punctuation">}</span>
 <span class="token comment"># 此时同名函数优先使用，显示（123）</span>
-<span class="token keyword">echo</span>
+<span class="token builtin class-name">echo</span>
 <span class="token comment"># 调用内建命令type，返回命令的类型（function）</span>
-<span class="token function">type</span> -t <span class="token keyword">echo</span>
+<span class="token builtin class-name">type</span> -t <span class="token builtin class-name">echo</span>
 <span class="token comment"># 此时内建命令优先使用</span>
-<span class="token function">builtin</span> <span class="token keyword">echo</span> -e <span class="token string">"backslash \\"</span></code></pre>
+<span class="token builtin class-name">builtin</span> <span class="token builtin class-name">echo</span> -e <span class="token string">"backslash <span class="token entity" title="\\">\\</span>"</span></code></pre>
 <pre><code class="language-shell"><span class="token comment"># 执行shell内部指令，输出当前系统下的命令别名</span>
-<span class="token function">builtin</span> <span class="token function">alias</span>
-<span class="token function">alias</span> cp<span class="token operator">=</span><span class="token string">'cp -i'</span>
-<span class="token function">alias</span> l.<span class="token operator">=</span><span class="token string">'ls -d .* --color=tty'</span>
-<span class="token function">alias</span> ll<span class="token operator">=</span><span class="token string">'ls -l --color=tty'</span>
-<span class="token function">alias</span> ls<span class="token operator">=</span><span class="token string">'ls --color=tty'</span>
-<span class="token function">alias</span> mv<span class="token operator">=</span><span class="token string">'mv -i'</span>
-<span class="token function">alias</span> rm<span class="token operator">=</span><span class="token string">'rm -i'</span>
-<span class="token function">alias</span> which<span class="token operator">=</span><span class="token string">'alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'</span></code></pre>
+<span class="token builtin class-name">builtin</span> <span class="token builtin class-name">alias</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">cp</span><span class="token operator">=</span><span class="token string">'cp -i'</span>
+<span class="token builtin class-name">alias</span> l.<span class="token operator">=</span><span class="token string">'ls -d .* --color=tty'</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">ll</span><span class="token operator">=</span><span class="token string">'ls -l --color=tty'</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">ls</span><span class="token operator">=</span><span class="token string">'ls --color=tty'</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">mv</span><span class="token operator">=</span><span class="token string">'mv -i'</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">rm</span><span class="token operator">=</span><span class="token string">'rm -i'</span>
+<span class="token builtin class-name">alias</span> <span class="token assign-left variable">which</span><span class="token operator">=</span><span class="token string">'alias | /usr/bin/which --tty-only --read-alias --show-dot --show-tilde'</span></code></pre>
 <h3 id="注意">注意</h3><ol>
 <li><p>该命令是bash内建命令，相关的帮助信息请查看<code>help</code>命令。</p>
 </li>
@@ -104,7 +104,7 @@ echo<span class="token punctuation">(</span><span class="token punctuation">)</s
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1584350098384"></script>
-<script type="text/javascript" src="../js/index.js?v=1584350098384"></script>
+<script type="text/javascript" src="../js/dt.js?v=1584405943588"></script>
+<script type="text/javascript" src="../js/index.js?v=1584405943588"></script>
 </body>
 </html>

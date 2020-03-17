@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,pvcreate,将物理硬盘分区初始化为物理卷">
     <title>pvcreate 命令，Linux pvcreate 命令详解：将物理硬盘分区初始化为物理卷 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584350099452">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584405945317">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -50,20 +50,20 @@
 <h3 id="参数">参数</h3><p>物理卷：指定要创建的物理卷对应的设备文件名。</p>
 <h3 id="实例">实例</h3><p>查看磁盘信息：</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># fdisk -l</span>
-Disk /dev/hda: 41.1 GB, 41174138880 bytes
-255 heads, 63 sectors/track, 5005 cylinders
-Units <span class="token operator">=</span> cylinders of 16065 * 512 <span class="token operator">=</span> 8225280 bytes
+Disk /dev/hda: <span class="token number">41.1</span> GB, <span class="token number">41174138880</span> bytes
+<span class="token number">255</span> heads, <span class="token number">63</span> sectors/track, <span class="token number">5005</span> cylinders
+Units <span class="token operator">=</span> cylinders of <span class="token number">16065</span> * <span class="token number">512</span> <span class="token operator">=</span> <span class="token number">8225280</span> bytes
 
    Device Boot      Start         End      Blocks   <span class="token function">id</span>  System
-/dev/hda1   *           1          13      104391   83  Linux
-/dev/hda2              14        1288    10241437+  83  Linux
-/dev/hda3            1289        1925     5116702+  83  Linux
-/dev/hda4            1926        5005    24740100    5  Extended
-/dev/hda5            1926        2052     1020096   82  Linux swap / Solaris
-/dev/hda6            2053        2235     1469916   8e  Linux LVM
-/dev/hda7            2236        2418     1469916   8e  Linux LVM
-/dev/hda8            2419        2601     1469916   8e  Linux LVM
-/dev/hda9            2602        2784     1469916   8e  Linux LVM</code></pre>
+/dev/hda1   *           <span class="token number">1</span>          <span class="token number">13</span>      <span class="token number">104391</span>   <span class="token number">83</span>  Linux
+/dev/hda2              <span class="token number">14</span>        <span class="token number">1288</span>    <span class="token number">10241437</span>+  <span class="token number">83</span>  Linux
+/dev/hda3            <span class="token number">1289</span>        <span class="token number">1925</span>     <span class="token number">5116702</span>+  <span class="token number">83</span>  Linux
+/dev/hda4            <span class="token number">1926</span>        <span class="token number">5005</span>    <span class="token number">24740100</span>    <span class="token number">5</span>  Extended
+/dev/hda5            <span class="token number">1926</span>        <span class="token number">2052</span>     <span class="token number">1020096</span>   <span class="token number">82</span>  Linux swap / Solaris
+/dev/hda6            <span class="token number">2053</span>        <span class="token number">2235</span>     <span class="token number">1469916</span>   8e  Linux LVM
+/dev/hda7            <span class="token number">2236</span>        <span class="token number">2418</span>     <span class="token number">1469916</span>   8e  Linux LVM
+/dev/hda8            <span class="token number">2419</span>        <span class="token number">2601</span>     <span class="token number">1469916</span>   8e  Linux LVM
+/dev/hda9            <span class="token number">2602</span>        <span class="token number">2784</span>     <span class="token number">1469916</span>   8e  Linux LVM</code></pre>
 <p>检查有无 PV 在系统上，然后将<code>/dev/hda6</code>到<code>/dev/hda9</code>建立成为PV格式</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># pvscan</span>
 No matching physical volumes found    <span class="token comment">#找不到任何的 PV 存在！</span></code></pre>
@@ -75,23 +75,23 @@ No matching physical volumes found    <span class="token comment">#找不到任�
   Physical volume <span class="token string">"/dev/hda9"</span> successfully created</code></pre>
 <p>这就分別表示每个 PV 的信息与系统所有 PV 的信息：</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># pvscan</span>
-  PV /dev/hda6         lvm2 <span class="token punctuation">[</span>1.40 GB<span class="token punctuation">]</span>
-  PV /dev/hda7         lvm2 <span class="token punctuation">[</span>1.40 GB<span class="token punctuation">]</span>
-  PV /dev/hda8         lvm2 <span class="token punctuation">[</span>1.40 GB<span class="token punctuation">]</span>
-  PV /dev/hda9         lvm2 <span class="token punctuation">[</span>1.40 GB<span class="token punctuation">]</span>
-  Total: 4 <span class="token punctuation">[</span>5.61 GB<span class="token punctuation">]</span> / <span class="token keyword">in</span> use: 0 <span class="token punctuation">[</span>0   <span class="token punctuation">]</span> / <span class="token keyword">in</span> no VG: 4 <span class="token punctuation">[</span>5.61 GB<span class="token punctuation">]</span></code></pre>
+  PV /dev/hda6         lvm2 <span class="token punctuation">[</span><span class="token number">1.40</span> GB<span class="token punctuation">]</span>
+  PV /dev/hda7         lvm2 <span class="token punctuation">[</span><span class="token number">1.40</span> GB<span class="token punctuation">]</span>
+  PV /dev/hda8         lvm2 <span class="token punctuation">[</span><span class="token number">1.40</span> GB<span class="token punctuation">]</span>
+  PV /dev/hda9         lvm2 <span class="token punctuation">[</span><span class="token number">1.40</span> GB<span class="token punctuation">]</span>
+  Total: <span class="token number">4</span> <span class="token punctuation">[</span><span class="token number">5.61</span> GB<span class="token punctuation">]</span> / <span class="token keyword">in</span> use: <span class="token number">0</span> <span class="token punctuation">[</span><span class="token number">0</span>   <span class="token punctuation">]</span> / <span class="token keyword">in</span> no VG: <span class="token number">4</span> <span class="token punctuation">[</span><span class="token number">5.61</span> GB<span class="token punctuation">]</span></code></pre>
 <p>更详细的列示出系统上面每个 PV 信息：</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># pvdisplay</span>
   <span class="token string">"/dev/hda6"</span> is a new physical volume of <span class="token string">"1.40 GB"</span>
   --- NEW Physical volume ---
   PV Name               /dev/hda6  <span class="token comment">#实际的 partition 分区名称</span>
   VG Name                          <span class="token comment">#因为尚未分配出去，所以空白！</span>
-  PV Size               1.40 GB    <span class="token comment">#就是容量说明</span>
+  PV Size               <span class="token number">1.40</span> GB    <span class="token comment">#就是容量说明</span>
   Allocatable           NO         <span class="token comment">#是否已被分配，结果是 NO</span>
-  PE Size <span class="token punctuation">(</span>KByte<span class="token punctuation">)</span>       0          <span class="token comment">#在此 PV 內的 PE 大小</span>
-  Total PE              0          <span class="token comment">#共分割出几个 PE</span>
-  <span class="token function">free</span> PE               0          <span class="token comment">#沒被 LV 用掉的 PE</span>
-  Allocated PE          0          <span class="token comment">#尚可分配出去的 PE 数量</span>
+  PE Size <span class="token punctuation">(</span>KByte<span class="token punctuation">)</span>       <span class="token number">0</span>          <span class="token comment">#在此 PV 內的 PE 大小</span>
+  Total PE              <span class="token number">0</span>          <span class="token comment">#共分割出几个 PE</span>
+  <span class="token function">free</span> PE               <span class="token number">0</span>          <span class="token comment">#沒被 LV 用掉的 PE</span>
+  Allocated PE          <span class="token number">0</span>          <span class="token comment">#尚可分配出去的 PE 数量</span>
   PV UUID               Z13Jk5-RCls-UJ8B-HzDa-Gesn-atku-rf2biN
 <span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">(</span>底下省略<span class="token punctuation">)</span><span class="token punctuation">..</span><span class="token punctuation">..</span></code></pre>
 <p>删除物理卷：</p>
@@ -100,7 +100,7 @@ Labels on physical volume <span class="token string">"/dev/sdb2"</span> successf
 <p>修改物理卷属性：</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># pvchange -x n /dev/sdb1    #禁止分配指定物理卷上的PE</span>
 Physical volume <span class="token string">"/dev/sdb1"</span> changed  
-1 physical volume changed / 0 physical volumes not changed </code></pre>
+<span class="token number">1</span> physical volume changed / <span class="token number">0</span> physical volumes not changed </code></pre>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 </div>
 
@@ -123,7 +123,7 @@ Physical volume <span class="token string">"/dev/sdb1"</span> changed
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1584350099452"></script>
-<script type="text/javascript" src="../js/index.js?v=1584350099452"></script>
+<script type="text/javascript" src="../js/dt.js?v=1584405945319"></script>
+<script type="text/javascript" src="../js/index.js?v=1584405945319"></script>
 </body>
 </html>

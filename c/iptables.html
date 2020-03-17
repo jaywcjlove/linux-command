@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,iptables,Linux上常用的防火墙软件">
     <title>iptables 命令，Linux iptables 命令详解：Linux上常用的防火墙软件 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584350099041">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584405944618">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -247,7 +247,7 @@
 <h3 id="实例">实例</h3><h4 id="空当前的所有规则和计数">空当前的所有规则和计数</h4><pre><code class="language-shell">iptables -F  <span class="token comment"># 清空所有的防火墙规则</span>
 iptables -X  <span class="token comment"># 删除用户自定义的空链</span>
 iptables -Z  <span class="token comment"># 清空计数</span></code></pre>
-<h4 id="配置允许ssh端口连接">配置允许ssh端口连接</h4><pre><code class="language-shell">iptables -A INPUT -s 192.168.1.0/24 -p tcp --dport 22 -j ACCEPT
+<h4 id="配置允许ssh端口连接">配置允许ssh端口连接</h4><pre><code class="language-shell">iptables -A INPUT -s <span class="token number">192.168</span>.1.0/24 -p tcp --dport <span class="token number">22</span> -j ACCEPT
 <span class="token comment"># 22为你的ssh端口， -s 192.168.1.0/24表示允许这个网段的机器来连接，其它网段的ip地址是登陆不了你的机器的。 -j ACCEPT表示接受这样的请求</span></code></pre>
 <h4 id="允许本地回环地址可以正常使用">允许本地回环地址可以正常使用</h4><pre><code class="language-shell">iptables -A INPUT -i lo -j ACCEPT
 <span class="token comment">#本地圆环地址就是那个127.0.0.1，是本机上使用的,它进与出都设置为允许</span>
@@ -255,11 +255,11 @@ iptables -A OUTPUT -o lo -j ACCEPT</code></pre>
 <h4 id="设置默认的规则">设置默认的规则</h4><pre><code class="language-shell">iptables -P INPUT DROP <span class="token comment"># 配置默认的不让进</span>
 iptables -P FORWARD DROP <span class="token comment"># 默认的不允许转发</span>
 iptables -P OUTPUT ACCEPT <span class="token comment"># 默认的可以出去</span></code></pre>
-<h4 id="配置白名单">配置白名单</h4><pre><code class="language-shell">iptables -A INPUT -p all -s 192.168.1.0/24 -j ACCEPT  <span class="token comment"># 允许机房内网机器可以访问</span>
-iptables -A INPUT -p all -s 192.168.140.0/24 -j ACCEPT  <span class="token comment"># 允许机房内网机器可以访问</span>
-iptables -A INPUT -p tcp -s 183.121.3.7 --dport 3380 -j ACCEPT <span class="token comment"># 允许183.121.3.7访问本机的3380端口</span></code></pre>
-<h4 id="开启相应的服务端口">开启相应的服务端口</h4><pre><code class="language-shell">iptables -A INPUT -p tcp --dport 80 -j ACCEPT <span class="token comment"># 开启80端口，因为web对外都是这个端口</span>
-iptables -A INPUT -p icmp --icmp-type 8 -j ACCEPT <span class="token comment"># 允许被ping</span>
+<h4 id="配置白名单">配置白名单</h4><pre><code class="language-shell">iptables -A INPUT -p all -s <span class="token number">192.168</span>.1.0/24 -j ACCEPT  <span class="token comment"># 允许机房内网机器可以访问</span>
+iptables -A INPUT -p all -s <span class="token number">192.168</span>.140.0/24 -j ACCEPT  <span class="token comment"># 允许机房内网机器可以访问</span>
+iptables -A INPUT -p tcp -s <span class="token number">183.121</span>.3.7 --dport <span class="token number">3380</span> -j ACCEPT <span class="token comment"># 允许183.121.3.7访问本机的3380端口</span></code></pre>
+<h4 id="开启相应的服务端口">开启相应的服务端口</h4><pre><code class="language-shell">iptables -A INPUT -p tcp --dport <span class="token number">80</span> -j ACCEPT <span class="token comment"># 开启80端口，因为web对外都是这个端口</span>
+iptables -A INPUT -p icmp --icmp-type <span class="token number">8</span> -j ACCEPT <span class="token comment"># 允许被ping</span>
 iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT <span class="token comment"># 已经建立的连接得让它进来</span></code></pre>
 <h4 id="保存规则到配置文件中">保存规则到配置文件中</h4><pre><code class="language-shell"><span class="token function">cp</span> /etc/sysconfig/iptables /etc/sysconfig/iptables.bak <span class="token comment"># 任何改动之前先备份，请保持这一优秀的习惯</span>
 iptables-save <span class="token operator">></span> /etc/sysconfig/iptables
@@ -283,46 +283,46 @@ iptables -X INPUT  <span class="token comment"># 删除指定的链，这个链�
                    <span class="token comment"># 如果没有指定链名，则会删除该表中所有非内置的链。</span>
 iptables -Z INPUT  <span class="token comment"># 把指定链，或者表中的所有链上的所有计数器清零。</span></code></pre>
 <h4 id="删除已添加的规则">删除已添加的规则</h4><pre><code class="language-shell"><span class="token comment"># 添加一条规则</span>
-iptables -A INPUT -s 192.168.1.5 -j DROP</code></pre>
+iptables -A INPUT -s <span class="token number">192.168</span>.1.5 -j DROP</code></pre>
 <p>将所有iptables以序号标记显示，执行：</p>
 <pre><code class="language-shell">iptables -L -n --line-numbers</code></pre>
 <p>比如要删除INPUT里序号为8的规则，执行：</p>
-<pre><code class="language-shell">iptables -D INPUT 8</code></pre>
-<h4 id="开放指定的端口">开放指定的端口</h4><pre><code class="language-shell">iptables -A INPUT -s 127.0.0.1 -d 127.0.0.1 -j ACCEPT               <span class="token comment">#允许本地回环接口(即运行本机访问本机)</span>
+<pre><code class="language-shell">iptables -D INPUT <span class="token number">8</span></code></pre>
+<h4 id="开放指定的端口">开放指定的端口</h4><pre><code class="language-shell">iptables -A INPUT -s <span class="token number">127.0</span>.0.1 -d <span class="token number">127.0</span>.0.1 -j ACCEPT               <span class="token comment">#允许本地回环接口(即运行本机访问本机)</span>
 iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT    <span class="token comment">#允许已建立的或相关连的通行</span>
 iptables -A OUTPUT -j ACCEPT         <span class="token comment">#允许所有本机向外的访问</span>
-iptables -A INPUT -p tcp --dport 22 -j ACCEPT    <span class="token comment">#允许访问22端口</span>
-iptables -A INPUT -p tcp --dport 80 -j ACCEPT    <span class="token comment">#允许访问80端口</span>
-iptables -A INPUT -p tcp --dport 21 -j ACCEPT    <span class="token comment">#允许ftp服务的21端口</span>
-iptables -A INPUT -p tcp --dport 20 -j ACCEPT    <span class="token comment">#允许FTP服务的20端口</span>
+iptables -A INPUT -p tcp --dport <span class="token number">22</span> -j ACCEPT    <span class="token comment">#允许访问22端口</span>
+iptables -A INPUT -p tcp --dport <span class="token number">80</span> -j ACCEPT    <span class="token comment">#允许访问80端口</span>
+iptables -A INPUT -p tcp --dport <span class="token number">21</span> -j ACCEPT    <span class="token comment">#允许ftp服务的21端口</span>
+iptables -A INPUT -p tcp --dport <span class="token number">20</span> -j ACCEPT    <span class="token comment">#允许FTP服务的20端口</span>
 iptables -A INPUT -j reject       <span class="token comment">#禁止其他未允许的规则访问</span>
 iptables -A FORWARD -j REJECT     <span class="token comment">#禁止其他未允许的规则访问</span></code></pre>
-<h4 id="屏蔽ip">屏蔽IP</h4><pre><code class="language-shell">iptables -A INPUT -p tcp -m tcp -s 192.168.0.8 -j DROP  <span class="token comment"># 屏蔽恶意主机（比如，192.168.0.8</span>
-iptables -I INPUT -s 123.45.6.7 -j DROP       <span class="token comment">#屏蔽单个IP的命令</span>
-iptables -I INPUT -s 123.0.0.0/8 -j DROP      <span class="token comment">#封整个段即从123.0.0.1到123.255.255.254的命令</span>
-iptables -I INPUT -s 124.45.0.0/16 -j DROP    <span class="token comment">#封IP段即从123.45.0.1到123.45.255.254的命令</span>
-iptables -I INPUT -s 123.45.6.0/24 -j DROP    <span class="token comment">#封IP段即从123.45.6.1到123.45.6.254的命令是</span></code></pre>
+<h4 id="屏蔽ip">屏蔽IP</h4><pre><code class="language-shell">iptables -A INPUT -p tcp -m tcp -s <span class="token number">192.168</span>.0.8 -j DROP  <span class="token comment"># 屏蔽恶意主机（比如，192.168.0.8</span>
+iptables -I INPUT -s <span class="token number">123.45</span>.6.7 -j DROP       <span class="token comment">#屏蔽单个IP的命令</span>
+iptables -I INPUT -s <span class="token number">123.0</span>.0.0/8 -j DROP      <span class="token comment">#封整个段即从123.0.0.1到123.255.255.254的命令</span>
+iptables -I INPUT -s <span class="token number">124.45</span>.0.0/16 -j DROP    <span class="token comment">#封IP段即从123.45.0.1到123.45.255.254的命令</span>
+iptables -I INPUT -s <span class="token number">123.45</span>.6.0/24 -j DROP    <span class="token comment">#封IP段即从123.45.6.1到123.45.6.254的命令是</span></code></pre>
 <h4 id="指定数据包出去的网络接口">指定数据包出去的网络接口</h4><p>只对 OUTPUT，FORWARD，POSTROUTING 三个链起作用。</p>
 <pre><code class="language-shell">iptables -A FORWARD -o eth0</code></pre>
 <h4 id="查看已添加的规则">查看已添加的规则</h4><pre><code class="language-shell">iptables -L -n -v
-Chain INPUT <span class="token punctuation">(</span>policy DROP 48106 packets, 2690K bytes<span class="token punctuation">)</span>
- pkts bytes target     prot opt <span class="token keyword">in</span>     out     <span class="token function">source</span>               destination
- 5075  589K ACCEPT     all  --  lo     *       0.0.0.0/0            0.0.0.0/0
- 191K   90M ACCEPT     tcp  --  *      *       0.0.0.0/0            0.0.0.0/0           tcp dpt:22
-1499K  133M ACCEPT     tcp  --  *      *       0.0.0.0/0            0.0.0.0/0           tcp dpt:80
-4364K 6351M ACCEPT     all  --  *      *       0.0.0.0/0            0.0.0.0/0           state RELATED,ESTABLISHED
- 6256  327K ACCEPT     icmp --  *      *       0.0.0.0/0            0.0.0.0/0
+Chain INPUT <span class="token punctuation">(</span>policy DROP <span class="token number">48106</span> packets, 2690K bytes<span class="token punctuation">)</span>
+ pkts bytes target     prot opt <span class="token keyword">in</span>     out     <span class="token builtin class-name">source</span>               destination
+ <span class="token number">5075</span>  589K ACCEPT     all  --  lo     *       <span class="token number">0.0</span>.0.0/0            <span class="token number">0.0</span>.0.0/0
+ 191K   90M ACCEPT     tcp  --  *      *       <span class="token number">0.0</span>.0.0/0            <span class="token number">0.0</span>.0.0/0           tcp dpt:22
+1499K  133M ACCEPT     tcp  --  *      *       <span class="token number">0.0</span>.0.0/0            <span class="token number">0.0</span>.0.0/0           tcp dpt:80
+4364K 6351M ACCEPT     all  --  *      *       <span class="token number">0.0</span>.0.0/0            <span class="token number">0.0</span>.0.0/0           state RELATED,ESTABLISHED
+ <span class="token number">6256</span>  327K ACCEPT     icmp --  *      *       <span class="token number">0.0</span>.0.0/0            <span class="token number">0.0</span>.0.0/0
 
-Chain FORWARD <span class="token punctuation">(</span>policy ACCEPT 0 packets, 0 bytes<span class="token punctuation">)</span>
- pkts bytes target     prot opt <span class="token keyword">in</span>     out     <span class="token function">source</span>               destination
+Chain FORWARD <span class="token punctuation">(</span>policy ACCEPT <span class="token number">0</span> packets, <span class="token number">0</span> bytes<span class="token punctuation">)</span>
+ pkts bytes target     prot opt <span class="token keyword">in</span>     out     <span class="token builtin class-name">source</span>               destination
 
 Chain OUTPUT <span class="token punctuation">(</span>policy ACCEPT 3382K packets, 1819M bytes<span class="token punctuation">)</span>
- pkts bytes target     prot opt <span class="token keyword">in</span>     out     <span class="token function">source</span>               destination
- 5075  589K ACCEPT     all  --  *      lo      0.0.0.0/0            0.0.0.0/0</code></pre>
+ pkts bytes target     prot opt <span class="token keyword">in</span>     out     <span class="token builtin class-name">source</span>               destination
+ <span class="token number">5075</span>  589K ACCEPT     all  --  *      lo      <span class="token number">0.0</span>.0.0/0            <span class="token number">0.0</span>.0.0/0</code></pre>
 <h4 id="启动网络转发规则">启动网络转发规则</h4><p>公网<code>210.14.67.7</code>让内网<code>192.168.188.0/24</code>上网</p>
-<pre><code class="language-shell">iptables -t nat -A POSTROUTING -s 192.168.188.0/24 -j SNAT --to-source 210.14.67.127</code></pre>
+<pre><code class="language-shell">iptables -t nat -A POSTROUTING -s <span class="token number">192.168</span>.188.0/24 -j SNAT --to-source <span class="token number">210.14</span>.67.127</code></pre>
 <h4 id="端口映射">端口映射</h4><p>本机的 2222 端口映射到内网 虚拟机的22 端口</p>
-<pre><code class="language-shell">iptables -t nat -A PREROUTING -d 210.14.67.127 -p tcp --dport 2222  -j DNAT --to-dest 192.168.188.115:22</code></pre>
+<pre><code class="language-shell">iptables -t nat -A PREROUTING -d <span class="token number">210.14</span>.67.127 -p tcp --dport <span class="token number">2222</span>  -j DNAT --to-dest <span class="token number">192.168</span>.188.115:22</code></pre>
 <h4 id="字符串匹配">字符串匹配</h4><p>比如，我们要过滤所有TCP连接中的字符串<code>test</code>，一旦出现它我们就终止这个连接，我们可以这么做：</p>
 <pre><code class="language-shell">iptables -A INPUT -p tcp -m string --algo kmp --string <span class="token string">"test"</span> -j REJECT --reject-with tcp-reset
 iptables -L
@@ -336,8 +336,8 @@ iptables -L
 <span class="token comment">#</span>
 <span class="token comment"># Chain OUTPUT (policy ACCEPT)</span>
 <span class="token comment"># target     prot opt source               destination</span></code></pre>
-<h4 id="阻止windows蠕虫的攻击">阻止Windows蠕虫的攻击</h4><pre><code class="language-shell">iptables -I INPUT -j DROP -p tcp -s 0.0.0.0/0 -m string --algo kmp --string <span class="token string">"cmd.exe"</span></code></pre>
-<h4 id="防止syn洪水攻击">防止SYN洪水攻击</h4><pre><code class="language-shell">iptables -A INPUT -p tcp --syn -m limit --limit 5/second -j ACCEPT</code></pre>
+<h4 id="阻止windows蠕虫的攻击">阻止Windows蠕虫的攻击</h4><pre><code class="language-shell">iptables -I INPUT -j DROP -p tcp -s <span class="token number">0.0</span>.0.0/0 -m string --algo kmp --string <span class="token string">"cmd.exe"</span></code></pre>
+<h4 id="防止syn洪水攻击">防止SYN洪水攻击</h4><pre><code class="language-shell">iptables -A INPUT -p tcp --syn -m limit --limit <span class="token number">5</span>/second -j ACCEPT</code></pre>
 <h2 id="更多实例">更多实例</h2><blockquote>
 <p>用iptables搭建一套强大的安全防护盾 <a href="http://www.imooc.com/learn/389">http://www.imooc.com/learn/389</a></p>
 </blockquote>
@@ -405,35 +405,35 @@ oracle -&gt; 1521/tcp</p>
 <p>防CC攻击</p>
 <pre><code class="language-shell">iptables -L -F -A -D <span class="token comment"># list flush append delete</span>
 <span class="token comment"># 场景一</span>
-iptables -I INPUT -p tcp --dport 80 -j ACCEPT <span class="token comment"># 允许 tcp 80 端口</span>
-iptables -I INPUT -p tcp --dport 10:22 -j ACCEPT <span class="token comment"># 允许 tcp 10-22 端口</span>
+iptables -I INPUT -p tcp --dport <span class="token number">80</span> -j ACCEPT <span class="token comment"># 允许 tcp 80 端口</span>
+iptables -I INPUT -p tcp --dport <span class="token number">10</span>:22 -j ACCEPT <span class="token comment"># 允许 tcp 10-22 端口</span>
 iptables -I INPUT -p icmp -j ACCEPT <span class="token comment"># 允许 icmp</span>
 iptables -A INPUT -j REJECT <span class="token comment"># 添加一条规则, 不允许所有</span>
 
 <span class="token comment"># 优化场景一</span>
 iptables -I INPUT -i lo -j ACCEPT <span class="token comment"># 允许本机访问</span>
 iptables -I INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT <span class="token comment"># 允许访问外网</span>
-iptables -I INPUT -p tcp --dport 80 -s 10.10.188.233 -j ACCEPT <span class="token comment"># 只允许固定ip访问80</span>
+iptables -I INPUT -p tcp --dport <span class="token number">80</span> -s <span class="token number">10.10</span>.188.233 -j ACCEPT <span class="token comment"># 只允许固定ip访问80</span>
 
 <span class="token comment"># 场景二</span>
 <span class="token function">vi</span> /etc/vsftpd/vsftpd.conf <span class="token comment"># 使用 vsftpd 开启 ftp 主动模式</span>
-port_enable<span class="token operator">=</span>yes
-connect_from_port_20<span class="token operator">=</span>YES
-iptables -I INPUT -p tcp --dport 21 -j ACCEPT
+<span class="token assign-left variable">port_enable</span><span class="token operator">=</span>yes
+<span class="token assign-left variable">connect_from_port_20</span><span class="token operator">=</span>YES
+iptables -I INPUT -p tcp --dport <span class="token number">21</span> -j ACCEPT
 
 <span class="token function">vi</span> /etc/vsftpd/vsftpd.conf <span class="token comment"># 建议使用 ftp 被动模式</span>
-pasv_min_port<span class="token operator">=</span>50000
-pasv_max_port<span class="token operator">=</span>60000
-iptables -I INPUT -p tcp --dport 21 -j ACCEPT
-iptables -I INPUT -p tcp --dport 50000:60000 -j ACCEPT
+<span class="token assign-left variable">pasv_min_port</span><span class="token operator">=</span><span class="token number">50000</span>
+<span class="token assign-left variable">pasv_max_port</span><span class="token operator">=</span><span class="token number">60000</span>
+iptables -I INPUT -p tcp --dport <span class="token number">21</span> -j ACCEPT
+iptables -I INPUT -p tcp --dport <span class="token number">50000</span>:60000 -j ACCEPT
 
 <span class="token comment"># 还可以使用 iptables 模块追踪来自动开发对应的端口</span>
 
 <span class="token comment"># 场景三</span>
 iptables -I INPUT -i lo -j ACCEPT <span class="token comment"># 允许本机访问</span>
 iptables -I INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT <span class="token comment"># 允许访问外网</span>
-iptables -I INPUT -s 10.10.155.0/24 -j ACCEPT <span class="token comment"># 允许内网访问</span>
-iptables -I INPUT -p tcp -m multiport --dports 80,1723 -j ACCEPT <span class="token comment"># 允许端口, 80 -> http, 1723 -> vpn</span>
+iptables -I INPUT -s <span class="token number">10.10</span>.155.0/24 -j ACCEPT <span class="token comment"># 允许内网访问</span>
+iptables -I INPUT -p tcp -m multiport --dports <span class="token number">80,1723</span> -j ACCEPT <span class="token comment"># 允许端口, 80 -> http, 1723 -> vpn</span>
 iptables -A INPUT -j REJECT <span class="token comment"># 添加一条规则, 不允许所有</span>
 
 iptables-save <span class="token comment"># 保存设置到配置文件</span>
@@ -441,14 +441,14 @@ iptables-save <span class="token comment"># 保存设置到配置文件</span>
 <span class="token comment"># 场景四</span>
 iptables -t nat -L <span class="token comment"># 查看 nat 配置</span>
 
-iptables -t nat -A POST_ROUTING -s 10.10.177.0/24 -j SNAT --to 10.10.188.232 <span class="token comment"># SNAT</span>
+iptables -t nat -A POST_ROUTING -s <span class="token number">10.10</span>.177.0/24 -j SNAT --to <span class="token number">10.10</span>.188.232 <span class="token comment"># SNAT</span>
 <span class="token function">vi</span> /etc/sysconfig/network <span class="token comment"># 配置网关</span>
 
-iptables -t nat -A POST_ROUTING -d 10.10.188.232 -p tcp --dport 80 -j DNAT --to 10.10.177.232:80 <span class="token comment"># DNAT</span>
+iptables -t nat -A POST_ROUTING -d <span class="token number">10.10</span>.188.232 -p tcp --dport <span class="token number">80</span> -j DNAT --to <span class="token number">10.10</span>.177.232:80 <span class="token comment"># DNAT</span>
 
 <span class="token comment">#场景五</span>
-iptables -I INPUT -p tcp --syn --dport 80 -m connlimit --connlimit-above 100 -j REJECT <span class="token comment"># 限制并发连接访问数</span>
-iptables -I INPUT -m limit --limit 3/hour --limit-burst 10 -j ACCEPT <span class="token comment"># limit模块; --limit-burst 默认为5</span></code></pre>
+iptables -I INPUT -p tcp --syn --dport <span class="token number">80</span> -m connlimit --connlimit-above <span class="token number">100</span> -j REJECT <span class="token comment"># 限制并发连接访问数</span>
+iptables -I INPUT -m limit --limit <span class="token number">3</span>/hour --limit-burst <span class="token number">10</span> -j ACCEPT <span class="token comment"># limit模块; --limit-burst 默认为5</span></code></pre>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 
 </div>
@@ -472,7 +472,7 @@ iptables -I INPUT -m limit --limit 3/hour --limit-burst 10 -j ACCEPT <span class
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1584350099042"></script>
-<script type="text/javascript" src="../js/index.js?v=1584350099042"></script>
+<script type="text/javascript" src="../js/dt.js?v=1584405944618"></script>
+<script type="text/javascript" src="../js/index.js?v=1584405944618"></script>
 </body>
 </html>

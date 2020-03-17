@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,setsebool,修改SElinux策略内各项规则的布尔值">
     <title>setsebool 命令，Linux setsebool 命令详解：修改SElinux策略内各项规则的布尔值 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584350099657">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584405945634">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -42,54 +42,54 @@
 
 <h1 id="setsebool">setsebool</h1><p>修改SElinux策略内各项规则的布尔值</p>
 <h2 id="补充说明">补充说明</h2><p><strong>setsebool命令</strong> 是用来修改SElinux策略内各项规则的布尔值。setsebool命令和getsebool命令是SELinux修改和查询布尔值的一套工具组。SELinux的策略与规则管理相关命令：seinfo命令、sesearch命令、getsebool命令、setsebool命令、semanage命令。</p>
-<h3 id="语法">语法</h3><pre><code class="language-shell">setsebool <span class="token punctuation">[</span>-P<span class="token punctuation">]</span> 布尔值<span class="token operator">=</span><span class="token punctuation">[</span>0<span class="token operator">|</span>1<span class="token punctuation">]</span></code></pre>
+<h3 id="语法">语法</h3><pre><code class="language-shell">setsebool <span class="token punctuation">[</span>-P<span class="token punctuation">]</span> 布尔值<span class="token operator">=</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token operator">|</span><span class="token number">1</span><span class="token punctuation">]</span></code></pre>
 <h3 id="选项">选项</h3><pre><code class="language-shell">-P:直接将设置值写入配置文件，该设置数据将来会生效的。</code></pre>
 <h3 id="实例">实例</h3><p>允许vsvtp匿名用户写入权限：</p>
-<pre><code class="language-shell">setsebool -P allow_ftpd_anon_write<span class="token operator">=</span>1</code></pre>
+<pre><code class="language-shell">setsebool -P <span class="token assign-left variable">allow_ftpd_anon_write</span><span class="token operator">=</span><span class="token number">1</span></code></pre>
 <p>如果你希望你的ftp用户可以访问自己的家目录的话，需要开启：</p>
-<pre><code class="language-shell">setsebool -P ftp_home_dir 1</code></pre>
+<pre><code class="language-shell">setsebool -P ftp_home_dir <span class="token number">1</span></code></pre>
 <p>如果你希望将vsftpd以daemon的方式运行的话，需要开启：</p>
-<pre><code class="language-shell">setsebool -P ftpd_is_daemon 1</code></pre>
+<pre><code class="language-shell">setsebool -P ftpd_is_daemon <span class="token number">1</span></code></pre>
 <p>你可以让SElinux停止保护vsftpd的daemon方式动行：</p>
-<pre><code class="language-shell">setsebool -P ftpd_disable_trans 1 </code></pre>
+<pre><code class="language-shell">setsebool -P ftpd_disable_trans <span class="token number">1</span> </code></pre>
 <p>HTTP被设置允许cgi的设置：</p>
-<pre><code class="language-shell">setsebool -P httpd_enable_cgi 1</code></pre>
+<pre><code class="language-shell">setsebool -P httpd_enable_cgi <span class="token number">1</span></code></pre>
 <p>允许用户HHTP访问其家目录，该设定限仅于用户的家目录主页：</p>
-<pre><code class="language-shell">setsebool -P httpd_enable_homedirs 1
+<pre><code class="language-shell">setsebool -P httpd_enable_homedirs <span class="token number">1</span>
 chcon -R -t httpd_sys_content_t ~user/public_html</code></pre>
 <p>允许httpd访问终端：</p>
-<pre><code class="language-shell">setsebool -P httpd_tty_comm 1</code></pre>
+<pre><code class="language-shell">setsebool -P httpd_tty_comm <span class="token number">1</span></code></pre>
 <p>关闭Selinux的关于httpd进程守护的保护：</p>
-<pre><code class="language-shell">setsebool -P httpd_disable_trans 1
+<pre><code class="language-shell">setsebool -P httpd_disable_trans <span class="token number">1</span>
 <span class="token function">service</span> httpd restart</code></pre>
 <p>关于named、master更新selinux设定：</p>
-<pre><code class="language-shell">setsebool -P named_write_master_zones 1</code></pre>
+<pre><code class="language-shell">setsebool -P named_write_master_zones <span class="token number">1</span></code></pre>
 <p>关闭named的进程守护保护：</p>
-<pre><code class="language-shell">setsebool -P named_disable_trans 1
+<pre><code class="language-shell">setsebool -P named_disable_trans <span class="token number">1</span>
 <span class="token function">service</span> named restart</code></pre>
 <p>Selinux将本机的NFS共享设置成只读：</p>
-<pre><code class="language-shell">setsebool -P nfs_export_all_ro 1</code></pre>
+<pre><code class="language-shell">setsebool -P nfs_export_all_ro <span class="token number">1</span></code></pre>
 <p>SElinux将本机的NFS共享设置成可读可写：</p>
-<pre><code class="language-shell">setsebool -P nfs_export_all_rw 1</code></pre>
+<pre><code class="language-shell">setsebool -P nfs_export_all_rw <span class="token number">1</span></code></pre>
 <p>如果你想要将远程NFS的家目录共享到本机，需要开启：</p>
-<pre><code class="language-shell">setsebool -P use_nfs_home_dirs 1</code></pre>
+<pre><code class="language-shell">setsebool -P use_nfs_home_dirs <span class="token number">1</span></code></pre>
 <p>如果samba服务器共享目录给多个域，则需要：</p>
-<pre><code class="language-shell">setsebool -P allow_smbd_anon_write<span class="token operator">=</span>1</code></pre>
+<pre><code class="language-shell">setsebool -P <span class="token assign-left variable">allow_smbd_anon_write</span><span class="token operator">=</span><span class="token number">1</span></code></pre>
 <p>samba服务器要共享家目录时：</p>
-<pre><code class="language-shell">setsebool -P samba_enable_home_dirs 1</code></pre>
+<pre><code class="language-shell">setsebool -P samba_enable_home_dirs <span class="token number">1</span></code></pre>
 <p>如果你需在本机上使用远程samba服务器的家目录：</p>
-<pre><code class="language-shell">setsebool -P use_samba_home_dirs 1</code></pre>
+<pre><code class="language-shell">setsebool -P use_samba_home_dirs <span class="token number">1</span></code></pre>
 <p>关闭selinux关于samba的进程守护的保护：</p>
-<pre><code class="language-shell">setsebool -P smbd_disable_trans 1
+<pre><code class="language-shell">setsebool -P smbd_disable_trans <span class="token number">1</span>
 <span class="token function">service</span> smb restart</code></pre>
 <p>允许rsync其他用户写入时：</p>
-<pre><code class="language-shell">setsebool -P allow_rsync_anon_write<span class="token operator">=</span>1</code></pre>
+<pre><code class="language-shell">setsebool -P <span class="token assign-left variable">allow_rsync_anon_write</span><span class="token operator">=</span><span class="token number">1</span></code></pre>
 <p>停止rsync的进程保护</p>
-<pre><code class="language-shell">setsebool -P rsync_disable_trans 1</code></pre>
+<pre><code class="language-shell">setsebool -P rsync_disable_trans <span class="token number">1</span></code></pre>
 <p>允许系统使用kerberos：</p>
-<pre><code class="language-shell">setsebool -P allow_kerberos 1</code></pre>
+<pre><code class="language-shell">setsebool -P allow_kerberos <span class="token number">1</span></code></pre>
 <p>系统工作在nis环境时：</p>
-<pre><code class="language-shell">setsebool -P allow_ypbind 1</code></pre>
+<pre><code class="language-shell">setsebool -P allow_ypbind <span class="token number">1</span></code></pre>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 </div>
 
@@ -112,7 +112,7 @@ chcon -R -t httpd_sys_content_t ~user/public_html</code></pre>
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1584350099657"></script>
-<script type="text/javascript" src="../js/index.js?v=1584350099657"></script>
+<script type="text/javascript" src="../js/dt.js?v=1584405945634"></script>
+<script type="text/javascript" src="../js/index.js?v=1584405945634"></script>
 </body>
 </html>

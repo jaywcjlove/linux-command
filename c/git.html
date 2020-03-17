@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,git,是目前世界上最先进的分布式版本控制系统">
     <title>git 命令，Linux git 命令详解：是目前世界上最先进的分布式版本控制系统 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584350098860">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584405944309">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -52,7 +52,7 @@
 <p>Git迅速成为最流行的分布式版本控制系统，尤其是2008年，GitHub网站上线了，它为开源项目免费提供Git存储，无数开源项目开始迁移至GitHub，包括jQuery，PHP，Ruby等等。</p>
 <p>历史就是这么偶然，如果不是当年BitMover公司威胁Linux社区，可能现在我们就没有免费而超级好用的Git了。</p>
 <p><a href="https://github.com/jaywcjlove/handbook/blob/master/other/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%B8%85%E5%8D%95.md">Git常用命令清单</a></p>
-<h3 id="语法">语法</h3><pre><code class="language-shell"><span class="token function">git</span> <span class="token punctuation">[</span>--version<span class="token punctuation">]</span> <span class="token punctuation">[</span>--help<span class="token punctuation">]</span> <span class="token punctuation">[</span>-C <span class="token operator">&lt;</span>path<span class="token operator">></span><span class="token punctuation">]</span> <span class="token punctuation">[</span>-c name<span class="token operator">=</span>value<span class="token punctuation">]</span>
+<h3 id="语法">语法</h3><pre><code class="language-shell"><span class="token function">git</span> <span class="token punctuation">[</span>--version<span class="token punctuation">]</span> <span class="token punctuation">[</span>--help<span class="token punctuation">]</span> <span class="token punctuation">[</span>-C <span class="token operator">&lt;</span>path<span class="token operator">></span><span class="token punctuation">]</span> <span class="token punctuation">[</span>-c <span class="token assign-left variable">name</span><span class="token operator">=</span>value<span class="token punctuation">]</span>
    <span class="token punctuation">[</span>--exec-path<span class="token punctuation">[</span><span class="token operator">=</span><span class="token operator">&lt;</span>path<span class="token operator">></span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>--html-path<span class="token punctuation">]</span> <span class="token punctuation">[</span>--man-path<span class="token punctuation">]</span> <span class="token punctuation">[</span>--info-path<span class="token punctuation">]</span>
    <span class="token punctuation">[</span>-p <span class="token operator">|</span> --paginate <span class="token operator">|</span> --no-pager<span class="token punctuation">]</span> <span class="token punctuation">[</span>--no-replace-objects<span class="token punctuation">]</span> <span class="token punctuation">[</span>--bare<span class="token punctuation">]</span>
    <span class="token punctuation">[</span>--git-dir<span class="token operator">=</span><span class="token operator">&lt;</span>path<span class="token operator">></span><span class="token punctuation">]</span> <span class="token punctuation">[</span>--work-tree<span class="token operator">=</span><span class="token operator">&lt;</span>path<span class="token operator">></span><span class="token punctuation">]</span> <span class="token punctuation">[</span>--namespace<span class="token operator">=</span><span class="token operator">&lt;</span>name<span class="token operator">></span><span class="token punctuation">]</span>
@@ -103,7 +103,7 @@ tag              创建，列出，删除或验证使用GPG签名的标签对象
 &#36; <span class="token function">git</span> clone ftp<span class="token punctuation">[</span>s<span class="token punctuation">]</span>://example.com/path/to/repo.git/
 &#36; <span class="token function">git</span> clone rsync://example.com/path/to/repo.git/</code></pre>
 <h2 id="配置">配置</h2><p>首先是配置帐号信息 <code>ssh -T git@github.com</code> 测试。</p>
-<h2 id="修改项目中的个人信息">修改项目中的个人信息</h2><pre><code class="language-shell"><span class="token function">git</span> <span class="token function">help</span> config <span class="token comment"># 获取帮助信息，查看修改个人信息的参数  </span>
+<h2 id="修改项目中的个人信息">修改项目中的个人信息</h2><pre><code class="language-shell"><span class="token function">git</span> <span class="token builtin class-name">help</span> config <span class="token comment"># 获取帮助信息，查看修改个人信息的参数  </span>
 <span class="token function">git</span> config --global user.name <span class="token string">"小弟调调"</span>           <span class="token comment"># 修改全局名字</span>
 <span class="token function">git</span> config --global user.email <span class="token string">"wowohoo@qq.com"</span>  <span class="token comment"># 修改全局邮箱</span>
 <span class="token function">git</span> config --list         <span class="token comment"># 查看配置的信息  </span></code></pre>
@@ -157,7 +157,7 @@ ssh-add -d  ~/.ssh/jslite_rsa <span class="token comment"># 删除指定的key</
 &#36; ssh-copy-id -i ~/.ssh/aliyunserver.key.pub root@192.168.182.112 <span class="token comment"># 这里需要输入密码一次</span></code></pre>
 <p>编辑 <code>~/.ssh/config</code></p>
 <pre><code class="language-shell">Host aliyun1
-  HostName 192.168.182.112
+  HostName <span class="token number">192.168</span>.182.112
   User root
   PreferredAuthentications publickey
   IdentityFile ~/.ssh/aliyunserver.key</code></pre>
@@ -165,7 +165,7 @@ ssh-add -d  ~/.ssh/jslite_rsa <span class="token comment"># 删除指定的key</
 <h3 id="https协议下提交代码免密码">https协议下提交代码免密码</h3><pre><code class="language-shell"><span class="token function">git</span> clone https://github.com/username/rep.git</code></pre>
 <p>通过上面方式克隆可能需要密码，解决办法：进入当前克隆的项目 <code>vi rep/.git/config</code> 编辑 <code>config</code>, 按照下面方式修改，你就可以提交代码不用输入密码了。</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>core<span class="token punctuation">]</span>
-    repositoryformatversion <span class="token operator">=</span> 0
+    repositoryformatversion <span class="token operator">=</span> <span class="token number">0</span>
     filemode <span class="token operator">=</span> <span class="token boolean">true</span>
     bare <span class="token operator">=</span> <span class="token boolean">false</span>
     logallrefupdates <span class="token operator">=</span> <span class="token boolean">true</span>
@@ -216,16 +216,16 @@ ssh-add -d  ~/.ssh/jslite_rsa <span class="token comment"># 删除指定的key</
 <pre><code class="language-shell"><span class="token function">git</span> pull
 You are not currently on a branch, so I cannot use any
 <span class="token string">'branch.&lt;branchname>.merge'</span> <span class="token keyword">in</span> your configuration file.
-Please specify <span class="token function">which</span> remote branch you want to use on the <span class="token function">command</span>
+Please specify <span class="token function">which</span> remote branch you want to use on the <span class="token builtin class-name">command</span>
 line and try again <span class="token punctuation">(</span>e.g. <span class="token string">'git pull &lt;repository> &lt;refspec>'</span><span class="token punctuation">)</span>.
-See git-pull<span class="token punctuation">(</span>1<span class="token punctuation">)</span> FOR details.</code></pre>
+See git-pull<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span> FOR details.</code></pre>
 <p>解决方法：</p>
 <pre><code class="language-shell"><span class="token function">git</span> checkout -b temp <span class="token comment"># 新建+切换到temp分支 </span>
 <span class="token function">git</span> checkout master</code></pre>
 <h3 id="最简单放弃本地修改内容">最简单放弃本地修改内容</h3><pre><code class="language-shell"><span class="token comment"># 如果有的修改以及加入暂存区的话</span>
 <span class="token function">git</span> reset --hard 
 <span class="token comment"># 还原所有修改，不会删除新增的文件</span>
-<span class="token function">git</span> checkout <span class="token keyword">.</span> 
+<span class="token function">git</span> checkout <span class="token builtin class-name">.</span> 
 <span class="token comment"># 下面命令会删除新增的文件</span>
 <span class="token function">git</span> clean -xdf</code></pre>
 <p>通过存储暂存区stash，在删除暂存区的方法放弃本地修改。</p>
@@ -241,7 +241,7 @@ See git-pull<span class="token punctuation">(</span>1<span class="token punctuat
 <h3 id="新建一个空分支">新建一个空分支</h3><pre><code class="language-shell"><span class="token comment"># 这种方式新建的分支(gh-pages)是没有 commit 记录的</span>
 <span class="token function">git</span> checkout --orphan gh-pages
 <span class="token comment"># 删除新建的gh-pages分支原本的内容，如果不删除，提交将作为当前分支的第一个commit</span>
-<span class="token function">git</span> <span class="token function">rm</span> -rf <span class="token keyword">.</span>
+<span class="token function">git</span> <span class="token function">rm</span> -rf <span class="token builtin class-name">.</span>
 <span class="token comment"># 查看一下状态 有可能上面一条命令，没有删除还没有提交的的文件</span>
 <span class="token function">git</span> state </code></pre>
 <h3 id="合并多个commit">合并多个commit</h3><pre><code class="language-shell"><span class="token comment"># 这个命令，将最近4个commit合并为1个，HEAD代表当前版本。</span>
@@ -267,8 +267,8 @@ See git-pull<span class="token punctuation">(</span>1<span class="token punctuat
 <span class="token comment"># 表示要修改当前版本的倒数第三次状态</span>
 <span class="token comment"># 将要更改的记录行首单词 pick 改为 edit</span>
 pick 96dc3f9 doc: Update quick-start.md
-pick f1cce8a test<span class="token punctuation">(</span>Transition<span class="token punctuation">)</span>:Add transition <span class="token function">test</span> <span class="token punctuation">(</span><span class="token comment">#47)</span>
-pick 6293516 feat<span class="token punctuation">(</span>Divider<span class="token punctuation">)</span>: Add Divider component.
+pick f1cce8a test<span class="token punctuation">(</span>Transition<span class="token punctuation">)</span>:Add transition <span class="token builtin class-name">test</span> <span class="token punctuation">(</span><span class="token comment">#47)</span>
+pick <span class="token number">6293516</span> feat<span class="token punctuation">(</span>Divider<span class="token punctuation">)</span>: Add Divider component.
 <span class="token comment"># Rebase eeb03a4..6293516 onto eeb03a4 (3 commands)</span>
 <span class="token comment">#</span>
 <span class="token comment"># Commands:</span>
@@ -296,7 +296,7 @@ pick 6293516 feat<span class="token punctuation">(</span>Divider<span class="tok
 
 <span class="token comment"># 最后，确保别人没有提交进行push，最好不要加 -f 强制推送</span>
 <span class="token function">git</span> push -f origin master</code></pre>
-<h3 id="添加忽略文件">添加忽略文件</h3><pre><code class="language-shell"><span class="token keyword">echo</span> node_modules/ <span class="token operator">>></span> .gitignore</code></pre>
+<h3 id="添加忽略文件">添加忽略文件</h3><pre><code class="language-shell"><span class="token builtin class-name">echo</span> node_modules/ <span class="token operator">>></span> .gitignore</code></pre>
 <h3 id="利用commit关闭一个issue">利用commit关闭一个issue</h3><p>这个功能在Github上可以玩儿，Gitlab上特别老的版本不能玩儿哦，那么如何跟随着commit关闭一个issue呢? 在confirm merge的时候可以使用一下命令来关闭相关issue:  </p>
 <p><code>fixes #xxx</code>、 <code>fixed #xxx</code>、 <code>fix #xxx</code>、 <code>closes #xxx</code>、 <code>close #xxx</code>、 <code>closed #xxx</code>、</p>
 <h3 id="同步fork的上游仓库">同步fork的上游仓库</h3><p><a href="https://help.github.com/articles/syncing-a-fork/">Github教程同步fork教程</a>，<a href="http://www.miss77.net/549.html">在Github上同步一个分支(fork)</a>  </p>
@@ -338,7 +338,7 @@ pick 6293516 feat<span class="token punctuation">(</span>Divider<span class="tok
 <h3 id="批量修改历史commit中的名字和邮箱">批量修改历史commit中的名字和邮箱</h3><p><strong>1.克隆仓库</strong></p>
 <p>注意参数，这个不是普通的clone，clone下来的仓库并不能参与开发</p>
 <pre><code class="language-shell"><span class="token function">git</span> clone --bare https://github.com/user/repo.git
-<span class="token function">cd</span> repo.git</code></pre>
+<span class="token builtin class-name">cd</span> repo.git</code></pre>
 <p><strong>2.命令行中运行代码</strong></p>
 <p>OLD_EMAIL原来的邮箱<br>CORRECT_NAME更正的名字<br>CORRECT_EMAIL更正的邮箱  </p>
 <p>将下面代码复制放到命令行中执行</p>
@@ -358,7 +358,7 @@ then
 fi
 '</span> --tag-name-filter <span class="token function">cat</span> -- --branches --tags</code></pre>
 <p>执行过程</p>
-<pre><code class="language-shell">Rewrite 160d4df2689ff6df3820563bfd13b5f1fb9ba832 <span class="token punctuation">(</span>479/508<span class="token punctuation">)</span> <span class="token punctuation">(</span>16 seconds passed, remaining 0 predicted<span class="token punctuation">)</span>
+<pre><code class="language-shell">Rewrite 160d4df2689ff6df3820563bfd13b5f1fb9ba832 <span class="token punctuation">(</span><span class="token number">479</span>/508<span class="token punctuation">)</span> <span class="token punctuation">(</span><span class="token number">16</span> seconds passed, remaining <span class="token number">0</span> predicted<span class="token punctuation">)</span>
 Ref <span class="token string">'refs/heads/dev'</span> was rewritten
 Ref <span class="token string">'refs/heads/master'</span> was rewritten</code></pre>
 <p><strong>3.同步到远程仓库</strong></p>
@@ -399,7 +399,7 @@ Ref <span class="token string">'refs/heads/master'</span> was rewritten</code></
 &#36; <span class="token function">git</span> clone file:///opt/git/project.git
 &#36; <span class="token function">git</span> clone ftp<span class="token punctuation">[</span>s<span class="token punctuation">]</span>://example.com/path/to/repo.git/
 &#36; <span class="token function">git</span> clone rsync://example.com/path/to/repo.git/</code></pre>
-<h2 id="本地">本地</h2><h3 id="help">help</h3><pre><code class="language-shell"><span class="token function">git</span> <span class="token function">help</span> config <span class="token comment"># 获取帮助信息  </span></code></pre>
+<h2 id="本地">本地</h2><h3 id="help">help</h3><pre><code class="language-shell"><span class="token function">git</span> <span class="token builtin class-name">help</span> config <span class="token comment"># 获取帮助信息  </span></code></pre>
 <h3 id="add">add</h3><pre><code class="language-shell"><span class="token function">git</span> <span class="token function">add</span> *   <span class="token comment"># 跟踪新文件   </span>
 <span class="token function">git</span> <span class="token function">add</span> -u <span class="token punctuation">[</span>path<span class="token punctuation">]</span>   <span class="token comment"># 添加[指定路径下]已跟踪文件   </span></code></pre>
 <h3 id="rm">rm</h3><pre><code class="language-shell"><span class="token function">rm</span> *<span class="token operator">&amp;</span><span class="token function">git</span> <span class="token function">rm</span> *          <span class="token comment"># 移除文件  </span>
@@ -414,7 +414,7 @@ Ref <span class="token string">'refs/heads/master'</span> was rewritten</code></
 <span class="token function">git</span> commit log <span class="token comment">#查看所有提交，包括没有push的commit    </span>
 <span class="token function">git</span> commit -m <span class="token string">"#133"</span> <span class="token comment">#关联issue 任意位置带上# 符号加上issue号码  </span>
 <span class="token function">git</span> commit -m <span class="token string">"fix #133"</span> commit关闭issue  
-<span class="token function">git</span> commit -m <span class="token string">'概要描述'</span>&#36;<span class="token string">'\n\n'</span><span class="token string">'1.详细描述'</span>&#36;<span class="token string">'\n'</span><span class="token string">'2.详细描述'</span> <span class="token comment">#提交简要描述和详细描述  </span></code></pre>
+<span class="token function">git</span> commit -m <span class="token string">'概要描述'</span>&#36;<span class="token string">'<span class="token entity" title="\n">\n</span><span class="token entity" title="\n">\n</span>'</span><span class="token string">'1.详细描述'</span>&#36;<span class="token string">'<span class="token entity" title="\n">\n</span>'</span><span class="token string">'2.详细描述'</span> <span class="token comment">#提交简要描述和详细描述  </span></code></pre>
 <h3 id="reset">reset</h3><pre><code class="language-shell"><span class="token function">git</span> reset HEAD *  <span class="token comment"># 取消已经暂存的文件   </span>
 <span class="token function">git</span> reset --mixed HEAD * <span class="token comment"># 同上   </span>
 <span class="token function">git</span> reset --soft HEAD *  <span class="token comment"># 重置到指定状态，不会修改索引区和工作树   </span>
@@ -426,7 +426,7 @@ Ref <span class="token string">'refs/heads/master'</span> was rewritten</code></
 <h3 id="checkout">checkout</h3><pre><code class="language-shell"><span class="token function">git</span> checkout -- <span class="token function">file</span>  <span class="token comment"># 取消对文件的修改（从暂存区——覆盖worktree file）  </span>
 <span class="token function">git</span> checkout branch<span class="token operator">|</span>tag<span class="token operator">|</span>commit -- file_name  <span class="token comment"># 从仓库取出file覆盖当前分支   </span>
 <span class="token function">git</span> checkout HEAD~1 <span class="token punctuation">[</span>文件<span class="token punctuation">]</span>  <span class="token comment"># 将会更新 working directory 去匹配某次 commit   </span>
-<span class="token function">git</span> checkout -- <span class="token keyword">.</span>          <span class="token comment"># 从暂存区取出文件覆盖工作区   </span>
+<span class="token function">git</span> checkout -- <span class="token builtin class-name">.</span>          <span class="token comment"># 从暂存区取出文件覆盖工作区   </span>
 <span class="token function">git</span> checkout -b gh-pages  0c304c9  <span class="token comment"># 这个表示 从当前分支 commit 哈希值为 0c304c9 的节点，分一个新的分支gh-pages出来，并切换到 gh-pages   </span></code></pre>
 <h3 id="diff">diff</h3><pre><code class="language-shell"><span class="token function">git</span> <span class="token function">diff</span> <span class="token function">file</span>     <span class="token comment"># 查看指定文件的差异   </span>
 <span class="token function">git</span> <span class="token function">diff</span> --stat   <span class="token comment"># 查看简单的diff结果   </span>
@@ -443,8 +443,8 @@ Ref <span class="token string">'refs/heads/master'</span> was rewritten</code></
 <span class="token function">git</span> stash apply <span class="token comment"># 恢复工作现场   </span>
 <span class="token function">git</span> stash drop  <span class="token comment"># 删除stash内容   </span>
 <span class="token function">git</span> stash pop   <span class="token comment"># 恢复的同时直接删除stash内容   </span>
-<span class="token function">git</span> stash apply stash@<span class="token punctuation">{</span>0<span class="token punctuation">}</span> <span class="token comment"># 恢复指定的工作现场，当你保存了不只一份工作现场时。   </span></code></pre>
-<h3 id="merge">merge</h3><pre><code class="language-shell"><span class="token function">git</span> merge --squash <span class="token function">test</span> <span class="token comment"># 合并压缩，将test上的commit压缩为一条   </span></code></pre>
+<span class="token function">git</span> stash apply stash@<span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span> <span class="token comment"># 恢复指定的工作现场，当你保存了不只一份工作现场时。   </span></code></pre>
+<h3 id="merge">merge</h3><pre><code class="language-shell"><span class="token function">git</span> merge --squash <span class="token builtin class-name">test</span> <span class="token comment"># 合并压缩，将test上的commit压缩为一条   </span></code></pre>
 <h3 id="cherry-pick">cherry-pick</h3><pre><code class="language-shell"><span class="token function">git</span> cherry-pick commit    <span class="token comment"># 拣选合并，将commit合并到当前分支   </span>
 <span class="token function">git</span> cherry-pick -n commit <span class="token comment"># 拣选多个提交，合并完后可以继续拣选下一个提交   </span></code></pre>
 <h3 id="rebase">rebase</h3><pre><code class="language-shell"><span class="token function">git</span> rebase master   <span class="token comment"># 将master分之上超前的提交，变基到当前分支  </span>
@@ -456,15 +456,15 @@ Ref <span class="token string">'refs/heads/master'</span> was rewritten</code></
 <h2 id="分支branch">分支branch</h2><h3 id="删除">删除</h3><pre><code class="language-shell"><span class="token function">git</span> push origin :branchName  <span class="token comment"># 删除远程分支  </span>
 <span class="token function">git</span> push origin --delete new <span class="token comment"># 删除远程分支new   </span>
 <span class="token function">git</span> branch -d branchName     <span class="token comment"># 删除本地分支，强制删除用-D  </span>
-<span class="token function">git</span> branch -d <span class="token function">test</span>      <span class="token comment"># 删除本地test分支   </span>
-<span class="token function">git</span> branch -D <span class="token function">test</span>      <span class="token comment"># 强制删除本地test分支   </span>
+<span class="token function">git</span> branch -d <span class="token builtin class-name">test</span>      <span class="token comment"># 删除本地test分支   </span>
+<span class="token function">git</span> branch -D <span class="token builtin class-name">test</span>      <span class="token comment"># 强制删除本地test分支   </span>
 <span class="token function">git</span> remote prune origin <span class="token comment"># 远程删除了，本地还能看到远程存在，这条命令删除远程不存在的分支</span></code></pre>
 <h3 id="提交">提交</h3><pre><code class="language-shell"><span class="token function">git</span> push -u origin branchName <span class="token comment"># 提交分支到远程origin主机中  </span></code></pre>
 <h3 id="拉取">拉取</h3><p><code>git fetch -p</code> #拉取远程分支时，自动清理 远程分支已删除，本地还存在的对应同名分支。  </p>
 <h3 id="分支合并">分支合并</h3><pre><code class="language-shell"><span class="token function">git</span> merge branchName      <span class="token comment"># 合并分支 - 将分支branchName和当前所在分支合并   </span>
 <span class="token function">git</span> merge origin/master   <span class="token comment"># 在本地分支上合并远程分支。   </span>
 <span class="token function">git</span> rebase origin/master  <span class="token comment"># 在本地分支上合并远程分支。   </span>
-<span class="token function">git</span> merge <span class="token function">test</span>            <span class="token comment"># 将test分支合并到当前分支   </span></code></pre>
+<span class="token function">git</span> merge <span class="token builtin class-name">test</span>            <span class="token comment"># 将test分支合并到当前分支   </span></code></pre>
 <h3 id="重命名">重命名</h3><p><code>git branch -m old new</code> #重命名分支  </p>
 <h3 id="查看">查看</h3><pre><code class="language-shell"><span class="token function">git</span> branch      <span class="token comment"># 列出本地分支   </span>
 <span class="token function">git</span> branch -r   <span class="token comment"># 列出远端分支   </span>
@@ -473,15 +473,15 @@ Ref <span class="token string">'refs/heads/master'</span> was rewritten</code></
 <span class="token function">git</span> branch --merge      <span class="token comment"># 查看已经合并到当前分支的分支   </span>
 <span class="token function">git</span> branch --no-merge   <span class="token comment"># 查看为合并到当前分支的分支   </span>
 <span class="token function">git</span> remote show origin  <span class="token comment"># 可以查看remote地址，远程分支</span></code></pre>
-<h3 id="新建">新建</h3><pre><code class="language-shell"><span class="token function">git</span> branch <span class="token function">test</span> <span class="token comment"># 新建test分支  </span>
+<h3 id="新建">新建</h3><pre><code class="language-shell"><span class="token function">git</span> branch <span class="token builtin class-name">test</span> <span class="token comment"># 新建test分支  </span>
 <span class="token function">git</span> branch newBrach 3defc69 <span class="token comment"># 指定哈希3defc69，新建分支名字为newBrach</span>
 <span class="token function">git</span> checkout -b newBrach origin/master <span class="token comment"># 取回远程主机的更新以后，在它的基础上创建一个新的分支  </span>
 <span class="token function">git</span> checkout -b newBrach 3defc69 <span class="token comment"># 以哈希值3defc69，新建 newBrach 分支，并切换到该分支</span></code></pre>
 <h3 id="连接">连接</h3><pre><code class="language-shell"><span class="token function">git</span> branch --set-upstream dev origin/dev     <span class="token comment"># 将本地dev分支与远程dev分支之间建立链接  </span>
 <span class="token function">git</span> branch --set-upstream master origin/next <span class="token comment"># 手动建立追踪关系  </span></code></pre>
-<h3 id="分支切换">分支切换</h3><pre><code class="language-shell"><span class="token function">git</span> checkout <span class="token function">test</span>     <span class="token comment"># 切换到test分支   </span>
-<span class="token function">git</span> checkout -b <span class="token function">test</span>  <span class="token comment"># 新建+切换到test分支   </span>
-<span class="token function">git</span> checkout -b <span class="token function">test</span> dev <span class="token comment"># 基于dev新建test分支，并切换   </span></code></pre>
+<h3 id="分支切换">分支切换</h3><pre><code class="language-shell"><span class="token function">git</span> checkout <span class="token builtin class-name">test</span>     <span class="token comment"># 切换到test分支   </span>
+<span class="token function">git</span> checkout -b <span class="token builtin class-name">test</span>  <span class="token comment"># 新建+切换到test分支   </span>
+<span class="token function">git</span> checkout -b <span class="token builtin class-name">test</span> dev <span class="token comment"># 基于dev新建test分支，并切换   </span></code></pre>
 <h2 id="远端">远端</h2><pre><code class="language-shell"><span class="token function">git</span> fetch <span class="token operator">&lt;</span>远程主机名<span class="token operator">></span> <span class="token operator">&lt;</span>分支名<span class="token operator">></span>   <span class="token comment"># fetch取回所有分支（branch）的更新  </span>
 <span class="token function">git</span> fetch origin remotebranch<span class="token punctuation">[</span>:localbranch<span class="token punctuation">]</span>   <span class="token comment">#  从远端拉去分支[到本地指定分支]   </span>
 <span class="token function">git</span> merge origin/branch   <span class="token comment"># 合并远端上指定分支   </span>
@@ -489,9 +489,9 @@ Ref <span class="token string">'refs/heads/master'</span> was rewritten</code></
 <span class="token function">git</span> push origin branch    <span class="token comment"># 将当前分支，推送到远端上指定分支   </span>
 <span class="token function">git</span> push origin localbranch:remotebranch  <span class="token comment"># 推送本地指定分支，到远端上指定分支   </span>
 <span class="token function">git</span> push origin :remotebranch   <span class="token comment"># 删除远端指定分支   </span>
-<span class="token function">git</span> checkout -b <span class="token punctuation">[</span>--track<span class="token punctuation">]</span> <span class="token function">test</span> origin/dev <span class="token comment"># 基于远端dev分支，新建本地test分支[同时设置跟踪]  </span></code></pre>
+<span class="token function">git</span> checkout -b <span class="token punctuation">[</span>--track<span class="token punctuation">]</span> <span class="token builtin class-name">test</span> origin/dev <span class="token comment"># 基于远端dev分支，新建本地test分支[同时设置跟踪]  </span></code></pre>
 <h2 id="submodule">submodule</h2><p>克隆项目同时克隆submodule</p>
-<pre><code class="language-shell"><span class="token function">git</span> clone https://github.com/jaywcjlove/handbook.git --depth<span class="token operator">=</span>1 --recurse-submodules</code></pre>
+<pre><code class="language-shell"><span class="token function">git</span> clone https://github.com/jaywcjlove/handbook.git --depth<span class="token operator">=</span><span class="token number">1</span> --recurse-submodules</code></pre>
 <p>克隆项目，之后再手动克隆 submodule 子项目</p>
 <pre><code class="language-shell"><span class="token function">git</span> submodule <span class="token function">add</span> --force <span class="token string">'仓库地址'</span> <span class="token string">'路径'</span>
 <span class="token comment"># 其中，仓库地址是指子模块仓库地址，路径指将子模块放置在当前工程下的路径。</span>
@@ -534,7 +534,7 @@ Ref <span class="token string">'refs/heads/master'</span> was rewritten</code></
 <span class="token function">git</span> log --graph --pretty<span class="token operator">=</span>oneline --abbrev-commit   
 <span class="token function">git</span> log -num <span class="token comment">#显示第几条log（倒数）   </span>
 <span class="token function">git</span> reflog <span class="token comment">#查看所有分支的所有操作记录   </span>
-<span class="token function">git</span> log --since<span class="token operator">=</span>1.day <span class="token comment">#一天内的提交；你可以给出各种时间格式，比如说具体的某一天（“2008-01-15”），或者是多久以前（“2 years 1 day 3 minutes ago”）。   </span>
+<span class="token function">git</span> log --since<span class="token operator">=</span><span class="token number">1</span>.day <span class="token comment">#一天内的提交；你可以给出各种时间格式，比如说具体的某一天（“2008-01-15”），或者是多久以前（“2 years 1 day 3 minutes ago”）。   </span>
 <span class="token function">git</span> log --pretty<span class="token operator">=</span><span class="token string">"%h - %s"</span> --author<span class="token operator">=</span>自己的名字 <span class="token comment">#查看自己的日志   </span>
 <span class="token function">git</span> log -p -2 <span class="token comment">#展开两次更新显示每次提交的内容差异   </span>
 <span class="token function">git</span> log --stat <span class="token comment">#要快速浏览其他协作者提交的更新都作了哪些改动   </span>
@@ -611,9 +611,9 @@ pick 310154e updated README formatting and added blame
 pick a5f4a0d added cat-file</code></pre>
 <p>改成</p>
 <pre><code>pick 310154e updated README formatting and added blame
-pick f7f3f6d changed my name a bit</code></pre><h3 id="删除仓库">删除仓库</h3><pre><code><span class="token function">cd</span> <span class="token punctuation">..</span>
+pick f7f3f6d changed my name a bit</code></pre><h3 id="删除仓库">删除仓库</h3><pre><code><span class="token builtin class-name">cd</span> <span class="token punctuation">..</span>
 <span class="token function">rm</span> -rf repo.git</code></pre><p><a href="https://help.github.com/articles/changing-author-info/">Github官方教程</a></p>
-<h2 id="其它">其它</h2><pre><code class="language-shell"><span class="token function">git</span> <span class="token function">help</span> *  <span class="token comment"># 获取命令的帮助信息  </span>
+<h2 id="其它">其它</h2><pre><code class="language-shell"><span class="token function">git</span> <span class="token builtin class-name">help</span> *  <span class="token comment"># 获取命令的帮助信息  </span>
 <span class="token function">git</span> status  <span class="token comment"># 获取当前的状态，非常有用，因为git会提示接下来的能做的操作  </span></code></pre>
 <h2 id="报错问题解决">报错问题解决</h2><p><strong>1. <code>git fatal: protocol error: bad line length character: No s</code></strong></p>
 <p>解决办法：更换remote地址为 <code>http/https</code> 的  </p>
@@ -631,7 +631,7 @@ pick f7f3f6d changed my name a bit</code></pre><h3 id="删除仓库">删除仓�
     url <span class="token operator">=</span> https://jaywcjlove@github.com/jaywcjlove/example.git  </code></pre>
 <p><strong>3. git status 显示中文问题</strong></p>
 <p>在查看状态的时候 git status 如果是中文就显示下面的情况</p>
-<pre><code class="language-shell">\344\272\247\345\223\201\351\234\200\346\261\202</code></pre>
+<pre><code class="language-shell"><span class="token punctuation">\</span><span class="token number">344</span><span class="token punctuation">\</span><span class="token number">272</span><span class="token punctuation">\</span><span class="token number">247</span><span class="token punctuation">\</span><span class="token number">345</span><span class="token punctuation">\</span><span class="token number">223</span><span class="token punctuation">\</span><span class="token number">201</span><span class="token punctuation">\</span><span class="token number">351</span><span class="token punctuation">\</span><span class="token number">234</span><span class="token punctuation">\</span><span class="token number">200</span><span class="token punctuation">\</span><span class="token number">346</span><span class="token punctuation">\</span><span class="token number">261</span><span class="token punctuation">\</span><span class="token number">202</span></code></pre>
 <p>解决这个问题方法是：</p>
 <pre><code class="language-shell"><span class="token function">git</span> config --global core.quotepath <span class="token boolean">false</span></code></pre>
 <h2 id="参考资料">参考资料</h2><ul>
@@ -679,7 +679,7 @@ pick f7f3f6d changed my name a bit</code></pre><h3 id="删除仓库">删除仓�
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1584350098861"></script>
-<script type="text/javascript" src="../js/index.js?v=1584350098861"></script>
+<script type="text/javascript" src="../js/dt.js?v=1584405944310"></script>
+<script type="text/javascript" src="../js/index.js?v=1584405944310"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,wget,Linux系统下载文件工具">
     <title>wget 命令，Linux wget 命令详解：Linux系统下载文件工具 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584350100020">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584405946188">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -77,17 +77,17 @@
 下载参数：
 
 –-bind-address<span class="token operator">=</span>ADDRESS 指定本地使用地址<span class="token punctuation">(</span>主机名或IP，当本地有多个IP或名字时使用<span class="token punctuation">)</span>
--t, –-tries<span class="token operator">=</span>NUMBER 设定最大尝试链接次数<span class="token punctuation">(</span>0 表示无限制<span class="token punctuation">)</span>.
+-t, –-tries<span class="token operator">=</span>NUMBER 设定最大尝试链接次数<span class="token punctuation">(</span><span class="token number">0</span> 表示无限制<span class="token punctuation">)</span>.
 -O –-output-document<span class="token operator">=</span>FILE 把文档写到FILE文件中
--nc, –-no-clobber 不要覆盖存在的文件或使用.#前缀
+-nc, –-no-clobber 不要覆盖存在的文件或使用.<span class="token comment">#前缀</span>
 -c, –-continue 接着下载没下载完的文件
 –progress<span class="token operator">=</span>TYPE 设定进程条标记
 -N, –-timestamping 不要重新下载文件除非比本地文件新
 -S, –-server-response 打印服务器的回应
 –-spider 不下载任何东西
--T, –-timeout<span class="token operator">=</span>SECONDS 设定响应超时的秒数
--w, –-wait<span class="token operator">=</span>SECONDS 两次尝试之间间隔SECONDS秒
-–waitretry<span class="token operator">=</span>SECONDS 在重新链接之间等待1…SECONDS秒
+-T, –-timeout<span class="token operator">=</span><span class="token environment constant">SECONDS</span> 设定响应超时的秒数
+-w, –-wait<span class="token operator">=</span><span class="token environment constant">SECONDS</span> 两次尝试之间间隔<span class="token environment constant">SECONDS</span>秒
+–waitretry<span class="token operator">=</span><span class="token environment constant">SECONDS</span> 在重新链接之间等待1…<span class="token environment constant">SECONDS</span>秒
 –random-wait 在下载之间等待0…2*WAIT秒
 -Y, –-proxy<span class="token operator">=</span>on/off 打开或关闭代理
 -Q, –-quota<span class="token operator">=</span>NUMBER 设置下载的容量限制
@@ -103,13 +103,13 @@
 
 HTTP 选项参数：
 
--–http-user<span class="token operator">=</span>USER 设定HTTP用户名为 USER.
+-–http-user<span class="token operator">=</span><span class="token environment constant">USER</span> 设定HTTP用户名为 <span class="token environment constant">USER</span><span class="token builtin class-name">.</span>
 -–http-passwd<span class="token operator">=</span>PASS 设定http密码为 PASS
 -C, –-cache<span class="token operator">=</span>on/off 允许/不允许服务器端的数据缓存 <span class="token punctuation">(</span>一般情况下允许<span class="token punctuation">)</span>
 -E, –-html-extension 将所有text/html文档以.html扩展名保存
 -–ignore-length 忽略 <span class="token variable">`</span></span>Content-Length’头域
 -–header<span class="token operator">=</span>STRING 在headers中插入字符串 STRING
--–proxy-user<span class="token operator">=</span>USER 设定代理的用户名为 USER
+-–proxy-user<span class="token operator">=</span><span class="token environment constant">USER</span> 设定代理的用户名为 <span class="token environment constant">USER</span>
 -–proxy-passwd<span class="token operator">=</span>PASS 设定代理的密码为 PASS
 -–referer<span class="token operator">=</span>URL 在HTTP请求中包含 <span class="token variable"><span class="token variable">`</span>Referer: URL’头
 -s, –-save-headers 保存HTTP头到文件
@@ -130,7 +130,7 @@ FTP 选项参数：
 递归下载参数：
 
 -r, -–recursive 递归下载－－慎用<span class="token operator">!</span>
--l, -–level<span class="token operator">=</span>NUMBER 最大递归深度 <span class="token punctuation">(</span>inf 或 0 代表无穷<span class="token punctuation">)</span>
+-l, -–level<span class="token operator">=</span>NUMBER 最大递归深度 <span class="token punctuation">(</span>inf 或 <span class="token number">0</span> 代表无穷<span class="token punctuation">)</span>
 –-delete-after 在现在完毕后局部删除文件
 -k, –-convert-links 转换非相对链接为相对链接
 -K, –-backup-converted 在转换文件X之前，将之备份为 X.orig
@@ -157,13 +157,13 @@ FTP 选项参数：
 <pre><code class="language-shell"><span class="token function">wget</span> http://www.jsdig.com/testfile.zip</code></pre>
 <p>以下的例子是从网络下载一个文件并保存在当前目录，在下载的过程中会显示进度条，包含（下载完成百分比，已经下载的字节，当前下载速度，剩余下载时间）。</p>
 <p><strong>下载并以不同的文件名保存</strong> </p>
-<pre><code class="language-shell"><span class="token function">wget</span> -O wordpress.zip http://www.jsdig.com/download.aspx?id<span class="token operator">=</span>1080</code></pre>
+<pre><code class="language-shell"><span class="token function">wget</span> -O wordpress.zip http://www.jsdig.com/download.aspx?id<span class="token operator">=</span><span class="token number">1080</span></code></pre>
 <p>wget默认会以最后一个符合<code>/</code>的后面的字符来命令，对于动态链接的下载通常文件名会不正确。</p>
 <p>错误：下面的例子会下载一个文件并以名称<code>download.aspx?id=1080</code>保存:</p>
-<pre><code class="language-shell"><span class="token function">wget</span> http://www.jsdig.com/download?id<span class="token operator">=</span>1</code></pre>
+<pre><code class="language-shell"><span class="token function">wget</span> http://www.jsdig.com/download?id<span class="token operator">=</span><span class="token number">1</span></code></pre>
 <p>即使下载的文件是zip格式，它仍然以<code>download.php?id=1080</code>命令。</p>
 <p>正确：为了解决这个问题，我们可以使用参数<code>-O</code>来指定一个文件名：</p>
-<pre><code class="language-shell"><span class="token function">wget</span> -O wordpress.zip http://www.jsdig.com/download.aspx?id<span class="token operator">=</span>1080</code></pre>
+<pre><code class="language-shell"><span class="token function">wget</span> -O wordpress.zip http://www.jsdig.com/download.aspx?id<span class="token operator">=</span><span class="token number">1080</span></code></pre>
 <p><strong>wget限速下载</strong> </p>
 <pre><code class="language-shell"><span class="token function">wget</span> --limit-rate<span class="token operator">=</span>300k http://www.jsdig.com/testfile.zip</code></pre>
 <p>当你执行wget的时候，它默认会占用全部可能的宽带下载。但是当你准备下载一个大文件，而你还需要下载其它文件时就有必要限速了。</p>
@@ -173,7 +173,7 @@ FTP 选项参数：
 <p><strong>使用wget后台下载</strong> </p>
 <pre><code class="language-shell"><span class="token function">wget</span> -b http://www.jsdig.com/testfile.zip
 
-Continuing <span class="token keyword">in</span> background, pid 1840.
+Continuing <span class="token keyword">in</span> background, pid <span class="token number">1840</span>.
 Output will be written to `wget-log'.</code></pre>
 <p>对于下载非常大的文件的时候，我们可以使用参数<code>-b</code>进行后台下载，你可以使用以下命令来察看下载进度：</p>
 <pre><code class="language-shell"><span class="token function">tail</span> -f wget-log</code></pre>
@@ -185,14 +185,14 @@ Output will be written to `wget-log'.</code></pre>
 <pre><code class="language-shell"><span class="token function">wget</span> --spider URL</code></pre>
 <p>如果下载链接正确，将会显示:</p>
 <pre><code class="language-shell">Spider mode enabled. Check <span class="token keyword">if</span> remote <span class="token function">file</span> exists.
-HTTP request sent, awaiting response<span class="token punctuation">..</span>. 200 OK
+HTTP request sent, awaiting response<span class="token punctuation">..</span>. <span class="token number">200</span> OK
 Length: unspecified <span class="token punctuation">[</span>text/html<span class="token punctuation">]</span>
 Remote <span class="token function">file</span> exists and could contain further links,
 but recursion is disabled -- not retrieving.</code></pre>
 <p>这保证了下载能在预定的时间进行，但当你给错了一个链接，将会显示如下错误:</p>
 <pre><code class="language-shell"><span class="token function">wget</span> --spider url
 Spider mode enabled. Check <span class="token keyword">if</span> remote <span class="token function">file</span> exists.
-HTTP request sent, awaiting response<span class="token punctuation">..</span>. 404 Not Found
+HTTP request sent, awaiting response<span class="token punctuation">..</span>. <span class="token number">404</span> Not Found
 Remote <span class="token function">file</span> does not exist -- broken link<span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span></code></pre>
 <p>你可以在以下几种情况下使用<code>--spider</code>参数：</p>
 <ul>
@@ -201,7 +201,7 @@ Remote <span class="token function">file</span> does not exist -- broken link<sp
 <li>检查网站页面的死链接</li>
 </ul>
 <p><strong>增加重试次数</strong> </p>
-<pre><code class="language-shell"><span class="token function">wget</span> --tries<span class="token operator">=</span>40 URL</code></pre>
+<pre><code class="language-shell"><span class="token function">wget</span> --tries<span class="token operator">=</span><span class="token number">40</span> URL</code></pre>
 <p>如果网络有问题或下载一个大文件也有可能失败。wget默认重试20次连接下载文件。如果需要，你可以使用<code>--tries</code>增加重试次数。</p>
 <p><strong>下载多个文件</strong> </p>
 <pre><code class="language-shell"><span class="token function">wget</span> -i filelist.txt</code></pre>
@@ -268,7 +268,7 @@ url4</code></pre>
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1584350100020"></script>
-<script type="text/javascript" src="../js/index.js?v=1584350100020"></script>
+<script type="text/javascript" src="../js/dt.js?v=1584405946188"></script>
+<script type="text/javascript" src="../js/index.js?v=1584405946188"></script>
 </body>
 </html>

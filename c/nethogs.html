@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,nethogs,终端下的网络流量监控工具">
     <title>nethogs 命令，Linux nethogs 命令详解：终端下的网络流量监控工具 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584350099300">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584405945068">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -50,17 +50,17 @@
 <p>本文为你介绍如何在Unix/Linux操作系统下如何安装和使用NetHogs按进程监控网络带宽使用率。</p>
 <h3 id="语法">语法</h3><pre><code class="language-shell">nethogs（选项）（参数）</code></pre>
 <h3 id="选项">选项</h3><pre><code class="language-shell">usage: nethogs <span class="token punctuation">[</span>-V<span class="token punctuation">]</span> <span class="token punctuation">[</span>-h<span class="token punctuation">]</span> <span class="token punctuation">[</span>-b<span class="token punctuation">]</span> <span class="token punctuation">[</span>-d seconds<span class="token punctuation">]</span> <span class="token punctuation">[</span>-v mode<span class="token punctuation">]</span> <span class="token punctuation">[</span>-c count<span class="token punctuation">]</span> <span class="token punctuation">[</span>-t<span class="token punctuation">]</span> <span class="token punctuation">[</span>-p<span class="token punctuation">]</span> <span class="token punctuation">[</span>-s<span class="token punctuation">]</span> <span class="token punctuation">[</span>device <span class="token punctuation">[</span>device <span class="token punctuation">[</span>device <span class="token punctuation">..</span>.<span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">]</span>
-  -V <span class="token keyword">:</span> 打印版本。
-  -h <span class="token keyword">:</span> 打印此帮助。
-  -b <span class="token keyword">:</span> bughunt模式 - 暗示tracemode。
-  -d <span class="token keyword">:</span> 延迟更新刷新率（以秒为单位）。 默认值为1。
-  -v <span class="token keyword">:</span> 视图模式（0 <span class="token operator">=</span> KB / s，1 <span class="token operator">=</span>总KB，2 <span class="token operator">=</span>总B，3 <span class="token operator">=</span>总MB）。 默认值为0。
-  -c <span class="token keyword">:</span> 更新次数。 默认为0（无限制）。
-  -t <span class="token keyword">:</span> tracemode.
-  -p <span class="token keyword">:</span> 煽动混乱模式（不推荐）。
-  -s <span class="token keyword">:</span> 按发送列排序输出。
-  -a <span class="token keyword">:</span> 监控所有设备，甚至环回/停止。
-  device <span class="token keyword">:</span> 要监控的设备。 默认是所有接口启动和运行，不包括环回
+  -V <span class="token builtin class-name">:</span> 打印版本。
+  -h <span class="token builtin class-name">:</span> 打印此帮助。
+  -b <span class="token builtin class-name">:</span> bughunt模式 - 暗示tracemode。
+  -d <span class="token builtin class-name">:</span> 延迟更新刷新率（以秒为单位）。 默认值为1。
+  -v <span class="token builtin class-name">:</span> 视图模式（0 <span class="token operator">=</span> KB / s，1 <span class="token operator">=</span>总KB，2 <span class="token operator">=</span>总B，3 <span class="token operator">=</span>总MB）。 默认值为0。
+  -c <span class="token builtin class-name">:</span> 更新次数。 默认为0（无限制）。
+  -t <span class="token builtin class-name">:</span> tracemode.
+  -p <span class="token builtin class-name">:</span> 煽动混乱模式（不推荐）。
+  -s <span class="token builtin class-name">:</span> 按发送列排序输出。
+  -a <span class="token builtin class-name">:</span> 监控所有设备，甚至环回/停止。
+  device <span class="token builtin class-name">:</span> 要监控的设备。 默认是所有接口启动和运行，不包括环回
 
 当nethogs运行时，按：
   q：退出
@@ -68,11 +68,11 @@
   r：按RECEIVE流量排序
   m：在总（KB，B，MB）和KB / s模式之间切换</code></pre>
 <p>其他参数和用法</p>
-<pre><code class="language-shell">-d <span class="token keyword">:</span> 刷新间隔
--h <span class="token keyword">:</span> 帮助
--p <span class="token keyword">:</span> promiscious 模式
--t <span class="token keyword">:</span> trace模式 
--V <span class="token keyword">:</span> 版本</code></pre>
+<pre><code class="language-shell">-d <span class="token builtin class-name">:</span> 刷新间隔
+-h <span class="token builtin class-name">:</span> 帮助
+-p <span class="token builtin class-name">:</span> promiscious 模式
+-t <span class="token builtin class-name">:</span> trace模式 
+-V <span class="token builtin class-name">:</span> 版本</code></pre>
 <p><strong>交互命令</strong></p>
 <p>以下是NetHogs的一些交互命令（键盘快捷键）</p>
 <ul>
@@ -95,8 +95,8 @@
 <p>Ubuntu 12.10 下的NetHogs预览</p>
 <p>正如上图所示，send列和received列显示的是按照每个进程的流量统计。总的收发数据带宽在最下方，而且可以用交互命令控制排序，下面将要讨论这些交互命令。</p>
 <h3 id="nethogs 命令行参数">NetHogs 命令行参数</h3><p>以下就是NetHogs命令行的参数，用-d来添加刷新频率参数，device name 用来检测给定的某个或者某些设备的带宽（默认是eth0）。例如：设置5秒钟的刷新频率，键入如下命令即可：</p>
-<pre><code class="language-shell">nethogs -d 5</code></pre>
-<pre><code class="language-shell">&#36; <span class="token function">sudo</span> nethogs -d 5</code></pre>
+<pre><code class="language-shell">nethogs -d <span class="token number">5</span></code></pre>
+<pre><code class="language-shell">&#36; <span class="token function">sudo</span> nethogs -d <span class="token number">5</span></code></pre>
 <p>如果只用来监视设备（eth0）的网络带宽可以使用如下命令：</p>
 <pre><code class="language-shell">nethogs eth0</code></pre>
 <pre><code class="language-shell">&#36; <span class="token function">sudo</span> nethogs eth0</code></pre>
@@ -128,7 +128,7 @@
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1584350099300"></script>
-<script type="text/javascript" src="../js/index.js?v=1584350099300"></script>
+<script type="text/javascript" src="../js/dt.js?v=1584405945068"></script>
+<script type="text/javascript" src="../js/index.js?v=1584405945068"></script>
 </body>
 </html>

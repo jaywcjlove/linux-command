@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,pstack,显示每个进程的栈跟踪">
     <title>pstack 命令，Linux pstack 命令详解：显示每个进程的栈跟踪 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584350099435">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584405945295">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -45,26 +45,26 @@
 <p>命令软件包下载地址：<a href="https://packages.debian.org/sid/pstack">https://packages.debian.org/sid/pstack</a></p>
 <h3 id="实例">实例</h3><p>pstree以树结构显示进程</p>
 <pre><code class="language-shell">pstree -p work <span class="token operator">|</span> <span class="token function">grep</span> ad
-sshd<span class="token punctuation">(</span>22669<span class="token punctuation">)</span>---bash<span class="token punctuation">(</span>22670<span class="token punctuation">)</span>---ad_preprocess<span class="token punctuation">(</span>4551<span class="token punctuation">)</span>-+-<span class="token punctuation">{</span>ad_preprocess<span class="token punctuation">}</span><span class="token punctuation">(</span>4552<span class="token punctuation">)</span>
-                                                <span class="token operator">|</span>-<span class="token punctuation">{</span>ad_preprocess<span class="token punctuation">}</span><span class="token punctuation">(</span>4553<span class="token punctuation">)</span>
-                                                <span class="token operator">|</span>-<span class="token punctuation">{</span>ad_preprocess<span class="token punctuation">}</span><span class="token punctuation">(</span>4554<span class="token punctuation">)</span>
-                                                <span class="token operator">|</span>-<span class="token punctuation">{</span>ad_preprocess<span class="token punctuation">}</span><span class="token punctuation">(</span>4555<span class="token punctuation">)</span>
-                                                <span class="token operator">|</span>-<span class="token punctuation">{</span>ad_preprocess<span class="token punctuation">}</span><span class="token punctuation">(</span>4556<span class="token punctuation">)</span>
-                                                `-<span class="token punctuation">{</span>ad_preprocess<span class="token punctuation">}</span><span class="token punctuation">(</span>4557<span class="token punctuation">)</span></code></pre>
+sshd<span class="token punctuation">(</span><span class="token number">22669</span><span class="token punctuation">)</span>---bash<span class="token punctuation">(</span><span class="token number">22670</span><span class="token punctuation">)</span>---ad_preprocess<span class="token punctuation">(</span><span class="token number">4551</span><span class="token punctuation">)</span>-+-<span class="token punctuation">{</span>ad_preprocess<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token number">4552</span><span class="token punctuation">)</span>
+                                                <span class="token operator">|</span>-<span class="token punctuation">{</span>ad_preprocess<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token number">4553</span><span class="token punctuation">)</span>
+                                                <span class="token operator">|</span>-<span class="token punctuation">{</span>ad_preprocess<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token number">4554</span><span class="token punctuation">)</span>
+                                                <span class="token operator">|</span>-<span class="token punctuation">{</span>ad_preprocess<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token number">4555</span><span class="token punctuation">)</span>
+                                                <span class="token operator">|</span>-<span class="token punctuation">{</span>ad_preprocess<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token number">4556</span><span class="token punctuation">)</span>
+                                                `-<span class="token punctuation">{</span>ad_preprocess<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token number">4557</span><span class="token punctuation">)</span></code></pre>
 <p>work为工作用户，-p为显示进程识别码，ad_preprocess共启动了6个子线程，加上主线程共7个线程。</p>
-<pre><code class="language-shell"><span class="token function">ps</span> -Lf 4551
-UID        PID  PPID   LWP  C NLWP STIME TTY      <span class="token function">stat</span>   <span class="token function">time</span> CMD
-work      4551 22670  4551  2    7 16:30 pts/2    Sl+    0:02 ./ad_preprocess
-work      4551 22670  4552  0    7 16:30 pts/2    Sl+    0:00 ./ad_preprocess
-work      4551 22670  4553  0    7 16:30 pts/2    Sl+    0:00 ./ad_preprocess
-work      4551 22670  4554  0    7 16:30 pts/2    Sl+    0:00 ./ad_preprocess
-work      4551 22670  4555  0    7 16:30 pts/2    Sl+    0:00 ./ad_preprocess
-work      4551 22670  4556  0    7 16:30 pts/2    Sl+    0:00 ./ad_preprocess
-work      4551 22670  4557  0    7 16:30 pts/2    Sl+    0:00 ./ad_preprocess</code></pre>
+<pre><code class="language-shell"><span class="token function">ps</span> -Lf <span class="token number">4551</span>
+<span class="token environment constant">UID</span>        PID  <span class="token environment constant">PPID</span>   LWP  C NLWP STIME TTY      <span class="token function">stat</span>   <span class="token function">time</span> CMD
+work      <span class="token number">4551</span> <span class="token number">22670</span>  <span class="token number">4551</span>  <span class="token number">2</span>    <span class="token number">7</span> <span class="token number">16</span>:30 pts/2    Sl+    <span class="token number">0</span>:02 ./ad_preprocess
+work      <span class="token number">4551</span> <span class="token number">22670</span>  <span class="token number">4552</span>  <span class="token number">0</span>    <span class="token number">7</span> <span class="token number">16</span>:30 pts/2    Sl+    <span class="token number">0</span>:00 ./ad_preprocess
+work      <span class="token number">4551</span> <span class="token number">22670</span>  <span class="token number">4553</span>  <span class="token number">0</span>    <span class="token number">7</span> <span class="token number">16</span>:30 pts/2    Sl+    <span class="token number">0</span>:00 ./ad_preprocess
+work      <span class="token number">4551</span> <span class="token number">22670</span>  <span class="token number">4554</span>  <span class="token number">0</span>    <span class="token number">7</span> <span class="token number">16</span>:30 pts/2    Sl+    <span class="token number">0</span>:00 ./ad_preprocess
+work      <span class="token number">4551</span> <span class="token number">22670</span>  <span class="token number">4555</span>  <span class="token number">0</span>    <span class="token number">7</span> <span class="token number">16</span>:30 pts/2    Sl+    <span class="token number">0</span>:00 ./ad_preprocess
+work      <span class="token number">4551</span> <span class="token number">22670</span>  <span class="token number">4556</span>  <span class="token number">0</span>    <span class="token number">7</span> <span class="token number">16</span>:30 pts/2    Sl+    <span class="token number">0</span>:00 ./ad_preprocess
+work      <span class="token number">4551</span> <span class="token number">22670</span>  <span class="token number">4557</span>  <span class="token number">0</span>    <span class="token number">7</span> <span class="token number">16</span>:30 pts/2    Sl+    <span class="token number">0</span>:00 ./ad_preprocess</code></pre>
 <p>进程共启动了7个线程</p>
 <p>pstack显示每个进程的栈跟踪：</p>
-<pre><code class="language-shell">pstack 4551
-Thread 7 <span class="token punctuation">(</span>Thread 1084229984 <span class="token punctuation">(</span>LWP 4552<span class="token punctuation">))</span>:
+<pre><code class="language-shell">pstack <span class="token number">4551</span>
+Thread <span class="token number">7</span> <span class="token punctuation">(</span>Thread <span class="token number">1084229984</span> <span class="token punctuation">(</span>LWP <span class="token number">4552</span><span class="token punctuation">))</span>:
 <span class="token comment">#0  0x000000302afc63dc in epoll_wait () from /lib64/tls/libc.so.6</span>
 <span class="token comment">#1  0x00000000006f0730 in ub::EPollEx::poll ()</span>
 <span class="token comment">#2  0x00000000006f172a in ub::NetReactor::callback ()</span>
@@ -72,7 +72,7 @@ Thread 7 <span class="token punctuation">(</span>Thread 1084229984 <span class="
 <span class="token comment">#4  0x000000302b80610a in start_thread () from /lib64/tls/libpthread.so.0</span>
 <span class="token comment">#5  0x000000302afc6003 in clone () from /lib64/tls/libc.so.6</span>
 <span class="token comment">#6  0x0000000000000000 in ?? ()</span>
-Thread 6 <span class="token punctuation">(</span>Thread 1094719840 <span class="token punctuation">(</span>LWP 4553<span class="token punctuation">))</span>:
+Thread <span class="token number">6</span> <span class="token punctuation">(</span>Thread <span class="token number">1094719840</span> <span class="token punctuation">(</span>LWP <span class="token number">4553</span><span class="token punctuation">))</span>:
 <span class="token comment">#0  0x000000302afc63dc in epoll_wait () from /lib64/tls/libc.so.6</span>
 <span class="token comment">#1  0x00000000006f0730 in ub::EPollEx::poll ()</span>
 <span class="token comment">#2  0x00000000006f172a in ub::NetReactor::callback ()</span>
@@ -80,7 +80,7 @@ Thread 6 <span class="token punctuation">(</span>Thread 1094719840 <span class="
 <span class="token comment">#4  0x000000302b80610a in start_thread () from /lib64/tls/libpthread.so.0</span>
 <span class="token comment">#5  0x000000302afc6003 in clone () from /lib64/tls/libc.so.6</span>
 <span class="token comment">#6  0x0000000000000000 in ?? ()</span>
-Thread 5 <span class="token punctuation">(</span>Thread 1105209696 <span class="token punctuation">(</span>LWP 4554<span class="token punctuation">))</span>:
+Thread <span class="token number">5</span> <span class="token punctuation">(</span>Thread <span class="token number">1105209696</span> <span class="token punctuation">(</span>LWP <span class="token number">4554</span><span class="token punctuation">))</span>:
 <span class="token comment">#0  0x000000302b80baa5 in __nanosleep_nocancel ()</span>
 <span class="token comment">#1  0x000000000079e758 in comcm::ms_sleep ()</span>
 <span class="token comment">#2  0x00000000006c8581 in ub::UbClientManager::healthyCheck ()</span>
@@ -88,13 +88,13 @@ Thread 5 <span class="token punctuation">(</span>Thread 1105209696 <span class="
 <span class="token comment">#4  0x000000302b80610a in start_thread () from /lib64/tls/libpthread.so.0</span>
 <span class="token comment">#5  0x000000302afc6003 in clone () from /lib64/tls/libc.so.6</span>
 <span class="token comment">#6  0x0000000000000000 in ?? ()</span>
-Thread 4 <span class="token punctuation">(</span>Thread 1115699552 <span class="token punctuation">(</span>LWP 4555<span class="token punctuation">))</span>:
+Thread <span class="token number">4</span> <span class="token punctuation">(</span>Thread <span class="token number">1115699552</span> <span class="token punctuation">(</span>LWP <span class="token number">4555</span><span class="token punctuation">))</span>:
 <span class="token comment">#0  0x000000302b80baa5 in __nanosleep_nocancel ()</span>
 <span class="token comment">#1  0x0000000000482b0e in armor::armor_check_thread ()</span>
 <span class="token comment">#2  0x000000302b80610a in start_thread () from /lib64/tls/libpthread.so.0</span>
 <span class="token comment">#3  0x000000302afc6003 in clone () from /lib64/tls/libc.so.6</span>
 <span class="token comment">#4  0x0000000000000000 in ?? ()</span>
-Thread 3 <span class="token punctuation">(</span>Thread 1126189408 <span class="token punctuation">(</span>LWP 4556<span class="token punctuation">))</span>:
+Thread <span class="token number">3</span> <span class="token punctuation">(</span>Thread <span class="token number">1126189408</span> <span class="token punctuation">(</span>LWP <span class="token number">4556</span><span class="token punctuation">))</span>:
 <span class="token comment">#0  0x000000302af8f1a5 in __nanosleep_nocancel () from /lib64/tls/libc.so.6</span>
 <span class="token comment">#1  0x000000302af8f010 in sleep () from /lib64/tls/libc.so.6</span>
 <span class="token comment">#2  0x000000000044c972 in Business_config_manager::run ()</span>
@@ -102,7 +102,7 @@ Thread 3 <span class="token punctuation">(</span>Thread 1126189408 <span class="
 <span class="token comment">#4  0x000000302b80610a in start_thread () from /lib64/tls/libpthread.so.0</span>
 <span class="token comment">#5  0x000000302afc6003 in clone () from /lib64/tls/libc.so.6</span>
 <span class="token comment">#6  0x0000000000000000 in ?? ()</span>
-Thread 2 <span class="token punctuation">(</span>Thread 1136679264 <span class="token punctuation">(</span>LWP 4557<span class="token punctuation">))</span>:
+Thread <span class="token number">2</span> <span class="token punctuation">(</span>Thread <span class="token number">1136679264</span> <span class="token punctuation">(</span>LWP <span class="token number">4557</span><span class="token punctuation">))</span>:
 <span class="token comment">#0  0x000000302af8f1a5 in __nanosleep_nocancel () from /lib64/tls/libc.so.6</span>
 <span class="token comment">#1  0x000000302af8f010 in sleep () from /lib64/tls/libc.so.6</span>
 <span class="token comment">#2  0x00000000004524bb in Process_thread::sleep_period ()</span>
@@ -111,7 +111,7 @@ Thread 2 <span class="token punctuation">(</span>Thread 1136679264 <span class="
 <span class="token comment">#5  0x000000302b80610a in start_thread () from /lib64/tls/libpthread.so.0</span>
 <span class="token comment">#6  0x000000302afc6003 in clone () from /lib64/tls/libc.so.6</span>
 <span class="token comment">#7  0x0000000000000000 in ?? ()</span>
-Thread 1 <span class="token punctuation">(</span>Thread 182894129792 <span class="token punctuation">(</span>LWP 4551<span class="token punctuation">))</span>:
+Thread <span class="token number">1</span> <span class="token punctuation">(</span>Thread <span class="token number">182894129792</span> <span class="token punctuation">(</span>LWP <span class="token number">4551</span><span class="token punctuation">))</span>:
 <span class="token comment">#0  0x000000302af8f1a5 in __nanosleep_nocancel () from /lib64/tls/libc.so.6</span>
 <span class="token comment">#1  0x000000302af8f010 in sleep () from /lib64/tls/libc.so.6</span>
 <span class="token comment">#2  0x0000000000420d79 in Ad_preprocess::run ()</span>
@@ -138,7 +138,7 @@ Thread 1 <span class="token punctuation">(</span>Thread 182894129792 <span class
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1584350099435"></script>
-<script type="text/javascript" src="../js/index.js?v=1584350099435"></script>
+<script type="text/javascript" src="../js/dt.js?v=1584405945295"></script>
+<script type="text/javascript" src="../js/index.js?v=1584405945295"></script>
 </body>
 </html>

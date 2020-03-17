@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,dmidecode,在Linux系统下获取有关硬件方面的信息">
     <title>dmidecode 命令，Linux dmidecode 命令详解：在Linux系统下获取有关硬件方面的信息 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584350098603">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584405943933">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -136,31 +136,31 @@
 <li>Additional Information</li>
 <li>Onboard Device</li>
 </ul>
-<h3 id="实例">实例</h3><pre><code class="language-shell">dmidecode -t 1  <span class="token comment"># 查看服务器信息</span>
+<h3 id="实例">实例</h3><pre><code class="language-shell">dmidecode -t <span class="token number">1</span>  <span class="token comment"># 查看服务器信息</span>
 dmidecode <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">'Product Name'</span> <span class="token comment"># 查看服务器型号 </span>
 dmidecode <span class="token operator">|</span><span class="token function">grep</span> <span class="token string">'Serial Number'</span> <span class="token comment"># 查看主板的序列号 </span>
-dmidecode -t 2  <span class="token comment"># 查看主板信息</span>
+dmidecode -t <span class="token number">2</span>  <span class="token comment"># 查看主板信息</span>
 dmidecode -s system-serial-number <span class="token comment"># 查看系统序列号 </span>
 dmidecode -t memory <span class="token comment"># 查看内存信息 </span>
-dmidecode -t 11 <span class="token comment"># 查看OEM信息 </span>
-dmidecode -t 17 <span class="token comment"># 查看内存条数</span>
-dmidecode -t 16 <span class="token comment"># 查询内存信息</span>
-dmidecode -t 4  <span class="token comment"># 查看CPU信息</span>
+dmidecode -t <span class="token number">11</span> <span class="token comment"># 查看OEM信息 </span>
+dmidecode -t <span class="token number">17</span> <span class="token comment"># 查看内存条数</span>
+dmidecode -t <span class="token number">16</span> <span class="token comment"># 查询内存信息</span>
+dmidecode -t <span class="token number">4</span>  <span class="token comment"># 查看CPU信息</span>
 
 <span class="token function">cat</span> /proc/scsi/scsi <span class="token comment"># 查看服务器硬盘信息</span></code></pre>
 <p>不带选项执行dmidecode命令通常会输出所有的硬件信息。dmidecode命令有个很有用的选项-t，可以按指定类型输出相关信息，假如要获得处理器方面的信息，则可以执行：</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># dmidecode -t processor</span>
 <span class="token comment"># dmidecode 2.11</span>
-SMBIOS 2.5 present.
+SMBIOS <span class="token number">2.5</span> present.
 
-Handle 0x0001, DMI <span class="token function">type</span> 4, 40 bytes
+Handle 0x0001, DMI <span class="token builtin class-name">type</span> <span class="token number">4</span>, <span class="token number">40</span> bytes
 Processor Information
-        Socket Designation: Node 1 Socket 1
+        Socket Designation: Node <span class="token number">1</span> Socket <span class="token number">1</span>
         Type: Central Processor
         Family: Xeon MP
         Manufacturer: Intel<span class="token punctuation">(</span>R<span class="token punctuation">)</span> Corporation
         id: C2 06 02 00 FF FB EB BF
-        Signature: Type 0, Family 6, Model 44, Stepping 2
+        Signature: Type <span class="token number">0</span>, Family <span class="token number">6</span>, Model <span class="token number">44</span>, Stepping <span class="token number">2</span>
         Flags:
                 FPU <span class="token punctuation">(</span>Floating-point unit on-chip<span class="token punctuation">)</span>
                 VME <span class="token punctuation">(</span>Virtual mode extension<span class="token punctuation">)</span>
@@ -173,28 +173,28 @@ Processor Information
                 CX8 <span class="token punctuation">(</span>CMPXCHG8 instruction supported<span class="token punctuation">)</span>
                 APIC <span class="token punctuation">(</span>On-chip APIC hardware supported<span class="token punctuation">)</span>
                 SEP <span class="token punctuation">(</span>Fast system call<span class="token punctuation">)</span>
-                MTRR <span class="token punctuation">(</span>Memory <span class="token function">type</span> range registers<span class="token punctuation">)</span>
-                PGE <span class="token punctuation">(</span>Page global enable<span class="token punctuation">)</span>
+                MTRR <span class="token punctuation">(</span>Memory <span class="token builtin class-name">type</span> range registers<span class="token punctuation">)</span>
+                PGE <span class="token punctuation">(</span>Page global <span class="token builtin class-name">enable</span><span class="token punctuation">)</span>
                 MCA <span class="token punctuation">(</span>Machine check architecture<span class="token punctuation">)</span>
                 CMOV <span class="token punctuation">(</span>Conditional move instruction supported<span class="token punctuation">)</span>
                 PAT <span class="token punctuation">(</span>Page attribute table<span class="token punctuation">)</span>
-                PSE-36 <span class="token punctuation">(</span>36-bit page size extension<span class="token punctuation">)</span>
+                PSE-36 <span class="token punctuation">(</span><span class="token number">36</span>-bit page size extension<span class="token punctuation">)</span>
                 CLFSH <span class="token punctuation">(</span>CLFLUSH instruction supported<span class="token punctuation">)</span>
                 DS <span class="token punctuation">(</span>Debug store<span class="token punctuation">)</span>
                 ACPI <span class="token punctuation">(</span>ACPI supported<span class="token punctuation">)</span>
                 MMX <span class="token punctuation">(</span>MMX technology supported<span class="token punctuation">)</span>
                 FXSR <span class="token punctuation">(</span>FXSAVE and FXSTOR instructions supported<span class="token punctuation">)</span>
                 SSE <span class="token punctuation">(</span>Streaming SIMD extensions<span class="token punctuation">)</span>
-                SSE2 <span class="token punctuation">(</span>Streaming SIMD extensions 2<span class="token punctuation">)</span>
+                SSE2 <span class="token punctuation">(</span>Streaming SIMD extensions <span class="token number">2</span><span class="token punctuation">)</span>
                 ss <span class="token punctuation">(</span>Self-snoop<span class="token punctuation">)</span>
                 HTT <span class="token punctuation">(</span>Multi-threading<span class="token punctuation">)</span>
                 TM <span class="token punctuation">(</span>Thermal monitor supported<span class="token punctuation">)</span>
-                PBE <span class="token punctuation">(</span>Pending <span class="token keyword">break</span> enabled<span class="token punctuation">)</span>
-        Version: Intel<span class="token punctuation">(</span>R<span class="token punctuation">)</span> Xeon<span class="token punctuation">(</span>R<span class="token punctuation">)</span> CPU           E5620  @ 2.40GHz
-        Voltage: 1.2 V
-        External Clock: 5866 MHz
-        Max Speed: 4400 MHz
-        Current Speed: 2400 MHz
+                PBE <span class="token punctuation">(</span>Pending <span class="token builtin class-name">break</span> enabled<span class="token punctuation">)</span>
+        Version: Intel<span class="token punctuation">(</span>R<span class="token punctuation">)</span> Xeon<span class="token punctuation">(</span>R<span class="token punctuation">)</span> CPU           E5620  @ <span class="token number">2</span>.40GHz
+        Voltage: <span class="token number">1.2</span> V
+        External Clock: <span class="token number">5866</span> MHz
+        Max Speed: <span class="token number">4400</span> MHz
+        Current Speed: <span class="token number">2400</span> MHz
         Status: Populated, Enabled
         Upgrade: ZIF Socket
         L1 Cache Handle: 0x0002
@@ -203,25 +203,25 @@ Processor Information
         Serial Number: Not Specified
         Asset Tag: Not Specified
         Part Number: Not Specified
-        Core Count: 4
-        Core Enabled: 4
-        Thread Count: 8
+        Core Count: <span class="token number">4</span>
+        Core Enabled: <span class="token number">4</span>
+        Thread Count: <span class="token number">8</span>
         Characteristics:
-                64-bit capable
+                <span class="token number">64</span>-bit capable
 
-Handle 0x0055, DMI <span class="token function">type</span> 4, 40 bytes
+Handle 0x0055, DMI <span class="token builtin class-name">type</span> <span class="token number">4</span>, <span class="token number">40</span> bytes
 Processor Information
-        Socket Designation: Node 1 Socket 2
+        Socket Designation: Node <span class="token number">1</span> Socket <span class="token number">2</span>
         Type: Central Processor
         Family: Xeon MP
         Manufacturer: Not Specified
         ID: 00 00 00 00 00 00 00 00
-        Signature: Type 0, Family 0, Model 0, Stepping 0
+        Signature: Type <span class="token number">0</span>, Family <span class="token number">0</span>, Model <span class="token number">0</span>, Stepping <span class="token number">0</span>
         Flags: None
         Version: Not Specified
-        Voltage: 1.2 V
-        External Clock: 5866 MHz
-        Max Speed: 4400 MHz
+        Voltage: <span class="token number">1.2</span> V
+        External Clock: <span class="token number">5866</span> MHz
+        Max Speed: <span class="token number">4400</span> MHz
         Current Speed: Unknown
         Status: Unpopulated
         Upgrade: ZIF Socket
@@ -316,7 +316,7 @@ dmidecode<span class="token operator">|</span><span class="token function">grep<
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1584350098604"></script>
-<script type="text/javascript" src="../js/index.js?v=1584350098604"></script>
+<script type="text/javascript" src="../js/dt.js?v=1584405943934"></script>
+<script type="text/javascript" src="../js/index.js?v=1584405943934"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,sed,功能强大的流式文本编辑器">
     <title>sed 命令，Linux sed 命令详解：功能强大的流式文本编辑器 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584350099611">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584405945558">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -51,9 +51,9 @@
 -n或--quiet或——silent：仅显示script处理后的结果；
 -V或--version：显示版本信息。</code></pre>
 <h3 id="参数">参数</h3><p>文件：指定待处理的文本文件列表。</p>
-<h3 id="sed命令">sed命令</h3><pre><code class="language-shell">a\ <span class="token comment"># 在当前行下面插入文本。</span>
-i\ <span class="token comment"># 在当前行上面插入文本。</span>
-c\ <span class="token comment"># 把选定的行改为新的文本。</span>
+<h3 id="sed命令">sed命令</h3><pre><code class="language-shell">a<span class="token punctuation">\</span> <span class="token comment"># 在当前行下面插入文本。</span>
+i<span class="token punctuation">\</span> <span class="token comment"># 在当前行上面插入文本。</span>
+c<span class="token punctuation">\</span> <span class="token comment"># 把选定的行改为新的文本。</span>
 d <span class="token comment"># 删除，删除选择的行。</span>
 D <span class="token comment"># 删除模板块的第一行。</span>
 s <span class="token comment"># 替换指定字符</span>
@@ -81,21 +81,21 @@ p <span class="token comment"># 表示打印行。  </span>
 w <span class="token comment"># 表示把行写入一个文件。  </span>
 x <span class="token comment"># 表示互换模板块中的文本和缓冲区中的文本。  </span>
 y <span class="token comment"># 表示把一个字符翻译为另外的字符（但是不用于正则表达式）</span>
-\1 <span class="token comment"># 子串匹配标记</span>
+<span class="token punctuation">\</span><span class="token number">1</span> <span class="token comment"># 子串匹配标记</span>
 <span class="token operator">&amp;</span> <span class="token comment"># 已匹配字符串标记</span></code></pre>
 <h3 id="sed元字符集">sed元字符集</h3><pre><code class="language-shell">^ <span class="token comment"># 匹配行开始，如：/^sed/匹配所有以sed开头的行。</span>
 &#36; <span class="token comment"># 匹配行结束，如：/sed&#36;/匹配所有以sed结尾的行。</span>
-<span class="token keyword">.</span> <span class="token comment"># 匹配一个非换行符的任意字符，如：/s.d/匹配s后接一个任意字符，最后是d。</span>
+<span class="token builtin class-name">.</span> <span class="token comment"># 匹配一个非换行符的任意字符，如：/s.d/匹配s后接一个任意字符，最后是d。</span>
 * <span class="token comment"># 匹配0个或多个字符，如：/*sed/匹配所有模板是一个或多个空格后紧跟sed的行。</span>
 <span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token comment"># 匹配一个指定范围内的字符，如/[ss]ed/匹配sed和Sed。  </span>
 <span class="token punctuation">[</span>^<span class="token punctuation">]</span> <span class="token comment"># 匹配一个不在指定范围内的字符，如：/[^A-RT-Z]ed/匹配不包含A-R和T-Z的一个字母开头，紧跟ed的行。</span>
-\<span class="token punctuation">(</span><span class="token punctuation">..</span>\<span class="token punctuation">)</span> <span class="token comment"># 匹配子串，保存匹配的字符，如s/\(love\)able/\1rs，loveable被替换成lovers。</span>
+<span class="token punctuation">\</span><span class="token punctuation">(</span><span class="token punctuation">..</span><span class="token punctuation">\</span><span class="token punctuation">)</span> <span class="token comment"># 匹配子串，保存匹配的字符，如s/\(love\)able/\1rs，loveable被替换成lovers。</span>
 <span class="token operator">&amp;</span> <span class="token comment"># 保存搜索字符用来替换其他字符，如s/love/ **&amp;** /，love这成 **love** 。</span>
-\<span class="token operator">&lt;</span> <span class="token comment"># 匹配单词的开始，如:/\&lt;love/匹配包含以love开头的单词的行。</span>
-\<span class="token operator">></span> <span class="token comment"># 匹配单词的结束，如/love\>/匹配包含以love结尾的单词的行。</span>
-x\<span class="token punctuation">{</span>m\<span class="token punctuation">}</span> <span class="token comment"># 重复字符x，m次，如：/0\{5\}/匹配包含5个0的行。</span>
-x\<span class="token punctuation">{</span>m,\<span class="token punctuation">}</span> <span class="token comment"># 重复字符x，至少m次，如：/0\{5,\}/匹配至少有5个0的行。</span>
-x\<span class="token punctuation">{</span>m,n\<span class="token punctuation">}</span> <span class="token comment"># 重复字符x，至少m次，不多于n次，如：/0\{5,10\}/匹配5~10个0的行。  </span></code></pre>
+<span class="token punctuation">\</span><span class="token operator">&lt;</span> <span class="token comment"># 匹配单词的开始，如:/\&lt;love/匹配包含以love开头的单词的行。</span>
+<span class="token punctuation">\</span><span class="token operator">></span> <span class="token comment"># 匹配单词的结束，如/love\>/匹配包含以love结尾的单词的行。</span>
+x<span class="token punctuation">\</span><span class="token punctuation">{</span>m<span class="token punctuation">\</span><span class="token punctuation">}</span> <span class="token comment"># 重复字符x，m次，如：/0\{5\}/匹配包含5个0的行。</span>
+x<span class="token punctuation">\</span><span class="token punctuation">{</span>m,<span class="token punctuation">\</span><span class="token punctuation">}</span> <span class="token comment"># 重复字符x，至少m次，如：/0\{5,\}/匹配至少有5个0的行。</span>
+x<span class="token punctuation">\</span><span class="token punctuation">{</span>m,n<span class="token punctuation">\</span><span class="token punctuation">}</span> <span class="token comment"># 重复字符x，至少m次，不多于n次，如：/0\{5,10\}/匹配5~10个0的行。  </span></code></pre>
 <h2 id="sed用法实例">sed用法实例</h2><h3 id="替换操作：s命令">替换操作：s命令</h3><p>替换文本中的字符串：</p>
 <pre><code class="language-shell"><span class="token function">sed</span> <span class="token string">'s/book/books/'</span> <span class="token function">file</span></code></pre>
 <p> <strong>-n选项</strong> 和 <strong>p命令</strong> 一起使用表示只打印那些发生替换的行：</p>
@@ -105,13 +105,13 @@ x\<span class="token punctuation">{</span>m,n\<span class="token punctuation">}<
 <h3 id="全面替换标记g">全面替换标记g</h3><p>使用后缀 /g 标记会替换每一行中的所有匹配：</p>
 <pre><code class="language-shell"><span class="token function">sed</span> <span class="token string">'s/book/books/g'</span> <span class="token function">file</span></code></pre>
 <p>当需要从第N处匹配开始替换时，可以使用 /Ng：</p>
-<pre><code class="language-shell"><span class="token keyword">echo</span> sksksksksksk <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'s/sk/SK/2g'</span>
+<pre><code class="language-shell"><span class="token builtin class-name">echo</span> sksksksksksk <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'s/sk/SK/2g'</span>
 skSKSKSKSKSK
 
-<span class="token keyword">echo</span> sksksksksksk <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'s/sk/SK/3g'</span>
+<span class="token builtin class-name">echo</span> sksksksksksk <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'s/sk/SK/3g'</span>
 skskSKSKSKSK
 
-<span class="token keyword">echo</span> sksksksksksk <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'s/sk/SK/4g'</span>
+<span class="token builtin class-name">echo</span> sksksksksksk <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'s/sk/SK/4g'</span>
 skskskSKSKSK</code></pre>
 <h3 id="定界符">定界符</h3><p>以上命令中字符 / 在sed中作为定界符使用，也可以使用任意的定界符：</p>
 <pre><code class="language-shell"><span class="token function">sed</span> <span class="token string">'s:test:TEXT:g'</span>
@@ -129,27 +129,27 @@ skskskSKSKSK</code></pre>
 <p>删除文件中所有开头是test的行：</p>
 <pre><code class="language-shell"><span class="token function">sed</span> <span class="token string">'/^test/'</span>d <span class="token function">file</span></code></pre>
 <h3 id="已匹配字符串标记&amp;">已匹配字符串标记&amp;</h3><p>正则表达式 \w+ 匹配每一个单词，使用 [&amp;] 替换它，&amp; 对应于之前所匹配到的单词：</p>
-<pre><code class="language-shell"><span class="token keyword">echo</span> this is a <span class="token function">test</span> line <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'s/\w\+/[&amp;]/g'</span>
+<pre><code class="language-shell"><span class="token builtin class-name">echo</span> this is a <span class="token builtin class-name">test</span> line <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'s/\w\+/[&amp;]/g'</span>
 <span class="token punctuation">[</span>this<span class="token punctuation">]</span> <span class="token punctuation">[</span>is<span class="token punctuation">]</span> <span class="token punctuation">[</span>a<span class="token punctuation">]</span> <span class="token punctuation">[</span>test<span class="token punctuation">]</span> <span class="token punctuation">[</span>line<span class="token punctuation">]</span></code></pre>
 <p>所有以192.168.0.1开头的行都会被替换成它自已加localhost：</p>
 <pre><code class="language-shell"><span class="token function">sed</span> <span class="token string">'s/^192.168.0.1/&amp;localhost/'</span> <span class="token function">file</span>
-192.168.0.1localhost</code></pre>
+<span class="token number">192.168</span>.0.1localhost</code></pre>
 <h3 id="子串匹配标记\1">子串匹配标记\1</h3><p>匹配给定样式的其中一部分：</p>
-<pre><code class="language-shell"><span class="token keyword">echo</span> this is digit 7 <span class="token keyword">in</span> a number <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'s/digit \([0-9]\)/\1/'</span>
-this is 7 <span class="token keyword">in</span> a number</code></pre>
+<pre><code class="language-shell"><span class="token builtin class-name">echo</span> this is digit <span class="token number">7</span> <span class="token keyword">in</span> a number <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'s/digit \([0-9]\)/<span class="token entity" title="\1">\1</span>/'</span>
+this is <span class="token number">7</span> <span class="token keyword">in</span> a number</code></pre>
 <p>命令中 digit 7，被替换成了 7。样式匹配到的子串是 7，(..) 用于匹配子串，对于匹配到的第一个子串就标记为  <strong>\1</strong> ，依此类推匹配到的第二个结果就是  <strong>\2</strong> ，例如：</p>
-<pre><code class="language-shell"><span class="token keyword">echo</span> aaa BBB <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'s/\([a-z]\+\) \([A-Z]\+\)/\2 \1/'</span>
+<pre><code class="language-shell"><span class="token builtin class-name">echo</span> aaa BBB <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'s/\([a-z]\+\) \([A-Z]\+\)/<span class="token entity" title="\2">\2</span> <span class="token entity" title="\1">\1</span>/'</span>
 BBB aaa</code></pre>
 <p>love被标记为1，所有loveable会被替换成lovers，并打印出来：</p>
-<pre><code class="language-shell"><span class="token function">sed</span> -n <span class="token string">'s/\(love\)able/\1rs/p'</span> <span class="token function">file</span></code></pre>
+<pre><code class="language-shell"><span class="token function">sed</span> -n <span class="token string">'s/\(love\)able/<span class="token entity" title="\1">\1</span>rs/p'</span> <span class="token function">file</span></code></pre>
 <h3 id="组合多个表达式">组合多个表达式</h3><pre><code class="language-shell"><span class="token function">sed</span> <span class="token string">'表达式'</span> <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">'表达式'</span>
 
 等价于：
 
 <span class="token function">sed</span> <span class="token string">'表达式; 表达式'</span></code></pre>
 <h3 id="引用">引用</h3><p>sed表达式可以使用单引号来引用，但是如果表达式内部包含变量字符串，就需要使用双引号。</p>
-<pre><code class="language-shell">test<span class="token operator">=</span>hello
-<span class="token keyword">echo</span> hello WORLD <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">"s/<span class="token variable">&#36;test</span>/HELLO"</span>
+<pre><code class="language-shell"><span class="token assign-left variable">test</span><span class="token operator">=</span>hello
+<span class="token builtin class-name">echo</span> hello WORLD <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">"s/<span class="token variable">&#36;test</span>/HELLO"</span>
 HELLO WORLD</code></pre>
 <h3 id="选定行的范围：,（逗号）">选定行的范围：,（逗号）</h3><p>所有在模板test和check所确定的范围内的行都被打印：</p>
 <pre><code class="language-shell"><span class="token function">sed</span> -n <span class="token string">'/test/,/check/p'</span> <span class="token function">file</span></code></pre>
@@ -167,13 +167,13 @@ HELLO WORLD</code></pre>
 <h3 id="写入文件：w命令">写入文件：w命令</h3><p>在example中所有包含test的行都被写入file里：</p>
 <pre><code class="language-shell"><span class="token function">sed</span> -n <span class="token string">'/test/w file'</span> example</code></pre>
 <h3 id="追加（行下）：a\命令">追加（行下）：a\命令</h3><p>将 this is a test line 追加到 以test 开头的行后面：</p>
-<pre><code class="language-shell"><span class="token function">sed</span> <span class="token string">'/^test/a\this is a test line'</span> <span class="token function">file</span></code></pre>
+<pre><code class="language-shell"><span class="token function">sed</span> <span class="token string">'/^test/a<span class="token entity" title="\t">\t</span>his is a test line'</span> <span class="token function">file</span></code></pre>
 <p>在 test.conf 文件第2行之后插入 this is a test line：</p>
-<pre><code class="language-shell"><span class="token function">sed</span> -i <span class="token string">'2a\this is a test line'</span> test.conf</code></pre>
+<pre><code class="language-shell"><span class="token function">sed</span> -i <span class="token string">'2a<span class="token entity" title="\t">\t</span>his is a test line'</span> test.conf</code></pre>
 <h3 id="插入（行上）：i\命令">插入（行上）：i\命令</h3><p>将 this is a test line 追加到以test开头的行前面：</p>
-<pre><code class="language-shell"><span class="token function">sed</span> <span class="token string">'/^test/i\this is a test line'</span> <span class="token function">file</span></code></pre>
+<pre><code class="language-shell"><span class="token function">sed</span> <span class="token string">'/^test/i<span class="token entity" title="\t">\t</span>his is a test line'</span> <span class="token function">file</span></code></pre>
 <p>在test.conf文件第5行之前插入this is a test line：</p>
-<pre><code class="language-shell"><span class="token function">sed</span> -i <span class="token string">'5i\this is a test line'</span> test.conf</code></pre>
+<pre><code class="language-shell"><span class="token function">sed</span> -i <span class="token string">'5i<span class="token entity" title="\t">\t</span>his is a test line'</span> test.conf</code></pre>
 <h3 id="下一个：n命令">下一个：n命令</h3><p>如果test被匹配，则移动到匹配行的下一行，替换这一行的aa，变为bb，并打印该行，然后继续：</p>
 <pre><code class="language-shell"><span class="token function">sed</span> <span class="token string">'/test/{ n; s/aa/bb/; }'</span> <span class="token function">file</span></code></pre>
 <h3 id="变形：y命令">变形：y命令</h3><p>把1~10行内所有abcde转变为大写，注意，正则表达式元字符不能使用这个命令：</p>
@@ -193,7 +193,7 @@ HELLO WORLD</code></pre>
 <p>方法2：</p>
 <pre><code class="language-shell"><span class="token function">sed</span> -n <span class="token string">'1~2p'</span> test.txt  <span class="token comment">#奇数行</span>
 <span class="token function">sed</span> -n <span class="token string">'2~2p'</span> test.txt  <span class="token comment">#偶数行</span></code></pre>
-<h3 id="打印匹配字符串的下一行">打印匹配字符串的下一行</h3><pre><code class="language-shell"><span class="token function">grep</span> -A 1 SCC URFILE
+<h3 id="打印匹配字符串的下一行">打印匹配字符串的下一行</h3><pre><code class="language-shell"><span class="token function">grep</span> -A <span class="token number">1</span> SCC URFILE
 <span class="token function">sed</span> -n <span class="token string">'/SCC/{n;p}'</span> URFILE
 <span class="token function">awk</span> <span class="token string">'/SCC/{getline; print}'</span> URFILE</code></pre>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
@@ -219,7 +219,7 @@ HELLO WORLD</code></pre>
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1584350099611"></script>
-<script type="text/javascript" src="../js/index.js?v=1584350099611"></script>
+<script type="text/javascript" src="../js/dt.js?v=1584405945558"></script>
+<script type="text/javascript" src="../js/index.js?v=1584405945558"></script>
 </body>
 </html>

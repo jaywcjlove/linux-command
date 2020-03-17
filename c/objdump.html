@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,objdump,显示二进制文件信息">
     <title>objdump 命令，Linux objdump 命令详解：显示二进制文件信息 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584350099351">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584405945146">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -154,38 +154,38 @@ objdump -b oasys -m vax -h fu.o
 @file 可以将选项集中到一个文件中，然后使用这个@file选项载入。</code></pre>
 <h3 id="实例">实例</h3><p>首先，在给出后面大部分测试所基于的源代码以及编译指令。 源代码如下： </p>
 <pre><code class="language-shell">root@localhost <span class="token punctuation">[</span>test<span class="token punctuation">]</span><span class="token comment"># nl mytest.cpp </span></code></pre>
-<pre><code class="language-shell">void printTest<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+<pre><code class="language-shell">void <span class="token function-name function">printTest</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     char a<span class="token punctuation">;</span>
     a <span class="token operator">=</span> <span class="token string">'a'</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 
-void printTest2<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
-int a <span class="token operator">=</span> 2<span class="token punctuation">;</span>
-a+<span class="token operator">=</span>2<span class="token punctuation">;</span>
+void <span class="token function-name function">printTest2</span><span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+int a <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span>
+<span class="token assign-left variable">a</span><span class="token operator">+=</span><span class="token number">2</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span> </code></pre>
 <p>对以上源代码进行编译，如下： </p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span><span class="token comment"># g++ -c -g mytest.cpp </span></code></pre>
 <p>这里，生成的文件是mytest.o，为了方便测试包含了调试的信息，对可执行文件的测试，显示的结果类似。 </p>
 <p> *<em>查看当前使用的objdump的版本号： *</em> </p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span><span class="token comment"># objdump -V </span>
-GNU objdump 2.17.50.0.6-14.el5 20061020 
-Copyright 2005 <span class="token function">free</span> Software Foundation, Inc. 
+GNU objdump <span class="token number">2.17</span>.50.0.6-14.el5 <span class="token number">20061020</span> 
+Copyright <span class="token number">2005</span> <span class="token function">free</span> Software Foundation, Inc. 
 This program is <span class="token function">free</span> software<span class="token punctuation">;</span> you may redistribute it under the terms of 
 the GNU General Public License.  This program has absolutely no warranty. </code></pre>
 <p> *<em>查看档案库文件中的信息： *</em> </p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span><span class="token comment"># objdump -a libmy2.a </span>
 In archive libmy2.a: 
 myfile.o:     <span class="token function">file</span> <span class="token function">format</span> elf32-i386 
-rwxrwxrwx 0/0   2724 Nov 16 16:06 2009 myfile.o 
+rwxrwxrwx <span class="token number">0</span>/0   <span class="token number">2724</span> Nov <span class="token number">16</span> <span class="token number">16</span>:06 <span class="token number">2009</span> myfile.o 
 mytest.o:     <span class="token function">file</span> <span class="token function">format</span> elf32-i386 
-rw-r--r-- 0/0    727 Jul 13 15:32 2011 mytest.o </code></pre>
+rw-r--r-- <span class="token number">0</span>/0    <span class="token number">727</span> Jul <span class="token number">13</span> <span class="token number">15</span>:32 <span class="token number">2011</span> mytest.o </code></pre>
 <p> <em>*这里，libmy2.a是一个使用ar命令将多个</em>.o目标文件打包而生成的静态库。命令的输出类似<code>ar -tv</code>，相比较<code>ar -tv</code>输出如下： ** </p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span><span class="token comment"># ar -tv libmy2.a </span>
-rwxrwxrwx 0/0   2724 Nov 16 16:06 2009 myfile.o 
-rw-r--r-- 0/0    727 Jul 13 15:32 2011 mytest.o </code></pre>
+rwxrwxrwx <span class="token number">0</span>/0   <span class="token number">2724</span> Nov <span class="token number">16</span> <span class="token number">16</span>:06 <span class="token number">2009</span> myfile.o 
+rw-r--r-- <span class="token number">0</span>/0    <span class="token number">727</span> Jul <span class="token number">13</span> <span class="token number">15</span>:32 <span class="token number">2011</span> mytest.o </code></pre>
 <p>显示可用的架构和目标结构列表： </p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span><span class="token comment"># objdump -i </span>
-BFD header <span class="token function">file</span> version 2.17.50.0.6-14.el5 20061020 
+BFD header <span class="token function">file</span> version <span class="token number">2.17</span>.50.0.6-14.el5 <span class="token number">20061020</span> 
 elf32-i386 
 <span class="token punctuation">(</span>header little endian, data little endian<span class="token punctuation">)</span> 
   i386 
@@ -250,27 +250,27 @@ mytest.o:     <span class="token function">file</span> <span class="token functi
 Disassembly of section .text: 
 00000000 <span class="token operator">&lt;</span>_Z9printTestv<span class="token operator">></span>: 
 void printTest<span class="token punctuation">(</span><span class="token punctuation">)</span> 
-   0:   55                      push   %ebp 
-   1:   89 e5                   mov    %esp,%ebp 
-   3:   83 ec 10                sub    <span class="token variable">&#36;0x10</span>,%esp 
+   <span class="token number">0</span>:   <span class="token number">55</span>                      push   %ebp 
+   <span class="token number">1</span>:   <span class="token number">89</span> e5                   mov    %esp,%ebp 
+   <span class="token number">3</span>:   <span class="token number">83</span> ec <span class="token number">10</span>                sub    <span class="token variable">&#36;0x10</span>,%esp 
 <span class="token punctuation">{</span> 
         char a<span class="token punctuation">;</span> 
         a <span class="token operator">=</span> <span class="token string">'a'</span><span class="token punctuation">;</span> 
-   6:   c6 45 ff 61             movb   <span class="token variable">&#36;0x61</span>,0xffffffff<span class="token punctuation">(</span>%ebp<span class="token punctuation">)</span> 
+   <span class="token number">6</span>:   c6 <span class="token number">45</span> ff <span class="token number">61</span>             movb   <span class="token variable">&#36;0x61</span>,0xffffffff<span class="token punctuation">(</span>%ebp<span class="token punctuation">)</span> 
 <span class="token punctuation">}</span> 
    a:   c9                      leave  
    b:   c3                      ret    
 
 000000c <span class="token operator">&lt;</span>_Z10printTest2v<span class="token operator">></span>: 
 void printTest2<span class="token punctuation">(</span><span class="token punctuation">)</span> 
-   c:   55                      push   %ebp 
-   d:   89 e5                   mov    %esp,%ebp 
-   f:   83 ec 10                sub    <span class="token variable">&#36;0x10</span>,%esp 
+   c:   <span class="token number">55</span>                      push   %ebp 
+   d:   <span class="token number">89</span> e5                   mov    %esp,%ebp 
+   f:   <span class="token number">83</span> ec <span class="token number">10</span>                sub    <span class="token variable">&#36;0x10</span>,%esp 
 <span class="token punctuation">{</span> 
-        int a <span class="token operator">=</span> 2<span class="token punctuation">;</span> 
-  12:   c7 45 fc 02 00 00 00    movl   <span class="token variable">&#36;0x2</span>,0xfffffffc<span class="token punctuation">(</span>%ebp<span class="token punctuation">)</span> 
-        a+<span class="token operator">=</span>2<span class="token punctuation">;</span> 
-  19:   83 45 fc 02             addl   <span class="token variable">&#36;0x2</span>,0xfffffffc<span class="token punctuation">(</span>%ebp<span class="token punctuation">)</span> 
+        int a <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> 
+  <span class="token number">12</span>:   c7 <span class="token number">45</span> fc 02 00 00 00    movl   <span class="token variable">&#36;0x2</span>,0xfffffffc<span class="token punctuation">(</span>%ebp<span class="token punctuation">)</span> 
+        <span class="token assign-left variable">a</span><span class="token operator">+=</span><span class="token number">2</span><span class="token punctuation">;</span> 
+  <span class="token number">19</span>:   <span class="token number">83</span> <span class="token number">45</span> fc 02             addl   <span class="token variable">&#36;0x2</span>,0xfffffffc<span class="token punctuation">(</span>%ebp<span class="token punctuation">)</span> 
 <span class="token punctuation">}</span> 
   1d:   c9                      leave  
   1e:   c3                      ret    </code></pre>
@@ -283,27 +283,27 @@ Disassembly of section .text:
 
 00000000 <span class="token operator">&lt;</span>_Z9printTestv<span class="token operator">></span>: 
 void printTest<span class="token punctuation">(</span><span class="token punctuation">)</span> 
-   0:   55                      push   %ebp 
-   1:   89 e5                   mov    %esp,%ebp 
-   3:   83 ec 10                sub    <span class="token variable">&#36;0x10</span>,%esp 
+   <span class="token number">0</span>:   <span class="token number">55</span>                      push   %ebp 
+   <span class="token number">1</span>:   <span class="token number">89</span> e5                   mov    %esp,%ebp 
+   <span class="token number">3</span>:   <span class="token number">83</span> ec <span class="token number">10</span>                sub    <span class="token variable">&#36;0x10</span>,%esp 
 <span class="token punctuation">{</span> 
         char a<span class="token punctuation">;</span> 
         a <span class="token operator">=</span> <span class="token string">'a'</span><span class="token punctuation">;</span> 
-   6:   c6 45 ff 61             movb   <span class="token variable">&#36;0x61</span>,0xffffffff<span class="token punctuation">(</span>%ebp<span class="token punctuation">)</span> 
+   <span class="token number">6</span>:   c6 <span class="token number">45</span> ff <span class="token number">61</span>             movb   <span class="token variable">&#36;0x61</span>,0xffffffff<span class="token punctuation">(</span>%ebp<span class="token punctuation">)</span> 
 <span class="token punctuation">}</span> 
    a:   c9                      leave  
    b:   c3                      ret    
 
 0000000c <span class="token operator">&lt;</span>_Z10printTest2v<span class="token operator">></span>: 
 void printTest2<span class="token punctuation">(</span><span class="token punctuation">)</span> 
-   c:   55                      push   %ebp 
-   d:   89 e5                   mov    %esp,%ebp 
-   f:   83 ec 10                sub    <span class="token variable">&#36;0x10</span>,%esp 
+   c:   <span class="token number">55</span>                      push   %ebp 
+   d:   <span class="token number">89</span> e5                   mov    %esp,%ebp 
+   f:   <span class="token number">83</span> ec <span class="token number">10</span>                sub    <span class="token variable">&#36;0x10</span>,%esp 
 <span class="token punctuation">{</span> 
-       int a <span class="token operator">=</span> 2<span class="token punctuation">;</span> 
-  12:   c7 45 fc 02 00 00 00    movl   <span class="token variable">&#36;0x2</span>,0xfffffffc<span class="token punctuation">(</span>%ebp<span class="token punctuation">)</span> 
-        a+<span class="token operator">=</span>2<span class="token punctuation">;</span> 
-  19:   83 45 fc 02             addl   <span class="token variable">&#36;0x2</span>,0xfffffffc<span class="token punctuation">(</span>%ebp<span class="token punctuation">)</span> 
+       int a <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> 
+  <span class="token number">12</span>:   c7 <span class="token number">45</span> fc 02 00 00 00    movl   <span class="token variable">&#36;0x2</span>,0xfffffffc<span class="token punctuation">(</span>%ebp<span class="token punctuation">)</span> 
+        <span class="token assign-left variable">a</span><span class="token operator">+=</span><span class="token number">2</span><span class="token punctuation">;</span> 
+  <span class="token number">19</span>:   <span class="token number">83</span> <span class="token number">45</span> fc 02             addl   <span class="token variable">&#36;0x2</span>,0xfffffffc<span class="token punctuation">(</span>%ebp<span class="token punctuation">)</span> 
 <span class="token punctuation">}</span> 
   1d:   c9                      leave  
   1e:   c3                      ret    </code></pre>
@@ -361,19 +361,19 @@ mytest.o:     <span class="token function">file</span> <span class="token functi
 Disassembly of section .text: 
 
 00000000 <span class="token operator">&lt;</span>_Z9printTestv<span class="token operator">></span>: 
-   0:   55                      push   %ebp 
-   1:   89 e5                   mov    %esp,%ebp 
-   3:   83 ec 10                sub    <span class="token variable">&#36;0x10</span>,%esp 
-   6:   c6 45 ff 61             movb   <span class="token variable">&#36;0x61</span>,0xffffffff<span class="token punctuation">(</span>%ebp<span class="token punctuation">)</span> 
+   <span class="token number">0</span>:   <span class="token number">55</span>                      push   %ebp 
+   <span class="token number">1</span>:   <span class="token number">89</span> e5                   mov    %esp,%ebp 
+   <span class="token number">3</span>:   <span class="token number">83</span> ec <span class="token number">10</span>                sub    <span class="token variable">&#36;0x10</span>,%esp 
+   <span class="token number">6</span>:   c6 <span class="token number">45</span> ff <span class="token number">61</span>             movb   <span class="token variable">&#36;0x61</span>,0xffffffff<span class="token punctuation">(</span>%ebp<span class="token punctuation">)</span> 
    a:   c9                      leave  
   b:   c3                      ret    
 
 0000000c <span class="token operator">&lt;</span>_Z10printTest2v<span class="token operator">></span>: 
-   c:   55                      push   %ebp 
-   d:   89 e5                   mov    %esp,%ebp 
-   f:   83 ec 10                sub    <span class="token variable">&#36;0x10</span>,%esp 
-  12:   c7 45 fc 02 00 00 00    movl   <span class="token variable">&#36;0x2</span>,0xfffffffc<span class="token punctuation">(</span>%ebp<span class="token punctuation">)</span> 
-  19:   83 45 fc 02             addl   <span class="token variable">&#36;0x2</span>,0xfffffffc<span class="token punctuation">(</span>%ebp<span class="token punctuation">)</span> 
+   c:   <span class="token number">55</span>                      push   %ebp 
+   d:   <span class="token number">89</span> e5                   mov    %esp,%ebp 
+   f:   <span class="token number">83</span> ec <span class="token number">10</span>                sub    <span class="token variable">&#36;0x10</span>,%esp 
+  <span class="token number">12</span>:   c7 <span class="token number">45</span> fc 02 00 00 00    movl   <span class="token variable">&#36;0x2</span>,0xfffffffc<span class="token punctuation">(</span>%ebp<span class="token punctuation">)</span> 
+  <span class="token number">19</span>:   <span class="token number">83</span> <span class="token number">45</span> fc 02             addl   <span class="token variable">&#36;0x2</span>,0xfffffffc<span class="token punctuation">(</span>%ebp<span class="token punctuation">)</span> 
   1d:   c9                      leave  
   1e:   c3                      ret    </code></pre>
 <p>这里，对text段的内容进行了反汇编。 </p>
@@ -385,11 +385,11 @@ Disassembly of section .text:
 00000000 <span class="token operator">&lt;</span>_Z9printTestv<span class="token operator">></span>: 
 _Z9printTestv<span class="token punctuation">(</span><span class="token punctuation">)</span>: 
 /root/test/04_libraryTest/mytest.cpp:1 
-   0:   55                      push   %ebp 
-   1:   89 e5                   mov    %esp,%ebp 
-   3:   83 ec 10                sub    <span class="token variable">&#36;0x10</span>,%esp 
+   <span class="token number">0</span>:   <span class="token number">55</span>                      push   %ebp 
+   <span class="token number">1</span>:   <span class="token number">89</span> e5                   mov    %esp,%ebp 
+   <span class="token number">3</span>:   <span class="token number">83</span> ec <span class="token number">10</span>                sub    <span class="token variable">&#36;0x10</span>,%esp 
 /root/test/04_libraryTest/mytest.cpp:4 
-   6:   c6 45 ff 61             movb   <span class="token variable">&#36;0x61</span>,0xffffffff<span class="token punctuation">(</span>%ebp<span class="token punctuation">)</span> 
+   <span class="token number">6</span>:   c6 <span class="token number">45</span> ff <span class="token number">61</span>             movb   <span class="token variable">&#36;0x61</span>,0xffffffff<span class="token punctuation">(</span>%ebp<span class="token punctuation">)</span> 
 /root/test/04_libraryTest/mytest.cpp:5 
    a:   c9                      leave  
    b:   c3                      ret    
@@ -397,13 +397,13 @@ _Z9printTestv<span class="token punctuation">(</span><span class="token punctuat
 0000000c <span class="token operator">&lt;</span>_Z10printTest2v<span class="token operator">></span>: 
 _Z10printTest2v<span class="token punctuation">(</span><span class="token punctuation">)</span>: 
 /root/test/04_libraryTest/mytest.cpp:6 
-   c:   55                      push   %ebp 
-   d:   89 e5                   mov    %esp,%ebp 
-   f:   83 ec 10                sub    <span class="token variable">&#36;0x10</span>,%esp 
+   c:   <span class="token number">55</span>                      push   %ebp 
+   d:   <span class="token number">89</span> e5                   mov    %esp,%ebp 
+   f:   <span class="token number">83</span> ec <span class="token number">10</span>                sub    <span class="token variable">&#36;0x10</span>,%esp 
 /root/test/04_libraryTest/mytest.cpp:8 
-  12:   c7 45 fc 02 00 00 00    movl   <span class="token variable">&#36;0x2</span>,0xfffffffc<span class="token punctuation">(</span>%ebp<span class="token punctuation">)</span> 
+  <span class="token number">12</span>:   c7 <span class="token number">45</span> fc 02 00 00 00    movl   <span class="token variable">&#36;0x2</span>,0xfffffffc<span class="token punctuation">(</span>%ebp<span class="token punctuation">)</span> 
 /root/test/04_libraryTest/mytest.cpp:9 
-  19:   83 45 fc 02             addl   <span class="token variable">&#36;0x2</span>,0xfffffffc<span class="token punctuation">(</span>%ebp<span class="token punctuation">)</span> 
+  <span class="token number">19</span>:   <span class="token number">83</span> <span class="token number">45</span> fc 02             addl   <span class="token variable">&#36;0x2</span>,0xfffffffc<span class="token punctuation">(</span>%ebp<span class="token punctuation">)</span> 
 /root/test/04_libraryTest/mytest.cpp:10 
   1d:   c9                      leave  
   1e:   c3                      ret    </code></pre>
@@ -414,29 +414,29 @@ mytest.o:     <span class="token function">file</span> <span class="token functi
 
 Sections: 
 Idx Name          Size      VMA       LMA       File off  Algn 
-  0 .text         0000001f  00000000  00000000  00000034  2**2 
+  <span class="token number">0</span> .text         0000001f  00000000  00000000  00000034  <span class="token number">2</span>**2 
                   CONTENTS, ALLOC, LOAD, readonly, CODE 
-  1 .data         00000000  00000000  00000000  00000054  2**2 
+  <span class="token number">1</span> .data         00000000  00000000  00000000  00000054  <span class="token number">2</span>**2 
                   CONTENTS, ALLOC, LOAD, DATA 
-  2 .bss          00000000  00000000  00000000  00000054  2**2 
+  <span class="token number">2</span> .bss          00000000  00000000  00000000  00000054  <span class="token number">2</span>**2 
                   ALLOC 
-  3 .debug_abbrev 00000046  00000000  00000000  00000054  2**0 
+  <span class="token number">3</span> .debug_abbrev 00000046  00000000  00000000  00000054  <span class="token number">2</span>**0 
                   CONTENTS, READONLY, DEBUGGING 
-  4 .debug_info   000000ed  00000000  00000000  0000009a  2**0 
+  <span class="token number">4</span> .debug_info   000000ed  00000000  00000000  0000009a  <span class="token number">2</span>**0 
                   CONTENTS, RELOC, READONLY, DEBUGGING 
-  5 .debug_line   0000003e  00000000  00000000  00000187  2**0 
+  <span class="token number">5</span> .debug_line   0000003e  00000000  00000000  00000187  <span class="token number">2</span>**0 
                   CONTENTS, RELOC, READONLY, DEBUGGING 
-  6 .debug_frame  00000044  00000000  00000000  000001c8  2**2 
+  <span class="token number">6</span> .debug_frame  00000044  00000000  00000000  000001c8  <span class="token number">2</span>**2 
                   CONTENTS, RELOC, READONLY, DEBUGGING 
-  7 .debug_loc    00000058  00000000  00000000  0000020c  2**0 
+  <span class="token number">7</span> .debug_loc    00000058  00000000  00000000  0000020c  <span class="token number">2</span>**0 
                   CONTENTS, READONLY, DEBUGGING 
-  8 .debug_pubnames 0000002f  00000000  00000000  00000264  2**0 
+  <span class="token number">8</span> .debug_pubnames 0000002f  00000000  00000000  00000264  <span class="token number">2</span>**0 
                   CONTENTS, RELOC, READONLY, DEBUGGING 
-  9 .debug_aranges 00000020  00000000  00000000  00000293  2**0 
+  <span class="token number">9</span> .debug_aranges 00000020  00000000  00000000  00000293  <span class="token number">2</span>**0 
                   CONTENTS, RELOC, READONLY, DEBUGGING 
-10 .comment      0000002e  00000000  00000000  000002b3  2**0 
+<span class="token number">10</span> .comment      0000002e  00000000  00000000  000002b3  <span class="token number">2</span>**0 
                   CONTENTS, READONLY 
-11 .note.GNU-stack 00000000  00000000  00000000  000002e1  2**0 
+<span class="token number">11</span> .note.GNU-stack 00000000  00000000  00000000  000002e1  <span class="token number">2</span>**0 
                   CONTENTS, READONLY </code></pre>
 <p>这里，更多的内容参见<code>man objdump</code>中的这个选项。</p>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
@@ -461,7 +461,7 @@ Idx Name          Size      VMA       LMA       File off  Algn
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1584350099351"></script>
-<script type="text/javascript" src="../js/index.js?v=1584350099351"></script>
+<script type="text/javascript" src="../js/dt.js?v=1584405945146"></script>
+<script type="text/javascript" src="../js/index.js?v=1584405945146"></script>
 </body>
 </html>

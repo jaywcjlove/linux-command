@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,readelf,用于显示elf格式文件的信息">
     <title>readelf 命令，Linux readelf 命令详解：用于显示elf格式文件的信息 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584350099504">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584405945396">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -151,10 +151,10 @@ int main<span class="token punctuation">(</span>int argc, char *argv<span class=
 <span class="token punctuation">{</span> 
         my_print<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
         cout<span class="token operator">&lt;&lt;</span><span class="token string">"hello!"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span> 
-        <span class="token keyword">return</span> 0<span class="token punctuation">;</span> 
+        <span class="token builtin class-name">return</span> <span class="token number">0</span><span class="token punctuation">;</span> 
 <span class="token punctuation">}</span> 
 
-void  my_print<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+void  <span class="token function-name function">my_print</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
 <span class="token punctuation">{</span> 
         cout<span class="token operator">&lt;&lt;</span><span class="token string">"print!"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span> 
 <span class="token punctuation">}</span> </code></pre>
@@ -163,10 +163,10 @@ void  my_print<span class="token punctuation">(</span><span class="token punctua
 <span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>&#36; g++ -g main.cpp -o main.debug </code></pre>
 <p>3)编译之后，查看生成的文件： </p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>&#36; <span class="token function">ls</span> -l 
-总计 64 
--rwxr-xr-x 1 quietheart quietheart  6700 07-07 18:04 main 
--rw-r--r-- 1 quietheart quietheart   201 07-07 18:02 main.cpp 
--rwxr-xr-x 1 quietheart quietheart 38932 07-07 18:04 main.debug </code></pre>
+总计 <span class="token number">64</span> 
+-rwxr-xr-x <span class="token number">1</span> quietheart quietheart  <span class="token number">6700</span> 07-07 <span class="token number">18</span>:04 main 
+-rw-r--r-- <span class="token number">1</span> quietheart quietheart   <span class="token number">201</span> 07-07 <span class="token number">18</span>:02 main.cpp 
+-rwxr-xr-x <span class="token number">1</span> quietheart quietheart <span class="token number">38932</span> 07-07 <span class="token number">18</span>:04 main.debug </code></pre>
 <p>这里，main.debug是带有调试信息的可执行文件，main是一般的可执行文件。 </p>
 <p> <strong>2.对于库文件形式的elf格式文件：</strong> </p>
 <p>1)查看库的源代码如下： </p>
@@ -181,7 +181,7 @@ void printInfo<span class="token punctuation">(</span><span class="token punctua
 <span class="token comment">#include &lt;iostream> </span>
 using std::cout<span class="token punctuation">;</span> 
 using std::endl<span class="token punctuation">;</span> 
-void printInfo<span class="token punctuation">(</span><span class="token punctuation">)</span> 
+void <span class="token function-name function">printInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
 <span class="token punctuation">{</span> 
     cout<span class="token operator">&lt;&lt;</span><span class="token string">"hello"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span> 
 <span class="token punctuation">}</span> </code></pre>
@@ -193,112 +193,112 @@ ar: creating libmy.a </code></pre>
 <p>3)编译之后，查看生成的文件： </p>
 <p>[root@localhost test]$ ls -l </p>
 <p>总计 44 </p>
-<pre><code class="language-shell">-rw-r--r-- 1 quietheart quietheart 2154 07-08 16:14 libmy.a 
--rwxr-xr-x 1 quietheart quietheart 5707 07-08 16:08 libmy.so 
--rwxr-xr-x 1 quietheart quietheart  117 07-08 16:06 myfile.cpp 
--rwxr-xr-x 1 quietheart quietheart   63 07-08 16:08 myfile.h 
--rw-r--r-- 1 quietheart quietheart 2004 07-08 16:08 myfile.o 
+<pre><code class="language-shell">-rw-r--r-- <span class="token number">1</span> quietheart quietheart <span class="token number">2154</span> 07-08 <span class="token number">16</span>:14 libmy.a 
+-rwxr-xr-x <span class="token number">1</span> quietheart quietheart <span class="token number">5707</span> 07-08 <span class="token number">16</span>:08 libmy.so 
+-rwxr-xr-x <span class="token number">1</span> quietheart quietheart  <span class="token number">117</span> 07-08 <span class="token number">16</span>:06 myfile.cpp 
+-rwxr-xr-x <span class="token number">1</span> quietheart quietheart   <span class="token number">63</span> 07-08 <span class="token number">16</span>:08 myfile.h 
+-rw-r--r-- <span class="token number">1</span> quietheart quietheart <span class="token number">2004</span> 07-08 <span class="token number">16</span>:08 myfile.o 
 libmy.a  libmy.so  myfile.cpp  myfile.h  myfile.o </code></pre>
 <p>这里，分别生成目标文件myfile.o，共享库文件libmy.so，和静态库文件libmy.a。 </p>
 <p>基于以上可执行文件和库，这里给出一些常用的命令。 </p>
 <p> <strong>读取可执行文件形式的elf文件头信息：</strong> </p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>&#36; readelf -h main 
 ELF Header: 
-  Magic:   7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00 
+  Magic:   7f <span class="token number">45</span> 4c <span class="token number">46</span> 01 01 01 00 00 00 00 00 00 00 00 00 
   Class:                             ELF32 
-  Data:                              2's complement, little endian 
-  Version:                           1 <span class="token punctuation">(</span>current<span class="token punctuation">)</span> 
+  Data:                              <span class="token number">2</span>'s complement, little endian 
+  Version:                           <span class="token number">1</span> <span class="token punctuation">(</span>current<span class="token punctuation">)</span> 
   OS/ABI:                            UNIX - System V 
-  ABI Version:                       0 
-  type:                              <span class="token function">exec</span> <span class="token punctuation">(</span>Executable file<span class="token punctuation">)</span> 
-  Machine:                           Intel 80386 
+  ABI Version:                       <span class="token number">0</span> 
+  type:                              <span class="token builtin class-name">exec</span> <span class="token punctuation">(</span>Executable <span class="token function">file</span><span class="token punctuation">)</span> 
+  Machine:                           Intel <span class="token number">80386</span> 
   Version:                           0x1 
   Entry point address:               0x8048580 
-  Start of program headers:          52 <span class="token punctuation">(</span>bytes into file<span class="token punctuation">)</span> 
-  Start of section headers:          3232 <span class="token punctuation">(</span>bytes into file<span class="token punctuation">)</span> 
+  Start of program headers:          <span class="token number">52</span> <span class="token punctuation">(</span>bytes into <span class="token function">file</span><span class="token punctuation">)</span> 
+  Start of section headers:          <span class="token number">3232</span> <span class="token punctuation">(</span>bytes into <span class="token function">file</span><span class="token punctuation">)</span> 
   Flags:                             0x0 
-  Size of this header:               52 <span class="token punctuation">(</span>bytes<span class="token punctuation">)</span> 
-  Size of program headers:           32 <span class="token punctuation">(</span>bytes<span class="token punctuation">)</span> 
-  Number of program headers:         8 
-  Size of section headers:           40 <span class="token punctuation">(</span>bytes<span class="token punctuation">)</span> 
-  Number of section headers:         29 
-  Section header string table index: 26 </code></pre>
+  Size of this header:               <span class="token number">52</span> <span class="token punctuation">(</span>bytes<span class="token punctuation">)</span> 
+  Size of program headers:           <span class="token number">32</span> <span class="token punctuation">(</span>bytes<span class="token punctuation">)</span> 
+  Number of program headers:         <span class="token number">8</span> 
+  Size of section headers:           <span class="token number">40</span> <span class="token punctuation">(</span>bytes<span class="token punctuation">)</span> 
+  Number of section headers:         <span class="token number">29</span> 
+  Section header string table index: <span class="token number">26</span> </code></pre>
 <p>这里，可见可执行文件的elf文件，其类型为EXEC(可执行文件)。另外，含调试信息的&quot;main.debug&quot;和不含调试信息的&quot;main&quot;除了一些大小信息之外，其内容是一样的。并且由此可见文件的体系结构为Intel 80386。 </p>
 <p> <strong>读取目标文件形式的elf文件头信息：</strong> </p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>&#36; readelf -h myfile.o 
 ELF Header: 
-  Magic:   7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00 
+  Magic:   7f <span class="token number">45</span> 4c <span class="token number">46</span> 01 01 01 00 00 00 00 00 00 00 00 00 
   Class:                             ELF32 
-  Data:                              2's complement, little endian 
-  Version:                           1 <span class="token punctuation">(</span>current<span class="token punctuation">)</span> 
+  Data:                              <span class="token number">2</span>'s complement, little endian 
+  Version:                           <span class="token number">1</span> <span class="token punctuation">(</span>current<span class="token punctuation">)</span> 
   OS/ABI:                            UNIX - System V 
-  ABI Version:                       0 
-  Type:                              REL <span class="token punctuation">(</span>Relocatable file<span class="token punctuation">)</span> 
-  Machine:                           Intel 80386 
+  ABI Version:                       <span class="token number">0</span> 
+  Type:                              REL <span class="token punctuation">(</span>Relocatable <span class="token function">file</span><span class="token punctuation">)</span> 
+  Machine:                           Intel <span class="token number">80386</span> 
   Version:                           0x1 
   Entry point address:               0x0 
-  Start of program headers:          0 <span class="token punctuation">(</span>bytes into file<span class="token punctuation">)</span> 
-  Start of section headers:          516 <span class="token punctuation">(</span>bytes into file<span class="token punctuation">)</span> 
+  Start of program headers:          <span class="token number">0</span> <span class="token punctuation">(</span>bytes into <span class="token function">file</span><span class="token punctuation">)</span> 
+  Start of section headers:          <span class="token number">516</span> <span class="token punctuation">(</span>bytes into <span class="token function">file</span><span class="token punctuation">)</span> 
   Flags:                             0x0 
-  Size of this header:               52 <span class="token punctuation">(</span>bytes<span class="token punctuation">)</span> 
-  Size of program headers:           0 <span class="token punctuation">(</span>bytes<span class="token punctuation">)</span> 
-  Number of program headers:         0 
-  Size of section headers:           40 <span class="token punctuation">(</span>bytes<span class="token punctuation">)</span> 
-  Number of section headers:         15 
-  Section header string table index: 12 </code></pre>
+  Size of this header:               <span class="token number">52</span> <span class="token punctuation">(</span>bytes<span class="token punctuation">)</span> 
+  Size of program headers:           <span class="token number">0</span> <span class="token punctuation">(</span>bytes<span class="token punctuation">)</span> 
+  Number of program headers:         <span class="token number">0</span> 
+  Size of section headers:           <span class="token number">40</span> <span class="token punctuation">(</span>bytes<span class="token punctuation">)</span> 
+  Number of section headers:         <span class="token number">15</span> 
+  Section header string table index: <span class="token number">12</span> </code></pre>
 <p>这里，可见目标文件的elf文件，其类型为REL(可重定位文件)。 </p>
 <p> <strong>读取静态库文件形式的elf文件头信息：</strong> </p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>&#36; readelf -h libmy.a 
 File: libmy.a<span class="token punctuation">(</span>myfile.o<span class="token punctuation">)</span> 
 ELF Header: 
-  Magic:   7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00 
+  Magic:   7f <span class="token number">45</span> 4c <span class="token number">46</span> 01 01 01 00 00 00 00 00 00 00 00 00 
   Class:                             ELF32 
-  Data:                              2's complement, little endian 
-  Version:                           1 <span class="token punctuation">(</span>current<span class="token punctuation">)</span> 
+  Data:                              <span class="token number">2</span>'s complement, little endian 
+  Version:                           <span class="token number">1</span> <span class="token punctuation">(</span>current<span class="token punctuation">)</span> 
   OS/ABI:                            UNIX - System V 
-  ABI Version:                       0 
-  Type:                              REL <span class="token punctuation">(</span>Relocatable file<span class="token punctuation">)</span> 
-  Machine:                           Intel 80386 
+  ABI Version:                       <span class="token number">0</span> 
+  Type:                              REL <span class="token punctuation">(</span>Relocatable <span class="token function">file</span><span class="token punctuation">)</span> 
+  Machine:                           Intel <span class="token number">80386</span> 
   Version:                           0x1 
   Entry point address:               0x0 
-  Start of program headers:          0 <span class="token punctuation">(</span>bytes into file<span class="token punctuation">)</span> 
-  Start of section headers:          516 <span class="token punctuation">(</span>bytes into file<span class="token punctuation">)</span> 
+  Start of program headers:          <span class="token number">0</span> <span class="token punctuation">(</span>bytes into <span class="token function">file</span><span class="token punctuation">)</span> 
+  Start of section headers:          <span class="token number">516</span> <span class="token punctuation">(</span>bytes into <span class="token function">file</span><span class="token punctuation">)</span> 
   Flags:                             0x0 
-  Size of this header:               52 <span class="token punctuation">(</span>bytes<span class="token punctuation">)</span> 
-  Size of program headers:           0 <span class="token punctuation">(</span>bytes<span class="token punctuation">)</span> 
-  Number of program headers:         0 
-  Size of section headers:           40 <span class="token punctuation">(</span>bytes<span class="token punctuation">)</span> 
-  Number of section headers:         15 
-  Section header string table index: 12 </code></pre>
+  Size of this header:               <span class="token number">52</span> <span class="token punctuation">(</span>bytes<span class="token punctuation">)</span> 
+  Size of program headers:           <span class="token number">0</span> <span class="token punctuation">(</span>bytes<span class="token punctuation">)</span> 
+  Number of program headers:         <span class="token number">0</span> 
+  Size of section headers:           <span class="token number">40</span> <span class="token punctuation">(</span>bytes<span class="token punctuation">)</span> 
+  Number of section headers:         <span class="token number">15</span> 
+  Section header string table index: <span class="token number">12</span> </code></pre>
 <p>这里，可见静态库文件的elf文件，其类型为REL(可重定位文件)。 </p>
 <p> <strong>读取动态库文件形式的elf文件头信息：</strong> </p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>&#36; readelf -h libmy.so 
 ELF Header: 
-  Magic:   7f 45 4c 46 01 01 01 00 00 00 00 00 00 00 00 00 
+  Magic:   7f <span class="token number">45</span> 4c <span class="token number">46</span> 01 01 01 00 00 00 00 00 00 00 00 00 
   Class:                             ELF32 
-  Data:                              2's complement, little endian 
-  Version:                           1 <span class="token punctuation">(</span>current<span class="token punctuation">)</span> 
+  Data:                              <span class="token number">2</span>'s complement, little endian 
+  Version:                           <span class="token number">1</span> <span class="token punctuation">(</span>current<span class="token punctuation">)</span> 
   OS/ABI:                            UNIX - System V 
-  ABI Version:                       0 
-  Type:                              DYN <span class="token punctuation">(</span>Shared object file<span class="token punctuation">)</span> 
-  Machine:                           Intel 80386 
+  ABI Version:                       <span class="token number">0</span> 
+  Type:                              DYN <span class="token punctuation">(</span>Shared object <span class="token function">file</span><span class="token punctuation">)</span> 
+  Machine:                           Intel <span class="token number">80386</span> 
   Version:                           0x1 
   Entry point address:               0x550 
-  Start of program headers:          52 <span class="token punctuation">(</span>bytes into file<span class="token punctuation">)</span> 
-  Start of section headers:          2768 <span class="token punctuation">(</span>bytes into file<span class="token punctuation">)</span> 
+  Start of program headers:          <span class="token number">52</span> <span class="token punctuation">(</span>bytes into <span class="token function">file</span><span class="token punctuation">)</span> 
+  Start of section headers:          <span class="token number">2768</span> <span class="token punctuation">(</span>bytes into <span class="token function">file</span><span class="token punctuation">)</span> 
   Flags:                             0x0 
-  Size of this header:               52 <span class="token punctuation">(</span>bytes<span class="token punctuation">)</span> 
-  Size of program headers:           32 <span class="token punctuation">(</span>bytes<span class="token punctuation">)</span> 
-  Number of program headers:         5 
-  Size of section headers:           40 <span class="token punctuation">(</span>bytes<span class="token punctuation">)</span> 
-  Number of section headers:         27 
-  Section header string table index: 24 </code></pre>
+  Size of this header:               <span class="token number">52</span> <span class="token punctuation">(</span>bytes<span class="token punctuation">)</span> 
+  Size of program headers:           <span class="token number">32</span> <span class="token punctuation">(</span>bytes<span class="token punctuation">)</span> 
+  Number of program headers:         <span class="token number">5</span> 
+  Size of section headers:           <span class="token number">40</span> <span class="token punctuation">(</span>bytes<span class="token punctuation">)</span> 
+  Number of section headers:         <span class="token number">27</span> 
+  Section header string table index: <span class="token number">24</span> </code></pre>
 <p>这里，可见动态库文件的elf文件，其类型为DYN(共享目标文件)。 </p>
 <p> <strong>查看可执行的elf文件程序头表信息：</strong> </p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>&#36; readelf -l main 
-Elf <span class="token function">file</span> <span class="token function">type</span> is EXEC <span class="token punctuation">(</span>Executable file<span class="token punctuation">)</span> 
+Elf <span class="token function">file</span> <span class="token builtin class-name">type</span> is EXEC <span class="token punctuation">(</span>Executable <span class="token function">file</span><span class="token punctuation">)</span> 
 Entry point 0x8048580 
-There are 8 program headers, starting at offset 52 
+There are <span class="token number">8</span> program headers, starting at offset <span class="token number">52</span> 
 
 Program Headers: 
   Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align 
@@ -334,9 +334,9 @@ There are no program headers <span class="token keyword">in</span> this file. </
 <p>这里可知，可重定位的静态库文件，它没程序头表。 </p>
 <p> <strong>查看动态库文件的elf文件程序头表信息：</strong> </p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>&#36; readelf -l libmy.so 
-Elf <span class="token function">file</span> <span class="token function">type</span> is DYN <span class="token punctuation">(</span>Shared object file<span class="token punctuation">)</span> 
+Elf <span class="token function">file</span> <span class="token builtin class-name">type</span> is DYN <span class="token punctuation">(</span>Shared object <span class="token function">file</span><span class="token punctuation">)</span> 
 Entry point 0x550 
-There are 5 program headers, starting at offset 52 
+There are <span class="token number">5</span> program headers, starting at offset <span class="token number">52</span> 
 
 Program Headers: 
   Type           Offset   VirtAddr   PhysAddr   FileSiz MemSiz  Flg Align 
@@ -356,38 +356,38 @@ Section to Segment mapping:
 <p>这里可知，做为共享目标文件的动态库，它程序头表。 </p>
 <p> <strong>查看一个可执行的elf文件的节信息：</strong> </p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>&#36; readelf -S main 
-There are 29 section headers, starting at offset 0xca0: 
+There are <span class="token number">29</span> section headers, starting at offset 0xca0: 
 Section Headers: 
   <span class="token punctuation">[</span>Nr<span class="token punctuation">]</span> Name              Type            Addr     Off    Size   ES Flg Lk Inf Al 
-  <span class="token punctuation">[</span> 0<span class="token punctuation">]</span>                   NULL            00000000 000000 000000 00      0   0  0 
-  <span class="token punctuation">[</span> 1<span class="token punctuation">]</span> .interp           PROGBITS        08048134 000134 000013 00   A  0   0  1 
-  <span class="token punctuation">[</span> 2<span class="token punctuation">]</span> .note.ABI-tag     NOTE            08048148 000148 000020 00   A  0   0  4 
-  <span class="token punctuation">[</span> 3<span class="token punctuation">]</span> .gnu.hash         GNU_HASH        08048168 000168 000030 04   A  4   0  4 
-  <span class="token punctuation">[</span> 4<span class="token punctuation">]</span> .dynsym           DYNSYM          08048198 000198 0000d0 10   A  5   1  4 
-  <span class="token punctuation">[</span> 5<span class="token punctuation">]</span> .dynstr           STRTAB          08048268 000268 000183 00   A  0   0  1 
-  <span class="token punctuation">[</span> 6<span class="token punctuation">]</span> .gnu.version      VERSYM          080483ec 0003ec 00001a 02   A  4   0  2 
-  <span class="token punctuation">[</span> 7<span class="token punctuation">]</span> .gnu.version_r    VERNEED         08048408 000408 000060 00   A  5   2  4 
-  <span class="token punctuation">[</span> 8<span class="token punctuation">]</span> .rel.dyn          REL             08048468 000468 000010 08   A  4   0  4 
-  <span class="token punctuation">[</span> 9<span class="token punctuation">]</span> .rel.plt          REL             08048478 000478 000048 08   A  4  11  4 
-  <span class="token punctuation">[</span>10<span class="token punctuation">]</span> .init             PROGBITS        080484c0 0004c0 000017 00  AX  0   0  4 
-  <span class="token punctuation">[</span>11<span class="token punctuation">]</span> .plt              PROGBITS        080484d8 0004d8 0000a0 04  AX  0   0  4 
-  <span class="token punctuation">[</span>12<span class="token punctuation">]</span> .text             PROGBITS        08048580 000580 000268 00  AX  0   0 16 
-  <span class="token punctuation">[</span>13<span class="token punctuation">]</span> .fini             PROGBITS        080487e8 0007e8 00001c 00  AX  0   0  4 
-  <span class="token punctuation">[</span>14<span class="token punctuation">]</span> .rodata           PROGBITS        08048804 000804 00001a 00   A  0   0  4 
-  <span class="token punctuation">[</span>15<span class="token punctuation">]</span> .eh_frame_hdr     PROGBITS        08048820 000820 000044 00   A  0   0  4 
-  <span class="token punctuation">[</span>16<span class="token punctuation">]</span> .eh_frame         PROGBITS        08048864 000864 00010c 00   A  0   0  4 
-  <span class="token punctuation">[</span>17<span class="token punctuation">]</span> .ctors            PROGBITS        08049970 000970 00000c 00  WA  0   0  4 
-  <span class="token punctuation">[</span>18<span class="token punctuation">]</span> .dtors            PROGBITS        0804997c 00097c 000008 00  WA  0   0  4 
-  <span class="token punctuation">[</span>19<span class="token punctuation">]</span> .jcr              PROGBITS        08049984 000984 000004 00  WA  0   0  4 
-  <span class="token punctuation">[</span>20<span class="token punctuation">]</span> .dynamic          DYNAMIC         08049988 000988 0000e0 08  WA  5   0  4 
-  <span class="token punctuation">[</span>21<span class="token punctuation">]</span> .got              PROGBITS        08049a68 000a68 000004 04  WA  0   0  4 
-  <span class="token punctuation">[</span>22<span class="token punctuation">]</span> .got.plt          PROGBITS        08049a6c 000a6c 000030 04  WA  0   0  4 
-  <span class="token punctuation">[</span>23<span class="token punctuation">]</span> .data             PROGBITS        08049a9c 000a9c 000004 00  WA  0   0  4 
-  <span class="token punctuation">[</span>24<span class="token punctuation">]</span> .bss              NOBITS          08049aa0 000aa0 000098 00  WA  0   0  8 
-  <span class="token punctuation">[</span>25<span class="token punctuation">]</span> .comment          PROGBITS        00000000 000aa0 000114 00      0   0  1 
-  <span class="token punctuation">[</span>26<span class="token punctuation">]</span> .shstrtab         STRTAB          00000000 000bb4 0000e9 00      0   0  1 
-  <span class="token punctuation">[</span>27<span class="token punctuation">]</span> .symtab           SYMTAB          00000000 001128 000510 10     28  53  4 
-  <span class="token punctuation">[</span>28<span class="token punctuation">]</span> .strtab           STRTAB          00000000 001638 0003f4 00      0   0  1 
+  <span class="token punctuation">[</span> <span class="token number">0</span><span class="token punctuation">]</span>                   NULL            00000000 000000 000000 00      <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">0</span> 
+  <span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">]</span> .interp           PROGBITS        08048134 000134 000013 00   A  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">1</span> 
+  <span class="token punctuation">[</span> <span class="token number">2</span><span class="token punctuation">]</span> .note.ABI-tag     NOTE            08048148 000148 000020 00   A  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span> <span class="token number">3</span><span class="token punctuation">]</span> .gnu.hash         GNU_HASH        08048168 000168 000030 04   A  <span class="token number">4</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span> <span class="token number">4</span><span class="token punctuation">]</span> .dynsym           DYNSYM          08048198 000198 0000d0 <span class="token number">10</span>   A  <span class="token number">5</span>   <span class="token number">1</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span> <span class="token number">5</span><span class="token punctuation">]</span> .dynstr           STRTAB          08048268 000268 000183 00   A  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">1</span> 
+  <span class="token punctuation">[</span> <span class="token number">6</span><span class="token punctuation">]</span> .gnu.version      VERSYM          080483ec 0003ec 00001a 02   A  <span class="token number">4</span>   <span class="token number">0</span>  <span class="token number">2</span> 
+  <span class="token punctuation">[</span> <span class="token number">7</span><span class="token punctuation">]</span> .gnu.version_r    VERNEED         08048408 000408 000060 00   A  <span class="token number">5</span>   <span class="token number">2</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span> <span class="token number">8</span><span class="token punctuation">]</span> .rel.dyn          REL             08048468 000468 000010 08   A  <span class="token number">4</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span> <span class="token number">9</span><span class="token punctuation">]</span> .rel.plt          REL             08048478 000478 000048 08   A  <span class="token number">4</span>  <span class="token number">11</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span> .init             PROGBITS        080484c0 0004c0 000017 00  AX  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">]</span> .plt              PROGBITS        080484d8 0004d8 0000a0 04  AX  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span> .text             PROGBITS        08048580 000580 000268 00  AX  <span class="token number">0</span>   <span class="token number">0</span> <span class="token number">16</span> 
+  <span class="token punctuation">[</span><span class="token number">13</span><span class="token punctuation">]</span> .fini             PROGBITS        080487e8 0007e8 00001c 00  AX  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">14</span><span class="token punctuation">]</span> .rodata           PROGBITS        08048804 000804 00001a 00   A  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">15</span><span class="token punctuation">]</span> .eh_frame_hdr     PROGBITS        08048820 000820 000044 00   A  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">]</span> .eh_frame         PROGBITS        08048864 000864 00010c 00   A  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">17</span><span class="token punctuation">]</span> .ctors            PROGBITS        08049970 000970 00000c 00  WA  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">18</span><span class="token punctuation">]</span> .dtors            PROGBITS        0804997c 00097c 000008 00  WA  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">19</span><span class="token punctuation">]</span> .jcr              PROGBITS        08049984 000984 000004 00  WA  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">]</span> .dynamic          DYNAMIC         08049988 000988 0000e0 08  WA  <span class="token number">5</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">21</span><span class="token punctuation">]</span> .got              PROGBITS        08049a68 000a68 000004 04  WA  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">22</span><span class="token punctuation">]</span> .got.plt          PROGBITS        08049a6c 000a6c 000030 04  WA  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">23</span><span class="token punctuation">]</span> .data             PROGBITS        08049a9c 000a9c 000004 00  WA  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">24</span><span class="token punctuation">]</span> .bss              NOBITS          08049aa0 000aa0 000098 00  WA  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">8</span> 
+  <span class="token punctuation">[</span><span class="token number">25</span><span class="token punctuation">]</span> .comment          PROGBITS        00000000 000aa0 000114 00      <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">1</span> 
+  <span class="token punctuation">[</span><span class="token number">26</span><span class="token punctuation">]</span> .shstrtab         STRTAB          00000000 000bb4 0000e9 00      <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">1</span> 
+  <span class="token punctuation">[</span><span class="token number">27</span><span class="token punctuation">]</span> .symtab           SYMTAB          00000000 001128 000510 <span class="token number">10</span>     <span class="token number">28</span>  <span class="token number">53</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">28</span><span class="token punctuation">]</span> .strtab           STRTAB          00000000 001638 0003f4 00      <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">1</span> 
 Key to Flags: 
   W <span class="token punctuation">(</span>write<span class="token punctuation">)</span>, A <span class="token punctuation">(</span>alloc<span class="token punctuation">)</span>, X <span class="token punctuation">(</span>execute<span class="token punctuation">)</span>, M <span class="token punctuation">(</span>merge<span class="token punctuation">)</span>, S <span class="token punctuation">(</span>strings<span class="token punctuation">)</span> 
   I <span class="token punctuation">(</span>info<span class="token punctuation">)</span>, L <span class="token punctuation">(</span>link order<span class="token punctuation">)</span>, G <span class="token punctuation">(</span>group<span class="token punctuation">)</span>, x <span class="token punctuation">(</span>unknown<span class="token punctuation">)</span> 
@@ -395,47 +395,47 @@ Key to Flags:
 <p>这里，main是可执行文件，不含调试信息。 </p>
 <p> <strong>查看一个包含调试信息的可执行的elf文件的节信息：</strong> </p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>&#36; readelf -S main.debug 
-There are 37 section headers, starting at offset 0x88c8: 
+There are <span class="token number">37</span> section headers, starting at offset 0x88c8: 
 
 Section Headers: 
   <span class="token punctuation">[</span>Nr<span class="token punctuation">]</span> Name              Type            Addr     Off    Size   ES Flg Lk Inf Al 
-  <span class="token punctuation">[</span> 0<span class="token punctuation">]</span>                   NULL            00000000 000000 000000 00      0   0  0 
-  <span class="token punctuation">[</span> 1<span class="token punctuation">]</span> .interp           PROGBITS        08048134 000134 000013 00   A  0   0  1 
-  <span class="token punctuation">[</span> 2<span class="token punctuation">]</span> .note.ABI-tag     NOTE            08048148 000148 000020 00   A  0   0  4 
-  <span class="token punctuation">[</span> 3<span class="token punctuation">]</span> .gnu.hash         GNU_HASH        08048168 000168 000030 04   A  4   0  4 
-  <span class="token punctuation">[</span> 4<span class="token punctuation">]</span> .dynsym           DYNSYM          08048198 000198 0000d0 10   A  5   1  4 
-  <span class="token punctuation">[</span> 5<span class="token punctuation">]</span> .dynstr           STRTAB          08048268 000268 000183 00   A  0   0  1 
-  <span class="token punctuation">[</span> 6<span class="token punctuation">]</span> .gnu.version      VERSYM          080483ec 0003ec 00001a 02   A  4   0  2 
-  <span class="token punctuation">[</span> 7<span class="token punctuation">]</span> .gnu.version_r    VERNEED         08048408 000408 000060 00   A  5   2  4 
-  <span class="token punctuation">[</span> 8<span class="token punctuation">]</span> .rel.dyn          REL             08048468 000468 000010 08   A  4   0  4 
-  <span class="token punctuation">[</span> 9<span class="token punctuation">]</span> .rel.plt          REL             08048478 000478 000048 08   A  4  11  4 
-  <span class="token punctuation">[</span>10<span class="token punctuation">]</span> .init             PROGBITS        080484c0 0004c0 000017 00  AX  0   0  4 
-  <span class="token punctuation">[</span>11<span class="token punctuation">]</span> .plt              PROGBITS        080484d8 0004d8 0000a0 04  AX  0   0  4 
-  <span class="token punctuation">[</span>12<span class="token punctuation">]</span> .text             PROGBITS        08048580 000580 000268 00  AX  0   0 16 
-  <span class="token punctuation">[</span>13<span class="token punctuation">]</span> .fini             PROGBITS        080487e8 0007e8 00001c 00  AX  0   0  4 
-  <span class="token punctuation">[</span>14<span class="token punctuation">]</span> .rodata           PROGBITS        08048804 000804 00001a 00   A  0   0  4 
-  <span class="token punctuation">[</span>15<span class="token punctuation">]</span> .eh_frame_hdr     PROGBITS        08048820 000820 000044 00   A  0   0  4 
-  <span class="token punctuation">[</span>16<span class="token punctuation">]</span> .eh_frame         PROGBITS        08048864 000864 00010c 00   A  0   0  4 
-  <span class="token punctuation">[</span>17<span class="token punctuation">]</span> .ctors            PROGBITS        08049970 000970 00000c 00  WA  0   0  4 
-  <span class="token punctuation">[</span>18<span class="token punctuation">]</span> .dtors            PROGBITS        0804997c 00097c 000008 00  WA  0   0  4 
-  <span class="token punctuation">[</span>19<span class="token punctuation">]</span> .jcr              PROGBITS        08049984 000984 000004 00  WA  0   0  4 
-  <span class="token punctuation">[</span>20<span class="token punctuation">]</span> .dynamic          DYNAMIC         08049988 000988 0000e0 08  WA  5   0  4 
-  <span class="token punctuation">[</span>21<span class="token punctuation">]</span> .got              PROGBITS        08049a68 000a68 000004 04  WA  0   0  4 
-  <span class="token punctuation">[</span>22<span class="token punctuation">]</span> .got.plt          PROGBITS        08049a6c 000a6c 000030 04  WA  0   0  4 
-  <span class="token punctuation">[</span>23<span class="token punctuation">]</span> .data             PROGBITS        08049a9c 000a9c 000004 00  WA  0   0  4 
-  <span class="token punctuation">[</span>24<span class="token punctuation">]</span> .bss              NOBITS          08049aa0 000aa0 000098 00  WA  0   0  8 
-  <span class="token punctuation">[</span>25<span class="token punctuation">]</span> .comment          PROGBITS        00000000 000aa0 000114 00      0   0  1 
-  <span class="token punctuation">[</span>26<span class="token punctuation">]</span> .debug_aranges    PROGBITS        00000000 000bb4 000020 00      0   0  1 
-  <span class="token punctuation">[</span>27<span class="token punctuation">]</span> .debug_pubnames   PROGBITS        00000000 000bd4 000028 00      0   0  1 
-  <span class="token punctuation">[</span>28<span class="token punctuation">]</span> .debug_info       PROGBITS        00000000 000bfc 0067aa 00      0   0  1 
-  <span class="token punctuation">[</span>29<span class="token punctuation">]</span> .debug_abbrev     PROGBITS        00000000 0073a6 000726 00      0   0  1 
-  <span class="token punctuation">[</span>30<span class="token punctuation">]</span> .debug_line       PROGBITS        00000000 007acc 0003e1 00      0   0  1 
-  <span class="token punctuation">[</span>31<span class="token punctuation">]</span> .debug_frame      PROGBITS        00000000 007eb0 00009c 00      0   0  4 
-  <span class="token punctuation">[</span>32<span class="token punctuation">]</span> .debug_str        PROGBITS        00000000 007f4c 000735 00      0   0  1 
-  <span class="token punctuation">[</span>33<span class="token punctuation">]</span> .debug_loc        PROGBITS        00000000 008681 0000f3 00      0   0  1 
-  <span class="token punctuation">[</span>34<span class="token punctuation">]</span> .shstrtab         STRTAB          00000000 008774 000151 00      0   0  1 
-  <span class="token punctuation">[</span>35<span class="token punctuation">]</span> .symtab           SYMTAB          00000000 008e90 000590 10     36  61  4 
-  <span class="token punctuation">[</span>36<span class="token punctuation">]</span> .strtab           STRTAB          00000000 009420 0003f4 00      0   0  1 
+  <span class="token punctuation">[</span> <span class="token number">0</span><span class="token punctuation">]</span>                   NULL            00000000 000000 000000 00      <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">0</span> 
+  <span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">]</span> .interp           PROGBITS        08048134 000134 000013 00   A  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">1</span> 
+  <span class="token punctuation">[</span> <span class="token number">2</span><span class="token punctuation">]</span> .note.ABI-tag     NOTE            08048148 000148 000020 00   A  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span> <span class="token number">3</span><span class="token punctuation">]</span> .gnu.hash         GNU_HASH        08048168 000168 000030 04   A  <span class="token number">4</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span> <span class="token number">4</span><span class="token punctuation">]</span> .dynsym           DYNSYM          08048198 000198 0000d0 <span class="token number">10</span>   A  <span class="token number">5</span>   <span class="token number">1</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span> <span class="token number">5</span><span class="token punctuation">]</span> .dynstr           STRTAB          08048268 000268 000183 00   A  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">1</span> 
+  <span class="token punctuation">[</span> <span class="token number">6</span><span class="token punctuation">]</span> .gnu.version      VERSYM          080483ec 0003ec 00001a 02   A  <span class="token number">4</span>   <span class="token number">0</span>  <span class="token number">2</span> 
+  <span class="token punctuation">[</span> <span class="token number">7</span><span class="token punctuation">]</span> .gnu.version_r    VERNEED         08048408 000408 000060 00   A  <span class="token number">5</span>   <span class="token number">2</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span> <span class="token number">8</span><span class="token punctuation">]</span> .rel.dyn          REL             08048468 000468 000010 08   A  <span class="token number">4</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span> <span class="token number">9</span><span class="token punctuation">]</span> .rel.plt          REL             08048478 000478 000048 08   A  <span class="token number">4</span>  <span class="token number">11</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span> .init             PROGBITS        080484c0 0004c0 000017 00  AX  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">]</span> .plt              PROGBITS        080484d8 0004d8 0000a0 04  AX  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span> .text             PROGBITS        08048580 000580 000268 00  AX  <span class="token number">0</span>   <span class="token number">0</span> <span class="token number">16</span> 
+  <span class="token punctuation">[</span><span class="token number">13</span><span class="token punctuation">]</span> .fini             PROGBITS        080487e8 0007e8 00001c 00  AX  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">14</span><span class="token punctuation">]</span> .rodata           PROGBITS        08048804 000804 00001a 00   A  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">15</span><span class="token punctuation">]</span> .eh_frame_hdr     PROGBITS        08048820 000820 000044 00   A  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">]</span> .eh_frame         PROGBITS        08048864 000864 00010c 00   A  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">17</span><span class="token punctuation">]</span> .ctors            PROGBITS        08049970 000970 00000c 00  WA  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">18</span><span class="token punctuation">]</span> .dtors            PROGBITS        0804997c 00097c 000008 00  WA  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">19</span><span class="token punctuation">]</span> .jcr              PROGBITS        08049984 000984 000004 00  WA  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">]</span> .dynamic          DYNAMIC         08049988 000988 0000e0 08  WA  <span class="token number">5</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">21</span><span class="token punctuation">]</span> .got              PROGBITS        08049a68 000a68 000004 04  WA  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">22</span><span class="token punctuation">]</span> .got.plt          PROGBITS        08049a6c 000a6c 000030 04  WA  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">23</span><span class="token punctuation">]</span> .data             PROGBITS        08049a9c 000a9c 000004 00  WA  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">24</span><span class="token punctuation">]</span> .bss              NOBITS          08049aa0 000aa0 000098 00  WA  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">8</span> 
+  <span class="token punctuation">[</span><span class="token number">25</span><span class="token punctuation">]</span> .comment          PROGBITS        00000000 000aa0 000114 00      <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">1</span> 
+  <span class="token punctuation">[</span><span class="token number">26</span><span class="token punctuation">]</span> .debug_aranges    PROGBITS        00000000 000bb4 000020 00      <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">1</span> 
+  <span class="token punctuation">[</span><span class="token number">27</span><span class="token punctuation">]</span> .debug_pubnames   PROGBITS        00000000 000bd4 000028 00      <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">1</span> 
+  <span class="token punctuation">[</span><span class="token number">28</span><span class="token punctuation">]</span> .debug_info       PROGBITS        00000000 000bfc 0067aa 00      <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">1</span> 
+  <span class="token punctuation">[</span><span class="token number">29</span><span class="token punctuation">]</span> .debug_abbrev     PROGBITS        00000000 0073a6 000726 00      <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">1</span> 
+  <span class="token punctuation">[</span><span class="token number">30</span><span class="token punctuation">]</span> .debug_line       PROGBITS        00000000 007acc 0003e1 00      <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">1</span> 
+  <span class="token punctuation">[</span><span class="token number">31</span><span class="token punctuation">]</span> .debug_frame      PROGBITS        00000000 007eb0 00009c 00      <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">32</span><span class="token punctuation">]</span> .debug_str        PROGBITS        00000000 007f4c 000735 00      <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">1</span> 
+  <span class="token punctuation">[</span><span class="token number">33</span><span class="token punctuation">]</span> .debug_loc        PROGBITS        00000000 008681 0000f3 00      <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">1</span> 
+  <span class="token punctuation">[</span><span class="token number">34</span><span class="token punctuation">]</span> .shstrtab         STRTAB          00000000 008774 000151 00      <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">1</span> 
+  <span class="token punctuation">[</span><span class="token number">35</span><span class="token punctuation">]</span> .symtab           SYMTAB          00000000 008e90 000590 <span class="token number">10</span>     <span class="token number">36</span>  <span class="token number">61</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">36</span><span class="token punctuation">]</span> .strtab           STRTAB          00000000 009420 0003f4 00      <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">1</span> 
 Key to Flags: 
   W <span class="token punctuation">(</span>write<span class="token punctuation">)</span>, A <span class="token punctuation">(</span>alloc<span class="token punctuation">)</span>, X <span class="token punctuation">(</span>execute<span class="token punctuation">)</span>, M <span class="token punctuation">(</span>merge<span class="token punctuation">)</span>, S <span class="token punctuation">(</span>strings<span class="token punctuation">)</span> 
   I <span class="token punctuation">(</span>info<span class="token punctuation">)</span>, L <span class="token punctuation">(</span>link order<span class="token punctuation">)</span>, G <span class="token punctuation">(</span>group<span class="token punctuation">)</span>, x <span class="token punctuation">(</span>unknown<span class="token punctuation">)</span> 
@@ -443,25 +443,25 @@ Key to Flags:
 <p>可见，相对非调试版本的可执行文件，多了&quot;.debug*&quot;段的信息。 </p>
 <p> <strong>查看一个目标文件的elf文件的节信息：</strong> </p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>&#36; readelf -S myfile.o 
-There are 15 section headers, starting at offset 0x204: 
+There are <span class="token number">15</span> section headers, starting at offset 0x204: 
 
 Section Headers: 
   <span class="token punctuation">[</span>Nr<span class="token punctuation">]</span> Name              Type            Addr     Off    Size   ES Flg Lk Inf Al 
-  <span class="token punctuation">[</span> 0<span class="token punctuation">]</span>                   NULL            00000000 000000 000000 00      0   0  0 
-  <span class="token punctuation">[</span> 1<span class="token punctuation">]</span> .text             PROGBITS        00000000 000034 00009e 00  AX  0   0  4 
-  <span class="token punctuation">[</span> 2<span class="token punctuation">]</span> .rel.text         REL             00000000 000744 000060 08     13   1  4 
-  <span class="token punctuation">[</span> 3<span class="token punctuation">]</span> .data             PROGBITS        00000000 0000d4 000000 00  WA  0   0  4 
-  <span class="token punctuation">[</span> 4<span class="token punctuation">]</span> .bss              NOBITS          00000000 0000d4 000001 00  WA  0   0  4 
-  <span class="token punctuation">[</span> 5<span class="token punctuation">]</span> .ctors            PROGBITS        00000000 0000d4 000004 00  WA  0   0  4 
-  <span class="token punctuation">[</span> 6<span class="token punctuation">]</span> .rel.ctors        REL             00000000 0007a4 000008 08     13   5  4 
-  <span class="token punctuation">[</span> 7<span class="token punctuation">]</span> .rodata           PROGBITS        00000000 0000d8 000006 00   A  0   0  1 
-  <span class="token punctuation">[</span> 8<span class="token punctuation">]</span> .eh_frame         PROGBITS        00000000 0000e0 00008c 00   A  0   0  4 
-  <span class="token punctuation">[</span> 9<span class="token punctuation">]</span> .rel.eh_frame     REL             00000000 0007ac 000028 08     13   8  4 
-  <span class="token punctuation">[</span>10<span class="token punctuation">]</span> .comment          PROGBITS        00000000 00016c 00002e 00      0   0  1 
-  <span class="token punctuation">[</span>11<span class="token punctuation">]</span> .note.GNU-stack   PROGBITS        00000000 00019a 000000 00      0   0  1 
-  <span class="token punctuation">[</span>12<span class="token punctuation">]</span> .shstrtab         STRTAB          00000000 00019a 00006a 00      0   0  1 
-  <span class="token punctuation">[</span>13<span class="token punctuation">]</span> .symtab           SYMTAB          00000000 00045c 000180 10     14  14  4 
-  <span class="token punctuation">[</span>14<span class="token punctuation">]</span> .strtab           STRTAB          00000000 0005dc 000166 00      0   0  1 
+  <span class="token punctuation">[</span> <span class="token number">0</span><span class="token punctuation">]</span>                   NULL            00000000 000000 000000 00      <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">0</span> 
+  <span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">]</span> .text             PROGBITS        00000000 000034 00009e 00  AX  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span> <span class="token number">2</span><span class="token punctuation">]</span> .rel.text         REL             00000000 000744 000060 08     <span class="token number">13</span>   <span class="token number">1</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span> <span class="token number">3</span><span class="token punctuation">]</span> .data             PROGBITS        00000000 0000d4 000000 00  WA  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span> <span class="token number">4</span><span class="token punctuation">]</span> .bss              NOBITS          00000000 0000d4 000001 00  WA  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span> <span class="token number">5</span><span class="token punctuation">]</span> .ctors            PROGBITS        00000000 0000d4 000004 00  WA  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span> <span class="token number">6</span><span class="token punctuation">]</span> .rel.ctors        REL             00000000 0007a4 000008 08     <span class="token number">13</span>   <span class="token number">5</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span> <span class="token number">7</span><span class="token punctuation">]</span> .rodata           PROGBITS        00000000 0000d8 000006 00   A  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">1</span> 
+  <span class="token punctuation">[</span> <span class="token number">8</span><span class="token punctuation">]</span> .eh_frame         PROGBITS        00000000 0000e0 00008c 00   A  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span> <span class="token number">9</span><span class="token punctuation">]</span> .rel.eh_frame     REL             00000000 0007ac 000028 08     <span class="token number">13</span>   <span class="token number">8</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span> .comment          PROGBITS        00000000 00016c 00002e 00      <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">1</span> 
+  <span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">]</span> .note.GNU-stack   PROGBITS        00000000 00019a 000000 00      <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">1</span> 
+  <span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span> .shstrtab         STRTAB          00000000 00019a 00006a 00      <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">1</span> 
+  <span class="token punctuation">[</span><span class="token number">13</span><span class="token punctuation">]</span> .symtab           SYMTAB          00000000 00045c 000180 <span class="token number">10</span>     <span class="token number">14</span>  <span class="token number">14</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">14</span><span class="token punctuation">]</span> .strtab           STRTAB          00000000 0005dc 000166 00      <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">1</span> 
 Key to Flags: 
   W <span class="token punctuation">(</span>write<span class="token punctuation">)</span>, A <span class="token punctuation">(</span>alloc<span class="token punctuation">)</span>, X <span class="token punctuation">(</span>execute<span class="token punctuation">)</span>, M <span class="token punctuation">(</span>merge<span class="token punctuation">)</span>, S <span class="token punctuation">(</span>strings<span class="token punctuation">)</span> 
   I <span class="token punctuation">(</span>info<span class="token punctuation">)</span>, L <span class="token punctuation">(</span>link order<span class="token punctuation">)</span>, G <span class="token punctuation">(</span>group<span class="token punctuation">)</span>, x <span class="token punctuation">(</span>unknown<span class="token punctuation">)</span> 
@@ -475,62 +475,62 @@ Key to Flags:
 <span class="token variable">`</span></span>``shell
 <span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>&#36; readelf -S libmy.a 
 File: libmy.a<span class="token punctuation">(</span>myfile.o<span class="token punctuation">)</span> 
-There are 15 section headers, starting at offset 0x204: 
+There are <span class="token number">15</span> section headers, starting at offset 0x204: 
 
 Section Headers: 
   <span class="token punctuation">[</span>Nr<span class="token punctuation">]</span> Name              Type            Addr     Off    Size   ES Flg Lk Inf Al 
-  <span class="token punctuation">[</span> 0<span class="token punctuation">]</span>                   NULL            00000000 000000 000000 00      0   0  0 
-  <span class="token punctuation">[</span> 1<span class="token punctuation">]</span> .text             PROGBITS        00000000 000034 00009e 00  AX  0   0  4 
-  <span class="token punctuation">[</span> 2<span class="token punctuation">]</span> .rel.text         REL             00000000 000744 000060 08     13   1  4 
-  <span class="token punctuation">[</span> 3<span class="token punctuation">]</span> .data             PROGBITS        00000000 0000d4 000000 00  WA  0   0  4 
-  <span class="token punctuation">[</span> 4<span class="token punctuation">]</span> .bss              NOBITS          00000000 0000d4 000001 00  WA  0   0  4 
-  <span class="token punctuation">[</span> 5<span class="token punctuation">]</span> .ctors            PROGBITS        00000000 0000d4 000004 00  WA  0   0  4 
-  <span class="token punctuation">[</span> 6<span class="token punctuation">]</span> .rel.ctors        REL             00000000 0007a4 000008 08     13   5  4 
-  <span class="token punctuation">[</span> 7<span class="token punctuation">]</span> .rodata           PROGBITS        00000000 0000d8 000006 00   A  0   0  1 
-  <span class="token punctuation">[</span> 8<span class="token punctuation">]</span> .eh_frame         PROGBITS        00000000 0000e0 00008c 00   A  0   0  4 
-  <span class="token punctuation">[</span> 9<span class="token punctuation">]</span> .rel.eh_frame     REL             00000000 0007ac 000028 08     13   8  4 
-  <span class="token punctuation">[</span>10<span class="token punctuation">]</span> .comment          PROGBITS        00000000 00016c 00002e 00      0   0  1 
-  <span class="token punctuation">[</span>11<span class="token punctuation">]</span> .note.GNU-stack   PROGBITS        00000000 00019a 000000 00      0   0  1 
-  <span class="token punctuation">[</span>12<span class="token punctuation">]</span> .shstrtab         STRTAB          00000000 00019a 00006a 00      0   0  1 
-  <span class="token punctuation">[</span>13<span class="token punctuation">]</span> .symtab           SYMTAB          00000000 00045c 000180 10     14  14  4 
-  <span class="token punctuation">[</span>14<span class="token punctuation">]</span> .strtab           STRTAB          00000000 0005dc 000166 00      0   0  1 
+  <span class="token punctuation">[</span> <span class="token number">0</span><span class="token punctuation">]</span>                   NULL            00000000 000000 000000 00      <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">0</span> 
+  <span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">]</span> .text             PROGBITS        00000000 000034 00009e 00  AX  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span> <span class="token number">2</span><span class="token punctuation">]</span> .rel.text         REL             00000000 000744 000060 08     <span class="token number">13</span>   <span class="token number">1</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span> <span class="token number">3</span><span class="token punctuation">]</span> .data             PROGBITS        00000000 0000d4 000000 00  WA  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span> <span class="token number">4</span><span class="token punctuation">]</span> .bss              NOBITS          00000000 0000d4 000001 00  WA  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span> <span class="token number">5</span><span class="token punctuation">]</span> .ctors            PROGBITS        00000000 0000d4 000004 00  WA  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span> <span class="token number">6</span><span class="token punctuation">]</span> .rel.ctors        REL             00000000 0007a4 000008 08     <span class="token number">13</span>   <span class="token number">5</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span> <span class="token number">7</span><span class="token punctuation">]</span> .rodata           PROGBITS        00000000 0000d8 000006 00   A  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">1</span> 
+  <span class="token punctuation">[</span> <span class="token number">8</span><span class="token punctuation">]</span> .eh_frame         PROGBITS        00000000 0000e0 00008c 00   A  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span> <span class="token number">9</span><span class="token punctuation">]</span> .rel.eh_frame     REL             00000000 0007ac 000028 08     <span class="token number">13</span>   <span class="token number">8</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span> .comment          PROGBITS        00000000 00016c 00002e 00      <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">1</span> 
+  <span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">]</span> .note.GNU-stack   PROGBITS        00000000 00019a 000000 00      <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">1</span> 
+  <span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span> .shstrtab         STRTAB          00000000 00019a 00006a 00      <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">1</span> 
+  <span class="token punctuation">[</span><span class="token number">13</span><span class="token punctuation">]</span> .symtab           SYMTAB          00000000 00045c 000180 <span class="token number">10</span>     <span class="token number">14</span>  <span class="token number">14</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">14</span><span class="token punctuation">]</span> .strtab           STRTAB          00000000 0005dc 000166 00      <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">1</span> 
 Key to Flags: 
   W <span class="token punctuation">(</span>write<span class="token punctuation">)</span>, A <span class="token punctuation">(</span>alloc<span class="token punctuation">)</span>, X <span class="token punctuation">(</span>execute<span class="token punctuation">)</span>, M <span class="token punctuation">(</span>merge<span class="token punctuation">)</span>, S <span class="token punctuation">(</span>strings<span class="token punctuation">)</span> 
   I <span class="token punctuation">(</span>info<span class="token punctuation">)</span>, L <span class="token punctuation">(</span>link order<span class="token punctuation">)</span>, G <span class="token punctuation">(</span>group<span class="token punctuation">)</span>, x <span class="token punctuation">(</span>unknown<span class="token punctuation">)</span> 
   O <span class="token punctuation">(</span>extra OS processing required<span class="token punctuation">)</span> o <span class="token punctuation">(</span>OS specific<span class="token punctuation">)</span>, p <span class="token punctuation">(</span>processor specific<span class="token punctuation">)</span> </code></pre>
 <p> <strong>查看一个动态库文件的elf文件的节信息：</strong> </p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>&#36; readelf -S libmy.so 
-There are 27 section headers, starting at offset 0xad0: 
+There are <span class="token number">27</span> section headers, starting at offset 0xad0: 
 
 Section Headers: 
   <span class="token punctuation">[</span>Nr<span class="token punctuation">]</span> Name              Type            Addr     Off    Size   ES Flg Lk Inf Al 
-  <span class="token punctuation">[</span> 0<span class="token punctuation">]</span>                   NULL            00000000 000000 000000 00      0   0  0 
-  <span class="token punctuation">[</span> 1<span class="token punctuation">]</span> .gnu.hash         GNU_HASH        000000d4 0000d4 00003c 04   A  2   0  4 
-  <span class="token punctuation">[</span> 2<span class="token punctuation">]</span> .dynsym           DYNSYM          00000110 000110 000120 10   A  3   1  4 
-  <span class="token punctuation">[</span> 3<span class="token punctuation">]</span> .dynstr           STRTAB          00000230 000230 000199 00   A  0   0  1 
-  <span class="token punctuation">[</span> 4<span class="token punctuation">]</span> .gnu.version      VERSYM          000003ca 0003ca 000024 02   A  2   0  2 
-  <span class="token punctuation">[</span> 5<span class="token punctuation">]</span> .gnu.version_r    VERNEED         000003f0 0003f0 000050 00   A  3   2  4 
-  <span class="token punctuation">[</span> 6<span class="token punctuation">]</span> .rel.dyn          REL             00000440 000440 0000b0 08   A  2   0  4 
-  <span class="token punctuation">[</span> 7<span class="token punctuation">]</span> .rel.plt          REL             000004f0 0004f0 000010 08   A  2   9  4 
-  <span class="token punctuation">[</span> 8<span class="token punctuation">]</span> .init             PROGBITS        00000500 000500 000017 00  AX  0   0  4 
-  <span class="token punctuation">[</span> 9<span class="token punctuation">]</span> .plt              PROGBITS        00000518 000518 000030 04  AX  0   0  4 
-  <span class="token punctuation">[</span>10<span class="token punctuation">]</span> .text             PROGBITS        00000550 000550 0001c4 00  AX  0   0 16 
-  <span class="token punctuation">[</span>11<span class="token punctuation">]</span> .fini             PROGBITS        00000714 000714 00001c 00  AX  0   0  4 
-  <span class="token punctuation">[</span>12<span class="token punctuation">]</span> .rodata           PROGBITS        00000730 000730 000006 00   A  0   0  1 
-  <span class="token punctuation">[</span>13<span class="token punctuation">]</span> .eh_frame_hdr     PROGBITS        00000738 000738 00002c 00   A  0   0  4 
-  <span class="token punctuation">[</span>14<span class="token punctuation">]</span> .eh_frame         PROGBITS        00000764 000764 000090 00   A  0   0  4 
-  <span class="token punctuation">[</span>15<span class="token punctuation">]</span> .ctors            PROGBITS        000017f4 0007f4 00000c 00  WA  0   0  4 
-  <span class="token punctuation">[</span>16<span class="token punctuation">]</span> .dtors            PROGBITS        00001800 000800 000008 00  WA  0   0  4 
-  <span class="token punctuation">[</span>17<span class="token punctuation">]</span> .jcr              PROGBITS        00001808 000808 000004 00  WA  0   0  4 
-  <span class="token punctuation">[</span>18<span class="token punctuation">]</span> .data.rel.ro      PROGBITS        0000180c 00080c 000004 00  WA  0   0  4 
-  <span class="token punctuation">[</span>19<span class="token punctuation">]</span> .dynamic          DYNAMIC         00001810 000810 0000e0 08  WA  3   0  4 
-  <span class="token punctuation">[</span>20<span class="token punctuation">]</span> .got              PROGBITS        000018f0 0008f0 00000c 04  WA  0   0  4 
-  <span class="token punctuation">[</span>21<span class="token punctuation">]</span> .got.plt          PROGBITS        000018fc 0008fc 000014 04  WA  0   0  4 
-  <span class="token punctuation">[</span>22<span class="token punctuation">]</span> .bss              NOBITS          00001910 000910 00000c 00  WA  0   0  4 
-  <span class="token punctuation">[</span>23<span class="token punctuation">]</span> .comment          PROGBITS        00000000 000910 0000e6 00      0   0  1 
-  <span class="token punctuation">[</span>24<span class="token punctuation">]</span> .shstrtab         STRTAB          00000000 0009f6 0000da 00      0   0  1 
-  <span class="token punctuation">[</span>25<span class="token punctuation">]</span> .symtab           SYMTAB          00000000 000f08 000410 10     26  48  4 
-  <span class="token punctuation">[</span>26<span class="token punctuation">]</span> .strtab           STRTAB          00000000 001318 000333 00      0   0  1 
+  <span class="token punctuation">[</span> <span class="token number">0</span><span class="token punctuation">]</span>                   NULL            00000000 000000 000000 00      <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">0</span> 
+  <span class="token punctuation">[</span> <span class="token number">1</span><span class="token punctuation">]</span> .gnu.hash         GNU_HASH        000000d4 0000d4 00003c 04   A  <span class="token number">2</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span> <span class="token number">2</span><span class="token punctuation">]</span> .dynsym           DYNSYM          00000110 000110 000120 <span class="token number">10</span>   A  <span class="token number">3</span>   <span class="token number">1</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span> <span class="token number">3</span><span class="token punctuation">]</span> .dynstr           STRTAB          00000230 000230 000199 00   A  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">1</span> 
+  <span class="token punctuation">[</span> <span class="token number">4</span><span class="token punctuation">]</span> .gnu.version      VERSYM          000003ca 0003ca 000024 02   A  <span class="token number">2</span>   <span class="token number">0</span>  <span class="token number">2</span> 
+  <span class="token punctuation">[</span> <span class="token number">5</span><span class="token punctuation">]</span> .gnu.version_r    VERNEED         000003f0 0003f0 000050 00   A  <span class="token number">3</span>   <span class="token number">2</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span> <span class="token number">6</span><span class="token punctuation">]</span> .rel.dyn          REL             00000440 000440 0000b0 08   A  <span class="token number">2</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span> <span class="token number">7</span><span class="token punctuation">]</span> .rel.plt          REL             000004f0 0004f0 000010 08   A  <span class="token number">2</span>   <span class="token number">9</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span> <span class="token number">8</span><span class="token punctuation">]</span> .init             PROGBITS        00000500 000500 000017 00  AX  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span> <span class="token number">9</span><span class="token punctuation">]</span> .plt              PROGBITS        00000518 000518 000030 04  AX  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">10</span><span class="token punctuation">]</span> .text             PROGBITS        00000550 000550 0001c4 00  AX  <span class="token number">0</span>   <span class="token number">0</span> <span class="token number">16</span> 
+  <span class="token punctuation">[</span><span class="token number">11</span><span class="token punctuation">]</span> .fini             PROGBITS        00000714 000714 00001c 00  AX  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">12</span><span class="token punctuation">]</span> .rodata           PROGBITS        00000730 000730 000006 00   A  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">1</span> 
+  <span class="token punctuation">[</span><span class="token number">13</span><span class="token punctuation">]</span> .eh_frame_hdr     PROGBITS        00000738 000738 00002c 00   A  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">14</span><span class="token punctuation">]</span> .eh_frame         PROGBITS        00000764 000764 000090 00   A  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">15</span><span class="token punctuation">]</span> .ctors            PROGBITS        000017f4 0007f4 00000c 00  WA  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">16</span><span class="token punctuation">]</span> .dtors            PROGBITS        00001800 000800 000008 00  WA  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">17</span><span class="token punctuation">]</span> .jcr              PROGBITS        00001808 000808 000004 00  WA  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">18</span><span class="token punctuation">]</span> .data.rel.ro      PROGBITS        0000180c 00080c 000004 00  WA  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">19</span><span class="token punctuation">]</span> .dynamic          DYNAMIC         00001810 000810 0000e0 08  WA  <span class="token number">3</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">20</span><span class="token punctuation">]</span> .got              PROGBITS        000018f0 0008f0 00000c 04  WA  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">21</span><span class="token punctuation">]</span> .got.plt          PROGBITS        000018fc 0008fc 000014 04  WA  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">22</span><span class="token punctuation">]</span> .bss              NOBITS          00001910 000910 00000c 00  WA  <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">23</span><span class="token punctuation">]</span> .comment          PROGBITS        00000000 000910 0000e6 00      <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">1</span> 
+  <span class="token punctuation">[</span><span class="token number">24</span><span class="token punctuation">]</span> .shstrtab         STRTAB          00000000 0009f6 0000da 00      <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">1</span> 
+  <span class="token punctuation">[</span><span class="token number">25</span><span class="token punctuation">]</span> .symtab           SYMTAB          00000000 000f08 000410 <span class="token number">10</span>     <span class="token number">26</span>  <span class="token number">48</span>  <span class="token number">4</span> 
+  <span class="token punctuation">[</span><span class="token number">26</span><span class="token punctuation">]</span> .strtab           STRTAB          00000000 001318 000333 00      <span class="token number">0</span>   <span class="token number">0</span>  <span class="token number">1</span> 
 Key to Flags: 
   W <span class="token punctuation">(</span>write<span class="token punctuation">)</span>, A <span class="token punctuation">(</span>alloc<span class="token punctuation">)</span>, X <span class="token punctuation">(</span>execute<span class="token punctuation">)</span>, M <span class="token punctuation">(</span>merge<span class="token punctuation">)</span>, S <span class="token punctuation">(</span>strings<span class="token punctuation">)</span> 
   I <span class="token punctuation">(</span>info<span class="token punctuation">)</span>, L <span class="token punctuation">(</span>link order<span class="token punctuation">)</span>, G <span class="token punctuation">(</span>group<span class="token punctuation">)</span>, x <span class="token punctuation">(</span>unknown<span class="token punctuation">)</span> 
@@ -557,7 +557,7 @@ Key to Flags:
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1584350099504"></script>
-<script type="text/javascript" src="../js/index.js?v=1584350099504"></script>
+<script type="text/javascript" src="../js/dt.js?v=1584405945397"></script>
+<script type="text/javascript" src="../js/index.js?v=1584405945397"></script>
 </body>
 </html>

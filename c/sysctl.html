@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,sysctl,时动态地修改内核的运行参数">
     <title>sysctl 命令，Linux sysctl 命令详解：时动态地修改内核的运行参数 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584350099786">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584405945846">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -56,44 +56,44 @@
 <p>读一个指定的变量，例如<code>kern.maxproc</code>：</p>
 <p>sysctl kern.maxproc kern.maxproc: 1044</p>
 <p>要设置一个指定的变量，直接用<code>variable=value</code>这样的语法：</p>
-<pre><code class="language-shell">sysctl kern.maxfiles<span class="token operator">=</span>5000
-kern.maxfiles: 2088 -<span class="token operator">></span> 5000</code></pre>
+<pre><code class="language-shell">sysctl kern.maxfiles<span class="token operator">=</span><span class="token number">5000</span>
+kern.maxfiles: <span class="token number">2088</span> -<span class="token operator">></span> <span class="token number">5000</span></code></pre>
 <p>您可以使用sysctl修改系统变量，也可以通过编辑sysctl.conf文件来修改系统变量。sysctl.conf看起来很像rc.conf。它用<code>variable=value</code>的形式来设定值。指定的值在系统进入多用户模式之后被设定。并不是所有的变量都可以在这个模式下设定。</p>
 <p>sysctl变量的设置通常是字符串、数字或者布尔型。（布尔型用 1 来表示&#39;yes&#39;，用 0 来表示&#39;no&#39;）。</p>
-<pre><code class="language-shell">sysctl -w kernel.sysrq<span class="token operator">=</span>0
-sysctl -w kernel.core_uses_pid<span class="token operator">=</span>1
-sysctl -w net.ipv4.conf.default.accept_redirects<span class="token operator">=</span>0
-sysctl -w net.ipv4.conf.default.accept_source_route<span class="token operator">=</span>0
-sysctl -w net.ipv4.conf.default.rp_filter<span class="token operator">=</span>1
-sysctl -w net.ipv4.tcp_syncookies<span class="token operator">=</span>1
-sysctl -w net.ipv4.tcp_max_syn_backlog<span class="token operator">=</span>2048
-sysctl -w net.ipv4.tcp_fin_timeout<span class="token operator">=</span>30
-sysctl -w net.ipv4.tcp_synack_retries<span class="token operator">=</span>2
-sysctl -w net.ipv4.tcp_keepalive_time<span class="token operator">=</span>3600
-sysctl -w net.ipv4.tcp_window_scaling<span class="token operator">=</span>1
-sysctl -w net.ipv4.tcp_sack<span class="token operator">=</span>1</code></pre>
+<pre><code class="language-shell">sysctl -w kernel.sysrq<span class="token operator">=</span><span class="token number">0</span>
+sysctl -w kernel.core_uses_pid<span class="token operator">=</span><span class="token number">1</span>
+sysctl -w net.ipv4.conf.default.accept_redirects<span class="token operator">=</span><span class="token number">0</span>
+sysctl -w net.ipv4.conf.default.accept_source_route<span class="token operator">=</span><span class="token number">0</span>
+sysctl -w net.ipv4.conf.default.rp_filter<span class="token operator">=</span><span class="token number">1</span>
+sysctl -w net.ipv4.tcp_syncookies<span class="token operator">=</span><span class="token number">1</span>
+sysctl -w net.ipv4.tcp_max_syn_backlog<span class="token operator">=</span><span class="token number">2048</span>
+sysctl -w net.ipv4.tcp_fin_timeout<span class="token operator">=</span><span class="token number">30</span>
+sysctl -w net.ipv4.tcp_synack_retries<span class="token operator">=</span><span class="token number">2</span>
+sysctl -w net.ipv4.tcp_keepalive_time<span class="token operator">=</span><span class="token number">3600</span>
+sysctl -w net.ipv4.tcp_window_scaling<span class="token operator">=</span><span class="token number">1</span>
+sysctl -w net.ipv4.tcp_sack<span class="token operator">=</span><span class="token number">1</span></code></pre>
 <h3 id="配置sysctl">配置sysctl</h3><p>编辑此文件：<code>/etc/sysctl.conf</code></p>
 <p>如果该文件为空，则输入以下内容，否则请根据情况自己做调整：</p>
 <pre><code class="language-shell"><span class="token comment"># Controls source route verification</span>
 <span class="token comment"># Default should work for all interfaces</span>
-net.ipv4.conf.default.rp_filter <span class="token operator">=</span> 1
+net.ipv4.conf.default.rp_filter <span class="token operator">=</span> <span class="token number">1</span>
 <span class="token comment"># net.ipv4.conf.all.rp_filter = 1</span>
 <span class="token comment"># net.ipv4.conf.lo.rp_filter = 1</span>
 <span class="token comment"># net.ipv4.conf.eth0.rp_filter = 1</span>
 
 <span class="token comment"># Disables IP source routing</span>
 <span class="token comment"># Default should work for all interfaces</span>
-net.ipv4.conf.default.accept_source_route <span class="token operator">=</span> 0
+net.ipv4.conf.default.accept_source_route <span class="token operator">=</span> <span class="token number">0</span>
 <span class="token comment"># net.ipv4.conf.all.accept_source_route = 0</span>
 <span class="token comment"># net.ipv4.conf.lo.accept_source_route = 0</span>
 <span class="token comment"># net.ipv4.conf.eth0.accept_source_route = 0</span>
 
 <span class="token comment"># Controls the System Request debugging functionality of the kernel</span>
-kernel.sysrq <span class="token operator">=</span> 0
+kernel.sysrq <span class="token operator">=</span> <span class="token number">0</span>
 
 <span class="token comment"># Controls whether core dumps will append the PID to the core filename.</span>
 <span class="token comment"># Useful for debugging multi-threaded applications.</span>
-kernel.core_uses_pid <span class="token operator">=</span> 1
+kernel.core_uses_pid <span class="token operator">=</span> <span class="token number">1</span>
 
 <span class="token comment"># Increase maximum amount of memory allocated to shm</span>
 <span class="token comment"># Only uncomment if needed!</span>
@@ -101,82 +101,82 @@ kernel.core_uses_pid <span class="token operator">=</span> 1
 
 <span class="token comment"># Disable ICMP Redirect Acceptance</span>
 <span class="token comment"># Default should work for all interfaces</span>
-net.ipv4.conf.default.accept_redirects <span class="token operator">=</span> 0
+net.ipv4.conf.default.accept_redirects <span class="token operator">=</span> <span class="token number">0</span>
 <span class="token comment"># net.ipv4.conf.all.accept_redirects = 0</span>
 <span class="token comment"># net.ipv4.conf.lo.accept_redirects = 0</span>
 <span class="token comment"># net.ipv4.conf.eth0.accept_redirects = 0</span>
 
 <span class="token comment"># enable Log Spoofed Packets, Source Routed Packets, Redirect Packets</span>
 <span class="token comment"># Default should work for all interfaces</span>
-net.ipv4.conf.default.log_martians <span class="token operator">=</span> 1
+net.ipv4.conf.default.log_martians <span class="token operator">=</span> <span class="token number">1</span>
 <span class="token comment"># net.ipv4.conf.all.log_martians = 1</span>
 <span class="token comment"># net.ipv4.conf.lo.log_martians = 1</span>
 <span class="token comment"># net.ipv4.conf.eth0.log_martians = 1</span>
 
 <span class="token comment"># Decrease the time default value for tcp_fin_timeout connection</span>
-net.ipv4.tcp_fin_timeout <span class="token operator">=</span> 25
+net.ipv4.tcp_fin_timeout <span class="token operator">=</span> <span class="token number">25</span>
 
 <span class="token comment"># Decrease the time default value for tcp_keepalive_time connection</span>
-net.ipv4.tcp_keepalive_time <span class="token operator">=</span> 1200
+net.ipv4.tcp_keepalive_time <span class="token operator">=</span> <span class="token number">1200</span>
 
 <span class="token comment"># Turn on the tcp_window_scaling</span>
-net.ipv4.tcp_window_scaling <span class="token operator">=</span> 1
+net.ipv4.tcp_window_scaling <span class="token operator">=</span> <span class="token number">1</span>
 
 <span class="token comment"># Turn on the tcp_sack</span>
-net.ipv4.tcp_sack <span class="token operator">=</span> 1
+net.ipv4.tcp_sack <span class="token operator">=</span> <span class="token number">1</span>
 
 <span class="token comment"># tcp_fack should be on because of sack</span>
-net.ipv4.tcp_fack <span class="token operator">=</span> 1
+net.ipv4.tcp_fack <span class="token operator">=</span> <span class="token number">1</span>
 
 <span class="token comment"># Turn on the tcp_timestamps</span>
-net.ipv4.tcp_timestamps <span class="token operator">=</span> 1
+net.ipv4.tcp_timestamps <span class="token operator">=</span> <span class="token number">1</span>
 
 <span class="token comment"># Enable TCP SYN Cookie Protection</span>
-net.ipv4.tcp_syncookies <span class="token operator">=</span> 1
+net.ipv4.tcp_syncookies <span class="token operator">=</span> <span class="token number">1</span>
 
 <span class="token comment"># Enable ignoring broadcasts request</span>
-net.ipv4.icmp_echo_ignore_broadcasts <span class="token operator">=</span> 1
+net.ipv4.icmp_echo_ignore_broadcasts <span class="token operator">=</span> <span class="token number">1</span>
 
 <span class="token comment"># Enable bad error message Protection</span>
-net.ipv4.icmp_ignore_bogus_error_responses <span class="token operator">=</span> 1
+net.ipv4.icmp_ignore_bogus_error_responses <span class="token operator">=</span> <span class="token number">1</span>
 
 <span class="token comment"># make more local ports available</span>
 <span class="token comment"># net.ipv4.ip_local_port_range = 1024 65000</span>
 
 <span class="token comment"># set TCP Re-Ordering value in kernel to ‘5′</span>
-net.ipv4.tcp_reordering <span class="token operator">=</span> 5
+net.ipv4.tcp_reordering <span class="token operator">=</span> <span class="token number">5</span>
 
 <span class="token comment"># Lower syn retry rates</span>
-net.ipv4.tcp_synack_retries <span class="token operator">=</span> 2
-net.ipv4.tcp_syn_retries <span class="token operator">=</span> 3
+net.ipv4.tcp_synack_retries <span class="token operator">=</span> <span class="token number">2</span>
+net.ipv4.tcp_syn_retries <span class="token operator">=</span> <span class="token number">3</span>
 
 <span class="token comment"># Set Max SYN Backlog to ‘2048′</span>
-net.ipv4.tcp_max_syn_backlog <span class="token operator">=</span> 2048
+net.ipv4.tcp_max_syn_backlog <span class="token operator">=</span> <span class="token number">2048</span>
 
 <span class="token comment"># Various Settings</span>
-net.core.netdev_max_backlog <span class="token operator">=</span> 1024
+net.core.netdev_max_backlog <span class="token operator">=</span> <span class="token number">1024</span>
 
 <span class="token comment"># Increase the maximum number of skb-heads to be cached</span>
-net.core.hot_list_length <span class="token operator">=</span> 256
+net.core.hot_list_length <span class="token operator">=</span> <span class="token number">256</span>
 
 <span class="token comment"># Increase the tcp-time-wait buckets pool size</span>
-net.ipv4.tcp_max_tw_buckets <span class="token operator">=</span> 360000
+net.ipv4.tcp_max_tw_buckets <span class="token operator">=</span> <span class="token number">360000</span>
 
 <span class="token comment"># This will increase the amount of memory available for socket input/output queues</span>
-net.core.rmem_default <span class="token operator">=</span> 65535
-net.core.rmem_max <span class="token operator">=</span> 8388608
-net.ipv4.tcp_rmem <span class="token operator">=</span> 4096 87380 8388608
-net.core.wmem_default <span class="token operator">=</span> 65535
-net.core.wmem_max <span class="token operator">=</span> 8388608
-net.ipv4.tcp_wmem <span class="token operator">=</span> 4096 65535 8388608
-net.ipv4.tcp_mem <span class="token operator">=</span> 8388608 8388608 8388608
-net.core.optmem_max <span class="token operator">=</span> 40960</code></pre>
+net.core.rmem_default <span class="token operator">=</span> <span class="token number">65535</span>
+net.core.rmem_max <span class="token operator">=</span> <span class="token number">8388608</span>
+net.ipv4.tcp_rmem <span class="token operator">=</span> <span class="token number">4096</span> <span class="token number">87380</span> <span class="token number">8388608</span>
+net.core.wmem_default <span class="token operator">=</span> <span class="token number">65535</span>
+net.core.wmem_max <span class="token operator">=</span> <span class="token number">8388608</span>
+net.ipv4.tcp_wmem <span class="token operator">=</span> <span class="token number">4096</span> <span class="token number">65535</span> <span class="token number">8388608</span>
+net.ipv4.tcp_mem <span class="token operator">=</span> <span class="token number">8388608</span> <span class="token number">8388608</span> <span class="token number">8388608</span>
+net.core.optmem_max <span class="token operator">=</span> <span class="token number">40960</span></code></pre>
 <p>如果希望屏蔽别人 ping 你的主机，则加入以下代码：</p>
 <pre><code class="language-shell"><span class="token comment"># Disable ping requests</span>
-net.ipv4.icmp_echo_ignore_all <span class="token operator">=</span> 1</code></pre>
+net.ipv4.icmp_echo_ignore_all <span class="token operator">=</span> <span class="token number">1</span></code></pre>
 <p>编辑完成后，请执行以下命令使变动立即生效：</p>
 <pre><code class="language-shell">/sbin/sysctl -p
-/sbin/sysctl -w net.ipv4.route.flush<span class="token operator">=</span>1</code></pre>
+/sbin/sysctl -w net.ipv4.route.flush<span class="token operator">=</span><span class="token number">1</span></code></pre>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 </div>
 
@@ -199,7 +199,7 @@ net.ipv4.icmp_echo_ignore_all <span class="token operator">=</span> 1</code></pr
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1584350099786"></script>
-<script type="text/javascript" src="../js/index.js?v=1584350099786"></script>
+<script type="text/javascript" src="../js/dt.js?v=1584405945846"></script>
+<script type="text/javascript" src="../js/index.js?v=1584405945846"></script>
 </body>
 </html>

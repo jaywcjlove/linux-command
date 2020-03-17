@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,readonly,标记shell变量或函数为只读">
     <title>readonly 命令，Linux readonly 命令详解：标记shell变量或函数为只读 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584350099512">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584405945413">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -41,8 +41,8 @@
 </span>
 
 <h1 id="readonly">readonly</h1><p>标记shell变量或函数为只读</p>
-<h2 id="语法">语法</h2><pre><code class="language-shell"><span class="token function">readonly</span> <span class="token punctuation">[</span>-aAf<span class="token punctuation">]</span> <span class="token punctuation">[</span>name<span class="token punctuation">[</span><span class="token operator">=</span>value<span class="token punctuation">]</span> <span class="token punctuation">..</span>.<span class="token punctuation">]</span>
-<span class="token function">readonly</span> -p</code></pre>
+<h2 id="语法">语法</h2><pre><code class="language-shell"><span class="token builtin class-name">readonly</span> <span class="token punctuation">[</span>-aAf<span class="token punctuation">]</span> <span class="token punctuation">[</span>name<span class="token punctuation">[</span><span class="token operator">=</span>value<span class="token punctuation">]</span> <span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+<span class="token builtin class-name">readonly</span> -p</code></pre>
 <h2 id="主要用途">主要用途</h2><ul>
 <li>定义一到多个变量并设置只读属性。</li>
 <li>为已定义的一到多个变量设置只读属性。</li>
@@ -59,40 +59,40 @@
 value（可选）：变量的值</code></pre>
 <h3 id="返回值">返回值</h3><p>readonly返回true除非你提供了非法选项或非法名称。</p>
 <h2 id="例子">例子</h2><pre><code class="language-shell"><span class="token comment"># 定义变量并增加只读属性</span>
-<span class="token function">readonly</span> var1<span class="token operator">=</span>13 var2
-<span class="token function">readonly</span> -a arr1<span class="token operator">=</span><span class="token punctuation">(</span>1 2 3 4 5<span class="token punctuation">)</span> arr2<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">'z'</span> <span class="token string">'x'</span> <span class="token string">'c'</span><span class="token punctuation">)</span>
+<span class="token builtin class-name">readonly</span> <span class="token assign-left variable">var1</span><span class="token operator">=</span><span class="token number">13</span> var2
+<span class="token builtin class-name">readonly</span> -a <span class="token assign-left variable">arr1</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">4</span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token assign-left variable">arr2</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">'z'</span> <span class="token string">'x'</span> <span class="token string">'c'</span><span class="token punctuation">)</span>
 <span class="token comment"># 必须有 '-A' 选项</span>
-<span class="token function">readonly</span> -A dict1<span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'key1'</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">'value1'</span><span class="token punctuation">)</span></code></pre>
+<span class="token builtin class-name">readonly</span> -A <span class="token assign-left variable">dict1</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'key1'</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">'value1'</span><span class="token punctuation">)</span></code></pre>
 <pre><code class="language-shell"><span class="token comment"># 先定义变量、函数，然后再为它们添加只读属性</span>
-max<span class="token operator">=</span>3
-<span class="token function">readonly</span> max
+<span class="token assign-left variable">max</span><span class="token operator">=</span><span class="token number">3</span>
+<span class="token builtin class-name">readonly</span> max
 
 <span class="token comment"># 数组定义时可以不加 `declare -a`</span>
-seasons<span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">'spring'</span> <span class="token string">'summer'</span> <span class="token string">'autumn'</span> <span class="token string">'winter'</span><span class="token punctuation">)</span>
+<span class="token assign-left variable">seasons</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token string">'spring'</span> <span class="token string">'summer'</span> <span class="token string">'autumn'</span> <span class="token string">'winter'</span><span class="token punctuation">)</span>
 <span class="token comment"># 为数组添加只读属性时可以不加 `-a` 选项</span>
-<span class="token function">readonly</span> seasons
+<span class="token builtin class-name">readonly</span> seasons
 
-<span class="token keyword">declare</span> -A man<span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'age'</span><span class="token punctuation">]</span><span class="token operator">=</span>23 <span class="token punctuation">[</span><span class="token string">'height'</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">'190cm'</span><span class="token punctuation">)</span>
+<span class="token builtin class-name">declare</span> -A <span class="token assign-left variable">man</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">'age'</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token number">23</span> <span class="token punctuation">[</span><span class="token string">'height'</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">'190cm'</span><span class="token punctuation">)</span>
 <span class="token comment"># 为关联数组添加只读属性时可以不加 `-A` 选项</span>
-<span class="token function">readonly</span> <span class="token function">man</span>
+<span class="token builtin class-name">readonly</span> <span class="token function">man</span>
 
-<span class="token keyword">function</span> foo<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token keyword">echo</span> <span class="token string">'bar'</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
+<span class="token keyword">function</span> <span class="token function-name function">foo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span> <span class="token builtin class-name">echo</span> <span class="token string">'bar'</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>
 <span class="token comment"># 为函数添加只读属性时必须加 `-f` 选项</span>
-<span class="token function">readonly</span> -f foo</code></pre>
+<span class="token builtin class-name">readonly</span> -f foo</code></pre>
 <pre><code class="language-shell"><span class="token comment"># 显示全部只读变量，以下两个命令的显示结果一样</span>
-<span class="token function">readonly</span>
-<span class="token function">readonly</span> -p
+<span class="token builtin class-name">readonly</span>
+<span class="token builtin class-name">readonly</span> -p
 <span class="token comment"># 显示全部拥有只读属性的数组</span>
-<span class="token function">readonly</span> -a
+<span class="token builtin class-name">readonly</span> -a
 <span class="token comment"># 显示全部拥有只读属性的关联数组</span>
-<span class="token function">readonly</span> -A
+<span class="token builtin class-name">readonly</span> -A
 <span class="token comment"># 显示全部拥有只读属性的函数</span>
-<span class="token function">readonly</span> -f</code></pre>
+<span class="token builtin class-name">readonly</span> -f</code></pre>
 <h2 id="常见错误">常见错误</h2><p>对于只读变量而言，若用户对其值进行修改，则会立即报错。例如，使用该指令定义一个只读变量&quot;test&quot;，并且将其值初始化为&quot;ok&quot;，输入如下命令：</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># readonly test='ok'        #定义只读变量并初始化 </span></code></pre>
 <p>那么当用户直接修改该只读变量时就会报错，如下所示：</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># test='my'                 #试图修改只读变量的值</span>
--bash: test: <span class="token function">readonly</span> variable</code></pre>
+-bash: test: <span class="token builtin class-name">readonly</span> variable</code></pre>
 <p>当用户试图修改只读变量的值时，会被提示该变量为只读变量。</p>
 <h2 id="注意">注意</h2><ol>
 <li>该命令是bash内建命令，相关的帮助信息请查看<code>help</code>命令。</li>
@@ -121,7 +121,7 @@ seasons<span class="token operator">=</span><span class="token punctuation">(</s
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1584350099512"></script>
-<script type="text/javascript" src="../js/index.js?v=1584350099512"></script>
+<script type="text/javascript" src="../js/dt.js?v=1584405945414"></script>
+<script type="text/javascript" src="../js/index.js?v=1584405945414"></script>
 </body>
 </html>

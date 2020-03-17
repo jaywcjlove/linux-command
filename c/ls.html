@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,ls,显示目录内容列表">
     <title>ls 命令，Linux ls 命令详解：显示目录内容列表 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584350099157">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1584405944815">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -169,7 +169,7 @@
 
 -T, --tabsize cols
        <span class="token comment"># 假定每个制表符宽度是 cols 。缺省为 8。为求效率， ls 可能在输出中使用制表符。  若 cols 为</span>
-       0，则不使用制表符。
+       <span class="token number">0</span>，则不使用制表符。
 
 -U, --sort<span class="token operator">=</span>none
        <span class="token comment"># 不排序目录内容；按它们在磁盘上存储的顺序列出。（选项“-U”和“-f”的不</span>
@@ -200,7 +200,7 @@ none <span class="token comment"># 不使用颜色，这是缺省项。</span>
 &#36; <span class="token function">ls</span> -al   <span class="token comment"># 列出所有文件（包括隐藏）的详细信息</span></code></pre>
 <p>显示当前目录下包括影藏文件在内的所有文件列表</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ls -a</span>
-<span class="token keyword">.</span>   anaconda-ks.cfg  .bash_logout   .bashrc  install.log         .mysql_history  satools  .tcshrc   .vimrc
+<span class="token builtin class-name">.</span>   anaconda-ks.cfg  .bash_logout   .bashrc  install.log         .mysql_history  satools  .tcshrc   .vimrc
 <span class="token punctuation">..</span>  .bash_history    .bash_profile  .cshrc   install.log.syslog  .rnd            .ssh     .viminfo</code></pre>
 <p>输出长格式列表</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ls -1</span>
@@ -212,8 +212,8 @@ satools</code></pre>
 <p>显示文件的inode信息</p>
 <p>索引节点（index inode简称为“inode”）是Linux中一个特殊的概念，具有相同的索引节点号的两个文本本质上是同一个文件（除文件名不同外）。</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ls -i -l anaconda-ks.cfg install.log</span>
-2345481 -rw------- 1 root root   859 Jun 11 22:49 anaconda-ks.cfg
-2345474 -rw-r--r-- 1 root root 13837 Jun 11 22:49 install.log</code></pre>
+<span class="token number">2345481</span> -rw------- <span class="token number">1</span> root root   <span class="token number">859</span> Jun <span class="token number">11</span> <span class="token number">22</span>:49 anaconda-ks.cfg
+<span class="token number">2345474</span> -rw-r--r-- <span class="token number">1</span> root root <span class="token number">13837</span> Jun <span class="token number">11</span> <span class="token number">22</span>:49 install.log</code></pre>
 <p>水平输出文件列表</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost /<span class="token punctuation">]</span><span class="token comment"># ls -m</span>
 
@@ -233,132 +233,132 @@ black.txt  freemem.sh  iptables.sh  lnmp.sh  mysql  php502_check.sh  ssh_safe.sh
 <p>打印文件的UID和GID</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost /<span class="token punctuation">]</span><span class="token comment"># ls -n</span>
 
-total 254
-drwxr-xr-x   2 0 0  4096 Jun 12 04:03 bin
-drwxr-xr-x   4 0 0  1024 Jun 15 14:45 boot
-drwxr-xr-x   6 0 0  4096 Jun 12 10:26 data
-drwxr-xr-x  10 0 0  3520 Sep 26 15:38 dev
-drwxr-xr-x  75 0 0  4096 Oct 16 04:02 etc
-drwxr-xr-x   4 0 0  4096 Jun 12 10:26 home
-drwxr-xr-x  14 0 0 12288 Jun 16 04:02 lib
-drwx------   2 0 0 16384 Jun 11 22:46 lost+found
-drwxr-xr-x   2 0 0  4096 May 11  2011 media
-drwxr-xr-x   2 0 0  4096 Nov  8  2010 misc
-drwxr-xr-x   2 0 0  4096 May 11  2011 mnt
-drwxr-xr-x   2 0 0  4096 May 11  2011 opt
-dr-xr-xr-x 232 0 0     0 Jun 15 11:04 proc
-drwxr-x---   4 0 0  4096 Oct 15 14:43 root
-drwxr-xr-x   2 0 0 12288 Jun 12 04:03 sbin
-drwxr-xr-x   2 0 0  4096 May 11  2011 selinux
-drwxr-xr-x   2 0 0  4096 May 11  2011 srv
-drwxr-xr-x  11 0 0     0 Jun 15 11:04 sys
-drwxrwxrwt   3 0 0 98304 Oct 16 08:45 tmp
-drwxr-xr-x  13 0 0  4096 Jun 11 23:38 usr
-drwxr-xr-x  19 0 0  4096 Jun 11 23:38 var</code></pre>
+total <span class="token number">254</span>
+drwxr-xr-x   <span class="token number">2</span> <span class="token number">0</span> <span class="token number">0</span>  <span class="token number">4096</span> Jun <span class="token number">12</span> 04:03 bin
+drwxr-xr-x   <span class="token number">4</span> <span class="token number">0</span> <span class="token number">0</span>  <span class="token number">1024</span> Jun <span class="token number">15</span> <span class="token number">14</span>:45 boot
+drwxr-xr-x   <span class="token number">6</span> <span class="token number">0</span> <span class="token number">0</span>  <span class="token number">4096</span> Jun <span class="token number">12</span> <span class="token number">10</span>:26 data
+drwxr-xr-x  <span class="token number">10</span> <span class="token number">0</span> <span class="token number">0</span>  <span class="token number">3520</span> Sep <span class="token number">26</span> <span class="token number">15</span>:38 dev
+drwxr-xr-x  <span class="token number">75</span> <span class="token number">0</span> <span class="token number">0</span>  <span class="token number">4096</span> Oct <span class="token number">16</span> 04:02 etc
+drwxr-xr-x   <span class="token number">4</span> <span class="token number">0</span> <span class="token number">0</span>  <span class="token number">4096</span> Jun <span class="token number">12</span> <span class="token number">10</span>:26 home
+drwxr-xr-x  <span class="token number">14</span> <span class="token number">0</span> <span class="token number">0</span> <span class="token number">12288</span> Jun <span class="token number">16</span> 04:02 lib
+drwx------   <span class="token number">2</span> <span class="token number">0</span> <span class="token number">0</span> <span class="token number">16384</span> Jun <span class="token number">11</span> <span class="token number">22</span>:46 lost+found
+drwxr-xr-x   <span class="token number">2</span> <span class="token number">0</span> <span class="token number">0</span>  <span class="token number">4096</span> May <span class="token number">11</span>  <span class="token number">2011</span> media
+drwxr-xr-x   <span class="token number">2</span> <span class="token number">0</span> <span class="token number">0</span>  <span class="token number">4096</span> Nov  <span class="token number">8</span>  <span class="token number">2010</span> misc
+drwxr-xr-x   <span class="token number">2</span> <span class="token number">0</span> <span class="token number">0</span>  <span class="token number">4096</span> May <span class="token number">11</span>  <span class="token number">2011</span> mnt
+drwxr-xr-x   <span class="token number">2</span> <span class="token number">0</span> <span class="token number">0</span>  <span class="token number">4096</span> May <span class="token number">11</span>  <span class="token number">2011</span> opt
+dr-xr-xr-x <span class="token number">232</span> <span class="token number">0</span> <span class="token number">0</span>     <span class="token number">0</span> Jun <span class="token number">15</span> <span class="token number">11</span>:04 proc
+drwxr-x---   <span class="token number">4</span> <span class="token number">0</span> <span class="token number">0</span>  <span class="token number">4096</span> Oct <span class="token number">15</span> <span class="token number">14</span>:43 root
+drwxr-xr-x   <span class="token number">2</span> <span class="token number">0</span> <span class="token number">0</span> <span class="token number">12288</span> Jun <span class="token number">12</span> 04:03 sbin
+drwxr-xr-x   <span class="token number">2</span> <span class="token number">0</span> <span class="token number">0</span>  <span class="token number">4096</span> May <span class="token number">11</span>  <span class="token number">2011</span> selinux
+drwxr-xr-x   <span class="token number">2</span> <span class="token number">0</span> <span class="token number">0</span>  <span class="token number">4096</span> May <span class="token number">11</span>  <span class="token number">2011</span> srv
+drwxr-xr-x  <span class="token number">11</span> <span class="token number">0</span> <span class="token number">0</span>     <span class="token number">0</span> Jun <span class="token number">15</span> <span class="token number">11</span>:04 sys
+drwxrwxrwt   <span class="token number">3</span> <span class="token number">0</span> <span class="token number">0</span> <span class="token number">98304</span> Oct <span class="token number">16</span> 08:45 tmp
+drwxr-xr-x  <span class="token number">13</span> <span class="token number">0</span> <span class="token number">0</span>  <span class="token number">4096</span> Jun <span class="token number">11</span> <span class="token number">23</span>:38 usr
+drwxr-xr-x  <span class="token number">19</span> <span class="token number">0</span> <span class="token number">0</span>  <span class="token number">4096</span> Jun <span class="token number">11</span> <span class="token number">23</span>:38 var</code></pre>
 <p>列出文件和文件夹的详细信息</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost /<span class="token punctuation">]</span><span class="token comment"># ls -l</span>
 
-total 254
-drwxr-xr-x   2 root root  4096 Jun 12 04:03 bin
-drwxr-xr-x   4 root root  1024 Jun 15 14:45 boot
-drwxr-xr-x   6 root root  4096 Jun 12 10:26 data
-drwxr-xr-x  10 root root  3520 Sep 26 15:38 dev
-drwxr-xr-x  75 root root  4096 Oct 16 04:02 etc
-drwxr-xr-x   4 root root  4096 Jun 12 10:26 home
-drwxr-xr-x  14 root root 12288 Jun 16 04:02 lib
-drwx------   2 root root 16384 Jun 11 22:46 lost+found
-drwxr-xr-x   2 root root  4096 May 11  2011 media
-drwxr-xr-x   2 root root  4096 Nov  8  2010 misc
-drwxr-xr-x   2 root root  4096 May 11  2011 mnt
-drwxr-xr-x   2 root root  4096 May 11  2011 opt
-dr-xr-xr-x 232 root root     0 Jun 15 11:04 proc
-drwxr-x---   4 root root  4096 Oct 15 14:43 root
-drwxr-xr-x   2 root root 12288 Jun 12 04:03 sbin
-drwxr-xr-x   2 root root  4096 May 11  2011 selinux
-drwxr-xr-x   2 root root  4096 May 11  2011 srv
-drwxr-xr-x  11 root root     0 Jun 15 11:04 sys
-drwxrwxrwt   3 root root 98304 Oct 16 08:48 tmp
-drwxr-xr-x  13 root root  4096 Jun 11 23:38 usr
-drwxr-xr-x  19 root root  4096 Jun 11 23:38 var</code></pre>
+total <span class="token number">254</span>
+drwxr-xr-x   <span class="token number">2</span> root root  <span class="token number">4096</span> Jun <span class="token number">12</span> 04:03 bin
+drwxr-xr-x   <span class="token number">4</span> root root  <span class="token number">1024</span> Jun <span class="token number">15</span> <span class="token number">14</span>:45 boot
+drwxr-xr-x   <span class="token number">6</span> root root  <span class="token number">4096</span> Jun <span class="token number">12</span> <span class="token number">10</span>:26 data
+drwxr-xr-x  <span class="token number">10</span> root root  <span class="token number">3520</span> Sep <span class="token number">26</span> <span class="token number">15</span>:38 dev
+drwxr-xr-x  <span class="token number">75</span> root root  <span class="token number">4096</span> Oct <span class="token number">16</span> 04:02 etc
+drwxr-xr-x   <span class="token number">4</span> root root  <span class="token number">4096</span> Jun <span class="token number">12</span> <span class="token number">10</span>:26 home
+drwxr-xr-x  <span class="token number">14</span> root root <span class="token number">12288</span> Jun <span class="token number">16</span> 04:02 lib
+drwx------   <span class="token number">2</span> root root <span class="token number">16384</span> Jun <span class="token number">11</span> <span class="token number">22</span>:46 lost+found
+drwxr-xr-x   <span class="token number">2</span> root root  <span class="token number">4096</span> May <span class="token number">11</span>  <span class="token number">2011</span> media
+drwxr-xr-x   <span class="token number">2</span> root root  <span class="token number">4096</span> Nov  <span class="token number">8</span>  <span class="token number">2010</span> misc
+drwxr-xr-x   <span class="token number">2</span> root root  <span class="token number">4096</span> May <span class="token number">11</span>  <span class="token number">2011</span> mnt
+drwxr-xr-x   <span class="token number">2</span> root root  <span class="token number">4096</span> May <span class="token number">11</span>  <span class="token number">2011</span> opt
+dr-xr-xr-x <span class="token number">232</span> root root     <span class="token number">0</span> Jun <span class="token number">15</span> <span class="token number">11</span>:04 proc
+drwxr-x---   <span class="token number">4</span> root root  <span class="token number">4096</span> Oct <span class="token number">15</span> <span class="token number">14</span>:43 root
+drwxr-xr-x   <span class="token number">2</span> root root <span class="token number">12288</span> Jun <span class="token number">12</span> 04:03 sbin
+drwxr-xr-x   <span class="token number">2</span> root root  <span class="token number">4096</span> May <span class="token number">11</span>  <span class="token number">2011</span> selinux
+drwxr-xr-x   <span class="token number">2</span> root root  <span class="token number">4096</span> May <span class="token number">11</span>  <span class="token number">2011</span> srv
+drwxr-xr-x  <span class="token number">11</span> root root     <span class="token number">0</span> Jun <span class="token number">15</span> <span class="token number">11</span>:04 sys
+drwxrwxrwt   <span class="token number">3</span> root root <span class="token number">98304</span> Oct <span class="token number">16</span> 08:48 tmp
+drwxr-xr-x  <span class="token number">13</span> root root  <span class="token number">4096</span> Jun <span class="token number">11</span> <span class="token number">23</span>:38 usr
+drwxr-xr-x  <span class="token number">19</span> root root  <span class="token number">4096</span> Jun <span class="token number">11</span> <span class="token number">23</span>:38 var</code></pre>
 <p>列出可读文件和文件夹详细信息</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost /<span class="token punctuation">]</span><span class="token comment"># ls -lh</span>
 
 total 254K
-drwxr-xr-x   2 root root 4.0K Jun 12 04:03 bin
-drwxr-xr-x   4 root root 1.0K Jun 15 14:45 boot
-drwxr-xr-x   6 root root 4.0K Jun 12 10:26 data
-drwxr-xr-x  10 root root 3.5K Sep 26 15:38 dev
-drwxr-xr-x  75 root root 4.0K Oct 16 04:02 etc
-drwxr-xr-x   4 root root 4.0K Jun 12 10:26 home
-drwxr-xr-x  14 root root  12K Jun 16 04:02 lib
-drwx------   2 root root  16K Jun 11 22:46 lost+found
-drwxr-xr-x   2 root root 4.0K May 11  2011 media
-drwxr-xr-x   2 root root 4.0K Nov  8  2010 misc
-drwxr-xr-x   2 root root 4.0K May 11  2011 mnt
-drwxr-xr-x   2 root root 4.0K May 11  2011 opt
-dr-xr-xr-x 235 root root    0 Jun 15 11:04 proc
-drwxr-x---   4 root root 4.0K Oct 15 14:43 root
-drwxr-xr-x   2 root root  12K Jun 12 04:03 sbin
-drwxr-xr-x   2 root root 4.0K May 11  2011 selinux
-drwxr-xr-x   2 root root 4.0K May 11  2011 srv
-drwxr-xr-x  11 root root    0 Jun 15 11:04 sys
-drwxrwxrwt   3 root root  96K Oct 16 08:49 tmp
-drwxr-xr-x  13 root root 4.0K Jun 11 23:38 usr
-drwxr-xr-x  19 root root 4.0K Jun 11 23:38 var</code></pre>
+drwxr-xr-x   <span class="token number">2</span> root root <span class="token number">4</span>.0K Jun <span class="token number">12</span> 04:03 bin
+drwxr-xr-x   <span class="token number">4</span> root root <span class="token number">1</span>.0K Jun <span class="token number">15</span> <span class="token number">14</span>:45 boot
+drwxr-xr-x   <span class="token number">6</span> root root <span class="token number">4</span>.0K Jun <span class="token number">12</span> <span class="token number">10</span>:26 data
+drwxr-xr-x  <span class="token number">10</span> root root <span class="token number">3</span>.5K Sep <span class="token number">26</span> <span class="token number">15</span>:38 dev
+drwxr-xr-x  <span class="token number">75</span> root root <span class="token number">4</span>.0K Oct <span class="token number">16</span> 04:02 etc
+drwxr-xr-x   <span class="token number">4</span> root root <span class="token number">4</span>.0K Jun <span class="token number">12</span> <span class="token number">10</span>:26 home
+drwxr-xr-x  <span class="token number">14</span> root root  12K Jun <span class="token number">16</span> 04:02 lib
+drwx------   <span class="token number">2</span> root root  16K Jun <span class="token number">11</span> <span class="token number">22</span>:46 lost+found
+drwxr-xr-x   <span class="token number">2</span> root root <span class="token number">4</span>.0K May <span class="token number">11</span>  <span class="token number">2011</span> media
+drwxr-xr-x   <span class="token number">2</span> root root <span class="token number">4</span>.0K Nov  <span class="token number">8</span>  <span class="token number">2010</span> misc
+drwxr-xr-x   <span class="token number">2</span> root root <span class="token number">4</span>.0K May <span class="token number">11</span>  <span class="token number">2011</span> mnt
+drwxr-xr-x   <span class="token number">2</span> root root <span class="token number">4</span>.0K May <span class="token number">11</span>  <span class="token number">2011</span> opt
+dr-xr-xr-x <span class="token number">235</span> root root    <span class="token number">0</span> Jun <span class="token number">15</span> <span class="token number">11</span>:04 proc
+drwxr-x---   <span class="token number">4</span> root root <span class="token number">4</span>.0K Oct <span class="token number">15</span> <span class="token number">14</span>:43 root
+drwxr-xr-x   <span class="token number">2</span> root root  12K Jun <span class="token number">12</span> 04:03 sbin
+drwxr-xr-x   <span class="token number">2</span> root root <span class="token number">4</span>.0K May <span class="token number">11</span>  <span class="token number">2011</span> selinux
+drwxr-xr-x   <span class="token number">2</span> root root <span class="token number">4</span>.0K May <span class="token number">11</span>  <span class="token number">2011</span> srv
+drwxr-xr-x  <span class="token number">11</span> root root    <span class="token number">0</span> Jun <span class="token number">15</span> <span class="token number">11</span>:04 sys
+drwxrwxrwt   <span class="token number">3</span> root root  96K Oct <span class="token number">16</span> 08:49 tmp
+drwxr-xr-x  <span class="token number">13</span> root root <span class="token number">4</span>.0K Jun <span class="token number">11</span> <span class="token number">23</span>:38 usr
+drwxr-xr-x  <span class="token number">19</span> root root <span class="token number">4</span>.0K Jun <span class="token number">11</span> <span class="token number">23</span>:38 var</code></pre>
 <p>显示文件夹信息</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost /<span class="token punctuation">]</span><span class="token comment"># ls -ld /etc/</span>
 
-drwxr-xr-x 75 root root 4096 Oct 16 04:02 /etc/</code></pre>
+drwxr-xr-x <span class="token number">75</span> root root <span class="token number">4096</span> Oct <span class="token number">16</span> 04:02 /etc/</code></pre>
 <p>按时间列出文件和文件夹详细信息</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost /<span class="token punctuation">]</span><span class="token comment"># ls -lt</span>
 
-total 254
-drwxrwxrwt   3 root root 98304 Oct 16 08:53 tmp
-drwxr-xr-x  75 root root  4096 Oct 16 04:02 etc
-drwxr-x---   4 root root  4096 Oct 15 14:43 root
-drwxr-xr-x  10 root root  3520 Sep 26 15:38 dev
-drwxr-xr-x  14 root root 12288 Jun 16 04:02 lib
-drwxr-xr-x   4 root root  1024 Jun 15 14:45 boot
-drwxr-xr-x  11 root root     0 Jun 15 11:04 sys
-dr-xr-xr-x 232 root root     0 Jun 15 11:04 proc
-drwxr-xr-x   6 root root  4096 Jun 12 10:26 data
-drwxr-xr-x   4 root root  4096 Jun 12 10:26 home
-drwxr-xr-x   2 root root  4096 Jun 12 04:03 bin
-drwxr-xr-x   2 root root 12288 Jun 12 04:03 sbin
-drwxr-xr-x  13 root root  4096 Jun 11 23:38 usr
-drwxr-xr-x  19 root root  4096 Jun 11 23:38 var
-drwx------   2 root root 16384 Jun 11 22:46 lost+found
-drwxr-xr-x   2 root root  4096 May 11  2011 media
-drwxr-xr-x   2 root root  4096 May 11  2011 mnt
-drwxr-xr-x   2 root root  4096 May 11  2011 opt
-drwxr-xr-x   2 root root  4096 May 11  2011 selinux
-drwxr-xr-x   2 root root  4096 May 11  2011 srv
-drwxr-xr-x   2 root root  4096 Nov  8  2010 misc</code></pre>
+total <span class="token number">254</span>
+drwxrwxrwt   <span class="token number">3</span> root root <span class="token number">98304</span> Oct <span class="token number">16</span> 08:53 tmp
+drwxr-xr-x  <span class="token number">75</span> root root  <span class="token number">4096</span> Oct <span class="token number">16</span> 04:02 etc
+drwxr-x---   <span class="token number">4</span> root root  <span class="token number">4096</span> Oct <span class="token number">15</span> <span class="token number">14</span>:43 root
+drwxr-xr-x  <span class="token number">10</span> root root  <span class="token number">3520</span> Sep <span class="token number">26</span> <span class="token number">15</span>:38 dev
+drwxr-xr-x  <span class="token number">14</span> root root <span class="token number">12288</span> Jun <span class="token number">16</span> 04:02 lib
+drwxr-xr-x   <span class="token number">4</span> root root  <span class="token number">1024</span> Jun <span class="token number">15</span> <span class="token number">14</span>:45 boot
+drwxr-xr-x  <span class="token number">11</span> root root     <span class="token number">0</span> Jun <span class="token number">15</span> <span class="token number">11</span>:04 sys
+dr-xr-xr-x <span class="token number">232</span> root root     <span class="token number">0</span> Jun <span class="token number">15</span> <span class="token number">11</span>:04 proc
+drwxr-xr-x   <span class="token number">6</span> root root  <span class="token number">4096</span> Jun <span class="token number">12</span> <span class="token number">10</span>:26 data
+drwxr-xr-x   <span class="token number">4</span> root root  <span class="token number">4096</span> Jun <span class="token number">12</span> <span class="token number">10</span>:26 home
+drwxr-xr-x   <span class="token number">2</span> root root  <span class="token number">4096</span> Jun <span class="token number">12</span> 04:03 bin
+drwxr-xr-x   <span class="token number">2</span> root root <span class="token number">12288</span> Jun <span class="token number">12</span> 04:03 sbin
+drwxr-xr-x  <span class="token number">13</span> root root  <span class="token number">4096</span> Jun <span class="token number">11</span> <span class="token number">23</span>:38 usr
+drwxr-xr-x  <span class="token number">19</span> root root  <span class="token number">4096</span> Jun <span class="token number">11</span> <span class="token number">23</span>:38 var
+drwx------   <span class="token number">2</span> root root <span class="token number">16384</span> Jun <span class="token number">11</span> <span class="token number">22</span>:46 lost+found
+drwxr-xr-x   <span class="token number">2</span> root root  <span class="token number">4096</span> May <span class="token number">11</span>  <span class="token number">2011</span> media
+drwxr-xr-x   <span class="token number">2</span> root root  <span class="token number">4096</span> May <span class="token number">11</span>  <span class="token number">2011</span> mnt
+drwxr-xr-x   <span class="token number">2</span> root root  <span class="token number">4096</span> May <span class="token number">11</span>  <span class="token number">2011</span> opt
+drwxr-xr-x   <span class="token number">2</span> root root  <span class="token number">4096</span> May <span class="token number">11</span>  <span class="token number">2011</span> selinux
+drwxr-xr-x   <span class="token number">2</span> root root  <span class="token number">4096</span> May <span class="token number">11</span>  <span class="token number">2011</span> srv
+drwxr-xr-x   <span class="token number">2</span> root root  <span class="token number">4096</span> Nov  <span class="token number">8</span>  <span class="token number">2010</span> misc</code></pre>
 <p>按修改时间列出文件和文件夹详细信息</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost /<span class="token punctuation">]</span><span class="token comment"># ls -ltr</span>
 
-total 254
-drwxr-xr-x   2 root root  4096 Nov  8  2010 misc
-drwxr-xr-x   2 root root  4096 May 11  2011 srv
-drwxr-xr-x   2 root root  4096 May 11  2011 selinux
-drwxr-xr-x   2 root root  4096 May 11  2011 opt
-drwxr-xr-x   2 root root  4096 May 11  2011 mnt
-drwxr-xr-x   2 root root  4096 May 11  2011 media
-drwx------   2 root root 16384 Jun 11 22:46 lost+found
-drwxr-xr-x  19 root root  4096 Jun 11 23:38 var
-drwxr-xr-x  13 root root  4096 Jun 11 23:38 usr
-drwxr-xr-x   2 root root 12288 Jun 12 04:03 sbin
-drwxr-xr-x   2 root root  4096 Jun 12 04:03 bin
-drwxr-xr-x   4 root root  4096 Jun 12 10:26 home
-drwxr-xr-x   6 root root  4096 Jun 12 10:26 data
-dr-xr-xr-x 232 root root     0 Jun 15 11:04 proc
-drwxr-xr-x  11 root root     0 Jun 15 11:04 sys
-drwxr-xr-x   4 root root  1024 Jun 15 14:45 boot
-drwxr-xr-x  14 root root 12288 Jun 16 04:02 lib
-drwxr-xr-x  10 root root  3520 Sep 26 15:38 dev
-drwxr-x---   4 root root  4096 Oct 15 14:43 root
-drwxr-xr-x  75 root root  4096 Oct 16 04:02 etc
-drwxrwxrwt   3 root root 98304 Oct 16 08:54 tmp</code></pre>
+total <span class="token number">254</span>
+drwxr-xr-x   <span class="token number">2</span> root root  <span class="token number">4096</span> Nov  <span class="token number">8</span>  <span class="token number">2010</span> misc
+drwxr-xr-x   <span class="token number">2</span> root root  <span class="token number">4096</span> May <span class="token number">11</span>  <span class="token number">2011</span> srv
+drwxr-xr-x   <span class="token number">2</span> root root  <span class="token number">4096</span> May <span class="token number">11</span>  <span class="token number">2011</span> selinux
+drwxr-xr-x   <span class="token number">2</span> root root  <span class="token number">4096</span> May <span class="token number">11</span>  <span class="token number">2011</span> opt
+drwxr-xr-x   <span class="token number">2</span> root root  <span class="token number">4096</span> May <span class="token number">11</span>  <span class="token number">2011</span> mnt
+drwxr-xr-x   <span class="token number">2</span> root root  <span class="token number">4096</span> May <span class="token number">11</span>  <span class="token number">2011</span> media
+drwx------   <span class="token number">2</span> root root <span class="token number">16384</span> Jun <span class="token number">11</span> <span class="token number">22</span>:46 lost+found
+drwxr-xr-x  <span class="token number">19</span> root root  <span class="token number">4096</span> Jun <span class="token number">11</span> <span class="token number">23</span>:38 var
+drwxr-xr-x  <span class="token number">13</span> root root  <span class="token number">4096</span> Jun <span class="token number">11</span> <span class="token number">23</span>:38 usr
+drwxr-xr-x   <span class="token number">2</span> root root <span class="token number">12288</span> Jun <span class="token number">12</span> 04:03 sbin
+drwxr-xr-x   <span class="token number">2</span> root root  <span class="token number">4096</span> Jun <span class="token number">12</span> 04:03 bin
+drwxr-xr-x   <span class="token number">4</span> root root  <span class="token number">4096</span> Jun <span class="token number">12</span> <span class="token number">10</span>:26 home
+drwxr-xr-x   <span class="token number">6</span> root root  <span class="token number">4096</span> Jun <span class="token number">12</span> <span class="token number">10</span>:26 data
+dr-xr-xr-x <span class="token number">232</span> root root     <span class="token number">0</span> Jun <span class="token number">15</span> <span class="token number">11</span>:04 proc
+drwxr-xr-x  <span class="token number">11</span> root root     <span class="token number">0</span> Jun <span class="token number">15</span> <span class="token number">11</span>:04 sys
+drwxr-xr-x   <span class="token number">4</span> root root  <span class="token number">1024</span> Jun <span class="token number">15</span> <span class="token number">14</span>:45 boot
+drwxr-xr-x  <span class="token number">14</span> root root <span class="token number">12288</span> Jun <span class="token number">16</span> 04:02 lib
+drwxr-xr-x  <span class="token number">10</span> root root  <span class="token number">3520</span> Sep <span class="token number">26</span> <span class="token number">15</span>:38 dev
+drwxr-x---   <span class="token number">4</span> root root  <span class="token number">4096</span> Oct <span class="token number">15</span> <span class="token number">14</span>:43 root
+drwxr-xr-x  <span class="token number">75</span> root root  <span class="token number">4096</span> Oct <span class="token number">16</span> 04:02 etc
+drwxrwxrwt   <span class="token number">3</span> root root <span class="token number">98304</span> Oct <span class="token number">16</span> 08:54 tmp</code></pre>
 <p>按照特殊字符对文件进行分类</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost nginx-1.2.1<span class="token punctuation">]</span><span class="token comment"># ls -F</span>
 
@@ -390,7 +390,7 @@ auto  CHANGES  CHANGES.ru  conf  configure  contrib  html  LICENSE  Makefile  <s
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1584350099157"></script>
-<script type="text/javascript" src="../js/index.js?v=1584350099157"></script>
+<script type="text/javascript" src="../js/dt.js?v=1584405944815"></script>
+<script type="text/javascript" src="../js/index.js?v=1584405944815"></script>
 </body>
 </html>
