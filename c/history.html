@@ -6,11 +6,11 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-    <meta name="description" content="history:用于显示历史命令 - 最专业的Linux命令大全，内容包含Linux命令手册、详解、学习，值得收藏的Linux命令速查手册。">
-    <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,history,用于显示历史命令">
-    <title>history 命令，Linux history 命令详解：用于显示历史命令 -  Linux 命令搜索引擎</title>
+    <meta name="description" content="history:显示或操作历史列表。 - 最专业的Linux命令大全，内容包含Linux命令手册、详解、学习，值得收藏的Linux命令速查手册。">
+    <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,history,显示或操作历史列表。">
+    <title>history 命令，Linux history 命令详解：显示或操作历史列表。 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1585552548067">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1585552574420">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -40,17 +40,28 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/history.md">添加实例</a>
 </span>
 
-<h1 id="history">history</h1><p>用于显示历史命令</p>
-<h2 id="补充说明">补充说明</h2><p><strong>history命令</strong> 用于显示指定数目的指令命令，读取历史命令文件中的目录到历史命令缓冲区和将历史命令缓冲区中的目录写入命令文件。</p>
-<p>该命令单独使用时，仅显示历史命令，在命令行中，可以使用符号<code>!</code>执行指定序号的历史命令。例如，要执行第2个历史命令，则输入<code>!2</code>。</p>
-<p>历史命令是被保存在内存中的，当退出或者登录shell时，会自动保存或读取。在内存中，历史命令仅能够存储1000条历史命令，该数量是由环境变量<code>HISTSIZE</code>进行控制。</p>
-<h3 id="语法">语法</h3><pre><code class="language-shell">history<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span></code></pre>
-<h3 id="选项">选项</h3><pre><code class="language-shell">-c：清空当前历史命令；
--a：将历史命令缓冲区中命令写入历史命令文件中；
--r：将历史命令文件中的命令读入当前历史命令缓冲区；
--w：将当前历史命令缓冲区命令写入历史命令文件中。</code></pre>
-<h3 id="参数">参数</h3><p>n：打印最近的n条历史命令。</p>
-<h3 id="实例">实例</h3><p>使用history命令显示最近使用的10条历史命令，输入如下命令：</p>
+<h1 id="history">history</h1><p>显示或操作历史列表。</p>
+<h2 id="概要">概要</h2><pre><code class="language-shell"><span class="token function">history</span> <span class="token punctuation">[</span>-c<span class="token punctuation">]</span> <span class="token punctuation">[</span>-d offset<span class="token punctuation">]</span> <span class="token punctuation">[</span>n<span class="token punctuation">]</span>
+<span class="token function">history</span> -anrw <span class="token punctuation">[</span>filename<span class="token punctuation">]</span>
+<span class="token function">history</span> -ps arg <span class="token punctuation">[</span>arg<span class="token punctuation">..</span>.<span class="token punctuation">]</span></code></pre>
+<h2 id="主要用途">主要用途</h2><ul>
+<li><p>显示历史列表。</p>
+</li>
+<li><p>操作历史列表。</p>
+</li>
+</ul>
+<h2 id="选项">选项</h2><pre><code class="language-shell">-c           清空历史列表。
+-d offset    根据offset删除记录。如果是正数则表示offset位置的记录，如果为负数则表示从结尾向前offset位置的记录。
+-a           将当前终端的历史记录行添加到历史记录文件。
+-n           将尚未从历史文件中读取的历史行追加到当前历史列表中。
+-r           读取历史文件，并将其内容附加到历史列表中。
+-w           将当前历史记录列表附加到历史记录文件中并且附加它们到历史列表中。
+-p           在每个arg上执行历史记录扩展并在标准输出上显示结果，而不将结果存储在历史记录列表中。
+-s           将每个arg作为单个条目附加到历史记录列表。</code></pre>
+<h2 id="参数">参数</h2><p>n：可选，只列出最近的n条记录。</p>
+<p>filename：可选，表示历史文件；默认调用顺序为<code>filename</code>、环境变量<code>HISTFILE</code>、<code>~/.bash_history</code>。</p>
+<h2 id="返回值">返回值</h2><p>返回成功，除非提供了非法选项或出现了错误。</p>
+<h2 id="例子">例子</h2><p>使用history命令显示最近使用的10条历史命令</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># history 10</span>
    <span class="token number">92</span>  <span class="token function">ls</span>
    <span class="token number">93</span>  <span class="token builtin class-name">cd</span> <span class="token punctuation">..</span>
@@ -62,20 +73,21 @@
    <span class="token number">99</span>  <span class="token function">cat</span> known_hosts
   <span class="token number">100</span>  <span class="token builtin class-name">exit</span>
   <span class="token number">101</span>  <span class="token function">history</span> <span class="token number">10</span></code></pre>
-<p>列出最近3条记录</p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># history 3</span>
-   <span class="token number">15</span>  <span class="token number">2017</span>-08-26 <span class="token number">11</span>:44:35  root <span class="token function">history</span> <span class="token number">3</span>
-   <span class="token number">16</span>  <span class="token number">2017</span>-08-26 <span class="token number">11</span>:44:37  root <span class="token function">history</span> n
-   <span class="token number">17</span>  <span class="token number">2017</span>-08-26 <span class="token number">11</span>:44:40  root <span class="token function">history</span> <span class="token number">3</span></code></pre>
 <p>清空历史记录</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># history -c</span></code></pre>
 <p>更多实例:</p>
-<pre><code class="language-shell"><span class="token function">history</span> -cw
-<span class="token variable"><span class="token variable">`</span>~/.bash_history<span class="token variable">`</span></span><span class="token builtin class-name">:</span> 保存历史命令
-<span class="token variable"><span class="token variable">`</span>/etc/profile<span class="token variable">`</span></span> -<span class="token operator">></span> HISSIZE: 历史命令保存数量
-推荐添加 h -<span class="token operator">></span> history, hsi -<span class="token operator">></span> <span class="token function">history</span><span class="token operator">|</span><span class="token function">grep</span> 别名
-<span class="token variable"><span class="token variable">`</span><span class="token operator">!</span>n<span class="token variable">`</span></span><span class="token builtin class-name">:</span> 执行第 n 条历史命令
-<span class="token variable"><span class="token variable">`</span><span class="token operator">!</span>xxx<span class="token variable">`</span></span><span class="token builtin class-name">:</span> 执行最后一条 xxx 开头的命令</code></pre>
+<pre><code class="language-shell"><span class="token comment"># 执行第 n 条历史命令</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># !n</span>
+
+<span class="token comment"># 执行最后一条 xxx 开头的命令</span>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># !xxx</span></code></pre>
+<h3 id="注意">注意</h3><ol>
+<li>在命令行中，可以使用符号<code>!</code>执行指定序号的历史命令。例如，要执行第2个历史命令，则输入<code>!2</code>。</li>
+<li>关闭终端后，历史列表将被写入历史文件<code>~/.bash_history</code>。</li>
+<li>环境变量<code>HISTSIZE</code>决定了历史文件中命令的存储数量，默认存储1000条。</li>
+<li>环境变量<code>HISTTIMEFORMAT</code>如果是非空值，则使用其值作为<code>strftime(3)</code>打印相关时间戳的格式字符串添加在每个显示的历史记录之前；否则不会打印时间戳。</li>
+<li>该命令是bash内建命令，相关的帮助信息请查看<code>help</code>命令。</li>
+</ol>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 
 </div>
@@ -99,7 +111,7 @@
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1585552548068"></script>
-<script type="text/javascript" src="../js/index.js?v=1585552548068"></script>
+<script type="text/javascript" src="../js/dt.js?v=1585552574420"></script>
+<script type="text/javascript" src="../js/index.js?v=1585552574420"></script>
 </body>
 </html>
