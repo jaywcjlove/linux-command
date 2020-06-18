@@ -1,99 +1,101 @@
 test
 ===
 
-shell环境中测试条件表达式工具
+执行条件表达式。
 
-## 补充说明
-
-**test命令** 是shell环境中测试条件表达式的实用工具。
-
-###  语法
+## 概要
 
 ```shell
-test(选项)
+test [expr]
 ```
 
-###  选项
+## 主要用途
+
+- 执行条件表达式。
+
+## 参数
+
+### 文件操作符：
 
 ```shell
--b<文件>：如果文件为一个块特殊文件，则为真；
--c<文件>：如果文件为一个字符特殊文件，则为真；
--d<文件>：如果文件为一个目录，则为真；
--e<文件>：如果文件存在，则为真；
--f<文件>：如果文件为一个普通文件，则为真；
--g<文件>：如果设置了文件的SGID位，则为真；
--G<文件>：如果文件存在且归该组所有，则为真；
--k<文件>：如果设置了文件的粘着位，则为真；
--O<文件>：如果文件存在并且归该用户所有，则为真；
--p<文件>：如果文件为一个命名管道，则为真；
--r<文件>：如果文件可读，则为真；
--s<文件>：如果文件的长度不为零，则为真；
--S<文件>：如果文件为一个套接字特殊文件，则为真；
--u<文件>：如果设置了文件的SUID位，则为真；
--w<文件>：如果文件可写，则为真；
--x<文件>：如果文件可执行，则为真。
-```
-
-###  实例
-
-linux中shell编程中的test常见用法：
-
- **判断表达式** 
-
-```shell
-if test     #表达式为真
-if test !   #表达式为假
-test 表达式1 –a 表达式2     #两个表达式都为真
-test 表达式1 –o 表达式2     #两个表达式有一个为真
-test 表达式1 ! 表达式2       #条件求反
-```
-
- **判断字符串** 
+-a FILE    如果文件存在，则为true。
+-b FILE    如果文件是块特殊的，则为true。
+-c FILE    如果文件是特殊字符，则为true。
+-d FILE    如果文件是目录，则为true。
+-e FILE    如果文件存在，则为true。
+-f FILE    如果文件存在并且是常规文件，则为true。
+-g FILE    如果文件是set-group-id，则为true。
+-h FILE    如果文件是符号链接，则为true。
+-L FILE    如果文件是符号链接，则为true。
+-k FILE    如果文件的粘滞位（sticky）设置了，则为true。
+-p FILE    如果文件是命名管道，则为true。
+-r FILE    如果您可以读取文件，则为true。
+-s FILE    如果文件存在且不为空，则为true。
+-S FILE    如果文件是套接字，则为true。
+-t FD      如果在终端上打开FD，则为True。
+-u FILE    如果文件是set-user-id，则为true。
+-w FILE    如果文件可写，则为true。
+-x FILE    如果您可以执行文件，则为true。
+-O FILE    如果文件有效地归您所有，则为true。
+-G FILE    如果文件有效地归您的组所有，则为true。
+-N FILE    如果文件自上次读取以来已被修改，则为true。
+    
+FILE1 -nt FILE2    根据修改日期，如果 file1 比 file2 新，则为true。
+FILE1 -ot FILE2    根据修改日期，如果 file1 比 file2 旧，则为true。
+FILE1 -ef FILE2    如果 file1 为 file2 的硬链接，则为true。
+```    
+### 字符串运算符：
 
 ```shell
-test –n 字符串    #字符串的长度非零
-test –z 字符串    #字符串的长度是否为零
-test 字符串1＝字符串2       #字符串是否相等，若相等返回true
-test 字符串1!＝字符串2      #字符串是否不等，若不等反悔false
+-z STRING              如果字符串为空，则为true。
+-n STRING              如果字符串不为空，则为true。
+STRING                 如果字符串不为空，则为true。
+STRING1 = STRING2      如果字符串相等，则为true。
+STRING1 ！= STRING2    如果字符串不相等，则为true。
+STRING1 < STRING2      如果 STRING1 的字典排序在 STRING2 之前，则为true。
+STRING1 > STRING2      如果 STRING1 在字典排序在 STRING2 之后，则为true。
 ```
 
- **判断整数** 
+### 其他运算符：
 
 ```shell
-test 整数1 -eq 整数2    #整数相等
-test 整数1 -ge 整数2    #整数1大于等于整数2
-test 整数1 -gt 整数2    #整数1大于整数2
-test 整数1 -le 整数2    #整数1小于等于整数2
-test 整数1 -lt 整数2    #整数1小于整数2
-test 整数1 -ne 整数2    #整数1不等于整数2
+-o OPTION         如果启用了shell选项OPTION，则为true。
+-v VAR            如果设置了shell变量VAR，则为true。
+-R VAR            如果设置了shell变量VAR并且是变量引用，则为true。
+！EXPR            如果expr为假，则为true。
+EXPR1 -a EXPR2    如果expr1和expr2都为true，则为true。
+EXPR1 -o EXPR2    如果expr1或expr2为true，则为true。
+arg1 OP arg2      算术表达式测试； OP是 -eq，-ne，-lt，-le，-gt，-ge 中的一个；算术表达式为真时返回true。
 ```
 
- **判断文件** 
+## 返回值
+
+如果表达式执行结果为成功时返回0，当表达式执行结果为失败或给出非法参数时返回1。
+
+## 例子
 
 ```shell
-test File1 –ef File2    两个文件是否为同一个文件，可用于硬连接。主要判断两个文件是否指向同一个inode。
-test File1 –nt File2    判断文件1是否比文件2新
-test File1 –ot File2    判断文件1比是否文件2旧
-test –b file   #文件是否块设备文件
-test –c File   #文件并且是字符设备文件
-test –d File   #文件并且是目录
-test –e File   #文件是否存在 （常用）
-test –f File   #文件是否为正规文件 （常用）
-test –g File   #文件是否是设置了组id
-test –G File   #文件属于的有效组ID
-test –h File   #文件是否是一个符号链接（同-L）
-test –k File   #文件是否设置了Sticky bit位
-test –b File   #文件存在并且是块设备文件
-test –L File   #文件是否是一个符号链接（同-h）
-test –o File   #文件的属于有效用户ID
-test –p File   #文件是一个命名管道
-test –r File   #文件是否可读
-test –s File   #文件是否是非空白文件
-test –t FD     #文件描述符是在一个终端打开的
-test –u File   #文件存在并且设置了它的set-user-id位
-test –w File   #文件是否存在并可写
-test –x File   #文件属否存在并可执行
+# 执行条件表达式并显示返回值。
+[root@pc root]$ test ! "abc" == 123; echo $?
+0
+
+# 等价形式，注意：方括号 [ 后面的空格以及方括号 ] 前面的空格。
+[root@pc root]$ [ ! "abc" == 123 ]; echo $?
+0
+
+[root@pc root]$ [[ ! "abc" == 123 ]]; echo $?
+0
 ```
+
+
+### 注意
+
+1. 该命令等价于 `[`。
+2. 编写 bash 条件表达式可用内建命令 `test`， `[` ，组合命令 `[[`；
+  > - 关于条件表达式可以查看[这里](http://www.gnu.org/software/bash/manual/html_node/Bash-Conditional-Expressions.html#Bash-Conditional-Expressions)；
+  > - 关于内建命令的索引可以查看[这里](http://www.gnu.org/software/bash/manual/html_node/Builtin-Index.html#Builtin-Index)；
+  > - 关于组合命令的索引可以查看[这里](http://www.gnu.org/software/bash/manual/html_node/Reserved-Word-Index.html#Reserved-Word-Index)
+3. 该命令是bash内建命令，相关的帮助信息请查看`help`命令。
 
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
