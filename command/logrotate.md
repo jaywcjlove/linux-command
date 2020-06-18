@@ -78,6 +78,21 @@ dateext                  使用当期日期作为命名格式
 dateformat .%s           配合dateext使用，紧跟在下一行出现，定义文件切割后的文件名，必须配合dateext使用，只支持 %Y %m %d %s 这四个参数
 size(或minsize) log-size 当日志文件到达指定的大小时才转储
 ```
+### 注意事项
 
+在`/etc/logrotate.d`目录下创建任意后缀名的文件
+```shell
+/tmp/log/log*
+{
+    copytruncate
+    daily
+    rotate 30
+    missingok
+    ifempty
+    compress
+    noolddir
+}
+```
+这种情况下，会将轮转过的log再重新轮转,因为轮转过后的文件名也是已log开头的
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
