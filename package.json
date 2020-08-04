@@ -30,7 +30,7 @@
     "fs-extra": "7.0.0",
     "gh-pages": "2.0.0",
     "loading-cli": "1.1.0",
-    "marked": "0.6.3",
+    "marked": "1.1.1",
     "path": "0.12.7",
     "prismjs": "1.19.0",
     "sitemap-generator": "8.4.2",
