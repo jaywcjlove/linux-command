@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,tar,将许多文件一起保存至一个单独的磁带或磁盘归档，并能从归档中单独还原所需文件。">
     <title>tar 命令，Linux tar 命令详解：将许多文件一起保存至一个单独的磁带或磁盘归档，并能从归档中单独还原所需文件。 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1596635682431">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1596635775640">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -43,7 +43,7 @@
 <h1 id="tar">tar</h1><p>将许多文件一起保存至一个单独的磁带或磁盘归档，并能从归档中单独还原所需文件。</p>
 <h2 id="补充说明">补充说明</h2><p><strong>tar命令</strong> 可以为linux的文件和目录创建档案。利用tar，可以为某一特定文件创建档案（备份文件），也可以在档案中改变文件，或者向档案中加入新的文件。tar最初被用来在磁带上创建档案，现在，用户可以在任何设备上创建档案。利用tar命令，可以把一大堆的文件和目录全部打包成一个文件，这对于备份文件或将几个文件组合成为一个文件以便于网络传输是非常有用的。</p>
 <p>首先要弄清两个概念：打包和压缩。打包是指将一大堆文件或目录变成一个总的文件；压缩则是将一个大的文件通过一些压缩算法变成一个小文件。</p>
-<p>为什么要区分这两个概念呢？这源于Linux中很多压缩程序只能针对一个文件进行压缩，这样当你想要压缩一大堆文件时，你得先将这一大堆文件先打成一个包（tar命令），然后再用压缩程序进行压缩（gzip bzip2命令）。</p>
+<p>为什么要区分这两个概念呢？这源于Linux中很多压缩程序只能针对一个文件进行压缩，这样当你想要压缩一大堆文件时，你得先将这一大堆文件先打成一个包（tar命令），然后再用压缩程序进行压缩（gzip bzip2命令）。</p>
 <h3 id="语法">语法</h3><pre><code class="language-shell"><span class="token function">tar</span> <span class="token punctuation">[</span>选项<span class="token punctuation">..</span>.<span class="token punctuation">]</span> <span class="token punctuation">[</span>FILE<span class="token punctuation">]</span><span class="token punctuation">..</span>.</code></pre>
 <h3 id="选项">选项</h3><pre><code class="language-shell">-A, --catenate, --concatenate   追加 <span class="token function">tar</span> 文件至归档
 -c, --create               创建一个新归档
@@ -392,19 +392,19 @@ Main-class: the_name_of_the_main_class_should_be_put_here</code></pre>
 <pre><code class="language-shell"><span class="token function">tar</span> -cvf log.tar log2012.log    仅打包，不压缩！
 <span class="token function">tar</span> -zcvf log.tar.gz log2012.log   打包后，以 <span class="token function">gzip</span> 压缩
 <span class="token function">tar</span> -jcvf log.tar.bz2 log2012.log  打包后，以 <span class="token function">bzip2</span> 压缩</code></pre>
-<p>在选项<code>f</code>之后的文件档名是自己取的，我们习惯上都用 .tar 来作为辨识。 如果加<code>z</code>选项，则以.tar.gz或.tgz来代表gzip压缩过的tar包；如果加<code>j</code>选项，则以.tar.bz2来作为tar包名。</p>
+<p>在选项<code>f</code>之后的文件档名是自己取的，我们习惯上都用 .tar 来作为辨识。 如果加<code>z</code>选项，则以.tar.gz或.tgz来代表gzip压缩过的tar包；如果加<code>j</code>选项，则以.tar.bz2来作为tar包名。</p>
 <p><strong>解压目录</strong></p>
 <p>去掉第一层目录结构，要出除第二层，--strip-components 2</p>
 <pre><code class="language-shell"><span class="token function">tar</span> -xvf portal-web-v2.0.0.tar --strip-components <span class="token number">1</span>  -C 指定目录</code></pre>
 <p><strong>查阅上述tar包内有哪些文件</strong> ：</p>
 <pre><code class="language-shell"><span class="token function">tar</span> -ztvf log.tar.gz</code></pre>
-<p>由于我们使用 gzip 压缩的log.tar.gz，所以要查阅log.tar.gz包内的文件时，就得要加上<code>z</code>这个选项了。</p>
+<p>由于我们使用 gzip 压缩的log.tar.gz，所以要查阅log.tar.gz包内的文件时，就得要加上<code>z</code>这个选项了。</p>
 <p><strong>将tar包解压缩</strong> ：</p>
 <pre><code class="language-shell"><span class="token function">tar</span> -zxvf /opt/soft/test/log.tar.gz</code></pre>
 <p>在预设的情况下，我们可以将压缩档在任何地方解开的</p>
 <p><strong>只将tar内的部分文件解压出来</strong> ：</p>
 <pre><code class="language-shell"><span class="token function">tar</span> -zxvf /opt/soft/test/log30.tar.gz log2013.log</code></pre>
-<p>我可以透过<code>tar -ztvf</code>来查阅 tar 包内的文件名称，如果单只要一个文件，就可以透过这个方式来解压部分文件！</p>
+<p>我可以透过<code>tar -ztvf</code>来查阅 tar 包内的文件名称，如果单只要一个文件，就可以透过这个方式来解压部分文件！</p>
 <p><strong>文件备份下来，并且保存其权限</strong> ：</p>
 <pre><code class="language-shell"><span class="token function">tar</span> -zcvpf log31.tar.gz log2014.log log2015.log log2016.log</code></pre>
 <p>这个<code>-p</code>的属性是很重要的，尤其是当您要保留原本文件的属性时。</p>
@@ -441,7 +441,7 @@ Main-class: the_name_of_the_main_class_should_be_put_here</code></pre>
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1596635682431"></script>
-<script type="text/javascript" src="../js/index.js?v=1596635682431"></script>
+<script type="text/javascript" src="../js/dt.js?v=1596635775640"></script>
+<script type="text/javascript" src="../js/index.js?v=1596635775640"></script>
 </body>
 </html>
