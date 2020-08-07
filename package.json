@@ -32,7 +32,7 @@
     "loading-cli": "1.1.0",
     "marked": "1.1.1",
     "path": "0.12.7",
-    "prismjs": "1.19.0",
+    "prismjs": "1.21.0",
     "sitemap-generator": "8.4.2",
     "sqlite3": "4.1.1",
     "stylus": "0.54.7",
