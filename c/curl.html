@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,curl,利用URL规则在命令行下工作的文件传输工具">
     <title>curl 命令，Linux curl 命令详解：利用URL规则在命令行下工作的文件传输工具 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1596854429295">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1597043675807">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -274,6 +274,42 @@ X-Pingback: http://wangchujiang.com/xmlrpc.php</code></pre>
 <pre><code class="language-shell">&#36; <span class="token function">curl</span> --trace - https://www.example.com</code></pre>
 <p><strong>获取本机外网ip</strong></p>
 <pre><code class="language-shell"><span class="token function">curl</span> ipecho.net/plain</code></pre>
+<p><strong>使用 curl 测试网站加载速度</strong></p>
+<p>命令有一个鲜为人知的选项，<code>-w</code>，该选项在请求结束之后打印本次请求的统计数据到标准输出。</p>
+<p>首先，我们定义控制打印行为的格式化字符串。新建文本文件 <code>fmt.txt</code>，并填入下面的内容：</p>
+<pre><code class="language-ruby">\n
+<span class="token constant">Response</span> <span class="token builtin">Time</span> <span class="token keyword">for</span><span class="token punctuation">:</span> <span class="token string">%{url_effective}</span>\n\n
+<span class="token constant">DNS</span> <span class="token constant">Lookup</span> <span class="token builtin">Time</span><span class="token punctuation">:</span>\t\t<span class="token string">%{time_namelookup}</span>s\n
+<span class="token constant">Redirection</span> <span class="token builtin">Time</span><span class="token punctuation">:</span>\t\t<span class="token string">%{time_redirect}</span>s\n
+<span class="token constant">Connection</span> <span class="token builtin">Time</span><span class="token punctuation">:</span>\t\t<span class="token string">%{time_connect}</span>s\n
+<span class="token constant">App</span> <span class="token constant">Connection</span> <span class="token builtin">Time</span><span class="token punctuation">:</span>\t\t<span class="token string">%{time_appconnect}</span>s\n
+<span class="token constant">Pre</span><span class="token operator">-</span>transfer <span class="token builtin">Time</span><span class="token punctuation">:</span>\t\t<span class="token string">%{time_pretransfer}</span>s\n
+<span class="token constant">Start</span><span class="token operator">-</span>transfer <span class="token builtin">Time</span><span class="token punctuation">:</span>\t\t<span class="token string">%{time_starttransfer}</span>s\n\n
+<span class="token constant">Total</span> <span class="token builtin">Time</span><span class="token punctuation">:</span>\t\t\t<span class="token string">%{time_total}</span>s\n</code></pre>
+<p>curl 提供了很多置换变量，可以在格式化字符串中通过 <code>%{var}</code> 的形式使用。完整的变量列表可以在 <code>curl</code> 的 <code>manpage</code> 中查看。简单介绍一下我们使用的这几个变量：</p>
+<ul>
+<li><code>url_effective</code>: 执行完地址重定向之后的最终 URL；</li>
+<li><code>time_namelookup</code>: 从请求开始至完成名称解析所花的时间，单位为秒，下同；</li>
+<li><code>time_redirect</code>: 执行所有重定向所花的时间；</li>
+<li><code>time_connect</code>: 从请求开始至建立 TCP 连接所花的时间；</li>
+<li><code>time_appconnect</code>: 从请求开始至完成 SSL/SSH 握手所花的时间；</li>
+<li><code>time_pretransfer</code>: 从请求开始至服务器准备传送文件所花的时间，包含了传送协商时间；</li>
+<li><code>time_starttransfer</code>: 从请求开始至服务器准备传送第一个字节所花的时间；</li>
+<li><code>time_total</code>: 完整耗时。</li>
+</ul>
+<p>然后执行请求，通过 @filename 指定保存了格式化字符串的文件：</p>
+<pre><code class="language-shell">&#36; <span class="token function">curl</span> -L -s -w @fmt.txt -o /dev/null http://www.google.com</code></pre>
+<p>输出：</p>
+<pre><code class="language-c">Response Time <span class="token keyword">for</span><span class="token operator">:</span> http<span class="token operator">:</span><span class="token comment">//www.google.co.jp/?gfe_rd=cr&amp;dcr=0&amp;ei=cjIaWpTkHeiQ8QfnxYzoBA</span>
+
+DNS Lookup Time<span class="token operator">:</span>        <span class="token number">0.000038</span>s
+Redirection Time<span class="token operator">:</span>       <span class="token number">0.207271</span>s
+Connection Time<span class="token operator">:</span>        <span class="token number">0.000039</span>s
+App Connection Time<span class="token operator">:</span>    <span class="token number">0.000039</span>s
+Pre<span class="token operator">-</span>transfer Time<span class="token operator">:</span>      <span class="token number">0.000067</span>s
+Start<span class="token operator">-</span>transfer Time<span class="token operator">:</span>    <span class="token number">0.260115</span>s
+
+Total Time<span class="token operator">:</span>             <span class="token number">0.467691</span>s</code></pre>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 
 </div>
@@ -297,7 +333,7 @@ X-Pingback: http://wangchujiang.com/xmlrpc.php</code></pre>
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1596854429296"></script>
-<script type="text/javascript" src="../js/index.js?v=1596854429296"></script>
+<script type="text/javascript" src="../js/dt.js?v=1597043675807"></script>
+<script type="text/javascript" src="../js/index.js?v=1597043675807"></script>
 </body>
 </html>
