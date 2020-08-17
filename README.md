@@ -2,10 +2,8 @@
   <a href="https://jaywcjlove.github.io/linux-command">
     <img src="./template/img/banner.svg?sanitize=true">
   </a>
+  <h1>Linux Command</h1>
 </p>
-
-Linux Command
---- 
 
 [![](https://jaywcjlove.github.io/sb/ico/linux.svg)](https://jaywcjlove.github.io/linux-command/) [![](https://jaywcjlove.github.io/sb/ico/weibo.svg)](http://weibo.com/pc175) [![](https://jaywcjlove.github.io/sb/ico/npm.svg)](https://www.npmjs.com/package/linux-command)
 
@@ -76,7 +74,7 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 
 #### Dash 版本
 
-由 [**@SHANG殇**](https://github.com/xinshangshangxin) 提供的 `Dash` 版本 [#91](https://github.com/jaywcjlove/linux-command/pull/91)，可配合 `alfred` 玩耍，下载 [linux-command.docset.zip](https://github.com/jaywcjlove/linux-command/releases) 文件解压，点击安装即可。
+由 [**@SHANG殇**](https://github.com/xinshangshangxin) 提供的 `Dash` 版本 [#91](https://github.com/jaywcjlove/linux-command/pull/91)，可配合 `alfred` 玩耍，下载 [linux-command.docset.zip](https://jaywcjlove.github.io/linux-command/linux-command.docset.zip) 文件解压，点击安装即可。
 
 [![](https://user-images.githubusercontent.com/8779091/57193499-5b475d00-6f6e-11e9-879d-e7e8fdc40ced.gif)](https://github.com/jaywcjlove/linux-command/releases)
 
@@ -87,26 +85,33 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 
 ## 目录
 
+- [开发使用](#开发使用)
+    - [Chrome 插件](#chrome-插件)
+    - [Web 版本](#web-版本)
+    - [Alfred 版本](#alfred-版本)
+    - [Dash 版本](#dash-版本)
+    - [命令行工具](#命令行工具)
+- [目录](#目录)
 - [Linux命令分类](#linux命令分类)
-  - [文件管理](#文件管理) File Management
-  - [文件传输](#文件传输) File Transfer
-  - [文本处理](#文本处理) File Editor
-  - [备份压缩](#备份压缩) File Compression
-  - [系统管理](#系统管理) System Management
-  - [系统设置](#系统设置) System Settings
-  - [网络通讯](#网络通讯) Network Communication
-  - [磁盘管理](#磁盘管理) Disk Management
-  - [磁盘维护](#磁盘维护) Disk Maintenance
-  - [设备管理](#设备管理) Device Commands
+  - [文件传输](#文件传输)
+  - [备份压缩](#备份压缩)
+  - [文件管理](#文件管理)
+  - [磁盘管理](#磁盘管理)
+  - [磁盘维护](#磁盘维护)
+  - [系统设置](#系统设置)
+  - [系统管理](#系统管理)
+  - [文本处理](#文本处理)
+  - [网络通讯](#网络通讯)
+  - [设备管理](#设备管理)
   - [电子邮件与新闻组](#电子邮件与新闻组)
-  - [其他命令](#其他命令) Misc Commands
-- [Node调用](#node调用)
+  - [其他命令](#其他命令)
 - [Linux学习资源整理](#linux学习资源整理)
- - [社区网站](#社区网站) 
- - [知识相关](#知识相关) 
- - [软件工具](#软件工具) 
- - [中国开源镜像站点](#中国开源镜像站点) 
- - [游戏玩家发行版](#游戏玩家发行版) 
+  - [社区网站](#社区网站)
+  - [知识相关](#知识相关)
+  - [软件工具](#软件工具)
+  - [中国开源镜像站点](#中国开源镜像站点)
+  - [游戏玩家发行版](#游戏玩家发行版)
+- [Team](#team)
 
 
 ## Linux命令分类
