@@ -24,6 +24,7 @@ jobs:
 
     - run: npm install
     - run: npm run build
+    - run: npm run dash
 
     - name: Build and Deploy
       uses: peaceiris/actions-gh-pages@v2.5.0
