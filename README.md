@@ -7,44 +7,21 @@
 
 [![](https://jaywcjlove.github.io/sb/ico/linux.svg)](https://jaywcjlove.github.io/linux-command/) [![](https://jaywcjlove.github.io/sb/ico/weibo.svg)](http://weibo.com/pc175) [![](https://jaywcjlove.github.io/sb/ico/npm.svg)](https://www.npmjs.com/package/linux-command)
 
-
-570 多个 Linux 命令，内容包含 Linux 命令手册、详解、学习，值得收藏的 Linux 命令速查手册。请原谅我写了个爬虫，爬了他们家的数据 [linuxde.net](http://man.linuxde.net) ，同时进行了编辑，增加了一些数据。对他们的辛勤劳动表示敬意，个人希望能本地离线搜索，不喜欢广告，希望得到干净漂亮的预览界面，业余和工作时间需要使用大量的命令，所以干了一件看似比较愚蠢的事情，在回头有空的时候估计能做一个App？或者是命令行帮助工具？但目前还没有计划...
+当前仓库搜集了 570 多个 Linux 命令，是一个非盈利性的仓库，生成了一个 web 网站方便使用，目前网站没有任何广告，内容包含 Linux 命令手册、详解、学习，内容来自网络和网友的补充，非常值得收藏的 Linux 命令速查手册。版权归属原作者，对任何法律问题及风险不承担任何责任，没有任何商业目的，如果认为侵犯了您的版权，请来信告知。我不能完全保证内容的正确性。通过使用本站内容带来的风险与我无关。当使用本站时，代表您已接受了本站的使用条款和隐私条款。
 
 [Web](#web-版本) | [Dash](#dash-版本) | [Alfred](#alfred-版本) | [KDE/Krunner](https://github.com/roachsinai/krunner-linuxcommands) | [Android](https://github.com/Ernest-su/LinuxCmd.git) | [Mac/Win/Linux](https://github.com/haloislet/linux-command) | [Chrome Plugin](#chrome-插件) | [命令行工具](#命令行工具)
 
-## 开发使用
+#### Web 版本
 
-可以通过 `npm` 安装 [`linux-command`](https://www.npmjs.com/package/linux-command) 包，包含所有命令的 markdown 文本，和一个[索引文件](dist/data.json)。
+[Github Web](http://jaywcjlove.github.io/linux-command/) | [OSChina Web](http://jaywcjlove.gitee.io/linux-command/) | [Githack](https://raw.githack.com/jaywcjlove/linux-command/gh-pages/index.html) | [Statically](https://cdn.statically.io/gh/jaywcjlove/linux-command/gh-pages/index.html)
 
-```bash
-npm install linux-command
-```
+扫描二维码移动端预览搜索，也可通过二维码下面链接地址打开使用，下面网站是通过 Github Action 自动更新。
 
-```js
-var comm = require("linux-command");
-console.log("---->", comm.ls);
+[![Linux 命令大全](./assets/qr.png)](https://jaywcjlove.github.io/linux-command/)
 
-var alias = require("linux-command/command/alias.md");
-console.log("---->", alias); // markdown string
-```
+预览搜索：**https://git.io/linux**
 
-你也可以通过 CDN 来访问索引数据，和对应的命令详细内容，我将更新内容定期发布版本，提供大家使用，[UNPKG](https://unpkg.com/linux-command/) 带上版本号，将锁定版本访问，删除版本号请求数据，将会自动重定向最新版本。
-
-```shell
-# 命令索引 JSON 数据
-https://unpkg.com/linux-command/dist/data.json
-# 对应命令详情（Markdown）数据
-https://unpkg.com/linux-command/command/<命令名称>.md
-```
-
-你也可以通过 Github 的 Raw 来，获取最新的内容
-
-```shell
-# 命令索引 JSON 数据
-https://raw.githubusercontent.com/jaywcjlove/linux-command/master/dist/data.json
-# 对应命令详情（Markdown）数据
-https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命令名称>.md 
-```
+[![Linux 命令大全](./assets/Linux.gif)](https://jaywcjlove.github.io/linux-command/)
 
 #### Chrome 插件
 
@@ -53,18 +30,6 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 [![Chrome Web Store 下载](http://jaywcjlove.github.io/sb/download/chrome-web-store.svg)](https://chrome.google.com/webstore/detail/oscnews/iheapfheanfjcemgneblljhaebonakbg)
 
 [![Chrome Web Store 下载](./assets/chrome-extensions.gif)](https://github.com/jaywcjlove/oscnews)
-
-#### Web 版本
-
-[Github Web](http://jaywcjlove.github.io/linux-command/) | [OSChina Web](http://jaywcjlove.gitee.io/linux-command/) | [Githack](https://raw.githack.com/jaywcjlove/linux-command/gh-pages/index.html) | [Statically](https://cdn.statically.io/gh/jaywcjlove/linux-command/gh-pages/index.html)
-
-扫描二维码移动端预览搜索，也可通过二维码下面链接地址打开使用。
-
-[![Linux 命令大全](./assets/qr.png)](https://jaywcjlove.github.io/linux-command/)
-
-预览搜索：**https://git.io/linux**
-
-[![Linux 命令大全](./assets/Linux.gif)](https://jaywcjlove.github.io/linux-command/)
 
 #### Alfred 版本
 
@@ -83,14 +48,9 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 - [`@chenjiandongx/how`](https://github.com/chenjiandongx/how) Python 版 [#129](https://github.com/jaywcjlove/linux-command/issues/129)，由 [**@陈键冬**](https://github.com/chenjiandongx) 提供。
 - [`@chenjiandongx/pls`](https://github.com/chenjiandongx/pls) Golang 版 [#129](https://github.com/jaywcjlove/linux-command/issues/129)，由 [**@陈键冬**](https://github.com/chenjiandongx) 提供。
 
+
 ## 目录
 
-- [开发使用](#开发使用)
-    - [Chrome 插件](#chrome-插件)
-    - [Web 版本](#web-版本)
-    - [Alfred 版本](#alfred-版本)
-    - [Dash 版本](#dash-版本)
-    - [命令行工具](#命令行工具)
 - [目录](#目录)
 - [Linux命令分类](#linux命令分类)
   - [文件传输](#文件传输)
@@ -105,6 +65,7 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
   - [设备管理](#设备管理)
   - [电子邮件与新闻组](#电子邮件与新闻组)
   - [其他命令](#其他命令)
+- [开发使用](#开发使用)
 - [Linux学习资源整理](#linux学习资源整理)
   - [社区网站](#社区网站)
   - [知识相关](#知识相关)
@@ -165,6 +126,41 @@ archive、ctlinnd、elm、getlist、inncheck、mail、mailconf、mailq、message
 ### 其他命令
 
 yes
+
+
+## 开发使用
+
+可以通过 `npm` 安装 [`linux-command`](https://www.npmjs.com/package/linux-command) 包，包含所有命令的 markdown 文本，和一个[索引文件](dist/data.json)。
+
+```bash
+npm install linux-command
+```
+
+```js
+var comm = require("linux-command");
+console.log("---->", comm.ls);
+
+var alias = require("linux-command/command/alias.md");
+console.log("---->", alias); // markdown string
+```
+
+你也可以通过 CDN 来访问索引数据，和对应的命令详细内容，我将更新内容定期发布版本，提供大家使用，[UNPKG](https://unpkg.com/linux-command/) 带上版本号，将锁定版本访问，删除版本号请求数据，将会自动重定向最新版本。
+
+```shell
+# 命令索引 JSON 数据
+https://unpkg.com/linux-command/dist/data.json
+# 对应命令详情（Markdown）数据
+https://unpkg.com/linux-command/command/<命令名称>.md
+```
+
+你也可以通过 Github 的 Raw 来，获取最新的内容
+
+```shell
+# 命令索引 JSON 数据
+https://raw.githubusercontent.com/jaywcjlove/linux-command/master/dist/data.json
+# 对应命令详情（Markdown）数据
+https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命令名称>.md 
+```
 
 ## Linux学习资源整理
 
