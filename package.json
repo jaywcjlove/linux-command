@@ -4,7 +4,7 @@
   "description": "Linux Command",
   "main": "dist/data.json",
   "scripts": {
-    "start": "npm run build && npm run deploy",
+    "start": "npm run build",
     "build": "node build/build.js",
     "dash": "npm run build && node build/dash.js"
   },
