@@ -321,7 +321,7 @@ find . -type f -name "*.txt" -exec printf "File: %s\n" {} \;
 -exec ./text.sh {} \;
 ```
 
-#### 搜索但跳出指定的目录
+#### 搜索但跳过指定的目录
 
 查找当前目录或者子目录下所有.txt文件，但是跳过子目录sk
 
