@@ -356,7 +356,7 @@ web03[192.168.2.102]
 mysqld            ok
 httpd               ok
 0
-awk '/^web/{T=$0;next;}{print T":t"$0;}' test.txt
+awk '/^web/{T=$0;next;}{print T":"t,$0;}' text.txt
 web01[192.168.2.100]:   httpd            ok
 web01[192.168.2.100]:   tomcat               ok
 web01[192.168.2.100]:   sendmail               ok
