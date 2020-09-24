@@ -66,6 +66,14 @@ ftp> ? [command] # 同HELP. [command]指定需要帮助的命令名称。如果�
 ftp> ! # 从 ftp 子系统退出到外壳。
 ```
 
+FTP 匿名登录账号密码
+
+```shell
+账号：anonymous
+密码: anonymous@
+```
+
+
 关闭FTP连接
 
 ```shell
