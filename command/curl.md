@@ -462,5 +462,31 @@ Start-transfer Time:    0.260115s
 Total Time:             0.467691s
 ```
 
+### 要求返回是压缩的状态
+
+```shell
+▶ curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    54  100    54    0     0     42      0  0:00:01  0:00:01 --:--:--    42
+100  2341  100  2341    0     0   1202      0  0:00:01  0:00:01 --:--:--  9289
+Installing Yarn!
+> Downloading tarball...
+
+[1/2]: https://yarnpkg.com/latest.tar.gz --> /var/folders/j7/3xly5sk567s65ny5dnr__3b80000gn/T/yarn.tar.gz.XXXXXXXXXX.9hJsBsrA
+  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+                                 Dload  Upload   Total   Spent    Left  Speed
+100    57  100    57    0     0     72      0 --:--:-- --:--:-- --:--:--    72
+100    93  100    93    0     0     63      0  0:00:01  0:00:01 --:--:--    63
+100   643  100   643    0     0    248      0  0:00:02  0:00:02 --:--:--   707
+100 1215k  100 1215k    0     0   153k      0  0:00:07  0:00:07 --:--:--  305k
+
+[2/2]: https://yarnpkg.com/latest.tar.gz.asc --> /var/folders/j7/3xly5sk567s65ny5dnr__3b80000gn/T/yarn.tar.gz.XXXXXXXXXX.9hJsBsrA.asc
+100    61  100    61    0     0    356      0 --:--:-- --:--:-- --:--:--   356
+100    97  100    97    0     0    325      0 --:--:-- --:--:-- --:--:--   325
+100   647  100   647    0     0   1283      0 --:--:-- --:--:-- --:--:--  1283
+100   832  100   832    0     0   1107      0 --:--:-- --:--:-- --:--:--  812k
+```
+
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
