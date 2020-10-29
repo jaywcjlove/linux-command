@@ -157,7 +157,7 @@ wget默认会以最后一个符合`/`的后面的字符来命令，对于动态�
 wget http://www.jsdig.com/download?id=1
 ```
 
-即使下载的文件是zip格式，它仍然以`download.php?id=1080`命令。
+即使下载的文件是zip格式，它仍然以`download.php?id=1080`命名。
 
 正确：为了解决这个问题，我们可以使用参数`-O`来指定一个文件名：
 
