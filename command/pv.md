@@ -27,42 +27,42 @@ pv [OPTION] [FILE]...
 ###  选项
 
 ```shell
--p, --progress           show progress bar
--t, --timer              show elapsed time
--e, --eta                show estimated time of arrival (completion)
--I, --fineta             show absolute estimated time of arrival
-                         (completion)
--r, --rate               show data transfer rate counter
--a, --average-rate       show data transfer average rate counter
--b, --bytes              show number of bytes transferred
--T, --buffer-percent     show percentage of transfer buffer in use
--A, --last-written NUM   show NUM bytes last written
--F, --format FORMAT      set output format to FORMAT
+-p, --progress           显示进度条
+-t, --timer              显示已用时间
+-e, --eta                显示预计到达时间 (完成)
+-I, --fineta             显示绝对估计到达时间
+                         (完成)
+-r, --rate               显示数据传输速率计数器
+-a, --average-rate       显示数据传输平均速率计数器
+-b, --bytes              显示传输的字节数
+-T, --buffer-percent     显示正在使用的传输缓冲区百分比
+-A, --last-written NUM   显示上次写入的字节数
+-F, --format FORMAT      将输出格式设置为FORMAT
 -n, --numeric            输出百分比
--q, --quiet              do not output any transfer information at all
+-q, --quiet              不输出任何信息
 
--W, --wait               display nothing until first byte transferred
--D, --delay-start SEC    display nothing until SEC seconds have passed
--s, --size SIZE          set estimated data size to SIZE bytes
--l, --line-mode          count lines instead of bytes
--0, --null               lines are null-terminated
--i, --interval SEC       update every SEC seconds
--w, --width WIDTH        assume terminal is WIDTH characters wide
--H, --height HEIGHT      assume terminal is HEIGHT rows high
--N, --name NAME          prefix visual information with NAME
--f, --force              output even if standard error is not a terminal
--c, --cursor             use cursor positioning escape sequences
+-W, --wait               在传输第一个字节之前不显示任何内容
+-D, --delay-start SEC    在SEC秒过去之前不显示任何内容
+-s, --size SIZE          将估算的数据大小设置为SIZE字节
+-l, --line-mode          计算行数而不是字节数 
+-0, --null               行以零结尾
+-i, --interval SEC       每SEC秒更新一次
+-w, --width WIDTH        假设终端的宽度为WIDTH个字符 
+-H, --height HEIGHT      假设终端高度为HEIGHT行
+-N, --name NAME          在可视信息前面加上名称
+-f, --force              将标准错误输出到终端
+-c, --cursor             使用光标定位转义序列
 
--L, --rate-limit RATE    limit transfer to RATE bytes per second
--B, --buffer-size BYTES  use a buffer size of BYTES
--C, --no-splice          never use splice(), always use read/write
--E, --skip-errors        skip read errors in input
--S, --stop-at-size       stop after --size bytes have been transferred
--R, --remote PID         update settings of process PID
+-L, --rate-limit RATE    将传输限制为每秒RATE字节
+-B, --buffer-size BYTES  使用BYTES的缓冲区大小
+-C, --no-splice          从不使用splice()，始终使用读/写
+-E, --skip-errors        跳过输入中的读取错误
+-S, --stop-at-size       传输--size字节后停止
+-R, --remote PID         更新过程PID的设置
 
--P, --pidfile FILE       save process ID in FILE
+-P, --pidfile FILE       将进程ID保存在FILE中 
 
--d, --watchfd PID[:FD]   watch file FD opened by process PID
+-d, --watchfd PID[:FD]   监视进程PID,打开的文件FD
 
 -h, --help               显示帮助
 -V, --version            显示版本信息
@@ -99,4 +99,9 @@ sudo pv -cN source < /Users/kacperwang/Downloads/CentOS-7-x86_64-Everything-1511
 source:  5.2GiB 5:11:41 [ 503KiB/s] [=====================>       ] 71% ETA 2:01:56
 ```
 
+在linux上, 如果执行的一些命令或者一些脚本需要花费很长时间, 但又不能拿出更多的精力反复盯着有没有执行结束, 这时候可以用pv监听PID, 任务完成后通过网络通知到微信或者钉钉, 这样就可以腾出来精力做其他的事, 是不是很棒
+
+```shell
+$ pv -d $(ps -ef | grep -v grep | grep "<脚本或命令的关键字>" | awk '{print $2}') && <这里执行发通知脚本或者命令,脚本或命令需要提前调试好>
+```
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
