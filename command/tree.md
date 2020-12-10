@@ -106,4 +106,17 @@ tree -L 2 > /home/www/tree.txt # 当前目录结果存到 tree.txt 文件中
 tree -I 'node_modules|icon|font' -L 2
 ```
 
+非树状结构列出目录`/private/`下的所有文件
+
+```
+tree -if /private/
+/private
+/private/a1
+/private/a2
+/private/etc
+/private/etc/b1
+/private/etc/b2
+/private/tftpboot
+```
+
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
