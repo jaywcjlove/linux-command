@@ -54,22 +54,22 @@ $ du -sh * | sort -h # 按文件大小排序
 显示目录或者文件所占空间：
 
 ```shell
-root@localhost [test]# du
-608 ./test6
-308 ./test4
-4 ./scf/lib
-4 ./scf/service/deploy/product
-4 ./scf/service/deploy/info
-12 ./scf/service/deploy
-16 ./scf/service
-4 ./scf/doc
-4 ./scf/bin
-32 ./scf
-8 ./test3
-1288 .
+root@localhost [test]# du -sh ./*
+608K ./test6
+308M ./test4
+4K ./scf/lib
+4K ./scf/service/deploy/product
+4K ./scf/service/deploy/info
+12G./scf/service/deploy
+16M ./scf/service
+4K ./scf/doc
+4K ./scf/bin
+32K ./scf
+8M ./test3
+12.34G .
 ```
 
-只显示当前目录下面的子目录的目录大小和当前目录的总的大小，最下面的1288为当前目录的总大小
+只显示当前目录下面的子目录的目录大小和当前目录的总的大小，最下面的12.34为当前目录的总大小
 
 显示指定文件所占空间：
 
