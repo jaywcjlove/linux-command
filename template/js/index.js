@@ -11,7 +11,7 @@
     this.root_path = (function () {
       var elm_path = $$('current_path');
       var url = window.location.origin + window.location.pathname;
-      return elm_path ? url.replace(/\/(c\/)?\w+\.html/, '').replace(/\/$/, '') : '';
+      return elm_path ? url.replace(/\/(c\/)?(\w|-)+\.html/, '').replace(/\/$/, '') : '';
     })();
 
     this.query = '';     //
@@ -88,29 +88,31 @@
         arrResultHTML = [],
         resultData = [],
         show_list_count = islist ? this.page_size : this.query_size;
+      var nameArr = [], desArr = [];
       if (arr && arr.length && toString.call(arr).indexOf('Array') > -1) {
         for (; i < page_size; i++) {
           if (!arr[i]) break;
           var nIdx = self.isSreachIndexOF(arr[i].n, self.query);
           var dIdx = self.isSreachIndexOF(arr[i].d, self.query);
-          if (nIdx > -1 || dIdx > -1) {
+          if (nIdx > -1) {
             var json = arr[i];
             json.nIdx = nIdx;
+            nameArr.push(json);
+          } else if (dIdx > -1) {
+            var json = arr[i];
             json.dIdx = dIdx;
-            resultData.push(json);
+            desArr.push(json);
           }
         }
       }
-      resultData.sort(function (a, b) {
-        return a.nIdx - b.nIdx
-      }).sort(function(a, b) {
-        return a.n.length - b.n.length;
-      }).sort(function (a, b) {
-        if (b.n.indexOf(self.query) < 0) {
-          return -1;
-        }
-        return a.n.indexOf(self.query) - b.n.indexOf(self.query);
+      nameArr.sort(function (a, b) {
+        return a.nIdx - b.nIdx;
       });
+      desArr.sort(function (a, b) {
+        return a.nIdx - b.nIdx;
+      });
+
+      resultData = nameArr.concat(desArr);
       resultData = resultData.slice(0, show_list_count);
 
       for (i = 0; i < resultData.length; i++) {

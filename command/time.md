@@ -58,66 +58,20 @@ shell内建也有一个time命令，当运行time时候是调用的系统内建�
 
 `-f`选项后的参数：
 
-<table border="1" cellpadding="0" cellspacing="0">
-<tbody>
-<tr>
-<th>参数</th>
-<th>描述</th>
-</tr>
-<tr>
-<td>%E</td>
-<td>real时间，显示格式为[小时:]分钟:秒</td>
-</tr>
-<tr>
-<td>%U</td>
-<td>user时间。</td>
-</tr>
-<tr>
-<td>%S</td>
-<td>sys时间。</td>
-</tr>
-<tr>
-<td>%C</td>
-<td>进行计时的命令名称和命令行参数。</td>
-</tr>
-<tr>
-<td>%D</td>
-<td>进程非共享数据区域，以KB为单位。</td>
-</tr>
-<tr>
-<td>%x</td>
-<td>命令退出状态。</td>
-</tr>
-<tr>
-<td>%k</td>
-<td>进程接收到的信号数量。</td>
-</tr>
-<tr>
-<td>%w</td>
-<td>进程被交换出主存的次数。</td>
-</tr>
-<tr>
-<td>%Z</td>
-<td>系统的页面大小，这是一个系统常量，不用系统中常量值也不同。</td>
-</tr>
-<tr>
-<td>%P</td>
-<td>进程所获取的CPU时间百分百，这个值等于user+system时间除以总共的运行时间。</td>
-</tr>
-<tr>
-<td>%K</td>
-<td>进程的平均总内存使用量（data+stack+text），单位是KB。</td>
-</tr>
-<tr>
-<td>%w</td>
-<td>进程主动进行上下文切换的次数，例如等待I/O操作完成。</td>
-</tr>
-<tr>
-<td>%c</td>
-<td>进程被迫进行上下文切换的次数（由于时间片到期）。</td>
-</tr>
-</tbody>
-</table>
-
+参数 | 描述
+--- | ---
+`%E` | real时间，显示格式为[小时:]分钟:秒
+`%U` | user时间。
+`%S` | sys时间。
+`%C` | 进行计时的命令名称和命令行参数。
+`%D` | 进程非共享数据区域，以KB为单位。
+`%x` | 命令退出状态。
+`%k` | 进程接收到的信号数量。
+`%w` | 进程被交换出主存的次数。
+`%Z` | 系统的页面大小，这是一个系统常量，不用系统中常量值也不同。
+`%P` | 进程所获取的CPU时间百分百，这个值等于 `user+system` 时间除以总共的运行时间。
+`%K` | 进程的平均总内存使用量（data+stack+text），单位是 `KB`。
+`%w` | 进程主动进行上下文切换的次数，例如等待I/O操作完成。
+`%c` | 进程被迫进行上下文切换的次数（由于时间片到期）。
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

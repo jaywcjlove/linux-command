@@ -1,51 +1,79 @@
 jobs
 ===
 
-显示Linux中的任务列表及任务状态
+显示作业的状态。
 
-## 补充说明
-
-**jobs命令** 用于显示Linux中的任务列表及任务状态，包括后台运行的任务。该命令可以显示任务号及其对应的进程号。其中，任务号是以普通用户的角度进行的，而进程号则是从系统管理员的角度来看的。一个任务可以对应于一个或者多个进程号。
-
-在Linux系统中执行某些操作时候，有时需要将当前任务暂停调至后台，或有时须将后台暂停的任务重启开启并调至前台，这一序列的操作将会使用到 jobs、bg、和 fg 三个命令以及两个快捷键来完成。
-
-###  语法
+## 概要
 
 ```shell
-jobs(选项)(参数)
+jobs [-lnprs] [jobspec ...]
+jobs -x command [args]
 ```
 
-###  选项
+## 主要用途
+
+- 显示作业的状态。
+- 列出活动的作业。
+- 列出停止的作业。
+
+## 选项
 
 ```shell
--l：显示进程号；
--p：仅任务对应的显示进程号；
--n：显示任务状态的变化；
--r：仅输出运行状态（running）的任务；
--s：仅输出停止状态（stoped）的任务。
+-l	在作业信息中额外的列出PID。
+-n	只列出最近一次通知以来状态变更的作业。
+-p	只列出PID。
+-r	只输出处于运行状态的作业。
+-s	只输出处于停止状态的作业。
 ```
 
-###  参数
+## 返回值
 
-任务标识号：指定要显示的任务识别号。
+返回状态为成功除非给出了非法选项、执行出现错误。
 
-###  实例
+如果使用`jobs -x command [args]`形式执行，那么返回值为`command`的退出状态。
 
-使用jobs命令显示当前系统的任务列表，输入如下命令：
+## 例子
 
 ```shell
-jobs -l               #显示当前系统的任务列表
+[user2@pc] ssh 192.168.1.4
+pc@192.168.1.4's password:
+# 此时按下ctrl+z使得交互停止。
+[1]+  Stopped                 ssh 192.168.1.4
+
+[user2@pc] sleep 60 &
+[2] 13338
+
+[user2@pc] jobs
+[1]-  Stopped                 ssh 192.168.1.4
+[2]   Running                 sleep 60 &
+
+[user2@pc] jobs -l
+[1]- 12927 Stopped                 ssh 192.168.1.4
+[2]  13338 Running                 sleep 60 &
+
+[user2@pc] jobs -p
+12927
+13338
+
+[user2@pc] jobs -s
+[1]-  Stopped                 ssh 192.168.1.4
+
+[user2@pc] jobs -r
+[2]   Running                 sleep 60 &
+
+[user2@pc] kill -9 12927
+[2]   Done                    sleep 60
+
+[user2@pc] jobs -n -l
+[1]+ 12927 Killed             ssh 192.168.1.4
+
+[user2@pc] jobs -n -l
 ```
 
-上面的命令执行后，将显示出当前系统下的任务列表信息，具体如下所示：
+### 注意
 
-```shell
-[1] + 1903 运行中          find / -name password &
-```
-
-注意：要得到以上输出信息，必须在执行jobs命令之前执行命令`find / -name password &`。否则，执行jobs命令不会显示任何信息。
-
-其中，输出信息的第一列表示任务编号，第二列表示任务所对应的进程号，第三列表示任务的运行状态，第四列表示启动任务的命令。
-
+1. `bash`的作业控制命令包括`bg fg kill wait disown suspend`。
+2. 该命令需要`set`选项`monitor`处于开启状态时才能执行；查看作业控制状态：输入`set -o`查看`monitor`行；执行`set -o monitor`或`set -m`开启该选项。
+3. 该命令是bash内建命令，相关的帮助信息请查看`help`命令。
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

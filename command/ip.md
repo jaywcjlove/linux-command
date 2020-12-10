@@ -130,7 +130,7 @@ default via 112.124.15.247 dev eth1
 **获取主机所有网络接口**
 
 ```shell
-ip link | grep ^[0-9] | awk -F: '{print $2}'
+ip link | grep -E '^[0-9]' | awk -F: '{print $2}'
 ```
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

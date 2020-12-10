@@ -1,39 +1,78 @@
 dirs
 ===
 
-显示目录记录
+显示目录堆栈。
 
-## 补充说明
-
-**dirs命令** 显示当前目录栈中的所有记录（不带参数的dirs命令显示当前目录栈中的记录）。dirs始终显示当然目录, 再是堆栈中的内容；即使目录堆栈为空, dirs命令仍然只显示当然目录。
-
-###  语法
+## 概要
 
 ```shell
-dirs(选项)(参数)
+dirs [-clpv] [+N] [-N]
 ```
 
-###  选项
+## 主要用途
+
+- 显示目录堆栈。
+
+- 清空目录堆栈。
+
+## 选项
 
 ```shell
--c：删除目录栈中的所有记录
--l：以完整格式显示
--p：一个目录一行的方式显示
--v：每行一个目录来显示目录栈的内容，每个目录前加上的编号
-+N：显示从左到右的第n个目录，数字从0开始
--N：显示从右到左的第n个日录，数字从0开始
+-c    清空目录堆栈。
+-l    堆栈内以~开头的目录在显示时展开。
+-p    将目录堆栈内的每一个目录按行显示。
+-v    将目录堆栈内的每一个目录按行显示并在每行前加上堆栈内的位置编号。
 ```
 
-###  参数
+## 参数
 
-目录：显示目录堆叠中的记录。
++N（可选）：不带参数执行`dirs`命令显示的列表中，左起的第N个目录将被显示。（从0开始计数）
 
-###  实例
+-N（可选）：不带参数执行`dirs`命令显示的列表中，右起的第N个目录将被显示。（从0开始计数）
+
+## 返回值
+
+返回成功除非提供了非法选项或执行出现错误。
+
+## 例子
 
 ```shell
-[root@localhost etc]# dirs
-/etc
+# 添加目录到堆栈。
+[user2@pc ~]$ dirs
+~
+[user2@pc ~]$ pushd -n ~/Desktop
+~ ~/Desktop
+[user2@pc ~]$ pushd -n ~/Pictures
+~ ~/Pictures ~/Desktop
+[user2@pc ~]$ pushd -n ~/bin
+~ ~/bin ~/Pictures ~/Desktop
+
+# 选项和参数的示例：
+[user2@pc ~]$ dirs -l
+/home/user2 /home/user2/bin /home/user2/Pictures /home/user2/Desktop
+[user2@pc ~]$ dirs -p
+~
+~/bin
+~/Pictures
+~/Desktop
+[user2@pc ~]$ dirs -v
+ 0  ~
+ 1  ~/bin
+ 2  ~/Pictures
+ 3  ~/Desktop
+[user2@pc ~]$ dirs +2
+~/Pictures
+[user2@pc ~]$ dirs -2
+~/bin
+[user2@pc ~]$ dirs -c
+[user2@pc ~]$ dirs
+~
 ```
 
+### 注意
+
+1. `bash`的目录堆栈命令包括`dirs popd pushd`。
+2. 当前目录始终是目录堆栈的顶部。
+3. 该命令是bash内建命令，相关的帮助信息请查看`help`命令。
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

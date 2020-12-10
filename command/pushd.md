@@ -1,44 +1,77 @@
 pushd
 ===
 
-将目录加入命令堆叠中
+将目录添加到目录堆栈顶部。
 
-## 补充说明
-
-**pushd命令** 是将目录加入命令堆叠中。如果指令没有指定目录名称，则会将当前的工作目录置入目录堆叠的最顶端。置入目录如果没有指定堆叠的位置，也会置入目录堆叠的最顶端，同时工作目录会自动切换到目录堆叠最顶端的目录去。
-
-###  语法
+## 概要
 
 ```shell
-pushd(选项)(参数)
+pushd [-n] [+N | -N | dir]
 ```
 
-###  选项
+## 主要用途
+
+- 将目录添加到目录堆栈顶部，切换当前工作目录到该目录。
+
+- 旋转目录堆栈，使堆栈的新顶部成为当前工作目录。
+
+- 没有参数时，交换目录堆栈的前两个目录。
+
+## 选项
 
 ```shell
--n：只加入目录到堆叠中，不进行cd操作；
-+n：删除从左到右的第n个目录，数字从0开始；
--n：删除从右到左的第n个目录，数字从0开始；
+-n    抑制添加目录引起的当前工作目录变化。
 ```
 
-###  参数
+## 参数
 
-目录：需要压入堆栈的目录。
++N（可选）：不带参数执行`dirs`命令显示的列表中，左起的第N个目录将作为堆栈顶部，在它前面的会移动到底部。（从0开始计数）
 
-###  实例
+-N（可选）：不带参数执行`dirs`命令显示的列表中，右起的第N个目录将作为堆栈顶部，在它前面的会移动到底部。（从0开始计数）
+
+dir（可选）：要推送的目录。
+
+## 返回值
+
+返回成功除非提供了非法选项或执行出现错误。
+
+## 例子
 
 ```shell
-root@Mylinux:/tmp/dir4# pushd /tmp/dir3
-/tmp/dir3 /tmp/dir4 /tmp/dir1 ~
-
-root@Mylinux:/tmp/dir3# pushd /tmp/dir2
-/tmp/dir2 /tmp/dir3 /tmp/dir4 /tmp/dir1 ~
-
-root@Mylinux:/tmp/dir2# pushd -1
-/tmp/dir1 ~ /tmp/dir2 /tmp/dir3 /tmp/dir4
+# 添加目录到堆栈，改变了当前工作目录。
+[user2@pc ~]$ dirs
+~
+[user2@pc ~]$ pushd ~/Desktop
+~/Desktop ~
+[user2@pc Desktop]$ 
 ```
 
-注意：最左边表示栈顶，最右边表示栈底。
+```shell
+# 添加目录到堆栈，当前工作目录不变。
+[user2@pc ~]$ dirs
+~
+[user2@pc ~]$ pushd -n ~/Desktop
+~ ~/Desktop
+[user2@pc ~]$ pushd -n ~/Pictures
+~ ~/Pictures ~/Desktop
 
+# 调整顺序。
+[user2@pc ~]$ pushd +1
+~/Pictures ~/Desktop ~
+[user2@pc ~]$ pushd -1
+~/Desktop ~ ~/Pictures
+[user2@pc ~]$ pushd
+~ ~/Desktop ~/Pictures
+```
+
+### 注意
+
+1. `bash`的目录堆栈命令包括`dirs popd pushd`。
+2. 当前目录始终是目录堆栈的顶部。
+3. 该命令是bash内建命令，相关的帮助信息请查看`help`命令。
+
+### 参考链接
+
+- [popd、pushd命令'-n'选项的行为](https://superuser.com/questions/784450/popd-and-pushd-behavior-with-n-option)
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

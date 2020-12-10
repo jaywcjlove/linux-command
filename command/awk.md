@@ -141,13 +141,13 @@ Line No:3, No of fields:3 $0=line3 f6 f7 $1=line3 $2=f6 $3=f7
 使用`print $NF`可以打印出一行中的最后一个字段，使用`$(NF-1)`则是打印倒数第二个字段，其他以此类推：
 
 ```shell
-echo -e "line1 f2 f3n line2 f4 f5" | awk '{print $NF}'
+echo -e "line1 f2 f3\n line2 f4 f5" | awk '{print $NF}'
 f3
 f5
 ```
 
 ```shell
-echo -e "line1 f2 f3n line2 f4 f5" | awk '{print $(NF-1)}'
+echo -e "line1 f2 f3\n line2 f4 f5" | awk '{print $(NF-1)}'
 f2
 f4
 
@@ -356,7 +356,7 @@ web03[192.168.2.102]
 mysqld            ok
 httpd               ok
 0
-awk '/^web/{T=$0;next;}{print T":t"$0;}' test.txt
+awk '/^web/{T=$0;next;}{print T":"t,$0;}' text.txt
 web01[192.168.2.100]:   httpd            ok
 web01[192.168.2.100]:   tomcat               ok
 web01[192.168.2.100]:   sendmail               ok

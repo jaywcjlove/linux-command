@@ -1,0 +1,34 @@
+name: GitHub Actions Build and Deploy linux-command
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build-deploy:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@master
+
+    - name: Setup Node
+      uses: actions/setup-node@v1
+      with:
+        node-version: '10.x'
+
+    # - name: Cache dependencies
+    #   uses: actions/cache@v1
+    #   with:
+    #     path: ~/.npm
+    #     key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+    #     restore-keys: |
+    #       ${{ runner.os }}-node-
+
+    - run: npm install
+    - run: npm run build
+    - run: npm run dash
+
+    - name: Build and Deploy
+      uses: peaceiris/actions-gh-pages@v2.5.0
+      env:
+        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: ./.deploy

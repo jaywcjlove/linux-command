@@ -112,5 +112,11 @@ cp -a aaa ./bbb/
 # 记住后面目录最好的'/' 带上 `-a` 参数
 ```
 
+复制到当前目录
+
+```sh
+cp aaa.conf ./
+# 将 aaa.conf 复制到当前目录
+```
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

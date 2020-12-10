@@ -1,31 +1,36 @@
 hostid
 ===
 
-用来打印当前主机的数字化标识
+显示当前主机的十六进制数字标识。
 
-## 补充说明
-
-**hostid命令** 用于打印当前主机的十六进制数字标识。是主机的唯一标识，是被用来限时软件的使用权限，不可改变。
-
-###  语法
+## 概要
 
 ```shell
-hostid
+hostid [OPTION]...
 ```
 
-###  选项
+## 主要用途
+
+- 显示当前主机的十六进制标识符。
+- 用来限制软件的使用权限，不可改变。
+
+## 选项
 
 ```shell
---help：显示帮助信息；
---version：显示版本信息。
+--help       显示帮助信息并退出。
+--version    显示版本信息并退出。
 ```
 
-###  实例
+## 例子
 
 ```shell
 [root@localhost ~]# hostid
 007f0100
 ```
+
+### 注意
+
+1. 该命令是`GNU coreutils`包中的命令，相关的帮助信息请查看`man -s 1 hostid`，`info coreutils 'hostid invocation'`。
 
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

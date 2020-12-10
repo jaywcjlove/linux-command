@@ -1,33 +1,45 @@
 id
 ===
 
-显示用户的ID以及所属群组的ID
+打印真实以及有效的用户和所在组的信息
 
-## 补充说明
-
-**id命令** 可以显示真实有效的用户ID(UID)和组ID(GID)。UID 是对一个用户的单一身份标识。组ID（GID）则对应多个UID。id命令已经默认预装在大多数Linux系统中。要使用它，只需要在你的控制台输入id。不带选项输入id会显示如下。结果会使用活跃用户。
-
-当我们想知道某个用户的UID和GID时id命令是非常有用的。一些程序可能需要UID/GID来运行。id使我们更加容易地找出用户的UID以GID而不必在`/etc/group`文件中搜寻。如往常一样，你可以在控制台输入`man id`进入id的手册页来获取更多的详情。
-
-###  语法
+## 概要
 
 ```shell
-id [-gGnru]--[help][--version][用户名称]
+id [OPTION]... [USER]...
 ```
 
-###  选项
+## 主要用途
+
+- 没有选项时，打印指定用户ID信息。
+
+## 选项
 
 ```shell
--g或--group 　 显示用户所属群组的ID。
--G或--groups   显示用户所属附加群组的ID。
--n或--name 　  显示用户，所属群组或附加群组的名称。
--r或--real 　  显示实际ID。
--u或--user 　  显示用户ID。
--help 　       显示帮助。
--version 　    显示版本信息。
+-a               兼容性选项，没有实际作用。
+-Z, --context    只打印进程的安全上下文。
+-g, --group      只打印有效的组ID。
+-G, --groups     打印全部组ID。
+-u, --user       只打印有效的用户ID。
+-z, --zero       使用空字符代替默认的空格来分隔条目。
+--help           显示帮助信息并退出。
+--version        显示版本信息并退出。
 ```
 
-###  实例
+只有在使用 `-u` `-g` `-G` 选项中一到多个时，以下选项可以使用：
+```shell
+-n, --name    打印名称而不是数字。
+-r, --real    打印真实ID而不是有效ID。
+```
+
+## 参数
+user（可选）：可以为一到多个，默认为当前用户。
+
+## 返回值
+
+返回0表示成功，返回非0值表示失败。
+
+## 例子
 
 ```shell
 [root@localhost ~]# id
@@ -74,5 +86,10 @@ uid=0(root) gid=0(root) groups=0(root),1(bin),2(daemon),3(sys),4(adm),6(disk),10
 uid=500(www) gid=500(www) groups=500(www)
 ```
 
+### 注意
+
+1. 该命令可以显示真实有效的用户ID(UID)和组ID(GID)。UID 是对一个用户的单一身份标识。组ID（GID）则对应多个UID；一些程序可能需要UID/GID来运行。`id` 使我们更加容易地找出用户的UID以及GID，而不必在 `/etc/group` 文件中搜寻。
+
+2. 该命令是`GNU coreutils`包中的命令，相关的帮助信息请查看`man -s 1 id`，`info coreutils 'id invocation'`。
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -1,94 +1,156 @@
 nl
 ===
 
-在Linux系统中计算文件内容行号
+为每一个文件添加行号。
 
-## 补充说明
-
-**nl命令** 读取 file 参数（缺省情况下标准输入），计算输入中的行号，将计算过的行号写入标准输出。在输出中，nl命令根据您在命令行中指定的标志来计算左边的行。输入文本必须写在逻辑页中。每个逻辑页有头、主体和页脚节（可以有空节）。除非使用`-p`选项，nl 命令在每个逻辑页开始的地方重新设置行号。可以单独为头、主体和页脚节设置行计算标志（例如，头和页脚行可以被计算然而文本行不能）。其默认的结果与`cat -n`有点不太一样， nl 可以将行号做比较多的显示设计，包括位数与是否自动补齐0等等的功能。
-
-###  语法
+## 概要
 
 ```shell
-nl (选项) (参数)
+nl [OPTION]... [FILE]...
 ```
 
-###  选项
+## 主要用途
+
+- 将每一个输入的文件添加行号后发送到标准输出。
+- 当没有文件或文件为`-`时，读取标准输入
+- 处理逻辑页（logical page）。
+
+## 选项
 
 ```shell
--b ：指定行号指定的方式，主要有两种：
-    -b a ：表示不论是否为空行，也同样列出行号(类似 cat -n)；
-    -b t ：如果有空行，空的那一行不要列出行号(默认值)；
+-b, --body-numbering=STYLE           使用STYLE 为body部分的行附加行号。
+-d, --section-delimiter=CC           使用CC作为logical page的分隔符。
+-f, --footer-numbering=STYLE         使用STYLE 为footer部分的行附加行号。
+-h, --header-numbering=STYLE         使用STYLE 为header部分的行附加行号。
+-i, --line-increment=NUMBER          行号递增间隔为NUMBER。
+-l, --join-blank-lines=NUMBER        连续NUMBER行的空行作为一行处理。
+-n, --number-format=FORMAT           根据FORMAT插入行号。
+-p, --no-renumber                    不要在每个部分重置行号。
+-s, --number-separator=STRING        在行号后添加字符串STRING。
+-v, --starting-line-number=NUMBER    每部分的起始行号。
+-w, --number-width=NUMBER            行号宽度为NUMBER。
+--help                               显示帮助信息并退出。
+--version                            显示版本信息并退出。
 
--n ：列出行号表示的方法，主要有三种：
-    -n ln ：行号在萤幕的最左方显示；
-    -n rn ：行号在自己栏位的最右方显示，且不加 0 ；
-    -n rz ：行号在自己栏位的最右方显示，且加 0 ；
 
--w ：行号栏位的占用的位数。
--p ：在逻辑定界符处不重新开始计算。
+默认选项为：-bt -d'\:' -fn -hn -i1 -l1 -nrn -sTAB -v1 -w6
+
+CC是由两个字符组成的，默认为\: ,第二个字符如果缺失则默认为:
+
+STYLE可以为下列可用值之一：
+
+a       所有行标记行号。
+t       仅为非空行标记行号。
+n       不标记行号。
+pBRE    符合基础正则表达式（BRE）的行会标记行号。
+
+FORMAT可以为下列可用值之一：
+
+ln    左对齐，不会在开始部分补充0以满足宽度。
+rn    右对齐，不会在开始部分补充0以满足宽度。
+rz    右对齐，会在开始部分补充0以满足宽度。
+
+logical page
+三部分组成（header， body， footer）
+起始标记（header \:\:\:， body \:\:， footer \:）
 ```
 
-###  实例
+## 参数
 
- **用 nl 列出 log2015.log 的内容** ：
+FILE（可选）：要处理的文件，可以为一或多个。
+
+## 返回值
+
+返回0表示成功，返回非0值表示失败。
+
+## 例子
 
 ```shell
-root@localhost [test]# nl log2015.log
-1 2015-01
-2 2015-02
-
-3 ======[root@localhost test]#
+nl_logicalpage.txt：该文件用于说明nl命令处理逻辑页，内容如下：
+\:\:\:
+header_1
+\:\:
+body_1
+\:
+footer_1
+\:\:\:
+header_2
+\:\:
+body_2
+\:
+footer_2
 ```
-
-说明：文件中的空白行，nl 不会加上行号
-
- **用 nl 列出 log2015.log 的内容，空本行也加上行号** ：
 
 ```shell
-[root@localhost test]# nl -b a log2015.log
-1 2015-01
-2 2015-02
-3
-4
-5 ======[root@localhost test]#
-```
+[user2@pc ~]$ nl nl_logicalpage.txt
 
- **让行号前面自动补上0，统一输出格式：** 
+       header_1
+
+     1	body_1
+
+       footer_1
+
+       header_2
+
+     1	body_2
+
+       footer_2
+
+[user2@pc ~]$ nl -v0 -fa -ha nl_logicalpage.txt
+
+     0	header_1
+
+     1	body_1
+
+     2	footer_1
+
+     0	header_2
+
+     1	body_2
+
+     2	footer_2
+
+[user2@pc ~]$ nl -p -fa -ha nl_logicalpage.txt
+
+     1	header_1
+
+     2	body_1
+
+     3	footer_1
+
+     4	header_2
+
+     5	body_2
+
+     6	footer_2
+```
 
 ```shell
-[root@localhost test]# nl -b a -n rz log2015.log
-000001 2015-01
-000002 2015-02
-000003 2015-03
-000004 2015-04
-000005 2015-05
-000006 2015-06
-000007 2015-07
-000008 2015-08
-000009 2015-09
-000010 2015-10
-000011 2015-11
-000012 2015-12
-000013 =======
-
-[root@localhost test]# nl -b a -n rz -w 3 log2015.log
-001 2015-01
-002 2015-02
-003 2015-03
-004 2015-04
-005 2015-05
-006 2015-06
-007 2015-07
-008 2015-08
-009 2015-09
-010 2015-10
-011 2015-11
-012 2015-12
-013 =======
+nl_normal.txt：该文件用于说明nl命令处理普通文件，内容如下：
+ZhuangZhu-74
+2019-11-21
+127.0.0.1
 ```
 
-说明：`nl -b a -n rz`命令行号默认为六位，要调整位数可以加上参数`-w 3`调整为3位。
+```shell
+[user2@pc ~]$ nl nl_normal.txt
+     1	ZhuangZhu-74
+     2	2019-11-21
+     3	127.0.0.1
 
+[user2@pc ~]$ nl -b p'1$' nl_normal.txt
+       ZhuangZhu-74
+     1	2019-11-21
+     2	127.0.0.1
+
+[user2@pc ~]$ nl -b p'^[A-Z]' nl_normal.txt
+     1	ZhuangZhu-74
+       2019-11-21
+       127.0.0.1
+```
+
+### 注意
+
+1. 该命令是`GNU coreutils`包中的命令，相关的帮助信息请查看`man -s 1 nl`，`info coreutils 'nl invocation'`。
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

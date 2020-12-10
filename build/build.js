@@ -6,7 +6,8 @@ const stylus = require('stylus');
 const Prism = require('prismjs');
 const loadLanguages = require('prismjs/components/');
 const UglifyJS = require("uglify-js");
-const colors = require('colors-cli/toxic');
+
+require('colors-cli/toxic');
 
 const renderer = new marked.Renderer();
 renderer.heading = (text, level) => {

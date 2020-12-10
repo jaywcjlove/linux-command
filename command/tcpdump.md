@@ -120,7 +120,7 @@ tcpdump -i eth0 dst host hostname
 如果想要获取主机210.27.48.1接收或发出的telnet包，使用如下命令
 
 ```shell
-tcpdump tcp port 23 host 210.27.48.1
+tcpdump tcp port 23 and host 210.27.48.1
 ```
 
 对本机的udp 123 端口进行监视 123 为ntp的服务端口

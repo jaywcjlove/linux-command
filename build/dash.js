@@ -1,7 +1,8 @@
 const fs = require('fs-extra');
-const { resolve: pathResolve } = require('path');
-const pkg = require('../package.json');
+const { resolve: pathResolve, join: pathJoin } = require('path');
 const sqlite3 = require('sqlite3');
+const archiver = require('archiver');
+const pkg = require('../package.json');
 
 const DATA_DIR = pathResolve(__dirname, '../assets/');
 const INDEX_JSON_PATH = pathResolve(__dirname, '../dist/data.json');
@@ -97,6 +98,46 @@ async function buildApi(dbPath) {
   await createDatabase(arr, dbPath);
 }
 
+function compressing() {
+  new Promise((resolve, reject) => {
+    const outputPaht = pathJoin(process.cwd(), '.deploy', 'linux-command.docset.zip');
+    // create a file to stream archive data to.
+    const output = fs.createWriteStream(outputPaht);
+    const archive = archiver('zip', {
+      zlib: { level: 9 } // Sets the compression level.
+    });
+    
+    // listen for all archive data to be written
+    // 'close' event is fired only when a file descriptor is involved
+    output.on('close', () => {
+      console.log(archive.pointer() + ' total bytes');
+      console.log('archiver has been finalized and the output file descriptor has closed.');
+      resolve();
+    });
+    
+    // good practice to catch warnings (ie stat failures and other non-blocking errors)
+    archive.on('warning', (err) => {
+      if (err.code === 'ENOENT') {
+        console.log('warning:::', err)
+        // log warning
+      } else {
+        // throw error
+        throw err;
+      }
+    });
+    
+    // good practice to catch this error explicitly
+    archive.on('error', function(err) {
+      reject(err);
+    });
+    
+    // pipe archive data to the file
+    archive.pipe(output);
+    archive.directory(pathJoin(process.cwd(), '.deploy', 'linux-command.docset'), false);
+    archive.finalize();
+  })
+}
+
 async function build() {
   console.log(`mkdir -p ${RESOURCES_DIR}`);
   await clean();
@@ -107,6 +148,9 @@ async function build() {
 
   console.info('build documents');
   await buildApi(DB_PATH);
+
+  console.info('compressing zip');
+  await compressing();
 }
 
 build()
