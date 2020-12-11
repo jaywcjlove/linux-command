@@ -1,23 +1,26 @@
-<!--
- * @Author: le-shi
- * @Date: 2020-12-10 14:58:42
- * @LastEditTime: 2020-12-10 16:04:08
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: https://github.com/le-shi/linux-command/blob/master/command/jq.md
--->
 jq
 ===
 
 一个轻量级的和灵活的命令行JSON处理器
 
-## 补充说明
+### 补充说明
 
 jq是用于处理JSON输入，将给定过滤器应用于其JSON文本输入并在标准输出上将过滤器的结果生成为JSON的工具。
 
 最简单的过滤器是., 它将jq的输入未经修改地复制到其输出中（格式设置除外，但请注意，IEEE754在内部用于数字表示，这意味着所有含义）。
 
-## 语法
+
+### 安装
+
+```bash
+# Debian系，如 Ubuntu
+sudo apt-get install jq
+
+# RedHat系, 如 CentOS
+yum install jq
+```
+
+### 语法
 
 ```bash
 jq [options] <jq filter> [file...]
@@ -25,7 +28,7 @@ jq [options] --args <jq filter> [strings...]
 jq [options] --jsonargs <jq filter> [JSON_TEXTS...]
 ```
 
-## 选项
+### 选项
 
 ```bash
 -c               紧凑而不是漂亮的输出;
@@ -47,7 +50,7 @@ jq [options] --jsonargs <jq filter> [JSON_TEXTS...]
 --               终止参数处理;
 ```
 
-## 例子
+### 例子
 
 `.`: 改变输入
 
@@ -179,10 +182,5 @@ $ echo '42' | jq '"The input was \(.), which is one less than \(.+1)"'
 "The input was 42, which is one less than 43"
 
 ```
-
-
-### 注意
-
-1. 该命令需要单独安装，相关的信息请查看[github主页](https://github.com/stedolan/jq)。
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
