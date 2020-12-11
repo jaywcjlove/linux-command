@@ -1,11 +1,3 @@
-<!--
- * @Author: your name
- * @Date: 2020-12-10 14:37:30
- * @LastEditTime: 2020-12-10 17:44:11
- * @LastEditors: Please set LastEditors
- * @Description: In User Settings Edit
- * @FilePath: /云/home/lshi/workspace/linux-command/command/rename.md
--->
 rename
 ===
 
