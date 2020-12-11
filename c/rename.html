@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,rename,用字符串替换的方式批量改变文件名">
     <title>rename 命令，Linux rename 命令详解：用字符串替换的方式批量改变文件名 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1607486425362">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1607652507881">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -41,31 +41,109 @@
 </span>
 
 <h1 id="rename">rename</h1><p>用字符串替换的方式批量改变文件名</p>
-<h2 id="补充说明">补充说明</h2><p><strong>rename命令</strong> 用字符串替换的方式批量改变文件名。</p>
-<h3 id="语法">语法</h3><pre><code class="language-shell">rename<span class="token punctuation">(</span>参数<span class="token punctuation">)</span></code></pre>
-<h3 id="参数">参数</h3><pre><code class="language-shell">原字符串：将文件名需要替换的字符串；
-目标字符串：将文件名中含有的原字符替换成目标字符串；
-文件：指定要改变文件名的文件列表。</code></pre>
-<h3 id="实例">实例</h3><p>将main1.c重命名为main.c</p>
-<pre><code class="language-shell"><span class="token function">rename</span> main1.c main.c main1.c</code></pre>
-<p> <strong>rename支持通配符</strong> </p>
-<pre><code class="language-shell">?  可替代单个字符
-*  可替代多个字符
-<span class="token punctuation">[</span>charset<span class="token punctuation">]</span>  可替代charset集中的任意单个字符</code></pre>
-<p>文件夹中有这些文件foo1, ..., foo9, foo10, ..., foo278</p>
-<p>如果使用<code>rename foo foo0 foo?</code>，会把foo1到foo9的文件重命名为foo01到foo09，重命名的文件只是有4个字符长度名称的文件，文件名中的foo被替换为foo0。</p>
-<p>如果使用<code>rename foo foo0 foo??</code>，foo01到foo99的所有文件都被重命名为foo001到foo099，只重命名5个字符长度名称的文件，文件名中的foo被替换为foo0。</p>
-<p>如果使用<code>rename foo foo0 foo*</code>，foo001到foo278的所有文件都被重命名为foo0001到foo0278，所有以foo开头的文件都被重命名。</p>
-<p>如果使用<code>rename foo0 foo foo0[2]*</code>，从foo0200到foo0278的所有文件都被重命名为foo200到foo278，文件名中的foo0被替换为foo。</p>
-<p> <strong>rename支持正则表达式</strong> </p>
-<p>字母的替换</p>
-<pre><code class="language-shell"><span class="token function">rename</span> <span class="token string">"s/AA/aa/"</span> *  <span class="token comment"># 把文件名中的AA替换成aa</span></code></pre>
+<h2 id="补充说明">补充说明</h2><p>rename命令存在两个版本用法上有所区别 </p>
+<pre><code class="language-bash">C语言版本<span class="token punctuation">,</span> 支持通配符
+<span class="token punctuation">[</span>常用通配符说明<span class="token punctuation">]</span>
+<span class="token operator">?</span>    表示一个任意字符
+<span class="token operator">*</span>    表示一个或一串任意字符
+
+Perl版本<span class="token punctuation">,</span> 支持正则表达式
+<span class="token punctuation">[</span>常用正则表达式符号说明<span class="token punctuation">]</span>
+<span class="token operator">^</span>    匹配输入的开始位置
+&#36;    匹配输入的结尾
+<span class="token punctuation">.</span>    匹配除换行符外的任意字符
+<span class="token operator">+</span>    匹配前一个字符一次或多次 例如，<span class="token string">"zo+"</span>可以匹配<span class="token string">"zoo"</span><span class="token punctuation">,</span>但不匹配<span class="token string">"z"</span>
+<span class="token punctuation">[</span>a<span class="token operator">-</span>z<span class="token punctuation">]</span>    表示某个范围内的字符，例如，<span class="token string">"[a-z]"</span>匹配<span class="token string">"a"</span>与<span class="token string">"z"</span>之间的任何一个小写字母字符。
+<span class="token punctuation">[</span><span class="token operator">^</span>m<span class="token operator">-</span>z<span class="token punctuation">]</span>    否定的字符区间。与不在指定区间内的字符匹配。</code></pre>
+<p>区分方法: <code>rename --version</code></p>
+<p>如果返回结果中包含 <strong>util-linux</strong> , 说明是C语言版本, 反之是Perl版本</p>
+<pre><code class="language-bash"><span class="token macro property"><span class="token directive-hash">#</span> <span class="token expression">Perl版本 <span class="token operator">|</span> <span class="token function">Ubuntu</span><span class="token punctuation">(</span><span class="token number">18</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token function">Mint</span><span class="token punctuation">(</span><span class="token number">20</span><span class="token punctuation">)</span>默认的是Perl版本</span></span>
+&#36; rename <span class="token operator">--</span>version
+<span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>rename using File<span class="token operator">::</span>Rename version <span class="token number">1.10</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span> <span class="token expression">C语言版本 <span class="token operator">|</span> <span class="token function">Centos</span><span class="token punctuation">(</span><span class="token number">7</span><span class="token punctuation">)</span>默认的是C语言版本</span></span>
+&#36; rename <span class="token operator">--</span>version
+rename，来自 util<span class="token operator">-</span>linux <span class="token number">2.23</span><span class="token number">.2</span></code></pre>
+<h3 id="语法">语法</h3><pre><code class="language-bash"><span class="token macro property"><span class="token directive-hash">#</span> <span class="token expression">Perl版本</span></span>
+rename <span class="token punctuation">[</span> <span class="token operator">-</span>h<span class="token operator">|</span><span class="token operator">-</span>m<span class="token operator">|</span><span class="token operator">-</span>V <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token operator">-</span>v <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token operator">-</span><span class="token number">0</span> <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token operator">-</span>n <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token operator">-</span>f <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token operator">-</span>d <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token operator">-</span>e<span class="token operator">|</span><span class="token operator">-</span>E perlexpr<span class="token punctuation">]</span><span class="token operator">*</span><span class="token operator">|</span>perlexpr <span class="token punctuation">[</span> files <span class="token punctuation">]</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span> <span class="token expression">C语言版本</span></span>
+rename <span class="token punctuation">[</span>选项<span class="token punctuation">]</span> 表达式 替换的字符 文件<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span></code></pre>
+<h3 id="参数">参数</h3><pre><code class="language-bash"><span class="token macro property"><span class="token directive-hash">#</span> <span class="token expression">Perl版本</span></span>
+<span class="token operator">-</span>v<span class="token punctuation">,</span> <span class="token operator">--</span>verbose
+        详细：成功重命名的文件的打印名称。
+
+<span class="token operator">-</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token operator">--</span>null
+        从STDIN读取时，请使用\<span class="token number">0</span>作为记录分隔符
+
+<span class="token operator">-</span>n<span class="token punctuation">,</span> <span class="token operator">--</span>nono
+        不执行任何操作：打印要重命名的文件名，但不重命名。
+
+<span class="token operator">-</span>f<span class="token punctuation">,</span> <span class="token operator">--</span>force
+        覆盖：允许覆盖现有文件
+
+<span class="token operator">--</span>path<span class="token punctuation">,</span> <span class="token operator">--</span>fullpath
+        重命名完整路径：包括任何目录组件。默认
+
+<span class="token operator">-</span>d<span class="token punctuation">,</span> <span class="token operator">--</span>filename<span class="token punctuation">,</span> <span class="token operator">--</span>nopath<span class="token punctuation">,</span> <span class="token operator">--</span>nofullpath
+        不重命名目录：仅重命名路径的文件名部分
+
+<span class="token operator">-</span>h<span class="token punctuation">,</span> <span class="token operator">--</span>help
+        帮助：打印提要和选项。
+
+<span class="token operator">-</span>m<span class="token punctuation">,</span> <span class="token operator">--</span>man
+        手册<span class="token operator">:</span> 打印手册页<span class="token punctuation">.</span>
+
+<span class="token operator">-</span>V<span class="token punctuation">,</span> <span class="token operator">--</span>version
+        版本<span class="token operator">:</span> 显示版本号<span class="token punctuation">.</span>
+
+<span class="token operator">-</span>e      表达<span class="token operator">:</span> 作用于文件名的代码<span class="token punctuation">.</span>
+
+        可以重复来构建代码（比如“perl<span class="token operator">-</span>e”）。如果没有<span class="token operator">-</span>e，则第一个参数用作代码。
+
+<span class="token operator">-</span>E      语句：对文件名执行操作的代码，如<span class="token operator">-</span>e，但终止于 <span class="token string">';'</span><span class="token punctuation">.</span>
+
+
+<span class="token macro property"><span class="token directive-hash">#</span> <span class="token expression">C语言版本</span></span>
+<span class="token operator">-</span>v<span class="token punctuation">,</span> <span class="token operator">--</span>verbose
+        提供视觉反馈，其中重命名了哪些文件（如果有的话）
+
+<span class="token operator">-</span>V<span class="token punctuation">,</span> <span class="token operator">--</span>version
+        显示版本信息并退出。
+
+<span class="token operator">-</span>s<span class="token punctuation">,</span> <span class="token operator">--</span>symlink
+        在符号链接目标上执行重命名
+
+<span class="token operator">-</span>h<span class="token punctuation">,</span> <span class="token operator">--</span>help
+        显示帮助文本并退出</code></pre>
+<h3 id="实例">实例</h3><hr>
+<h4 id="perl版本">Perl版本</h4><p>将1.txt 2.txt重命名为1.log 2.log</p>
+<pre><code class="language-bash">&#36; rename <span class="token operator">-</span>v <span class="token string">"s/txt/log/g"</span> <span class="token number">1.</span>txt <span class="token number">2.</span>txt
+<span class="token number">1.</span>txt renamed as <span class="token number">1.l</span>og
+<span class="token number">2.</span>txt renamed as <span class="token number">2.l</span>og</code></pre>
 <p>修改文件的后缀</p>
-<pre><code class="language-shell"><span class="token function">rename</span> <span class="token string">"s//.html//.php/"</span> *     <span class="token comment"># 把.html 后缀的改成 .php后缀</span></code></pre>
+<pre><code class="language-bash">rename <span class="token string">"s//.html//.php/"</span> <span class="token operator">*</span>     # 把<span class="token punctuation">.</span>html 后缀的改成 <span class="token punctuation">.</span>php后缀</code></pre>
 <p>批量添加文件后缀</p>
-<pre><code class="language-shell"><span class="token function">rename</span> <span class="token string">"s/&#36;//.txt/"</span> *  <span class="token comment"># 把所有的文件名都以txt结尾</span></code></pre>
+<pre><code class="language-bash">rename <span class="token string">"s/&#36;//.txt/"</span> <span class="token operator">*</span>  # 把所有的文件名都以txt结尾</code></pre>
 <p>批量删除文件名</p>
-<pre><code class="language-shell"><span class="token function">rename</span> <span class="token string">"s//.txt//"</span> *   <span class="token comment"># 把所有以.txt结尾的文件名的.txt删掉</span></code></pre>
+<pre><code class="language-bash">rename <span class="token string">"s//.txt//"</span> <span class="token operator">*</span>   # 把所有以<span class="token punctuation">.</span>txt结尾的文件名的<span class="token punctuation">.</span>txt删掉</code></pre>
+<hr>
+<h5 id="c语言版本">C语言版本</h5><p>将1.txt 2.txt重命名为1.log 2.log</p>
+<pre><code class="language-bash">&#36; rename <span class="token operator">-</span>v txt log <span class="token number">1.</span>txt <span class="token number">2.</span>txt
+`<span class="token number">1.</span>txt<span class="token string">' -> `1.log'</span>
+`<span class="token number">2.</span>txt<span class="token string">' -> `2.log'</span></code></pre>
+<p>文件夹中有这些文件foo1, ..., foo9, foo10, ..., foo278</p>
+<pre><code class="language-bash"># 把foo1到foo9的文件重命名为foo01到foo09，重命名的文件只是有<span class="token number">4</span>个字符长度名称的文件，文件名中的foo被替换为foo0。
+rename foo foo0 foo<span class="token operator">?</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span> <span class="token directive keyword">foo</span><span class="token expression"><span class="token number">01</span>到foo99的所有文件都被重命名为foo001到foo099，只重命名<span class="token number">5</span>个字符长度名称的文件，文件名中的foo被替换为foo0。</span></span>
+rename foo foo0 foo<span class="token operator">?</span><span class="token operator">?</span>
+
+<span class="token macro property"><span class="token directive-hash">#</span> <span class="token directive keyword">foo</span><span class="token expression"><span class="token number">001</span>到foo278的所有文件都被重命名为foo0001到foo0278，所有以foo开头的文件都被重命名。</span></span>
+rename foo foo0 foo<span class="token operator">*</span>
+
+# 从foo0200到foo0278的所有文件都被重命名为foo200到foo278，文件名中的foo0被替换为foo。
+rename foo0 foo foo0<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">*</span></code></pre>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 </div>
 
@@ -84,12 +162,12 @@
   收藏本站请使用Ctrl+D或者Command+d
   <br /> 共搜集到
   <span id="commands_info">
-    571
+    573
   </span> 个Linux命令
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1607486425363"></script>
-<script type="text/javascript" src="../js/index.js?v=1607486425363"></script>
+<script type="text/javascript" src="../js/dt.js?v=1607652507881"></script>
+<script type="text/javascript" src="../js/index.js?v=1607652507881"></script>
 </body>
 </html>
