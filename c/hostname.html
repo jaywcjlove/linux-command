@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,hostname,显示和设置系统的主机名">
     <title>hostname 命令，Linux hostname 命令详解：显示和设置系统的主机名 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1607652507651">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1607667440942">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -41,34 +41,37 @@
 </span>
 
 <h1 id="hostname">hostname</h1><p>显示和设置系统的主机名</p>
-<h2 id="补充说明">补充说明</h2><p><strong>hostname命令</strong> 用于显示和设置系统的主机名称。环境变量HOSTNAME也保存了当前的主机名。在使用hostname命令设置主机名后，系统并不会永久保存新的主机名，重新启动机器之后还是原来的主机名。如果需要永久修改主机名，需要同时修改<code>/etc/hosts</code>和<code>/etc/sysconfig/network</code>的相关内容。(hostnamectl有效的解决了这个问题)</p>
-<h3 id="语法">语法</h3><pre><code class="language-shell"><span class="token function">hostname</span> <span class="token punctuation">[</span>-b<span class="token punctuation">]</span> <span class="token punctuation">{</span>hostname<span class="token operator">|</span>-F file<span class="token punctuation">}</span>         <span class="token builtin class-name">set</span> <span class="token function">host</span> name <span class="token punctuation">(</span>from <span class="token function">file</span><span class="token punctuation">)</span>
-<span class="token function">hostname</span> <span class="token punctuation">[</span>-a<span class="token operator">|</span>-A<span class="token operator">|</span>-d<span class="token operator">|</span>-f<span class="token operator">|</span>-i<span class="token operator">|</span>-I<span class="token operator">|</span>-s<span class="token operator">|</span>-y<span class="token punctuation">]</span>       display formatted name
-<span class="token function">hostname</span>                                 display <span class="token function">host</span> name
+<h2 id="补充说明">补充说明</h2><p><strong>hostname命令</strong> 
+用于显示和设置系统的主机名称。</p>
+<ul>
+<li>环境变量 <code>HOSTNAME</code> 也保存了当前的主机名。</li>
+<li>在使用 <code>hostname</code> 命令设置主机名后，系统并不会永久保存新的主机名，重启之后还是原来的主机名。如果需要永久修改主机名，需要修改 <code>/etc/hosts</code> 和 <code>/etc/sysconfig/network</code> 的相关内容并进行重启；也可以使用 <code>hostnamectl</code> 命令进行永久修改。</li>
+</ul>
+<h3 id="语法">语法</h3><pre><code class="language-shell"><span class="token function">hostname</span> <span class="token punctuation">[</span>-b<span class="token punctuation">]</span> <span class="token punctuation">{</span>hostname<span class="token operator">|</span>-F file<span class="token punctuation">}</span>           设置主机名称（或从文件获取）
+<span class="token function">hostname</span> <span class="token punctuation">[</span>-a<span class="token operator">|</span>-A<span class="token operator">|</span>-d<span class="token operator">|</span>-f<span class="token operator">|</span>-i<span class="token operator">|</span>-I<span class="token operator">|</span>-s<span class="token operator">|</span>-y<span class="token punctuation">]</span>         显示格式化的名称
+<span class="token function">hostname</span>                                   显示主机名称
 
-<span class="token punctuation">{</span>yp,nis,<span class="token punctuation">}</span>domainname <span class="token punctuation">{</span>nisdomain<span class="token operator">|</span>-F file<span class="token punctuation">}</span>  <span class="token builtin class-name">set</span> NIS domain name <span class="token punctuation">(</span>from <span class="token function">file</span><span class="token punctuation">)</span>
-<span class="token punctuation">{</span>yp,nis,<span class="token punctuation">}</span>domainname                      display NIS domain name
+<span class="token punctuation">{</span>yp,nis,<span class="token punctuation">}</span>domainname <span class="token punctuation">{</span>nisdomain<span class="token operator">|</span>-F file<span class="token punctuation">}</span>    设置 NIS 主机名称（或从文件获取）
+<span class="token punctuation">{</span>yp,nis,<span class="token punctuation">}</span>domainname                        显示 NIS 主机名称
 
-dnsdomainname                            display dns domain name
+dnsdomainname                              显示 DNS 主机名称
 
-<span class="token function">hostname</span> -V<span class="token operator">|</span>--version<span class="token operator">|</span>-h<span class="token operator">|</span>--help          print info and <span class="token builtin class-name">exit</span>
-</code></pre>
-<h3 id="选项">选项</h3><pre><code class="language-shell">-a, --alias            显示主机别名
--A, --all-fqdns        显示所有FQDN名称
--b, --boot             如果没有可用的主机名，则设置默认主机名
--d, --domain           显示DNS域名
--f, --fqdn, --long     显示FQDN名称
--F, --file             从给定文件中读取主机名或NIS域名
--i, --ip-address       显示主机的ip地址
--I, --all-ip-addresses 显示主机的所有ip地址
--s, --short            显示短主机名称，在第一个点处截断
--y, --yp, --nis        显示NIS域名</code></pre>
+<span class="token function">hostname</span> -V<span class="token operator">|</span>--version<span class="token operator">|</span>-h<span class="token operator">|</span>--help            打印信息并退出</code></pre>
+<h3 id="选项">选项</h3><pre><code class="language-shell">-a, --alias               显示主机别名
+-A, --all-fqdns           显示所有FQDN名称
+-b, --boot                如果没有可用的主机名，则设置默认主机名
+-d, --domain              显示DNS域名
+-f, --fqdn, --long        显示FQDN名称
+-F, --file                从给定文件中读取主机名或NIS域名
+-i, --ip-address          显示主机的ip地址
+-I, --all-ip-addresses    显示主机所有的ip地址
+-s, --short               显示短主机名称，在第一个点处截断
+-y, --yp, --nis           显示NIS域名</code></pre>
 <h3 id="实例">实例</h3><p>显示主机名</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@AY1307311912260196fcZ ~<span class="token punctuation">]</span><span class="token comment"># hostname</span>
 AY1307311912260196fcZ</code></pre>
 <p>临时改变主机名</p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@AY1307311912260196fcZ ~<span class="token punctuation">]</span><span class="token comment"># hostname newname</span>
-<span class="token comment"># 如果需要永久改变需要在/etc/hosts和etc/sysconfig/network进行修改并进行重启, 或者是用hostnamectl进行修改</span></code></pre>
+<pre><code class="language-shell"><span class="token punctuation">[</span>root@AY1307311912260196fcZ ~<span class="token punctuation">]</span><span class="token comment"># hostname newname</span></code></pre>
 <p>显示主机的所有IP地址</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@AY1307311912260196fcZ ~<span class="token punctuation">]</span><span class="token comment"># hostname -I</span>
 <span class="token number">10.17</span>.0.1 <span class="token number">10.18</span>.0.10 <span class="token number">172.17</span>.0.1</code></pre>
@@ -95,7 +98,7 @@ AY1307311912260196fcZ</code></pre>
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1607652507651"></script>
-<script type="text/javascript" src="../js/index.js?v=1607652507651"></script>
+<script type="text/javascript" src="../js/dt.js?v=1607667440942"></script>
+<script type="text/javascript" src="../js/index.js?v=1607667440942"></script>
 </body>
 </html>
