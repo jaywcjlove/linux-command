@@ -47,77 +47,55 @@ du [选项][文件]
 
 ### 实例
 
+文件从大到小排序
 ```
-$ du -sh * | sort -h # 按文件大小排序
+ubuntu@VM-0-14-ubuntu:~/git-work/linux-command$ du -sh * |sort -rh
+2.9M    command
+1.9M    assets
+148K    template
+72K     package-lock.json
+52K     dist
+28K     build
+16K     README.md
+4.0K    renovate.json
+4.0K    package.json
+4.0K    LICENSE
 ```
 
-显示目录或者文件所占空间：
+只显示当前目录下子目录的大小。
 
 ```shell
-root@localhost [test]# du -sh ./*
-608K ./test6
-308M ./test4
-4K ./scf/lib
-4K ./scf/service/deploy/product
-4K ./scf/service/deploy/info
-12G./scf/service/deploy
-16M ./scf/service
-4K ./scf/doc
-4K ./scf/bin
-32K ./scf
-8M ./test3
-12.34G .
+ubuntu@VM-0-14-ubuntu:~/git-work/linux-command$ du -sh ./*/
+1.9M    ./assets/
+28K     ./build/
+2.9M    ./command/
+52K     ./dist/
+148K    ./template/
 ```
 
-只显示当前目录下面的子目录的目录大小和当前目录的总的大小，最下面的12.34为当前目录的总大小
-
-显示指定文件所占空间：
+查看指定目录下文件所占的空间：
 
 ```shell
-[root@localhost test]# du log2012.log
-300 log2012.log
-```
-
-查看指定目录的所占空间：
-
-```shell
-[root@localhost test]# du scf
-4 scf/lib
-4 scf/service/deploy/product
-4 scf/service/deploy/info
-12 scf/service/deploy
-16 scf/service
-4 scf/doc
-4 scf/bin
-32 scf
-```
-
-显示多个文件所占空间：
-
-```shell
-[root@localhost test]# du log30.tar.gz log31.tar.gz
-4 log30.tar.gz
-4 log31.tar.gz
+ubuntu@VM-0-14-ubuntu:~/git-work/linux-command/assets$ du ./*
+144     ./alfred.png
+452     ./chrome-extensions.gif
+4       ./dash-icon.png
+1312    ./Linux.gif
+16      ./qr.png
 ```
 
 只显示总和的大小:
 
 ```shell
-[root@localhost test]# du -s
-1288 .
-
-[root@localhost test]# du -s scf
-32 scf
-
-[root@localhost test]# cd ..
-[root@localhost soft]# du -s test
-1288 test
+ubuntu@VM-0-14-ubuntu:~/git-work/linux-command/assets$ du -s .
+1932    .
 ```
 
 显示总和的大小且易读:
 
 ```shell
-du -sh $dir
+ubuntu@VM-0-14-ubuntu:~/git-work/linux-command/assets$ du -sh .
+1.9M    .
 ```
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

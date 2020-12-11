@@ -1,15 +1,17 @@
 jq
 ===
 
-一个轻量级的和灵活的命令行JSON处理器
+一个灵活的轻量级命令行JSON处理器
 
 ### 补充说明
 
-jq是 stedolan 开发的一个轻量级的和灵活的命令行JSON处理器, 源码请参考[Github](https://github.com/stedolan/jq)
+jq 是 stedolan 开发的一个轻量级的和灵活的命令行JSON处理器，源码请参考 [jq 项目主页](https://github.com/stedolan/jq)
 
-jq是用于处理JSON输入，将给定过滤器应用于其JSON文本输入并在标准输出上将过滤器的结果生成为JSON的工具。
+jq 用于处理JSON输入，将给定过滤器应用于其JSON文本输入并在标准输出上将过滤器的结果生成为JSON。
 
-最简单的过滤器是., 它将jq的输入未经修改地复制到其输出中（格式设置除外，但请注意，IEEE754在内部用于数字表示，这意味着所有含义）。
+最简单的过滤器是`.`，它将jq的输入未经修改地复制到其输出中（格式设置除外）。
+
+请注意，jq 当前仅支持64位双精度浮点数（IEEE754）。
 
 
 ### 安装
@@ -54,7 +56,7 @@ jq [options] --jsonargs <jq filter> [JSON_TEXTS...]
 
 ### 例子
 
-`.`: 改变输入
+`.`: 以漂亮的方式输出
 
 ```bash
 $ echo '{ "foo": { "bar": { "baz": 123 } } }' | jq '.'
