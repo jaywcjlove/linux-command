@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,fgrep,为文件搜索文字字符串">
     <title>fgrep 命令，Linux fgrep 命令详解：为文件搜索文字字符串 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1607951371249">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1607951766082">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -44,13 +44,13 @@
 <h2 id="补充说明">补充说明</h2><p><strong>fgrep命令</strong> 是用来搜索 file 参数指定的输入文件（缺省为标准输入）中的匹配模式的行。fgrep 命令特别搜索 Pattern 参数，它们是固定的字符串。如果在 File 参数中指定一个以上的文件 fgrep 命令将显示包含匹配行的文件。</p>
 <p>fgrep 命令于 grep 和 egrep 命令不同，因为它搜索字符串而不是搜索匹配表达式的模式。fgrep 命令使用快速的压缩算法。<code>$, *, &amp;#91;, |, (, )</code>和<code>\</code>等字符串被 fgrep 命令按字面意思解释。这些字符并不解释为正则表达式，但它们在 grep 和 egrep 命令中解释为正则表达式。因为这些字符对于 shell 有特定的含义，完整的字符串应该加上单引号<code>‘ ... ’</code>。. 如果没有指定文件， fgrep 命令假定标准输入。一般，找到的每行都复制到标准输出中去。如果不止一个输入文件，则在找到的每行前打印文件名。</p>
 <ol>
-<li>fgrep 命令和带 -F 标志的 grep命令是一样的但出错和用法消息不同-s 标志功能也不同。</li>
-<li>每行限制在 2048 个字节。</li>
-<li>段落（-p 标志下）目前限制在5000个字符的长度。</li>
-<li>不要在特定的文件中运行 grep 命令，因为会产生不可预料的结果。</li>
-<li>输入行不能包含空字符。</li>
-<li>输入文件应该以换行字符结尾。</li>
-<li>虽然可以同时指定很多标志，但某些标志会覆盖其余的标志。例如，如果同时指定 -l 和 -n ，只有文件名写入到标准输出中去。</li>
+<li> fgrep 命令和带 -F 标志的 grep命令是一样的但出错和用法消息不同-s 标志功能也不同。</li>
+<li> 每行限制在 2048 个字节。</li>
+<li> 段落（-p 标志下）目前限制在5000个字符的长度。</li>
+<li> 不要在特定的文件中运行 grep 命令，因为会产生不可预料的结果。</li>
+<li> 输入行不能包含空字符。</li>
+<li> 输入文件应该以换行字符结尾。</li>
+<li> 虽然可以同时指定很多标志，但某些标志会覆盖其余的标志。例如，如果同时指定 -l 和 -n ，只有文件名写入到标准输出中去。</li>
 </ol>
 <h3 id="语法">语法</h3><pre><code class="language-shell">fgrep<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span></code></pre>
 <h3 id="选项">选项</h3><pre><code class="language-shell">-b：在找到的每行之前添加行所在的块编号。使用此标志有助于按照上下文查找磁盘块号码。-b 标志不能用于标准输入或者管道输入。
@@ -106,7 +106,7 @@ n：将文件中每行的相对行号置于行前。
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1607951371250"></script>
-<script type="text/javascript" src="../js/index.js?v=1607951371250"></script>
+<script type="text/javascript" src="../js/dt.js?v=1607951766083"></script>
+<script type="text/javascript" src="../js/index.js?v=1607951766083"></script>
 </body>
 </html>

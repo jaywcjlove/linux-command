@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,vmstat,显示虚拟内存状态">
     <title>vmstat 命令，Linux vmstat 命令详解：显示虚拟内存状态 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1607951371711">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1607951766489">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -52,8 +52,8 @@
 -p：显示指定的硬盘分区状态；
 -S：输出信息的单位。</code></pre>
 <h3 id="参数">参数</h3><ul>
-<li>事件间隔：状态信息刷新的时间间隔；</li>
-<li>次数：显示报告的次数。</li>
+<li>  事件间隔：状态信息刷新的时间间隔；</li>
+<li>  次数：显示报告的次数。</li>
 </ul>
 <h3 id="实例">实例</h3><pre><code class="language-shell"><span class="token function">vmstat</span> <span class="token number">3</span>
 procs -----------memory---------- ---swap-- -----io---- --system-- -----cpu------
@@ -66,49 +66,49 @@ procs -----------memory---------- ---swap-- -----io---- --system-- -----cpu-----
 <p> <strong>字段说明：</strong> </p>
 <p>Procs（进程）</p>
 <ul>
-<li>r: 运行队列中进程数量，这个值也可以判断是否需要增加CPU。（长期大于1）</li>
-<li>b: 等待IO的进程数量。</li>
+<li>  r: 运行队列中进程数量，这个值也可以判断是否需要增加CPU。（长期大于1）</li>
+<li>  b: 等待IO的进程数量。</li>
 </ul>
 <p>Memory（内存）</p>
 <ul>
-<li>swpd: 使用虚拟内存大小，如果swpd的值不为0，但是SI，SO的值长期为0，这种情况不会影响系统性能。</li>
-<li>free: 空闲物理内存大小。</li>
-<li>buff: 用作缓冲的内存大小。</li>
-<li>cache: 用作缓存的内存大小，如果cache的值大的时候，说明cache处的文件数多，如果频繁访问到的文件都能被cache处，那么磁盘的读IO bi会非常小。</li>
+<li>  swpd: 使用虚拟内存大小，如果swpd的值不为0，但是SI，SO的值长期为0，这种情况不会影响系统性能。</li>
+<li>  free: 空闲物理内存大小。</li>
+<li>  buff: 用作缓冲的内存大小。</li>
+<li>  cache: 用作缓存的内存大小，如果cache的值大的时候，说明cache处的文件数多，如果频繁访问到的文件都能被cache处，那么磁盘的读IO bi会非常小。</li>
 </ul>
 <p>Swap</p>
 <ul>
-<li>si: 每秒从交换区写到内存的大小，由磁盘调入内存。</li>
-<li>so: 每秒写入交换区的内存大小，由内存调入磁盘。</li>
+<li>  si: 每秒从交换区写到内存的大小，由磁盘调入内存。</li>
+<li>  so: 每秒写入交换区的内存大小，由内存调入磁盘。</li>
 </ul>
 <p>注意：内存够用的时候，这2个值都是0，如果这2个值长期大于0时，系统性能会受到影响，磁盘IO和CPU资源都会被消耗。有些朋友看到空闲内存（free）很少的或接近于0时，就认为内存不够用了，不能光看这一点，还要结合si和so，如果free很少，但是si和so也很少（大多时候是0），那么不用担心，系统性能这时不会受到影响的。</p>
 <p>IO（现在的Linux版本块的大小为1kb）</p>
 <ul>
-<li>bi: 每秒读取的块数</li>
-<li>bo: 每秒写入的块数</li>
+<li>  bi: 每秒读取的块数</li>
+<li>  bo: 每秒写入的块数</li>
 </ul>
 <p>注意：随机磁盘读写的时候，这2个值越大（如超出1024k)，能看到CPU在IO等待的值也会越大。</p>
 <p>system（系统）</p>
 <ul>
-<li>in: 每秒中断数，包括时钟中断。</li>
-<li>cs: 每秒上下文切换数。</li>
+<li>  in: 每秒中断数，包括时钟中断。</li>
+<li>  cs: 每秒上下文切换数。</li>
 </ul>
 <p>注意：上面2个值越大，会看到由内核消耗的CPU时间会越大。</p>
 <p>CPU（以百分比表示）</p>
 <ul>
-<li>us: 用户进程执行时间百分比(user time)</li>
+<li>  us: 用户进程执行时间百分比(user time)</li>
 </ul>
 <p>us的值比较高时，说明用户进程消耗的CPU时间多，但是如果长期超50%的使用，那么我们就该考虑优化程序算法或者进行加速。</p>
 <ul>
-<li>sy: 内核系统进程执行时间百分比(system time)</li>
+<li>  sy: 内核系统进程执行时间百分比(system time)</li>
 </ul>
 <p>sy的值高时，说明系统内核消耗的CPU资源多，这并不是良性表现，我们应该检查原因。</p>
 <ul>
-<li>wa: IO等待时间百分比</li>
+<li>  wa: IO等待时间百分比</li>
 </ul>
 <p>wa的值高时，说明IO等待比较严重，这可能由于磁盘大量作随机访问造成，也有可能磁盘出现瓶颈（块操作）。</p>
 <ul>
-<li>id: 空闲时间百分比</li>
+<li>  id: 空闲时间百分比</li>
 </ul>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 </div>
@@ -133,7 +133,7 @@ procs -----------memory---------- ---swap-- -----io---- --system-- -----cpu-----
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1607951371711"></script>
-<script type="text/javascript" src="../js/index.js?v=1607951371711"></script>
+<script type="text/javascript" src="../js/dt.js?v=1607951766490"></script>
+<script type="text/javascript" src="../js/index.js?v=1607951766490"></script>
 </body>
 </html>
