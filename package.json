@@ -30,10 +30,10 @@
     "fs-extra": "9.0.1",
     "marked": "1.2.6",
     "prismjs": "1.21.0",
-    "sitemap-generator": "8.5.0",
+    "sitemap-generator": "^8.5.1",
     "sqlite3": "4.1.1",
     "stylus": "0.54.8",
-    "uglify-js": "3.8.0"
+    "uglify-js": "3.12.1"
   },
   "bugs": {
     "url": "https://github.com/jaywcjlove/linux-command/issues"
