@@ -96,5 +96,25 @@ zfb@localhost:~$
 
 其中，只有命令`cat command.log`是用户输入，其他均为自动呈现。通过查看上面输出的时间`2020-12-23 20:48:46`，可以证明，这是重现的记录，而非重新执行一遍命令。也就是说，可以把`time.file`和`command.log`文件移动到任意一台机器上，都可以重现命令输入与终端回显。
 
+ **记录服务器用户会话操作** 
+
+以`root`身份编辑文件`/etc/profile`，在文件末尾追加以下内容
+
+```bash
+if [ $UID -ge 0 ]
+then
+    exec /usr/bin/script -t 2>/var/log/script-records/$USER-$UID-`date +%Y%m%d`.time -a -f -q /var/log/script-records/$USER-$UID-`date +%Y%m%d`.log
+fi
+```
+
+然后再以`root`身份创建文件夹用于存储服务器上的各个用户在终端的所有操作信息
+
+```bash
+sudo mkdir -p /var/log/script-records/
+sudo chmod 733 /var/log/script-records/
+```
+
+最后，执行命令`source /etc/profile`即可。任意用户（`UID ≥ 0`）在终端执行的所有操作都会被安静地记录下来，以天为单位存储。
+
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
