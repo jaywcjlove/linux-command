@@ -77,6 +77,12 @@ zip -q -r html.zip html
 zip -q -r html.zip *
 ```
 
+压缩 `example/basic/` 目录内容到 `basic.zip` 压缩包中 `-x` 指定排除目录，注意没有双引号将不起作用。
+
+```shell
+zip -r basic.zip example/basic/ -x "example/basic/node_modules/*" -x "example/basic/build/*" -x "example/basic/coverage/*"
+```
+
 压缩效率选择:
 
 ```shell
