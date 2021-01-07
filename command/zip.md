@@ -89,6 +89,24 @@ zip -r basic.zip example/basic/ -x "example/basic/node_modules/*" -x "example/ba
 zip -9 # 1-9 faster->better
 ```
 
+创建 `public_html` 目录下忽略所有文件和文件夹，排除包括文本 `backup` 的所有文件。
+
+```shell
+$ zip -r public_html.zip public_html -x *backup*
+```
+
+`httpdocs` 目录忽略 `.svn` 文件或 `git` 的文件和目录下创建所有文件的归档。
+
+```shell
+$ zip -r httpdocs.zip httpdocs --exclude *.svn* --exclude *.git*
+```
+
+`httpdocs` 目录忽略的所有文件，并与 `.log` 结尾的目录下创建所有文件的归档。
+
+```shell
+$ zip -r httpdocs.zip httpdocs --exclude "*.log"
+```
+
 ### 问题解决
 
 CentOS7中命令找不到
