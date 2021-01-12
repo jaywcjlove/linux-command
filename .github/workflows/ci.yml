@@ -18,7 +18,7 @@ jobs:
       id: changelog
       uses: jaywcjlove/changelog-generator@v1.3.9
       with:
-        myToken: ${{ secrets.GITHUB_TOKEN }}
+        token: ${{ secrets.GITHUB_TOKEN }}
         filter-author: (jaywcjlove|小弟调调™|dependabot\[bot\]|Renovate Bot)
         filter: (^[\s]+?[R|r]elease)|(^[R|r]elease)
 
