@@ -14,13 +14,13 @@ jobs:
       with:
         node-version: '10.x'
 
-    # - name: Cache dependencies
-    #   uses: actions/cache@v1
-    #   with:
-    #     path: ~/.npm
-    #     key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-    #     restore-keys: |
-    #       ${{ runner.os }}-node-
+    - name: Generate Changelog
+      id: changelog
+      uses: jaywcjlove/changelog-generator@v1.3.9
+      with:
+        myToken: ${{ secrets.GITHUB_TOKEN }}
+        filter-author: (jaywcjlove|小弟调调™|dependabot\[bot\]|Renovate Bot)
+        filter: (^[\s]+?[R|r]elease)|(^[R|r]elease)
 
     - run: npm install
     - run: npm run build
