@@ -28,7 +28,7 @@
     "colors-cli": "1.0.27",
     "ejs": "3.1.3",
     "fs-extra": "9.0.1",
-    "marked": "1.2.7",
+    "marked": "2.0.0",
     "prismjs": "1.22.0",
     "sitemap-generator": "8.5.1",
     "sqlite3": "4.1.1",
