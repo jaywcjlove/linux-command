@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,tmux,Tmux是一个优秀的终端复用软件，类似GNU Screen，但来自于OpenBSD，采用BSD授权">
     <title>tmux 命令，Linux tmux 命令详解：Tmux是一个优秀的终端复用软件，类似GNU Screen，但来自于OpenBSD，采用BSD授权 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614049695315">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614326816157">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -64,7 +64,8 @@ yum <span class="token function">install</span> libevent libevent-devel ncurses-
 <span class="token function">tar</span> -zvxf tmux-2.3.tar.gz <span class="token comment"># (提前下载：wget https://github.com/tmux/tmux/releases/download/2.3/tmux-2.3.tar.gz)</span>
 <span class="token builtin class-name">cd</span> tmux-2.3
 ./configure
-<span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span></code></pre>
+<span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span>
+</code></pre>
 <h2 id="快捷键使用说明">快捷键使用说明</h2><table class="table-view log-set-param">
 <tbody>
 <tr>
@@ -371,7 +372,8 @@ ctrl+b p        <span class="token comment">#    选择前一个窗口</span>
 ctrl+b w        <span class="token comment">#    以菜单方式显示及选择窗口</span>
 ctrl+b s        <span class="token comment">#    以菜单方式显示和选择会话。这个常用到，可以选择进入哪个tmux</span>
 ctrl+b t        <span class="token comment">#    显示时钟。然后按enter键后就会恢复到shell终端状态</span>
-ctrl+b d        <span class="token comment">#    脱离当前会话；这样可以暂时返回Shell界面，输入tmux attach能够重新进入之前的会话</span></code></pre>
+ctrl+b d        <span class="token comment">#    脱离当前会话；这样可以暂时返回Shell界面，输入tmux attach能够重新进入之前的会话</span>
+</code></pre>
 <h2 id="参考资料">参考资料</h2><ul>
 <li>tmux 官网下载地址：<a href="http://tmux.github.io/">http://tmux.github.io/</a> </li>
 </ul>
@@ -398,7 +400,7 @@ ctrl+b d        <span class="token comment">#    脱离当前会话；这样可�
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1614049695315"></script>
-<script type="text/javascript" src="../js/index.js?v=1614049695315"></script>
+<script type="text/javascript" src="../js/dt.js?v=1614326816157"></script>
+<script type="text/javascript" src="../js/index.js?v=1614326816157"></script>
 </body>
 </html>

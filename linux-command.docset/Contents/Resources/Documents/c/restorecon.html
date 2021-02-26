@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,restorecon,恢复文件的安全上下文">
     <title>restorecon 命令，Linux restorecon 命令详解：恢复文件的安全上下文 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614049695210">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614326816037">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -42,7 +42,8 @@
 
 <h1 id="restorecon">restorecon</h1><p>恢复文件的安全上下文</p>
 <h2 id="补充说明">补充说明</h2><p><strong>restorecon命令</strong> 用来恢复SELinux文件属性即恢复文件的安全上下文。</p>
-<h3 id="语法">语法</h3><pre><code class="language-shell">restorecon <span class="token punctuation">[</span>-iFnrRv<span class="token punctuation">]</span> <span class="token punctuation">[</span>-e excludedir <span class="token punctuation">]</span> <span class="token punctuation">[</span>-o filename <span class="token punctuation">]</span> <span class="token punctuation">[</span>-f filename <span class="token operator">|</span> pathname<span class="token punctuation">..</span>.<span class="token punctuation">]</span></code></pre>
+<h3 id="语法">语法</h3><pre><code class="language-shell">restorecon <span class="token punctuation">[</span>-iFnrRv<span class="token punctuation">]</span> <span class="token punctuation">[</span>-e excludedir <span class="token punctuation">]</span> <span class="token punctuation">[</span>-o filename <span class="token punctuation">]</span> <span class="token punctuation">[</span>-f filename <span class="token operator">|</span> pathname<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+</code></pre>
 <h3 id="选项">选项</h3><pre><code class="language-shell">-i：忽略不存在的文件。
 -f：infilename 文件 infilename 中记录要处理的文件。
 -e：directory 排除目录。
@@ -50,7 +51,8 @@
 -n：不改变文件标签。
 -o/outfilename：保存文件列表到 outfilename，在文件不正确情况下。
 -v：将过程显示到屏幕上。
--F：强制恢复文件安全语境。</code></pre>
+-F：强制恢复文件安全语境。
+</code></pre>
 <h3 id="实例">实例</h3><p>假设CentOS安装了apache，网页默认的主目录是<code>/var/www/html</code>，我们经常遇到这样的问题，在其他目录中创建了一个网页文件，然后用mv移动到网页默认目录<code>/var/www/html</code>中，但是在浏览器中却打不开这个文件，这很可能是因为这个文件的SELinux配置信息是继承原来那个目录的，与<code>/var/www/html</code>目录不同，使用mv移动的时候，这个SELinux配置信息也一起移动过来了，从而导致无法打开页面，具体请看下面的实例：</p>
 <p>使用CentOS举例,如果默认没有安装apache，确保网络连接，使用下面的命令安装</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@jsdig.com ~<span class="token punctuation">]</span><span class="token comment"># yum install httpd</span>
@@ -74,15 +76,18 @@ welcome to www.jsdig.com
 <span class="token comment"># 而index.html文件的SELinux配置信息却是tcontext=后面的部分，</span>
 <span class="token comment"># 从tcontext=的第三段“admin_home_t”不难看出，这个文件的SELinux配置信息是root用户家目录的。</span>
 <span class="token comment"># </span>
-<span class="token assign-left variable">type</span><span class="token operator">=</span>AVC <span class="token assign-left variable">msg</span><span class="token operator">=</span>audit<span class="token punctuation">(</span><span class="token number">1378974214.610</span>:465<span class="token punctuation">)</span>: avc:  denied  <span class="token punctuation">{</span> <span class="token function">open</span> <span class="token punctuation">}</span> <span class="token keyword">for</span>  <span class="token assign-left variable">pid</span><span class="token operator">=</span><span class="token number">2359</span> <span class="token assign-left variable">comm</span><span class="token operator">=</span><span class="token string">"httpd"</span> <span class="token assign-left variable">path</span><span class="token operator">=</span><span class="token string">"/var/www/html/index.html"</span> <span class="token assign-left variable">dev</span><span class="token operator">=</span><span class="token string">"sda1"</span> <span class="token assign-left variable">ino</span><span class="token operator">=</span><span class="token number">1317685</span> <span class="token assign-left variable">scontext</span><span class="token operator">=</span>system_u:system_r:httpd_t:s0 <span class="token assign-left variable">tcontext</span><span class="token operator">=</span>unconfined_u:object_r:admin_home_t:s0 <span class="token assign-left variable">tclass</span><span class="token operator">=</span>file</code></pre>
+<span class="token assign-left variable">type</span><span class="token operator">=</span>AVC <span class="token assign-left variable">msg</span><span class="token operator">=</span>audit<span class="token punctuation">(</span><span class="token number">1378974214.610</span>:465<span class="token punctuation">)</span>: avc:  denied  <span class="token punctuation">{</span> <span class="token function">open</span> <span class="token punctuation">}</span> <span class="token keyword">for</span>  <span class="token assign-left variable">pid</span><span class="token operator">=</span><span class="token number">2359</span> <span class="token assign-left variable">comm</span><span class="token operator">=</span><span class="token string">"httpd"</span> <span class="token assign-left variable">path</span><span class="token operator">=</span><span class="token string">"/var/www/html/index.html"</span> <span class="token assign-left variable">dev</span><span class="token operator">=</span><span class="token string">"sda1"</span> <span class="token assign-left variable">ino</span><span class="token operator">=</span><span class="token number">1317685</span> <span class="token assign-left variable">scontext</span><span class="token operator">=</span>system_u:system_r:httpd_t:s0 <span class="token assign-left variable">tcontext</span><span class="token operator">=</span>unconfined_u:object_r:admin_home_t:s0 <span class="token assign-left variable">tclass</span><span class="token operator">=</span>file
+</code></pre>
 <p>使用ls -Z也可以看出,文件和目录的SELinux信息不匹配</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@jsdig.com html<span class="token punctuation">]</span><span class="token comment"># ls -Z /var/www/html/</span>
 <span class="token punctuation">..</span><span class="token punctuation">..</span> unconfined_u:object_r:admin_home_t:s0 index.html
 
 <span class="token punctuation">[</span>root@jsdig.com html<span class="token punctuation">]</span><span class="token comment"># ls -Zd /var/www/html/</span>
-<span class="token punctuation">..</span><span class="token punctuation">..</span> system_u:object_r:httpd_sys_content_t:s0 /var/www/html/</code></pre>
+<span class="token punctuation">..</span><span class="token punctuation">..</span> system_u:object_r:httpd_sys_content_t:s0 /var/www/html/
+</code></pre>
 <p>使用restorecon来恢复网页主目录中所有文件的SELinux配置信息(如果目标为一个目录，可以添加-R参数递归)</p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@jsdig.com html<span class="token punctuation">]</span><span class="token comment"># restorecon -R /var/www/html/</span></code></pre>
+<pre><code class="language-shell"><span class="token punctuation">[</span>root@jsdig.com html<span class="token punctuation">]</span><span class="token comment"># restorecon -R /var/www/html/</span>
+</code></pre>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 </div>
 
@@ -106,7 +111,7 @@ welcome to www.jsdig.com
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1614049695210"></script>
-<script type="text/javascript" src="../js/index.js?v=1614049695210"></script>
+<script type="text/javascript" src="../js/dt.js?v=1614326816038"></script>
+<script type="text/javascript" src="../js/index.js?v=1614326816038"></script>
 </body>
 </html>

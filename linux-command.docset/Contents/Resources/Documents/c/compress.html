@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,compress,使用Lempress-Ziv编码压缩数据文件">
     <title>compress 命令，Linux compress 命令详解：使用Lempress-Ziv编码压缩数据文件 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614049694881">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614326815629">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -42,28 +42,35 @@
 
 <h1 id="compress">compress</h1><p>使用Lempress-Ziv编码压缩数据文件</p>
 <h2 id="补充说明">补充说明</h2><p><strong>compress命令</strong> 使用“Lempress-Ziv”编码压缩数据文件。compress是个历史悠久的压缩程序，文件经它压缩后，其名称后面会多出&quot;.Z&quot;的扩展名。当要解压缩时，可执行uncompress指令。事实上uncompress是指向compress的符号连接，因此不论是压缩或解压缩，都可通过compress指令单独完成。</p>
-<h3 id="语法">语法</h3><pre><code class="language-shell">compress<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span></code></pre>
+<h3 id="语法">语法</h3><pre><code class="language-shell">compress<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
+</code></pre>
 <h3 id="选项">选项</h3><pre><code class="language-shell">-f：不提示用户，强制覆盖掉目标文件；
 -c：将结果送到标准输出，无文件被改变；
 -r：递归的操作方式；
 -b<span class="token operator">&lt;</span>压缩效率<span class="token operator">></span>：压缩效率是一个介于9~16的数值，预设值为<span class="token string">"16"</span>，指定愈大的数值，压缩效率就愈高；
 -d：对文件进行解压缩而非压缩；
 -v：显示指令执行过程；
--V：显示指令版本及程序预设值。</code></pre>
+-V：显示指令版本及程序预设值。
+</code></pre>
 <h3 id="参数">参数</h3><p>文件：指定要压缩的文件列表。</p>
 <h3 id="实例">实例</h3><p>将<code>/etc/man.config</code>复到<code>/tmp</code> ，并加以压缩</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># cd /tmp</span>
 <span class="token punctuation">[</span>root@localhost tmp<span class="token punctuation">]</span><span class="token comment"># cp /etc/man.config .</span>
 <span class="token punctuation">[</span>root@localhost tmp<span class="token punctuation">]</span><span class="token comment"># compress man.config</span>
-<span class="token punctuation">[</span>root@localhost tmp<span class="token punctuation">]</span><span class="token comment"># ls -l</span></code></pre>
-<pre><code class="language-shell">-rw-r--r-- <span class="token number">1</span> root root <span class="token number">2605</span> Jul <span class="token number">27</span> <span class="token number">11</span>:43 man.config.Z</code></pre>
+<span class="token punctuation">[</span>root@localhost tmp<span class="token punctuation">]</span><span class="token comment"># ls -l</span>
+</code></pre>
+<pre><code class="language-shell">-rw-r--r-- <span class="token number">1</span> root root <span class="token number">2605</span> Jul <span class="token number">27</span> <span class="token number">11</span>:43 man.config.Z
+</code></pre>
 <p>将刚刚的压缩档解开</p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost tmp<span class="token punctuation">]</span><span class="token comment"># compress -d man.config.Z</span></code></pre>
+<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost tmp<span class="token punctuation">]</span><span class="token comment"># compress -d man.config.Z</span>
+</code></pre>
 <p>将 man.config 压缩成另外一个文件来备份</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost tmp<span class="token punctuation">]</span><span class="token comment"># compress -c man.config > man.config.back.Z</span>
-<span class="token punctuation">[</span>root@localhost tmp<span class="token punctuation">]</span><span class="token comment"># ll man.config*</span></code></pre>
+<span class="token punctuation">[</span>root@localhost tmp<span class="token punctuation">]</span><span class="token comment"># ll man.config*</span>
+</code></pre>
 <pre><code class="language-shell">-rw-r--r-- <span class="token number">1</span> root root <span class="token number">4506</span> Jul <span class="token number">27</span> <span class="token number">11</span>:43 man.config
--rw-r--r-- <span class="token number">1</span> root root <span class="token number">2605</span> Jul <span class="token number">27</span> <span class="token number">11</span>:46 man.config.back.Z</code></pre>
+-rw-r--r-- <span class="token number">1</span> root root <span class="token number">2605</span> Jul <span class="token number">27</span> <span class="token number">11</span>:46 man.config.back.Z
+</code></pre>
 <p>这个<code>-c</code>的选项比较有趣！会将压缩过程的资料输出到屏幕上，而不是写入成为file.Z文件。所以，我们可以透过资料流重导向的方法将资料输出成为另一个档名。</p>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 </div>
@@ -88,7 +95,7 @@
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1614049694882"></script>
-<script type="text/javascript" src="../js/index.js?v=1614049694882"></script>
+<script type="text/javascript" src="../js/dt.js?v=1614326815630"></script>
+<script type="text/javascript" src="../js/index.js?v=1614326815630"></script>
 </body>
 </html>

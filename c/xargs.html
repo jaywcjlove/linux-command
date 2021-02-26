@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,xargs,给其他命令传递参数的一个过滤器">
     <title>xargs 命令，Linux xargs 命令详解：给其他命令传递参数的一个过滤器 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614049695362">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614326816217">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -50,11 +50,13 @@ a b c d e f g
 h i j k l m n
 o p q
 r s t
-u <span class="token function">v</span> w x y z</code></pre>
+u <span class="token function">v</span> w x y z
+</code></pre>
 <p>多行输入单行输出：</p>
 <pre><code class="language-shell"><span class="token function">cat</span> test.txt <span class="token operator">|</span> <span class="token function">xargs</span>
 
-a b c d e f g h i j k l m n o p q r s t u <span class="token function">v</span> w x y z</code></pre>
+a b c d e f g h i j k l m n o p q r s t u <span class="token function">v</span> w x y z
+</code></pre>
 <h4 id="使用 -n 进行多行输出">使用 -n 进行多行输出</h4><p><strong>-n 选项</strong> 多行输出：</p>
 <pre><code class="language-shell"><span class="token function">cat</span> test.txt <span class="token operator">|</span> <span class="token function">xargs</span> -n3
 
@@ -66,49 +68,61 @@ m n o
 p q r
 s t u
 <span class="token function">v</span> w x
-y z</code></pre>
+y z
+</code></pre>
 <h4 id="使用 -d 分割输入">使用 -d 分割输入</h4><p><strong>-d 选项</strong> 可以自定义一个定界符：</p>
 <pre><code class="language-shell"><span class="token builtin class-name">echo</span> <span class="token string">"nameXnameXnameXname"</span> <span class="token operator">|</span> <span class="token function">xargs</span> -dX
 
-name name name name</code></pre>
+name name name name
+</code></pre>
 <p>结合 <strong>-n 选项</strong> 使用：</p>
 <pre><code class="language-shell"><span class="token builtin class-name">echo</span> <span class="token string">"nameXnameXnameXname"</span> <span class="token operator">|</span> <span class="token function">xargs</span> -dX -n2
 
 name name
-name name</code></pre>
+name name
+</code></pre>
 <h4 id="读取 stdin">读取 stdin</h4><p><strong>读取 stdin，将格式化后的参数传递给命令</strong></p>
 <p>假设一个命令为 sk.sh 和一个保存参数的文件 arg.txt：</p>
 <pre><code class="language-shell"><span class="token shebang important">#!/bin/bash</span>
 <span class="token comment">#sk.sh 命令内容，打印出所有参数。</span>
 
-<span class="token builtin class-name">echo</span> <span class="token variable">&#36;*</span></code></pre>
+<span class="token builtin class-name">echo</span> <span class="token variable">&#36;*</span>
+</code></pre>
 <p>arg.txt 文件内容：</p>
 <pre><code class="language-shell"><span class="token function">cat</span> arg.txt
 
 aaa
 bbb
-ccc</code></pre>
+ccc
+</code></pre>
 <h4 id="结合 -i 选项">结合 -I 选项</h4><p>xargs 的一个 <strong>选项 -I</strong> ，使用 -I 指定一个替换字符串{}，这个字符串在 xargs 扩展时会被替换掉，当 -I 与 xargs 结合使用，每一个参数命令都会被执行一次：</p>
 <pre><code class="language-shell"><span class="token function">cat</span> arg.txt <span class="token operator">|</span> <span class="token function">xargs</span> -I <span class="token punctuation">{</span><span class="token punctuation">}</span> ./sk.sh -p <span class="token punctuation">{</span><span class="token punctuation">}</span> -l
 
 -p aaa -l
 -p bbb -l
--p ccc -l</code></pre>
+-p ccc -l
+</code></pre>
 <p>复制所有图片文件到 /data/images 目录下：</p>
-<pre><code class="language-shell"><span class="token function">ls</span> *.jpg <span class="token operator">|</span> <span class="token function">xargs</span> -n1 -I <span class="token function">cp</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> /data/images</code></pre>
+<pre><code class="language-shell"><span class="token function">ls</span> *.jpg <span class="token operator">|</span> <span class="token function">xargs</span> -n1 -I <span class="token function">cp</span> <span class="token punctuation">{</span><span class="token punctuation">}</span> /data/images
+</code></pre>
 <h4 id="结合 find 命令使用">结合 find 命令使用</h4><p><strong>xargs 结合 find 使用</strong></p>
 <p>用 rm 删除太多的文件时候，可能得到一个错误信息：<code>/bin/rm Argument list too long</code>. 用 <code>xargs</code> 去避免这个问题：</p>
-<pre><code class="language-shell"><span class="token function">find</span> <span class="token builtin class-name">.</span> -type f -name <span class="token string">"*.log"</span> -print0 <span class="token operator">|</span> <span class="token function">xargs</span> -0 <span class="token function">rm</span> -f</code></pre>
+<pre><code class="language-shell"><span class="token function">find</span> <span class="token builtin class-name">.</span> -type f -name <span class="token string">"*.log"</span> -print0 <span class="token operator">|</span> <span class="token function">xargs</span> -0 <span class="token function">rm</span> -f
+</code></pre>
 <p>xargs -0 将 <code>\0</code> 作为定界符。</p>
 <p>统计一个源代码目录中所有 php 文件的行数：</p>
-<pre><code class="language-shell"><span class="token function">find</span> <span class="token builtin class-name">.</span> -type f -name <span class="token string">"*.php"</span> -print0 <span class="token operator">|</span> <span class="token function">xargs</span> -0 <span class="token function">wc</span> -l</code></pre>
+<pre><code class="language-shell"><span class="token function">find</span> <span class="token builtin class-name">.</span> -type f -name <span class="token string">"*.php"</span> -print0 <span class="token operator">|</span> <span class="token function">xargs</span> -0 <span class="token function">wc</span> -l
+</code></pre>
 <p>查找所有的 jpg 文件，并且压缩它们：</p>
-<pre><code class="language-shell"><span class="token function">find</span> <span class="token builtin class-name">.</span> -type f -name <span class="token string">"*.jpg"</span> -print <span class="token operator">|</span> <span class="token function">xargs</span> <span class="token function">tar</span> -czvf images.tar.gz</code></pre>
+<pre><code class="language-shell"><span class="token function">find</span> <span class="token builtin class-name">.</span> -type f -name <span class="token string">"*.jpg"</span> -print <span class="token operator">|</span> <span class="token function">xargs</span> <span class="token function">tar</span> -czvf images.tar.gz
+</code></pre>
 <h4 id="打印出执行的命令">打印出执行的命令</h4><p>结合 <code>-t</code> 选项可以打印出 <code>xargs</code> 执行的命令</p>
-<pre><code><span class="token function">ls</span> <span class="token operator">|</span> <span class="token function">xargs</span> -t -I<span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token builtin class-name">echo</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre>
+<pre><code><span class="token function">ls</span> <span class="token operator">|</span> <span class="token function">xargs</span> -t -I<span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token builtin class-name">echo</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre>
 <p>会输出当前目录下的文件列表和执行的 echo 命令</p>
 <h4 id="使用 -p 选项确认执行的命令">使用 -p 选项确认执行的命令</h4><p><code>-p</code> 选项会在执行每一个命令时弹出确认，当你需要非常准确的确认每一次操作时可以使用 <code>-p</code> 参数，比如，查找当前目录下 <code>.log</code> 文件，每一次删除都需要确认：</p>
-<pre><code><span class="token function">find</span> <span class="token builtin class-name">.</span> -maxdepth <span class="token number">1</span> -name <span class="token string">"*.log"</span> <span class="token operator">|</span> <span class="token function">xargs</span> -p -I<span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token function">rm</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre>
+<pre><code><span class="token function">find</span> <span class="token builtin class-name">.</span> -maxdepth <span class="token number">1</span> -name <span class="token string">"*.log"</span> <span class="token operator">|</span> <span class="token function">xargs</span> -p -I<span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token function">rm</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+</code></pre>
 <h4 id="执行多个命令">执行多个命令</h4><p>使用 <code>-I</code> 选项可以让 <code>xargs</code> 执行多个命令</p>
 <pre><code><span class="token function">cat</span> foo.txt
 one
@@ -121,12 +135,15 @@ two
 three
 
 <span class="token function">ls</span>
-one two three</code></pre>
+one two three
+</code></pre>
 <h4 id="其他应用">其他应用</h4><p><strong>xargs 其他应用</strong></p>
 <p>假如你有一个文件包含了很多你希望下载的 URL，你能够使用 xargs 下载所有链接：</p>
-<pre><code class="language-shell"><span class="token function">cat</span> url-list.txt <span class="token operator">|</span> <span class="token function">xargs</span> <span class="token function">wget</span> -c</code></pre>
+<pre><code class="language-shell"><span class="token function">cat</span> url-list.txt <span class="token operator">|</span> <span class="token function">xargs</span> <span class="token function">wget</span> -c
+</code></pre>
 <h3 id="子 shell（subshells）">子 Shell（Subshells）</h3><p>运行一个 shell 脚本时会启动另一个命令解释器.，就好像你的命令是在命令行提示下被解释的一样，类似于批处理文件里的一系列命令。每个 shell 脚本有效地运行在父 shell(parent shell) 的一个子进程里。这个父 shell 是指在一个控制终端或在一个 xterm 窗口中给你命令指示符的进程。</p>
-<pre><code class="language-shell">cmd1 <span class="token operator">|</span> <span class="token punctuation">(</span> cmd2<span class="token punctuation">;</span> cmd3<span class="token punctuation">;</span> cmd4 <span class="token punctuation">)</span> <span class="token operator">|</span> cmd5</code></pre>
+<pre><code class="language-shell">cmd1 <span class="token operator">|</span> <span class="token punctuation">(</span> cmd2<span class="token punctuation">;</span> cmd3<span class="token punctuation">;</span> cmd4 <span class="token punctuation">)</span> <span class="token operator">|</span> cmd5
+</code></pre>
 <p>如果 cmd2 是 cd /，那么就会改变子 Shell 的工作目录，这种改变只是局限于子 shell 内部，cmd5 则完全不知道工作目录发生的变化。子 shell 是嵌在圆括号 () 内部的命令序列，子 Shell 内部定义的变量为局部变量。</p>
 <p>子 shell 可用于为一组命令设定临时的环境变量：</p>
 <pre><code class="language-shell">COMMAND1
@@ -144,7 +161,8 @@ COMMAND3
 <span class="token punctuation">)</span>
 <span class="token comment"># 父 shell 不受影响，变量值没有更改。</span>
 COMMAND6
-COMMAND7</code></pre>
+COMMAND7
+</code></pre>
 <h2 id="reference">reference</h2><ul>
 <li><a href="https://shapeshed.com/unix-xargs/">https://shapeshed.com/unix-xargs/</a></li>
 </ul>
@@ -172,7 +190,7 @@ COMMAND7</code></pre>
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1614049695362"></script>
-<script type="text/javascript" src="../js/index.js?v=1614049695362"></script>
+<script type="text/javascript" src="../js/dt.js?v=1614326816218"></script>
+<script type="text/javascript" src="../js/index.js?v=1614326816218"></script>
 </body>
 </html>

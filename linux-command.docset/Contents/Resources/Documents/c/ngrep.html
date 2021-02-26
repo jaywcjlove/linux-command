@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,ngrep,方便的数据包匹配和显示工具">
     <title>ngrep 命令，Linux ngrep 命令详解：方便的数据包匹配和显示工具 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614049695151">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614326815955">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -48,14 +48,17 @@
 <span class="token function">tar</span> -zxf libpcap-1.3.0.tar.gz
 <span class="token builtin class-name">cd</span> libpcap-1.3.0
 ./configure
-<span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span></code></pre>
+<span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span>
+</code></pre>
 <p>ngrep的安装就是 configure/make/make install 三部曲。</p>
 <p>注：configure时是遇到 please wipe out all unused pcap installations，添加以下选项：</p>
-<pre><code class="language-shell">./configure --with-pcap-includes<span class="token operator">=</span>/usr/local/include/pcap</code></pre>
+<pre><code class="language-shell">./configure --with-pcap-includes<span class="token operator">=</span>/usr/local/include/pcap
+</code></pre>
 <p>在安装后输入ngrep来验证下安装是否成功。</p>
 <h3 id="语法">语法</h3><pre><code class="language-shell">ngrep <span class="token operator">&lt;</span>-LhNXViwqpevxlDtTRM<span class="token operator">></span> <span class="token operator">&lt;</span>-IO pcap_dump<span class="token operator">></span> <span class="token operator">&lt;</span>-n num<span class="token operator">></span> <span class="token operator">&lt;</span>-d dev<span class="token operator">></span> <span class="token operator">&lt;</span>-A num<span class="token operator">></span>
 <span class="token operator">&lt;</span>-s snaplen<span class="token operator">></span> <span class="token operator">&lt;</span>-S limitlen<span class="token operator">></span> <span class="token operator">&lt;</span>-w normal<span class="token operator">|</span>byline<span class="token operator">|</span>single<span class="token operator">|</span>none<span class="token operator">></span> <span class="token operator">&lt;</span>-c cols<span class="token operator">></span>
-<span class="token operator">&lt;</span>-P char<span class="token operator">></span> <span class="token operator">&lt;</span>-F file<span class="token operator">></span> <span class="token operator">&lt;</span>match expression<span class="token operator">></span> <span class="token operator">&lt;</span>bpf filter<span class="token operator">></span></code></pre>
+<span class="token operator">&lt;</span>-P char<span class="token operator">></span> <span class="token operator">&lt;</span>-F file<span class="token operator">></span> <span class="token operator">&lt;</span>match expression<span class="token operator">></span> <span class="token operator">&lt;</span>bpf filter<span class="token operator">></span>
+</code></pre>
 <h3 id="选项">选项</h3><pre><code class="language-shell">-e <span class="token comment"># 显示空数据包</span>
 -i <span class="token comment"># 忽略大小写</span>
 -v <span class="token comment"># 反转匹配</span>
@@ -81,18 +84,23 @@
 -F <span class="token comment"># 使用文件中定义的bpf(Berkeley Packet Filter)</span>
 -N <span class="token comment"># 显示由IANA定义的子协议号</span>
 -d <span class="token comment"># 使用哪个网卡，可以用-L选项查询</span>
--L <span class="token comment"># 查询网卡接口</span></code></pre>
+-L <span class="token comment"># 查询网卡接口</span>
+</code></pre>
 <h3 id="实例">实例</h3><p>捕捉cloudian：18080端口的request和response，<code>-W byline</code>用来解析包中的换行符，否则包里的所有数据都是连续的，可读性差。<code>-d lo</code>是监听本地网卡：</p>
-<pre><code class="language-shell">ngrep -W byline -d lo port <span class="token number">18080</span></code></pre>
+<pre><code class="language-shell">ngrep -W byline -d lo port <span class="token number">18080</span>
+</code></pre>
 <p>捕捉amazon：80端口的request和response。<code>-d eth0是</code>用来监听对外的网卡：</p>
-<pre><code class="language-shell">ngrep -W byline -d eth0 port <span class="token number">80</span></code></pre>
+<pre><code class="language-shell">ngrep -W byline -d eth0 port <span class="token number">80</span>
+</code></pre>
 <p>可以用<code>-d any</code>来捕捉所有的包：</p>
-<pre><code class="language-shell">ngrep <span class="token string">'[a-zA-Z]'</span> -t -W byline -d any tcp port <span class="token number">18080</span></code></pre>
+<pre><code class="language-shell">ngrep <span class="token string">'[a-zA-Z]'</span> -t -W byline -d any tcp port <span class="token number">18080</span>
+</code></pre>
 <p>捕获字符串<code>.flv</code>，比如要查看在Web Flash 视频中的.flv文件的下载地址：</p>
 <pre><code class="language-shell">ngrep -d3 -N -q <span class="token punctuation">\</span>.flv
 interface: <span class="token punctuation">\</span>Device<span class="token punctuation">\</span>TNT_40_1_<span class="token punctuation">{</span>670F6B50-0A13-4BAB-9D9E-994A833F5BA9<span class="token punctuation">}</span> <span class="token punctuation">(</span><span class="token number">10.132</span>.0.0/2
 <span class="token number">55.255</span>.192.0<span class="token punctuation">)</span>
-match: <span class="token punctuation">\</span>.flv</code></pre>
+match: <span class="token punctuation">\</span>.flv
+</code></pre>
 <p>打开一个视频页面：</p>
 <pre><code class="language-shell">T<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span> <span class="token number">10.132</span>.34.23:24860 -<span class="token operator">></span> <span class="token number">61.142</span>.208.154:80 <span class="token punctuation">[</span>AP<span class="token punctuation">]</span>
 GET /f59.c31.56.com/flvdownload/12/19/ggyg7741@56.com_56flv_zhajm_119556973
@@ -101,7 +109,8 @@ site.swf<span class="token punctuation">..</span>x-flash-version: <span class="t
 flate<span class="token punctuation">..</span>User-Agent: Mozilla/4.0 <span class="token punctuation">(</span>compatible<span class="token punctuation">;</span> MSIE <span class="token number">7.0</span><span class="token punctuation">;</span> Windows NT <span class="token number">5.1</span><span class="token punctuation">;</span> .NET
 CLR <span class="token number">2.0</span>.50727<span class="token punctuation">;</span> .NET CLR <span class="token number">3.0</span>.04506.30<span class="token punctuation">)</span><span class="token punctuation">..</span>host: f59.r.56.com<span class="token punctuation">..</span>Connection: Keep
 -Alive<span class="token punctuation">..</span>Cookie: <span class="token assign-left variable">whistoryview</span><span class="token operator">=</span><span class="token number">23423759</span>-23635627-23423344-23171935-23058374-2
-<span class="token number">3081156</span>-23207350-22395727-<span class="token punctuation">;</span> <span class="token assign-left variable">geoip</span><span class="token operator">=</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">;</span> <span class="token assign-left variable">wl_all_s</span><span class="token operator">=</span>y<span class="token punctuation">..</span><span class="token punctuation">..</span></code></pre>
+<span class="token number">3081156</span>-23207350-22395727-<span class="token punctuation">;</span> <span class="token assign-left variable">geoip</span><span class="token operator">=</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">;</span> <span class="token assign-left variable">wl_all_s</span><span class="token operator">=</span>y<span class="token punctuation">..</span><span class="token punctuation">..</span>
+</code></pre>
 <p>OK。地址已经找到了,就是<a href="http://f59.c31.56.com/flvdownload/12/19/ggyg7741@56.com_56flv_zhajm_11955697397.flv">http://f59.c31.56.com/flvdownload/12/19/ggyg7741@56.com_56flv_zhajm_11955697397.flv</a></p>
 <p>加个<code>-W byline</code>参数后,将解析包中的换行符：</p>
 <pre><code class="language-shell">T<span class="token punctuation">(</span><span class="token number">6</span><span class="token punctuation">)</span> <span class="token number">2007</span>/11/25 <span class="token number">15</span>:56:12.192619 <span class="token number">10.132</span>.34.23:26365 -<span class="token operator">></span> <span class="token number">59.151</span>.21.101:80 <span class="token punctuation">[</span>AP<span class="token punctuation">]</span>
@@ -119,7 +128,8 @@ rT3vFo7ac<span class="token punctuation">;</span> <span class="token assign-left
 83CnEs9rxA1xBDM9mLR8-ckWeScyOQA8PyYnX5u5OjFvjfRbDg_FDZfwxhRzqS9KPZv26pjnsUxs0FDM
 1xpJ5AgDn38pXtlCdkksJ0-cbiIWoA61oHWMg<span class="token punctuation">;</span> <span class="token assign-left variable">NID</span><span class="token operator">=</span><span class="token number">7</span><span class="token operator">=</span>AvJxn5B6YOLLxoYz4LLzhIbNsQUQiulRS6U
 JGxdBniQBmXm99y7L-NBNORN82N3unmZSGHFPfePVHnLK2MjYjglyXZhU9x7ETXNBnY3NurNijHDhJ7K
-yi7E53UBOcv4V.</code></pre>
+yi7E53UBOcv4V.
+</code></pre>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 </div>
 
@@ -143,7 +153,7 @@ yi7E53UBOcv4V.</code></pre>
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1614049695151"></script>
-<script type="text/javascript" src="../js/index.js?v=1614049695151"></script>
+<script type="text/javascript" src="../js/dt.js?v=1614326815956"></script>
+<script type="text/javascript" src="../js/index.js?v=1614326815956"></script>
 </body>
 </html>

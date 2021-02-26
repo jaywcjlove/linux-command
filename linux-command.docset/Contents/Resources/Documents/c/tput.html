@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,tput,通过terminfo数据库对终端会话进行初始化和操作">
     <title>tput 命令，Linux tput 命令详解：通过terminfo数据库对终端会话进行初始化和操作 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614049695317">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614326816160">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -52,21 +52,27 @@ tput cup <span class="token number">10</span> <span class="token number">13</spa
 tput civis <span class="token comment"># 光标不可见</span>
 tput cnorm <span class="token comment"># 光标可见</span>
 tput rc <span class="token comment"># 显示输出</span>
-<span class="token builtin class-name">exit</span> <span class="token number">0</span></code></pre>
+<span class="token builtin class-name">exit</span> <span class="token number">0</span>
+</code></pre>
 <p> <strong>移动光标</strong> </p>
 <p>使用 tput 可以方便地实现在各设备上移动光标的位置。通过在 tput 中使用 cup 选项，或光标位置，您可以在设备的各行和各列中将光标移动到任意 X 或 Y 坐标。设备左上角的坐标为 (0,0)。</p>
 <p>要在设备上将光标移动到第 5 列 (X) 的第 1 行 (Y)，只需执行 tput cup 5 1。另一个示例是 tput cup 23 45，此命令将使光标移动到第 23 列上的第 45 行。</p>
 <p> <strong>移动光标并显示信息</strong> </p>
 <p>另一种有用的光标定位技巧是移动光标，执行用于显示信息的命令，然后返回到前一光标位置：</p>
-<pre><code class="language-shell"><span class="token punctuation">(</span>tput sc <span class="token punctuation">;</span> tput cup <span class="token number">23</span> <span class="token number">45</span> <span class="token punctuation">;</span> <span class="token builtin class-name">echo</span> “Input from tput/echo at <span class="token number">23</span>/45” <span class="token punctuation">;</span> tput rc<span class="token punctuation">)</span></code></pre>
+<pre><code class="language-shell"><span class="token punctuation">(</span>tput sc <span class="token punctuation">;</span> tput cup <span class="token number">23</span> <span class="token number">45</span> <span class="token punctuation">;</span> <span class="token builtin class-name">echo</span> “Input from tput/echo at <span class="token number">23</span>/45” <span class="token punctuation">;</span> tput rc<span class="token punctuation">)</span>
+</code></pre>
 <p>下面我们分析一下 subshell 命令：</p>
-<pre><code class="language-shell">tput sc</code></pre>
+<pre><code class="language-shell">tput sc
+</code></pre>
 <p>必须首先保存当前的光标位置。要保存当前的光标位置，请包括 sc 选项或“save cursor position”。</p>
-<pre><code class="language-shell">tput cup <span class="token number">23</span> <span class="token number">45</span></code></pre>
+<pre><code class="language-shell">tput cup <span class="token number">23</span> <span class="token number">45</span>
+</code></pre>
 <p>在保存了光标位置后，光标坐标将移动到 (23,45)。</p>
-<pre><code class="language-shell"><span class="token builtin class-name">echo</span> “Input from tput/echo at <span class="token number">23</span>/45”</code></pre>
+<pre><code class="language-shell"><span class="token builtin class-name">echo</span> “Input from tput/echo at <span class="token number">23</span>/45”
+</code></pre>
 <p>将信息显示到 stdout 中。</p>
-<pre><code class="language-shell">tput rc</code></pre>
+<pre><code class="language-shell">tput rc
+</code></pre>
 <p>在显示了这些信息之后，光标必须返回到使用 tput sc 保存的原始位置。要使光标返回到其上次保存的位置，请包括 rc 选项或“restore cursor position”。</p>
 <p>注意：由于本文首先详细介绍了通过命令行执行 tput，因此您可能会觉得在自己的 subshell 中执行命令要比单独执行每条命令然后在每条命令执行之前显示提示更简洁。</p>
 <p> <strong>更改光标的属性</strong> </p>
@@ -85,7 +91,8 @@ tput rc <span class="token comment"># 显示输出</span>
 <li>  7：白色</li>
 </ul>
 <p>执行以下示例命令可以将背景颜色更改为黄色，将前景颜色更改为红色：</p>
-<pre><code class="language-shell">tput setb <span class="token number">6</span> tput setf <span class="token number">4</span></code></pre>
+<pre><code class="language-shell">tput setb <span class="token number">6</span> tput setf <span class="token number">4</span>
+</code></pre>
 <p>要反显当前的颜色方案，只需执行<code>tput rev</code>。</p>
 <p>有时，仅为文本着色还不够，也就是说，您想要通过另一种方式引起用户的注意。可以通过两种方式达到这一目的：一是将文本设置为粗体，二是为文本添加下划线。</p>
 <p>要将文本更改为粗体，请使用 bold 选项。要开始添加下划线，请使用 smul 选项。在完成显示带下划线的文本后，请使用 rmul 选项。</p>
@@ -103,7 +110,8 @@ tput rc <span class="token comment"># 显示输出</span>
     <span class="token builtin class-name">echo</span> <span class="token variable"><span class="token variable">&#36;(</span>tput setaf &#36;i<span class="token punctuation">;</span> tput setab &#36;j<span class="token punctuation">;</span> tput bold<span class="token variable">)</span></span><span class="token string">"show me the money"</span><span class="token variable"><span class="token variable">&#36;(</span>tput sgr0<span class="token variable">)</span></span>
 <span class="token keyword">done</span>
 
-<span class="token builtin class-name">exit</span> <span class="token number">0</span></code></pre>
+<span class="token builtin class-name">exit</span> <span class="token number">0</span>
+</code></pre>
 <p>输出格式控制函数：</p>
 <pre><code class="language-shell"><span class="token shebang important">#!/bin/bash</span>
 
@@ -152,7 +160,8 @@ tput rc <span class="token comment"># 显示输出</span>
 
 format_output <span class="token string">"Yesterday Once more"</span> <span class="token number">2</span> <span class="token number">5</span> <span class="token number">1</span> <span class="token number">1</span>
 
-<span class="token builtin class-name">exit</span> <span class="token number">0</span></code></pre>
+<span class="token builtin class-name">exit</span> <span class="token number">0</span>
+</code></pre>
 <p>光标属性例子：</p>
 <pre><code class="language-shell"><span class="token shebang important">#!/bin/bash</span>
 <span class="token comment"># clear the screen</span>
@@ -184,7 +193,8 @@ tput <span class="token function">clear</span>
 tput sgr0
 tput rc
 
-<span class="token builtin class-name">exit</span> <span class="token number">0</span></code></pre>
+<span class="token builtin class-name">exit</span> <span class="token number">0</span>
+</code></pre>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 </div>
 
@@ -208,7 +218,7 @@ tput rc
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1614049695317"></script>
-<script type="text/javascript" src="../js/index.js?v=1614049695317"></script>
+<script type="text/javascript" src="../js/dt.js?v=1614326816161"></script>
+<script type="text/javascript" src="../js/index.js?v=1614326816161"></script>
 </body>
 </html>

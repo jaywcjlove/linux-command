@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,dmidecode,在Linux系统下获取有关硬件方面的信息">
     <title>dmidecode 命令，Linux dmidecode 命令详解：在Linux系统下获取有关硬件方面的信息 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614049694919">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614326815671">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -44,7 +44,8 @@
 <h2 id="补充说明">补充说明</h2><p><strong>dmidecode命令</strong> 可以让你在Linux系统下获取有关硬件方面的信息。dmidecode的作用是将DMI数据库中的信息解码，以可读的文本方式显示。由于DMI信息可以人为修改，因此里面的信息不一定是系统准确的信息。dmidecode遵循SMBIOS/DMI标准，其输出的信息包括BIOS、系统、主板、处理器、内存、缓存等等。</p>
 <p>DMI（Desktop Management Interface,DMI）就是帮助收集电脑系统信息的管理系统，DMI信息的收集必须在严格遵照SMBIOS规范的前提下进行。SMBIOS（System Management BIOS）是主板或系统制造者以标准格式显示产品管理信息所需遵循的统一规范。SMBIOS和DMI是由行业指导机构Desktop Management Task Force(DMTF)起草的开放性的技术标准，其中DMI设计适用于任何的平台和操作系统。</p>
 <p>DMI充当了管理工具和系统层之间接口的角色。它建立了标准的可管理系统更加方便了电脑厂商和用户对系统的了解。DMI的主要组成部分是Management Information Format(MIF)数据库。这个数据库包括了所有有关电脑系统和配件的信息。通过DMI，用户可以获取序列号、电脑厂商、串口信息以及其它系统配件信息。</p>
-<h3 id="语法">语法</h3><pre><code class="language-shell">dmidecode <span class="token punctuation">[</span>选项<span class="token punctuation">]</span></code></pre>
+<h3 id="语法">语法</h3><pre><code class="language-shell">dmidecode <span class="token punctuation">[</span>选项<span class="token punctuation">]</span>
+</code></pre>
 <h3 id="选项">选项</h3><pre><code class="language-shell">-d：<span class="token punctuation">(</span>default:/dev/mem<span class="token punctuation">)</span>从设备文件读取信息，输出内容与不加参数标准输出相同。
 -h：显示帮助信息。
 -s：只显示指定DMI字符串的信息。<span class="token punctuation">(</span>string<span class="token punctuation">)</span>
@@ -52,7 +53,8 @@
 -u：显示未解码的原始条目内容。
 --dump-bin file：将DMI数据转储到一个二进制文件中。
 --from-dump FILE：从一个二进制文件读取DMI数据。
--V：显示版本信息。</code></pre>
+-V：显示版本信息。
+</code></pre>
 <p> <strong>dmidecode参数string及type列表：</strong> </p>
 <p>（1）Valid string keywords are：</p>
 <ul>
@@ -147,7 +149,8 @@ dmidecode -t <span class="token number">17</span> <span class="token comment"># 
 dmidecode -t <span class="token number">16</span> <span class="token comment"># 查询内存信息</span>
 dmidecode -t <span class="token number">4</span>  <span class="token comment"># 查看CPU信息</span>
 
-<span class="token function">cat</span> /proc/scsi/scsi <span class="token comment"># 查看服务器硬盘信息</span></code></pre>
+<span class="token function">cat</span> /proc/scsi/scsi <span class="token comment"># 查看服务器硬盘信息</span>
+</code></pre>
 <p>不带选项执行dmidecode命令通常会输出所有的硬件信息。dmidecode命令有个很有用的选项-t，可以按指定类型输出相关信息，假如要获得处理器方面的信息，则可以执行：</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># dmidecode -t processor</span>
 <span class="token comment"># dmidecode 2.11</span>
@@ -231,18 +234,21 @@ Processor Information
         Serial Number: Not Specified
         Asset Tag: Not Specified
         Part Number: Not Specified
-        Characteristics: None</code></pre>
+        Characteristics: None
+</code></pre>
 <p>查看内存的插槽数，已经使用多少插槽。每条内存多大，已使用内存多大</p>
 <pre><code class="language-shell">dmidecode<span class="token operator">|</span><span class="token function">grep</span> -P -A5 <span class="token string">"Memory\s+Device"</span><span class="token operator">|</span><span class="token function">grep</span> Size<span class="token operator">|</span><span class="token function">grep</span> -v Range 
 
 <span class="token comment">#   Size: 2048 MB</span>
 <span class="token comment">#   Size: 2048 MB</span>
 <span class="token comment">#   Size: 4096 MB</span>
-<span class="token comment">#   Size: No Module Installed</span></code></pre>
+<span class="token comment">#   Size: No Module Installed</span>
+</code></pre>
 <p>查看内存支持的最大内存容量</p>
 <pre><code class="language-shell">dmidecode<span class="token operator">|</span><span class="token function">grep</span> -P <span class="token string">'Maximum\s+Capacity'</span>
 
-<span class="token comment">#  Maximum Capacity: 16 GB</span></code></pre>
+<span class="token comment">#  Maximum Capacity: 16 GB</span>
+</code></pre>
 <p>查看内存的频率</p>
 <pre><code class="language-shell">dmidecode<span class="token operator">|</span><span class="token function">grep</span> -A16 <span class="token string">"Memory Device"</span>
 
@@ -293,7 +299,8 @@ dmidecode<span class="token operator">|</span><span class="token function">grep<
 ```shell
 
 
-<span class="token operator">&lt;</span><span class="token operator">!</span>-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ --<span class="token operator">></span></code></pre>
+<span class="token operator">&lt;</span><span class="token operator">!</span>-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ --<span class="token operator">></span>
+</code></pre>
 
 </div>
 
@@ -317,7 +324,7 @@ dmidecode<span class="token operator">|</span><span class="token function">grep<
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1614049694920"></script>
-<script type="text/javascript" src="../js/index.js?v=1614049694920"></script>
+<script type="text/javascript" src="../js/dt.js?v=1614326815671"></script>
+<script type="text/javascript" src="../js/index.js?v=1614326815671"></script>
 </body>
 </html>

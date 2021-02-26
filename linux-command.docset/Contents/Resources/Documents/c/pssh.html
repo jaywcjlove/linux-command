@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,pssh,批量管理执行">
     <title>pssh 命令，Linux pssh 命令详解：批量管理执行 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614049695184">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614326816003">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -44,12 +44,14 @@
 <h2 id="补充说明">补充说明</h2><p><strong>pssh命令</strong> 是一个python编写可以在多台服务器上执行命令的工具，同时支持拷贝文件，是同类工具中很出色的，类似pdsh，个人认为相对pdsh更为简便，使用必须在各个服务器上配置好密钥认证访问。</p>
 <h3 id="安装pssh">安装pssh</h3><p>在CentOS系统环境下，介绍yum的安装和源码安装的方式：</p>
 <p> <strong>yum方法</strong> </p>
-<pre><code class="language-shell">yum <span class="token function">install</span> pssh</code></pre>
+<pre><code class="language-shell">yum <span class="token function">install</span> pssh
+</code></pre>
 <p> <strong>编译安装</strong> </p>
 <pre><code class="language-shell"><span class="token function">wget</span> http://parallel-ssh.googlecode.com/files/pssh-2.3.1.tar.gz
 <span class="token function">tar</span> xf pssh-2.3.1.tar.gz
 <span class="token builtin class-name">cd</span> pssh-2.3.1/
-python setup.py <span class="token function">install</span></code></pre>
+python setup.py <span class="token function">install</span>
+</code></pre>
 <h3 id="选项">选项</h3><pre><code class="language-shell">--version：查看版本
 --help：查看帮助，即此信息
 -h：主机文件列表，内容格式”<span class="token punctuation">[</span>user@<span class="token punctuation">]</span>host<span class="token punctuation">[</span>:port<span class="token punctuation">]</span>”
@@ -65,7 +67,8 @@ python setup.py <span class="token function">install</span></code></pre>
 -x：额外的命令行参数使用空白符号，引号，反斜线处理
 -X：额外的命令行参数，单个参数模式，同-x
 -i：每个服务器内部处理信息输出
--P：打印出服务器返回信息</code></pre>
+-P：打印出服务器返回信息
+</code></pre>
 <h3 id="实例">实例</h3><p>获取每台服务器的uptime：</p>
 <pre><code class="language-shell"><span class="token comment"># pssh -h ip.txt -i uptime</span>
 <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token number">11</span>:15:03 <span class="token punctuation">[</span>SUCCESS<span class="token punctuation">]</span> Mar.mars.he
@@ -73,7 +76,8 @@ python setup.py <span class="token function">install</span></code></pre>
 <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token number">11</span>:15:03 <span class="token punctuation">[</span>SUCCESS<span class="token punctuation">]</span> Jan.mars.he
 <span class="token number">11</span>:15:12 up <span class="token number">3</span> days, <span class="token number">23</span>:26,  <span class="token number">0</span> users,  load average: <span class="token number">0.00</span>, <span class="token number">0.00</span>, <span class="token number">0.00</span>
 <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token number">11</span>:15:03 <span class="token punctuation">[</span>SUCCESS<span class="token punctuation">]</span> Feb.mars.he
-<span class="token number">11</span>:15:12 up <span class="token number">4</span> days, <span class="token number">16</span>:26,  <span class="token number">2</span> users,  load average: <span class="token number">0.08</span>, <span class="token number">0.02</span>, <span class="token number">0.01</span></code></pre>
+<span class="token number">11</span>:15:12 up <span class="token number">4</span> days, <span class="token number">16</span>:26,  <span class="token number">2</span> users,  load average: <span class="token number">0.08</span>, <span class="token number">0.02</span>, <span class="token number">0.01</span>
+</code></pre>
 <p>查看每台服务器上mysql复制IO/SQL线程运行状态信息：</p>
 <pre><code class="language-shell"><span class="token comment"># pssh -h IP.txt -i "/usr/local/mysql/bin/mysql -e 'show slave status \G'"|grep Running:</span>
              Slave_IO_Running: <span class="token function">yes</span>
@@ -81,7 +85,8 @@ python setup.py <span class="token function">install</span></code></pre>
              Slave_IO_Running: Yes
             Slave_SQL_Running: Yes
              Slave_IO_Running: Yes
-            Slave_SQL_Running: Yes</code></pre>
+            Slave_SQL_Running: Yes
+</code></pre>
 <p>保存每台服务器运行的结果：</p>
 <pre><code class="language-shell"><span class="token comment"># pssh -h IP.txt -i -o /tmp/pssh/ uptime</span>
 <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token number">11</span>:19:47 <span class="token punctuation">[</span>SUCCESS<span class="token punctuation">]</span> Feb.mars.he
@@ -89,7 +94,8 @@ python setup.py <span class="token function">install</span></code></pre>
 <span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token number">11</span>:19:47 <span class="token punctuation">[</span>SUCCESS<span class="token punctuation">]</span> Jan.mars.he
 <span class="token number">11</span>:19:56 up <span class="token number">3</span> days, <span class="token number">23</span>:30,  <span class="token number">0</span> users,  load average: <span class="token number">0.01</span>, <span class="token number">0.00</span>, <span class="token number">0.00</span>
 <span class="token punctuation">[</span><span class="token number">3</span><span class="token punctuation">]</span> <span class="token number">11</span>:19:47 <span class="token punctuation">[</span>SUCCESS<span class="token punctuation">]</span> Mar.mars.he
-<span class="token number">11</span>:19:56 up <span class="token number">4</span> days, <span class="token number">16</span>:30,  <span class="token number">1</span> user,  load average: <span class="token number">0.00</span>, <span class="token number">0.00</span>, <span class="token number">0.00</span></code></pre>
+<span class="token number">11</span>:19:56 up <span class="token number">4</span> days, <span class="token number">16</span>:30,  <span class="token number">1</span> user,  load average: <span class="token number">0.00</span>, <span class="token number">0.00</span>, <span class="token number">0.00</span>
+</code></pre>
 <p>我们来看一下/tmp/pssh/下的文件及其内容</p>
 <pre><code class="language-shell"><span class="token comment"># ll /tmp/pssh/</span>
 总用量 <span class="token number">12</span>
@@ -100,7 +106,8 @@ python setup.py <span class="token function">install</span></code></pre>
 <span class="token comment"># cat /tmp/pssh/*</span>
 <span class="token number">11</span>:19:55 up <span class="token number">4</span> days, <span class="token number">16</span>:31,  <span class="token number">2</span> users,  load average: <span class="token number">0.02</span>, <span class="token number">0.03</span>, <span class="token number">0.00</span>
 <span class="token number">11</span>:19:56 up <span class="token number">3</span> days, <span class="token number">23</span>:30,  <span class="token number">0</span> users,  load average: <span class="token number">0.01</span>, <span class="token number">0.00</span>, <span class="token number">0.00</span>
-<span class="token number">11</span>:19:56 up <span class="token number">4</span> days, <span class="token number">16</span>:30,  <span class="token number">1</span> user,  load average: <span class="token number">0.00</span>, <span class="token number">0.00</span>, <span class="token number">0.00</span></code></pre>
+<span class="token number">11</span>:19:56 up <span class="token number">4</span> days, <span class="token number">16</span>:30,  <span class="token number">1</span> user,  load average: <span class="token number">0.00</span>, <span class="token number">0.00</span>, <span class="token number">0.00</span>
+</code></pre>
 <p>上面介绍的是pssh命令很少的一部分，大家可以将其用到适合自己的场景，发挥它的最大功效。</p>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 </div>
@@ -125,7 +132,7 @@ python setup.py <span class="token function">install</span></code></pre>
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1614049695184"></script>
-<script type="text/javascript" src="../js/index.js?v=1614049695184"></script>
+<script type="text/javascript" src="../js/dt.js?v=1614326816004"></script>
+<script type="text/javascript" src="../js/index.js?v=1614326816004"></script>
 </body>
 </html>

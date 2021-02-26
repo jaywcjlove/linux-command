@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,lftp,优秀的文件客户端程序">
     <title>lftp 命令，Linux lftp 命令详解：优秀的文件客户端程序 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614049695082">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614326815861">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -42,46 +42,59 @@
 
 <h1 id="lftp">lftp</h1><p>优秀的文件客户端程序</p>
 <h2 id="补充说明">补充说明</h2><p><strong>lftp命令</strong> 是一款优秀的文件客户端程序，它支持ftp、SETP、HTTP和FTPs等多种文件传输协议。lftp支持tab自动补全，记不得命令双击tab键，就可以看到可能的选项了。</p>
-<h3 id="语法">语法</h3><pre><code class="language-shell">lftp<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span></code></pre>
+<h3 id="语法">语法</h3><pre><code class="language-shell">lftp<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
+</code></pre>
 <h3 id="选项">选项</h3><pre><code class="language-shell">-f：指定lftp指令要执行的脚本文件；
 -c：执行指定的命令后退出；
 --help：显示帮助信息；
---version：显示指令的版本号。</code></pre>
+--version：显示指令的版本号。
+</code></pre>
 <h3 id="参数">参数</h3><p>站点：要访问的站点的ip地址或者域名。</p>
 <h3 id="实例">实例</h3><p> <strong>登录ftp</strong> </p>
-<pre><code class="language-shell">lftp 用户名:密码@ftp地址:传送端口（默认21）</code></pre>
+<pre><code class="language-shell">lftp 用户名:密码@ftp地址:传送端口（默认21）
+</code></pre>
 <p>也可以先不带用户名登录，然后在接口界面下用login命令来用指定账号登录，密码不显示。</p>
 <p> <strong>查看文件与改变目录</strong> </p>
 <pre><code class="language-shell"><span class="token function">ls</span>
-<span class="token builtin class-name">cd</span> 对应ftp目录</code></pre>
+<span class="token builtin class-name">cd</span> 对应ftp目录
+</code></pre>
 <p> <strong>下载</strong> </p>
 <p>get当然是可以的，还可以：</p>
 <pre><code class="language-shell">mget -c *.pdf    <span class="token comment">#把所有的pdf文件以允许断点续传的方式下载。</span>
 mirror aaa/      <span class="token comment">#将aaa目录整个的下载下来，子目录也会自动复制。</span>
-pget -c -n <span class="token number">10</span> file.dat   <span class="token comment">#以最多10个线程以允许断点续传的方式下载file.dat，可以通过设置pget:default-n的值而使用默认值。</span></code></pre>
+pget -c -n <span class="token number">10</span> file.dat   <span class="token comment">#以最多10个线程以允许断点续传的方式下载file.dat，可以通过设置pget:default-n的值而使用默认值。</span>
+</code></pre>
 <p> <strong>上传</strong> </p>
 <p>同样的put、mput都是对文件的操作，和下载类似。</p>
-<pre><code class="language-shell">mirror -R 本地目录名</code></pre>
+<pre><code class="language-shell">mirror -R 本地目录名
+</code></pre>
 <p>将本地目录以迭代（包括子目录）的方式反向上传到ftp site。</p>
 <p> <strong>模式设置</strong> </p>
-<pre><code class="language-shell"><span class="token builtin class-name">set</span> ftp:charset gbk</code></pre>
+<pre><code class="language-shell"><span class="token builtin class-name">set</span> ftp:charset gbk
+</code></pre>
 <p>远程ftp site用gbk编码，对应的要设置为utf8,只要替换gbk为utf8即可。</p>
-<pre><code class="language-shell"><span class="token builtin class-name">set</span> file:charset utf8</code></pre>
+<pre><code class="language-shell"><span class="token builtin class-name">set</span> file:charset utf8
+</code></pre>
 <p>本地的charset设定为utf8,如果你是gbk，相应改掉。</p>
-<pre><code class="language-shell"><span class="token builtin class-name">set</span> ftp:passive-mode <span class="token number">1</span></code></pre>
+<pre><code class="language-shell"><span class="token builtin class-name">set</span> ftp:passive-mode <span class="token number">1</span>
+</code></pre>
 <p>使用被动模式登录，有些site要求必须用被动模式或者主动模式才可以登录，这个开关就是设置这个的。0代表不用被动模式。</p>
 <p> <strong>书签</strong> </p>
 <p>其实命令行也可以有书签，在lftp终端提示符下：</p>
-<pre><code class="language-shell">bookmark <span class="token function">add</span> ustc</code></pre>
+<pre><code class="language-shell">bookmark <span class="token function">add</span> ustc
+</code></pre>
 <p>就可以把当前正在浏览的ftp site用ustc作为标签储存起来。以后在shell终端下，直接<code>lftp ustc</code>就可以自动填好用户名和密码，进入对应的目录了。</p>
-<pre><code class="language-shell">bookmark edit</code></pre>
+<pre><code class="language-shell">bookmark edit
+</code></pre>
 <p>会调用编辑器手动修改书签。当然，也可以看到，这个书签其实就是个简单的文本文件。密码，用户名都可以看到。</p>
 <p> <strong>配置文件</strong> </p>
-<pre><code class="language-shell"><span class="token function">vim</span> /etc/lftp.conf</code></pre>
+<pre><code class="language-shell"><span class="token function">vim</span> /etc/lftp.conf
+</code></pre>
 <p>一般，我会添加这几行：</p>
 <pre><code class="language-shell"><span class="token builtin class-name">set</span> ftp:charset gbk
 <span class="token builtin class-name">set</span> file:charset utf8
-<span class="token builtin class-name">set</span> pget:default-n <span class="token number">5</span></code></pre>
+<span class="token builtin class-name">set</span> pget:default-n <span class="token number">5</span>
+</code></pre>
 <p>这样，就不用每次进入都要打命令了。其他的set可以自己tab然后help来看。</p>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 </div>
@@ -106,7 +119,7 @@ pget -c -n <span class="token number">10</span> file.dat   <span class="token co
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1614049695083"></script>
-<script type="text/javascript" src="../js/index.js?v=1614049695083"></script>
+<script type="text/javascript" src="../js/dt.js?v=1614326815862"></script>
+<script type="text/javascript" src="../js/index.js?v=1614326815862"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,firewall-cmd,Linux上新用的防火墙软件，跟iptables差不多的工具">
     <title>firewall-cmd 命令，Linux firewall-cmd 命令详解：Linux上新用的防火墙软件，跟iptables差不多的工具 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614049694976">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614326815733">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -49,20 +49,24 @@
 </ol>
 <p>firewalld自身并不具备防火墙的功能，而是和iptables一样需要通过内核的netfilter来实现，也就是说firewalld和 iptables一样，他们的作用都是用于维护规则，而真正使用规则干活的是内核的netfilter，只不过firewalld和iptables的结 构以及使用方法不一样罢了。</p>
 <p><strong>命令格式</strong> </p>
-<pre><code class="language-shell">firewall-cmd <span class="token punctuation">[</span>选项 <span class="token punctuation">..</span>. <span class="token punctuation">]</span></code></pre>
+<pre><code class="language-shell">firewall-cmd <span class="token punctuation">[</span>选项 <span class="token punctuation">..</span>. <span class="token punctuation">]</span>
+</code></pre>
 <h3 id="选项">选项</h3><p>通用选项</p>
 <pre><code class="language-shell">-h, --help    <span class="token comment"># 显示帮助信息；</span>
 -V, --version <span class="token comment"># 显示版本信息. （这个选项不能与其他选项组合）；</span>
--q, --quiet   <span class="token comment"># 不打印状态消息；</span></code></pre>
+-q, --quiet   <span class="token comment"># 不打印状态消息；</span>
+</code></pre>
 <p>状态选项</p>
 <pre><code class="language-shell">--state                <span class="token comment"># 显示firewalld的状态；</span>
 --reload               <span class="token comment"># 不中断服务的重新加载；</span>
 --complete-reload      <span class="token comment"># 中断所有连接的重新加载；</span>
 --runtime-to-permanent <span class="token comment"># 将当前防火墙的规则永久保存；</span>
---check-config         <span class="token comment"># 检查配置正确性；</span></code></pre>
+--check-config         <span class="token comment"># 检查配置正确性；</span>
+</code></pre>
 <p>日志选项</p>
 <pre><code class="language-shell">--get-log-denied         <span class="token comment"># 获取记录被拒绝的日志；</span>
---set-log-denied<span class="token operator">=</span><span class="token operator">&lt;</span>value<span class="token operator">></span> <span class="token comment"># 设置记录被拒绝的日志，只能为 'all','unicast','broadcast','multicast','off' 其中的一个；</span></code></pre>
+--set-log-denied<span class="token operator">=</span><span class="token operator">&lt;</span>value<span class="token operator">></span> <span class="token comment"># 设置记录被拒绝的日志，只能为 'all','unicast','broadcast','multicast','off' 其中的一个；</span>
+</code></pre>
 <h3 id="实例">实例</h3><pre><code class="language-shell"><span class="token comment"># 安装firewalld</span>
 yum <span class="token function">install</span> firewalld firewall-config
 
@@ -79,7 +83,8 @@ systemctl stop firewalld
 systemctl disable firewalld
 yum <span class="token function">install</span> iptables-services
 systemctl start iptables
-systemctl <span class="token builtin class-name">enable</span> iptables</code></pre>
+systemctl <span class="token builtin class-name">enable</span> iptables
+</code></pre>
 <p>配置firewalld</p>
 <pre><code class="language-shell">firewall-cmd --version  <span class="token comment"># 查看版本</span>
 firewall-cmd --help     <span class="token comment"># 查看帮助</span>
@@ -100,7 +105,7 @@ firewall-cmd --complete-reload
 <span class="token comment"># 将接口添加到区域，默认接口都在public</span>
 firewall-cmd --zone<span class="token operator">=</span>public --add-interface<span class="token operator">=</span>eth0
 <span class="token comment"># 永久生效再加上 --permanent 然后reload防火墙</span>
-
+ 
 <span class="token comment"># 设置默认接口区域，立即生效无需重启</span>
 firewall-cmd --set-default-zone<span class="token operator">=</span>public
 
@@ -110,10 +115,10 @@ firewall-cmd --zone<span class="token operator">=</span>dmz --list-ports
 <span class="token comment"># 加入一个端口到区域：</span>
 firewall-cmd --zone<span class="token operator">=</span>dmz --add-port<span class="token operator">=</span><span class="token number">8080</span>/tcp
 <span class="token comment"># 若要永久生效方法同上</span>
-
+ 
 <span class="token comment"># 打开一个服务，类似于将端口可视化，服务需要在配置文件中添加，/etc/firewalld 目录下有services文件夹，这个不详细说了，详情参考文档</span>
 firewall-cmd --zone<span class="token operator">=</span>work --add-service<span class="token operator">=</span>smtp
-
+ 
 <span class="token comment"># 移除服务</span>
 firewall-cmd --zone<span class="token operator">=</span>work --remove-service<span class="token operator">=</span>smtp
 
@@ -136,7 +141,8 @@ firewall-cmd --zone<span class="token operator">=</span>public --list-all
 firewall-cmd --zone<span class="token operator">=</span>internal --change-interface<span class="token operator">=</span>enp03s
 
 <span class="token comment"># 永久修改网络接口enp03s为内部区域（internal）</span>
-firewall-cmd --permanent --zone<span class="token operator">=</span>internal --change-interface<span class="token operator">=</span>enp03s</code></pre>
+firewall-cmd --permanent --zone<span class="token operator">=</span>internal --change-interface<span class="token operator">=</span>enp03s
+</code></pre>
 <p>服务管理</p>
 <pre><code class="language-shell"><span class="token comment"># 显示服务列表  </span>
 Amanda, FTP, Samba和TFTP等最重要的服务已经被FirewallD提供相应的服务，可以使用如下命令查看：
@@ -160,7 +166,8 @@ firewall-cmd --list-services
 
 <span class="token comment"># 添加HTTP服务到内部区域（internal）</span>
 firewall-cmd --permanent --zone<span class="token operator">=</span>internal --add-service<span class="token operator">=</span>http
-firewall-cmd --reload     <span class="token comment"># 在不改变状态的条件下重新加载防火墙</span></code></pre>
+firewall-cmd --reload     <span class="token comment"># 在不改变状态的条件下重新加载防火墙</span>
+</code></pre>
 <p>端口管理</p>
 <pre><code class="language-shell"><span class="token comment"># 打开443/TCP端口</span>
 firewall-cmd --add-port<span class="token operator">=</span><span class="token number">443</span>/tcp
@@ -173,12 +180,14 @@ firewall-cmd --permanent --add-port<span class="token operator">=</span><span cl
 firewall-cmd --reload
 
 <span class="token comment"># 查看防火墙，添加的端口也可以看到</span>
-firewall-cmd --list-all</code></pre>
+firewall-cmd --list-all
+</code></pre>
 <p>直接模式</p>
 <pre><code class="language-shell"><span class="token comment"># FirewallD包括一种直接模式，使用它可以完成一些工作，例如打开TCP协议的9999端口</span>
 
 firewall-cmd --direct -add-rule ipv4 filter INPUT <span class="token number">0</span> -p tcp --dport <span class="token number">9000</span> -j ACCEPT
-firewall-cmd --reload</code></pre>
+firewall-cmd --reload
+</code></pre>
 <p><strong>自定义服务管理</strong></p>
 <p>选项</p>
 <pre><code class="language-shell">（末尾带有 <span class="token punctuation">[</span>P only<span class="token punctuation">]</span> 的话表示该选项除了与（--permanent）之外，不能与其他选项一同使用！）
@@ -201,43 +210,43 @@ firewall-cmd --reload</code></pre>
                       给该服务设置一个简短的描述 <span class="token punctuation">[</span>P only<span class="token punctuation">]</span>
 --service<span class="token operator">=</span><span class="token operator">&lt;</span>服务名<span class="token operator">></span> --get-short
                       显示该服务的简短描述 <span class="token punctuation">[</span>P only<span class="token punctuation">]</span>
-
+                      
 --service<span class="token operator">=</span><span class="token operator">&lt;</span>服务名<span class="token operator">></span> --add-port<span class="token operator">=</span><span class="token operator">&lt;</span>端口号<span class="token operator">></span><span class="token punctuation">[</span>-<span class="token operator">&lt;</span>端口号<span class="token operator">></span><span class="token punctuation">]</span>/<span class="token operator">&lt;</span>protocol<span class="token operator">></span>
                       给该服务添加一个新的端口<span class="token punctuation">(</span>端口段<span class="token punctuation">)</span> <span class="token punctuation">[</span>P only<span class="token punctuation">]</span>
-
+                      
 --service<span class="token operator">=</span><span class="token operator">&lt;</span>服务名<span class="token operator">></span> --remove-port<span class="token operator">=</span><span class="token operator">&lt;</span>端口号<span class="token operator">></span><span class="token punctuation">[</span>-<span class="token operator">&lt;</span>端口号<span class="token operator">></span><span class="token punctuation">]</span>/<span class="token operator">&lt;</span>protocol<span class="token operator">></span>
                       从该服务上移除一个端口<span class="token punctuation">(</span>端口段<span class="token punctuation">)</span> <span class="token punctuation">[</span>P only<span class="token punctuation">]</span>
-
+                      
 --service<span class="token operator">=</span><span class="token operator">&lt;</span>服务名<span class="token operator">></span> --query-port<span class="token operator">=</span><span class="token operator">&lt;</span>端口号<span class="token operator">></span><span class="token punctuation">[</span>-<span class="token operator">&lt;</span>端口号<span class="token operator">></span><span class="token punctuation">]</span>/<span class="token operator">&lt;</span>protocol<span class="token operator">></span>
                       查询该服务是否添加了某个端口<span class="token punctuation">(</span>端口段<span class="token punctuation">)</span> <span class="token punctuation">[</span>P only<span class="token punctuation">]</span>
-
+                      
 --service<span class="token operator">=</span><span class="token operator">&lt;</span>服务名<span class="token operator">></span> --get-ports
                       显示该服务添加的所有端口 <span class="token punctuation">[</span>P only<span class="token punctuation">]</span>
-
+                      
 --service<span class="token operator">=</span><span class="token operator">&lt;</span>服务名<span class="token operator">></span> --add-protocol<span class="token operator">=</span><span class="token operator">&lt;</span>protocol<span class="token operator">></span>
                       为该服务添加一个协议 <span class="token punctuation">[</span>P only<span class="token punctuation">]</span>
-
+                      
 --service<span class="token operator">=</span><span class="token operator">&lt;</span>服务名<span class="token operator">></span> --remove-protocol<span class="token operator">=</span><span class="token operator">&lt;</span>protocol<span class="token operator">></span>
                       从该服务上移除一个协议 <span class="token punctuation">[</span>P only<span class="token punctuation">]</span>
-
+                      
 --service<span class="token operator">=</span><span class="token operator">&lt;</span>服务名<span class="token operator">></span> --query-protocol<span class="token operator">=</span><span class="token operator">&lt;</span>protocol<span class="token operator">></span>
                       查询该服务是否添加了某个协议 <span class="token punctuation">[</span>P only<span class="token punctuation">]</span>
-
+                      
 --service<span class="token operator">=</span><span class="token operator">&lt;</span>服务名<span class="token operator">></span> --get-protocols
                       显示该服务添加的所有协议 <span class="token punctuation">[</span>P only<span class="token punctuation">]</span>
-
+                      
 --service<span class="token operator">=</span><span class="token operator">&lt;</span>服务名<span class="token operator">></span> --add-source-port<span class="token operator">=</span><span class="token operator">&lt;</span>端口号<span class="token operator">></span><span class="token punctuation">[</span>-<span class="token operator">&lt;</span>端口号<span class="token operator">></span><span class="token punctuation">]</span>/<span class="token operator">&lt;</span>protocol<span class="token operator">></span>
                       添加新的源端口<span class="token punctuation">(</span>端口段<span class="token punctuation">)</span>到该服务 <span class="token punctuation">[</span>P only<span class="token punctuation">]</span>
-
+                      
 --service<span class="token operator">=</span><span class="token operator">&lt;</span>服务名<span class="token operator">></span> --remove-source-port<span class="token operator">=</span><span class="token operator">&lt;</span>端口号<span class="token operator">></span><span class="token punctuation">[</span>-<span class="token operator">&lt;</span>端口号<span class="token operator">></span><span class="token punctuation">]</span>/<span class="token operator">&lt;</span>protocol<span class="token operator">></span>
                       从该服务中删除源端口<span class="token punctuation">(</span>端口段<span class="token punctuation">)</span> <span class="token punctuation">[</span>P only<span class="token punctuation">]</span>
-
+                      
 --service<span class="token operator">=</span><span class="token operator">&lt;</span>服务名<span class="token operator">></span> --query-source-port<span class="token operator">=</span><span class="token operator">&lt;</span>端口号<span class="token operator">></span><span class="token punctuation">[</span>-<span class="token operator">&lt;</span>端口号<span class="token operator">></span><span class="token punctuation">]</span>/<span class="token operator">&lt;</span>protocol<span class="token operator">></span>
                       查询该服务是否添加了某个源端口<span class="token punctuation">(</span>端口段<span class="token punctuation">)</span> <span class="token punctuation">[</span>P only<span class="token punctuation">]</span>
-
+                      
 --service<span class="token operator">=</span><span class="token operator">&lt;</span>服务名<span class="token operator">></span> --get-source-ports
                       显示该服务所有源端口 <span class="token punctuation">[</span>P only<span class="token punctuation">]</span>
-
+                      
 --service<span class="token operator">=</span><span class="token operator">&lt;</span>服务名<span class="token operator">></span> --add-module<span class="token operator">=</span><span class="token operator">&lt;</span>module<span class="token operator">></span>
                       为该服务添加一个模块 <span class="token punctuation">[</span>P only<span class="token punctuation">]</span>
 --service<span class="token operator">=</span><span class="token operator">&lt;</span>服务名<span class="token operator">></span> --remove-module<span class="token operator">=</span><span class="token operator">&lt;</span>module<span class="token operator">></span>
@@ -253,7 +262,8 @@ firewall-cmd --reload</code></pre>
 --service<span class="token operator">=</span><span class="token operator">&lt;</span>服务名<span class="token operator">></span> --query-destination<span class="token operator">=</span><span class="token operator">&lt;</span>ipv<span class="token operator">></span>:<span class="token operator">&lt;</span>address<span class="token operator">></span><span class="token punctuation">[</span>/<span class="token operator">&lt;</span>mask<span class="token operator">></span><span class="token punctuation">]</span>
                       Return whether destination ipv is <span class="token builtin class-name">set</span> <span class="token keyword">for</span> <span class="token function">service</span> <span class="token punctuation">[</span>P only<span class="token punctuation">]</span>
 --service<span class="token operator">=</span><span class="token operator">&lt;</span>服务名<span class="token operator">></span> --get-destinations
-                      List destinations <span class="token keyword">in</span> <span class="token function">service</span> <span class="token punctuation">[</span>P only<span class="token punctuation">]</span></code></pre>
+                      List destinations <span class="token keyword">in</span> <span class="token function">service</span> <span class="token punctuation">[</span>P only<span class="token punctuation">]</span>
+</code></pre>
 <p><strong>控制端口 / 服务</strong></p>
 <p>可以通过两种方式控制端口的开放，一种是指定端口号另一种是指定服务名。虽然开放 http 服务就是开放了 80 端口，但是还是不能通过端口号来关闭，也就是说通过指定服务名开放的就要通过指定服务名关闭；通过指定端口号开放的就要通过指定端口号关闭。还有一个要注意的就是指定端口的时候一定要指定是什么协议，tcp 还是 udp。知道这个之后以后就不用每次先关防火墙了，可以让防火墙真正的生效。</p>
 <pre><code class="language-shell">firewall-cmd --add-service<span class="token operator">=</span>mysql        <span class="token comment"># 开放mysql端口</span>
@@ -262,11 +272,13 @@ firewall-cmd --list-services            <span class="token comment"># 查看开�
 firewall-cmd --add-port<span class="token operator">=</span><span class="token number">3306</span>/tcp        <span class="token comment"># 开放通过tcp访问3306</span>
 firewall-cmd --remove-port<span class="token operator">=</span>80tcp        <span class="token comment"># 阻止通过tcp访问3306</span>
 firewall-cmd --add-port<span class="token operator">=</span><span class="token number">233</span>/udp         <span class="token comment"># 开放通过udp访问233</span>
-firewall-cmd --list-ports               <span class="token comment"># 查看开放的端口</span></code></pre>
+firewall-cmd --list-ports               <span class="token comment"># 查看开放的端口</span>
+</code></pre>
 <p>伪装 IP</p>
 <pre><code class="language-shell">firewall-cmd --query-masquerade <span class="token comment"># 检查是否允许伪装IP</span>
 firewall-cmd --add-masquerade   <span class="token comment"># 允许防火墙伪装IP</span>
-firewall-cmd --remove-masquerade<span class="token comment"># 禁止防火墙伪装IP</span></code></pre>
+firewall-cmd --remove-masquerade<span class="token comment"># 禁止防火墙伪装IP</span>
+</code></pre>
 <p><strong>端口转发</strong></p>
 <p>端口转发可以将指定地址访问指定的端口时，将流量转发至指定地址的指定端口。转发的目的如果不指定 ip 的话就默认为本机，如果指定了 ip 却没指定端口，则默认使用来源端口。
 如果配置好端口转发之后不能用，可以检查下面两个问题：</p>
@@ -276,7 +288,8 @@ firewall-cmd --remove-masquerade<span class="token comment"># 禁止防火墙伪
 </ol>
 <pre><code class="language-shell">firewall-cmd --add-forward-port<span class="token operator">=</span>port<span class="token operator">=</span><span class="token number">80</span>:proto<span class="token operator">=</span>tcp:toport<span class="token operator">=</span><span class="token number">8080</span>   <span class="token comment"># 将80端口的流量转发至8080</span>
 firewall-cmd --add-forward-port<span class="token operator">=</span>port<span class="token operator">=</span><span class="token number">80</span>:proto<span class="token operator">=</span>tcp:toaddr<span class="token operator">=</span><span class="token number">192.168</span>.0.1 <span class="token comment"># 将80端口的流量转发至192.168.0.1</span>
-firewall-cmd --add-forward-port<span class="token operator">=</span>port<span class="token operator">=</span><span class="token number">80</span>:proto<span class="token operator">=</span>tcp:toaddr<span class="token operator">=</span><span class="token number">192.168</span>.0.1:toport<span class="token operator">=</span><span class="token number">8080</span> <span class="token comment"># 将80端口的流量转发至192.168.0.1的8080端口</span></code></pre>
+firewall-cmd --add-forward-port<span class="token operator">=</span>port<span class="token operator">=</span><span class="token number">80</span>:proto<span class="token operator">=</span>tcp:toaddr<span class="token operator">=</span><span class="token number">192.168</span>.0.1:toport<span class="token operator">=</span><span class="token number">8080</span> <span class="token comment"># 将80端口的流量转发至192.168.0.1的8080端口</span>
+</code></pre>
 <ol>
 <li>当我们想把某个端口隐藏起来的时候，就可以在防火墙上阻止那个端口访问，然后再开一个不规则的端口，之后配置防火墙的端口转发，将流量转发过去。</li>
 <li>端口转发还可以做流量分发，一个防火墙拖着好多台运行着不同服务的机器，然后用防火墙将不同端口的流量转发至不同机器。</li>
@@ -304,7 +317,7 @@ firewall-cmd --add-forward-port<span class="token operator">=</span>port<span cl
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1614049694976"></script>
-<script type="text/javascript" src="../js/index.js?v=1614049694976"></script>
+<script type="text/javascript" src="../js/dt.js?v=1614326815734"></script>
+<script type="text/javascript" src="../js/index.js?v=1614326815734"></script>
 </body>
 </html>

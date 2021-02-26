@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,pv,显示当前在命令行执行的命令的进度信息，管道查看器">
     <title>pv 命令，Linux pv 命令详解：显示当前在命令行执行的命令的进度信息，管道查看器 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614049695187">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614326816008">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -46,9 +46,11 @@
 <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> <span class="token function">pv</span>
 
 <span class="token comment"># RedHat系的则这样：</span>
-yum <span class="token function">install</span> <span class="token function">pv</span></code></pre>
+yum <span class="token function">install</span> <span class="token function">pv</span>
+</code></pre>
 <h3 id="语法">语法</h3><pre><code class="language-shell">pv<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
-<span class="token function">pv</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span> <span class="token punctuation">[</span>FILE<span class="token punctuation">]</span><span class="token punctuation">..</span>.</code></pre>
+<span class="token function">pv</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span> <span class="token punctuation">[</span>FILE<span class="token punctuation">]</span><span class="token punctuation">..</span>.
+</code></pre>
 <h3 id="选项">选项</h3><pre><code class="language-shell">-p, --progress           显示进度条
 -t, --timer              显示已用时间
 -e, --eta                显示预计到达时间 <span class="token punctuation">(</span>完成<span class="token punctuation">)</span>
@@ -87,7 +89,8 @@ yum <span class="token function">install</span> <span class="token function">pv<
 -d, --watchfd PID<span class="token punctuation">[</span>:FD<span class="token punctuation">]</span>   监视进程PID,打开的文件FD
 
 -h, --help               显示帮助
--V, --version            显示版本信息</code></pre>
+-V, --version            显示版本信息
+</code></pre>
 <h3 id="实例">实例</h3><p>我们（在 linux 上使用命令行的用户）的大多数使用场景都会用到的命令是从一个 USB 驱动器拷贝电影文件到你的电脑。如果你使用 cp 来完成上面的任务，你会什么情况都不清楚，直到整个复制过程结束或者出错。</p>
 <pre><code class="language-shell"><span class="token comment"># 复制文件会有进度</span>
 linux <span class="token punctuation">[</span>master●<span class="token punctuation">]</span> % <span class="token function">pv</span> ~/Downloads/CentOS-7-x86_64-Minimal-1511.iso <span class="token operator">></span> ~/Desktop/CentOS-7-x86_64-Minimal-1511.iso
@@ -96,7 +99,8 @@ linux <span class="token punctuation">[</span>master●<span class="token punctu
 
 <span class="token comment"># -L 可以让你修改 pv 命令的传输速率。</span>
 <span class="token comment"># 使用 -L 选项来限制传输速率为2MB/s。</span>
-<span class="token function">pv</span> -L 2m /media/himanshu/1AC2-A8E3/fNf.mkv <span class="token operator">></span> ./Desktop/fnf.mkv </code></pre>
+<span class="token function">pv</span> -L 2m /media/himanshu/1AC2-A8E3/fNf.mkv <span class="token operator">></span> ./Desktop/fnf.mkv 
+</code></pre>
 <pre><code class="language-shell"><span class="token comment"># 字符一个个匀速在命令行中显示出来</span>
 <span class="token builtin class-name">echo</span> <span class="token string">"Tecmint[dot]com is a community of Linux Nerds and Geeks"</span> <span class="token operator">|</span> <span class="token function">pv</span> -qL <span class="token number">10</span>
 
@@ -107,9 +111,11 @@ linux <span class="token punctuation">[</span>master●<span class="token punctu
 <span class="token comment"># 用 dd 命令将 iso 写入磁盘，pv来实现进度条的显示</span>
 <span class="token function">sudo</span> <span class="token function">pv</span> -cN <span class="token builtin class-name">source</span> <span class="token operator">&lt;</span> /Users/kacperwang/Downloads/CentOS-7-x86_64-Everything-1511.iso <span class="token operator">|</span> <span class="token function">sudo</span> <span class="token function">dd</span> <span class="token assign-left variable">of</span><span class="token operator">=</span>/dev/disk2 <span class="token assign-left variable">bs</span><span class="token operator">=</span>4m
 <span class="token comment">## 显示下面进度</span>
-source:  <span class="token number">5</span>.2GiB <span class="token number">5</span>:11:41 <span class="token punctuation">[</span> 503KiB/s<span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span><span class="token operator">></span>       <span class="token punctuation">]</span> <span class="token number">71</span>% ETA <span class="token number">2</span>:01:56</code></pre>
+source:  <span class="token number">5</span>.2GiB <span class="token number">5</span>:11:41 <span class="token punctuation">[</span> 503KiB/s<span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">==</span><span class="token operator">=</span><span class="token operator">></span>       <span class="token punctuation">]</span> <span class="token number">71</span>% ETA <span class="token number">2</span>:01:56
+</code></pre>
 <p>在linux上, 如果执行的一些命令或者一些脚本需要花费很长时间, 但又不能拿出更多的精力反复盯着有没有执行结束, 这时候可以用pv监听PID, 任务完成后通过网络通知到微信或者钉钉, 这样就可以腾出来精力做其他的事, 是不是很棒</p>
-<pre><code class="language-shell">&#36; <span class="token function">pv</span> -d <span class="token variable"><span class="token variable">&#36;(</span><span class="token function">ps</span> -ef <span class="token operator">|</span> <span class="token function">grep</span> -v <span class="token function">grep</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"&lt;脚本或命令的关键字>"</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print <span class="token variable">&#36;2</span>}'</span><span class="token variable">)</span></span> <span class="token operator">&amp;&amp;</span> <span class="token operator">&lt;</span>这里执行发通知脚本或者命令,脚本或命令需要提前调试好<span class="token operator">></span></code></pre>
+<pre><code class="language-shell">&#36; <span class="token function">pv</span> -d <span class="token variable"><span class="token variable">&#36;(</span><span class="token function">ps</span> -ef <span class="token operator">|</span> <span class="token function">grep</span> -v <span class="token function">grep</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"&lt;脚本或命令的关键字>"</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print <span class="token variable">&#36;2</span>}'</span><span class="token variable">)</span></span> <span class="token operator">&amp;&amp;</span> <span class="token operator">&lt;</span>这里执行发通知脚本或者命令,脚本或命令需要提前调试好<span class="token operator">></span>
+</code></pre>
 <h3 id="注意">注意</h3><ol>
 <li>选项&quot;-d, --watchfd PID[:FD]&quot;, 是在1.6.6版本中才有的参数,如果使用需要<code>pv</code>升级到大于等于1.6.6的版本</li>
 <li>CentOS7的Yum仓库里<code>pv</code>最新的是1.4.6版本,1.6.6版本是发布在CentOS8里面的,如果需要,可以将CentOS8里的pv下载到本地电脑上或者本地的Yum私服里, 这个是<a href="http://www.rpmfind.net/linux/rpm2html/search.php?query=pv&amp;submit=Search+...&amp;system=EPEL&amp;arch=">下载地址</a>, 可以根据自己不同的架构下载, 1.6.6的安装: <code>rpm -ivh pv-1.6.6-7.el8.x86_64.rpm -U</code></li>
@@ -137,7 +143,7 @@ source:  <span class="token number">5</span>.2GiB <span class="token number">5</
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1614049695187"></script>
-<script type="text/javascript" src="../js/index.js?v=1614049695187"></script>
+<script type="text/javascript" src="../js/dt.js?v=1614326816008"></script>
+<script type="text/javascript" src="../js/index.js?v=1614326816008"></script>
 </body>
 </html>

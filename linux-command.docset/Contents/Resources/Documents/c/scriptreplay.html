@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,scriptreplay,重新播放终端会话的所有操作">
     <title>scriptreplay 命令，Linux scriptreplay 命令详解：重新播放终端会话的所有操作 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614049695242">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614326816071">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -42,7 +42,8 @@
 
 <h1 id="scriptreplay">scriptreplay</h1><p>重新播放终端会话的所有操作</p>
 <h2 id="补充说明">补充说明</h2><p><strong>scriptreplay</strong> 用于在终端中，根据 <code>script</code> 命令记录的终端数据文件和时间日志文件，重现当时用户的所有操作和命令的输出信息。简而言之，重现播放当时终端会话发生的一切信息，而不是重新运行一遍命令。例如，用户当时在输入某条命令时，字符的键入和删除也都会被重现。非常适合用于教程演示场合。而且，在机器 A 上面使用 <code>script</code> 命令记录终端操作，可以在机器 B 上面使用 <code>scriptreplay</code> 命令重新播放。</p>
-<h3 id="语法">语法</h3><pre><code class="language-shell">scriptreplay <span class="token punctuation">[</span>options<span class="token punctuation">]</span> <span class="token punctuation">[</span>-t<span class="token punctuation">]</span> timingfile <span class="token punctuation">[</span>typescript <span class="token punctuation">[</span>divisor<span class="token punctuation">]</span><span class="token punctuation">]</span></code></pre>
+<h3 id="语法">语法</h3><pre><code class="language-shell">scriptreplay <span class="token punctuation">[</span>options<span class="token punctuation">]</span> <span class="token punctuation">[</span>-t<span class="token punctuation">]</span> timingfile <span class="token punctuation">[</span>typescript <span class="token punctuation">[</span>divisor<span class="token punctuation">]</span><span class="token punctuation">]</span>
+</code></pre>
 <h3 id="选项">选项</h3><pre><code class="language-shell">-t, --timing <span class="token function">file</span>         <span class="token comment"># 记录时间日志的文件名称</span>
 -s, --typescript <span class="token function">file</span>     <span class="token comment"># 记录终端数据信息的日志文件名称</span>
 -d, --divisor number      <span class="token comment"># 表示倍速播放，把时间日志文件记录的时间间隔都除以 number</span>
@@ -50,7 +51,8 @@
 -m, --maxdelay number     <span class="token comment"># 表示命令之间的最大延迟时间（单位是秒）</span>
                           <span class="token comment"># -m 2 表示 command.log 中存放的两条命令之间的间隔时间如果大于两秒，则按两秒执行播放</span>
 -V, --version             <span class="token comment"># 显示版本信息并退出</span>
--h, --help                <span class="token comment"># 显示帮助文本并退出</span></code></pre>
+-h, --help                <span class="token comment"># 显示帮助文本并退出</span>
+</code></pre>
 <h3 id="参数">参数</h3><ul>
 <li>时间日志文件：存储时间日志信息的文件名称</li>
 <li>终端数据文件：存储终端数据信息的文件名称</li>
@@ -58,7 +60,8 @@
 <h3 id="实例">实例</h3><pre><code class="language-shell"><span class="token comment"># 重新播放终端内容，默认第一个参数是时间日志，第二个参数是终端数据文件</span>
 scriptreplay time.file command.log
 <span class="token comment"># 重新播放终端内容，播放快进速度为 1 ，命令之间最大延时为 2 秒</span>
-scriptreplay -d <span class="token number">1</span> -m <span class="token number">2</span> -t time.file -s command.log</code></pre>
+scriptreplay -d <span class="token number">1</span> -m <span class="token number">2</span> -t time.file -s command.log
+</code></pre>
 <p> <strong>记录终端内容到文件</strong> </p>
 <pre><code class="language-shell">zfb@localhost:~&#36; script -t <span class="token operator"><span class="token file-descriptor important">2</span>></span>time.file -a -f command.log
 Script started, <span class="token function">file</span> is command.log
@@ -78,7 +81,8 @@ drwxr-xr-x <span class="token number">37</span> zfb zfb <span class="token numbe
 -rw-r--r--  <span class="token number">1</span> zfb zfb  <span class="token number">790</span> Dec <span class="token number">23</span> <span class="token number">20</span>:49 time.file
 zfb@localhost:~&#36; <span class="token builtin class-name">exit</span>
 Script done, <span class="token function">file</span> is command.log
-zfb@localhost:~&#36;</code></pre>
+zfb@localhost:~&#36;
+</code></pre>
 <p> <strong>重新播放终端内容</strong> </p>
 <pre><code class="language-shell">zfb@localhost:~&#36; scriptreplay -d <span class="token number">1</span> -m <span class="token number">2</span> -t time.file -s command.log
 zfb@localhost:~&#36; <span class="token builtin class-name">echo</span> <span class="token string">"hello, world"</span>
@@ -97,7 +101,8 @@ drwxr-xr-x <span class="token number">37</span> zfb zfb <span class="token numbe
 -rw-r--r--  <span class="token number">1</span> zfb zfb  <span class="token number">790</span> Dec <span class="token number">23</span> <span class="token number">20</span>:49 time.file
 zfb@localhost:~&#36; <span class="token builtin class-name">exit</span>
 
-zfb@localhost:~&#36;</code></pre>
+zfb@localhost:~&#36;
+</code></pre>
 <p>其中，只有命令<code>scriptreplay -d 1 -m 2 -t time.file -s command.log</code>是用户输入，其他均为自动呈现（且视觉效果与真实用户的操作一致）。通过查看上面输出的时间<code>2020-12-23 20:48:46</code>，可以证明，这是重新播放当时的记录，而非重新执行一遍命令。也就是说，可以把<code>time.file</code>和<code>command.log</code>文件移动到任意一台支持<code>scriptreplay</code>命令的机器上，都可以动态重现命令输入与终端回显。</p>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 
@@ -123,7 +128,7 @@ zfb@localhost:~&#36;</code></pre>
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1614049695242"></script>
-<script type="text/javascript" src="../js/index.js?v=1614049695242"></script>
+<script type="text/javascript" src="../js/dt.js?v=1614326816071"></script>
+<script type="text/javascript" src="../js/index.js?v=1614326816071"></script>
 </body>
 </html>

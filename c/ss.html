@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,ss,比 netstat 好用的socket统计信息，iproute2 包附带的另一个工具，允许你查询 socket 的有关统计信息">
     <title>ss 命令，Linux ss 命令详解：比 netstat 好用的socket统计信息，iproute2 包附带的另一个工具，允许你查询 socket 的有关统计信息 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614049695272">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614326816110">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -45,7 +45,8 @@
 <p>当服务器的socket连接数量变得非常大时，无论是使用netstat命令还是直接<code>cat /proc/net/tcp</code>，执行速度都会很慢。可能你不会有切身的感受，但请相信我，当服务器维持的连接达到上万个的时候，使用netstat等于浪费 生命，而用ss才是节省时间。</p>
 <p>天下武功唯快不破。ss快的秘诀在于，它利用到了TCP协议栈中tcp_diag。tcp_diag是一个用于分析统计的模块，可以获得Linux 内核中第一手的信息，这就确保了ss的快捷高效。当然，如果你的系统中没有tcp_diag，ss也可以正常运行，只是效率会变得稍慢。</p>
 <h3 id="语法">语法</h3><pre><code class="language-shell">ss <span class="token punctuation">[</span>参数<span class="token punctuation">]</span>
-ss <span class="token punctuation">[</span>参数<span class="token punctuation">]</span> <span class="token punctuation">[</span>过滤<span class="token punctuation">]</span></code></pre>
+ss <span class="token punctuation">[</span>参数<span class="token punctuation">]</span> <span class="token punctuation">[</span>过滤<span class="token punctuation">]</span>
+</code></pre>
 <h3 id="选项">选项</h3><pre><code class="language-shell">-h, --help      帮助信息
 -V, --version   程序版本信息
 -n, --numeric   不解析服务名称
@@ -71,7 +72,8 @@ ss <span class="token punctuation">[</span>参数<span class="token punctuation"
       QUERY :<span class="token operator">=</span> <span class="token punctuation">{</span>all<span class="token operator">|</span>inet<span class="token operator">|</span>tcp<span class="token operator">|</span>udp<span class="token operator">|</span>raw<span class="token operator">|</span>unix<span class="token operator">|</span>packet<span class="token operator">|</span>netlink<span class="token punctuation">}</span><span class="token punctuation">[</span>,QUERY<span class="token punctuation">]</span>
 -D, --diag<span class="token operator">=</span>FILE     将原始TCP套接字（sockets）信息转储到文件
  -F, --filter<span class="token operator">=</span>FILE  从文件中都去过滤器信息
-       FILTER :<span class="token operator">=</span> <span class="token punctuation">[</span> state TCP-STATE <span class="token punctuation">]</span> <span class="token punctuation">[</span> EXPRESSION <span class="token punctuation">]</span></code></pre>
+       FILTER :<span class="token operator">=</span> <span class="token punctuation">[</span> state TCP-STATE <span class="token punctuation">]</span> <span class="token punctuation">[</span> EXPRESSION <span class="token punctuation">]</span>
+</code></pre>
 <h3 id="实例">实例</h3><pre><code class="language-shell">ss -t -a    <span class="token comment"># 显示TCP连接</span>
 ss -s       <span class="token comment"># 显示 Sockets 摘要</span>
 ss -l       <span class="token comment"># 列出所有打开的网络连接端口</span>
@@ -99,7 +101,8 @@ ss src <span class="token number">192.168</span>.119.103
 ss src <span class="token number">192.168</span>.119.103:http
 ss src <span class="token number">192.168</span>.119.103:80
 ss src <span class="token number">192.168</span>.119.103:smtp
-ss src <span class="token number">192.168</span>.119.103:25</code></pre>
+ss src <span class="token number">192.168</span>.119.103:25
+</code></pre>
 <p><strong>将本地或者远程端口和一个数比较</strong></p>
 <pre><code class="language-shell"><span class="token comment"># ss dport OP PORT 远程端口和一个数比较；</span>
 <span class="token comment"># ss sport OP PORT 本地端口和一个数比较</span>
@@ -119,7 +122,8 @@ ss  sport eq :22
 ss  dport <span class="token operator">!=</span> :22
 ss  state connected sport <span class="token operator">=</span> :http
 ss <span class="token punctuation">\</span><span class="token punctuation">(</span> sport <span class="token operator">=</span> :http or sport <span class="token operator">=</span> :https <span class="token punctuation">\</span><span class="token punctuation">)</span>
-ss -o state fin-wait-1 <span class="token punctuation">\</span><span class="token punctuation">(</span> sport <span class="token operator">=</span> :http or sport <span class="token operator">=</span> :https <span class="token punctuation">\</span><span class="token punctuation">)</span> dst <span class="token number">192.168</span>.1/24</code></pre>
+ss -o state fin-wait-1 <span class="token punctuation">\</span><span class="token punctuation">(</span> sport <span class="token operator">=</span> :http or sport <span class="token operator">=</span> :https <span class="token punctuation">\</span><span class="token punctuation">)</span> dst <span class="token number">192.168</span>.1/24
+</code></pre>
 <p><strong>用TCP 状态过滤Sockets</strong></p>
 <pre><code class="language-shell">ss -4 state closing
 <span class="token comment"># ss -4 state FILTER-NAME-HERE</span>
@@ -130,7 +134,8 @@ ss -o state fin-wait-1 <span class="token punctuation">\</span><span class="toke
 <span class="token comment"># connected : 除了listen and closed的所有状态</span>
 <span class="token comment"># synchronized :所有已连接的状态除了syn-sent</span>
 <span class="token comment"># bucket : 显示状态为maintained as minisockets,如：time-wait和syn-recv.</span>
-<span class="token comment"># big : 和bucket相反.</span></code></pre>
+<span class="token comment"># big : 和bucket相反.</span>
+</code></pre>
 <p> <strong>显示ICP连接</strong></p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ss -t -a</span>
 State       Recv-Q Send-Q                            Local Address:Port                                Peer Address:Port
@@ -139,7 +144,8 @@ LISTEN      <span class="token number">0</span>      <span class="token number">
 LISTEN      <span class="token number">0</span>      <span class="token number">0</span>                                             *:ssh                                            *:*
 LISTEN      <span class="token number">0</span>      <span class="token number">0</span>                                     <span class="token number">127.0</span>.0.1:smtp                                           *:*
 ESTAB       <span class="token number">0</span>      <span class="token number">0</span>                                <span class="token number">112.124</span>.15.130:42071                              <span class="token number">42.156</span>.166.25:http
-ESTAB       <span class="token number">0</span>      <span class="token number">0</span>                                <span class="token number">112.124</span>.15.130:ssh                              <span class="token number">121.229</span>.196.235:33398</code></pre>
+ESTAB       <span class="token number">0</span>      <span class="token number">0</span>                                <span class="token number">112.124</span>.15.130:ssh                              <span class="token number">121.229</span>.196.235:33398
+</code></pre>
 <p> <strong>显示 Sockets 摘要</strong></p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ss -s</span>
 Total: <span class="token number">172</span> <span class="token punctuation">(</span>kernel <span class="token number">189</span><span class="token punctuation">)</span>
@@ -151,7 +157,8 @@ RAW       <span class="token number">0</span>         <span class="token number"
 UDP       <span class="token number">5</span>         <span class="token number">5</span>         <span class="token number">0</span>
 TCP       <span class="token number">6</span>         <span class="token number">6</span>         <span class="token number">0</span>
 INET      <span class="token number">11</span>        <span class="token number">11</span>        <span class="token number">0</span>
-FRAG      <span class="token number">0</span>         <span class="token number">0</span>         <span class="token number">0</span></code></pre>
+FRAG      <span class="token number">0</span>         <span class="token number">0</span>         <span class="token number">0</span>
+</code></pre>
 <p>列出当前的established, closed, orphaned and waiting TCP sockets</p>
 <p> <strong>列出所有打开的网络连接端口</strong></p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ss -l</span>
@@ -159,17 +166,20 @@ Recv-Q Send-Q                                 Local Address:Port                
 <span class="token number">0</span>      <span class="token number">0</span>                                                  *:3306                                                *:*
 <span class="token number">0</span>      <span class="token number">0</span>                                                  *:http                                                *:*
 <span class="token number">0</span>      <span class="token number">0</span>                                                  *:ssh                                                 *:*
-<span class="token number">0</span>      <span class="token number">0</span>                                          <span class="token number">127.0</span>.0.1:smtp                                                *:*</code></pre>
+<span class="token number">0</span>      <span class="token number">0</span>                                          <span class="token number">127.0</span>.0.1:smtp                                                *:*
+</code></pre>
 <p> <strong>查看进程使用的socket</strong></p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ss -pl</span>
 Recv-Q Send-Q                                          Local Address:Port                                              Peer Address:Port
 <span class="token number">0</span>      <span class="token number">0</span>                                                           *:3306                                                         *:*        users:<span class="token variable"><span class="token punctuation">((</span>"mysqld"<span class="token punctuation">,</span><span class="token number">1718</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">))</span></span>
 <span class="token number">0</span>      <span class="token number">0</span>                                                           *:http                                                         *:*        users:<span class="token variable"><span class="token punctuation">((</span>"nginx"<span class="token punctuation">,</span><span class="token number">13312</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token punctuation">(</span>"nginx"<span class="token punctuation">,</span><span class="token number">13333</span><span class="token punctuation">,</span><span class="token number">5</span><span class="token punctuation">))</span></span>
 <span class="token number">0</span>      <span class="token number">0</span>                                                           *:ssh                                                          *:*        users:<span class="token variable"><span class="token punctuation">((</span>"sshd"<span class="token punctuation">,</span><span class="token number">1379</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">))</span></span>
-<span class="token number">0</span>      <span class="token number">0</span>                                                   <span class="token number">127.0</span>.0.1:smtp                                                         *:*        us</code></pre>
+<span class="token number">0</span>      <span class="token number">0</span>                                                   <span class="token number">127.0</span>.0.1:smtp                                                         *:*        us
+</code></pre>
 <p> <strong>找出打开套接字/端口应用程序</strong></p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ss -pl | grep 3306</span>
-<span class="token number">0</span>      <span class="token number">0</span>                            *:3306                          *:*        users:<span class="token variable"><span class="token punctuation">((</span>"mysqld"<span class="token punctuation">,</span><span class="token number">1718</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">))</span></span></code></pre>
+<span class="token number">0</span>      <span class="token number">0</span>                            *:3306                          *:*        users:<span class="token variable"><span class="token punctuation">((</span>"mysqld"<span class="token punctuation">,</span><span class="token number">1718</span><span class="token punctuation">,</span><span class="token number">10</span><span class="token punctuation">))</span></span>
+</code></pre>
 <p> <strong>显示所有UDP Sockets</strong></p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ss -u -a</span>
 State       Recv-Q Send-Q                                     Local Address:Port                                         Peer Address:Port
@@ -177,13 +187,15 @@ UNCONN      <span class="token number">0</span>      <span class="token number">
 UNCONN      <span class="token number">0</span>      <span class="token number">0</span>                                         <span class="token number">112.124</span>.15.130:ntp                                                     *:*
 UNCONN      <span class="token number">0</span>      <span class="token number">0</span>                                            <span class="token number">10.160</span>.7.81:ntp                                                     *:*
 UNCONN      <span class="token number">0</span>      <span class="token number">0</span>                                              <span class="token number">127.0</span>.0.1:ntp                                                     *:*
-UNCONN      <span class="token number">0</span>      <span class="token number">0</span>                                                      *:ntp                                                     *:*</code></pre>
+UNCONN      <span class="token number">0</span>      <span class="token number">0</span>                                                      *:ntp                                                     *:*
+</code></pre>
 <h4 id="出所有端口为 22（ssh）的连接">出所有端口为 22（ssh）的连接</h4><pre><code class="language-shell">ss state all sport <span class="token operator">=</span> :ssh
 
 Netid State      Recv-Q Send-Q     Local Address:Port                      Peer Address:Port
 tcp   LISTEN     <span class="token number">0</span>      <span class="token number">128</span>                    *:ssh                                  *:*
 tcp   ESTAB      <span class="token number">0</span>      <span class="token number">0</span>          <span class="token number">192.168</span>.0.136:ssh                      <span class="token number">192.168</span>.0.102:46540
-tcp   LISTEN     <span class="token number">0</span>      <span class="token number">128</span>                   :::ssh                                 :::*</code></pre>
+tcp   LISTEN     <span class="token number">0</span>      <span class="token number">128</span>                   :::ssh                                 :::*
+</code></pre>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 
 </div>
@@ -208,7 +220,7 @@ tcp   LISTEN     <span class="token number">0</span>      <span class="token num
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1614049695272"></script>
-<script type="text/javascript" src="../js/index.js?v=1614049695272"></script>
+<script type="text/javascript" src="../js/dt.js?v=1614326816110"></script>
+<script type="text/javascript" src="../js/index.js?v=1614326816110"></script>
 </body>
 </html>

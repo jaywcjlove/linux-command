@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,script,记录终端会话的所有操作">
     <title>script 命令，Linux script 命令详解：记录终端会话的所有操作 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614049695241">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614326816069">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -42,7 +42,8 @@
 
 <h1 id="script">script</h1><p>记录终端会话的所有操作</p>
 <h2 id="补充说明">补充说明</h2><p><strong>script</strong> 用于在终端会话中，记录用户的所有操作和命令的输出信息。简而言之，记录终端会话发生的一切信息，如同一台终端录像机。例如，用户在输入某条命令时，字符的键入和删除也都会被记录。用户在终端的所有操作、终端的回显等信息会被以 <code>raw</code> 格式存储在日志文件，称为终端数据文件。命令的时间信息会被单独以另一种结构储存为日志文件，称为时间日志文件。使用命令<code>exit</code>或者快捷键<code>Ctrl + D</code>停止记录。</p>
-<h3 id="语法">语法</h3><pre><code class="language-shell">script<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span></code></pre>
+<h3 id="语法">语法</h3><pre><code class="language-shell">script<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
+</code></pre>
 <h3 id="选项">选项</h3><pre><code class="language-shell">-a, --append              <span class="token comment"># 对终端会话的操作信息，以追加方式写入文件（保留原文件内容）</span>
 -c, --command <span class="token builtin class-name">command</span>     <span class="token comment"># 只运行 command 命令而不打开交互终端。相当于开启 script ，执行 command ，再退出 script</span>
                           <span class="token comment"># command 可以是任意能够在终端会话执行的命令</span>
@@ -55,14 +56,16 @@
 -q, --quiet               <span class="token comment"># 安静模式。启动和退出script命令不显示任何提示</span>
 -t<span class="token punctuation">[</span>file<span class="token punctuation">]</span>, --timing<span class="token punctuation">[</span><span class="token operator">=</span>file<span class="token punctuation">]</span> <span class="token comment"># 输出时间日志信息到标准错误(stderr)或者文件</span>
 -V, --version             <span class="token comment"># 显示版本信息并退出</span>
--h, --help                <span class="token comment"># 显示帮助文本并退出</span></code></pre>
+-h, --help                <span class="token comment"># 显示帮助文本并退出</span>
+</code></pre>
 <h3 id="参数">参数</h3><ul>
 <li>终端数据文件：设置存储终端数据信息的文件名称</li>
 </ul>
 <h3 id="实例">实例</h3><pre><code class="language-shell">script                             <span class="token comment"># 开启记录，默认会在当前目录创建名称为 typescript 的文件来保存终端数据文件</span>
 script command.log                 <span class="token comment"># 开启记录，在当前目录创建名称为 command.log 的文件来保存终端数据文件</span>
 script -t <span class="token operator"><span class="token file-descriptor important">2</span>></span>time.file command.log  <span class="token comment"># 开启记录，在当前目录创建名称为 command.log 的文件来保存终端数据文件</span>
-                                   <span class="token comment"># 在当前目录创建名称为 time.file 的文件来保存时间日志文件</span></code></pre>
+                                   <span class="token comment"># 在当前目录创建名称为 time.file 的文件来保存时间日志文件</span>
+</code></pre>
 <p> <strong>以追加模式记录终端信息</strong> </p>
 <pre><code class="language-shell">zfb@localhost:~&#36; script -t <span class="token operator"><span class="token file-descriptor important">2</span>></span>time.file -a -f command.log
 Script started, <span class="token function">file</span> is command.log
@@ -82,7 +85,8 @@ drwxr-xr-x <span class="token number">37</span> zfb zfb <span class="token numbe
 -rw-r--r--  <span class="token number">1</span> zfb zfb  <span class="token number">790</span> Dec <span class="token number">23</span> <span class="token number">20</span>:49 time.file
 zfb@localhost:~&#36; <span class="token builtin class-name">exit</span>
 Script done, <span class="token function">file</span> is command.log
-zfb@localhost:~&#36;</code></pre>
+zfb@localhost:~&#36;
+</code></pre>
 <p>然后，用户可以查看终端数据文件，使用方法如下  </p>
 <pre><code class="language-shell">zfb@localhost:~&#36; <span class="token function">cat</span> command.log
 Script started on <span class="token number">2020</span>-12-23 <span class="token number">20</span>:48:25+08:00 <span class="token punctuation">[</span><span class="token environment constant">TERM</span><span class="token operator">=</span><span class="token string">"xterm-256color"</span> <span class="token assign-left variable">TTY</span><span class="token operator">=</span><span class="token string">"/dev/pts/0"</span> <span class="token assign-left variable"><span class="token environment constant">COLUMNS</span></span><span class="token operator">=</span><span class="token string">"75"</span> <span class="token assign-left variable"><span class="token environment constant">LINES</span></span><span class="token operator">=</span><span class="token string">"30"</span><span class="token punctuation">]</span>
@@ -103,17 +107,20 @@ drwxr-xr-x <span class="token number">37</span> zfb zfb <span class="token numbe
 zfb@localhost:~&#36; <span class="token builtin class-name">exit</span>
 
 Script <span class="token keyword">done</span> on <span class="token number">2020</span>-12-23 <span class="token number">20</span>:49:04+08:00 <span class="token punctuation">[</span>COMMAND_EXIT_CODE<span class="token operator">=</span><span class="token string">"0"</span><span class="token punctuation">]</span>
-zfb@localhost:~&#36;</code></pre>
+zfb@localhost:~&#36;
+</code></pre>
 <p>其中，只有命令<code>cat command.log</code>是用户输入，其他均为自动呈现。通过查看上面输出的时间<code>2020-12-23 20:48:46</code>，可以证明，这是重现的记录，而非重新执行一遍命令。也就是说，可以把<code>time.file</code>和<code>command.log</code>文件移动到任意一台机器上，都可以重现命令输入与终端回显。</p>
 <p> <strong>记录服务器用户会话操作</strong> </p>
 <p>以<code>root</code>身份编辑文件<code>/etc/profile</code>，在文件末尾追加以下内容</p>
 <pre><code class="language-bash"><span class="token keyword">if</span> <span class="token punctuation">[</span> &#36;UID <span class="token operator">-</span>ge <span class="token number">0</span> <span class="token punctuation">]</span>
 then
     exec <span class="token operator">/</span>usr<span class="token operator">/</span>bin<span class="token operator">/</span>script <span class="token operator">-</span>t <span class="token number">2</span><span class="token operator">></span><span class="token operator">/</span>var<span class="token operator">/</span>log<span class="token operator">/</span>script<span class="token operator">-</span>records<span class="token operator">/</span>&#36;USER<span class="token operator">-</span>&#36;UID<span class="token operator">-</span>`date <span class="token operator">+</span><span class="token operator">%</span>Y<span class="token operator">%</span>m<span class="token operator">%</span>d`<span class="token punctuation">.</span>time <span class="token operator">-</span>a <span class="token operator">-</span>f <span class="token operator">-</span>q <span class="token operator">/</span>var<span class="token operator">/</span>log<span class="token operator">/</span>script<span class="token operator">-</span>records<span class="token operator">/</span>&#36;USER<span class="token operator">-</span>&#36;UID<span class="token operator">-</span>`date <span class="token operator">+</span><span class="token operator">%</span>Y<span class="token operator">%</span>m<span class="token operator">%</span>d`<span class="token punctuation">.</span>log
-fi</code></pre>
+fi
+</code></pre>
 <p>然后再以<code>root</code>身份创建文件夹用于存储服务器上的各个用户在终端的所有操作信息</p>
 <pre><code class="language-bash">sudo mkdir <span class="token operator">-</span>p <span class="token operator">/</span>var<span class="token operator">/</span>log<span class="token operator">/</span>script<span class="token operator">-</span>records<span class="token operator">/</span>
-sudo chmod <span class="token number">733</span> <span class="token operator">/</span>var<span class="token operator">/</span>log<span class="token operator">/</span>script<span class="token operator">-</span>records<span class="token operator">/</span></code></pre>
+sudo chmod <span class="token number">733</span> <span class="token operator">/</span>var<span class="token operator">/</span>log<span class="token operator">/</span>script<span class="token operator">-</span>records<span class="token operator">/</span>
+</code></pre>
 <p>最后，执行命令<code>source /etc/profile</code>即可。任意用户（<code>UID ≥ 0</code>）在终端执行的所有操作都会被安静地记录下来，以天为单位存储。</p>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 
@@ -139,7 +146,7 @@ sudo chmod <span class="token number">733</span> <span class="token operator">/<
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1614049695241"></script>
-<script type="text/javascript" src="../js/index.js?v=1614049695241"></script>
+<script type="text/javascript" src="../js/dt.js?v=1614326816070"></script>
+<script type="text/javascript" src="../js/index.js?v=1614326816070"></script>
 </body>
 </html>

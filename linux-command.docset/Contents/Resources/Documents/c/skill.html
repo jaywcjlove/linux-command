@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,skill,向选定的进程发送信号冻结进程">
     <title>skill 命令，Linux skill 命令详解：向选定的进程发送信号冻结进程 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614049695259">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614326816096">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -42,7 +42,8 @@
 
 <h1 id="skill">skill</h1><p>向选定的进程发送信号冻结进程</p>
 <h2 id="补充说明">补充说明</h2><p><strong>skill命令</strong> 用于向选定的进程发送信号，冻结进程。这个命令初学者并不常用，深入之后牵涉到系统服务优化之后可能会用到。</p>
-<h3 id="语法">语法</h3><pre><code class="language-shell">skill<span class="token punctuation">(</span>选项<span class="token punctuation">)</span></code></pre>
+<h3 id="语法">语法</h3><pre><code class="language-shell">skill<span class="token punctuation">(</span>选项<span class="token punctuation">)</span>
+</code></pre>
 <h3 id="选项">选项</h3><pre><code class="language-shell">-f：快速模式；
 -i：交互模式，每一步操作都需要确认；
 -v：冗余模式；
@@ -51,7 +52,8 @@
 -t：指定开启进程的终端号；
 -u：指定开启进程的用户；
 -p：指定进程的id号；
--c：指定开启进程的指令名称。</code></pre>
+-c：指定开启进程的指令名称。
+</code></pre>
 <h3 id="实例">实例</h3><p>如果您发现了一个占用大量CPU和内存的进程，但又不想停止它，该怎么办？考虑下面的top命令输出：</p>
 <pre><code class="language-shell"><span class="token function">top</span> -c -p <span class="token number">16514</span>
 <span class="token number">23</span>:00:44  up <span class="token number">12</span> days,  <span class="token number">2</span>:04,  <span class="token number">4</span> users,  load average: <span class="token number">0.47</span>, <span class="token number">0.35</span>, <span class="token number">0.31</span>
@@ -63,9 +65,11 @@ Mem:  1026912k av, 1010476k used,   16436k free,       0k shrd,   52128k buff
 Swap: 2041192k av,   83160k used, 1958032k <span class="token function">free</span>                  799432k cached
 
   PID <span class="token environment constant">USER</span>     PRI  NI  SIZE  RSS SHARE <span class="token function">stat</span> %CPU %MEM   <span class="token function">time</span> CPU <span class="token builtin class-name">command</span>
-<span class="token number">16514</span> oracle    <span class="token number">19</span>   <span class="token number">4</span> <span class="token number">28796</span>  26M <span class="token number">20252</span> D N   <span class="token number">7.0</span>  <span class="token number">2.5</span>   <span class="token number">0</span>:03   <span class="token number">0</span> oraclePRODB2<span class="token punctuation">..</span>.</code></pre>
+<span class="token number">16514</span> oracle    <span class="token number">19</span>   <span class="token number">4</span> <span class="token number">28796</span>  26M <span class="token number">20252</span> D N   <span class="token number">7.0</span>  <span class="token number">2.5</span>   <span class="token number">0</span>:03   <span class="token number">0</span> oraclePRODB2<span class="token punctuation">..</span>.
+</code></pre>
 <p>既然您确认进程16514占用了大量内存，您就可以使用skill命令“冻结”它，而不是停止它。</p>
-<pre><code class="language-shell">skill -STOP <span class="token number">1</span></code></pre>
+<pre><code class="language-shell">skill -STOP <span class="token number">1</span>
+</code></pre>
 <p>之后，检查top输出：</p>
 <pre><code class="language-shell"><span class="token number">23</span>:01:11  up <span class="token number">12</span> days,  <span class="token number">2</span>:05,  <span class="token number">4</span> users,  load average: <span class="token number">1.20</span>, <span class="token number">0.54</span>, <span class="token number">0.38</span>
 <span class="token number">1</span> processes: <span class="token number">0</span> sleeping, <span class="token number">0</span> running, <span class="token number">0</span> zombie, <span class="token number">1</span> stopped
@@ -76,18 +80,24 @@ Mem:  1026912k av, 1008756k used,   18156k free,       0k shrd,    3976k buff
 Swap: 2041192k av,   83152k used, 1958040k <span class="token function">free</span>                  851200k cached
 
   PID <span class="token environment constant">USER</span>     PRI  NI  SIZE  RSS SHARE STAT %CPU %MEM   TIME CPU COMMAND
-<span class="token number">16514</span> oracle    <span class="token number">19</span>   <span class="token number">4</span> <span class="token number">28796</span>  26M <span class="token number">20252</span> T N   <span class="token number">0.0</span>  <span class="token number">2.5</span>   <span class="token number">0</span>:04   <span class="token number">0</span> oraclePRODB2<span class="token punctuation">..</span>.</code></pre>
+<span class="token number">16514</span> oracle    <span class="token number">19</span>   <span class="token number">4</span> <span class="token number">28796</span>  26M <span class="token number">20252</span> T N   <span class="token number">0.0</span>  <span class="token number">2.5</span>   <span class="token number">0</span>:04   <span class="token number">0</span> oraclePRODB2<span class="token punctuation">..</span>.
+</code></pre>
 <p>现在，CPU 从 0% 空闲变为 94% 空闲。该进程被有效冻结。过一段时间之后，您可能希望唤醒该进程：</p>
-<pre><code class="language-shell">skill -CONT <span class="token number">16514</span></code></pre>
+<pre><code class="language-shell">skill -CONT <span class="token number">16514</span>
+</code></pre>
 <p>如果希望暂时冻结进程以便为完成更重要的进程腾出空间，该方法非常有用。</p>
 <p>此命令用途很广。如果您要停止 &quot;oracle&quot; 用户的所有进程，只需要一个命令即可实现：</p>
-<pre><code class="language-shell">skill -STOP oracle</code></pre>
+<pre><code class="language-shell">skill -STOP oracle
+</code></pre>
 <p>可以使用用户、PID、命令或终端 id 作为参数。以下命令可停止所有 rman 命令。</p>
-<pre><code class="language-shell">skill -STOP rman</code></pre>
+<pre><code class="language-shell">skill -STOP rman
+</code></pre>
 <p>如您所见，skill 决定您输入的参数（进程 ID、用户 ID 或命令）并进行相应操作。这可能会导致在某些情况下出现这样的问题：您可能具有同名的用户和命令。最好的示例是 &quot;oracle&quot; 进程，通常由用户 &quot;oracle&quot; 运行。因此，当您希望停止名为 &quot;oracle&quot; 的进程时，可执行以下命令：</p>
-<pre><code class="language-shell">skill -STOP oracle</code></pre>
+<pre><code class="language-shell">skill -STOP oracle
+</code></pre>
 <p>用户 &quot;oracle&quot; 的所有进程都停止，包括您可能要使用的会话。要非常明确地执行命令，您可以选择使用一个新参数指定参数的类型。要停止一个名为 oracle 的命令，可执行以下命令：</p>
-<pre><code class="language-shell">skill -STOP -c oracle</code></pre>
+<pre><code class="language-shell">skill -STOP -c oracle
+</code></pre>
 <p>snice命令的功能与skill类似。但它用于降低进程的优先级，而不是停止进程。首先，检查 top 输出：</p>
 <pre><code class="language-shell">  PID <span class="token environment constant">USER</span>     PRI  NI  SIZE  RSS SHARE STAT %CPU %MEM   TIME CPU COMMAND
     <span class="token number">3</span> root      <span class="token number">15</span>   <span class="token number">0</span>     <span class="token number">0</span>    <span class="token number">0</span>     <span class="token number">0</span> RW    <span class="token number">0.0</span>  <span class="token number">0.0</span>   <span class="token number">0</span>:00   <span class="token number">0</span> kapmd
@@ -97,11 +107,13 @@ Swap: 2041192k av,   83152k used, 1958040k <span class="token function">free</sp
 <span class="token number">13689</span> oracle    <span class="token number">15</span>   <span class="token number">0</span> <span class="token number">10004</span> <span class="token number">9640</span>  <span class="token number">7820</span> T     <span class="token number">0.0</span>  <span class="token number">0.9</span>   <span class="token number">0</span>:00   <span class="token number">0</span> oracle
 <span class="token number">13695</span> oracle    <span class="token number">15</span>   <span class="token number">0</span>  <span class="token number">9984</span> <span class="token number">9620</span>  <span class="token number">7800</span> T     <span class="token number">0.0</span>  <span class="token number">0.9</span>   <span class="token number">0</span>:00   <span class="token number">0</span> oracle
 <span class="token number">13698</span> oracle    <span class="token number">15</span>   <span class="token number">0</span> <span class="token number">10064</span> <span class="token number">9700</span>  <span class="token number">7884</span> T     <span class="token number">0.0</span>  <span class="token number">0.9</span>   <span class="token number">0</span>:00   <span class="token number">0</span> oracle
-<span class="token number">13701</span> oracle    <span class="token number">15</span>   <span class="token number">0</span> <span class="token number">22204</span>  21M <span class="token number">16940</span> T     <span class="token number">0.0</span>  <span class="token number">2.1</span>   <span class="token number">0</span>:00   <span class="token number">0</span> oracle</code></pre>
+<span class="token number">13701</span> oracle    <span class="token number">15</span>   <span class="token number">0</span> <span class="token number">22204</span>  21M <span class="token number">16940</span> T     <span class="token number">0.0</span>  <span class="token number">2.1</span>   <span class="token number">0</span>:00   <span class="token number">0</span> oracle
+</code></pre>
 <p>现在，将 &quot;oracle&quot; 进程的优先级降低四个点。注意，该值越高，优先级越低。</p>
 <pre><code class="language-shell">snice +4 -u oracle
   PID <span class="token environment constant">USER</span>     PRI  NI  SIZE  RSS SHARE STAT %CPU %MEM   TIME CPU COMMAND
-<span class="token number">16894</span> oracle    <span class="token number">20</span>   <span class="token number">4</span> <span class="token number">38904</span>  32M <span class="token number">26248</span> D N   <span class="token number">5.5</span>  <span class="token number">3.2</span>   <span class="token number">0</span>:01   <span class="token number">0</span> oracle</code></pre>
+<span class="token number">16894</span> oracle    <span class="token number">20</span>   <span class="token number">4</span> <span class="token number">38904</span>  32M <span class="token number">26248</span> D N   <span class="token number">5.5</span>  <span class="token number">3.2</span>   <span class="token number">0</span>:01   <span class="token number">0</span> oracle
+</code></pre>
 <p>注意，NI 列（nice 值）现在是 4，优先级现在设置为 20，而不是 15。这对于降低优先级非常有帮助。</p>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 </div>
@@ -126,7 +138,7 @@ Swap: 2041192k av,   83152k used, 1958040k <span class="token function">free</sp
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1614049695260"></script>
-<script type="text/javascript" src="../js/index.js?v=1614049695260"></script>
+<script type="text/javascript" src="../js/dt.js?v=1614326816096"></script>
+<script type="text/javascript" src="../js/index.js?v=1614326816096"></script>
 </body>
 </html>

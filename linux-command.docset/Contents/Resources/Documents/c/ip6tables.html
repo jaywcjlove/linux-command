@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,ip6tables,linux中防火墙软件">
     <title>ip6tables 命令，Linux ip6tables 命令详解：linux中防火墙软件 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614049695054">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614326815828">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -42,7 +42,8 @@
 
 <h1 id="ip6tables">ip6tables</h1><p>linux中防火墙软件</p>
 <h2 id="补充说明">补充说明</h2><p><strong>ip6tables命令</strong> 和iptables一样，都是linux中防火墙软件，不同的是ip6tables采用的TCP/ip协议为IPv6。</p>
-<h3 id="语法">语法</h3><pre><code class="language-shell">ip6tables<span class="token punctuation">(</span>选项<span class="token punctuation">)</span></code></pre>
+<h3 id="语法">语法</h3><pre><code class="language-shell">ip6tables<span class="token punctuation">(</span>选项<span class="token punctuation">)</span>
+</code></pre>
 <h3 id="选项">选项</h3><pre><code class="language-shell">-t<span class="token operator">&lt;</span>表<span class="token operator">></span>：指定要操纵的表；
 -A：向规则链中添加条目；
 -D：从规则链中删除条目；
@@ -59,12 +60,15 @@
 -j<span class="token operator">&lt;</span>目标<span class="token operator">></span>：指定要跳转的目标；
 -i<span class="token operator">&lt;</span>网络接口<span class="token operator">></span>：指定数据包进入本机的网络接口；
 -o<span class="token operator">&lt;</span>网络接口<span class="token operator">></span>：指定数据包要离开本机所使用的网络接口。
--c<span class="token operator">&lt;</span>计数器<span class="token operator">></span>：在执行插入操作（insert），追加操作（append），替换操作（replace）时初始化包计数器和字节计数器。</code></pre>
+-c<span class="token operator">&lt;</span>计数器<span class="token operator">></span>：在执行插入操作（insert），追加操作（append），替换操作（replace）时初始化包计数器和字节计数器。
+</code></pre>
 <h3 id="实例">实例</h3><p>在命令行窗口输入下面的指令就可以查看当前的 IPv6 防火墙配置：</p>
-<pre><code class="language-shell">ip6tables -nl --line-numbers</code></pre>
+<pre><code class="language-shell">ip6tables -nl --line-numbers
+</code></pre>
 <p> <strong>/etc/sysconfig/ip6tables文件</strong> </p>
 <p>使用编辑器编辑<code>/etc/sysconfig/ip6tables</code>文件：</p>
-<pre><code class="language-shell"><span class="token function">vi</span> /etc/sysconfig/ip6tables</code></pre>
+<pre><code class="language-shell"><span class="token function">vi</span> /etc/sysconfig/ip6tables
+</code></pre>
 <p>可能会看到下面的默认 ip6tables 规则：</p>
 <pre><code class="language-shell">*filter
 :INPUT accept <span class="token punctuation">[</span><span class="token number">0</span>:0<span class="token punctuation">]</span>
@@ -84,30 +88,39 @@
 -A RH-Firewall-1-INPUT -p tcp -m tcp --dport <span class="token number">32768</span>:61000 <span class="token operator">!</span> --syn -j ACCEPT
 -A RH-Firewall-1-INPUT -m tcp -p tcp --dport <span class="token number">22</span> -j ACCEPT
 -A RH-Firewall-1-INPUT -j reject --reject-with icmp6-adm-prohibited
-COMMIT</code></pre>
+COMMIT
+</code></pre>
 <p>与 IPv4 的 iptables 规则类似，但又不完全相同。</p>
 <p>要开启 80 端口（HTTP 服务器端口），在 COMMIT 一行之前添加如下规则：</p>
-<pre><code class="language-shell">-A RH-Firewall-1-INPUT -m tcp -p tcp --dport <span class="token number">80</span> -j ACCEPT</code></pre>
+<pre><code class="language-shell">-A RH-Firewall-1-INPUT -m tcp -p tcp --dport <span class="token number">80</span> -j ACCEPT
+</code></pre>
 <p><code>-p tcp</code>表示仅针对 tcp 协议的通信。<code>--dport</code>指定端口号。</p>
 <p>要开启 53 端口（DNS 服务器端口），在 COMMIT 一行之前添加如下规则：</p>
 <pre><code class="language-shell">-A RH-Firewall-1-INPUT -m tcp -p tcp --dport <span class="token number">53</span> -j ACCEPT
--A RH-Firewall-1-INPUT -m udp -p tcp --dport <span class="token number">53</span> -j ACCEPT</code></pre>
+-A RH-Firewall-1-INPUT -m udp -p tcp --dport <span class="token number">53</span> -j ACCEPT
+</code></pre>
 <p>同时针对 tcp 和 udp 协议开启 53 端口。</p>
 <p>要开启 443 端口，在 COMMIT 一行之前添加如下规则：</p>
-<pre><code class="language-shell">-A RH-Firewall-1-INPUT -m tcp -p tcp --dport <span class="token number">443</span> -j ACCEPT</code></pre>
+<pre><code class="language-shell">-A RH-Firewall-1-INPUT -m tcp -p tcp --dport <span class="token number">443</span> -j ACCEPT
+</code></pre>
 <p>要开启 25 端口（SMTP 邮件服务器端口），在 COMMIT 一行之前添加如下规则：</p>
-<pre><code class="language-shell">-A RH-Firewall-1-INPUT -m tcp -p tcp --dport <span class="token number">25</span> -j ACCEPT</code></pre>
+<pre><code class="language-shell">-A RH-Firewall-1-INPUT -m tcp -p tcp --dport <span class="token number">25</span> -j ACCEPT
+</code></pre>
 <p>对于那些没有特定规则与之匹配的数据包，可能是我们不想要的，多半是有问题的。我们可能也希望在丢弃（DROP）之前记录它们。此时，可以将最后一行：</p>
 <pre><code class="language-shell">-A RH-Firewall-1-INPUT -j REJECT --reject-with icmp6-adm-prohibited
-COMMIT</code></pre>
+COMMIT
+</code></pre>
 <p>改为：</p>
 <pre><code class="language-shell">-A RH-Firewall-1-INPUT -j LOG
 -A RH-Firewall-1-INPUT -j DROP
-COMMIT</code></pre>
+COMMIT
+</code></pre>
 <p>保存并关闭该文件。然后重新启动 ip6tables 防火墙：</p>
-<pre><code class="language-shell"><span class="token comment"># service ip6tables restart</span></code></pre>
+<pre><code class="language-shell"><span class="token comment"># service ip6tables restart</span>
+</code></pre>
 <p>然后重新查看 ip6tables 规则，可以看到如下所示的输出：</p>
-<pre><code class="language-shell"><span class="token comment"># ip6tables -vnL --line-numbers</span></code></pre>
+<pre><code class="language-shell"><span class="token comment"># ip6tables -vnL --line-numbers</span>
+</code></pre>
 <p>输出示例：</p>
 <pre><code class="language-shell">Chain INPUT <span class="token punctuation">(</span>policy ACCEPT <span class="token number">0</span> packets, <span class="token number">0</span> bytes<span class="token punctuation">)</span>
 num   pkts bytes target     prot opt <span class="token keyword">in</span>     out     <span class="token builtin class-name">source</span>               destination
@@ -132,7 +145,8 @@ num   pkts bytes target     prot opt <span class="token keyword">in</span>     o
 <span class="token number">11</span>       <span class="token number">0</span>     <span class="token number">0</span> ACCEPT     tcp      *      *       ::/0                 ::/0               tcp dpt:80
 <span class="token number">12</span>       <span class="token number">0</span>     <span class="token number">0</span> ACCEPT     tcp      *      *       ::/0                 ::/0               tcp dpt:53
 <span class="token number">13</span>    <span class="token number">4108</span>  380K ACCEPT     udp      *      *       ::/0                 ::/0               udp dpt:53
-<span class="token number">14</span>      <span class="token number">18</span>  <span class="token number">4196</span> REJECT     all      *      *       ::/0                 ::/0</code></pre>
+<span class="token number">14</span>      <span class="token number">18</span>  <span class="token number">4196</span> REJECT     all      *      *       ::/0                 ::/0
+</code></pre>
 <p> <strong>IPv6 私有 IP</strong> </p>
 <p>IPv4 通常默认即可保护内部局域网私有 IP 上的主机。但是 IPv6 的地址非常丰富，不再需要使用类似 NAT 等协议的私有网络。这样一来，所有的内部主机都可以拥有公网 IP 而直接连接到互联网，也就同时暴露于互联网上的各种威胁之中了。那么，如何配置 IPv6 防火墙使其默认将除了 ping6 请求之外的所有输入数据包都丢弃呢？可以使用FC00::/7 前缀来标识本地 IPv6 单播地址。</p>
 <p> <strong>允许特定的 ICMPv6 通信</strong> </p>
@@ -164,7 +178,8 @@ num   pkts bytes target     prot opt <span class="token keyword">in</span>     o
 -A ICMPv6 -p icmpv6 --icmpv6-type <span class="token number">152</span> -s fe80::/10 -j ACCEPT
 -A ICMPv6 -p icmpv6 --icmpv6-type <span class="token number">153</span> -s fe80::/10 -j ACCEPT
 -A ICMPv6 -j RETURN
--A OUTPUT -p icmpv6 -j ACCEPT</code></pre>
+-A OUTPUT -p icmpv6 -j ACCEPT
+</code></pre>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 </div>
 
@@ -188,7 +203,7 @@ num   pkts bytes target     prot opt <span class="token keyword">in</span>     o
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1614049695054"></script>
-<script type="text/javascript" src="../js/index.js?v=1614049695054"></script>
+<script type="text/javascript" src="../js/dt.js?v=1614326815828"></script>
+<script type="text/javascript" src="../js/index.js?v=1614326815828"></script>
 </body>
 </html>

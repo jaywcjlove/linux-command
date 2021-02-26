@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,useradd,创建的新的系统用户">
     <title>useradd 命令，Linux useradd 命令详解：创建的新的系统用户 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614049695337">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614326816184">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -43,7 +43,8 @@
 <h1 id="useradd">useradd</h1><p>创建的新的系统用户</p>
 <h2 id="补充说明">补充说明</h2><p><strong>useradd命令</strong> 用于Linux中创建的新的系统用户。useradd可用来建立用户帐号。帐号建好之后，再用passwd设定帐号的密码．而可用userdel删除帐号。使用useradd指令所建立的帐号，实际上是保存在<code>/etc/passwd</code>文本文件中。</p>
 <p>在Slackware中，adduser指令是个script程序，利用交谈的方式取得输入的用户帐号资料，然后再交由真正建立帐号的useradd命令建立新用户，如此可方便管理员建立用户帐号。在Red Hat Linux中， <strong>adduser命令</strong> 则是useradd命令的符号连接，两者实际上是同一个指令。</p>
-<h3 id="语法">语法</h3><pre><code class="language-shell">useradd<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span></code></pre>
+<h3 id="语法">语法</h3><pre><code class="language-shell">useradd<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
+</code></pre>
 <h3 id="选项">选项</h3><pre><code class="language-shell">-c<span class="token operator">&lt;</span>备注<span class="token operator">></span>：加上备注文字。备注文字会保存在passwd的备注栏位中；
 -d<span class="token operator">&lt;</span>登入目录<span class="token operator">></span>：指定用户登入时的启始目录；
 -D：变更预设值；
@@ -56,12 +57,15 @@
 -n：取消建立以用户名称为名的群组；
 -r：建立系统帐号；
 -s<span class="token operator">&lt;</span>shell<span class="token operator">></span>：指定用户登入后所使用的shell；
--u<span class="token operator">&lt;</span>uid<span class="token operator">></span>：指定用户id。</code></pre>
+-u<span class="token operator">&lt;</span>uid<span class="token operator">></span>：指定用户id。
+</code></pre>
 <h3 id="参数">参数</h3><p>用户名：要创建的用户名。</p>
 <h3 id="实例">实例</h3><p>新建用户加入组：</p>
-<pre><code class="language-shell"><span class="token function">useradd</span> –g sales jack –G company,employees    //-g：加入主要组、-G：加入次要组</code></pre>
+<pre><code class="language-shell"><span class="token function">useradd</span> –g sales jack –G company,employees    //-g：加入主要组、-G：加入次要组
+</code></pre>
 <p>建立一个新用户账户，并设置ID：</p>
-<pre><code class="language-shell"><span class="token function">useradd</span> caojh -u <span class="token number">544</span></code></pre>
+<pre><code class="language-shell"><span class="token function">useradd</span> caojh -u <span class="token number">544</span>
+</code></pre>
 <p>需要说明的是，设定ID值时尽量要大于500，以免冲突。因为Linux安装后会建立一些特殊用户，一般0到499之间的值留给bin、mail这样的系统账号。</p>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 </div>
@@ -86,7 +90,7 @@
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1614049695337"></script>
-<script type="text/javascript" src="../js/index.js?v=1614049695337"></script>
+<script type="text/javascript" src="../js/dt.js?v=1614326816185"></script>
+<script type="text/javascript" src="../js/index.js?v=1614326816185"></script>
 </body>
 </html>

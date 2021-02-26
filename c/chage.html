@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,chage,修改帐号和密码的有效期限">
     <title>chage 命令，Linux chage 命令详解：修改帐号和密码的有效期限 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614049694850">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614326815599">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -42,19 +42,22 @@
 
 <h1 id="chage">chage</h1><p>修改帐号和密码的有效期限</p>
 <h2 id="补充说明">补充说明</h2><p><strong>chage命令</strong> 是用来修改帐号和密码的有效期限。</p>
-<h3 id="语法">语法</h3><pre><code class="language-shell">chage <span class="token punctuation">[</span>选项<span class="token punctuation">]</span> 用户名</code></pre>
+<h3 id="语法">语法</h3><pre><code class="language-shell">chage <span class="token punctuation">[</span>选项<span class="token punctuation">]</span> 用户名
+</code></pre>
 <h3 id="选项">选项</h3><pre><code class="language-shell">-m：密码可更改的最小天数。为零时代表任何时候都可以更改密码。
 -M：密码保持有效的最大天数。
 -w：用户密码到期前，提前收到警告信息的天数。
 -E：帐号到期的日期。过了这天，此帐号将不可用。
 -d：上一次更改的日期。
 -i：停滞时期。如果一个密码已过期这些天，那么此帐号将不可用。
--l：例出当前的设置。由非特权用户来确定他们的密码或帐号何时过期。</code></pre>
+-l：例出当前的设置。由非特权用户来确定他们的密码或帐号何时过期。
+</code></pre>
 <h3 id="实例">实例</h3><p>可以编辑<code>/etc/login.defs</code>来设定几个参数，以后设置口令默认就按照参数设定为准：</p>
 <pre><code class="language-shell">PASS_MAX_DAYS   <span class="token number">99999</span>
 PASS_MIN_DAYS   <span class="token number">0</span>
 PASS_MIN_LEN    <span class="token number">5</span>
-PASS_WARN_AGE   <span class="token number">7</span></code></pre>
+PASS_WARN_AGE   <span class="token number">7</span>
+</code></pre>
 <p>当然在<code>/etc/default/useradd</code>可以找到如下2个参数进行设置：</p>
 <pre><code class="language-shell"><span class="token comment"># useradd defaults file</span>
 <span class="token assign-left variable">GROUP</span><span class="token operator">=</span><span class="token number">100</span>
@@ -63,7 +66,8 @@ PASS_WARN_AGE   <span class="token number">7</span></code></pre>
 <span class="token assign-left variable">EXPIRE</span><span class="token operator">=</span>
 <span class="token assign-left variable"><span class="token environment constant">SHELL</span></span><span class="token operator">=</span>/bin/bash
 <span class="token assign-left variable">SKEL</span><span class="token operator">=</span>/etc/skel
-<span class="token assign-left variable">CREATE_MAIL_SPOOL</span><span class="token operator">=</span>yes</code></pre>
+<span class="token assign-left variable">CREATE_MAIL_SPOOL</span><span class="token operator">=</span>yes
+</code></pre>
 <p>通过修改配置文件，能对之后新建用户起作用，而目前系统已经存在的用户，则直接用chage来配置。</p>
 <p>我的服务器root帐户密码策略信息如下：</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@linuxde ~<span class="token punctuation">]</span><span class="token comment"># chage -l root</span>
@@ -73,7 +77,8 @@ PASS_WARN_AGE   <span class="token number">7</span></code></pre>
 帐户过期时间                           ：从不
 两次改变密码之间相距的最小天数          ：0
 两次改变密码之间相距的最大天数          ：99999
-在密码过期之前警告的天数                ：7</code></pre>
+在密码过期之前警告的天数                ：7
+</code></pre>
 <p>我可以通过如下命令修改我的密码过期时间：</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@linuxde ~<span class="token punctuation">]</span><span class="token comment"># chage -M 60 root</span>
 <span class="token punctuation">[</span>root@linuxde ~<span class="token punctuation">]</span><span class="token comment"># chage -l root</span>
@@ -83,7 +88,8 @@ PASS_WARN_AGE   <span class="token number">7</span></code></pre>
 帐户过期时间                                       ：从不
 两次改变密码之间相距的最小天数          ：0
 两次改变密码之间相距的最大天数          ：60
-在密码过期之前警告的天数                    ：9</code></pre>
+在密码过期之前警告的天数                    ：9
+</code></pre>
 <p>然后通过如下命令设置密码失效时间：</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@linuxde ~<span class="token punctuation">]</span><span class="token comment"># chage -I 5 root</span>
 <span class="token punctuation">[</span>root@linuxde ~<span class="token punctuation">]</span><span class="token comment"># chage -l root</span>
@@ -93,7 +99,8 @@ PASS_WARN_AGE   <span class="token number">7</span></code></pre>
 帐户过期时间                                  ：从不
 两次改变密码之间相距的最小天数          ：0
 两次改变密码之间相距的最大天数          ：60
-在密码过期之前警告的天数                 ：9</code></pre>
+在密码过期之前警告的天数                 ：9
+</code></pre>
 <p>从上述命令可以看到，在密码过期后5天，密码自动失效，这个用户将无法登陆系统了。</p>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 </div>
@@ -118,7 +125,7 @@ PASS_WARN_AGE   <span class="token number">7</span></code></pre>
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1614049694851"></script>
-<script type="text/javascript" src="../js/index.js?v=1614049694851"></script>
+<script type="text/javascript" src="../js/dt.js?v=1614326815600"></script>
+<script type="text/javascript" src="../js/index.js?v=1614326815600"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,tftp,在本机和tftp服务器之间使用TFTP协议传输文件">
     <title>tftp 命令，Linux tftp 命令详解：在本机和tftp服务器之间使用TFTP协议传输文件 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614049695311">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614326816153">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -43,22 +43,26 @@
 <h1 id="tftp">tftp</h1><p>在本机和tftp服务器之间使用TFTP协议传输文件</p>
 <h2 id="补充说明">补充说明</h2><p><strong>tftp命令</strong> 用在本机和tftp服务器之间使用TFTP协议传输文件。</p>
 <p>TFTP是用来下载远程文件的最简单网络协议，它其于UDP协议而实现。嵌入式linux的tftp开发环境包括两个方面：一是linux服务器端的tftp-server支持，二是嵌入式目标系统的tftp-client支持。因为u-boot本身内置支持tftp-client，所以嵌入式目标系统端就不用配置了。下面就详细介绍一下linux服务器端tftp-server的配置。</p>
-<h3 id="语法">语法</h3><pre><code class="language-shell">tftp<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span></code></pre>
+<h3 id="语法">语法</h3><pre><code class="language-shell">tftp<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
+</code></pre>
 <h3 id="选项">选项</h3><pre><code class="language-shell">-c：指定与tftp服务器连接成功后，立即要执行的指令；
 -m：指定文件传输模式。可以是ASCII或者Binary；
 -v：显示指令详细执行过程；
--V：显示指令版本信息。</code></pre>
+-V：显示指令版本信息。
+</code></pre>
 <h3 id="参数">参数</h3><p>主机：指定tftp要联机的tftp服务器的ip地址或主机名。</p>
 <h3 id="实例">实例</h3><p> <strong>1、安装tftp服务器</strong> </p>
 <p>需要安装xinetd、tftp和tftp-server 3个软件</p>
 <p>如果能上网，通过yum安装：</p>
 <pre><code class="language-shell">yum <span class="token function">install</span> xinetd
 yum <span class="token function">install</span> tftp
-yum <span class="token function">install</span> tftp-server</code></pre>
+yum <span class="token function">install</span> tftp-server
+</code></pre>
 <p>如果不能上网，可以直接安装提供的rpm包：</p>
 <pre><code class="language-shell"><span class="token function">rpm</span> -ivh xinetd-2.3.14-18.fc9.i386.rpm
 <span class="token function">rpm</span> -ivh tftp-0.48-3.fc9.i386.rpm
-<span class="token function">rpm</span> -ivh tftp-server-0.48-3.fc9.i386.rpm</code></pre>
+<span class="token function">rpm</span> -ivh tftp-server-0.48-3.fc9.i386.rpm
+</code></pre>
 <p> <strong>2、配置tftp服务器</strong> </p>
 <p>修改/etc/xinetd.d/tftp文件，将其中的disable=yes改为disable=no。主要是设置TFTP服务器的根目录，开启服务。修改后的文件如下：</p>
 <pre><code class="language-shell"><span class="token function">service</span> tftp
@@ -73,17 +77,20 @@ yum <span class="token function">install</span> tftp-server</code></pre>
        per_source            <span class="token operator">=</span><span class="token number">11</span>
        cps                   <span class="token operator">=</span><span class="token number">100</span> <span class="token number">2</span>
        flags                 <span class="token operator">=</span>IPv4
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>说明：修改项<code>server_args= -s &lt;path&gt; -c</code>，其中<path>处可以改为你的tftp-server的根目录，参数-s指定chroot，-c指定了可以创建文件。</p>
 <p> <strong>3、启动tftp服务器并关闭防火墙</strong> </p>
 <pre><code class="language-shell">/etc/init.d/iptables stop        <span class="token comment"># 关闭防火墙</span>
 <span class="token function">sudo</span> /sbin/service xinetd start
 或
 <span class="token function">service</span> xinetd restart
-/etc/init.d/xinetd start</code></pre>
+/etc/init.d/xinetd start
+</code></pre>
 <p>看到启动[OK]就可以了</p>
 <p>4、查看tftp服务是否开启</p>
-<pre><code class="language-shell"><span class="token function">netstat</span> -a <span class="token operator">|</span> <span class="token function">grep</span> tftp</code></pre>
+<pre><code class="language-shell"><span class="token function">netstat</span> -a <span class="token operator">|</span> <span class="token function">grep</span> tftp
+</code></pre>
 <p>显示结果为<code>udp 0 0 *:tftp *:*</code>表明服务已经开启，就表明tftp配置成功了。</p>
 <p> <strong>5、tftp使用</strong> </p>
 <p>复制一个文件到tftp服务器目录，然后在主机启动tftp软件，进行简单测试。</p>
@@ -91,9 +98,11 @@ yum <span class="token function">install</span> tftp-server</code></pre>
 tftp<span class="token operator">></span>get <span class="token operator">&lt;</span>download file<span class="token operator">></span> 
 
 tftp<span class="token operator">></span>put <span class="token operator">&lt;</span>upload file<span class="token operator">></span>
-tftp<span class="token operator">></span>q</code></pre>
+tftp<span class="token operator">></span>q
+</code></pre>
 <p> <strong>6、tftp命令用法如下</strong> </p>
-<pre><code class="language-shell">tftp your-ip-address</code></pre>
+<pre><code class="language-shell">tftp your-ip-address
+</code></pre>
 <p>进入TFTP操作：</p>
 <ul>
 <li><p>  connect：连接到远程tftp服务器</p>
@@ -124,20 +133,23 @@ tftp<span class="token operator">></span>q</code></pre>
 </li>
 <li><p>  ? ：帮助信息</p>
 </li>
-<li><p>*7、如果老是出现“AVC Denial, click icon to view”的错误，并不能传输文件，需要作如下修改** </p>
+<li><p><em>7、如果老是出现“AVC Denial, click icon to view”的错误，并不能传输文件，需要作如下修改</em>* </p>
 </li>
 </ul>
 <p>修改<code>/etc/sysconfig/selinux</code>,将SELINUX设定为disable，使用命令<code>setenforce 0</code>让selinux配置文件生效。</p>
 <p> <strong>8、Busybox中tftp命令的用法</strong> </p>
 <p>命令格式为：</p>
-<pre><code class="language-shell">tftp <span class="token punctuation">[</span>option<span class="token punctuation">]</span> <span class="token punctuation">..</span>. <span class="token function">host</span> <span class="token punctuation">[</span>port<span class="token punctuation">]</span></code></pre>
+<pre><code class="language-shell">tftp <span class="token punctuation">[</span>option<span class="token punctuation">]</span> <span class="token punctuation">..</span>. <span class="token function">host</span> <span class="token punctuation">[</span>port<span class="token punctuation">]</span>
+</code></pre>
 <p>如果要下载或上传文件的话是一定要用这些option的。</p>
 <pre><code class="language-shell">-g 表示下载文件 <span class="token punctuation">(</span>get<span class="token punctuation">)</span>
 -p 表示上传文件 <span class="token punctuation">(</span>put<span class="token punctuation">)</span>
 -l 表示本地文件名 <span class="token punctuation">(</span>local <span class="token function">file</span><span class="token punctuation">)</span>
--r 表示远程主机的文件名 <span class="token punctuation">(</span>remote <span class="token function">file</span><span class="token punctuation">)</span></code></pre>
+-r 表示远程主机的文件名 <span class="token punctuation">(</span>remote <span class="token function">file</span><span class="token punctuation">)</span>
+</code></pre>
 <p>例如，要从远程主机192.168.1.2上下载 embedexpert，则应输入以下命令</p>
-<pre><code class="language-shell">tftp -g -r embedexpert <span class="token number">192.168</span>.1.2</code></pre>
+<pre><code class="language-shell">tftp -g -r embedexpert <span class="token number">192.168</span>.1.2
+</code></pre>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 </div>
 
@@ -161,7 +173,7 @@ tftp<span class="token operator">></span>q</code></pre>
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1614049695311"></script>
-<script type="text/javascript" src="../js/index.js?v=1614049695311"></script>
+<script type="text/javascript" src="../js/dt.js?v=1614326816154"></script>
+<script type="text/javascript" src="../js/index.js?v=1614326816154"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,passwd,用于让用户可以更改自己的密码">
     <title>passwd 命令，Linux passwd 命令详解：用于让用户可以更改自己的密码 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614049695165">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614326815981">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -42,21 +42,25 @@
 
 <h1 id="passwd">passwd</h1><p>用于让用户可以更改自己的密码</p>
 <h2 id="补充说明">补充说明</h2><p><strong>passwd命令</strong> 用于设置用户的认证信息，包括用户密码、密码过期时间等。系统管理者则能用它管理系统用户的密码。只有管理者可以指定用户名称，一般用户只能变更自己的密码。</p>
-<h3 id="语法">语法</h3><pre><code class="language-shell">passwd<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span></code></pre>
+<h3 id="语法">语法</h3><pre><code class="language-shell">passwd<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
+</code></pre>
 <h3 id="选项">选项</h3><pre><code class="language-shell">-d：删除密码，仅有系统管理者才能使用；
 -f：强制执行；
 -k：设置只有在密码过期失效后，方能更新；
 -l：锁住密码；
 -s：列出密码的相关信息，仅有系统管理者才能使用；
--u：解开已上锁的帐号。</code></pre>
+-u：解开已上锁的帐号。
+</code></pre>
 <h3 id="参数">参数</h3><p>用户名：需要设置密码的用户名。</p>
 <h3 id="知识扩展">知识扩展</h3><p>与用户、组账户信息相关的文件</p>
 <p>存放用户信息：</p>
 <pre><code class="language-shell">/etc/passwd
-/etc/shadow</code></pre>
+/etc/shadow
+</code></pre>
 <p>存放组信息：</p>
 <pre><code class="language-shell">/etc/group
-/etc/gshadow</code></pre>
+/etc/gshadow
+</code></pre>
 <p>用户信息文件分析（每项用<code>:</code>隔开）</p>
 <pre><code class="language-shell">例如：jack:X:503:504:::/home/jack/:/bin/bash
 jack　　<span class="token comment"># 用户名</span>
@@ -65,7 +69,8 @@ X　　<span class="token comment"># 口令、密码</span>
 <span class="token number">504</span>　　<span class="token comment"># 所在组</span>
 <span class="token builtin class-name">:</span>　　<span class="token comment"># 描述</span>
 /home/jack/　　<span class="token comment"># 用户主目录</span>
-/bin/bash　　<span class="token comment"># 用户缺省Shell</span></code></pre>
+/bin/bash　　<span class="token comment"># 用户缺省Shell</span>
+</code></pre>
 <p>组信息文件分析</p>
 <pre><code class="language-shell">例如：jack:<span class="token variable">&#36;!</span>&#36;:???:13801:0:99999:7:*:*:
 jack　　<span class="token comment"># 组名</span>
@@ -75,20 +80,23 @@ jack　　<span class="token comment"># 组名</span>
 <span class="token number">99999</span>　　<span class="token comment"># 用户口令</span>
 <span class="token number">7</span>　　<span class="token comment"># 到7天时提醒</span>
 *　　<span class="token comment"># 禁用天数</span>
-*　　<span class="token comment"># 过期天数</span></code></pre>
+*　　<span class="token comment"># 过期天数</span>
+</code></pre>
 <h3 id="实例">实例</h3><p>如果是普通用户执行passwd只能修改自己的密码。如果新建用户后，要为新用户创建密码，则用passwd用户名，注意要以root用户的权限来创建。</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># passwd linuxde     # 更改或创建linuxde用户的密码；</span>
 Changing password <span class="token keyword">for</span> user linuxde.
 New UNIX password:           <span class="token comment"># 请输入新密码；</span>
 Retype new UNIX password:    <span class="token comment"># 再输入一次；</span>
-passwd: all authentication tokens updated successfully.  <span class="token comment"># 成功；</span></code></pre>
+passwd: all authentication tokens updated successfully.  <span class="token comment"># 成功；</span>
+</code></pre>
 <p>普通用户如果想更改自己的密码，直接运行passwd即可，比如当前操作的用户是linuxde。</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>linuxde@localhost ~<span class="token punctuation">]</span>&#36; <span class="token function">passwd</span>
 Changing password <span class="token keyword">for</span> user linuxde.  <span class="token comment"># 更改linuxde用户的密码；</span>
 <span class="token punctuation">(</span>current<span class="token punctuation">)</span> UNIX password:    <span class="token comment"># 请输入当前密码；</span>
 New UNIX password:          <span class="token comment"># 请输入新密码；</span>
 Retype new UNIX password:   <span class="token comment"># 确认新密码；</span>
-passwd: all authentication tokens updated successfully.  <span class="token comment"># 更改成功；</span></code></pre>
+passwd: all authentication tokens updated successfully.  <span class="token comment"># 更改成功；</span>
+</code></pre>
 <p>比如我们让某个用户不能修改密码，可以用<code>-l</code>选项来锁定：</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># passwd -l linuxde     # 锁定用户linuxde不能更改密码；</span>
 Locking password <span class="token keyword">for</span> user linuxde.
@@ -99,14 +107,16 @@ passwd: Success            <span class="token comment"># 锁定成功；</span>
 Changing password <span class="token keyword">for</span> user linuxde.
 Changing password <span class="token keyword">for</span> linuxde
 <span class="token punctuation">(</span>current<span class="token punctuation">)</span> UNIX password:           <span class="token comment"># 输入linuxde的当前密码；</span>
-passwd: Authentication token manipulation error      <span class="token comment"># 失败，不能更改密码；</span></code></pre>
+passwd: Authentication token manipulation error      <span class="token comment"># 失败，不能更改密码；</span>
+</code></pre>
 <p>再来一例：</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># passwd -d linuxde   # 清除linuxde用户密码；</span>
 Removing password <span class="token keyword">for</span> user linuxde.
 passwd: Success                          <span class="token comment"># 清除成功；</span>
 
 <span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># passwd -S linuxde     # 查询linuxde用户密码状态；</span>
-Empty password.                          <span class="token comment"># 空密码，也就是没有密码；</span></code></pre>
+Empty password.                          <span class="token comment"># 空密码，也就是没有密码；</span>
+</code></pre>
 <p>注意：当我们清除一个用户的密码时，登录时就无需密码，这一点要加以注意。</p>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 </div>
@@ -131,7 +141,7 @@ Empty password.                          <span class="token comment"># 空密码
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1614049695165"></script>
-<script type="text/javascript" src="../js/index.js?v=1614049695165"></script>
+<script type="text/javascript" src="../js/dt.js?v=1614326815981"></script>
+<script type="text/javascript" src="../js/index.js?v=1614326815981"></script>
 </body>
 </html>

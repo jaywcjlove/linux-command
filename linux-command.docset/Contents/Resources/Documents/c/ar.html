@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,ar,建立或修改备存文件，或是从备存文件中抽取文件">
     <title>ar 命令，Linux ar 命令详解：建立或修改备存文件，或是从备存文件中抽取文件 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614049694788">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614326815535">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -44,7 +44,8 @@
 <h2 id="补充说明">补充说明</h2><p><strong>ar命令</strong> 是一个建立或修改备存文件，或是从备存文件中抽取文件的工具，ar可让您集合许多文件，成为单一的备存文件。在备存文件中，所有成员文件皆保有原来的属性与权限</p>
 <h3 id="语法">语法</h3><pre><code class="language-shell">ar <span class="token punctuation">[</span>-<span class="token punctuation">]</span><span class="token punctuation">{</span>dmpqrtx<span class="token punctuation">}</span><span class="token punctuation">[</span>abcfilNoPsSuvV<span class="token punctuation">]</span> <span class="token punctuation">[</span>membername<span class="token punctuation">]</span> <span class="token punctuation">[</span>count<span class="token punctuation">]</span> archive files<span class="token punctuation">..</span>.
 Usage: ar <span class="token punctuation">[</span>emulation options<span class="token punctuation">]</span> <span class="token punctuation">[</span>-<span class="token punctuation">]</span><span class="token punctuation">{</span>dmpqrstx<span class="token punctuation">}</span><span class="token punctuation">[</span>abcDfilMNoPsSTuvV<span class="token punctuation">]</span> <span class="token punctuation">[</span>--plugin <span class="token operator">&lt;</span>name<span class="token operator">></span><span class="token punctuation">]</span> <span class="token punctuation">[</span>member-name<span class="token punctuation">]</span> <span class="token punctuation">[</span>count<span class="token punctuation">]</span> archive-file file<span class="token punctuation">..</span>.
-       ar -M <span class="token punctuation">[</span><span class="token operator">&lt;</span>mri-脚本<span class="token punctuation">]</span></code></pre>
+       ar -M <span class="token punctuation">[</span><span class="token operator">&lt;</span>mri-脚本<span class="token punctuation">]</span>
+</code></pre>
 <h3 id="选项">选项</h3><pre><code class="language-shell">ar 允许你 在第一个 命令行 参数中 以任意 顺序 混合 指定 操作码p 和修饰符mod <span class="token builtin class-name">.</span>
 
 只要你 愿意, 也可以 用破折号 作为 命令行 第一个 参数的 开始.
@@ -100,7 +101,7 @@ b      增加 文件到 档案中 已有 成员 之前  , 如果 使用了 修�
 
 c      建立    档案.  指定的 档案 archive 始终 会被建立, 如果 你要求 执行的是 更新, 通过 此修饰符 建立 档案时 会给出 一个
       警告.
-
+      
 f      截短 档案成员的 名字.  ar 通常 允许 任意 长度的 文件名, 但这会 导致 与某些 系统上的 ar 出现 兼容性  问题,  使用  f
       修饰符 可以 在往档案中 追加 文件时 把名字 截短.
 
@@ -128,9 +129,11 @@ u      通常ar r<span class="token punctuation">..</span>. 把所有 列出的 
       会失去 速度上的 优势, 所以 不允许 执行 `qu'</span> 组合操作.
 
 <span class="token function">v</span>      使用本修饰符可以进行 冗余的 操作。附加了此修饰符时，很多操作会显示 更多的消息，如处理的文件名等。
-V      显示 ar 的版本号。</code></pre>
+V      显示 ar 的版本号。
+</code></pre>
 <p>选项参数 </p>
-<pre><code class="language-shell">--plugin <span class="token operator">&lt;</span>p<span class="token operator">></span> - load the specified plugin</code></pre>
+<pre><code class="language-shell">--plugin <span class="token operator">&lt;</span>p<span class="token operator">></span> - load the specified plugin
+</code></pre>
 <p>ar：支持的目标： elf64-x86-64 elf32-i386 elf32-x86-64 a.out-i386-linux pei-i386 pei-x86-64 elf64-l1om elf64-k1om elf64-little elf64-big elf32-little elf32-big plugin srec symbolsrec verilog tekhex binary ihex</p>
 <h3 id="实例">实例</h3><p>打包文件</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ls   # 显示当前目录文件   </span>
@@ -140,24 +143,28 @@ anaconda-ks.cfg c.c Desktop
 <span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ar rv one.bak a.c b.c  # 打包 a.c b.c文件 </span>
 ar: 正在创建 one.bak
 a - a.c
-a - b.c</code></pre>
+a - b.c
+</code></pre>
 <p>打包多个文件</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ar rv two.bak *.c  // 打包以.c结尾的文件  </span>
 ar: 正在创建 two.bak
 a - a.c
 a - b.c
 a - c.c
-a - d.c</code></pre>
+a - d.c
+</code></pre>
 <p>显示打包文件的内容</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ar t two.bak    </span>
 a.c
 b.c
 c.c
-d.c</code></pre>
+d.c
+</code></pre>
 <p>删除打包文件的成员文件</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ar d two.bak a.c b.c c.c  </span>
 <span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ar t two.bak       </span>
-d.c</code></pre>
+d.c
+</code></pre>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 
 </div>
@@ -182,7 +189,7 @@ d.c</code></pre>
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1614049694788"></script>
-<script type="text/javascript" src="../js/index.js?v=1614049694788"></script>
+<script type="text/javascript" src="../js/dt.js?v=1614326815535"></script>
+<script type="text/javascript" src="../js/index.js?v=1614326815535"></script>
 </body>
 </html>

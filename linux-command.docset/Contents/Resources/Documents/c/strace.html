@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,strace,跟踪系统调用和信号">
     <title>strace 命令，Linux strace 命令详解：跟踪系统调用和信号 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614049695281">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614326816121">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -49,7 +49,8 @@
      <span class="token punctuation">[</span>command <span class="token punctuation">[</span> arg <span class="token punctuation">..</span>.  <span class="token punctuation">]</span> <span class="token punctuation">]</span>
 
 <span class="token function">strace</span>  -c  <span class="token punctuation">[</span> -eexpr <span class="token punctuation">]</span> <span class="token punctuation">..</span>.  <span class="token punctuation">[</span> -Ooverhead <span class="token punctuation">]</span> <span class="token punctuation">[</span> -Ssortby <span class="token punctuation">]</span>
-    <span class="token punctuation">[</span> <span class="token builtin class-name">command</span> <span class="token punctuation">[</span> arg<span class="token punctuation">..</span>.  <span class="token punctuation">]</span> <span class="token punctuation">]</span></code></pre>
+    <span class="token punctuation">[</span> <span class="token builtin class-name">command</span> <span class="token punctuation">[</span> arg<span class="token punctuation">..</span>.  <span class="token punctuation">]</span> <span class="token punctuation">]</span>
+</code></pre>
 <h3 id="选项">选项</h3><pre><code class="language-shell">-c 统计每一系统调用的所执行的时间,次数和出错的次数等.
 -d 输出strace关于标准错误的调试信息.
 -f 跟踪由fork调用所产生的子进程.
@@ -84,7 +85,8 @@ qualifier只能是 trace,abbrev,verbose,raw,signal,read,write其中之一.value�
 -o filename 将strace的输出写入文件filename
 -p pid 跟踪指定的进程pid.
 -s strsize 指定输出的字符串的最大长度.默认为32.文件名一直全部输出.
--u username 以username的<span class="token environment constant">UID</span>和GID执行被跟踪的命令</code></pre>
+-u username 以username的<span class="token environment constant">UID</span>和GID执行被跟踪的命令
+</code></pre>
 <h3 id="实例">实例</h3><p> <strong>追踪系统调用</strong> </p>
 <p>现在我们做一个很简单的程序来演示strace的基本用法。这个程序的C语言代码如下：</p>
 <pre><code class="language-shell"><span class="token comment"># filename test.c</span>
@@ -96,9 +98,11 @@ int <span class="token function-name function">main</span><span class="token pun
     scanf<span class="token punctuation">(</span><span class="token string">"%d"</span>, <span class="token operator">&amp;</span>a<span class="token punctuation">)</span><span class="token punctuation">;</span>
     printf<span class="token punctuation">(</span><span class="token string">"%09d<span class="token entity" title="\n">\n</span>"</span>, a<span class="token punctuation">)</span><span class="token punctuation">;</span>
     <span class="token builtin class-name">return</span> <span class="token number">0</span><span class="token punctuation">;</span>
-<span class="token punctuation">}</span></code></pre>
+<span class="token punctuation">}</span>
+</code></pre>
 <p>然后我们用<code>gcc -o test test.c</code>编译一下，得到一个可执行的文件test。然后用strace调用执行：</p>
-<pre><code class="language-shell"><span class="token function">strace</span> ./test</code></pre>
+<pre><code class="language-shell"><span class="token function">strace</span> ./test
+</code></pre>
 <p>执行期间会要求你输入一个整数，我们输入99，最后得到如下的结果：</p>
 <pre><code class="language-shell">// 直接执行test的结果
 oracle@orainst<span class="token punctuation">[</span>orcl<span class="token punctuation">]</span>:~ &#36;./test
@@ -136,11 +140,13 @@ mmap2<span class="token punctuation">(</span>NULL, <span class="token number">40
 write<span class="token punctuation">(</span><span class="token number">1</span>, <span class="token string">"000000099<span class="token entity" title="\n">\n</span>"</span>, <span class="token number">10000000099</span>
 <span class="token punctuation">)</span>             <span class="token operator">=</span> <span class="token number">10</span>
 munmap<span class="token punctuation">(</span>0xbf5fe000, <span class="token number">4096</span><span class="token punctuation">)</span>                <span class="token operator">=</span> <span class="token number">0</span>
-exit_group<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>                           <span class="token operator">=</span> ?</code></pre>
+exit_group<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>                           <span class="token operator">=</span> ?
+</code></pre>
 <p>从trace结构可以看到，系统首先调用execve开始一个新的进行，接着进行些环境的初始化操作，最后停顿在”read(0,”上面，这也就是执行到了我们的scanf函数，等待我们输入数字呢，在输入完99之后，在调用write函数将格式化后的数值”000000099″输出到屏幕，最后调用exit_group退出进行，完成整个程序的执行过程。</p>
 <p> <strong>跟踪信号传递</strong> </p>
 <p>我们还是使用上面的那个test程序，来观察进程接收信号的情况。还是先<code>strace ./test</code>，等到等待输入的画面的时候不要输入任何东西，然后打开另外一个窗口，输入如下的命令</p>
-<pre><code class="language-shell"><span class="token function">killall</span> <span class="token builtin class-name">test</span></code></pre>
+<pre><code class="language-shell"><span class="token function">killall</span> <span class="token builtin class-name">test</span>
+</code></pre>
 <p>这时候就能看到我们的程序推出了，最后的trace结果如下：</p>
 <pre><code class="language-shell">oracle@orainst<span class="token punctuation">[</span>orcl<span class="token punctuation">]</span>:~
 <span class="token variable">&#36;strace</span> ./test
@@ -164,14 +170,16 @@ fstat64<span class="token punctuation">(</span><span class="token number">0</spa
 mmap2<span class="token punctuation">(</span>NULL, <span class="token number">4096</span>, PROT_READ<span class="token operator">|</span>PROT_WRITE, MAP_PRIVATE<span class="token operator">|</span>MAP_ANONYMOUS, -1, <span class="token number">0</span><span class="token punctuation">)</span> <span class="token operator">=</span> 0xbf5ff000
 read<span class="token punctuation">(</span><span class="token number">0</span>, 0xbf5ff000, <span class="token number">1024</span><span class="token punctuation">)</span>               <span class="token operator">=</span> ? ERESTARTSYS <span class="token punctuation">(</span>To be restarted<span class="token punctuation">)</span>
 --- SIGTERM <span class="token punctuation">(</span>Terminated<span class="token punctuation">)</span> @ <span class="token number">0</span> <span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span> ---
-+++ killed by SIGTERM +++</code></pre>
++++ killed by SIGTERM +++
+</code></pre>
 <p>trace中很清楚的告诉你test进程”+++ killed by SIGTERM +++”。</p>
 <p> <strong>系统调用统计</strong> </p>
 <p>strace不光能追踪系统调用，通过使用参数-c，它还能将进程所有的系统调用做一个统计分析给你，下面就来看看strace的统计，这次我们执行带-c参数的strace：</p>
 <p>strace -c ./test</p>
 <p>最后能得到这样的trace结果：</p>
 <pre><code class="language-shell">oracle@orainst<span class="token punctuation">[</span>orcl<span class="token punctuation">]</span>:~
-<span class="token variable">&#36;strace</span> -c ./test</code></pre>
+<span class="token variable">&#36;strace</span> -c ./test
+</code></pre>
 <pre><code class="language-shell">execve<span class="token punctuation">(</span><span class="token string">"./test"</span>, <span class="token punctuation">[</span><span class="token string">"./test"</span><span class="token punctuation">]</span>, <span class="token punctuation">[</span>/* <span class="token number">41</span> vars */<span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">0</span>
 % <span class="token function">time</span>     seconds  usecs/call     calls    errors syscall
 ------ ----------- ----------- --------- --------- ----------------
@@ -187,14 +195,16 @@ read<span class="token punctuation">(</span><span class="token number">0</span>,
   <span class="token number">0.98</span>    <span class="token number">0.000003</span>           <span class="token number">3</span>         <span class="token number">1</span>           mmap2
   <span class="token number">0.66</span>    <span class="token number">0.000002</span>           <span class="token number">2</span>         <span class="token number">1</span>           set_thread_area
 ------ ----------- ----------- --------- --------- ----------------
-<span class="token number">100.00</span>    <span class="token number">0.000305</span>                    <span class="token number">68</span>        <span class="token number">47</span> total</code></pre>
+<span class="token number">100.00</span>    <span class="token number">0.000305</span>                    <span class="token number">68</span>        <span class="token number">47</span> total
+</code></pre>
 <p>这里很清楚的告诉你调用了那些系统函数，调用次数多少，消耗了多少时间等等这些信息，这个对我们分析一个程序来说是非常有用的。</p>
 <h3 id="常用参数说明">常用参数说明</h3><p>除了-c参数之外，strace还提供了其他有用的参数给我们，让我们能很方便的得到自己想要的信息，下面就对那些常用的参数一一做个介绍。</p>
 <p> <strong>重定向输出</strong> </p>
 <p>参数-o用在将strace的结果输出到文件中，如果不指定-o参数的话，默认的输出设备是STDERR，也就是说使用”-o filename”和” 2&gt;filename”的结果是一样的。</p>
 <pre><code class="language-shell"><span class="token comment"># 这两个命令都是将strace结果输出到文件test.txt中</span>
 <span class="token function">strace</span> -c -o test.txt ./test
-<span class="token function">strace</span> -c ./test  <span class="token operator"><span class="token file-descriptor important">2</span>></span>test.txt</code></pre>
+<span class="token function">strace</span> -c ./test  <span class="token operator"><span class="token file-descriptor important">2</span>></span>test.txt
+</code></pre>
 <p> <strong>对系统调用进行计时</strong> </p>
 <p>strace可以使用参数-T将每个系统调用所花费的时间打印出来，每个调用的时间花销现在在调用行最右边的尖括号里面。</p>
 <pre><code class="language-shell">oracle@orainst<span class="token punctuation">[</span>orcl<span class="token punctuation">]</span>:~
@@ -208,7 +218,8 @@ mmap2<span class="token punctuation">(</span>NULL, <span class="token number">40
 write<span class="token punctuation">(</span><span class="token number">1</span>, <span class="token string">"000000001<span class="token entity" title="\n">\n</span>"</span>, <span class="token number">10000000001</span>
 <span class="token punctuation">)</span>             <span class="token operator">=</span> <span class="token number">10</span> <span class="token operator">&lt;</span><span class="token number">0.00001</span><span class="token operator"><span class="token file-descriptor important">6</span>></span>
 munmap<span class="token punctuation">(</span>0xbf5fe000, <span class="token number">4096</span><span class="token punctuation">)</span>                <span class="token operator">=</span> <span class="token number">0</span> <span class="token operator">&lt;</span><span class="token number">0.00002</span><span class="token operator"><span class="token file-descriptor important">0</span>></span>
-exit_group<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>                           <span class="token operator">=</span> ?</code></pre>
+exit_group<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>                           <span class="token operator">=</span> ?
+</code></pre>
 <p> <strong>系统调用的时间</strong> </p>
 <p>这是一个很有用的功能，strace会将每次系统调用的发生时间记录下来，只要使用-t/tt/ttt三个参数就可以看到效果了，具体的例子可以自己去尝试。</p>
 <table>
@@ -240,22 +251,28 @@ exit_group<span class="token punctuation">(</span><span class="token number">0</
 <pre><code class="language-shell"><span class="token function">strace</span> -s <span class="token number">20</span> ./test
 
 read<span class="token punctuation">(</span><span class="token number">0</span>, <span class="token number">2222222222222222222222222</span>      // 我们输入的2一共有25个
-<span class="token string">"22222222222222222222"</span><span class="token punctuation">..</span>., <span class="token number">1024</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">26</span>  // 而我们看到的结果中2只有20个</code></pre>
+<span class="token string">"22222222222222222222"</span><span class="token punctuation">..</span>., <span class="token number">1024</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">26</span>  // 而我们看到的结果中2只有20个
+</code></pre>
 <p> <strong>trace一个现有的进程</strong> </p>
 <p>strace不光能自己初始化一个进程进行trace，还能追踪现有的进程，参数-p就是取这个作用的，用法也很简单，具体如下。</p>
-<pre><code class="language-shell"><span class="token function">strace</span> -p pid</code></pre>
+<pre><code class="language-shell"><span class="token function">strace</span> -p pid
+</code></pre>
 <h3 id="综合例子">综合例子</h3><p>说了那么多的功能和参数，现在我们来一个实用点的，就是研究下Oracle的lgwr进程，看看这个进程是不是像文档所说的那样没3s钟写一次log文件，考虑到lgwr写日志的触发条件比较多，我们需要找一个空闲的Oracle实例做这个实验。</p>
 <p>我们先要得到lgwr进程的pid，运行下面的命令</p>
 <pre><code class="language-shell"><span class="token function">ps</span> -ef<span class="token operator">|</span><span class="token function">grep</span> lgwr
 
-oracle    <span class="token number">5912</span>     <span class="token number">1</span>  <span class="token number">0</span> Nov12 ?        00:14:56 ora_lgwr_orcl</code></pre>
+oracle    <span class="token number">5912</span>     <span class="token number">1</span>  <span class="token number">0</span> Nov12 ?        00:14:56 ora_lgwr_orcl
+</code></pre>
 <p>得到lgwr的pid是5912，现在启动strace，然后将trace的几个输出到lgwr.txt文件中，执行下面的命令</p>
-<pre><code class="language-shell"><span class="token function">strace</span> -tt -s <span class="token number">10</span> -o lgwr.txt -p <span class="token number">5912</span></code></pre>
+<pre><code class="language-shell"><span class="token function">strace</span> -tt -s <span class="token number">10</span> -o lgwr.txt -p <span class="token number">5912</span>
+</code></pre>
 <p>过一会之后停止strace，然后查看结果。由于输出的结果比较多，为了方便我们只看Oracle写入log文件时用的pwrite函数的调用</p>
-<pre><code class="language-shell"><span class="token function">grep</span> pwrite<span class="token punctuation">\</span><span class="token punctuation">(</span><span class="token number">20</span> lgwr.txt</code></pre>
+<pre><code class="language-shell"><span class="token function">grep</span> pwrite<span class="token punctuation">\</span><span class="token punctuation">(</span><span class="token number">20</span> lgwr.txt
+</code></pre>
 <p>等等，为什么grep的时候用的是”pwrite(2″呢？，因为我知道我这个机器打开的当前的log文件的句柄编号都是2开始的。具体查找方法是先使用下面的语句找出当前活动的日志文件都有哪些：</p>
 <pre><code class="language-shell"><span class="token keyword">select</span> member, <span class="token function">v</span><span class="token variable">&#36;log</span>.status from <span class="token function">v</span><span class="token variable">&#36;log</span>, <span class="token function">v</span><span class="token variable">&#36;logfile</span>
-where <span class="token function">v</span><span class="token variable">&#36;log</span>.group<span class="token comment">#=v&#36;logfile.group#;</span></code></pre>
+where <span class="token function">v</span><span class="token variable">&#36;log</span>.group<span class="token comment">#=v&#36;logfile.group#;</span>
+</code></pre>
 <p>得到</p>
 <pre><code class="language-shell">MEMBER                                             STATUS
 -------------------------------------------------- ----------------
@@ -266,9 +283,11 @@ where <span class="token function">v</span><span class="token variable">&#36;log
 /db/databases/orcl/redo-01-a/redo-t01-g01-m1.log    INACTIVE
 /db/databases/orcl/redo-03-a/redo-t01-g01-m2.log    INACTIVE
 /db/databases/orcl/redo-02-a/redo-t01-g04-m1.log    INACTIVE
-/db/databases/orcl/redo-04-a/redo-t01-g04-m2.log    INACTIVE</code></pre>
+/db/databases/orcl/redo-04-a/redo-t01-g04-m2.log    INACTIVE
+</code></pre>
 <p>然后到/proc中去找打开文件的句柄：</p>
-<pre><code class="language-shell">ll /proc/.5912/fd/</code></pre>
+<pre><code class="language-shell">ll /proc/.5912/fd/
+</code></pre>
 <p>得到</p>
 <pre><code class="language-shell">lrwx------    <span class="token number">1</span> oracle   dba            <span class="token number">64</span> Dec <span class="token number">30</span> <span class="token number">10</span>:55 <span class="token number">18</span> -<span class="token operator">></span> /db/databases/orcl/redo-01-a/redo-t01-g01-m1.log
 lrwx------    <span class="token number">1</span> oracle   dba            <span class="token number">64</span> Dec <span class="token number">30</span> <span class="token number">10</span>:55 <span class="token number">19</span> -<span class="token operator">></span> /db/databases/orcl/redo-03-a/redo-t01-g01-m2.log
@@ -277,7 +296,8 @@ lrwx------    <span class="token number">1</span> oracle   dba            <span 
 lrwx------    <span class="token number">1</span> oracle   dba            <span class="token number">64</span> Dec <span class="token number">30</span> <span class="token number">10</span>:55 <span class="token number">22</span> -<span class="token operator">></span> /db/databases/orcl/redo-01-a/redo-t01-g03-m1.log
 lrwx------    <span class="token number">1</span> oracle   dba            <span class="token number">64</span> Dec <span class="token number">30</span> <span class="token number">10</span>:55 <span class="token number">23</span> -<span class="token operator">></span> /db/databases/orcl/redo-03-a/redo-t01-g03-m2.log
 lrwx------    <span class="token number">1</span> oracle   dba            <span class="token number">64</span> Dec <span class="token number">30</span> <span class="token number">10</span>:55 <span class="token number">24</span> -<span class="token operator">></span> /db/databases/orcl/redo-02-a/redo-t01-g04-m1.log
-lrwx------    <span class="token number">1</span> oracle   dba            <span class="token number">64</span> Dec <span class="token number">30</span> <span class="token number">10</span>:55 <span class="token number">25</span> -<span class="token operator">></span> /db/databases/orcl/redo-04-a/redo-t01-g04-m2.log</code></pre>
+lrwx------    <span class="token number">1</span> oracle   dba            <span class="token number">64</span> Dec <span class="token number">30</span> <span class="token number">10</span>:55 <span class="token number">25</span> -<span class="token operator">></span> /db/databases/orcl/redo-04-a/redo-t01-g04-m2.log
+</code></pre>
 <p>现在能看到我机器当前日志文件的句柄分别是20和21。</p>
 <p>现在我们得到如下结果</p>
 <pre><code class="language-shell"><span class="token number">11</span>:13:55.603245 pwrite<span class="token punctuation">(</span><span class="token number">20</span>, <span class="token string">"<span class="token entity" title="\1">\1</span><span class="token entity" title="\&quot;">\"</span><span class="token entity" title="\0">\0</span><span class="token entity" title="\0">\0</span>J!"</span><span class="token punctuation">..</span>., <span class="token number">1536</span>, <span class="token number">4363264</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">1536</span>
@@ -305,7 +325,8 @@ lrwx------    <span class="token number">1</span> oracle   dba            <span 
 <span class="token number">11</span>:14:05.608690 pwrite<span class="token punctuation">(</span><span class="token number">20</span>, <span class="token string">"<span class="token entity" title="\1">\1</span><span class="token entity" title="\&quot;">\"</span><span class="token entity" title="\0">\0</span><span class="token entity" title="\0">\0</span>g!"</span><span class="token punctuation">..</span>., <span class="token number">1024</span>, <span class="token number">4378112</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">1024</span>
 <span class="token number">11</span>:14:05.608962 pwrite<span class="token punctuation">(</span><span class="token number">21</span>, <span class="token string">"<span class="token entity" title="\1">\1</span><span class="token entity" title="\&quot;">\"</span><span class="token entity" title="\0">\0</span><span class="token entity" title="\0">\0</span>g!"</span><span class="token punctuation">..</span>., <span class="token number">1024</span>, <span class="token number">4378112</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">1024</span>
 <span class="token number">11</span>:14:05.611022 pwrite<span class="token punctuation">(</span><span class="token number">20</span>, <span class="token string">"<span class="token entity" title="\1">\1</span><span class="token entity" title="\&quot;">\"</span><span class="token entity" title="\0">\0</span><span class="token entity" title="\0">\0</span>i!"</span><span class="token punctuation">..</span>., <span class="token number">1536</span>, <span class="token number">4379136</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">1536</span>
-<span class="token number">11</span>:14:05.611283 pwrite<span class="token punctuation">(</span><span class="token number">21</span>, <span class="token string">"<span class="token entity" title="\1">\1</span><span class="token entity" title="\&quot;">\"</span><span class="token entity" title="\0">\0</span><span class="token entity" title="\0">\0</span>i!"</span><span class="token punctuation">..</span>., <span class="token number">1536</span>, <span class="token number">4379136</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">1536</span></code></pre>
+<span class="token number">11</span>:14:05.611283 pwrite<span class="token punctuation">(</span><span class="token number">21</span>, <span class="token string">"<span class="token entity" title="\1">\1</span><span class="token entity" title="\&quot;">\"</span><span class="token entity" title="\0">\0</span><span class="token entity" title="\0">\0</span>i!"</span><span class="token punctuation">..</span>., <span class="token number">1536</span>, <span class="token number">4379136</span><span class="token punctuation">)</span> <span class="token operator">=</span> <span class="token number">1536</span>
+</code></pre>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 </div>
 
@@ -329,7 +350,7 @@ lrwx------    <span class="token number">1</span> oracle   dba            <span 
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1614049695282"></script>
-<script type="text/javascript" src="../js/index.js?v=1614049695282"></script>
+<script type="text/javascript" src="../js/dt.js?v=1614326816122"></script>
+<script type="text/javascript" src="../js/index.js?v=1614326816122"></script>
 </body>
 </html>

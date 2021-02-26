@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,partprobe,不重启的情况下重读分区">
     <title>partprobe 命令，Linux partprobe 命令详解：不重启的情况下重读分区 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614049695164">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1614326815980">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -42,18 +42,21 @@
 
 <h1 id="partprobe">partprobe</h1><p>不重启的情况下重读分区</p>
 <h2 id="补充说明">补充说明</h2><p><strong>partprobe命令</strong> 用于重读分区表，当出现删除文件后，出现仍然占用空间。可以partprobe在不重启的情况下重读分区。</p>
-<h3 id="语法">语法</h3><pre><code class="language-shell">partprobe<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span></code></pre>
+<h3 id="语法">语法</h3><pre><code class="language-shell">partprobe<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
+</code></pre>
 <h3 id="选项">选项</h3><pre><code class="language-shell">-d：不更新内核；
 -s：显示摘要和分区；
 -h：显示帮助信息；
--v：显示版本信息。</code></pre>
+-v：显示版本信息。
+</code></pre>
 <h3 id="参数">参数</h3><p>设备：指定需要确认分区表改变的硬盘对应的设备文件。</p>
 <h3 id="实例">实例</h3><p>使用partprobe不重启系统添加新的磁盘分区，主机自带硬盘超过300GB，目前只划分使用了3个主分区，不到70GB，如下：</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># df -h </span>
 Filesystem Size Used Avail Use% Mounted on 
 /dev/sda1 29G <span class="token number">3</span>.7G  24G <span class="token number">14</span>% / 
 /dev/sda2 29G  22G <span class="token number">5</span>.2G <span class="token number">81</span>% /oracle 
-tmpfs    <span class="token number">2</span>.0G    <span class="token number">0</span> <span class="token number">2</span>.0G  <span class="token number">0</span>% /dev/shm</code></pre>
+tmpfs    <span class="token number">2</span>.0G    <span class="token number">0</span> <span class="token number">2</span>.0G  <span class="token number">0</span>% /dev/shm
+</code></pre>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># cat /proc/partitions</span>
 major minor  <span class="token comment">#blocks  name</span>
 
@@ -64,7 +67,8 @@ major minor  <span class="token comment">#blocks  name</span>
    <span class="token number">8</span>    <span class="token number">16</span>     <span class="token number">976896</span> sdb
    <span class="token number">8</span>    <span class="token number">32</span>     <span class="token number">976896</span> sdc
 
-…省略其他</code></pre>
+…省略其他
+</code></pre>
 <p>现在需要给系统添加1个100GB的空间存放数据文件，而又不影响现有系统上业务的运行，使用fdisk结合partprobe命令不重启系统添加一块新的磁盘分区。操作步骤如下：</p>
 <p> <strong>第1步 添加新的磁盘分区</strong> ：</p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># fdisk /dev/sda</span>
@@ -105,9 +109,11 @@ WARNING: Re-reading the partition table failed with error <span class="token num
 Device or resource busy.
 The kernel still uses the old table.
 The new table will be used at the next reboot.
-Syncing disks.</code></pre>
+Syncing disks.
+</code></pre>
 <p> <strong>第2步 使用工具partprobe让kernel读取分区信息：</strong> </p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># partprobe</span></code></pre>
+<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># partprobe</span>
+</code></pre>
 <p>使用fdisk工具只是将分区信息写到磁盘，如果需要mkfs磁盘分区则需要重启系统，而使用partprobe则可以使kernel重新读取分区信息，从而避免重启系统。</p>
 <p> <strong>第3步 格式化文件系统：</strong> </p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># mkfs.ext3 /dev/sda4</span>
@@ -135,7 +141,8 @@ Writing superblocks and filesystem accounting information:
 
 This filesystem will be automatically checked every <span class="token number">26</span> mounts or
 <span class="token number">180</span> days, whichever comes first.  Use tune2fs -c or -i to override.
-<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment">#</span></code></pre>
+<span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment">#</span>
+</code></pre>
 <p> <strong>第4步 mount新的分区<code>/dev/sda4</code>：</strong> </p>
 <pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># e2label  /dev/sda4 /data</span>
 <span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># mkdir /data</span>
@@ -145,7 +152,8 @@ Filesystem           1K-blocks      Used Available Use% Mounted on
 /dev/sda1             <span class="token number">29753556</span>   <span class="token number">3810844</span>  <span class="token number">24406900</span>  <span class="token number">14</span>% /
 /dev/sda2             <span class="token number">29753588</span>  <span class="token number">11304616</span>  <span class="token number">16913160</span>  <span class="token number">41</span>% /oracle
 tmpfs                  <span class="token number">2023936</span>         <span class="token number">0</span>   <span class="token number">2023936</span>   <span class="token number">0</span>% /dev/shm
-/dev/sda4             <span class="token number">96132968</span>    <span class="token number">192312</span>  <span class="token number">91057300</span>   <span class="token number">1</span>% /data</code></pre>
+/dev/sda4             <span class="token number">96132968</span>    <span class="token number">192312</span>  <span class="token number">91057300</span>   <span class="token number">1</span>% /data
+</code></pre>
 <p>使用partprobe可以不用重启系统即可配合fdisk工具创建新的分区。</p>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 </div>
@@ -170,7 +178,7 @@ tmpfs                  <span class="token number">2023936</span>         <span c
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1614049695164"></script>
-<script type="text/javascript" src="../js/index.js?v=1614049695164"></script>
+<script type="text/javascript" src="../js/dt.js?v=1614326815980"></script>
+<script type="text/javascript" src="../js/index.js?v=1614326815980"></script>
 </body>
 </html>
