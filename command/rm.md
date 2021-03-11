@@ -48,9 +48,16 @@ Remove example ?y（删除文件example)
 
 应注意，这样做是非常危险的!
 
+
+**rm 命令删除当前目录下的 node_modules 目录**
+
+```shell
+find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +
+```
+
 **rm 命令删除文件**
 
-```shellbash
+```shell
 # rm 文件1 文件2 ...
 rm testfile.txt
 ```
