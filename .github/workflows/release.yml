@@ -29,7 +29,7 @@ jobs:
           name: ${{ steps.changelog.outputs.tag }}
           tag: ${{ steps.changelog.outputs.tag }}
           body: |
-            [![](https://img.shields.io/badge/Open%20in-unpkg-blue)](https://uiwjs.github.io/npm-unpkg/#/pkg/linux-command@${{steps.changelog.outputs.versionNumber}}/file/README.md) [![npm bundle size](https://img.shields.io/bundlephobia/minzip/linux-command)](https://bundlephobia.com/result?p=linux-command@${{steps.changelog.outputs.versionNumber}})
+            [![](https://img.shields.io/badge/Open%20in-unpkg-blue)](https://uiwjs.github.io/npm-unpkg/#/pkg/linux-command@${{steps.changelog.outputs.version}}/file/README.md) [![npm bundle size](https://img.shields.io/bundlephobia/minzip/linux-command)](https://bundlephobia.com/result?p=linux-command@${{steps.changelog.outputs.version}})
             
             ```bash
             npm i linux-command@${{steps.changelog.outputs.version}}
