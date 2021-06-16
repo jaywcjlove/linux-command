@@ -14,7 +14,7 @@ jobs:
 
     - name: Generate Changelog
       id: changelog
-      uses: jaywcjlove/changelog-generator@v1.4.1
+      uses: jaywcjlove/changelog-generator@v1.4.2
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
         head-ref: ${{steps.create_tag.outputs.version}}
