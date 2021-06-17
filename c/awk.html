@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,awk,文本和数据进行处理的编程语言">
     <title>awk 命令，Linux awk 命令详解：文本和数据进行处理的编程语言 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1623902967603">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1623920737489">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -48,7 +48,7 @@
 </code></pre>
 <p><strong>常用命令选项</strong> </p>
 <ul>
-<li> <strong>-F fs</strong> fs指定输入分隔符，fs可以是字符串或正则表达式，如-F:</li>
+<li> <strong>-F fs</strong> fs指定输入分隔符，fs可以是字符串或正则表达式，如-F:，默认的分隔符是连续的空格或制表符</li>
 <li> <strong>-v var=value</strong> 赋值一个用户定义变量，将外部变量传递给awk</li>
 <li> <strong>-f scripfile</strong> 从脚本文件中读取awk命令</li>
 <li> <strong>-m[fr] val</strong> 对val值设置内在限制，-mf选项限制分配给val的最大块数目；-mr选项限制记录的最大数目。这两个功能是Bell实验室版awk的扩展功能，在标准awk中不适用。</li>
@@ -130,6 +130,15 @@ v1 v2 v3
 <span class="token punctuation">[</span>N<span class="token punctuation">]</span>  **RSTART**  由match函数所匹配的字符串的第一个位置。
 <span class="token punctuation">[</span>N<span class="token punctuation">]</span>  **RLENGTH**  由match函数所匹配的字符串的长度。
 <span class="token punctuation">[</span>N<span class="token punctuation">]</span>  **SUBSEP**  数组下标分隔符（默认值是34）。
+</code></pre>
+<p>转义序列</p>
+<pre><code><span class="token punctuation">\</span><span class="token punctuation">\</span> <span class="token punctuation">\</span>自身
+<span class="token punctuation">\</span>&#36; 转义&#36;
+<span class="token punctuation">\</span>t 制表符
+<span class="token punctuation">\</span>b 退格符
+<span class="token punctuation">\</span>r 回车符
+<span class="token punctuation">\</span>n 换行符
+<span class="token punctuation">\</span>c 取消换行
 </code></pre>
 <p><strong>示例</strong> </p>
 <pre><code class="language-shell"><span class="token builtin class-name">echo</span> -e <span class="token string">"line1 f2 f3<span class="token entity" title="\n">\n</span>line2 f4 f5<span class="token entity" title="\n">\n</span>line3 f6 f7"</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print "Line No:"NR", No of fields:"NF, "<span class="token variable">&#36;0</span>="<span class="token variable">&#36;0</span>, "<span class="token variable">&#36;1</span>="<span class="token variable">&#36;1</span>, "<span class="token variable">&#36;2</span>="<span class="token variable">&#36;2</span>, "<span class="token variable">&#36;3</span>="<span class="token variable">&#36;3</span>}'</span> 
@@ -260,6 +269,24 @@ f4
 <td>匹配正则表达式和不匹配正则表达式</td>
 </tr>
 </tbody></table>
+<pre><code>^ 行首
+&#36; 行尾
+<span class="token builtin class-name">.</span> 除了换行符以外的任意单个字符
+* 前导字符的零个或多个
+.* 所有字符
+<span class="token punctuation">[</span><span class="token punctuation">]</span> 字符组内的任一字符
+<span class="token punctuation">[</span>^<span class="token punctuation">]</span>对字符组内的每个字符取反<span class="token punctuation">(</span>不匹配字符组内的每个字符<span class="token punctuation">)</span>
+^<span class="token punctuation">[</span>^<span class="token punctuation">]</span> 非字符组内的字符开头的行
+<span class="token punctuation">[</span>a-z<span class="token punctuation">]</span> 小写字母
+<span class="token punctuation">[</span>A-Z<span class="token punctuation">]</span> 大写字母
+<span class="token punctuation">[</span>a-Z<span class="token punctuation">]</span> 小写和大写字母
+<span class="token punctuation">[</span><span class="token number">0</span>-9<span class="token punctuation">]</span> 数字
+<span class="token punctuation">\</span><span class="token operator">&lt;</span> 单词头单词一般以空格或特殊字符做分隔,连续的字符串被当做单词
+<span class="token punctuation">\</span><span class="token operator">></span> 单词尾
+</code></pre>
+<blockquote>
+<p>正则需要用 /正则/ 包围住</p>
+</blockquote>
 <p>例：</p>
 <pre><code class="language-shell"><span class="token function">awk</span> <span class="token string">'BEGIN{a="100testa";if(a ~ /^100*/){print "ok";}}'</span>
 ok
@@ -973,7 +1000,7 @@ drwxr-xr-x <span class="token number">95</span> root   root       <span class="t
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1623902967603"></script>
-<script type="text/javascript" src="../js/index.js?v=1623902967603"></script>
+<script type="text/javascript" src="../js/dt.js?v=1623920737489"></script>
+<script type="text/javascript" src="../js/index.js?v=1623920737489"></script>
 </body>
 </html>
