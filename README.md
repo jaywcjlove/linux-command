@@ -23,6 +23,12 @@
 
 [![Linux 命令大全](./assets/Linux.gif)](https://jaywcjlove.github.io/linux-command/)
 
+#### 微信小程序版本
+
+微信小程序版本，由 [**@Matz Yang**](https://github.com/MatzYang) 提供 [#260](https://github.com/jaywcjlove/linux-command/issues/260)。
+
+<img width="180" src="https://user-images.githubusercontent.com/1445225/123251478-d50b7d80-d51d-11eb-80e4-01e18212fc4d.png" />
+
 #### Chrome 插件
 
 可在[源码仓库](https://github.com/jaywcjlove/oscnews)预览效果，[Github下载 crx 文件安装](https://github.com/jaywcjlove/oscnews/releases) 或者[开源中国下载 crx 文件安装](https://gitee.com/jaywcjlove/oscnews/releases) 也可通过 Chrome Web Store 下载：
