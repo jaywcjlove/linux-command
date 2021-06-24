@@ -17,11 +17,11 @@
 
 扫描二维码移动端预览搜索，也可通过二维码下面链接地址打开使用，下面网站是通过 Github Action 自动更新。
 
-[![Linux 命令大全](./assets/qr.png)](https://jaywcjlove.github.io/linux-command/)
+[![Linux 命令大全](https://user-images.githubusercontent.com/1680273/123261718-ab585380-d529-11eb-86e1-e97cdcd78150.png)](https://jaywcjlove.github.io/linux-command/)
 
 预览搜索：**https://git.io/linux**
 
-[![Linux 命令大全](./assets/Linux.gif)](https://jaywcjlove.github.io/linux-command/)
+[![Linux 命令大全](https://user-images.githubusercontent.com/1680273/123261829-ce830300-d529-11eb-8cea-a39059b972dd.gif)](https://jaywcjlove.github.io/linux-command/)
 
 #### 微信小程序版本
 
