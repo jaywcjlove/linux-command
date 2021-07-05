@@ -18,8 +18,10 @@ sync(选项)
 ###  选项
 
 ```shell
+-d, --data             只同步文件数据，不同步不必要的元数据
+-f, --file-system      同步包含这些文件的文件系统
 --help：显示帮助；
- --version：显示版本信息。
+--version：显示版本信息。
 ```
 
 ###  buffer与cache

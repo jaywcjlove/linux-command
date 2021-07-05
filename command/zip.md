@@ -77,10 +77,40 @@ zip -q -r html.zip html
 zip -q -r html.zip *
 ```
 
+压缩 `example/basic/` 目录内容到 `basic.zip` 压缩包中 `-x` 指定排除目录，注意没有双引号将不起作用。
+
+```shell
+zip -r basic.zip example/basic/ -x "example/basic/node_modules/*" -x "example/basic/build/*" -x "example/basic/coverage/*"
+```
+
+上面压缩解压出来，内容存放在 `example/basic/`， 如果想存放到根目录，进入目录进行压缩，目前没有找到一个合适的参数来解决此问题。
+
+```
+cd example/basic/ && zip -r basic.zip . -x "node_modules/*" -x "build/*" -x "coverage/*"
+```
+
 压缩效率选择:
 
 ```shell
 zip -9 # 1-9 faster->better
+```
+
+创建 `public_html` 目录下忽略所有文件和文件夹，排除包括文本 `backup` 的所有文件。
+
+```shell
+$ zip -r public_html.zip public_html -x *backup*
+```
+
+`httpdocs` 目录忽略 `.svn` 文件或 `git` 的文件和目录下创建所有文件的归档。
+
+```shell
+$ zip -r httpdocs.zip httpdocs --exclude *.svn* --exclude *.git*
+```
+
+`httpdocs` 目录忽略的所有文件，并与 `.log` 结尾的目录下创建所有文件的归档。
+
+```shell
+$ zip -r httpdocs.zip httpdocs --exclude "*.log"
 ```
 
 ### 问题解决

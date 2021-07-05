@@ -10,7 +10,7 @@ iptables-restore
 ###  语法
 
 ```shell
-iptables-restor(选项)
+iptables-restore(选项)
 ```
 
 ###  选项
@@ -23,7 +23,7 @@ iptables-restor(选项)
 ###  实例
 
 ```shell
-iptables-restor < iptables.bak
+iptables-restore < iptables.bak
 ```
 
 iptables.bak是iptables-save命令所备份的文件。

@@ -329,6 +329,16 @@ find . -type f -name "*.txt" -exec printf "File: %s\n" {} \;
 find . -path "./sk" -prune -o -name "*.txt" -print
 ```
 
+> :warning: ./sk 不能写成 ./sk/ ，否则没有作用。
+
+忽略两个目录
+
+```shell
+find . \( -path ./sk -o  -path ./st \) -prune -o -name "*.txt" -print
+```
+
+> :warning: 如果写相对路径必须加上`./`
+
 #### find其他技巧收集
 
 要列出所有长度为零的文件

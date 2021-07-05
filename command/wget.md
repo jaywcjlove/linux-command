@@ -66,7 +66,7 @@ wget [参数] [URL地址]
 –random-wait 在下载之间等待0…2*WAIT秒
 -Y, –-proxy=on/off 打开或关闭代理
 -Q, –-quota=NUMBER 设置下载的容量限制
-–limit-rate=RATE 限定下载输率
+-–limit-rate=RATE 限定下载输率
 
 目录参数：
 

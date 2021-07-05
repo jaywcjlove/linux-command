@@ -222,4 +222,108 @@ sent 258 bytes received 76 bytes 95.43 bytes/sec
 total size is 150995011 speedup is 452080.87
 ```
 
+**将源目录同步到目标目录**
+
+```shell
+$ rsync -r source destination
+```
+
+上面命令中，`-r` 表示递归，即包含子目录。注意，`-r`是必须的，否则 `rsync` 运行不会成功。`source` 目录表示源目录，`destination` 表示目标目录。
+
+**多个文件或目录同步**
+
+```shell
+$ rsync -r source1 source2 destination
+```
+
+上面命令中，`source1`、`source2` 都会被同步到 `destination` 目录。
+
+**同步元信息**
+
+`-a` 参数可以替代 `-r`，除了可以递归同步以外，还可以同步元信息（比如修改时间、权限等）。由于 `rsync` 默认使用文件大小和修改时间决定文件是否需要更新，所以 `-a` 比 `-r` 更有用。下面的用法才是常见的写法。
+
+```shell
+$ rsync -a source destination
+```
+
+目标目录 `destination` 如果不存在，`rsync` 会自动创建。执行上面的命令后，源目录 `source` 被完整地复制到了目标目录 `destination` 下面，即形成了 `destination/source` 的目录结构。
+
+如果只想同步源目录 `source` 里面的内容到目标目录 `destination` ，则需要在源目录后面加上斜杠。
+
+```shell
+$ rsync -a source/ destination
+```
+
+上面命令执行后，`source` 目录里面的内容，就都被复制到了 `destination` 目录里面，并不会在 `destination` 下面创建一个 `source` 子目录。
+
+
+**模拟执行的结果**
+
+如果不确定 `rsync` 执行后会产生什么结果，可以先用 `-n` 或 `--dry-run` 参数模拟执行的结果。
+
+```shell
+$ rsync -anv source/ destination
+```
+
+上面命令中，`-n` 参数模拟命令执行的结果，并不真的执行命令。`-v` 参数则是将结果输出到终端，这样就可以看到哪些内容会被同步。
+
+**目标目录成为源目录的镜像副本**
+
+默认情况下，`rsync` 只确保源目录的所有内容（明确排除的文件除外）都复制到目标目录。它不会使两个目录保持相同，并且不会删除文件。如果要使得目标目录成为源目录的镜像副本，则必须使用 `--delete` 参数，这将删除只存在于目标目录、不存在于源目录的文件。
+
+```shell
+$ rsync -av --delete source/ destination
+```
+
+上面命令中，`--delete` 参数会使得 `destination` 成为 `source` 的一个镜像。
+
+
+**排除文件**
+
+有时，我们希望同步时排除某些文件或目录，这时可以用--exclude参数指定排除模式。
+
+```shell
+$ rsync -av --exclude='*.txt' source/ destination
+# 或者
+$ rsync -av --exclude '*.txt' source/ destination
+```
+
+上面命令排除了所有 `TXT` 文件。
+
+注意，`rsync` 会同步以"点"开头的隐藏文件，如果要排除隐藏文件，可以这样写 `--exclude=".*"`。
+
+如果要排除某个目录里面的所有文件，但不希望排除目录本身，可以写成下面这样。
+
+```shell
+$ rsync -av --exclude 'dir1/*' source/ destination
+```
+
+多个排除模式，可以用多个 `--exclude` 参数。
+
+```shell
+$ rsync -av --exclude 'file1.txt' --exclude 'dir1/*' source/ destination
+```
+
+多个排除模式也可以利用 Bash 的大扩号的扩展功能，只用一个 `--exclude` 参数。
+
+```shell
+$ rsync -av --exclude={'file1.txt','dir1/*'} source/ destination
+```
+
+如果排除模式很多，可以将它们写入一个文件，每个模式一行，然后用 `--exclude-from` 参数指定这个文件。
+
+```shell
+$ rsync -av --exclude-from='exclude-file.txt' source/ destination
+```
+
+**指定必须同步的文件模式**
+
+`--include` 参数用来指定必须同步的文件模式，往往与 `--exclude` 结合使用。
+
+```shell
+$ rsync -av --include="*.txt" --exclude='*' source/ destination
+```
+
+上面命令指定同步时，排除所有文件，但是会包括 `TXT` 文件。
+
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

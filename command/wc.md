@@ -65,4 +65,20 @@ expr $(ls -l | wc -l) - 1
 8
 ```
 
+统计当前目录下的所有文件行数及总计行数
+
+```shell
+[root@centos7 ~]# wc -l *
+      21 LICENSE
+     270 README.md
+wc: example: read: Is a directory
+     785 lerna-debug.log
+      25 lerna.json
+wc: node_modules: read: Is a directory
+   23603 package-lock.json
+      79 package.json
+       3 renovate.json
+   24786 total
+```
+
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
