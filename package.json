@@ -33,7 +33,7 @@
     "sitemap-generator": "8.5.1",
     "sqlite3": "4.1.1",
     "stylus": "0.54.8",
-    "uglify-js": "3.12.1"
+    "uglify-js": "3.14.1"
   },
   "bugs": {
     "url": "https://github.com/jaywcjlove/linux-command/issues"
