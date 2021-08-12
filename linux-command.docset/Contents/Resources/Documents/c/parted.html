@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,parted,磁盘分区和分区大小调整工具">
     <title>parted 命令，Linux parted 命令详解：磁盘分区和分区大小调整工具 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628764653540">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628769137339">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -40,28 +40,34 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/parted.md">添加实例</a>
 </span>
 
-<h1 id="parted">parted</h1><p>磁盘分区和分区大小调整工具</p>
-<h2 id="补充说明">补充说明</h2><p><strong>parted命令</strong> 是由GNU组织开发的一款功能强大的磁盘分区和分区大小调整工具，与fdisk不同，它支持调整分区的大小。作为一种设计用于Linux的工具，它没有构建成处理与fdisk关联的多种分区类型，但是，它可以处理最常见的分区格式，包括：ext2、ext3、fat16、fat32、NTFS、ReiserFS、JFS、XFS、UFS、HFS以及Linux交换分区。</p>
-<h3 id="语法">语法</h3><pre><code class="language-shellshell">parted<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
+<h1>parted</h1>
+<p>磁盘分区和分区大小调整工具</p>
+<h2>补充说明</h2>
+<p><strong>parted命令</strong> 是由GNU组织开发的一款功能强大的磁盘分区和分区大小调整工具，与fdisk不同，它支持调整分区的大小。作为一种设计用于Linux的工具，它没有构建成处理与fdisk关联的多种分区类型，但是，它可以处理最常见的分区格式，包括：ext2、ext3、fat16、fat32、NTFS、ReiserFS、JFS、XFS、UFS、HFS以及Linux交换分区。</p>
+<h3>语法</h3>
+<pre class="language-shell"><code class="language-shell">parted<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
 </code></pre>
-<h3 id="选项">选项</h3><pre><code class="language-shellshell">-h：显示帮助信息；
+<h3>选项</h3>
+<pre class="language-shell"><code class="language-shell">-h：显示帮助信息；
 -i：交互式模式；
 -s：脚本模式，不提示用户；
 -v：显示版本号。
 </code></pre>
-<h3 id="参数">参数</h3><ul>
-<li>  设备：指定要分区的硬盘所对应的设备文件；</li>
-<li>  命令：要执行的parted命令。</li>
+<h3>参数</h3>
+<ul>
+<li>设备：指定要分区的硬盘所对应的设备文件；</li>
+<li>命令：要执行的parted命令。</li>
 </ul>
-<h3 id="实例">实例</h3><p>从串行技术出现以来，越来越多用户选择使用大容量的SATA硬盘创建磁盘阵列；特别是MD1000/MD3000，很轻易就突破2T的LUN，故在此给大家一些指引。</p>
+<h3>实例</h3>
+<p>从串行技术出现以来，越来越多用户选择使用大容量的SATA硬盘创建磁盘阵列；特别是MD1000/MD3000，很轻易就突破2T的LUN，故在此给大家一些指引。</p>
 <p>红帽企业 Linux 4 Update 4供对大于 2 terabytes（TB）的磁盘设备的支持。</p>
 <p>请参考以下操作步骤：</p>
 <p>注：</p>
 <ul>
-<li>  绿色代表你需要使用的命令。</li>
-<li>  红色代表你需要注意到的输出信息，在后续需要使用。</li>
+<li>绿色代表你需要使用的命令。</li>
+<li>红色代表你需要注意到的输出信息，在后续需要使用。</li>
 </ul>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># fdisk -l</span>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># fdisk -l</span>
 Disk /dev/sda: <span class="token number">35.8</span> GB, <span class="token number">35862976512</span> bytes
 <span class="token number">255</span> heads, <span class="token number">63</span> sectors/track, <span class="token number">4360</span> cylinders
 Units <span class="token operator">=</span> cylinders of <span class="token number">16065</span> * <span class="token number">512</span> <span class="token operator">=</span> <span class="token number">8225280</span> bytes
@@ -74,7 +80,7 @@ Disk /dev/sdb: <span class="token number">2147</span> MB, <span class="token num
 Units <span class="token operator">=</span> cylinders of <span class="token number">16065</span> * <span class="token number">512</span> <span class="token operator">=</span> <span class="token number">8225280</span> bytes
 Disk /dev/sdb doesn't contain a valid partition table
 </code></pre>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># parted /dev/sdb</span>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># parted /dev/sdb</span>
 GNU Parted Copyright <span class="token punctuation">(</span>C<span class="token punctuation">)</span> <span class="token number">1998</span> - <span class="token number">2004</span> <span class="token function">free</span> Software Foundation, Inc.
 This program is <span class="token function">free</span> software, covered by the GNU General Public License.
 This program is distributed <span class="token keyword">in</span> the hope that it will be useful, but WITHOUT ANY
@@ -86,7 +92,7 @@ PARTICULAR PURPOSE.  See the GNU General Public License <span class="token keywo
 /dev/sdb的磁盘几何结构：0.000-2048.000兆字节
 磁盘标签类型：gpt
 Minor   起始点       终止点 文件系统   名称                 标志
-<span class="token punctuation">(</span>parted<span class="token punctuation">)</span>mkpart primary <span class="token number">0</span> <span class="token number">2048</span>  <span class="token operator">&lt;</span>-----上面print显示的数字
+<span class="token punctuation">(</span>parted<span class="token punctuation">)</span>mkpart primary <span class="token number">0</span> <span class="token number">2048</span>  <span class="token operator">&#x3C;</span>-----上面print显示的数字
 <span class="token punctuation">(</span>parted<span class="token punctuation">)</span>print
 /dev/sdb的磁盘几何结构：0.000-2048.000兆字节
 磁盘标签类型：gpt
@@ -95,7 +101,7 @@ Minor   起始点       终止点 文件系统   名称                 标志
 <span class="token punctuation">(</span>parted<span class="token punctuation">)</span>quit
 </code></pre>
 <p>如果必要，不要忘记更新<code>/etc/fstab</code>。</p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># fdisk -l</span>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># fdisk -l</span>
 Disk /dev/sda: <span class="token number">35.8</span> GB, <span class="token number">35862976512</span> bytes
 <span class="token number">255</span> heads, <span class="token number">63</span> sectors/track, <span class="token number">4360</span> cylinders
 Units <span class="token operator">=</span> cylinders of <span class="token number">16065</span> * <span class="token number">512</span> <span class="token operator">=</span> <span class="token number">8225280</span> bytes
@@ -115,7 +121,7 @@ Partition <span class="token number">1</span> has different physical/logical beg
 Partition <span class="token number">1</span> has different physical/logical endings:
      <span class="token assign-left variable">phys</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">1023</span>, <span class="token number">254</span>, <span class="token number">63</span><span class="token punctuation">)</span> <span class="token assign-left variable">logical</span><span class="token operator">=</span><span class="token punctuation">(</span><span class="token number">261</span>, <span class="token number">21</span>, <span class="token number">16</span><span class="token punctuation">)</span>
 </code></pre>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># mkfs.ext3 /dev/sdb1</span>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># mkfs.ext3 /dev/sdb1</span>
 <span class="token function">mke2fs</span> <span class="token number">1.35</span> <span class="token punctuation">(</span><span class="token number">28</span>-Feb-2004<span class="token punctuation">)</span>
 Filesystem <span class="token assign-left variable">label</span><span class="token operator">=</span>
 OS type: Linux
@@ -136,10 +142,10 @@ Writing superblocks and filesystem accounting information: <span class="token ke
 This filesystem will be automatically checked every <span class="token number">28</span> mounts or
 <span class="token number">180</span> days, whichever comes first.  Use tune2fs -c or -i to override.
 </code></pre>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># mount /dev/sdb1 /mnt</span>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># mount /dev/sdb1 /mnt</span>
 <span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># df -h</span>
 Filesystem            容量  已用 可用 已用% 挂载点
-/dev/sda3              <span class="token operator">&lt;</span>?xml:namespace prefix <span class="token operator">=</span> st1 /<span class="token operator">></span>32G  <span class="token number">2</span>.6G   28G   <span class="token number">9</span>% /
+/dev/sda3              <span class="token operator">&#x3C;</span>?xml:namespace prefix <span class="token operator">=</span> st1 /<span class="token operator">></span>32G  <span class="token number">2</span>.6G   28G   <span class="token number">9</span>% /
 /dev/sda1              99M   12M   82M  <span class="token number">13</span>% /boot
 none                  252M     <span class="token number">0</span>  252M   <span class="token number">0</span>% /dev/shm
 /dev/sdb1             <span class="token number">2</span>.0G   36M  <span class="token number">1</span>.9G   <span class="token number">2</span>% /mnt
@@ -167,7 +173,7 @@ none                  252M     <span class="token number">0</span>  252M   <span
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1628764653541"></script>
-<script type="text/javascript" src="../js/index.js?v=1628764653541"></script>
+<script type="text/javascript" src="../js/dt.js?v=1628769137340"></script>
+<script type="text/javascript" src="../js/index.js?v=1628769137340"></script>
 </body>
 </html>

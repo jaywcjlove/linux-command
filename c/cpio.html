@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,cpio,用来建立、还原备份档的工具程序">
     <title>cpio 命令，Linux cpio 命令详解：用来建立、还原备份档的工具程序 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628764653211">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628769137140">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -40,42 +40,46 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/cpio.md">添加实例</a>
 </span>
 
-<h1 id="cpio">cpio</h1><p>用来建立、还原备份档的工具程序</p>
-<h2 id="补充说明">补充说明</h2><p><strong>cpio命令</strong> 主要是用来建立或者还原备份档的工具程序，cpio命令可以复制文件到归档包中，或者从归档包中复制文件。</p>
-<h3 id="语法">语法</h3><pre><code class="language-shell">cpio<span class="token punctuation">(</span>选项<span class="token punctuation">)</span>
+<h1>cpio</h1>
+<p>用来建立、还原备份档的工具程序</p>
+<h2>补充说明</h2>
+<p><strong>cpio命令</strong> 主要是用来建立或者还原备份档的工具程序，cpio命令可以复制文件到归档包中，或者从归档包中复制文件。</p>
+<h3>语法</h3>
+<pre class="language-shell"><code class="language-shell">cpio<span class="token punctuation">(</span>选项<span class="token punctuation">)</span>
 </code></pre>
-<h3 id="选项">选项</h3><pre><code class="language-shell">-0或--null：接受新增列控制字符，通常配合find指令的“-print0”参数使用；
+<h3>选项</h3>
+<pre class="language-shell"><code class="language-shell">-0或--null：接受新增列控制字符，通常配合find指令的“-print0”参数使用；
 -a或--rest-access-time：重新设置文件的存取时间；
 -A或--append：附加到已存在的备份文档中，且这个备份文档必须存放在磁盘上，而不能放置于磁带机里；
 -b或--awap：此参数的效果和同时指定“-ss”参数相同；
 -B：将输入/输出的区块大小改成5210Bytes；
 -c：使用旧ASCII备份格式；
--C<span class="token operator">&lt;</span>区块大小<span class="token operator">></span>或--io-size<span class="token operator">=</span><span class="token operator">&lt;</span>区块大小<span class="token operator">></span>：设置输入/输出的区块大小，单位是Byte；
+-C<span class="token operator">&#x3C;</span>区块大小<span class="token operator">></span>或--io-size<span class="token operator">=</span><span class="token operator">&#x3C;</span>区块大小<span class="token operator">></span>：设置输入/输出的区块大小，单位是Byte；
 -d或--make-directories：如有需要cpio会自行建立目录；
--E<span class="token operator">&lt;</span>范本文件<span class="token operator">></span>或--pattern-file<span class="token operator">=</span><span class="token operator">&lt;</span>范本文件<span class="token operator">></span>：指定范本文件，其内含有一个或多个范本样式，让cpio解开符合范本条件的文件，格式为每列一个范本样式；
+-E<span class="token operator">&#x3C;</span>范本文件<span class="token operator">></span>或--pattern-file<span class="token operator">=</span><span class="token operator">&#x3C;</span>范本文件<span class="token operator">></span>：指定范本文件，其内含有一个或多个范本样式，让cpio解开符合范本条件的文件，格式为每列一个范本样式；
 -f或--nonmatching：让cpio解开所有不符合范本条件的文件；
--F<span class="token operator">&lt;</span>备份档<span class="token operator">></span>或--file<span class="token operator">=</span><span class="token operator">&lt;</span>备份档<span class="token operator">></span>：指定备份档的名称，用来取代标准输入或输出，也能借此通过网络使用另一台主机的保存设备存取备份档；
--H<span class="token operator">&lt;</span>备份格式<span class="token operator">></span>：指定备份时欲使用的文件格式；
+-F<span class="token operator">&#x3C;</span>备份档<span class="token operator">></span>或--file<span class="token operator">=</span><span class="token operator">&#x3C;</span>备份档<span class="token operator">></span>：指定备份档的名称，用来取代标准输入或输出，也能借此通过网络使用另一台主机的保存设备存取备份档；
+-H<span class="token operator">&#x3C;</span>备份格式<span class="token operator">></span>：指定备份时欲使用的文件格式；
 -i或--extract：执行copy-in模式，还原备份档；
--l<span class="token operator">&lt;</span>备份档<span class="token operator">></span>：指定备份档的名称，用来取代标准输入，也能借此通过网络使用另一台主机的保存设备读取备份档；
+-l<span class="token operator">&#x3C;</span>备份档<span class="token operator">></span>：指定备份档的名称，用来取代标准输入，也能借此通过网络使用另一台主机的保存设备读取备份档；
 -k：此参数将忽略不予处理，仅负责解决cpio不同版本间的兼容性问题；
 -l或--link：以硬连接的方式取代复制文件，可在copy-pass模式下运用；
 -L或--dereference：不建立符号连接，直接复制该连接所指向的原始文件；
 -m或preserve-modification-time：不去更改文件的更改时间；
--M<span class="token operator">&lt;</span>回传信息<span class="token operator">></span>或--message<span class="token operator">=</span><span class="token operator">&lt;</span>回传信息<span class="token operator">></span>：设置更换保存媒体的信息；
+-M<span class="token operator">&#x3C;</span>回传信息<span class="token operator">></span>或--message<span class="token operator">=</span><span class="token operator">&#x3C;</span>回传信息<span class="token operator">></span>：设置更换保存媒体的信息；
 -n或--numeric-uid-gid：使用“-tv”参数列出备份档的内容时，若再加上参数“-n”，则会以用户识别和群组识别码替代拥有者和群组名称列出文件清单；
 -o或--create：执行copy-out模式，建立备份档；
--O<span class="token operator">&lt;</span>备份档<span class="token operator">></span>：指定备份档的名称，用来取代标准输出，也能借此通过网络使用另一台主机的保存设备存放备份档；
+-O<span class="token operator">&#x3C;</span>备份档<span class="token operator">></span>：指定备份档的名称，用来取代标准输出，也能借此通过网络使用另一台主机的保存设备存放备份档；
 -p或--pass-through：执行copy-pass模式，略过备份步骤，直接将文件复制到目的目录；
 -r或--rename：当有文件名称需要更改时，采用互动模式；
--R<span class="token operator">&lt;</span>拥有者<span class="token operator">></span><span class="token operator">&lt;</span>:/.<span class="token operator">></span><span class="token operator">&lt;</span>所属群组<span class="token operator">></span>或----owner<span class="token operator">&lt;</span>拥有者<span class="token operator">></span><span class="token operator">&lt;</span>:/.<span class="token operator">></span><span class="token operator">&lt;</span>所属群组<span class="token operator">></span>   在copy-in模式还原备份档，或copy-pass模式复制文件时，可指定这些备份，复制的文件的拥有者与所属群组；
+-R<span class="token operator">&#x3C;</span>拥有者<span class="token operator">></span><span class="token operator">&#x3C;</span>:/.<span class="token operator">></span><span class="token operator">&#x3C;</span>所属群组<span class="token operator">></span>或----owner<span class="token operator">&#x3C;</span>拥有者<span class="token operator">></span><span class="token operator">&#x3C;</span>:/.<span class="token operator">></span><span class="token operator">&#x3C;</span>所属群组<span class="token operator">></span>   在copy-in模式还原备份档，或copy-pass模式复制文件时，可指定这些备份，复制的文件的拥有者与所属群组；
 -s或--swap-bytes：交换每队字节的内容；
 -S或--swap-halfwords：交换每半个字节的内容；
 -t或--list：将输入的内容呈现出来；
 -u或--unconditional：置换所有文件，不论日期时间的新旧与否，皆不予询问而直接覆盖；
 -v或--verbose：详细显示指令的执行过程；
 -V或--dot：执行指令时。在每个文件的执行程序前面加上“.”号；
---block-size<span class="token operator">=</span><span class="token operator">&lt;</span>区块大小<span class="token operator">></span>：设置输入/输出的区块大小，假如设置数值为5，则区块大小为2500，若设置成10，则区块大小为5120，以此类推；
+--block-size<span class="token operator">=</span><span class="token operator">&#x3C;</span>区块大小<span class="token operator">></span>：设置输入/输出的区块大小，假如设置数值为5，则区块大小为2500，若设置成10，则区块大小为5120，以此类推；
 --force-local：强制将备份档存放在本地主机；
 --help：在线帮助；
 --no-absolute-filenames：使用相对路径建立文件名称；
@@ -85,19 +89,20 @@
 --sparse：倘若一个文件内含有大量的连续0字节，则将此文件存在稀疏文件；
 --version：显示版本信息。
 </code></pre>
-<h3 id="实例">实例</h3><p><strong>将<code>/etc</code>下的所有普通文件都备份到<code>/opt/etc.cpio</code>，使用以下命令：</strong> </p>
-<pre><code class="language-shell"><span class="token function">find</span> /etc –type f <span class="token operator">|</span> cpio –ocvB <span class="token operator">></span>/opt/etc.cpio
+<h3>实例</h3>
+<p><strong>将<code>/etc</code>下的所有普通文件都备份到<code>/opt/etc.cpio</code>，使用以下命令：</strong></p>
+<pre class="language-shell"><code class="language-shell"><span class="token function">find</span> /etc –type f <span class="token operator">|</span> cpio –ocvB <span class="token operator">></span>/opt/etc.cpio
 </code></pre>
-<p><strong>将系统上所有资料备份到磁带机内，使用以下命令：</strong> </p>
-<pre><code class="language-shell"><span class="token function">find</span> / -print <span class="token operator">|</span> cpio -covB <span class="token operator">></span> /dev/st0
+<p><strong>将系统上所有资料备份到磁带机内，使用以下命令：</strong></p>
+<pre class="language-shell"><code class="language-shell"><span class="token function">find</span> / -print <span class="token operator">|</span> cpio -covB <span class="token operator">></span> /dev/st0
 </code></pre>
 <p>这里的<code>/dev/st0</code>是磁带的设备名，代表SCSI磁带机。</p>
-<p><strong>查看上例磁带机上备份的文件，使用以下命令：</strong> </p>
-<pre><code class="language-shell">cpio  -icdvt <span class="token operator">&lt;</span> /dev/st0 <span class="token operator">></span> /tmp/st_content
+<p><strong>查看上例磁带机上备份的文件，使用以下命令：</strong></p>
+<pre class="language-shell"><code class="language-shell">cpio  -icdvt <span class="token operator">&#x3C;</span> /dev/st0 <span class="token operator">></span> /tmp/st_content
 </code></pre>
 <p>有时可能因为备份的文件过多，一个屏幕无法显示完毕，此时我们利用下面命令，让磁带机的文件信息输出到文件。</p>
-<p><strong>将示例1中的备份包还原到相应的位置，如果有相同文件进行覆盖，使用以下命令：</strong> </p>
-<pre><code class="language-shell">cpio –icduv <span class="token operator">&lt;</span> /opt/etc.cpio
+<p><strong>将示例1中的备份包还原到相应的位置，如果有相同文件进行覆盖，使用以下命令：</strong></p>
+<pre class="language-shell"><code class="language-shell">cpio –icduv <span class="token operator">&#x3C;</span> /opt/etc.cpio
 </code></pre>
 <p>注意，cpio恢复的路径，如果cpio在打包备份的时候用的是绝对路径，那么在恢复的时候会自动恢复到这些绝对路径下，本例就会将备份文件全部还原到/etc路径下对应的目录中。同理，如果在打包备份用的是相对路径，还原时也将恢复到相对路径下。</p>
 <p>通过上面的示例，可以看出，cpio无法直接读取文件，它需要每个文件或者目录的完整路径名才能识别读取，而find命令的输出刚好做到了这点，因此，cpio命令一般和find命令配合使用。其实，上面的示例我们已经看到了它们的组合用法。</p>
@@ -124,7 +129,7 @@
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1628764653212"></script>
-<script type="text/javascript" src="../js/index.js?v=1628764653212"></script>
+<script type="text/javascript" src="../js/dt.js?v=1628769137140"></script>
+<script type="text/javascript" src="../js/index.js?v=1628769137140"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,dnf,新一代的RPM软件包管理器">
     <title>dnf 命令，Linux dnf 命令详解：新一代的RPM软件包管理器 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628764653250">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628769137158">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -40,144 +40,148 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/dnf.md">添加实例</a>
 </span>
 
-<h1 id="dnf">dnf</h1><p>新一代的RPM软件包管理器</p>
-<h2 id="补充说明">补充说明</h2><p><strong>DNF</strong> 是新一代的rpm软件包管理器。他首先出现在 Fedora 18 这个发行版中。而最近，它取代了yum，正式成为 Fedora 22 的包管理器。</p>
+<h1>dnf</h1>
+<p>新一代的RPM软件包管理器</p>
+<h2>补充说明</h2>
+<p><strong>DNF</strong> 是新一代的rpm软件包管理器。他首先出现在 Fedora 18 这个发行版中。而最近，它取代了yum，正式成为 Fedora 22 的包管理器。</p>
 <p>DNF包管理器克服了YUM包管理器的一些瓶颈，提升了包括用户体验，内存占用，依赖分析，运行速度等多方面的内容。DNF使用 RPM, libsolv 和 hawkey 库进行包管理操作。尽管它没有预装在 CentOS 和 RHEL 7 中，但你可以在使用 YUM 的同时使用 DNF 。你可以在这里获得关于 DNF 的更多知识：《 DNF 代替 YUM ，你所不知道的缘由》</p>
 <p>DNF 的最新稳定发行版版本号是 1.0，发行日期是2015年5月11日。 这一版本的额 DNF 包管理器（包括在他之前的所有版本） 都大部分采用 Python 编写，发行许可为GPL v2.</p>
-<h3 id="安装 dnf 包管理器">安装 DNF 包管理器</h3><p>DNF 并未默认安装在 RHEL 或 CentOS 7系统中，但是 Fedora 22 已经默认使用 DNF .</p>
+<h3>安装 DNF 包管理器</h3>
+<p>DNF 并未默认安装在 RHEL 或 CentOS 7系统中，但是 Fedora 22 已经默认使用 DNF .</p>
 <p>1、为了安装 DNF ，您必须先安装并启用 epel-release 依赖。</p>
 <p>在系统中执行以下命令：</p>
-<pre><code class="language-shell">yum <span class="token function">install</span> epel-release
+<pre class="language-shell"><code class="language-shell">yum <span class="token function">install</span> epel-release
 </code></pre>
 <p>或者</p>
-<pre><code class="language-shell">yum <span class="token function">install</span> epel-release -y
+<pre class="language-shell"><code class="language-shell">yum <span class="token function">install</span> epel-release -y
 </code></pre>
 <p>其实这里并没有强制使用”-y”的理由，相反的，在不使用”-y”的情况下，用户可以在安装过程中查看到底有哪些东西被安装进了系统。但对于没有这个需求的用户，您可以在 YUM 中使用”-y”参数来自动安装所有东西。</p>
 <p>2、使用 epel-release 依赖中的 YUM 命令来安装 DNF 包。在系统中执行以下命令：</p>
-<pre><code class="language-shell">yum <span class="token function">install</span> dnf
+<pre class="language-shell"><code class="language-shell">yum <span class="token function">install</span> dnf
 </code></pre>
 <p>然后， DNF 包管理器就被成功的安装到你的系统中了。接下来，是时候开始我们的教程了！在这个教程中，您将会学到27个用于 DNF 包管理器的命令。使用这些命令，你可以方便有效的管理您系统中的 RPM 软件包。现在，让我们开始学习 DNF 包管理器的27条常用命令吧！</p>
-<p><strong>查看 DNF 包管理器版本</strong> </p>
+<p><strong>查看 DNF 包管理器版本</strong></p>
 <p>用处：该命令用于查看安装在您系统中的 DNF 包管理器的版本</p>
-<pre><code class="language-shell">dnf –version
+<pre class="language-shell"><code class="language-shell">dnf –version
 </code></pre>
 <p>!Check-DNF-Version</p>
-<p><strong>查看系统中可用的 DNF 软件库</strong> </p>
+<p><strong>查看系统中可用的 DNF 软件库</strong></p>
 <p>用处：该命令用于显示系统中可用的 DNF 软件库</p>
-<pre><code class="language-shell">dnf repolist
+<pre class="language-shell"><code class="language-shell">dnf repolist
 </code></pre>
-<p><strong>查看系统中可用和不可用的所有的 DNF 软件库</strong> </p>
+<p><strong>查看系统中可用和不可用的所有的 DNF 软件库</strong></p>
 <p>用处：该命令用于显示系统中可用和不可用的所有的 DNF 软件库</p>
-<pre><code class="language-shell">dnf repolist all
+<pre class="language-shell"><code class="language-shell">dnf repolist all
 </code></pre>
-<p><strong>列出所有 RPM 包</strong> </p>
+<p><strong>列出所有 RPM 包</strong></p>
 <p>用处：该命令用于列出用户系统上的所有来自软件库的可用软件包和所有已经安装在系统上的软件包</p>
-<pre><code class="language-shell">dnf list
+<pre class="language-shell"><code class="language-shell">dnf list
 </code></pre>
-<p><strong>列出所有安装了的 RPM 包</strong> </p>
+<p><strong>列出所有安装了的 RPM 包</strong></p>
 <p>用处：该命令用于列出所有安装了的 RPM 包</p>
-<pre><code class="language-shell">dnf list installed
+<pre class="language-shell"><code class="language-shell">dnf list installed
 </code></pre>
-<p><strong>列出所有可供安装的 RPM 包</strong> </p>
+<p><strong>列出所有可供安装的 RPM 包</strong></p>
 <p>用处：该命令用于列出来自所有可用软件库的可供安装的软件包</p>
-<pre><code class="language-shell">dnf list available
+<pre class="language-shell"><code class="language-shell">dnf list available
 </code></pre>
-<p><strong>搜索软件库中的 RPM 包</strong> </p>
+<p><strong>搜索软件库中的 RPM 包</strong></p>
 <p>用处：当你不知道你想要安装的软件的准确名称时，你可以用该命令来搜索软件包。你需要在”search”参数后面键入软件的部分名称来搜索。（在本例中我们使用”nano”）</p>
-<pre><code class="language-shell">dnf search <span class="token function">nano</span>
+<pre class="language-shell"><code class="language-shell">dnf search <span class="token function">nano</span>
 </code></pre>
-<p><strong>查找某一文件的提供者</strong> </p>
+<p><strong>查找某一文件的提供者</strong></p>
 <p>用处：当你想要查看是哪个软件包提供了系统中的某一文件时，你可以使用这条命令。（在本例中，我们将查找”/bin/bash”这个文件的提供者）</p>
-<pre><code class="language-shell">dnf provides /bin/bash
+<pre class="language-shell"><code class="language-shell">dnf provides /bin/bash
 </code></pre>
-<p><strong>查看软件包详情</strong> </p>
+<p><strong>查看软件包详情</strong></p>
 <p>用处：当你想在安装某一个软件包之前查看它的详细信息时，这条命令可以帮到你。（在本例中，我们将查看”nano”这一软件包的详细信息）</p>
-<pre><code class="language-shell">dnf info <span class="token function">nano</span>
+<pre class="language-shell"><code class="language-shell">dnf info <span class="token function">nano</span>
 </code></pre>
-<p><strong>安装软件包</strong> </p>
+<p><strong>安装软件包</strong></p>
 <p>用处：使用该命令，系统将会自动安装对应的软件及其所需的所有依赖（在本例中，我们将用该命令安装nano软件）</p>
-<pre><code class="language-shell">dnf <span class="token function">install</span> <span class="token function">nano</span>
+<pre class="language-shell"><code class="language-shell">dnf <span class="token function">install</span> <span class="token function">nano</span>
 </code></pre>
-<p><strong>升级软件包</strong> </p>
+<p><strong>升级软件包</strong></p>
 <p>用处：该命令用于升级制定软件包（在本例中，我们将用命令升级”systemd”这一软件包）</p>
-<pre><code class="language-shell">dnf update systemd
+<pre class="language-shell"><code class="language-shell">dnf update systemd
 </code></pre>
-<p><strong>检查系统软件包的更新</strong> </p>
+<p><strong>检查系统软件包的更新</strong></p>
 <p>用处：该命令用于检查系统中所有软件包的更新</p>
-<pre><code class="language-shell">dnf check-update
+<pre class="language-shell"><code class="language-shell">dnf check-update
 </code></pre>
-<p><strong>升级所有系统软件包</strong> </p>
+<p><strong>升级所有系统软件包</strong></p>
 <p>用处：该命令用于升级系统中所有有可用升级的软件包</p>
-<pre><code class="language-shell">dnf update 或 dnf upgrade
+<pre class="language-shell"><code class="language-shell">dnf update 或 dnf upgrade
 </code></pre>
-<p><strong>删除软件包</strong> </p>
+<p><strong>删除软件包</strong></p>
 <p>用处：删除系统中指定的软件包（在本例中我们将使用命令删除”nano”这一软件包）</p>
-<pre><code class="language-shell">dnf remove <span class="token function">nano</span> 或 dnf erase <span class="token function">nano</span>
+<pre class="language-shell"><code class="language-shell">dnf remove <span class="token function">nano</span> 或 dnf erase <span class="token function">nano</span>
 </code></pre>
-<p><strong>删除无用孤立的软件包</strong> </p>
+<p><strong>删除无用孤立的软件包</strong></p>
 <p>用处：当没有软件再依赖它们时，某一些用于解决特定软件依赖的软件包将会变得没有存在的意义，该命令就是用来自动移除这些没用的孤立软件包。</p>
-<pre><code class="language-shell">dnf autoremove
+<pre class="language-shell"><code class="language-shell">dnf autoremove
 </code></pre>
-<p><strong>删除缓存的无用软件包</strong> </p>
+<p><strong>删除缓存的无用软件包</strong></p>
 <p>用处：在使用 DNF 的过程中，会因为各种原因在系统中残留各种过时的文件和未完成的编译工程。我们可以使用该命令来删除这些没用的垃圾文件。</p>
-<pre><code class="language-shell">dnf clean all
+<pre class="language-shell"><code class="language-shell">dnf clean all
 </code></pre>
-<p><strong>获取有关某条命令的使用帮助</strong> </p>
+<p><strong>获取有关某条命令的使用帮助</strong></p>
 <p>用处：该命令用于获取有关某条命令的使用帮助（包括可用于该命令的参数和该命令的用途说明）（本例中我们将使用命令获取有关命令”clean”的使用帮助）</p>
-<pre><code class="language-shell">dnf <span class="token builtin class-name">help</span> clean
+<pre class="language-shell"><code class="language-shell">dnf <span class="token builtin class-name">help</span> clean
 </code></pre>
-<p><strong>查看所有的 DNF 命令及其用途</strong> </p>
+<p><strong>查看所有的 DNF 命令及其用途</strong></p>
 <p>用处：该命令用于列出所有的 DNF 命令及其用途</p>
-<pre><code class="language-shell">dnf <span class="token builtin class-name">help</span>
+<pre class="language-shell"><code class="language-shell">dnf <span class="token builtin class-name">help</span>
 </code></pre>
-<p><strong>查看 DNF 命令的执行历史</strong> </p>
+<p><strong>查看 DNF 命令的执行历史</strong></p>
 <p>用处：您可以使用该命令来查看您系统上 DNF 命令的执行历史。通过这个手段您可以知道在自您使用 DNF 开始有什么软件被安装和卸载。</p>
-<pre><code class="language-shell">dnf <span class="token function">history</span>
+<pre class="language-shell"><code class="language-shell">dnf <span class="token function">history</span>
 </code></pre>
-<p><strong>查看所有的软件包组</strong> </p>
+<p><strong>查看所有的软件包组</strong></p>
 <p>用处：该命令用于列出所有的软件包组</p>
-<pre><code class="language-shell">dnf grouplist
+<pre class="language-shell"><code class="language-shell">dnf grouplist
 </code></pre>
-<p><strong>安装一个软件包组</strong> </p>
+<p><strong>安装一个软件包组</strong></p>
 <p>用处：该命令用于安装一个软件包组（本例中，我们将用命令安装”Educational Software”这个软件包组）</p>
-<pre><code class="language-shell">dnf groupinstall ‘Educational Software’
+<pre class="language-shell"><code class="language-shell">dnf groupinstall ‘Educational Software’
 </code></pre>
-<p><strong>升级一个软件包组中的软件包</strong> </p>
+<p><strong>升级一个软件包组中的软件包</strong></p>
 <p>用处：该命令用于升级一个软件包组中的软件包（本例中，我们将用命令升级”Educational Software”这个软件包组中的软件）</p>
-<pre><code class="language-shell">dnf groupupdate ‘Educational Software’
+<pre class="language-shell"><code class="language-shell">dnf groupupdate ‘Educational Software’
 </code></pre>
-<p><strong>删除一个软件包组</strong> </p>
+<p><strong>删除一个软件包组</strong></p>
 <p>用处：该命令用于删除一个软件包组（本例中，我们将用命令删除”Educational Software”这个软件包组）</p>
-<pre><code class="language-shell">dnf groupremove ‘Educational Software’
+<pre class="language-shell"><code class="language-shell">dnf groupremove ‘Educational Software’
 </code></pre>
-<p><strong>从特定的软件包库安装特定的软件</strong> </p>
+<p><strong>从特定的软件包库安装特定的软件</strong></p>
 <p>用处：该命令用于从特定的软件包库安装特定的软件（本例中我们将使用命令从软件包库 epel 中安装 phpmyadmin 软件包）</p>
-<pre><code class="language-shell">dnf –enablerepo<span class="token operator">=</span>epel <span class="token function">install</span> phpmyadmin
+<pre class="language-shell"><code class="language-shell">dnf –enablerepo<span class="token operator">=</span>epel <span class="token function">install</span> phpmyadmin
 </code></pre>
-<p><strong>更新软件包到最新的稳定发行版</strong> </p>
+<p><strong>更新软件包到最新的稳定发行版</strong></p>
 <p>用处：该命令可以通过所有可用的软件源将已经安装的所有软件包更新到最新的稳定发行版</p>
-<pre><code class="language-shell">dnf distro-sync
+<pre class="language-shell"><code class="language-shell">dnf distro-sync
 </code></pre>
-<p><strong>重新安装特定软件包</strong> </p>
+<p><strong>重新安装特定软件包</strong></p>
 <p>用处：该命令用于重新安装特定软件包（本例中，我们将使用命令重新安装”nano”这个软件包）</p>
-<pre><code class="language-shell">dnf reinstall <span class="token function">nano</span>
+<pre class="language-shell"><code class="language-shell">dnf reinstall <span class="token function">nano</span>
 </code></pre>
-<p><strong>回滚某个特定软件的版本</strong> </p>
+<p><strong>回滚某个特定软件的版本</strong></p>
 <p>用处：该命令用于降低特定软件包的版本（如果可能的话）（本例中，我们将使用命令降低”acpid”这个软件包的版本）</p>
-<pre><code class="language-shell">dnf downgrade acpid
+<pre class="language-shell"><code class="language-shell">dnf downgrade acpid
 </code></pre>
 <p>样例输出：</p>
-<pre><code class="language-shell">Using metadata from Wed May <span class="token number">20</span> <span class="token number">12</span>:44:59 <span class="token number">2015</span>
+<pre class="language-shell"><code class="language-shell">Using metadata from Wed May <span class="token number">20</span> <span class="token number">12</span>:44:59 <span class="token number">2015</span>
 No match <span class="token keyword">for</span> available package: acpid-2.0.19-5.el7.x86_64
 Error: Nothing to do.
 </code></pre>
 <p>原作者注：在执行这条命令的时候， DNF 并没有按照我期望的那样降级指定的软件（“acpid”）。该问题已经上报。</p>
-<h3 id="总结">总结</h3><p>DNF 包管理器作为 YUM 包管理器的升级替代品，它能自动完成更多的操作。但在我看来，正因如此，所以 DNF 包管理器不会太受那些经验老道的 Linux 系统管理者的欢迎。举例如下：</p>
+<h3>总结</h3>
+<p>DNF 包管理器作为 YUM 包管理器的升级替代品，它能自动完成更多的操作。但在我看来，正因如此，所以 DNF 包管理器不会太受那些经验老道的 Linux 系统管理者的欢迎。举例如下：</p>
 <ol>
-<li> 在 DNF 中没有 –skip-broken 命令，并且没有替代命令供选择。</li>
-<li> 在 DNF 中没有判断哪个包提供了指定依赖的 resolvedep 命令。</li>
-<li> 在 DNF 中没有用来列出某个软件依赖包的 deplist 命令。</li>
-<li> 当你在 DNF 中排除了某个软件库，那么该操作将会影响到你之后所有的操作，不像在 YUM 下那样，你的排除操作只会咋升级和安装软件时才起作用。</li>
+<li>在 DNF 中没有 –skip-broken 命令，并且没有替代命令供选择。</li>
+<li>在 DNF 中没有判断哪个包提供了指定依赖的 resolvedep 命令。</li>
+<li>在 DNF 中没有用来列出某个软件依赖包的 deplist 命令。</li>
+<li>当你在 DNF 中排除了某个软件库，那么该操作将会影响到你之后所有的操作，不像在 YUM 下那样，你的排除操作只会咋升级和安装软件时才起作用。</li>
 </ol>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 </div>
@@ -202,7 +206,7 @@ Error: Nothing to do.
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1628764653250"></script>
-<script type="text/javascript" src="../js/index.js?v=1628764653250"></script>
+<script type="text/javascript" src="../js/dt.js?v=1628769137159"></script>
+<script type="text/javascript" src="../js/index.js?v=1628769137159"></script>
 </body>
 </html>

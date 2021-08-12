@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,lynx,纯文本模式的网页浏览器">
     <title>lynx 命令，Linux lynx 命令详解：纯文本模式的网页浏览器 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628764653485">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628769137300">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -40,11 +40,15 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/lynx.md">添加实例</a>
 </span>
 
-<h1 id="lynx">lynx</h1><p>纯文本模式的网页浏览器</p>
-<h2 id="补充说明">补充说明</h2><p><strong>lynx命令</strong> 是纯文本模式的网页浏览器，不支持图形、音视频等多媒体信息。</p>
-<h3 id="语法">语法</h3><pre><code class="language-shell">lynx<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
+<h1>lynx</h1>
+<p>纯文本模式的网页浏览器</p>
+<h2>补充说明</h2>
+<p><strong>lynx命令</strong> 是纯文本模式的网页浏览器，不支持图形、音视频等多媒体信息。</p>
+<h3>语法</h3>
+<pre class="language-shell"><code class="language-shell">lynx<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
 </code></pre>
-<h3 id="选项">选项</h3><pre><code class="language-shell">-case：在搜索字符串时，区分大小写；
+<h3>选项</h3>
+<pre class="language-shell"><code class="language-shell">-case：在搜索字符串时，区分大小写；
 -ftp：关闭ftp功能；
 -nobrowse：关闭目录浏览功能；
 -noclor：关闭色彩显示模式；
@@ -53,15 +57,17 @@
 --help：显示指令的帮助信息；
 --versiom：显示指令的版本信息。
 </code></pre>
-<h3 id="参数">参数</h3><p>URL：指定要访问的网站的URL地址。</p>
-<h2 id="内部命令">内部命令</h2><p> <strong>移动命令</strong> </p>
-<pre><code class="language-shell">下方向键：页面上的下一个链接<span class="token punctuation">(</span>用高亮度显示<span class="token punctuation">)</span>。
+<h3>参数</h3>
+<p>URL：指定要访问的网站的URL地址。</p>
+<h2>内部命令</h2>
+<p><strong>移动命令</strong></p>
+<pre class="language-shell"><code class="language-shell">下方向键：页面上的下一个链接<span class="token punctuation">(</span>用高亮度显示<span class="token punctuation">)</span>。
 上方向键：页面上的前一个链接<span class="token punctuation">(</span>用高亮度显示<span class="token punctuation">)</span>。
 回车和右方向键：跳转到链接指向的地址。
 左方向键：回到上一个页面。
 </code></pre>
-<p> <strong>滚动命令</strong> </p>
-<pre><code class="language-shell">+、Page-Down、Space、Ctrl+f：向下翻页。
+<p><strong>滚动命令</strong></p>
+<pre class="language-shell"><code class="language-shell">+、Page-Down、Space、Ctrl+f：向下翻页。
 -、Page-Up、b、Ctrl+b：向上翻页。
 Ctrl+a：移动到当前页的最前面。
 Ctrl+e：移动到当前页的最后面。
@@ -71,8 +77,8 @@ Ctrl+p：往回翻两行。
 <span class="token punctuation">(</span>：往回翻半页。
 <span class="token comment">#：回到当前页的 Toolbar 或 Banner。</span>
 </code></pre>
-<p> <strong>文件操作命令</strong> </p>
-<pre><code class="language-shell">c：建立一个新文件。
+<p><strong>文件操作命令</strong></p>
+<pre class="language-shell"><code class="language-shell">c：建立一个新文件。
 d：下载选中的文件。
 E：编辑选中的文件。
 f：为当前文件显示一个选项菜单。
@@ -81,8 +87,8 @@ r：删除选中的文件。
 t：Tag highlighted file。
 u：上载一个文件到当前目录。
 </code></pre>
-<p> <strong>其他命令</strong> </p>
-<pre><code class="language-shell">?、h：帮助。
+<p><strong>其他命令</strong></p>
+<pre class="language-shell"><code class="language-shell">?、h：帮助。
 a：把当前链接加入到一个书签文件里。
 c：向页面的拥有者发送意见或建议。
 d：下载当前链接。
@@ -145,7 +151,7 @@ Ctrl+k：调用 Cookie Jar 页。
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1628764653485"></script>
-<script type="text/javascript" src="../js/index.js?v=1628764653485"></script>
+<script type="text/javascript" src="../js/dt.js?v=1628769137300"></script>
+<script type="text/javascript" src="../js/index.js?v=1628769137300"></script>
 </body>
 </html>

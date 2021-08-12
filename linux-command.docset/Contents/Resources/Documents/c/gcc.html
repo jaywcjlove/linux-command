@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,gcc,基于C/C++的编译器">
     <title>gcc 命令，Linux gcc 命令详解：基于C/C++的编译器 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628764653322">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628769137203">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -40,56 +40,62 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/gcc.md">添加实例</a>
 </span>
 
-<h1 id="gcc">gcc</h1><p>基于C/C++的编译器</p>
-<h2 id="补充说明">补充说明</h2><p><strong>gcc命令</strong> 使用GNU推出的基于C/C++的编译器，是开放源代码领域应用最广泛的编译器，具有功能强大，编译代码支持性能优化等特点。现在很多程序员都应用GCC，怎样才能更好的应用GCC。目前，GCC可以用来编译C/C++、FORTRAN、JAVA、OBJC、ADA等语言的程序，可根据需要选择安装支持的语言。</p>
-<h3 id="语法">语法</h3><pre><code class="language-shell">gcc<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
+<h1>gcc</h1>
+<p>基于C/C++的编译器</p>
+<h2>补充说明</h2>
+<p><strong>gcc命令</strong> 使用GNU推出的基于C/C++的编译器，是开放源代码领域应用最广泛的编译器，具有功能强大，编译代码支持性能优化等特点。现在很多程序员都应用GCC，怎样才能更好的应用GCC。目前，GCC可以用来编译C/C++、FORTRAN、JAVA、OBJC、ADA等语言的程序，可根据需要选择安装支持的语言。</p>
+<h3>语法</h3>
+<pre class="language-shell"><code class="language-shell">gcc<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
 </code></pre>
-<h3 id="选项">选项</h3><pre><code class="language-shell">-o：指定生成的输出文件；
+<h3>选项</h3>
+<pre class="language-shell"><code class="language-shell">-o：指定生成的输出文件；
 -E：仅执行编译预处理；
 -S：将C代码转换为汇编代码；
 -wall：显示警告信息；
 -c：仅执行编译操作，不进行连接操作。
 </code></pre>
-<h3 id="参数">参数</h3><p>C源文件：指定C语言源代码文件。</p>
-<h3 id="实例">实例</h3><p><strong>常用编译命令选项</strong> </p>
+<h3>参数</h3>
+<p>C源文件：指定C语言源代码文件。</p>
+<h3>实例</h3>
+<p><strong>常用编译命令选项</strong></p>
 <p>假设源程序文件名为test.c</p>
-<p><strong>无选项编译链接</strong> </p>
-<pre><code class="language-shell">gcc test.c
+<p><strong>无选项编译链接</strong></p>
+<pre class="language-shell"><code class="language-shell">gcc test.c
 </code></pre>
 <p>将test.c预处理、汇编、编译并链接形成可执行文件。这里未指定输出文件，默认输出为a.out。</p>
-<p><strong>选项 -o</strong> </p>
-<pre><code class="language-shell">gcc test.c -o <span class="token builtin class-name">test</span>
+<p><strong>选项 -o</strong></p>
+<pre class="language-shell"><code class="language-shell">gcc test.c -o <span class="token builtin class-name">test</span>
 </code></pre>
 <p>将test.c预处理、汇编、编译并链接形成可执行文件test。-o选项用来指定输出文件的文件名。</p>
-<p><strong>选项 -E</strong> </p>
-<pre><code class="language-shell">gcc -E test.c -o test.i
+<p><strong>选项 -E</strong></p>
+<pre class="language-shell"><code class="language-shell">gcc -E test.c -o test.i
 </code></pre>
 <p>将test.c预处理输出test.i文件。</p>
-<p><strong>选项 -S</strong> </p>
-<pre><code class="language-shell">gcc -S test.i
+<p><strong>选项 -S</strong></p>
+<pre class="language-shell"><code class="language-shell">gcc -S test.i
 </code></pre>
 <p>将预处理输出文件test.i汇编成test.s文件。</p>
-<p><strong>选项 -c</strong> </p>
-<pre><code class="language-shell">gcc -c test.s
+<p><strong>选项 -c</strong></p>
+<pre class="language-shell"><code class="language-shell">gcc -c test.s
 </code></pre>
 <p>将汇编输出文件test.s编译输出test.o文件。</p>
-<p><strong>无选项链接</strong> </p>
-<pre><code class="language-shell">gcc test.o -o <span class="token builtin class-name">test</span>
+<p><strong>无选项链接</strong></p>
+<pre class="language-shell"><code class="language-shell">gcc test.o -o <span class="token builtin class-name">test</span>
 </code></pre>
 <p>将编译输出文件test.o链接成最终可执行文件test。</p>
-<p><strong>选项 -O</strong> </p>
-<pre><code class="language-shell">gcc -O1 test.c -o <span class="token builtin class-name">test</span>
+<p><strong>选项 -O</strong></p>
+<pre class="language-shell"><code class="language-shell">gcc -O1 test.c -o <span class="token builtin class-name">test</span>
 </code></pre>
 <p>使用编译优化级别1编译程序。级别为1~3，级别越大优化效果越好，但编译时间越长。</p>
-<p><strong>多源文件的编译方法</strong> </p>
+<p><strong>多源文件的编译方法</strong></p>
 <p>如果有多个源文件，基本上有两种编译方法：</p>
 <p>假设有两个源文件为test.c和testfun.c</p>
-<p><strong>多个文件一起编译</strong> </p>
-<pre><code class="language-shell">gcc testfun.c test.c -o <span class="token builtin class-name">test</span>
+<p><strong>多个文件一起编译</strong></p>
+<pre class="language-shell"><code class="language-shell">gcc testfun.c test.c -o <span class="token builtin class-name">test</span>
 </code></pre>
 <p>将testfun.c和test.c分别编译后链接成test可执行文件。</p>
-<p><strong>分别编译各个源文件，之后对编译后输出的目标文件链接。</strong> </p>
-<pre><code class="language-shell">gcc -c testfun.c    <span class="token comment">#将testfun.c编译成testfun.o</span>
+<p><strong>分别编译各个源文件，之后对编译后输出的目标文件链接。</strong></p>
+<pre class="language-shell"><code class="language-shell">gcc -c testfun.c    <span class="token comment">#将testfun.c编译成testfun.o</span>
 gcc -c test.c       <span class="token comment">#将test.c编译成test.o</span>
 gcc -o testfun.o test.o -o <span class="token builtin class-name">test</span>    <span class="token comment">#将testfun.o和test.o链接成test</span>
 </code></pre>
@@ -117,7 +123,7 @@ gcc -o testfun.o test.o -o <span class="token builtin class-name">test</span>   
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1628764653322"></script>
-<script type="text/javascript" src="../js/index.js?v=1628764653322"></script>
+<script type="text/javascript" src="../js/dt.js?v=1628769137203"></script>
+<script type="text/javascript" src="../js/index.js?v=1628769137203"></script>
 </body>
 </html>

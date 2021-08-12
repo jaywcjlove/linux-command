@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,dos2unix,将DOS格式文本文件转换成Unix格式">
     <title>dos2unix 命令，Linux dos2unix 命令详解：将DOS格式文本文件转换成Unix格式 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628764653254">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628769137161">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -40,36 +40,42 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/dos2unix.md">添加实例</a>
 </span>
 
-<h1 id="dos2unix">dos2unix</h1><p>将DOS格式文本文件转换成Unix格式</p>
-<h2 id="补充说明">补充说明</h2><p><strong>dos2unix命令</strong> 用来将DOS格式的文本文件转换成UNIX格式的（DOS/MAC to UNIX text file format converter）。DOS下的文本文件是以<code>\r\n</code>作为断行标志的，表示成十六进制就是0D 0A。而Unix下的文本文件是以\n作为断行标志的，表示成十六进制就是0A。DOS格式的文本文件在Linux底下，用较低版本的vi打开时行尾会显示<code>^M</code>，而且很多命令都无法很好的处理这种格式的文件，如果是个shell脚本，。而Unix格式的文本文件在Windows下用Notepad打开时会拼在一起显示。因此产生了两种格式文件相互转换的需求，对应的将UNIX格式文本文件转成成DOS格式的是unix2dos命令。</p>
-<h3 id="语法">语法</h3><pre><code class="language-shell">dos2unix <span class="token punctuation">[</span>-hkqV<span class="token punctuation">]</span> <span class="token punctuation">[</span>-c convmode<span class="token punctuation">]</span> <span class="token punctuation">[</span>-o <span class="token function">file</span> <span class="token punctuation">..</span>.<span class="token punctuation">]</span> <span class="token punctuation">[</span>-n infile outfile <span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+<h1>dos2unix</h1>
+<p>将DOS格式文本文件转换成Unix格式</p>
+<h2>补充说明</h2>
+<p><strong>dos2unix命令</strong> 用来将DOS格式的文本文件转换成UNIX格式的（DOS/MAC to UNIX text file format converter）。DOS下的文本文件是以<code>\r\n</code>作为断行标志的，表示成十六进制就是0D 0A。而Unix下的文本文件是以\n作为断行标志的，表示成十六进制就是0A。DOS格式的文本文件在Linux底下，用较低版本的vi打开时行尾会显示<code>^M</code>，而且很多命令都无法很好的处理这种格式的文件，如果是个shell脚本，。而Unix格式的文本文件在Windows下用Notepad打开时会拼在一起显示。因此产生了两种格式文件相互转换的需求，对应的将UNIX格式文本文件转成成DOS格式的是unix2dos命令。</p>
+<h3>语法</h3>
+<pre class="language-shell"><code class="language-shell">dos2unix <span class="token punctuation">[</span>-hkqV<span class="token punctuation">]</span> <span class="token punctuation">[</span>-c convmode<span class="token punctuation">]</span> <span class="token punctuation">[</span>-o <span class="token function">file</span> <span class="token punctuation">..</span>.<span class="token punctuation">]</span> <span class="token punctuation">[</span>-n infile outfile <span class="token punctuation">..</span>.<span class="token punctuation">]</span>
 </code></pre>
-<h3 id="选项">选项</h3><pre><code class="language-shell">-k：保持输出文件的日期不变
+<h3>选项</h3>
+<pre class="language-shell"><code class="language-shell">-k：保持输出文件的日期不变
 -q：安静模式，不提示任何警告信息。
 -V：查看版本
 -c：转换模式，模式有：ASCII, 7bit, ISO, Mac, 默认是：ASCII。
 -o：写入到源文件
 -n：写入到新文件
 </code></pre>
-<h3 id="参数">参数</h3><p>参数：需要转换到文件。</p>
-<h3 id="实例">实例</h3><p>最简单的用法就是dos2unix直接跟上文件名：</p>
-<pre><code class="language-shell">dos2unix <span class="token function">file</span>
+<h3>参数</h3>
+<p>参数：需要转换到文件。</p>
+<h3>实例</h3>
+<p>最简单的用法就是dos2unix直接跟上文件名：</p>
+<pre class="language-shell"><code class="language-shell">dos2unix <span class="token function">file</span>
 </code></pre>
 <p>如果一次转换多个文件，把这些文件名直接跟在dos2unix之后。（注：也可以加上<code>-o</code>参数，也可以不加，效果一样）</p>
-<pre><code class="language-shell">dos2unix file1 file2 file3
+<pre class="language-shell"><code class="language-shell">dos2unix file1 file2 file3
 dos2unix -o file1 file2 file3
 </code></pre>
 <p>上面在转换时，都会直接在原来的文件上修改，如果想把转换的结果保存在别的文件，而源文件不变，则可以使用<code>-n</code>参数。</p>
-<pre><code class="language-shell">dos2unix oldfile newfile
+<pre class="language-shell"><code class="language-shell">dos2unix oldfile newfile
 </code></pre>
 <p>如果要保持文件时间戳不变，加上<code>-k</code>参数。所以上面几条命令都是可以加上<code>-k</code>参数来保持文件时间戳的。</p>
-<pre><code class="language-shell">dos2unix -k <span class="token function">file</span>
+<pre class="language-shell"><code class="language-shell">dos2unix -k <span class="token function">file</span>
 dos2unix -k file1 file2 file3
 dos2unix -k -o file1 file2 file3
 dos2unix -k -n oldfile newfile
 </code></pre>
 <p>转换当前目录下所有文件</p>
-<pre><code class="language-shell"><span class="token function">find</span> -type f <span class="token operator">|</span> <span class="token function">xargs</span> dos2unix
+<pre class="language-shell"><code class="language-shell"><span class="token function">find</span> -type f <span class="token operator">|</span> <span class="token function">xargs</span> dos2unix
 </code></pre>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 </div>
@@ -94,7 +100,7 @@ dos2unix -k -n oldfile newfile
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1628764653254"></script>
-<script type="text/javascript" src="../js/index.js?v=1628764653254"></script>
+<script type="text/javascript" src="../js/dt.js?v=1628769137162"></script>
+<script type="text/javascript" src="../js/index.js?v=1628769137162"></script>
 </body>
 </html>

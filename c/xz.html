@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,xz,POSIX 平台开发具有高压缩率的工具">
     <title>xz 命令，Linux xz 命令详解：POSIX 平台开发具有高压缩率的工具 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628764653765">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628769137505">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -40,12 +40,16 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/xz.md">添加实例</a>
 </span>
 
-<h1 id="xz">xz</h1><p>POSIX 平台开发具有高压缩率的工具</p>
-<h2 id="补充说明">补充说明</h2><p><strong>xz命令</strong> XZ Utils 是为 POSIX 平台开发具有高压缩率的工具。它使用 LZMA2 压缩算法，生成的压缩文件比 POSIX 平台传统使用的 gzip、bzip2 生成的压缩文件更小，而且解压缩速度也很快。最初 XZ Utils 的是基于 LZMA-SDK 开发，但是 LZMA-SDK 包含了一些 WINDOWS 平台的特性，所以 XZ Utils 为以适应 POSIX 平台作了大幅的修改。XZ Utils 的出现也是为了取代 POSIX 系统中旧的 LZMA Utils。</p>
-<h3 id="语法">语法</h3><pre><code class="language-shell">xz<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
+<h1>xz</h1>
+<p>POSIX 平台开发具有高压缩率的工具</p>
+<h2>补充说明</h2>
+<p><strong>xz命令</strong> XZ Utils 是为 POSIX 平台开发具有高压缩率的工具。它使用 LZMA2 压缩算法，生成的压缩文件比 POSIX 平台传统使用的 gzip、bzip2 生成的压缩文件更小，而且解压缩速度也很快。最初 XZ Utils 的是基于 LZMA-SDK 开发，但是 LZMA-SDK 包含了一些 WINDOWS 平台的特性，所以 XZ Utils 为以适应 POSIX 平台作了大幅的修改。XZ Utils 的出现也是为了取代 POSIX 系统中旧的 LZMA Utils。</p>
+<h3>语法</h3>
+<pre class="language-shell"><code class="language-shell">xz<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
 xz <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. <span class="token punctuation">[</span>FILE<span class="token punctuation">]</span><span class="token punctuation">..</span>.
 </code></pre>
-<h3 id="选项">选项</h3><pre><code class="language-shell">-z, --compress    <span class="token comment"># 强制压缩</span>
+<h3>选项</h3>
+<pre class="language-shell"><code class="language-shell">-z, --compress    <span class="token comment"># 强制压缩</span>
 -d, --decompress, --uncompress
                   <span class="token comment"># force decompression</span>
 -t, --test        <span class="token comment"># 测试压缩文件的完整性</span>
@@ -66,39 +70,40 @@ xz <span class="token punctuation">[</span>OPTION<span class="token punctuation"
 -H, --long-help   <span class="token comment"># 显示更多帮助（还列出了高级选项）</span>
 -V, --version     <span class="token comment"># 显示版本号并退出</span>
 </code></pre>
-<h3 id="参数">参数</h3><ul>
+<h3>参数</h3>
+<ul>
 <li>源文件：指定连接的源文件。</li>
 <li>目标文件：指定源文件的目标连接文件。</li>
 </ul>
-<h3 id="实例">实例</h3><p>压缩一个文件 test.txt，压缩成功后生成 test.txt.xz, 原文件会被删除。</p>
-<pre><code class="language-shell">&#36; xz test.txt
-&#36; <span class="token function">ls</span> test.txt*
+<h3>实例</h3>
+<p>压缩一个文件 test.txt，压缩成功后生成 test.txt.xz, 原文件会被删除。</p>
+<pre class="language-shell"><code class="language-shell">$ xz test.txt
+$ <span class="token function">ls</span> test.txt*
 
 test.txt.xz
 </code></pre>
 <p>解压 test.txt.xz 文件，并使用参数 -k 保持原文件不被删除</p>
-<pre><code class="language-shell">&#36; xz -d -k test.txt.xz
-&#36; <span class="token function">ls</span> test.txt*
+<pre class="language-shell"><code class="language-shell">$ xz -d -k test.txt.xz
+$ <span class="token function">ls</span> test.txt*
 
 test.txt.xz test.txt
 </code></pre>
 <p>使用参数 -l 显示 .xz 文件的基本信息。基本信息包括压缩率、数据完整性验证方式等。也可以和参数 -v 或 -vv 配合显示更详尽的信息。</p>
-<pre><code class="language-shell">xz -l index.txt.xz
+<pre class="language-shell"><code class="language-shell">xz -l index.txt.xz
 <span class="token comment"># Strms  Blocks   Compressed Uncompressed  Ratio  Check   Filename</span>
 <span class="token comment">#    1       1        768 B      1,240 B  0.619  CRC64   index.txt.</span>
 </code></pre>
 <p>使用参数 -0, -1, -2, … -6, … -9 或参数 --fast, --best 设定压缩率。xz 命令的默认为 -6 ，对于大多数系统来说，甚至是一些较旧的系统，-4 … -6 压缩率预设值都不错的表现。</p>
-<pre><code class="language-shell">&#36; xz -k7 xz_pipe_decomp_mini.c
-&#36; xz -k --fast xz_pipe_decomp_mini.c
+<pre class="language-shell"><code class="language-shell">$ xz -k7 xz_pipe_decomp_mini.c
+$ xz -k --fast xz_pipe_decomp_mini.c
 </code></pre>
 <p>使用参数 -H 显示 xz 命令所有 options. 参数 -H 比使用参数 --help 显示的内容更详细。</p>
-<pre><code class="language-shell">&#36; xz -H  <span class="token operator">|</span> <span class="token function">more</span>
+<pre class="language-shell"><code class="language-shell">$ xz -H  <span class="token operator">|</span> <span class="token function">more</span>
 </code></pre>
 <p>借助 xargs 命令并行压缩多文件。下面的命令行可以将 /var/log 目录下所有的扩展名为 .log 的文件压缩。通过 xargs 命令同时运行多个 xz 进行压缩。</p>
-<pre><code class="language-shell"><span class="token comment"># 运行此命令须有 root 权限。</span>
+<pre class="language-shell"><code class="language-shell"><span class="token comment"># 运行此命令须有 root 权限。</span>
 <span class="token function">find</span> /var/log -type f -iname <span class="token string">"*.log"</span> -print0 <span class="token operator">|</span> <span class="token function">xargs</span> -P4 -n16 xz -T1
 </code></pre>
-
 </div>
 
 <div class="footer ">
@@ -121,7 +126,7 @@ test.txt.xz test.txt
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1628764653765"></script>
-<script type="text/javascript" src="../js/index.js?v=1628764653765"></script>
+<script type="text/javascript" src="../js/dt.js?v=1628769137505"></script>
+<script type="text/javascript" src="../js/index.js?v=1628769137505"></script>
 </body>
 </html>

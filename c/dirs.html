@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,dirs,显示目录堆栈。">
     <title>dirs 命令，Linux dirs 命令详解：显示目录堆栈。 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628764653242">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628769137157">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -40,61 +40,70 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/dirs.md">添加实例</a>
 </span>
 
-<h1 id="dirs">dirs</h1><p>显示目录堆栈。</p>
-<h2 id="概要">概要</h2><pre><code class="language-shell"><span class="token function">dirs</span> <span class="token punctuation">[</span>-clpv<span class="token punctuation">]</span> <span class="token punctuation">[</span>+N<span class="token punctuation">]</span> <span class="token punctuation">[</span>-N<span class="token punctuation">]</span>
+<h1>dirs</h1>
+<p>显示目录堆栈。</p>
+<h2>概要</h2>
+<pre class="language-shell"><code class="language-shell"><span class="token function">dirs</span> <span class="token punctuation">[</span>-clpv<span class="token punctuation">]</span> <span class="token punctuation">[</span>+N<span class="token punctuation">]</span> <span class="token punctuation">[</span>-N<span class="token punctuation">]</span>
 </code></pre>
-<h2 id="主要用途">主要用途</h2><ul>
-<li><p>显示目录堆栈。</p>
+<h2>主要用途</h2>
+<ul>
+<li>
+<p>显示目录堆栈。</p>
 </li>
-<li><p>清空目录堆栈。</p>
+<li>
+<p>清空目录堆栈。</p>
 </li>
 </ul>
-<h2 id="选项">选项</h2><pre><code class="language-shell">-c    清空目录堆栈。
+<h2>选项</h2>
+<pre class="language-shell"><code class="language-shell">-c    清空目录堆栈。
 -l    堆栈内以~开头的目录在显示时展开。
 -p    将目录堆栈内的每一个目录按行显示。
 -v    将目录堆栈内的每一个目录按行显示并在每行前加上堆栈内的位置编号。
 </code></pre>
-<h2 id="参数">参数</h2><p>+N（可选）：不带参数执行<code>dirs</code>命令显示的列表中，左起的第N个目录将被显示。（从0开始计数）</p>
+<h2>参数</h2>
+<p>+N（可选）：不带参数执行<code>dirs</code>命令显示的列表中，左起的第N个目录将被显示。（从0开始计数）</p>
 <p>-N（可选）：不带参数执行<code>dirs</code>命令显示的列表中，右起的第N个目录将被显示。（从0开始计数）</p>
-<h2 id="返回值">返回值</h2><p>返回成功除非提供了非法选项或执行出现错误。</p>
-<h2 id="例子">例子</h2><pre><code class="language-shell"><span class="token comment"># 添加目录到堆栈。</span>
-<span class="token punctuation">[</span>user2@pc ~<span class="token punctuation">]</span>&#36; <span class="token function">dirs</span>
+<h2>返回值</h2>
+<p>返回成功除非提供了非法选项或执行出现错误。</p>
+<h2>例子</h2>
+<pre class="language-shell"><code class="language-shell"><span class="token comment"># 添加目录到堆栈。</span>
+<span class="token punctuation">[</span>user2@pc ~<span class="token punctuation">]</span>$ <span class="token function">dirs</span>
 ~
-<span class="token punctuation">[</span>user2@pc ~<span class="token punctuation">]</span>&#36; <span class="token function">pushd</span> -n ~/Desktop
+<span class="token punctuation">[</span>user2@pc ~<span class="token punctuation">]</span>$ <span class="token function">pushd</span> -n ~/Desktop
 ~ ~/Desktop
-<span class="token punctuation">[</span>user2@pc ~<span class="token punctuation">]</span>&#36; <span class="token function">pushd</span> -n ~/Pictures
+<span class="token punctuation">[</span>user2@pc ~<span class="token punctuation">]</span>$ <span class="token function">pushd</span> -n ~/Pictures
 ~ ~/Pictures ~/Desktop
-<span class="token punctuation">[</span>user2@pc ~<span class="token punctuation">]</span>&#36; <span class="token function">pushd</span> -n ~/bin
+<span class="token punctuation">[</span>user2@pc ~<span class="token punctuation">]</span>$ <span class="token function">pushd</span> -n ~/bin
 ~ ~/bin ~/Pictures ~/Desktop
 
 <span class="token comment"># 选项和参数的示例：</span>
-<span class="token punctuation">[</span>user2@pc ~<span class="token punctuation">]</span>&#36; <span class="token function">dirs</span> -l
+<span class="token punctuation">[</span>user2@pc ~<span class="token punctuation">]</span>$ <span class="token function">dirs</span> -l
 /home/user2 /home/user2/bin /home/user2/Pictures /home/user2/Desktop
-<span class="token punctuation">[</span>user2@pc ~<span class="token punctuation">]</span>&#36; <span class="token function">dirs</span> -p
+<span class="token punctuation">[</span>user2@pc ~<span class="token punctuation">]</span>$ <span class="token function">dirs</span> -p
 ~
 ~/bin
 ~/Pictures
 ~/Desktop
-<span class="token punctuation">[</span>user2@pc ~<span class="token punctuation">]</span>&#36; <span class="token function">dirs</span> -v
+<span class="token punctuation">[</span>user2@pc ~<span class="token punctuation">]</span>$ <span class="token function">dirs</span> -v
  <span class="token number">0</span>  ~
  <span class="token number">1</span>  ~/bin
  <span class="token number">2</span>  ~/Pictures
  <span class="token number">3</span>  ~/Desktop
-<span class="token punctuation">[</span>user2@pc ~<span class="token punctuation">]</span>&#36; <span class="token function">dirs</span> +2
+<span class="token punctuation">[</span>user2@pc ~<span class="token punctuation">]</span>$ <span class="token function">dirs</span> +2
 ~/Pictures
-<span class="token punctuation">[</span>user2@pc ~<span class="token punctuation">]</span>&#36; <span class="token function">dirs</span> -2
+<span class="token punctuation">[</span>user2@pc ~<span class="token punctuation">]</span>$ <span class="token function">dirs</span> -2
 ~/bin
-<span class="token punctuation">[</span>user2@pc ~<span class="token punctuation">]</span>&#36; <span class="token function">dirs</span> -c
-<span class="token punctuation">[</span>user2@pc ~<span class="token punctuation">]</span>&#36; <span class="token function">dirs</span>
+<span class="token punctuation">[</span>user2@pc ~<span class="token punctuation">]</span>$ <span class="token function">dirs</span> -c
+<span class="token punctuation">[</span>user2@pc ~<span class="token punctuation">]</span>$ <span class="token function">dirs</span>
 ~
 </code></pre>
-<h3 id="注意">注意</h3><ol>
+<h3>注意</h3>
+<ol>
 <li><code>bash</code>的目录堆栈命令包括<code>dirs popd pushd</code>。</li>
 <li>当前目录始终是目录堆栈的顶部。</li>
 <li>该命令是bash内建命令，相关的帮助信息请查看<code>help</code>命令。</li>
 </ol>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-
 </div>
 
 <div class="footer ">
@@ -117,7 +126,7 @@
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1628764653243"></script>
-<script type="text/javascript" src="../js/index.js?v=1628764653243"></script>
+<script type="text/javascript" src="../js/dt.js?v=1628769137157"></script>
+<script type="text/javascript" src="../js/index.js?v=1628769137157"></script>
 </body>
 </html>

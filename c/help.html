@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,help,该命令是bash内建命令，用于显示bash内建命令的帮助信息。">
     <title>help 命令，Linux help 命令详解：该命令是bash内建命令，用于显示bash内建命令的帮助信息。 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628764653355">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628769137221">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -40,28 +40,35 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/help.md">添加实例</a>
 </span>
 
-<h1 id="help">help</h1><p>该命令是bash内建命令，用于显示bash内建命令的帮助信息。</p>
-<h2 id="补充说明">补充说明</h2><p><strong>help命令</strong> help命令只能显示bash内建命令的帮助信息，而对于外部命令的帮助信息只能使用man或者info命令查看。</p>
-<h3 id="语法">语法</h3><pre><code class="language-shell">help<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
+<h1>help</h1>
+<p>该命令是bash内建命令，用于显示bash内建命令的帮助信息。</p>
+<h2>补充说明</h2>
+<p><strong>help命令</strong> help命令只能显示bash内建命令的帮助信息，而对于外部命令的帮助信息只能使用man或者info命令查看。</p>
+<h3>语法</h3>
+<pre class="language-shell"><code class="language-shell">help<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
 </code></pre>
-<h3 id="选项">选项</h3><pre><code class="language-shell">-d：显示内建命令的简要描述。
+<h3>选项</h3>
+<pre class="language-shell"><code class="language-shell">-d：显示内建命令的简要描述。
 -m：按照man手册的格式输出内建命令的帮助信息。
 -s：仅输出内建命令的命令格式。
 不指定选项时：输出的帮助信息类似于-m选项，但是缺少段落名称和<span class="token string">'SEE ALSO'</span>，<span class="token string">'IMPLEMENTATION'</span>部分。
 </code></pre>
-<h3 id="参数">参数</h3><p>bash内建命令（可以为多个，请用空格分隔开）。</p>
-<h3 id="常见问题">常见问题</h3><p>Q：有哪些命令是bash内建命令？我如何判断一个命令是否为bash内建命令？</p>
-<p>A：您可以在终端使用 &#39;man builtin&#39; 或 &#39;man builtins&#39; 来获取；您可以查看bash内建命令 &#39;type&#39; 的帮助信息。</p>
+<h3>参数</h3>
+<p>bash内建命令（可以为多个，请用空格分隔开）。</p>
+<h3>常见问题</h3>
+<p>Q：有哪些命令是bash内建命令？我如何判断一个命令是否为bash内建命令？</p>
+<p>A：您可以在终端使用 'man builtin' 或 'man builtins' 来获取；您可以查看bash内建命令 'type' 的帮助信息。</p>
 <p>Q：那么help命令本身的帮助信息如何获取？</p>
 <p>A：把help作为参数传给help命令；）</p>
-<p>Q：为什么echo也可以用 &#39;man echo&#39; 来查看帮助信息？</p>
-<p>A：因为除了bash内建的echo，GNU/linux的coreutils包里也有该命令；在echo的man手册中，DESCRIPTION段落的 &#39;NOTE&#39; 也提示了和同名内建的不同。</p>
-<p>PS：当你在shell脚本里定义了一个叫 &#39;echo&#39; 的函数，那么调用的时候优先级会如何呢？</p>
-<p>请参考 &#39;builtin&#39; 命令</p>
+<p>Q：为什么echo也可以用 'man echo' 来查看帮助信息？</p>
+<p>A：因为除了bash内建的echo，GNU/linux的coreutils包里也有该命令；在echo的man手册中，DESCRIPTION段落的 'NOTE' 也提示了和同名内建的不同。</p>
+<p>PS：当你在shell脚本里定义了一个叫 'echo' 的函数，那么调用的时候优先级会如何呢？</p>
+<p>请参考 'builtin' 命令</p>
 <p>Q：我需要获得更多的bash的相关帮助信息</p>
-<p>A：限于篇幅和主题，您可以在终端执行 &#39;man bash&#39; ， &#39;info bash&#39; ，<a href="http://www.gnu.org/software/bash/">访问bash官方网站</a>，以及搜索引擎等。</p>
-<h3 id="实例">实例</h3><p>使用help命令显示shell内部shopt命令的帮助信息，输入如下命令：</p>
-<pre><code class="language-shell"><span class="token builtin class-name">help</span> <span class="token builtin class-name">shopt</span>                <span class="token comment">#获取shopt命令的帮助信息</span>
+<p>A：限于篇幅和主题，您可以在终端执行 'man bash' ， 'info bash' ，<a href="http://www.gnu.org/software/bash/">访问bash官方网站</a>，以及搜索引擎等。</p>
+<h3>实例</h3>
+<p>使用help命令显示shell内部shopt命令的帮助信息，输入如下命令：</p>
+<pre class="language-shell"><code class="language-shell"><span class="token builtin class-name">help</span> <span class="token builtin class-name">shopt</span>                <span class="token comment">#获取shopt命令的帮助信息</span>
 shopt: <span class="token builtin class-name">shopt</span> <span class="token punctuation">[</span>-pqsu<span class="token punctuation">]</span> <span class="token punctuation">[</span>-o long-option<span class="token punctuation">]</span> optname <span class="token punctuation">[</span>optname<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
     Toggle the values of variables controlling optional behavior.
     The -s flag means to <span class="token builtin class-name">enable</span> <span class="token punctuation">(</span>set<span class="token punctuation">)</span> each OPTNAME<span class="token punctuation">;</span> the -u flag
@@ -73,7 +80,6 @@ shopt: <span class="token builtin class-name">shopt</span> <span class="token pu
     not each is set.
 </code></pre>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-
 </div>
 
 <div class="footer ">
@@ -96,7 +102,7 @@ shopt: <span class="token builtin class-name">shopt</span> <span class="token pu
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1628764653355"></script>
-<script type="text/javascript" src="../js/index.js?v=1628764653355"></script>
+<script type="text/javascript" src="../js/dt.js?v=1628769137222"></script>
+<script type="text/javascript" src="../js/index.js?v=1628769137222"></script>
 </body>
 </html>

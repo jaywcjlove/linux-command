@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,zip,可以用来解压缩文件">
     <title>zip 命令，Linux zip 命令详解：可以用来解压缩文件 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628764653770">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628769137509">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -40,12 +40,16 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/zip.md">添加实例</a>
 </span>
 
-<h1 id="zip">zip</h1><p>可以用来解压缩文件</p>
-<h2 id="补充说明">补充说明</h2><p><strong>zip命令</strong> 可以用来解压缩文件，或者对文件进行打包操作。zip是个使用广泛的压缩程序，文件经它压缩后会另外产生具有“.zip”扩展名的压缩文件。</p>
-<h3 id="语法">语法</h3><pre><code class="language-shell">zip<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
+<h1>zip</h1>
+<p>可以用来解压缩文件</p>
+<h2>补充说明</h2>
+<p><strong>zip命令</strong> 可以用来解压缩文件，或者对文件进行打包操作。zip是个使用广泛的压缩程序，文件经它压缩后会另外产生具有“.zip”扩展名的压缩文件。</p>
+<h3>语法</h3>
+<pre class="language-shell"><code class="language-shell">zip<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
 </code></pre>
-<h3 id="选项">选项</h3><pre><code class="language-shell">-A：调整可执行的自动解压缩文件；
--b<span class="token operator">&lt;</span>工作目录<span class="token operator">></span>：指定暂时存放文件的目录；
+<h3>选项</h3>
+<pre class="language-shell"><code class="language-shell">-A：调整可执行的自动解压缩文件；
+-b<span class="token operator">&#x3C;</span>工作目录<span class="token operator">></span>：指定暂时存放文件的目录；
 -c：替每个被压缩的文件加上注释；
 -d：从压缩文件内删除指定的文件；
 -D：压缩文件内不建立目录名称；
@@ -53,7 +57,7 @@
 -F：尝试修复已损坏的压缩文件；
 -g：将文件压缩后附加在已有的压缩文件之后，而非另行建立新的压缩文件；
 -h：在线帮助；
--i<span class="token operator">&lt;</span>范本样式<span class="token operator">></span>：只压缩符合条件的文件；
+-i<span class="token operator">&#x3C;</span>范本样式<span class="token operator">></span>：只压缩符合条件的文件；
 -j：只保存文件名称及其内容，而不存放任何目录名称；
 -J：删除压缩文件前面不必要的数据；
 -k：使用MS-DOS兼容格式的文件名称；
@@ -61,63 +65,65 @@
 -ll：压缩文件时，把LF+cp字符置换成LF字符；
 -L：显示版权信息；
 -m：将文件压缩并加入压缩文件后，删除原始文件，即把文件移到压缩文件中；
--n<span class="token operator">&lt;</span>字尾字符串<span class="token operator">></span>：不压缩具有特定字尾字符串的文件；
+-n<span class="token operator">&#x3C;</span>字尾字符串<span class="token operator">></span>：不压缩具有特定字尾字符串的文件；
 -o：以压缩文件内拥有最新更改时间的文件为准，将压缩文件的更改时间设成和该文件相同；
 -q：不显示指令执行过程；
 -r：递归处理，将指定目录下的所有文件和子目录一并处理；
 -S：包含系统和隐藏文件；
--t<span class="token operator">&lt;</span>日期时间<span class="token operator">></span>：把压缩文件的日期设成指定的日期；
+-t<span class="token operator">&#x3C;</span>日期时间<span class="token operator">></span>：把压缩文件的日期设成指定的日期；
 -T：检查备份文件内的每个文件是否正确无误；
 -u：更换较新的文件到压缩文件内；
 -v：显示指令执行过程或显示版本信息；
 -V：保存VMS操作系统的文件属性；
 -w：在文件名称里假如版本编号，本参数仅在VMS操作系统下有效；
--x<span class="token operator">&lt;</span>范本样式<span class="token operator">></span>：压缩时排除符合条件的文件；
+-x<span class="token operator">&#x3C;</span>范本样式<span class="token operator">></span>：压缩时排除符合条件的文件；
 -X：不保存额外的文件属性；
 -y：直接保存符号连接，而非该链接所指向的文件，本参数仅在UNIX之类的系统下有效；
 -z：替压缩文件加上注释；
--&#36;：保存第一个被压缩文件所在磁盘的卷册名称；
--<span class="token operator">&lt;</span>压缩效率<span class="token operator">></span>：压缩效率是一个介于1~9的数值。
+-$：保存第一个被压缩文件所在磁盘的卷册名称；
+-<span class="token operator">&#x3C;</span>压缩效率<span class="token operator">></span>：压缩效率是一个介于1~9的数值。
 </code></pre>
-<h3 id="参数">参数</h3><ul>
-<li>  zip压缩包：指定要创建的zip压缩包；</li>
-<li>  文件列表：指定要压缩的文件列表。</li>
+<h3>参数</h3>
+<ul>
+<li>zip压缩包：指定要创建的zip压缩包；</li>
+<li>文件列表：指定要压缩的文件列表。</li>
 </ul>
-<h3 id="实例">实例</h3><p>将<code>/home/Blinux/html/</code>这个目录下所有文件和文件夹打包为当前目录下的html.zip：</p>
-<pre><code class="language-shell"><span class="token function">zip</span> -q -r html.zip /home/Blinux/html
+<h3>实例</h3>
+<p>将<code>/home/Blinux/html/</code>这个目录下所有文件和文件夹打包为当前目录下的html.zip：</p>
+<pre class="language-shell"><code class="language-shell"><span class="token function">zip</span> -q -r html.zip /home/Blinux/html
 </code></pre>
 <p>上面的命令操作是将绝对地址的文件及文件夹进行压缩，以下给出压缩相对路径目录，比如目前在Bliux这个目录下，执行以下操作可以达到以上同样的效果：</p>
-<pre><code class="language-shell"><span class="token function">zip</span> -q -r html.zip html
+<pre class="language-shell"><code class="language-shell"><span class="token function">zip</span> -q -r html.zip html
 </code></pre>
 <p>比如现在我的html目录下，我操作的zip压缩命令是：</p>
-<pre><code class="language-shell"><span class="token function">zip</span> -q -r html.zip *
+<pre class="language-shell"><code class="language-shell"><span class="token function">zip</span> -q -r html.zip *
 </code></pre>
 <p>压缩 <code>example/basic/</code> 目录内容到 <code>basic.zip</code> 压缩包中 <code>-x</code> 指定排除目录，注意没有双引号将不起作用。</p>
-<pre><code class="language-shell"><span class="token function">zip</span> -r basic.zip example/basic/ -x <span class="token string">"example/basic/node_modules/*"</span> -x <span class="token string">"example/basic/build/*"</span> -x <span class="token string">"example/basic/coverage/*"</span>
+<pre class="language-shell"><code class="language-shell"><span class="token function">zip</span> -r basic.zip example/basic/ -x <span class="token string">"example/basic/node_modules/*"</span> -x <span class="token string">"example/basic/build/*"</span> -x <span class="token string">"example/basic/coverage/*"</span>
 </code></pre>
 <p>上面压缩解压出来，内容存放在 <code>example/basic/</code>， 如果想存放到根目录，进入目录进行压缩，目前没有找到一个合适的参数来解决此问题。</p>
-<pre><code><span class="token builtin class-name">cd</span> example/basic/ <span class="token operator">&amp;&amp;</span> <span class="token function">zip</span> -r basic.zip <span class="token builtin class-name">.</span> -x <span class="token string">"node_modules/*"</span> -x <span class="token string">"build/*"</span> -x <span class="token string">"coverage/*"</span>
+<pre><code>cd example/basic/ &#x26;&#x26; zip -r basic.zip . -x "node_modules/*" -x "build/*" -x "coverage/*"
 </code></pre>
 <p>压缩效率选择:</p>
-<pre><code class="language-shell"><span class="token function">zip</span> -9 <span class="token comment"># 1-9 faster->better</span>
+<pre class="language-shell"><code class="language-shell"><span class="token function">zip</span> -9 <span class="token comment"># 1-9 faster->better</span>
 </code></pre>
 <p>创建 <code>public_html</code> 目录下忽略所有文件和文件夹，排除包括文本 <code>backup</code> 的所有文件。</p>
-<pre><code class="language-shell">&#36; <span class="token function">zip</span> -r public_html.zip public_html -x *backup*
+<pre class="language-shell"><code class="language-shell">$ <span class="token function">zip</span> -r public_html.zip public_html -x *backup*
 </code></pre>
 <p><code>httpdocs</code> 目录忽略 <code>.svn</code> 文件或 <code>git</code> 的文件和目录下创建所有文件的归档。</p>
-<pre><code class="language-shell">&#36; <span class="token function">zip</span> -r httpdocs.zip httpdocs --exclude *.svn* --exclude *.git*
+<pre class="language-shell"><code class="language-shell">$ <span class="token function">zip</span> -r httpdocs.zip httpdocs --exclude *.svn* --exclude *.git*
 </code></pre>
 <p><code>httpdocs</code> 目录忽略的所有文件，并与 <code>.log</code> 结尾的目录下创建所有文件的归档。</p>
-<pre><code class="language-shell">&#36; <span class="token function">zip</span> -r httpdocs.zip httpdocs --exclude <span class="token string">"*.log"</span>
+<pre class="language-shell"><code class="language-shell">$ <span class="token function">zip</span> -r httpdocs.zip httpdocs --exclude <span class="token string">"*.log"</span>
 </code></pre>
-<h3 id="问题解决">问题解决</h3><p>CentOS7中命令找不到</p>
-<pre><code class="language-shell">-Bash: Unzip: Command Not Found
+<h3>问题解决</h3>
+<p>CentOS7中命令找不到</p>
+<pre class="language-shell"><code class="language-shell">-Bash: Unzip: Command Not Found
 </code></pre>
 <p>解决方法</p>
-<pre><code class="language-shell">yum <span class="token function">install</span> -y <span class="token function">unzip</span> <span class="token function">zip</span>
+<pre class="language-shell"><code class="language-shell">yum <span class="token function">install</span> -y <span class="token function">unzip</span> <span class="token function">zip</span>
 </code></pre>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-
 </div>
 
 <div class="footer ">
@@ -140,7 +146,7 @@
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1628764653770"></script>
-<script type="text/javascript" src="../js/index.js?v=1628764653770"></script>
+<script type="text/javascript" src="../js/dt.js?v=1628769137509"></script>
+<script type="text/javascript" src="../js/index.js?v=1628769137509"></script>
 </body>
 </html>

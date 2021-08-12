@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,iptables,Linux上常用的防火墙软件">
     <title>iptables 命令，Linux iptables 命令详解：Linux上常用的防火墙软件 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628764653405">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628769137253">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -40,22 +40,26 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/iptables.md">添加实例</a>
 </span>
 
-<h1 id="iptables">iptables</h1><p>Linux上常用的防火墙软件</p>
-<h2 id="补充说明">补充说明</h2><p><strong>iptables命令</strong> 是Linux上常用的防火墙软件，是netfilter项目的一部分。可以直接配置，也可以通过许多前端和图形界面配置。</p>
+<h1>iptables</h1>
+<p>Linux上常用的防火墙软件</p>
+<h2>补充说明</h2>
+<p><strong>iptables命令</strong> 是Linux上常用的防火墙软件，是netfilter项目的一部分。可以直接配置，也可以通过许多前端和图形界面配置。</p>
 <!-- TOC -->
-
 <ul>
-<li><a href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E">补充说明</a><ul>
+<li><a href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E">补充说明</a>
+<ul>
 <li><a href="#%E8%AF%AD%E6%B3%95">语法</a></li>
 <li><a href="#%E9%80%89%E9%A1%B9">选项</a></li>
 </ul>
 </li>
-<li><a href="#%E5%9F%BA%E6%9C%AC%E5%8F%82%E6%95%B0">基本参数</a><ul>
+<li><a href="#%E5%9F%BA%E6%9C%AC%E5%8F%82%E6%95%B0">基本参数</a>
+<ul>
 <li><a href="#%E5%91%BD%E4%BB%A4%E9%80%89%E9%A1%B9%E8%BE%93%E5%85%A5%E9%A1%BA%E5%BA%8F">命令选项输入顺序</a></li>
 <li><a href="#%E5%B7%A5%E4%BD%9C%E6%9C%BA%E5%88%B6">工作机制</a></li>
 <li><a href="#%E9%98%B2%E7%81%AB%E5%A2%99%E7%9A%84%E7%AD%96%E7%95%A5">防火墙的策略</a></li>
 <li><a href="#%E9%98%B2%E7%81%AB%E5%A2%99%E7%9A%84%E7%AD%96%E7%95%A5-1">防火墙的策略</a></li>
-<li><a href="#%E5%AE%9E%E4%BE%8B">实例</a><ul>
+<li><a href="#%E5%AE%9E%E4%BE%8B">实例</a>
+<ul>
 <li><a href="#%E6%B8%85%E7%A9%BA%E5%BD%93%E5%89%8D%E7%9A%84%E6%89%80%E6%9C%89%E8%A7%84%E5%88%99%E5%92%8C%E8%AE%A1%E6%95%B0">清空当前的所有规则和计数</a></li>
 <li><a href="#%E9%85%8D%E7%BD%AE%E5%85%81%E8%AE%B8ssh%E7%AB%AF%E5%8F%A3%E8%BF%9E%E6%8E%A5">配置允许ssh端口连接</a></li>
 <li><a href="#%E5%85%81%E8%AE%B8%E6%9C%AC%E5%9C%B0%E5%9B%9E%E7%8E%AF%E5%9C%B0%E5%9D%80%E5%8F%AF%E4%BB%A5%E6%AD%A3%E5%B8%B8%E4%BD%BF%E7%94%A8">允许本地回环地址可以正常使用</a></li>
@@ -81,17 +85,18 @@
 </li>
 </ul>
 <!-- /TOC -->
-
-<h3 id="语法">语法</h3><pre><code class="language-shell">iptables<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
+<h3>语法</h3>
+<pre class="language-shell"><code class="language-shell">iptables<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
 </code></pre>
-<h3 id="选项">选项</h3><pre><code class="language-shell">-t, --table table 对指定的表 table 进行操作， table 必须是 raw， nat，filter，mangle 中的一个。如果不指定此选项，默认的是 filter 表。
+<h3>选项</h3>
+<pre class="language-shell"><code class="language-shell">-t, --table table 对指定的表 table 进行操作， table 必须是 raw， nat，filter，mangle 中的一个。如果不指定此选项，默认的是 filter 表。
 
 <span class="token comment"># 通用匹配：源地址目标地址的匹配</span>
 -p：指定要匹配的数据包协议类型；
 -s, --source <span class="token punctuation">[</span><span class="token operator">!</span><span class="token punctuation">]</span> address<span class="token punctuation">[</span>/mask<span class="token punctuation">]</span> ：把指定的一个／一组地址作为源地址，按此规则进行过滤。当后面没有 mask 时，address 是一个地址，比如：192.168.1.1；当 mask 指定时，可以表示一组范围内的地址，比如：192.168.1.0/255.255.255.0。
 -d, --destination <span class="token punctuation">[</span><span class="token operator">!</span><span class="token punctuation">]</span> address<span class="token punctuation">[</span>/mask<span class="token punctuation">]</span> ：地址格式同上，但这里是指定地址为目的地址，按此进行过滤。
--i, --in-interface <span class="token punctuation">[</span><span class="token operator">!</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span>网络接口name<span class="token operator">></span> ：指定数据包的来自来自网络接口，比如最常见的 eth0 。注意：它只对 INPUT，FORWARD，PREROUTING 这三个链起作用。如果没有指定此选项， 说明可以来自任何一个网络接口。同前面类似，<span class="token string">"!"</span> 表示取反。
--o, --out-interface <span class="token punctuation">[</span><span class="token operator">!</span><span class="token punctuation">]</span> <span class="token operator">&lt;</span>网络接口name<span class="token operator">></span> ：指定数据包出去的网络接口。只对 OUTPUT，FORWARD，POSTROUTING 三个链起作用。
+-i, --in-interface <span class="token punctuation">[</span><span class="token operator">!</span><span class="token punctuation">]</span> <span class="token operator">&#x3C;</span>网络接口name<span class="token operator">></span> ：指定数据包的来自来自网络接口，比如最常见的 eth0 。注意：它只对 INPUT，FORWARD，PREROUTING 这三个链起作用。如果没有指定此选项， 说明可以来自任何一个网络接口。同前面类似，<span class="token string">"!"</span> 表示取反。
+-o, --out-interface <span class="token punctuation">[</span><span class="token operator">!</span><span class="token punctuation">]</span> <span class="token operator">&#x3C;</span>网络接口name<span class="token operator">></span> ：指定数据包出去的网络接口。只对 OUTPUT，FORWARD，POSTROUTING 三个链起作用。
 
 <span class="token comment"># 查看管理命令</span>
 -L, --list <span class="token punctuation">[</span>chain<span class="token punctuation">]</span> 列出链 chain 上面的所有规则，如果没有指定链，列出表上所有链的所有规则。
@@ -110,72 +115,30 @@
 -E, --rename-chain old-chain new-chain ：用指定的新名字去重命名指定的链。这并不会对链内部造成任何影响。
 -Z, --zero <span class="token punctuation">[</span>chain<span class="token punctuation">]</span> ：把指定链，或者表中的所有链上的所有计数器清零。
 
--j, --jump target <span class="token operator">&lt;</span>指定目标<span class="token operator">></span> ：即满足某条件时该执行什么样的动作。target 可以是内置的目标，比如 ACCEPT，也可以是用户自定义的链。
+-j, --jump target <span class="token operator">&#x3C;</span>指定目标<span class="token operator">></span> ：即满足某条件时该执行什么样的动作。target 可以是内置的目标，比如 ACCEPT，也可以是用户自定义的链。
 -h：显示帮助信息；
 </code></pre>
-<h2 id="基本参数">基本参数</h2><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>-P</td>
-<td>设置默认策略:iptables -P INPUT (DROP</td>
-</tr>
-<tr>
-<td>-F</td>
-<td>清空规则链</td>
-</tr>
-<tr>
-<td>-L</td>
-<td>查看规则链</td>
-</tr>
-<tr>
-<td>-A</td>
-<td>在规则链的末尾加入新规则</td>
-</tr>
-<tr>
-<td>-I</td>
-<td>num  在规则链的头部加入新规则</td>
-</tr>
-<tr>
-<td>-D</td>
-<td>num  删除某一条规则</td>
-</tr>
-<tr>
-<td>-s</td>
-<td>匹配来源地址IP/MASK，加叹号&quot;!&quot;表示除这个IP外。</td>
-</tr>
-<tr>
-<td>-d</td>
-<td>匹配目标地址</td>
-</tr>
-<tr>
-<td>-i</td>
-<td>网卡名称 匹配从这块网卡流入的数据</td>
-</tr>
-<tr>
-<td>-o</td>
-<td>网卡名称 匹配从这块网卡流出的数据</td>
-</tr>
-<tr>
-<td>-p</td>
-<td>匹配协议,如tcp,udp,icmp</td>
-</tr>
-<tr>
-<td>--dport num</td>
-<td>匹配目标端口号</td>
-</tr>
-<tr>
-<td>--sport num</td>
-<td>匹配来源端口号</td>
-</tr>
-</tbody></table>
-<h4 id="命令选项输入顺序">命令选项输入顺序</h4><pre><code class="language-shell">iptables -t 表名 <span class="token operator">&lt;</span>-A/I/D/R<span class="token operator">></span> 规则链名 <span class="token punctuation">[</span>规则号<span class="token punctuation">]</span> <span class="token operator">&lt;</span>-i/o 网卡名<span class="token operator">></span> -p 协议名 <span class="token operator">&lt;</span>-s 源IP/源子网<span class="token operator">></span> --sport 源端口 <span class="token operator">&lt;</span>-d 目标IP/目标子网<span class="token operator">></span> --dport 目标端口 -j 动作
+<h2>基本参数</h2>
+<p>| 参数 | 作用 |
+| ---- | ---- |
+| -P |  设置默认策略:iptables -P INPUT (DROP|ACCEPT) |
+| -F |  清空规则链 |
+| -L |  查看规则链 |
+| -A |  在规则链的末尾加入新规则 |
+| -I | num  在规则链的头部加入新规则 |
+| -D | num  删除某一条规则 |
+| -s |  匹配来源地址IP/MASK，加叹号"!"表示除这个IP外。 |
+| -d |  匹配目标地址 |
+| -i | 网卡名称 匹配从这块网卡流入的数据 |
+| -o | 网卡名称 匹配从这块网卡流出的数据 |
+| -p |  匹配协议,如tcp,udp,icmp |
+| --dport num | 匹配目标端口号 |
+| --sport num | 匹配来源端口号 |</p>
+<h4>命令选项输入顺序</h4>
+<pre class="language-shell"><code class="language-shell">iptables -t 表名 <span class="token operator">&#x3C;</span>-A/I/D/R<span class="token operator">></span> 规则链名 <span class="token punctuation">[</span>规则号<span class="token punctuation">]</span> <span class="token operator">&#x3C;</span>-i/o 网卡名<span class="token operator">></span> -p 协议名 <span class="token operator">&#x3C;</span>-s 源IP/源子网<span class="token operator">></span> --sport 源端口 <span class="token operator">&#x3C;</span>-d 目标IP/目标子网<span class="token operator">></span> --dport 目标端口 -j 动作
 </code></pre>
-<h4 id="工作机制">工作机制</h4><p>规则链名包括(也被称为五个钩子函数（hook functions）)：</p>
+<h4>工作机制</h4>
+<p>规则链名包括(也被称为五个钩子函数（hook functions）)：</p>
 <ul>
 <li><strong>INPUT链</strong> ：处理输入数据包。</li>
 <li><strong>OUTPUT链</strong> ：处理输出数据包。</li>
@@ -183,7 +146,8 @@
 <li><strong>PREROUTING链</strong> ：用于目标地址转换（DNAT）。</li>
 <li><strong>POSTOUTING链</strong> ：用于源地址转换（SNAT）。</li>
 </ul>
-<h4 id="防火墙的策略">防火墙的策略</h4><p>防火墙策略一般分为两种，一种叫<code>通</code>策略，一种叫<code>堵</code>策略，通策略，默认门是关着的，必须要定义谁能进。堵策略则是，大门是洞开的，但是你必须有身份认证，否则不能进。所以我们要定义，让进来的进来，让出去的出去，<code>所以通，是要全通，而堵，则是要选择</code>。当我们定义的策略的时候，要分别定义多条功能，其中：定义数据包中允许或者不允许的策略，filter过滤的功能，而定义地址转换的功能的则是nat选项。为了让这些功能交替工作，我们制定出了“表”这个定义，来定义、区分各种不同的工作功能和处理方式。</p>
+<h4>防火墙的策略</h4>
+<p>防火墙策略一般分为两种，一种叫<code>通</code>策略，一种叫<code>堵</code>策略，通策略，默认门是关着的，必须要定义谁能进。堵策略则是，大门是洞开的，但是你必须有身份认证，否则不能进。所以我们要定义，让进来的进来，让出去的出去，<code>所以通，是要全通，而堵，则是要选择</code>。当我们定义的策略的时候，要分别定义多条功能，其中：定义数据包中允许或者不允许的策略，filter过滤的功能，而定义地址转换的功能的则是nat选项。为了让这些功能交替工作，我们制定出了“表”这个定义，来定义、区分各种不同的工作功能和处理方式。</p>
 <p>我们现在用的比较多个功能有3个：</p>
 <ol>
 <li>filter 定义允许或者不允许的，只能做在3个链上：INPUT ，FORWARD ，OUTPUT</li>
@@ -218,7 +182,7 @@
 <li><strong>LOG</strong> ：日志记录。</li>
 <li><strong>SEMARK</strong> : 添加SEMARK标记以供网域内强制访问控制（MAC）</li>
 </ul>
-<pre><code class="language-shell">                             ┏╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍┓
+<pre class="language-shell"><code class="language-shell">                             ┏╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍┓
  ┌───────────────┐           ┃    Network    ┃
  │ table: filter │           ┗━━━━━━━┳━━━━━━━┛
  │ chain: INPUT  │◀────┐             │
@@ -249,34 +213,43 @@
                              ┃    Network    ┃
                              ┗━━━━━━━━━━━━━━━┛
 </code></pre>
-<h3 id="实例">实例</h3><h4 id="清空当前的所有规则和计数">清空当前的所有规则和计数</h4><pre><code class="language-shell">iptables -F  <span class="token comment"># 清空所有的防火墙规则</span>
+<h3>实例</h3>
+<h4>清空当前的所有规则和计数</h4>
+<pre class="language-shell"><code class="language-shell">iptables -F  <span class="token comment"># 清空所有的防火墙规则</span>
 iptables -X  <span class="token comment"># 删除用户自定义的空链</span>
 iptables -Z  <span class="token comment"># 清空计数</span>
 </code></pre>
-<h4 id="配置允许ssh端口连接">配置允许ssh端口连接</h4><pre><code class="language-shell">iptables -A INPUT -s <span class="token number">192.168</span>.1.0/24 -p tcp --dport <span class="token number">22</span> -j ACCEPT
+<h4>配置允许ssh端口连接</h4>
+<pre class="language-shell"><code class="language-shell">iptables -A INPUT -s <span class="token number">192.168</span>.1.0/24 -p tcp --dport <span class="token number">22</span> -j ACCEPT
 <span class="token comment"># 22为你的ssh端口， -s 192.168.1.0/24表示允许这个网段的机器来连接，其它网段的ip地址是登陆不了你的机器的。 -j ACCEPT表示接受这样的请求</span>
 </code></pre>
-<h4 id="允许本地回环地址可以正常使用">允许本地回环地址可以正常使用</h4><pre><code class="language-shell">iptables -A INPUT -i lo -j ACCEPT
+<h4>允许本地回环地址可以正常使用</h4>
+<pre class="language-shell"><code class="language-shell">iptables -A INPUT -i lo -j ACCEPT
 <span class="token comment">#本地圆环地址就是那个127.0.0.1，是本机上使用的,它进与出都设置为允许</span>
 iptables -A OUTPUT -o lo -j ACCEPT
 </code></pre>
-<h4 id="设置默认的规则">设置默认的规则</h4><pre><code class="language-shell">iptables -P INPUT DROP <span class="token comment"># 配置默认的不让进</span>
+<h4>设置默认的规则</h4>
+<pre class="language-shell"><code class="language-shell">iptables -P INPUT DROP <span class="token comment"># 配置默认的不让进</span>
 iptables -P FORWARD DROP <span class="token comment"># 默认的不允许转发</span>
 iptables -P OUTPUT ACCEPT <span class="token comment"># 默认的可以出去</span>
 </code></pre>
-<h4 id="配置白名单">配置白名单</h4><pre><code class="language-shell">iptables -A INPUT -p all -s <span class="token number">192.168</span>.1.0/24 -j ACCEPT  <span class="token comment"># 允许机房内网机器可以访问</span>
+<h4>配置白名单</h4>
+<pre class="language-shell"><code class="language-shell">iptables -A INPUT -p all -s <span class="token number">192.168</span>.1.0/24 -j ACCEPT  <span class="token comment"># 允许机房内网机器可以访问</span>
 iptables -A INPUT -p all -s <span class="token number">192.168</span>.140.0/24 -j ACCEPT  <span class="token comment"># 允许机房内网机器可以访问</span>
 iptables -A INPUT -p tcp -s <span class="token number">183.121</span>.3.7 --dport <span class="token number">3380</span> -j ACCEPT <span class="token comment"># 允许183.121.3.7访问本机的3380端口</span>
 </code></pre>
-<h4 id="开启相应的服务端口">开启相应的服务端口</h4><pre><code class="language-shell">iptables -A INPUT -p tcp --dport <span class="token number">80</span> -j ACCEPT <span class="token comment"># 开启80端口，因为web对外都是这个端口</span>
+<h4>开启相应的服务端口</h4>
+<pre class="language-shell"><code class="language-shell">iptables -A INPUT -p tcp --dport <span class="token number">80</span> -j ACCEPT <span class="token comment"># 开启80端口，因为web对外都是这个端口</span>
 iptables -A INPUT -p icmp --icmp-type <span class="token number">8</span> -j ACCEPT <span class="token comment"># 允许被ping</span>
 iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT <span class="token comment"># 已经建立的连接得让它进来</span>
 </code></pre>
-<h4 id="保存规则到配置文件中">保存规则到配置文件中</h4><pre><code class="language-shell"><span class="token function">cp</span> /etc/sysconfig/iptables /etc/sysconfig/iptables.bak <span class="token comment"># 任何改动之前先备份，请保持这一优秀的习惯</span>
+<h4>保存规则到配置文件中</h4>
+<pre class="language-shell"><code class="language-shell"><span class="token function">cp</span> /etc/sysconfig/iptables /etc/sysconfig/iptables.bak <span class="token comment"># 任何改动之前先备份，请保持这一优秀的习惯</span>
 iptables-save <span class="token operator">></span> /etc/sysconfig/iptables
 <span class="token function">cat</span> /etc/sysconfig/iptables
 </code></pre>
-<h4 id="列出已设置的规则">列出已设置的规则</h4><blockquote>
+<h4>列出已设置的规则</h4>
+<blockquote>
 <p>iptables -L [-t 表名] [链名]</p>
 </blockquote>
 <ul>
@@ -284,28 +257,31 @@ iptables-save <span class="token operator">></span> /etc/sysconfig/iptables
 <li>五个规则链名 <code>INPUT</code>、<code>OUTPUT</code>、<code>FORWARD</code>、<code>PREROUTING</code>、<code>POSTROUTING</code></li>
 <li>filter表包含<code>INPUT</code>、<code>OUTPUT</code>、<code>FORWARD</code>三个规则链</li>
 </ul>
-<pre><code class="language-shell">iptables -L -t nat                  <span class="token comment"># 列出 nat 上面的所有规则</span>
+<pre class="language-shell"><code class="language-shell">iptables -L -t nat                  <span class="token comment"># 列出 nat 上面的所有规则</span>
 <span class="token comment">#            ^ -t 参数指定，必须是 raw， nat，filter，mangle 中的一个</span>
 iptables -L -t nat  --line-numbers  <span class="token comment"># 规则带编号</span>
 iptables -L INPUT
 
 iptables -L -nv  <span class="token comment"># 查看，这个列表看起来更详细</span>
 </code></pre>
-<h4 id="清除已有规则">清除已有规则</h4><pre><code class="language-shell">iptables -F INPUT  <span class="token comment"># 清空指定链 INPUT 上面的所有规则</span>
+<h4>清除已有规则</h4>
+<pre class="language-shell"><code class="language-shell">iptables -F INPUT  <span class="token comment"># 清空指定链 INPUT 上面的所有规则</span>
 iptables -X INPUT  <span class="token comment"># 删除指定的链，这个链必须没有被其它任何规则引用，而且这条上必须没有任何规则。</span>
                    <span class="token comment"># 如果没有指定链名，则会删除该表中所有非内置的链。</span>
 iptables -Z INPUT  <span class="token comment"># 把指定链，或者表中的所有链上的所有计数器清零。</span>
 </code></pre>
-<h4 id="删除已添加的规则">删除已添加的规则</h4><pre><code class="language-shell"><span class="token comment"># 添加一条规则</span>
+<h4>删除已添加的规则</h4>
+<pre class="language-shell"><code class="language-shell"><span class="token comment"># 添加一条规则</span>
 iptables -A INPUT -s <span class="token number">192.168</span>.1.5 -j DROP
 </code></pre>
 <p>将所有iptables以序号标记显示，执行：</p>
-<pre><code class="language-shell">iptables -L -n --line-numbers
+<pre class="language-shell"><code class="language-shell">iptables -L -n --line-numbers
 </code></pre>
 <p>比如要删除INPUT里序号为8的规则，执行：</p>
-<pre><code class="language-shell">iptables -D INPUT <span class="token number">8</span>
+<pre class="language-shell"><code class="language-shell">iptables -D INPUT <span class="token number">8</span>
 </code></pre>
-<h4 id="开放指定的端口">开放指定的端口</h4><pre><code class="language-shell">iptables -A INPUT -s <span class="token number">127.0</span>.0.1 -d <span class="token number">127.0</span>.0.1 -j ACCEPT               <span class="token comment">#允许本地回环接口(即运行本机访问本机)</span>
+<h4>开放指定的端口</h4>
+<pre class="language-shell"><code class="language-shell">iptables -A INPUT -s <span class="token number">127.0</span>.0.1 -d <span class="token number">127.0</span>.0.1 -j ACCEPT               <span class="token comment">#允许本地回环接口(即运行本机访问本机)</span>
 iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT    <span class="token comment">#允许已建立的或相关连的通行</span>
 iptables -A OUTPUT -j ACCEPT         <span class="token comment">#允许所有本机向外的访问</span>
 iptables -A INPUT -p tcp --dport <span class="token number">22</span> -j ACCEPT    <span class="token comment">#允许访问22端口</span>
@@ -315,16 +291,19 @@ iptables -A INPUT -p tcp --dport <span class="token number">20</span> -j ACCEPT 
 iptables -A INPUT -j reject       <span class="token comment">#禁止其他未允许的规则访问</span>
 iptables -A FORWARD -j REJECT     <span class="token comment">#禁止其他未允许的规则访问</span>
 </code></pre>
-<h4 id="屏蔽ip">屏蔽IP</h4><pre><code class="language-shell">iptables -A INPUT -p tcp -m tcp -s <span class="token number">192.168</span>.0.8 -j DROP  <span class="token comment"># 屏蔽恶意主机（比如，192.168.0.8</span>
+<h4>屏蔽IP</h4>
+<pre class="language-shell"><code class="language-shell">iptables -A INPUT -p tcp -m tcp -s <span class="token number">192.168</span>.0.8 -j DROP  <span class="token comment"># 屏蔽恶意主机（比如，192.168.0.8</span>
 iptables -I INPUT -s <span class="token number">123.45</span>.6.7 -j DROP       <span class="token comment">#屏蔽单个IP的命令</span>
 iptables -I INPUT -s <span class="token number">123.0</span>.0.0/8 -j DROP      <span class="token comment">#封整个段即从123.0.0.1到123.255.255.254的命令</span>
 iptables -I INPUT -s <span class="token number">124.45</span>.0.0/16 -j DROP    <span class="token comment">#封IP段即从123.45.0.1到123.45.255.254的命令</span>
 iptables -I INPUT -s <span class="token number">123.45</span>.6.0/24 -j DROP    <span class="token comment">#封IP段即从123.45.6.1到123.45.6.254的命令是</span>
 </code></pre>
-<h4 id="指定数据包出去的网络接口">指定数据包出去的网络接口</h4><p>只对 OUTPUT，FORWARD，POSTROUTING 三个链起作用。</p>
-<pre><code class="language-shell">iptables -A FORWARD -o eth0
+<h4>指定数据包出去的网络接口</h4>
+<p>只对 OUTPUT，FORWARD，POSTROUTING 三个链起作用。</p>
+<pre class="language-shell"><code class="language-shell">iptables -A FORWARD -o eth0
 </code></pre>
-<h4 id="查看已添加的规则">查看已添加的规则</h4><pre><code class="language-shell">iptables -L -n -v
+<h4>查看已添加的规则</h4>
+<pre class="language-shell"><code class="language-shell">iptables -L -n -v
 Chain INPUT <span class="token punctuation">(</span>policy DROP <span class="token number">48106</span> packets, 2690K bytes<span class="token punctuation">)</span>
  pkts bytes target     prot opt <span class="token keyword">in</span>     out     <span class="token builtin class-name">source</span>               destination
  <span class="token number">5075</span>  589K ACCEPT     all  --  lo     *       <span class="token number">0.0</span>.0.0/0            <span class="token number">0.0</span>.0.0/0
@@ -340,14 +319,17 @@ Chain OUTPUT <span class="token punctuation">(</span>policy ACCEPT 3382K packets
  pkts bytes target     prot opt <span class="token keyword">in</span>     out     <span class="token builtin class-name">source</span>               destination
  <span class="token number">5075</span>  589K ACCEPT     all  --  *      lo      <span class="token number">0.0</span>.0.0/0            <span class="token number">0.0</span>.0.0/0
 </code></pre>
-<h4 id="启动网络转发规则">启动网络转发规则</h4><p>公网<code>210.14.67.7</code>让内网<code>192.168.188.0/24</code>上网</p>
-<pre><code class="language-shell">iptables -t nat -A POSTROUTING -s <span class="token number">192.168</span>.188.0/24 -j SNAT --to-source <span class="token number">210.14</span>.67.127
+<h4>启动网络转发规则</h4>
+<p>公网<code>210.14.67.7</code>让内网<code>192.168.188.0/24</code>上网</p>
+<pre class="language-shell"><code class="language-shell">iptables -t nat -A POSTROUTING -s <span class="token number">192.168</span>.188.0/24 -j SNAT --to-source <span class="token number">210.14</span>.67.127
 </code></pre>
-<h4 id="端口映射">端口映射</h4><p>本机的 2222 端口映射到内网 虚拟机的22 端口</p>
-<pre><code class="language-shell">iptables -t nat -A PREROUTING -d <span class="token number">210.14</span>.67.127 -p tcp --dport <span class="token number">2222</span>  -j DNAT --to-dest <span class="token number">192.168</span>.188.115:22
+<h4>端口映射</h4>
+<p>本机的 2222 端口映射到内网 虚拟机的22 端口</p>
+<pre class="language-shell"><code class="language-shell">iptables -t nat -A PREROUTING -d <span class="token number">210.14</span>.67.127 -p tcp --dport <span class="token number">2222</span>  -j DNAT --to-dest <span class="token number">192.168</span>.188.115:22
 </code></pre>
-<h4 id="字符串匹配">字符串匹配</h4><p>比如，我们要过滤所有TCP连接中的字符串<code>test</code>，一旦出现它我们就终止这个连接，我们可以这么做：</p>
-<pre><code class="language-shell">iptables -A INPUT -p tcp -m string --algo kmp --string <span class="token string">"test"</span> -j REJECT --reject-with tcp-reset
+<h4>字符串匹配</h4>
+<p>比如，我们要过滤所有TCP连接中的字符串<code>test</code>，一旦出现它我们就终止这个连接，我们可以这么做：</p>
+<pre class="language-shell"><code class="language-shell">iptables -A INPUT -p tcp -m string --algo kmp --string <span class="token string">"test"</span> -j REJECT --reject-with tcp-reset
 iptables -L
 
 <span class="token comment"># Chain INPUT (policy ACCEPT)</span>
@@ -360,22 +342,26 @@ iptables -L
 <span class="token comment"># Chain OUTPUT (policy ACCEPT)</span>
 <span class="token comment"># target     prot opt source               destination</span>
 </code></pre>
-<h4 id="阻止windows蠕虫的攻击">阻止Windows蠕虫的攻击</h4><pre><code class="language-shell">iptables -I INPUT -j DROP -p tcp -s <span class="token number">0.0</span>.0.0/0 -m string --algo kmp --string <span class="token string">"cmd.exe"</span>
+<h4>阻止Windows蠕虫的攻击</h4>
+<pre class="language-shell"><code class="language-shell">iptables -I INPUT -j DROP -p tcp -s <span class="token number">0.0</span>.0.0/0 -m string --algo kmp --string <span class="token string">"cmd.exe"</span>
 </code></pre>
-<h4 id="防止syn洪水攻击">防止SYN洪水攻击</h4><pre><code class="language-shell">iptables -A INPUT -p tcp --syn -m limit --limit <span class="token number">5</span>/second -j ACCEPT
+<h4>防止SYN洪水攻击</h4>
+<pre class="language-shell"><code class="language-shell">iptables -A INPUT -p tcp --syn -m limit --limit <span class="token number">5</span>/second -j ACCEPT
 </code></pre>
-<h4 id="添加secmark记录">添加SECMARK记录</h4><pre><code class="language-shell">iptables -t mangle -A INPUT -p tcp --src <span class="token number">192.168</span>.1.2 --dport <span class="token number">443</span> -j SECMARK --selctx system_u:object_r:myauth_packet_t
+<h4>添加SECMARK记录</h4>
+<pre class="language-shell"><code class="language-shell">iptables -t mangle -A INPUT -p tcp --src <span class="token number">192.168</span>.1.2 --dport <span class="token number">443</span> -j SECMARK --selctx system_u:object_r:myauth_packet_t
 <span class="token comment"># 向从 192.168.1.2:443 以TCP方式发出到本机的包添加MAC安全上下文 system_u:object_r:myauth_packet_t</span>
 </code></pre>
-<h2 id="更多实例">更多实例</h2><blockquote>
-<p>用iptables搭建一套强大的安全防护盾 <a href="http://www.imooc.com/learn/389">http://www.imooc.com/learn/389</a></p>
+<h2>更多实例</h2>
+<blockquote>
+<p>用iptables搭建一套强大的安全防护盾 http://www.imooc.com/learn/389</p>
 </blockquote>
 <p>iptables: linux 下应用层防火墙工具</p>
 <p>iptables 5链: 对应 Hook point
 netfilter: linux 操作系统核心层内部的一个数据包处理模块
 Hook point: 数据包在 netfilter 中的挂载点; <code>PRE_ROUTING / INPUT / OUTPUT / FORWARD / POST_ROUTING</code></p>
-<p>iptables &amp; netfilter
-<img src="http://7xq89b.com1.z0.glb.clouddn.com/netfilter&iptables.jpg" alt=""></p>
+<p>iptables &#x26; netfilter
+<img src="http://7xq89b.com1.z0.glb.clouddn.com/netfilter&#x26;iptables.jpg" alt=""></p>
 <p>iptables 4表5链
 <img src="http://7xq89b.com1.z0.glb.clouddn.com/iptables-data-stream.jpg" alt=""></p>
 <p>iptables rules
@@ -385,14 +371,15 @@ Hook point: 数据包在 netfilter 中的挂载点; <code>PRE_ROUTING / INPUT / 
 </ul>
 <p><strong>filter</strong>: 访问控制 / 规则匹配
 <strong>nat</strong>: 地址转发
- mangle / raw</p>
+mangle / raw</p>
 <ul>
 <li>规则</li>
 </ul>
 <p>数据访问控制: ACCEPT / DROP / REJECT
-数据包改写(nat -&gt; 地址转换): snat / dnat
+数据包改写(nat -> 地址转换): snat / dnat
 信息记录: log</p>
-<h2 id="使用场景实例">使用场景实例</h2><ul>
+<h2>使用场景实例</h2>
+<ul>
 <li>场景一</li>
 </ul>
 <p>开放 tcp 10-22/80 端口
@@ -409,21 +396,21 @@ vsftpd: 使 ftp 支持主动模式(客户端产生随机端口通知服务器, �
 </ul>
 <p>允许外网访问:
 web
-http -&gt; 80/tcp; https -&gt; 443/tcp
+http -> 80/tcp; https -> 443/tcp
 mail
-smtp -&gt; 25/tcp; smtps -&gt; 465/tcp
-pop3 -&gt; 110/tcp; pop3s -&gt; 995/tcp
-imap -&gt; 143/tcp</p>
+smtp -> 25/tcp; smtps -> 465/tcp
+pop3 -> 110/tcp; pop3s -> 995/tcp
+imap -> 143/tcp</p>
 <p>内部使用:
 file
-nfs -&gt; 123/udp
-samba -&gt; 137/138/139/445/tcp
-ftp -&gt; 20/21/tcp
+nfs -> 123/udp
+samba -> 137/138/139/445/tcp
+ftp -> 20/21/tcp
 remote
-ssh -&gt; 22/tcp
+ssh -> 22/tcp
 sql
-mysql -&gt; 3306/tcp
-oracle -&gt; 1521/tcp</p>
+mysql -> 3306/tcp
+oracle -> 1521/tcp</p>
 <ul>
 <li>场景四</li>
 </ul>
@@ -432,7 +419,7 @@ oracle -&gt; 1521/tcp</p>
 <li>场景五</li>
 </ul>
 <p>防CC攻击</p>
-<pre><code class="language-shell">iptables -L -F -A -D <span class="token comment"># list flush append delete</span>
+<pre class="language-shell"><code class="language-shell">iptables -L -F -A -D <span class="token comment"># list flush append delete</span>
 <span class="token comment"># 场景一</span>
 iptables -I INPUT -p tcp --dport <span class="token number">80</span> -j ACCEPT <span class="token comment"># 允许 tcp 80 端口</span>
 iptables -I INPUT -p tcp --dport <span class="token number">10</span>:22 -j ACCEPT <span class="token comment"># 允许 tcp 10-22 端口</span>
@@ -480,7 +467,6 @@ iptables -I INPUT -p tcp --syn --dport <span class="token number">80</span> -m c
 iptables -I INPUT -m limit --limit <span class="token number">3</span>/hour --limit-burst <span class="token number">10</span> -j ACCEPT <span class="token comment"># limit模块; --limit-burst 默认为5</span>
 </code></pre>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-
 </div>
 
 <div class="footer ">
@@ -503,7 +489,7 @@ iptables -I INPUT -m limit --limit <span class="token number">3</span>/hour --li
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1628764653405"></script>
-<script type="text/javascript" src="../js/index.js?v=1628764653405"></script>
+<script type="text/javascript" src="../js/dt.js?v=1628769137253"></script>
+<script type="text/javascript" src="../js/index.js?v=1628769137253"></script>
 </body>
 </html>

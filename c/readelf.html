@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,readelf,用于显示elf格式文件的信息">
     <title>readelf 命令，Linux readelf 命令详解：用于显示elf格式文件的信息 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628764653585">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628769137373">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -40,32 +40,36 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/readelf.md">添加实例</a>
 </span>
 
-<h1 id="readelf">readelf</h1><p>用于显示elf格式文件的信息</p>
-<h2 id="补充说明">补充说明</h2><p><strong>readelf命令</strong> 用来显示一个或者多个elf格式的目标文件的信息，可以通过它的选项来控制显示哪些信息。这里的elf-file(s)就表示那些被检查的文件。可以支持32位，64位的elf格式文件，也支持包含elf文件的文档（这里一般指的是使用ar命令将一些elf文件打包之后生成的例如lib*.a之类的“静态库”文件）。 </p>
+<h1>readelf</h1>
+<p>用于显示elf格式文件的信息</p>
+<h2>补充说明</h2>
+<p><strong>readelf命令</strong> 用来显示一个或者多个elf格式的目标文件的信息，可以通过它的选项来控制显示哪些信息。这里的elf-file(s)就表示那些被检查的文件。可以支持32位，64位的elf格式文件，也支持包含elf文件的文档（这里一般指的是使用ar命令将一些elf文件打包之后生成的例如lib*.a之类的“静态库”文件）。 </p>
 <p>这个程序和objdump提供的功能类似，但是它显示的信息更为具体，并且它不依赖BFD库(BFD库是一个GNU项目，它的目标就是希望通过一种统一的接口来处理不同的目标文件)，所以即使BFD库有什么bug存在的话也不会影响到readelf程序。 </p>
 <p>运行readelf的时候，除了-v和-H之外，其它的选项必须有一个被指定。 </p>
-<h3 id="elf文件类型">ELF文件类型</h3><p> <strong>种类型的ELF文件：</strong> </p>
+<h3>ELF文件类型</h3>
+<p><strong>种类型的ELF文件：</strong></p>
 <ol>
-<li> 可重定位文件:用户和其他目标文件一起创建可执行文件或者共享目标文件,例如lib*.a文件。 </li>
-<li> 可执行文件：用于生成进程映像，载入内存执行,例如编译好的可执行文件a.out。 </li>
-<li> 共享目标文件：用于和其他共享目标文件或者可重定位文件一起生成elf目标文件或者和执行文件一起创建进程映像，例如lib*.so文件。 </li>
+<li>可重定位文件:用户和其他目标文件一起创建可执行文件或者共享目标文件,例如lib*.a文件。 </li>
+<li>可执行文件：用于生成进程映像，载入内存执行,例如编译好的可执行文件a.out。 </li>
+<li>共享目标文件：用于和其他共享目标文件或者可重定位文件一起生成elf目标文件或者和执行文件一起创建进程映像，例如lib*.so文件。 </li>
 </ol>
-<p> <strong>ELF文件作用：</strong> </p>
+<p><strong>ELF文件作用：</strong></p>
 <p>ELF文件参与程序的连接(建立一个程序)和程序的执行(运行一个程序)，所以可以从不同的角度来看待elf格式的文件： </p>
 <ol>
-<li> 如果用于编译和链接（可重定位文件），则编译器和链接器将把elf文件看作是节头表描述的节的集合,程序头表可选。 </li>
-<li> 如果用于加载执行（可执行文件），则加载器则将把elf文件看作是程序头表描述的段的集合，一个段可能包含多个节，节头表可选。 </li>
-<li> 如果是共享文件，则两者都含有。 </li>
+<li>如果用于编译和链接（可重定位文件），则编译器和链接器将把elf文件看作是节头表描述的节的集合,程序头表可选。 </li>
+<li>如果用于加载执行（可执行文件），则加载器则将把elf文件看作是程序头表描述的段的集合，一个段可能包含多个节，节头表可选。 </li>
+<li>如果是共享文件，则两者都含有。 </li>
 </ol>
-<p> <strong>ELF文件总体组成：</strong>  </p>
+<p><strong>ELF文件总体组成：</strong>  </p>
 <p>elf文件头描述elf文件的总体信息。包括：系统相关，类型相关，加载相关，链接相关。 </p>
 <ul>
-<li>  系统相关表示：elf文件标识的魔术数，以及硬件和平台等相关信息，增加了elf文件的移植性,使交叉编译成为可能。 </li>
-<li>  类型相关就是前面说的那个类型。 </li>
-<li>  加载相关：包括程序头表相关信息。 </li>
-<li>  链接相关：节头表相关信息。 </li>
+<li>系统相关表示：elf文件标识的魔术数，以及硬件和平台等相关信息，增加了elf文件的移植性,使交叉编译成为可能。 </li>
+<li>类型相关就是前面说的那个类型。 </li>
+<li>加载相关：包括程序头表相关信息。 </li>
+<li>链接相关：节头表相关信息。 </li>
 </ul>
-<h3 id="选项">选项</h3><pre><code class="language-shell">-a 
+<h3>选项</h3>
+<pre class="language-shell"><code class="language-shell">-a 
 --all 显示全部信息,等价于 -h -l -S -s -r -d -V -A -I. 
 
 -h 
@@ -113,8 +117,8 @@
 -D 
 --use-dynamic 使用动态段中的符号表显示符号，而不是使用符号段。 
 
--x <span class="token operator">&lt;</span>number or name<span class="token operator">></span> 
---hex-dump<span class="token operator">=</span><span class="token operator">&lt;</span>number or name<span class="token operator">></span> 以16进制方式显示指定段内内容。number指定段表中段的索引,或字符串指定文件中的段名。 
+-x <span class="token operator">&#x3C;</span>number or name<span class="token operator">></span> 
+--hex-dump<span class="token operator">=</span><span class="token operator">&#x3C;</span>number or name<span class="token operator">></span> 以16进制方式显示指定段内内容。number指定段表中段的索引,或字符串指定文件中的段名。 
 
 -w<span class="token punctuation">[</span>liaprmfFsoR<span class="token punctuation">]</span> or 
 --debug-dump<span class="token punctuation">[</span><span class="token operator">=</span>line,<span class="token operator">=</span>info,<span class="token operator">=</span>abbrev,<span class="token operator">=</span>pubnames,<span class="token operator">=</span>aranges,<span class="token operator">=</span>macro,<span class="token operator">=</span>frames,<span class="token operator">=</span>frames-interp,<span class="token operator">=</span>str,<span class="token operator">=</span>loc,<span class="token operator">=</span>Ranges<span class="token punctuation">]</span> 显示调试段中指定的内容。 
@@ -133,11 +137,12 @@
 
 @file 可以将选项集中到一个文件中，然后使用这个@file选项载入。 
 </code></pre>
-<h3 id="实例">实例</h3><p>先给出如下例子：</p>
-<p> <strong>1.对于可执行文件形式的elf格式文件：</strong> </p>
+<h3>实例</h3>
+<p>先给出如下例子：</p>
+<p><strong>1.对于可执行文件形式的elf格式文件：</strong></p>
 <p>1)查看可执行程序的源代码如下： </p>
-<pre><code class="language-shell">root@localhost <span class="token punctuation">[</span>test<span class="token punctuation">]</span>&#36; <span class="token function">cat</span> main.cpp 
-<span class="token comment">#include &lt;iostream> </span>
+<pre class="language-shell"><code class="language-shell">root@localhost <span class="token punctuation">[</span>test<span class="token punctuation">]</span>$ <span class="token function">cat</span> main.cpp 
+<span class="token comment">#include &#x3C;iostream> </span>
 using std::cout<span class="token punctuation">;</span> 
 using std::endl<span class="token punctuation">;</span> 
 void my_print<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
@@ -145,30 +150,30 @@ void my_print<span class="token punctuation">(</span><span class="token punctuat
 int main<span class="token punctuation">(</span>int argc, char *argv<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> 
 <span class="token punctuation">{</span> 
         my_print<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
-        cout<span class="token operator">&lt;&lt;</span><span class="token string">"hello!"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span> 
+        cout<span class="token operator">&#x3C;&#x3C;</span><span class="token string">"hello!"</span><span class="token operator">&#x3C;&#x3C;</span>endl<span class="token punctuation">;</span> 
         <span class="token builtin class-name">return</span> <span class="token number">0</span><span class="token punctuation">;</span> 
 <span class="token punctuation">}</span> 
 
 void  <span class="token function-name function">my_print</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
 <span class="token punctuation">{</span> 
-        cout<span class="token operator">&lt;&lt;</span><span class="token string">"print!"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span> 
+        cout<span class="token operator">&#x3C;&#x3C;</span><span class="token string">"print!"</span><span class="token operator">&#x3C;&#x3C;</span>endl<span class="token punctuation">;</span> 
 <span class="token punctuation">}</span> 
 </code></pre>
 <p>2)编译如下： </p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>&#36; g++ main.cpp -o main 
-<span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>&#36; g++ -g main.cpp -o main.debug 
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>$ g++ main.cpp -o main 
+<span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>$ g++ -g main.cpp -o main.debug 
 </code></pre>
 <p>3)编译之后，查看生成的文件： </p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>&#36; <span class="token function">ls</span> -l 
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>$ <span class="token function">ls</span> -l 
 总计 <span class="token number">64</span> 
 -rwxr-xr-x <span class="token number">1</span> quietheart quietheart  <span class="token number">6700</span> 07-07 <span class="token number">18</span>:04 main 
 -rw-r--r-- <span class="token number">1</span> quietheart quietheart   <span class="token number">201</span> 07-07 <span class="token number">18</span>:02 main.cpp 
 -rwxr-xr-x <span class="token number">1</span> quietheart quietheart <span class="token number">38932</span> 07-07 <span class="token number">18</span>:04 main.debug 
 </code></pre>
 <p>这里，main.debug是带有调试信息的可执行文件，main是一般的可执行文件。 </p>
-<p> <strong>2.对于库文件形式的elf格式文件：</strong> </p>
+<p><strong>2.对于库文件形式的elf格式文件：</strong></p>
 <p>1)查看库的源代码如下： </p>
-<pre><code class="language-shell">//myfile.h 
+<pre class="language-shell"><code class="language-shell">//myfile.h 
 <span class="token comment">#ifndef __MYFILE_H </span>
 <span class="token comment">#define __MYFILE_H </span>
 void printInfo<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
@@ -176,24 +181,24 @@ void printInfo<span class="token punctuation">(</span><span class="token punctua
 
 //myfile.cpp 
 <span class="token comment">#include "myfile.h" </span>
-<span class="token comment">#include &lt;iostream> </span>
+<span class="token comment">#include &#x3C;iostream> </span>
 using std::cout<span class="token punctuation">;</span> 
 using std::endl<span class="token punctuation">;</span> 
 void <span class="token function-name function">printInfo</span><span class="token punctuation">(</span><span class="token punctuation">)</span> 
 <span class="token punctuation">{</span> 
-    cout<span class="token operator">&lt;&lt;</span><span class="token string">"hello"</span><span class="token operator">&lt;&lt;</span>endl<span class="token punctuation">;</span> 
+    cout<span class="token operator">&#x3C;&#x3C;</span><span class="token string">"hello"</span><span class="token operator">&#x3C;&#x3C;</span>endl<span class="token punctuation">;</span> 
 <span class="token punctuation">}</span> 
 </code></pre>
 <p>2)编译如下： </p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>&#36; g++ -c myfile.cpp 
-<span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>&#36; g++ -shared -fPCI -o libmy.so myfile.o 
-<span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>&#36; ar -r libmy.a myfile.o 
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>$ g++ -c myfile.cpp 
+<span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>$ g++ -shared -fPCI -o libmy.so myfile.o 
+<span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>$ ar -r libmy.a myfile.o 
 ar: creating libmy.a 
 </code></pre>
 <p>3)编译之后，查看生成的文件： </p>
 <p>[root@localhost test]$ ls -l </p>
 <p>总计 44 </p>
-<pre><code class="language-shell">-rw-r--r-- <span class="token number">1</span> quietheart quietheart <span class="token number">2154</span> 07-08 <span class="token number">16</span>:14 libmy.a 
+<pre class="language-shell"><code class="language-shell">-rw-r--r-- <span class="token number">1</span> quietheart quietheart <span class="token number">2154</span> 07-08 <span class="token number">16</span>:14 libmy.a 
 -rwxr-xr-x <span class="token number">1</span> quietheart quietheart <span class="token number">5707</span> 07-08 <span class="token number">16</span>:08 libmy.so 
 -rwxr-xr-x <span class="token number">1</span> quietheart quietheart  <span class="token number">117</span> 07-08 <span class="token number">16</span>:06 myfile.cpp 
 -rwxr-xr-x <span class="token number">1</span> quietheart quietheart   <span class="token number">63</span> 07-08 <span class="token number">16</span>:08 myfile.h 
@@ -202,8 +207,8 @@ libmy.a  libmy.so  myfile.cpp  myfile.h  myfile.o
 </code></pre>
 <p>这里，分别生成目标文件myfile.o，共享库文件libmy.so，和静态库文件libmy.a。 </p>
 <p>基于以上可执行文件和库，这里给出一些常用的命令。 </p>
-<p> <strong>读取可执行文件形式的elf文件头信息：</strong> </p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>&#36; readelf -h main 
+<p><strong>读取可执行文件形式的elf文件头信息：</strong></p>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>$ readelf -h main 
 ELF Header: 
   Magic:   7f <span class="token number">45</span> 4c <span class="token number">46</span> 01 01 01 00 00 00 00 00 00 00 00 00 
   Class:                             ELF32 
@@ -225,9 +230,9 @@ ELF Header:
   Number of section headers:         <span class="token number">29</span> 
   Section header string table index: <span class="token number">26</span> 
 </code></pre>
-<p>这里，可见可执行文件的elf文件，其类型为EXEC(可执行文件)。另外，含调试信息的&quot;main.debug&quot;和不含调试信息的&quot;main&quot;除了一些大小信息之外，其内容是一样的。并且由此可见文件的体系结构为Intel 80386。 </p>
-<p> <strong>读取目标文件形式的elf文件头信息：</strong> </p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>&#36; readelf -h myfile.o 
+<p>这里，可见可执行文件的elf文件，其类型为EXEC(可执行文件)。另外，含调试信息的"main.debug"和不含调试信息的"main"除了一些大小信息之外，其内容是一样的。并且由此可见文件的体系结构为Intel 80386。 </p>
+<p><strong>读取目标文件形式的elf文件头信息：</strong></p>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>$ readelf -h myfile.o 
 ELF Header: 
   Magic:   7f <span class="token number">45</span> 4c <span class="token number">46</span> 01 01 01 00 00 00 00 00 00 00 00 00 
   Class:                             ELF32 
@@ -250,8 +255,8 @@ ELF Header:
   Section header string table index: <span class="token number">12</span> 
 </code></pre>
 <p>这里，可见目标文件的elf文件，其类型为REL(可重定位文件)。 </p>
-<p> <strong>读取静态库文件形式的elf文件头信息：</strong> </p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>&#36; readelf -h libmy.a 
+<p><strong>读取静态库文件形式的elf文件头信息：</strong></p>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>$ readelf -h libmy.a 
 File: libmy.a<span class="token punctuation">(</span>myfile.o<span class="token punctuation">)</span> 
 ELF Header: 
   Magic:   7f <span class="token number">45</span> 4c <span class="token number">46</span> 01 01 01 00 00 00 00 00 00 00 00 00 
@@ -275,8 +280,8 @@ ELF Header:
   Section header string table index: <span class="token number">12</span> 
 </code></pre>
 <p>这里，可见静态库文件的elf文件，其类型为REL(可重定位文件)。 </p>
-<p> <strong>读取动态库文件形式的elf文件头信息：</strong> </p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>&#36; readelf -h libmy.so 
+<p><strong>读取动态库文件形式的elf文件头信息：</strong></p>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>$ readelf -h libmy.so 
 ELF Header: 
   Magic:   7f <span class="token number">45</span> 4c <span class="token number">46</span> 01 01 01 00 00 00 00 00 00 00 00 00 
   Class:                             ELF32 
@@ -299,8 +304,8 @@ ELF Header:
   Section header string table index: <span class="token number">24</span> 
 </code></pre>
 <p>这里，可见动态库文件的elf文件，其类型为DYN(共享目标文件)。 </p>
-<p> <strong>查看可执行的elf文件程序头表信息：</strong> </p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>&#36; readelf -l main 
+<p><strong>查看可执行的elf文件程序头表信息：</strong></p>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>$ readelf -l main 
 Elf <span class="token function">file</span> <span class="token builtin class-name">type</span> is EXEC <span class="token punctuation">(</span>Executable <span class="token function">file</span><span class="token punctuation">)</span> 
 Entry point 0x8048580 
 There are <span class="token number">8</span> program headers, starting at offset <span class="token number">52</span> 
@@ -328,20 +333,20 @@ Section to Segment mapping:
    06     .eh_frame_hdr 
    07     
 </code></pre>
-<p>这里，含调试信息的&quot;main.debug&quot;和不含调试信息的&quot;main&quot;其内容是一样的。 </p>
-<p> **查看目标文件的elf文件程序头表信息： ** </p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>&#36; readelf -l myfile.o 
+<p>这里，含调试信息的"main.debug"和不含调试信息的"main"其内容是一样的。 </p>
+<p>**查看目标文件的elf文件程序头表信息： **</p>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>$ readelf -l myfile.o 
 There are no program headers <span class="token keyword">in</span> this file. 
 </code></pre>
 <p>这里可知，可重定位的目标文件，它没程序头表。 </p>
-<p> <strong>查看静态库文件的elf文件程序头表信息：</strong> </p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>&#36; readelf -l libmy.a 
+<p><strong>查看静态库文件的elf文件程序头表信息：</strong></p>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>$ readelf -l libmy.a 
 File: libmy.a<span class="token punctuation">(</span>myfile.o<span class="token punctuation">)</span> 
 There are no program headers <span class="token keyword">in</span> this file. 
 </code></pre>
 <p>这里可知，可重定位的静态库文件，它没程序头表。 </p>
-<p> <strong>查看动态库文件的elf文件程序头表信息：</strong> </p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>&#36; readelf -l libmy.so 
+<p><strong>查看动态库文件的elf文件程序头表信息：</strong></p>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>$ readelf -l libmy.so 
 Elf <span class="token function">file</span> <span class="token builtin class-name">type</span> is DYN <span class="token punctuation">(</span>Shared object <span class="token function">file</span><span class="token punctuation">)</span> 
 Entry point 0x550 
 There are <span class="token number">5</span> program headers, starting at offset <span class="token number">52</span> 
@@ -363,8 +368,8 @@ Section to Segment mapping:
    04     
 </code></pre>
 <p>这里可知，做为共享目标文件的动态库，它程序头表。 </p>
-<p> <strong>查看一个可执行的elf文件的节信息：</strong> </p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>&#36; readelf -S main 
+<p><strong>查看一个可执行的elf文件的节信息：</strong></p>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>$ readelf -S main 
 There are <span class="token number">29</span> section headers, starting at offset 0xca0: 
 Section Headers: 
   <span class="token punctuation">[</span>Nr<span class="token punctuation">]</span> Name              Type            Addr     Off    Size   ES Flg Lk Inf Al 
@@ -403,8 +408,8 @@ Key to Flags:
   O <span class="token punctuation">(</span>extra OS processing required<span class="token punctuation">)</span> o <span class="token punctuation">(</span>OS specific<span class="token punctuation">)</span>, p <span class="token punctuation">(</span>processor specific<span class="token punctuation">)</span> 
 </code></pre>
 <p>这里，main是可执行文件，不含调试信息。 </p>
-<p> <strong>查看一个包含调试信息的可执行的elf文件的节信息：</strong> </p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>&#36; readelf -S main.debug 
+<p><strong>查看一个包含调试信息的可执行的elf文件的节信息：</strong></p>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>$ readelf -S main.debug 
 There are <span class="token number">37</span> section headers, starting at offset 0x88c8: 
 
 Section Headers: 
@@ -451,9 +456,9 @@ Key to Flags:
   I <span class="token punctuation">(</span>info<span class="token punctuation">)</span>, L <span class="token punctuation">(</span>link order<span class="token punctuation">)</span>, G <span class="token punctuation">(</span>group<span class="token punctuation">)</span>, x <span class="token punctuation">(</span>unknown<span class="token punctuation">)</span> 
   O <span class="token punctuation">(</span>extra OS processing required<span class="token punctuation">)</span> o <span class="token punctuation">(</span>OS specific<span class="token punctuation">)</span>, p <span class="token punctuation">(</span>processor specific<span class="token punctuation">)</span> 
 </code></pre>
-<p>可见，相对非调试版本的可执行文件，多了&quot;.debug*&quot;段的信息。 </p>
-<p> <strong>查看一个目标文件的elf文件的节信息：</strong> </p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>&#36; readelf -S myfile.o 
+<p>可见，相对非调试版本的可执行文件，多了".debug*"段的信息。 </p>
+<p><strong>查看一个目标文件的elf文件的节信息：</strong></p>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>$ readelf -S myfile.o 
 There are <span class="token number">15</span> section headers, starting at offset 0x204: 
 
 Section Headers: 
@@ -484,7 +489,7 @@ Key to Flags:
  **查看一个静态库文件的elf文件的节信息：** 
 
 <span class="token variable">`</span></span>``shell
-<span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>&#36; readelf -S libmy.a 
+<span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>$ readelf -S libmy.a 
 File: libmy.a<span class="token punctuation">(</span>myfile.o<span class="token punctuation">)</span> 
 There are <span class="token number">15</span> section headers, starting at offset 0x204: 
 
@@ -510,8 +515,8 @@ Key to Flags:
   I <span class="token punctuation">(</span>info<span class="token punctuation">)</span>, L <span class="token punctuation">(</span>link order<span class="token punctuation">)</span>, G <span class="token punctuation">(</span>group<span class="token punctuation">)</span>, x <span class="token punctuation">(</span>unknown<span class="token punctuation">)</span> 
   O <span class="token punctuation">(</span>extra OS processing required<span class="token punctuation">)</span> o <span class="token punctuation">(</span>OS specific<span class="token punctuation">)</span>, p <span class="token punctuation">(</span>processor specific<span class="token punctuation">)</span> 
 </code></pre>
-<p> <strong>查看一个动态库文件的elf文件的节信息：</strong> </p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>&#36; readelf -S libmy.so 
+<p><strong>查看一个动态库文件的elf文件的节信息：</strong></p>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost test<span class="token punctuation">]</span>$ readelf -S libmy.so 
 There are <span class="token number">27</span> section headers, starting at offset 0xad0: 
 
 Section Headers: 
@@ -571,7 +576,7 @@ Key to Flags:
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1628764653585"></script>
-<script type="text/javascript" src="../js/index.js?v=1628764653585"></script>
+<script type="text/javascript" src="../js/dt.js?v=1628769137374"></script>
+<script type="text/javascript" src="../js/index.js?v=1628769137374"></script>
 </body>
 </html>

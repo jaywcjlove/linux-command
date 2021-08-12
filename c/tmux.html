@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,tmux,Tmux是一个优秀的终端复用软件，类似GNU Screen，但来自于OpenBSD，采用BSD授权">
     <title>tmux 命令，Linux tmux 命令详解：Tmux是一个优秀的终端复用软件，类似GNU Screen，但来自于OpenBSD，采用BSD授权 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628764653700">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628769137456">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -40,19 +40,23 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/tmux.md">添加实例</a>
 </span>
 
-<h1 id="tmux">tmux</h1><p>Tmux是一个优秀的终端复用软件，类似GNU Screen，但来自于OpenBSD，采用BSD授权</p>
-<h2 id="补充说明">补充说明</h2><p>使用它最直观的好处就是，通过一个终端登录远程主机并运行tmux后，在其中可以开启多个控制台而无需再“浪费”多余的终端来连接这台远程主机；</p>
-<h2 id="功能">功能</h2><ul>
-<li> 提供了强劲的、易于使用的命令行界面。</li>
-<li> 可横向和纵向分割窗口。</li>
-<li> 窗格可以自由移动和调整大小，或直接利用四个预设布局之一。</li>
-<li> 支持 UTF-8 编码及 256 色终端。</li>
-<li> 可在多个缓冲区进行复制和粘贴。</li>
-<li> 可通过交互式菜单来选择窗口、会话及客户端。</li>
-<li> 支持跨窗口搜索。</li>
-<li> 支持自动及手动锁定窗口。</li>
+<h1>tmux</h1>
+<p>Tmux是一个优秀的终端复用软件，类似GNU Screen，但来自于OpenBSD，采用BSD授权</p>
+<h2>补充说明</h2>
+<p>使用它最直观的好处就是，通过一个终端登录远程主机并运行tmux后，在其中可以开启多个控制台而无需再“浪费”多余的终端来连接这台远程主机；</p>
+<h2>功能</h2>
+<ul>
+<li>提供了强劲的、易于使用的命令行界面。</li>
+<li>可横向和纵向分割窗口。</li>
+<li>窗格可以自由移动和调整大小，或直接利用四个预设布局之一。</li>
+<li>支持 UTF-8 编码及 256 色终端。</li>
+<li>可在多个缓冲区进行复制和粘贴。</li>
+<li>可通过交互式菜单来选择窗口、会话及客户端。</li>
+<li>支持跨窗口搜索。</li>
+<li>支持自动及手动锁定窗口。</li>
 </ul>
-<h2 id="安装">安装</h2><pre><code class="language-shell"><span class="token comment"># 在 Mac OS 中，通过 brew 安装</span>
+<h2>安装</h2>
+<pre class="language-shell"><code class="language-shell"><span class="token comment"># 在 Mac OS 中，通过 brew 安装</span>
 brew <span class="token function">install</span> tmux
 <span class="token comment"># ubuntu版本下直接apt-get安装</span>
 <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> tmux
@@ -64,9 +68,10 @@ yum <span class="token function">install</span> libevent libevent-devel ncurses-
 <span class="token function">tar</span> -zvxf tmux-2.3.tar.gz <span class="token comment"># (提前下载：wget https://github.com/tmux/tmux/releases/download/2.3/tmux-2.3.tar.gz)</span>
 <span class="token builtin class-name">cd</span> tmux-2.3
 ./configure
-<span class="token function">make</span> <span class="token operator">&amp;&amp;</span> <span class="token function">make</span> <span class="token function">install</span>
+<span class="token function">make</span> <span class="token operator">&#x26;&#x26;</span> <span class="token function">make</span> <span class="token function">install</span>
 </code></pre>
-<h2 id="快捷键使用说明">快捷键使用说明</h2><table class="table-view log-set-param">
+<h2>快捷键使用说明</h2>
+<table class="table-view log-set-param">
 <tbody>
 <tr>
 <td colspan="2" align="left" valign="center" width="0">
@@ -164,7 +169,7 @@ yum <span class="token function">install</span> libevent libevent-devel ncurses-
 </tr>
 <tr>
 <td>
-  <div>&amp;</div>
+  <div>&#x26;</div>
 </td>
 <td>
   <div>关闭当前窗口</div>
@@ -351,10 +356,9 @@ yum <span class="token function">install</span> libevent libevent-devel ncurses-
 </tr>
 </tbody>
 </table>
-
 <p>1）进入tmux面板后，一定要先按ctrl+b，然后松开，再按其他的组合键才生效。
 2）常用到的几个组合键：</p>
-<pre><code class="language-shell">ctrl+b ?        <span class="token comment">#     显示快捷键帮助</span>
+<pre class="language-shell"><code class="language-shell">ctrl+b ?        <span class="token comment">#     显示快捷键帮助</span>
 ctrl+b 空格键   <span class="token comment">#     采用下一个内置布局，这个很有意思，在多屏时，用这个就会将多有屏幕竖着展示</span>
 ctrl+b <span class="token operator">!</span>        <span class="token comment">#     把当前窗口变为新窗口</span>
 ctrl+b  "       <span class="token comment">#     模向分隔窗口</span>
@@ -363,7 +367,7 @@ ctrl+b q        <span class="token comment">#     显示分隔窗口的编号</s
 ctrl+b o        <span class="token comment">#     跳到下一个分隔窗口。多屏之间的切换</span>
 ctrl+b 上下键   <span class="token comment">#    上一个及下一个分隔窗口</span>
 ctrl+b C-方向键 <span class="token comment">#    调整分隔窗口大小</span>
-ctrl+b <span class="token operator">&amp;</span>        <span class="token comment">#    确认后退出当前tmux</span>
+ctrl+b <span class="token operator">&#x26;</span>        <span class="token comment">#    确认后退出当前tmux</span>
 ctrl+b <span class="token punctuation">[</span>        <span class="token comment">#    复制模式，即将当前屏幕移到上一个的位置上，其他所有窗口都向前移动一个。</span>
 ctrl+b c        <span class="token comment">#    创建新窗口</span>
 ctrl+b n        <span class="token comment">#    选择下一个窗口</span>
@@ -374,10 +378,10 @@ ctrl+b s        <span class="token comment">#    以菜单方式显示和选择�
 ctrl+b t        <span class="token comment">#    显示时钟。然后按enter键后就会恢复到shell终端状态</span>
 ctrl+b d        <span class="token comment">#    脱离当前会话；这样可以暂时返回Shell界面，输入tmux attach能够重新进入之前的会话</span>
 </code></pre>
-<h2 id="参考资料">参考资料</h2><ul>
-<li>tmux 官网下载地址：<a href="http://tmux.github.io/">http://tmux.github.io/</a> </li>
+<h2>参考资料</h2>
+<ul>
+<li>tmux 官网下载地址：http://tmux.github.io/</li>
 </ul>
-
 </div>
 
 <div class="footer ">
@@ -400,7 +404,7 @@ ctrl+b d        <span class="token comment">#    脱离当前会话；这样可�
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1628764653700"></script>
-<script type="text/javascript" src="../js/index.js?v=1628764653700"></script>
+<script type="text/javascript" src="../js/dt.js?v=1628769137456"></script>
+<script type="text/javascript" src="../js/index.js?v=1628769137456"></script>
 </body>
 </html>

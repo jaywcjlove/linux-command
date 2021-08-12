@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,jq,一个灵活的轻量级命令行JSON处理器">
     <title>jq 命令，Linux jq 命令详解：一个灵活的轻量级命令行JSON处理器 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628764653426">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628769137260">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -40,125 +40,141 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/jq.md">添加实例</a>
 </span>
 
-<h1 id="jq">jq</h1><p>一个灵活的轻量级命令行JSON处理器</p>
-<h3 id="补充说明">补充说明</h3><p>jq 是 stedolan 开发的一个轻量级的和灵活的命令行JSON处理器，源码请参考 <a href="https://github.com/stedolan/jq">jq 项目主页</a></p>
+<h1>jq</h1>
+<p>一个灵活的轻量级命令行JSON处理器</p>
+<h3>补充说明</h3>
+<p>jq 是 stedolan 开发的一个轻量级的和灵活的命令行JSON处理器，源码请参考 <a href="https://github.com/stedolan/jq">jq 项目主页</a></p>
 <p>jq 用于处理JSON输入，将给定过滤器应用于其JSON文本输入并在标准输出上将过滤器的结果生成为JSON。</p>
 <p>最简单的过滤器是<code>.</code>，它将jq的输入未经修改地复制到其输出中（格式设置除外）。</p>
 <p>请注意，jq 当前仅支持64位双精度浮点数（IEEE754）。</p>
-<h3 id="安装">安装</h3><pre><code class="language-bash"><span class="token macro property"><span class="token directive-hash">#</span> <span class="token expression">Debian系，如 Ubuntu</span></span>
-sudo apt<span class="token operator">-</span>get install jq
+<h3>安装</h3>
+<pre class="language-bash"><code class="language-bash"><span class="token comment"># Debian系，如 Ubuntu</span>
+<span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> jq
 
-<span class="token macro property"><span class="token directive-hash">#</span> <span class="token expression">RedHat系<span class="token punctuation">,</span> 如 CentOS</span></span>
-yum install jq
+<span class="token comment"># RedHat系, 如 CentOS</span>
+yum <span class="token function">install</span> jq
 </code></pre>
-<h3 id="语法">语法</h3><pre><code class="language-bash">jq <span class="token punctuation">[</span>options<span class="token punctuation">]</span> <span class="token operator">&lt;</span>jq filter<span class="token operator">></span> <span class="token punctuation">[</span>file<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span>
-jq <span class="token punctuation">[</span>options<span class="token punctuation">]</span> <span class="token operator">--</span>args <span class="token operator">&lt;</span>jq filter<span class="token operator">></span> <span class="token punctuation">[</span>strings<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span>
-jq <span class="token punctuation">[</span>options<span class="token punctuation">]</span> <span class="token operator">--</span>jsonargs <span class="token operator">&lt;</span>jq filter<span class="token operator">></span> <span class="token punctuation">[</span>JSON_TEXTS<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span>
+<h3>语法</h3>
+<pre class="language-bash"><code class="language-bash">jq <span class="token punctuation">[</span>options<span class="token punctuation">]</span> <span class="token operator">&#x3C;</span>jq filter<span class="token operator">></span> <span class="token punctuation">[</span>file<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+jq <span class="token punctuation">[</span>options<span class="token punctuation">]</span> --args <span class="token operator">&#x3C;</span>jq filter<span class="token operator">></span> <span class="token punctuation">[</span>strings<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+jq <span class="token punctuation">[</span>options<span class="token punctuation">]</span> --jsonargs <span class="token operator">&#x3C;</span>jq filter<span class="token operator">></span> <span class="token punctuation">[</span>JSON_TEXTS<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
 </code></pre>
-<h3 id="选项">选项</h3><pre><code class="language-bash"><span class="token operator">-</span>c               紧凑而不是漂亮的输出<span class="token punctuation">;</span>
-<span class="token operator">-</span>n               使用`null`作为单个输入值<span class="token punctuation">;</span>
-<span class="token operator">-</span>e               根据输出设置退出状态代码<span class="token punctuation">;</span>
-<span class="token operator">-</span>s               将所有输入读取（吸取）到数组中；应用过滤器<span class="token punctuation">;</span>
-<span class="token operator">-</span>r               输出原始字符串，而不是JSON文本<span class="token punctuation">;</span>
-<span class="token operator">-</span>R               读取原始字符串，而不是JSON文本<span class="token punctuation">;</span>
-<span class="token operator">-</span>C               为JSON着色<span class="token punctuation">;</span>
-<span class="token operator">-</span>M               单色（不要为JSON着色）<span class="token punctuation">;</span>
-<span class="token operator">-</span>S               在输出上排序对象的键<span class="token punctuation">;</span>
-<span class="token operator">--</span>tab            使用制表符进行缩进<span class="token punctuation">;</span>
-<span class="token operator">--</span>arg a v        将变量&#36;a设置为value<span class="token operator">&lt;</span>v<span class="token operator">></span><span class="token punctuation">;</span>
-<span class="token operator">--</span>argjson a v    将变量&#36;a设置为JSON value<span class="token operator">&lt;</span>v<span class="token operator">></span><span class="token punctuation">;</span>
-<span class="token operator">--</span>slurpfile a f  将变量&#36;a设置为从<span class="token operator">&lt;</span>f<span class="token operator">></span>读取的JSON文本数组<span class="token punctuation">;</span>
-<span class="token operator">--</span>rawfile a f    将变量&#36;a设置为包含<span class="token operator">&lt;</span>f<span class="token operator">></span>内容的字符串<span class="token punctuation">;</span>
-<span class="token operator">--</span>args           其余参数是字符串参数，而不是文件<span class="token punctuation">;</span>
-<span class="token operator">--</span>jsonargs       其余的参数是JSON参数，而不是文件<span class="token punctuation">;</span>
-<span class="token operator">--</span>               终止参数处理<span class="token punctuation">;</span>
+<h3>选项</h3>
+<pre class="language-bash"><code class="language-bash">-c               紧凑而不是漂亮的输出<span class="token punctuation">;</span>
+-n               使用<span class="token variable"><span class="token variable">`</span>null<span class="token variable">`</span></span>作为单个输入值<span class="token punctuation">;</span>
+-e               根据输出设置退出状态代码<span class="token punctuation">;</span>
+-s               将所有输入读取（吸取）到数组中；应用过滤器<span class="token punctuation">;</span>
+-r               输出原始字符串，而不是JSON文本<span class="token punctuation">;</span>
+-R               读取原始字符串，而不是JSON文本<span class="token punctuation">;</span>
+-C               为JSON着色<span class="token punctuation">;</span>
+-M               单色（不要为JSON着色）<span class="token punctuation">;</span>
+-S               在输出上排序对象的键<span class="token punctuation">;</span>
+--tab            使用制表符进行缩进<span class="token punctuation">;</span>
+--arg a <span class="token function">v</span>        将变量<span class="token variable">$a</span>设置为value<span class="token operator">&#x3C;</span>v<span class="token operator">></span><span class="token punctuation">;</span>
+--argjson a <span class="token function">v</span>    将变量<span class="token variable">$a</span>设置为JSON value<span class="token operator">&#x3C;</span>v<span class="token operator">></span><span class="token punctuation">;</span>
+--slurpfile a f  将变量<span class="token variable">$a</span>设置为从<span class="token operator">&#x3C;</span>f<span class="token operator">></span>读取的JSON文本数组<span class="token punctuation">;</span>
+--rawfile a f    将变量<span class="token variable">$a</span>设置为包含<span class="token operator">&#x3C;</span>f<span class="token operator">></span>内容的字符串<span class="token punctuation">;</span>
+--args           其余参数是字符串参数，而不是文件<span class="token punctuation">;</span>
+--jsonargs       其余的参数是JSON参数，而不是文件<span class="token punctuation">;</span>
+--               终止参数处理<span class="token punctuation">;</span>
 </code></pre>
-<h3 id="例子">例子</h3><p><code>.</code>: 以漂亮的方式输出</p>
-<pre><code class="language-bash">&#36; echo <span class="token string">'{ "foo": { "bar": { "baz": 123 } } }'</span> <span class="token operator">|</span> jq <span class="token string">'.'</span>
+<h3>例子</h3>
+<p><code>.</code>: 以漂亮的方式输出</p>
+<pre class="language-bash"><code class="language-bash">$ <span class="token builtin class-name">echo</span> <span class="token string">'{ "foo": { "bar": { "baz": 123 } } }'</span> <span class="token operator">|</span> jq <span class="token string">'.'</span>
 <span class="token punctuation">{</span>
-  <span class="token string">"foo"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-    <span class="token string">"bar"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
-      <span class="token string">"baz"</span><span class="token operator">:</span> <span class="token number">123</span>
+  <span class="token string">"foo"</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+    <span class="token string">"bar"</span><span class="token builtin class-name">:</span> <span class="token punctuation">{</span>
+      <span class="token string">"baz"</span><span class="token builtin class-name">:</span> <span class="token number">123</span>
     <span class="token punctuation">}</span>
   <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
+
 </code></pre>
 <p><code>.foo, .foo.bar, .foo?</code>: 获取一个键的值</p>
-<pre><code class="language-bash">&#36; echo <span class="token string">'{"foo": 42, "bar": "less interesting data"}'</span> <span class="token operator">|</span> jq <span class="token string">'.foo'</span>
+<pre class="language-bash"><code class="language-bash">$ <span class="token builtin class-name">echo</span> <span class="token string">'{"foo": 42, "bar": "less interesting data"}'</span> <span class="token operator">|</span> jq <span class="token string">'.foo'</span>
 <span class="token number">42</span>
 </code></pre>
 <p><code>.[], .[]?, .[2], .[10:15]</code>: 数组运算</p>
-<pre><code class="language-bash">&#36; echo <span class="token string">'[{"name":"JSON", "good":true}, {"name":"XML", "good":false}]'</span> <span class="token operator">|</span> jq <span class="token string">'.[1]'</span>
+<pre class="language-bash"><code class="language-bash">$ <span class="token builtin class-name">echo</span> <span class="token string">'[{"name":"JSON", "good":true}, {"name":"XML", "good":false}]'</span> <span class="token operator">|</span> jq <span class="token string">'.[1]'</span>
 <span class="token punctuation">{</span>
-  <span class="token string">"name"</span><span class="token operator">:</span> <span class="token string">"XML"</span><span class="token punctuation">,</span>
-  <span class="token string">"good"</span><span class="token operator">:</span> false
+  <span class="token string">"name"</span><span class="token builtin class-name">:</span> <span class="token string">"XML"</span>,
+  <span class="token string">"good"</span><span class="token builtin class-name">:</span> <span class="token boolean">false</span>
 <span class="token punctuation">}</span>
+
 </code></pre>
 <p><code>[], {}</code>: 构造一个数组/对象</p>
-<pre><code class="language-bash">&#36; echo <span class="token string">'{"user":"stedolan","titles":["JQ Primer", "More JQ"]}'</span> <span class="token operator">|</span> jq <span class="token string">'{user, title: .titles[]}'</span>
+<pre class="language-bash"><code class="language-bash">$ <span class="token builtin class-name">echo</span> <span class="token string">'{"user":"stedolan","titles":["JQ Primer", "More JQ"]}'</span> <span class="token operator">|</span> jq <span class="token string">'{user, title: .titles[]}'</span>
 
 <span class="token punctuation">{</span>
-  <span class="token string">"user"</span><span class="token operator">:</span> <span class="token string">"stedolan"</span><span class="token punctuation">,</span>
-  <span class="token string">"title"</span><span class="token operator">:</span> <span class="token string">"JQ Primer"</span>
+  <span class="token string">"user"</span><span class="token builtin class-name">:</span> <span class="token string">"stedolan"</span>,
+  <span class="token string">"title"</span><span class="token builtin class-name">:</span> <span class="token string">"JQ Primer"</span>
 <span class="token punctuation">}</span>
 <span class="token punctuation">{</span>
-  <span class="token string">"user"</span><span class="token operator">:</span> <span class="token string">"stedolan"</span><span class="token punctuation">,</span>
-  <span class="token string">"title"</span><span class="token operator">:</span> <span class="token string">"More JQ"</span>
+  <span class="token string">"user"</span><span class="token builtin class-name">:</span> <span class="token string">"stedolan"</span>,
+  <span class="token string">"title"</span><span class="token builtin class-name">:</span> <span class="token string">"More JQ"</span>
 <span class="token punctuation">}</span>
+
 </code></pre>
 <p><code>length</code>: 计算一个值的长度</p>
-<pre><code class="language-bash">&#36; echo <span class="token string">'[[1,2], "string", {"a":2}, null]'</span> <span class="token operator">|</span> jq <span class="token string">'.[] | length'</span>                                  
+<pre class="language-bash"><code class="language-bash">$ <span class="token builtin class-name">echo</span> <span class="token string">'[[1,2], "string", {"a":2}, null]'</span> <span class="token operator">|</span> jq <span class="token string">'.[] | length'</span>                                  
 <span class="token number">2</span>
 <span class="token number">6</span>
 <span class="token number">1</span>
 <span class="token number">0</span>
+
 </code></pre>
 <p><code>keys</code>: 取出数组中的键</p>
-<pre><code class="language-bash">&#36; echo <span class="token string">'{"abc": 1, "abcd": 2, "Foo": 3}'</span> <span class="token operator">|</span> jq <span class="token string">'keys'</span>                                        
+<pre class="language-bash"><code class="language-bash">$ <span class="token builtin class-name">echo</span> <span class="token string">'{"abc": 1, "abcd": 2, "Foo": 3}'</span> <span class="token operator">|</span> jq <span class="token string">'keys'</span>                                        
 <span class="token punctuation">[</span>
-  <span class="token string">"Foo"</span><span class="token punctuation">,</span>
-  <span class="token string">"abc"</span><span class="token punctuation">,</span>
+  <span class="token string">"Foo"</span>,
+  <span class="token string">"abc"</span>,
   <span class="token string">"abcd"</span>
 <span class="token punctuation">]</span>
+
 </code></pre>
 <p><code>,</code>: 使用多个过滤器</p>
-<pre><code class="language-bash">&#36; echo <span class="token string">'{ "foo": 42, "bar": "something else", "baz": true}'</span> <span class="token operator">|</span> jq <span class="token string">'.foo, .bar'</span> 
+<pre class="language-bash"><code class="language-bash">$ <span class="token builtin class-name">echo</span> <span class="token string">'{ "foo": 42, "bar": "something else", "baz": true}'</span> <span class="token operator">|</span> jq <span class="token string">'.foo, .bar'</span> 
 <span class="token number">42</span>
 <span class="token string">"something else"</span>
+
 </code></pre>
 <p><code>|</code>: 通过管道将一个过滤器的输出当做下一个过滤器的输入</p>
-<pre><code class="language-bash">&#36; echo <span class="token string">'[{"name":"JSON", "good":true}, {"name":"XML", "good":false}]'</span> <span class="token operator">|</span> jq <span class="token string">'.[] | .name'</span>                                                 
+<pre class="language-bash"><code class="language-bash">$ <span class="token builtin class-name">echo</span> <span class="token string">'[{"name":"JSON", "good":true}, {"name":"XML", "good":false}]'</span> <span class="token operator">|</span> jq <span class="token string">'.[] | .name'</span>                                                 
 <span class="token string">"JSON"</span>
 <span class="token string">"XML"</span>
+
 </code></pre>
 <p><code>select(foo)</code>: 如果foo返回true，则输入保持不变</p>
-<pre><code class="language-bash">&#36; echo <span class="token string">'[1,5,3,0,7]'</span> <span class="token operator">|</span> jq <span class="token string">'map(select(. >= 2))'</span>                                                    
+<pre class="language-bash"><code class="language-bash">$ <span class="token builtin class-name">echo</span> <span class="token string">'[1,5,3,0,7]'</span> <span class="token operator">|</span> jq <span class="token string">'map(select(. >= 2))'</span>                                                    
 <span class="token punctuation">[</span>
-  <span class="token number">5</span><span class="token punctuation">,</span>
-  <span class="token number">3</span><span class="token punctuation">,</span>
+  <span class="token number">5</span>,
+  <span class="token number">3</span>,
   <span class="token number">7</span>
 <span class="token punctuation">]</span>
+
 </code></pre>
 <p><code>map(foo)</code>: 每个输入调用过滤器</p>
-<pre><code class="language-bash">&#36; echo <span class="token string">'[1,2,3]'</span> <span class="token operator">|</span> jq <span class="token string">'map(.+1)'</span>
+<pre class="language-bash"><code class="language-bash">$ <span class="token builtin class-name">echo</span> <span class="token string">'[1,2,3]'</span> <span class="token operator">|</span> jq <span class="token string">'map(.+1)'</span>
 <span class="token punctuation">[</span>
-  <span class="token number">2</span><span class="token punctuation">,</span>
-  <span class="token number">3</span><span class="token punctuation">,</span>
+  <span class="token number">2</span>,
+  <span class="token number">3</span>,
   <span class="token number">4</span>
 <span class="token punctuation">]</span>
+
 </code></pre>
 <p><code>if-then-else-end</code>: 条件判断</p>
-<pre><code class="language-bash"> &#36; echo <span class="token string">'2'</span> <span class="token operator">|</span> jq <span class="token string">'if . == 0 then "zero" elif . == 1 then "one" else "many" end'</span>
+<pre class="language-bash"><code class="language-bash"> $ <span class="token builtin class-name">echo</span> <span class="token string">'2'</span> <span class="token operator">|</span> jq <span class="token string">'if . == 0 then "zero" elif . == 1 then "one" else "many" end'</span>
 
 <span class="token string">"many"</span>
+
 </code></pre>
 <p><code>\(foo)</code>: 在字符串中插入值并进行运算</p>
-<pre><code class="language-bash">&#36; echo <span class="token string">'42'</span> <span class="token operator">|</span> jq <span class="token string">'"The input was \(.), which is one less than \(.+1)"'</span>          
+<pre class="language-bash"><code class="language-bash">$ <span class="token builtin class-name">echo</span> <span class="token string">'42'</span> <span class="token operator">|</span> jq <span class="token string">'"The input was \(.), which is one less than \(.+1)"'</span>          
 
 <span class="token string">"The input was 42, which is one less than 43"</span>
+
 </code></pre>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-
 </div>
 
 <div class="footer ">
@@ -181,7 +197,7 @@ jq <span class="token punctuation">[</span>options<span class="token punctuation
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1628764653426"></script>
-<script type="text/javascript" src="../js/index.js?v=1628764653426"></script>
+<script type="text/javascript" src="../js/dt.js?v=1628769137260"></script>
+<script type="text/javascript" src="../js/index.js?v=1628769137260"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,inotifywait,异步文件系统监控机制">
     <title>inotifywait 命令，Linux inotifywait 命令详解：异步文件系统监控机制 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628764653387">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628769137238">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -40,55 +40,60 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/inotifywait.md">添加实例</a>
 </span>
 
-<h1 id="inotifywait">inotifywait</h1><p>异步文件系统监控机制</p>
-<h2 id="补充说明">补充说明</h2><p><strong>Inotify</strong> 一种强大的、细粒度的、异步文件系统监控机制，它满足各种各样的文件监控需要，可以监控文件系统的访问属性、读写属性、权限属性、删除创建、移动等操作，也就是可以监控文件发生的一切变化。。</p>
-<p> <strong>inotify-tools</strong> 是一个C库和一组命令行的工作提供Linux下inotify的简单接口。inotify-tools安装后会得到<code>inotifywait</code>和<code>inotifywatch</code>这两条命令：</p>
+<h1>inotifywait</h1>
+<p>异步文件系统监控机制</p>
+<h2>补充说明</h2>
+<p><strong>Inotify</strong> 一种强大的、细粒度的、异步文件系统监控机制，它满足各种各样的文件监控需要，可以监控文件系统的访问属性、读写属性、权限属性、删除创建、移动等操作，也就是可以监控文件发生的一切变化。。</p>
+<p><strong>inotify-tools</strong> 是一个C库和一组命令行的工作提供Linux下inotify的简单接口。inotify-tools安装后会得到<code>inotifywait</code>和<code>inotifywatch</code>这两条命令：</p>
 <ul>
-<li>   <strong>inotifywait命令</strong> 可以用来收集有关文件访问信息，Linux发行版一般没有包括这个命令，需要安装inotify-tools，这个命令还需要将inotify支持编译入Linux内核，好在大多数Linux发行版都在内核中启用了inotify。</li>
-<li>   <strong>inotifywatch命令</strong> 用于收集关于被监视的文件系统的统计数据，包括每个 inotify 事件发生多少次。</li>
+<li><strong>inotifywait命令</strong> 可以用来收集有关文件访问信息，Linux发行版一般没有包括这个命令，需要安装inotify-tools，这个命令还需要将inotify支持编译入Linux内核，好在大多数Linux发行版都在内核中启用了inotify。</li>
+<li><strong>inotifywatch命令</strong> 用于收集关于被监视的文件系统的统计数据，包括每个 inotify 事件发生多少次。</li>
 </ul>
 <p>开始之前需要检测系统内核是否支持inotify：</p>
 <p>使用<code>uname -r</code>命令检查Linux内核，如果低于2.6.13，就需要重新编译内核加入inotify的支持。</p>
 <p>使用<code>ll /proc/sys/fs/inotify</code>命令，是否有以下三条信息输出，如果没有表示不支持。</p>
-<pre><code class="language-shell">ll /proc/sys/fs/inotify
+<pre class="language-shell"><code class="language-shell">ll /proc/sys/fs/inotify
 total <span class="token number">0</span>
 -rw-r--r-- <span class="token number">1</span> root root <span class="token number">0</span> Jan  <span class="token number">4</span> <span class="token number">15</span>:41 max_queued_events
 -rw-r--r-- <span class="token number">1</span> root root <span class="token number">0</span> Jan  <span class="token number">4</span> <span class="token number">15</span>:41 max_user_instances
 -rw-r--r-- <span class="token number">1</span> root root <span class="token number">0</span> Jan  <span class="token number">4</span> <span class="token number">15</span>:41 max_user_watches
 </code></pre>
-<h3 id="安装inotify-tools">安装inotify-tools</h3><ul>
-<li>  inotify-tools项目地址：<a href="https://github.com/rvoicilas/inotify-tools">https://github.com/rvoicilas/inotify-tools</a></li>
-<li>  inotify-tools下载地址：<a href="http://github.com/downloads/rvoicilas/inotify-tools/inotify-tools-3.14.tar.gz">http://github.com/downloads/rvoicilas/inotify-tools/inotify-tools-3.14.tar.gz</a></li>
+<h3>安装inotify-tools</h3>
+<ul>
+<li>inotify-tools项目地址：https://github.com/rvoicilas/inotify-tools</li>
+<li>inotify-tools下载地址：http://github.com/downloads/rvoicilas/inotify-tools/inotify-tools-3.14.tar.gz</li>
 </ul>
-<pre><code class="language-shell"><span class="token comment">#CentOS release 5.8/64位：</span>
+<pre class="language-shell"><code class="language-shell"><span class="token comment">#CentOS release 5.8/64位：</span>
 <span class="token function">tar</span> zxvf inotify-tools-3.14.tar.gz
 <span class="token builtin class-name">cd</span> inotify-tools-3.14
 ./configure
 <span class="token function">make</span>
 <span class="token function">make</span> <span class="token function">install</span>
 </code></pre>
-<p>其他Linux发行版安装方法可以参见：<a href="https://github.com/rvoicilas/inotify-tools/wiki#wiki-getting">https://github.com/rvoicilas/inotify-tools/wiki#wiki-getting</a></p>
-<h3 id="inotify相关参数">inotify相关参数</h3><p>inotify定义了下列的接口参数，可以用来限制inotify消耗kernel memory的大小。由于这些参数都是内存参数，因此，可以根据应用需求，实时的调节其大小：</p>
+<p>其他Linux发行版安装方法可以参见：https://github.com/rvoicilas/inotify-tools/wiki#wiki-getting</p>
+<h3>inotify相关参数</h3>
+<p>inotify定义了下列的接口参数，可以用来限制inotify消耗kernel memory的大小。由于这些参数都是内存参数，因此，可以根据应用需求，实时的调节其大小：</p>
 <ul>
-<li>  <code>/proc/sys/fs/inotify/max_queued_evnets</code>表示调用inotify_init时分配给inotify instance中可排队的event的数目的最大值，超出这个值的事件被丢弃，但会触发IN_Q_OVERFLOW事件。</li>
-<li>  <code>/proc/sys/fs/inotify/max_user_instances</code>表示每一个real user id可创建的inotify instatnces的数量上限。</li>
-<li>  <code>/proc/sys/fs/inotify/max_user_watches</code>表示每个inotify instatnces可监控的最大目录数量。如果监控的文件数目巨大，需要根据情况，适当增加此值的大小。</li>
+<li><code>/proc/sys/fs/inotify/max_queued_evnets</code>表示调用inotify_init时分配给inotify instance中可排队的event的数目的最大值，超出这个值的事件被丢弃，但会触发IN_Q_OVERFLOW事件。</li>
+<li><code>/proc/sys/fs/inotify/max_user_instances</code>表示每一个real user id可创建的inotify instatnces的数量上限。</li>
+<li><code>/proc/sys/fs/inotify/max_user_watches</code>表示每个inotify instatnces可监控的最大目录数量。如果监控的文件数目巨大，需要根据情况，适当增加此值的大小。</li>
 </ul>
 <p>根据以上在32位或者64位系统都可以执行：</p>
-<pre><code class="language-shell"><span class="token builtin class-name">echo</span> <span class="token number">104857600</span> <span class="token operator">></span> /proc/sys/fs/inotify/max_user_watches
+<pre class="language-shell"><code class="language-shell"><span class="token builtin class-name">echo</span> <span class="token number">104857600</span> <span class="token operator">></span> /proc/sys/fs/inotify/max_user_watches
 <span class="token builtin class-name">echo</span> <span class="token string">'echo 104857600 > /proc/sys/fs/inotify/max_user_watches'</span> <span class="token operator">>></span> /etc/rc.local
 </code></pre>
 <p>如果遇到以下错误：</p>
-<pre><code class="language-shell">inotifywait: error <span class="token keyword">while</span> loading shared libraries: libinotifytools.so.0: cannot <span class="token function">open</span> shared object file: No such <span class="token function">file</span> or directory 
+<pre class="language-shell"><code class="language-shell">inotifywait: error <span class="token keyword">while</span> loading shared libraries: libinotifytools.so.0: cannot <span class="token function">open</span> shared object file: No such <span class="token function">file</span> or directory 
 </code></pre>
-<pre><code class="language-shell"> **解决方法：** 
+<pre class="language-shell"><code class="language-shell"> **解决方法：** 
 <span class="token number">32</span>位系统：ln -s /usr/local/lib/libinotifytools.so.0 /usr/lib/libinotifytools.so.0
 <span class="token number">64</span>位系统：ln -s /usr/local/lib/libinotifytools.so.0 /usr/lib64/libinotifytools.so.0
 </code></pre>
-<h3 id="inotifywait命令使用">inotifywait命令使用</h3><pre><code class="language-shell"><span class="token shebang important">#!/bin/bash</span>
+<h3>inotifywait命令使用</h3>
+<pre class="language-shell"><code class="language-shell"><span class="token shebang important">#!/bin/bash</span>
 <span class="token comment">#filename watchdir.sh</span>
-<span class="token assign-left variable">path</span><span class="token operator">=</span><span class="token variable">&#36;1</span>
-/usr/local/bin/inotifywait -mrq --timefmt <span class="token string">'%d/%m/%y/%H:%M'</span> --format <span class="token string">'%T %w %f'</span> -e modify,delete,create,attrib <span class="token variable">&#36;path</span>
+<span class="token assign-left variable">path</span><span class="token operator">=</span><span class="token variable">$1</span>
+/usr/local/bin/inotifywait -mrq --timefmt <span class="token string">'%d/%m/%y/%H:%M'</span> --format <span class="token string">'%T %w %f'</span> -e modify,delete,create,attrib <span class="token variable">$path</span>
 
 执行输出：
 ./watchdir.sh /data/wsdata/tools/
@@ -109,7 +114,8 @@ total <span class="token number">0</span>
 04/01/13/16:35 /data/wsdata/tools/ j.jsp~
 04/01/13/16:35 /data/wsdata/tools/ .j.jsp.swp
 </code></pre>
-<h3 id="inotifywait命令参数">inotifywait命令参数</h3><ul>
+<h3>inotifywait命令参数</h3>
+<ul>
 <li><code>-m</code>是要持续监视变化。</li>
 <li><code>-r</code>使用递归形式监视目录。</li>
 <li><code>-q</code>减少冗余信息，只打印出需要的信息。</li>
@@ -117,46 +123,17 @@ total <span class="token number">0</span>
 <li><code>--timefmt</code>是指定时间的输出格式。</li>
 <li><code>--format</code>指定文件变化的详细信息。</li>
 </ul>
-<h3 id="可监听的事件">可监听的事件</h3><table>
-<thead>
-<tr>
-<th>事件</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>access</td>
-<td><strong>访问</strong> ，读取文件。</td>
-</tr>
-<tr>
-<td>modify</td>
-<td><strong>修改</strong> ，文件内容被修改。</td>
-</tr>
-<tr>
-<td>attrib</td>
-<td><strong>属性</strong> ，文件元数据被修改。</td>
-</tr>
-<tr>
-<td>move</td>
-<td><strong>移动</strong> ，对文件进行移动操作。</td>
-</tr>
-<tr>
-<td>create</td>
-<td><strong>创建</strong> ，生成新文件</td>
-</tr>
-<tr>
-<td>open</td>
-<td><strong>打开</strong> ，对文件进行打开操作。</td>
-</tr>
-<tr>
-<td>close</td>
-<td><strong>关闭</strong> ，对文件进行关闭操作。</td>
-</tr>
-<tr>
-<td>delete</td>
-<td><strong>删除</strong> ，文件被删除。</td>
-</tr>
-</tbody></table>
+<h3>可监听的事件</h3>
+<p>事件 | 描述
+--- | ---
+access | <strong>访问</strong> ，读取文件。
+modify | <strong>修改</strong> ，文件内容被修改。
+attrib | <strong>属性</strong> ，文件元数据被修改。
+move | <strong>移动</strong> ，对文件进行移动操作。
+create | <strong>创建</strong> ，生成新文件
+open | <strong>打开</strong> ，对文件进行打开操作。
+close | <strong>关闭</strong> ，对文件进行关闭操作。
+delete | <strong>删除</strong> ，文件被删除。</p>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 </div>
 
@@ -180,7 +157,7 @@ total <span class="token number">0</span>
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1628764653388"></script>
-<script type="text/javascript" src="../js/index.js?v=1628764653388"></script>
+<script type="text/javascript" src="../js/dt.js?v=1628769137238"></script>
+<script type="text/javascript" src="../js/index.js?v=1628769137238"></script>
 </body>
 </html>

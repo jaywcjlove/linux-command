@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,yum,基于RPM的软件包管理器">
     <title>yum 命令，Linux yum 命令详解：基于RPM的软件包管理器 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628764653767">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628769137507">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -40,12 +40,16 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/yum.md">添加实例</a>
 </span>
 
-<h1 id="yum">yum</h1><p>基于RPM的软件包管理器</p>
-<h2 id="补充说明">补充说明</h2><p><strong>yum命令</strong> 是在Fedora和RedHat以及SUSE中基于rpm的软件包管理器，它可以使系统管理人员交互和自动化地更新与管理RPM软件包，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软体包，无须繁琐地一次次下载、安装。</p>
+<h1>yum</h1>
+<p>基于RPM的软件包管理器</p>
+<h2>补充说明</h2>
+<p><strong>yum命令</strong> 是在Fedora和RedHat以及SUSE中基于rpm的软件包管理器，它可以使系统管理人员交互和自动化地更新与管理RPM软件包，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软体包，无须繁琐地一次次下载、安装。</p>
 <p>yum提供了查找、安装、删除某一个、一组甚至全部软件包的命令，而且命令简洁而又好记。</p>
-<h3 id="语法">语法</h3><pre><code class="language-shell">yum<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
+<h3>语法</h3>
+<pre class="language-shell"><code class="language-shell">yum<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
 </code></pre>
-<h3 id="选项">选项</h3><pre><code class="language-shell">-h：显示帮助信息；
+<h3>选项</h3>
+<pre class="language-shell"><code class="language-shell">-h：显示帮助信息；
 -y：对所有的提问都回答“yes”；
 -c：指定配置文件；
 -q：安静模式；
@@ -55,7 +59,8 @@
 -R：设置yum处理一个命令的最大等待时间；
 -C：完全从缓存中运行，而不去下载或者更新任何头文件。
 </code></pre>
-<h3 id="参数">参数</h3><pre><code class="language-shell">install：安装rpm软件包；
+<h3>参数</h3>
+<pre class="language-shell"><code class="language-shell">install：安装rpm软件包；
 update：更新rpm软件包；
 check-update：检查是否有可用的更新rpm软件包；
 remove：删除指定的rpm软件包；
@@ -69,26 +74,27 @@ localinstall：安装本地的rpm软件包；
 localupdate：显示本地rpm软件包进行更新；
 deplist：显示rpm软件包的所有依赖关系。
 </code></pre>
-<h3 id="实例">实例</h3><p>部分常用的命令包括：</p>
+<h3>实例</h3>
+<p>部分常用的命令包括：</p>
 <ul>
-<li>  自动搜索最快镜像插件：<code>yum install yum-fastestmirror</code></li>
-<li>  安装yum图形窗口插件：<code>yum install yumex</code></li>
-<li>  查看可能批量安装的列表：<code>yum grouplist</code></li>
+<li>自动搜索最快镜像插件：<code>yum install yum-fastestmirror</code></li>
+<li>安装yum图形窗口插件：<code>yum install yumex</code></li>
+<li>查看可能批量安装的列表：<code>yum grouplist</code></li>
 </ul>
 <p><strong>安装</strong></p>
-<pre><code class="language-shell">yum <span class="token function">install</span>              <span class="token comment">#全部安装</span>
+<pre class="language-shell"><code class="language-shell">yum <span class="token function">install</span>              <span class="token comment">#全部安装</span>
 yum <span class="token function">install</span> package1     <span class="token comment">#安装指定的安装包package1</span>
 yum groupinsall group1   <span class="token comment">#安装程序组group1</span>
 </code></pre>
 <p><strong>更新和升级</strong></p>
-<pre><code class="language-shell">yum update               <span class="token comment">#全部更新</span>
+<pre class="language-shell"><code class="language-shell">yum update               <span class="token comment">#全部更新</span>
 yum update package1      <span class="token comment">#更新指定程序包package1</span>
 yum check-update         <span class="token comment">#检查可更新的程序</span>
 yum upgrade package1     <span class="token comment">#升级指定程序包package1</span>
 yum groupupdate group1   <span class="token comment">#升级程序组group1</span>
 </code></pre>
 <p><strong>查找和显示</strong></p>
-<pre><code class="language-shell"><span class="token comment"># 检查 MySQL 是否已安装</span>
+<pre class="language-shell"><code class="language-shell"><span class="token comment"># 检查 MySQL 是否已安装</span>
 yum list installed <span class="token operator">|</span> <span class="token function">grep</span> mysql
 yum list installed mysql*
 
@@ -98,22 +104,22 @@ yum list package1      <span class="token comment">#显示指定程序包安装�
 yum groupinfo group1   <span class="token comment">#显示程序组group1信息yum search string 根据关键字string查找安装包</span>
 </code></pre>
 <p><strong>删除程序</strong></p>
-<pre><code class="language-shell">yum remove <span class="token operator">&amp;</span><span class="token comment">#124; erase package1   #删除程序包package1</span>
+<pre class="language-shell"><code class="language-shell">yum remove <span class="token operator">&#x26;</span><span class="token comment">#124; erase package1   #删除程序包package1</span>
 yum groupremove group1             <span class="token comment">#删除程序组group1</span>
 yum deplist package1               <span class="token comment">#查看程序package1依赖情况</span>
 </code></pre>
 <p><strong>清除缓存</strong></p>
-<pre><code class="language-shell">yum clean packages       <span class="token comment">#清除缓存目录下的软件包</span>
+<pre class="language-shell"><code class="language-shell">yum clean packages       <span class="token comment">#清除缓存目录下的软件包</span>
 yum clean headers        <span class="token comment">#清除缓存目录下的 headers</span>
 yum clean oldheaders     <span class="token comment">#清除缓存目录下旧的 headers</span>
 </code></pre>
 <p><strong>更多实例</strong></p>
-<pre><code class="language-shell"><span class="token comment"># yum</span>
+<pre class="language-shell"><code class="language-shell"><span class="token comment"># yum</span>
 /etc/yum.repos.d/       yum 源配置文件
 <span class="token function">vi</span> /etc/yum.repos.d/nginx.repo <span class="token comment"># 举个栗子: nginx yum源</span>
 <span class="token punctuation">[</span>nginx<span class="token punctuation">]</span>
 <span class="token assign-left variable">name</span><span class="token operator">=</span>nginx repo
-<span class="token assign-left variable">baseurl</span><span class="token operator">=</span>http://nginx.org/packages/centos/6/<span class="token variable">&#36;basearch</span>/
+<span class="token assign-left variable">baseurl</span><span class="token operator">=</span>http://nginx.org/packages/centos/6/<span class="token variable">$basearch</span>/
 <span class="token assign-left variable">gpgcheck</span><span class="token operator">=</span><span class="token number">0</span>
 <span class="token assign-left variable">enabled</span><span class="token operator">=</span><span class="token number">1</span>
 
@@ -128,7 +134,6 @@ yum makecache
 yum groupinstall <span class="token string">"Chinese Support"</span> <span class="token comment"># 添加中文语言支持</span>
 </code></pre>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-
 </div>
 
 <div class="footer ">
@@ -151,7 +156,7 @@ yum groupinstall <span class="token string">"Chinese Support"</span> <span class
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1628764653768"></script>
-<script type="text/javascript" src="../js/index.js?v=1628764653768"></script>
+<script type="text/javascript" src="../js/dt.js?v=1628769137507"></script>
+<script type="text/javascript" src="../js/index.js?v=1628769137507"></script>
 </body>
 </html>

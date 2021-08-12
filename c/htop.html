@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,htop,[非内部命令]一个互动的进程查看器，可以动态观察系统进程状况">
     <title>htop 命令，Linux htop 命令详解：[非内部命令]一个互动的进程查看器，可以动态观察系统进程状况 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628764653367">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628769137228">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -40,8 +40,10 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/htop.md">添加实例</a>
 </span>
 
-<h1 id="htop">htop</h1><p>[非内部命令]一个互动的进程查看器，可以动态观察系统进程状况</p>
-<h2 id="补充说明">补充说明</h2><p>htop命令 是Linux系统中的一个互动的进程查看器，一个文本模式的应用程序(在控制台或者X终端中)，需要ncurses。</p>
+<h1>htop</h1>
+<p>[非内部命令]一个互动的进程查看器，可以动态观察系统进程状况</p>
+<h2>补充说明</h2>
+<p>htop命令 是Linux系统中的一个互动的进程查看器，一个文本模式的应用程序(在控制台或者X终端中)，需要ncurses。</p>
 <p>与Linux传统的top相比，htop更加人性化。它可让用户交互式操作，支持颜色主题，可横向或纵向滚动浏览进程列表，并支持鼠标操作。</p>
 <p>与top相比，htop有以下优点：</p>
 <ul>
@@ -56,10 +58,12 @@
 <li>只支持键盘操作。</li>
 <li>显示也单调。</li>
 </ul>
-<p>htop 官网：<a href="http://htop.sourceforge.net/">http://htop.sourceforge.net/</a></p>
-<h3 id="语法">语法</h3><pre><code class="language-shell"><span class="token function">htop</span>
+<p>htop 官网：http://htop.sourceforge.net/</p>
+<h3>语法</h3>
+<pre class="language-shell"><code class="language-shell"><span class="token function">htop</span>
 </code></pre>
-<h3 id="参数">参数</h3><pre><code class="language-shell">-C --no-color               使用单色配色方案
+<h3>参数</h3>
+<pre class="language-shell"><code class="language-shell">-C --no-color               使用单色配色方案
 -d --delay<span class="token operator">=</span>DELAY            设置更新之间的延迟，在十秒
 -s --sort-key<span class="token operator">=</span>COLUMN        纵列排序<span class="token punctuation">(</span>try --sort-key<span class="token operator">=</span>help <span class="token keyword">for</span> a list<span class="token punctuation">)</span>
 -u --user<span class="token operator">=</span>USERNAME          只显示一个指定用户的进程
@@ -67,48 +71,90 @@
 -h --help                   打印此命令帮助
 -v --version                打印版本信息
 </code></pre>
-<h3 id="选项">选项</h3><p>```shell
-h,?     F1：查看htop使用说明
+<h3>选项</h3>
+<pre class="language-shell"><code class="language-shell">h,?     F1：查看htop使用说明
 S       F2：设置
 /       F3：搜索进程
-\       F4：过滤器，按关键字搜索
+<span class="token punctuation">\</span>       F4：过滤器，按关键字搜索
 t       F5：显示树形结构
-&lt;,&gt;     F6：选择排序方式
-[       F7：减少nice值，这样就可以提高对应进程的优先级
-]       F8：增加nice值，这样可以降低对应进程的优先级
+<span class="token operator">&#x3C;</span>,<span class="token operator">></span>     F6：选择排序方式
+<span class="token punctuation">[</span>       F7：减少nice值，这样就可以提高对应进程的优先级
+<span class="token punctuation">]</span>       F8：增加nice值，这样可以降低对应进程的优先级
 k       F9：杀掉选中的进程
-q       F10：退出htop</p>
-<p>/ : 搜索字符
-h : 显示帮助
-l : 显示进程打开的文件: 如果安装了lsof，按此键可以显示进程所打开的文件
-u : 显示所有用户，并可以选择某一特定用户的进程
-U : 取消标记所有的进程
-s : 将调用strace追踪进程的系统调用
-t : 显示树形结构</p>
-<p>H：显示/隐藏用户线程
+q       F10：退出htop
+
+
+/ <span class="token builtin class-name">:</span> 搜索字符
+h <span class="token builtin class-name">:</span> 显示帮助
+l <span class="token builtin class-name">:</span> 显示进程打开的文件: 如果安装了lsof，按此键可以显示进程所打开的文件
+u <span class="token builtin class-name">:</span> 显示所有用户，并可以选择某一特定用户的进程
+U <span class="token builtin class-name">:</span> 取消标记所有的进程
+s <span class="token builtin class-name">:</span> 将调用strace追踪进程的系统调用
+t <span class="token builtin class-name">:</span> 显示树形结构
+
+H：显示/隐藏用户线程
 I：倒转排序顺序
-K：显示/隐藏内核线程<br>M：按内存占用排序
-P：按CPU排序<br>T：按运行时间排序</p>
-<p>上下键或PgUP， PgDn : 移动选中进程<br>左右键或Home， End : 移动列表<br>Space(空格) : 标记/取消标记一个进程。命令可以作用于多个进程，例如 &quot;kill&quot;，将应用于所有已标记的进程  </p>
-<p>```shell</p>
-<h3 id="htop设定">Htop设定</h3><p>鼠标点击Setup或者按下F2 之后进入htop 设定的页面</p>
-<h4 id="1-meters">1. Meters</h4><p>设定顶端的 显示信息，分为左右两侧，Left column 表示左侧的显示的信息，Right column表示右侧显示的信息，如果要新加选项，可以选择Available meters添加，F5新增到上方左侧，F6新增到上方右侧。Left column和Right column下面的选项，可以选定信息的显示方式，有LED、Bar(进度条)、Text(文本模式)，可以根据个人喜好进行设置</p>
-<h4 id="2-display-options">2. Display options</h4><p>选择要显示的内容，按空格 x表示显示，选择完后，按F10保存</p>
-<h4 id="3-colors">3. Colors</h4><p>设定界面以什么颜色来显示，个人认为用处不大，各人喜好不同</p>
-<h4 id="4-colums">4. Colums</h4><p>作用是增加或取消要显示的各项内容，选择后F7(向上移动)、F8(向下移动)、F9(取消显示、F10(保存更改))此处增加了PPID、PGRP，根据各人需求，显示那些信息。</p>
-<p><strong>F3 搜索进程</strong></p>
-<p>在界面下按F3或直接输入”/”就可以直接进入搜索模式，是按照进程名进行搜索的，搜索到的进程会用设定的颜色标记出来，方便查看。</p>
-<p><strong>F4：过滤器</strong></p>
-<p>相当于模糊查找，不区分大小写，下方输入要搜索的内容后，则界面只显示搜索到的内容，更加方便查看</p>
-<p><strong>F5:以树形方式显示</strong></p>
-<p><strong>F6：排序方式</strong></p>
-<p>按下F6后会跳转至以树形方式显示界面，让您选择以什么方式进行排序，在Sort by下选择您要以什么来排序</p>
-<p><strong>F7，F8：调整进程nice值</strong></p>
-<p>F7表示减小nice值(增大优先级)，F8增大nice值(减小优先级)，选择某一进程，按F7或F8来增大或减小nice值，nice值范围为-20-19</p>
-<p><strong>F9：杀死进程</strong></p>
-<p>选择某一进程按F9即可杀死此进程，很方便</p>
-<p><strong>F10:退出htop</strong></p>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+K：显示/隐藏内核线程    
+M：按内存占用排序
+P：按CPU排序    
+T：按运行时间排序
+
+上下键或PgUP， PgDn <span class="token builtin class-name">:</span> 移动选中进程  
+左右键或Home， End <span class="token builtin class-name">:</span> 移动列表  
+Space<span class="token punctuation">(</span>空格<span class="token punctuation">)</span> <span class="token builtin class-name">:</span> 标记/取消标记一个进程。命令可以作用于多个进程，例如 <span class="token string">"kill"</span>，将应用于所有已标记的进程  
+
+```shell
+
+
+<span class="token comment">### Htop设定</span>
+
+鼠标点击Setup或者按下F2 之后进入htop 设定的页面
+
+<span class="token comment">#### 1. Meters</span>
+
+设定顶端的 显示信息，分为左右两侧，Left <span class="token function">column</span> 表示左侧的显示的信息，Right column表示右侧显示的信息，如果要新加选项，可以选择Available meters添加，F5新增到上方左侧，F6新增到上方右侧。Left column和Right column下面的选项，可以选定信息的显示方式，有LED、Bar<span class="token punctuation">(</span>进度条<span class="token punctuation">)</span>、Text<span class="token punctuation">(</span>文本模式<span class="token punctuation">)</span>，可以根据个人喜好进行设置
+
+<span class="token comment">#### 2. Display options</span>
+
+选择要显示的内容，按空格 x表示显示，选择完后，按F10保存
+
+<span class="token comment">#### 3. Colors</span>
+
+设定界面以什么颜色来显示，个人认为用处不大，各人喜好不同
+
+<span class="token comment">#### 4. Colums</span>
+
+作用是增加或取消要显示的各项内容，选择后F7<span class="token punctuation">(</span>向上移动<span class="token punctuation">)</span>、F8<span class="token punctuation">(</span>向下移动<span class="token punctuation">)</span>、F9<span class="token punctuation">(</span>取消显示、F10<span class="token punctuation">(</span>保存更改<span class="token punctuation">))</span>此处增加了<span class="token environment constant">PPID</span>、PGRP，根据各人需求，显示那些信息。
+
+**F3 搜索进程**
+
+在界面下按F3或直接输入”/”就可以直接进入搜索模式，是按照进程名进行搜索的，搜索到的进程会用设定的颜色标记出来，方便查看。
+
+**F4：过滤器**
+
+相当于模糊查找，不区分大小写，下方输入要搜索的内容后，则界面只显示搜索到的内容，更加方便查看
+
+**F5:以树形方式显示**
+
+
+**F6：排序方式**
+
+按下F6后会跳转至以树形方式显示界面，让您选择以什么方式进行排序，在Sort by下选择您要以什么来排序
+
+**F7，F8：调整进程nice值**
+
+F7表示减小nice值<span class="token punctuation">(</span>增大优先级<span class="token punctuation">)</span>，F8增大nice值<span class="token punctuation">(</span>减小优先级<span class="token punctuation">)</span>，选择某一进程，按F7或F8来增大或减小nice值，nice值范围为-20-19
+
+
+**F9：杀死进程**
+
+选择某一进程按F9即可杀死此进程，很方便
+
+**F10:退出htop**
+
+
+<span class="token operator">&#x3C;</span><span class="token operator">!</span>-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ --<span class="token operator">></span>
+</code></pre>
 </div>
 
 <div class="footer ">
@@ -131,7 +177,7 @@ P：按CPU排序<br>T：按运行时间排序</p>
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1628764653367"></script>
-<script type="text/javascript" src="../js/index.js?v=1628764653367"></script>
+<script type="text/javascript" src="../js/dt.js?v=1628769137228"></script>
+<script type="text/javascript" src="../js/index.js?v=1628769137228"></script>
 </body>
 </html>

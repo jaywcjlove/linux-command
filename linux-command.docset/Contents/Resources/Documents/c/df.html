@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,df,显示磁盘的相关信息">
     <title>df 命令，Linux df 命令详解：显示磁盘的相关信息 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628764653230">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628769137149">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -40,12 +40,16 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/df.md">添加实例</a>
 </span>
 
-<h1 id="df">df</h1><p>显示磁盘的相关信息</p>
-<h2 id="补充说明">补充说明</h2><p><strong>df命令</strong> 用于显示磁盘分区上的可使用的磁盘空间。默认显示单位为KB。可以利用该命令来获取硬盘被占用了多少空间，目前还剩下多少空间等信息。</p>
-<h3 id="语法">语法</h3><pre><code class="language-shell">df<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
+<h1>df</h1>
+<p>显示磁盘的相关信息</p>
+<h2>补充说明</h2>
+<p><strong>df命令</strong> 用于显示磁盘分区上的可使用的磁盘空间。默认显示单位为KB。可以利用该命令来获取硬盘被占用了多少空间，目前还剩下多少空间等信息。</p>
+<h3>语法</h3>
+<pre class="language-shell"><code class="language-shell">df<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
 </code></pre>
-<h3 id="选项">选项</h3><pre><code class="language-shell">-a或--all：包含全部的文件系统；
---block-size<span class="token operator">=</span><span class="token operator">&lt;</span>区块大小<span class="token operator">></span>：以指定的区块大小来显示区块数目；
+<h3>选项</h3>
+<pre class="language-shell"><code class="language-shell">-a或--all：包含全部的文件系统；
+--block-size<span class="token operator">=</span><span class="token operator">&#x3C;</span>区块大小<span class="token operator">></span>：以指定的区块大小来显示区块数目；
 -h或--human-readable：以可读性较高的方式来显示信息；
 -H或--si：与-h参数相同，但在计算时是以1000 Bytes为换算单位而非1024 Bytes；
 -i或--inodes：显示inode的信息；
@@ -55,17 +59,20 @@
 --no-sync：在取得磁盘使用信息前，不要执行sync指令，此为预设值；
 -P或--portability：使用POSIX的输出格式；
 --sync：在取得磁盘使用信息前，先执行sync指令；
--t<span class="token operator">&lt;</span>文件系统类型<span class="token operator">></span>或--type<span class="token operator">=</span><span class="token operator">&lt;</span>文件系统类型<span class="token operator">></span>：仅显示指定文件系统类型的磁盘信息；
+-t<span class="token operator">&#x3C;</span>文件系统类型<span class="token operator">></span>或--type<span class="token operator">=</span><span class="token operator">&#x3C;</span>文件系统类型<span class="token operator">></span>：仅显示指定文件系统类型的磁盘信息；
 -T或--print-type：显示文件系统的类型；
--x<span class="token operator">&lt;</span>文件系统类型<span class="token operator">></span>或--exclude-type<span class="token operator">=</span><span class="token operator">&lt;</span>文件系统类型<span class="token operator">></span>：不要显示指定文件系统类型的磁盘信息；
+-x<span class="token operator">&#x3C;</span>文件系统类型<span class="token operator">></span>或--exclude-type<span class="token operator">=</span><span class="token operator">&#x3C;</span>文件系统类型<span class="token operator">></span>：不要显示指定文件系统类型的磁盘信息；
 --help：显示帮助；
 --version：显示版本信息。
 </code></pre>
-<h3 id="参数">参数</h3><p>文件：指定文件系统上的文件。</p>
-<h3 id="大小格式">大小格式</h3><p>显示值以 <code>--block-size</code> 和 <code>DF_BLOCK_SIZE</code>，<code>BLOCK_SIZE</code> 和 <code>BLOCKSIZE</code> 环境变量中的第一个可用 <code>SIZE</code> 为单位。 否则，单位默认为 <code>1024</code> 个字节（如果设置 <code>POSIXLY_CORRECT</code>，则为<code>512</code>）。</p>
+<h3>参数</h3>
+<p>文件：指定文件系统上的文件。</p>
+<h3>大小格式</h3>
+<p>显示值以 <code>--block-size</code> 和 <code>DF_BLOCK_SIZE</code>，<code>BLOCK_SIZE</code> 和 <code>BLOCKSIZE</code> 环境变量中的第一个可用 <code>SIZE</code> 为单位。 否则，单位默认为 <code>1024</code> 个字节（如果设置 <code>POSIXLY_CORRECT</code>，则为<code>512</code>）。</p>
 <p>SIZE是一个整数和可选单位（例如：10M是10 * 1024 * 1024）。 单位是K，M，G，T，P，E，Z，Y（1024的幂）或KB，MB，...（1000的幂）。</p>
-<h3 id="实例">实例</h3><p>查看系统磁盘设备，默认是KB为单位：</p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@LinServ-1 ~<span class="token punctuation">]</span><span class="token comment"># df</span>
+<h3>实例</h3>
+<p>查看系统磁盘设备，默认是KB为单位：</p>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@LinServ-1 ~<span class="token punctuation">]</span><span class="token comment"># df</span>
 文件系统               1K-块        已用     可用 已用% 挂载点
 /dev/sda2            <span class="token number">146294492</span>  <span class="token number">28244432</span> <span class="token number">110498708</span>  <span class="token number">21</span>% /
 /dev/sda1              <span class="token number">1019208</span>     <span class="token number">62360</span>    <span class="token number">904240</span>   <span class="token number">7</span>% /boot
@@ -73,7 +80,7 @@ tmpfs                  <span class="token number">1032204</span>         <span c
 /dev/sdb1            <span class="token number">2884284108</span> <span class="token number">218826068</span> <span class="token number">2518944764</span>   <span class="token number">8</span>% /data1
 </code></pre>
 <p>使用<code>-h</code>选项以KB以上的单位来显示，可读性高：</p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@LinServ-1 ~<span class="token punctuation">]</span><span class="token comment"># df -h</span>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@LinServ-1 ~<span class="token punctuation">]</span><span class="token comment"># df -h</span>
 文件系统              容量  已用 可用 已用% 挂载点
 /dev/sda2             140G   27G  106G  <span class="token number">21</span>% /
 /dev/sda1             996M   61M  884M   <span class="token number">7</span>% /boot
@@ -81,7 +88,7 @@ tmpfs                1009M     <span class="token number">0</span> 1009M   <span
 /dev/sdb1             <span class="token number">2</span>.7T  209G  <span class="token number">2</span>.4T   <span class="token number">8</span>% /data1
 </code></pre>
 <p>查看全部文件系统：</p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@LinServ-1 ~<span class="token punctuation">]</span><span class="token comment"># df -a</span>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@LinServ-1 ~<span class="token punctuation">]</span><span class="token comment"># df -a</span>
 文件系统               1K-块        已用     可用 已用% 挂载点
 /dev/sda2            <span class="token number">146294492</span>  <span class="token number">28244432</span> <span class="token number">110498708</span>  <span class="token number">21</span>% /
 proc                         <span class="token number">0</span>         <span class="token number">0</span>         <span class="token number">0</span>   -  /proc
@@ -93,12 +100,11 @@ tmpfs                  <span class="token number">1032204</span>         <span c
 none                         <span class="token number">0</span>         <span class="token number">0</span>         <span class="token number">0</span>   -  /proc/sys/fs/binfmt_misc
 </code></pre>
 <p>显示 <code>public</code> 目录中的可用空间量，如以下输出中所示：</p>
-<pre><code class="language-shell"><span class="token function">df</span> public
+<pre class="language-shell"><code class="language-shell"><span class="token function">df</span> public
 <span class="token comment"># Filesystem     1K-blocks     Used Available Use% Mounted on</span>
 <span class="token comment"># /dev/loop0      18761008 15246924   2554392  86% /d Avail</span>
 </code></pre>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-
 </div>
 
 <div class="footer ">
@@ -121,7 +127,7 @@ none                         <span class="token number">0</span>         <span c
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1628764653230"></script>
-<script type="text/javascript" src="../js/index.js?v=1628764653230"></script>
+<script type="text/javascript" src="../js/dt.js?v=1628769137149"></script>
+<script type="text/javascript" src="../js/index.js?v=1628769137149"></script>
 </body>
 </html>

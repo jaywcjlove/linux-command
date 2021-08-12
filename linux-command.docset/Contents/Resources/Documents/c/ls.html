@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,ls,显示目录内容列表">
     <title>ls 命令，Linux ls 命令详解：显示目录内容列表 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628764653464">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628769137288">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -40,15 +40,19 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/ls.md">添加实例</a>
 </span>
 
-<h1 id="ls">ls</h1><p>显示目录内容列表</p>
-<h2 id="补充说明">补充说明</h2><p><strong>ls命令</strong> 就是list的缩写，用来显示目标列表，在Linux中是使用率较高的命令。ls命令的输出信息可以进行彩色加亮显示，以分区不同类型的文件。</p>
-<h3 id="语法">语法</h3><pre><code class="language-shell"><span class="token function">ls</span> <span class="token punctuation">[</span>选项<span class="token punctuation">]</span> <span class="token punctuation">[</span>文件名<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+<h1>ls</h1>
+<p>显示目录内容列表</p>
+<h2>补充说明</h2>
+<p><strong>ls命令</strong> 就是list的缩写，用来显示目标列表，在Linux中是使用率较高的命令。ls命令的输出信息可以进行彩色加亮显示，以分区不同类型的文件。</p>
+<h3>语法</h3>
+<pre class="language-shell"><code class="language-shell"><span class="token function">ls</span> <span class="token punctuation">[</span>选项<span class="token punctuation">]</span> <span class="token punctuation">[</span>文件名<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
    <span class="token punctuation">[</span>-1abcdfgiklmnopqrstuxABCDFGLNQRSUX<span class="token punctuation">]</span> <span class="token punctuation">[</span>-w cols<span class="token punctuation">]</span> <span class="token punctuation">[</span>-T cols<span class="token punctuation">]</span> <span class="token punctuation">[</span>-I pattern<span class="token punctuation">]</span> <span class="token punctuation">[</span>--full-time<span class="token punctuation">]</span> 
    <span class="token punctuation">[</span>--format<span class="token operator">=</span><span class="token punctuation">{</span>long,verbose,commas,across,vertical,single-col‐umn<span class="token punctuation">}</span><span class="token punctuation">]</span> 
    <span class="token punctuation">[</span>--sort<span class="token operator">=</span><span class="token punctuation">{</span>none,time,size,extension<span class="token punctuation">}</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>--time<span class="token operator">=</span><span class="token punctuation">{</span>atime,access,use,ctime,status<span class="token punctuation">}</span><span class="token punctuation">]</span> 
    <span class="token punctuation">[</span>--color<span class="token punctuation">[</span><span class="token operator">=</span><span class="token punctuation">{</span>none,auto,always<span class="token punctuation">}</span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>--help<span class="token punctuation">]</span> <span class="token punctuation">[</span>--version<span class="token punctuation">]</span> <span class="token punctuation">[</span>--<span class="token punctuation">]</span>
 </code></pre>
-<h3 id="选项">选项</h3><pre><code class="language-shell">-C     <span class="token comment"># 多列输出，纵向排序。</span>
+<h3>选项</h3>
+<pre class="language-shell"><code class="language-shell">-C     <span class="token comment"># 多列输出，纵向排序。</span>
 -F     <span class="token comment"># 每个目录名加 "/" 后缀，每个 FIFO 名加 "|" 后缀， 每个可运行名加“ * ”后缀。</span>
 -R     <span class="token comment"># 递归列出遇到的子目录。</span>
 -a     <span class="token comment"># 列出所有文件，包括以 "." 开头的隐含文件。</span>
@@ -198,21 +202,23 @@ none <span class="token comment"># 不使用颜色，这是缺省项。</span>
        <span class="token comment"># 因此这个选项已经给出了系统所知的全部信息。）例如，当你有一个         Makefile          文件</span>
        <span class="token comment"># 不能恰当地生成文件时，这个选项会提供帮助。</span>
 </code></pre>
-<h3 id="参数">参数</h3><p>目录：指定要显示列表的目录，也可以是具体的文件。</p>
-<h3 id="实例">实例</h3><pre><code class="language-shell">&#36; <span class="token function">ls</span>       <span class="token comment"># 仅列出当前目录可见文件</span>
-&#36; <span class="token function">ls</span> -l    <span class="token comment"># 列出当前目录可见文件详细信息</span>
-&#36; <span class="token function">ls</span> -hl   <span class="token comment"># 列出详细信息并以可读大小显示文件大小</span>
-&#36; <span class="token function">ls</span> -al   <span class="token comment"># 列出所有文件（包括隐藏）的详细信息</span>
-&#36; <span class="token function">ls</span> --human-readable --size -1 -S --classify <span class="token comment"># 按文件大小排序</span>
-&#36; <span class="token function">du</span> -sh * <span class="token operator">|</span> <span class="token function">sort</span> -h <span class="token comment"># 按文件大小排序(同上)</span>
+<h3>参数</h3>
+<p>目录：指定要显示列表的目录，也可以是具体的文件。</p>
+<h3>实例</h3>
+<pre class="language-shell"><code class="language-shell">$ <span class="token function">ls</span>       <span class="token comment"># 仅列出当前目录可见文件</span>
+$ <span class="token function">ls</span> -l    <span class="token comment"># 列出当前目录可见文件详细信息</span>
+$ <span class="token function">ls</span> -hl   <span class="token comment"># 列出详细信息并以可读大小显示文件大小</span>
+$ <span class="token function">ls</span> -al   <span class="token comment"># 列出所有文件（包括隐藏）的详细信息</span>
+$ <span class="token function">ls</span> --human-readable --size -1 -S --classify <span class="token comment"># 按文件大小排序</span>
+$ <span class="token function">du</span> -sh * <span class="token operator">|</span> <span class="token function">sort</span> -h <span class="token comment"># 按文件大小排序(同上)</span>
 </code></pre>
 <p>显示当前目录下包括影藏文件在内的所有文件列表</p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ls -a</span>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ls -a</span>
 <span class="token builtin class-name">.</span>   anaconda-ks.cfg  .bash_logout   .bashrc  install.log         .mysql_history  satools  .tcshrc   .vimrc
 <span class="token punctuation">..</span>  .bash_history    .bash_profile  .cshrc   install.log.syslog  .rnd            .ssh     .viminfo
 </code></pre>
 <p>输出长格式列表</p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ls -1</span>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ls -1</span>
 
 anaconda-ks.cfg
 install.log
@@ -221,23 +227,23 @@ satools
 </code></pre>
 <p>显示文件的inode信息</p>
 <p>索引节点（index inode简称为“inode”）是Linux中一个特殊的概念，具有相同的索引节点号的两个文本本质上是同一个文件（除文件名不同外）。</p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ls -i -l anaconda-ks.cfg install.log</span>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ls -i -l anaconda-ks.cfg install.log</span>
 <span class="token number">2345481</span> -rw------- <span class="token number">1</span> root root   <span class="token number">859</span> Jun <span class="token number">11</span> <span class="token number">22</span>:49 anaconda-ks.cfg
 <span class="token number">2345474</span> -rw-r--r-- <span class="token number">1</span> root root <span class="token number">13837</span> Jun <span class="token number">11</span> <span class="token number">22</span>:49 install.log
 </code></pre>
 <p>水平输出文件列表</p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost /<span class="token punctuation">]</span><span class="token comment"># ls -m</span>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost /<span class="token punctuation">]</span><span class="token comment"># ls -m</span>
 
 bin, boot, data, dev, etc, home, lib, lost+found, media, misc, mnt, opt, proc, root, sbin, selinux, srv, sys, tmp, usr, var
 </code></pre>
 <p>修改最后一次编辑的文件</p>
 <p>最近修改的文件显示在最上面。</p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost /<span class="token punctuation">]</span><span class="token comment"># ls -t</span>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost /<span class="token punctuation">]</span><span class="token comment"># ls -t</span>
 
 tmp  root  etc  dev  lib  boot  sys  proc  data  home  bin  sbin  usr  var  lost+found  media  mnt  opt  selinux  srv  misc
 </code></pre>
 <p>显示递归文件</p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ls -R</span>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ls -R</span>
 .:
 anaconda-ks.cfg  install.log  install.log.syslog  satools
 
@@ -245,7 +251,7 @@ anaconda-ks.cfg  install.log  install.log.syslog  satools
 black.txt  freemem.sh  iptables.sh  lnmp.sh  mysql  php502_check.sh  ssh_safe.sh
 </code></pre>
 <p>打印文件的UID和GID</p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost /<span class="token punctuation">]</span><span class="token comment"># ls -n</span>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost /<span class="token punctuation">]</span><span class="token comment"># ls -n</span>
 
 total <span class="token number">254</span>
 drwxr-xr-x   <span class="token number">2</span> <span class="token number">0</span> <span class="token number">0</span>  <span class="token number">4096</span> Jun <span class="token number">12</span> 04:03 bin
@@ -271,7 +277,7 @@ drwxr-xr-x  <span class="token number">13</span> <span class="token number">0</s
 drwxr-xr-x  <span class="token number">19</span> <span class="token number">0</span> <span class="token number">0</span>  <span class="token number">4096</span> Jun <span class="token number">11</span> <span class="token number">23</span>:38 var
 </code></pre>
 <p>列出文件和文件夹的详细信息</p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost /<span class="token punctuation">]</span><span class="token comment"># ls -l</span>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost /<span class="token punctuation">]</span><span class="token comment"># ls -l</span>
 
 total <span class="token number">254</span>
 drwxr-xr-x   <span class="token number">2</span> root root  <span class="token number">4096</span> Jun <span class="token number">12</span> 04:03 bin
@@ -297,7 +303,7 @@ drwxr-xr-x  <span class="token number">13</span> root root  <span class="token n
 drwxr-xr-x  <span class="token number">19</span> root root  <span class="token number">4096</span> Jun <span class="token number">11</span> <span class="token number">23</span>:38 var
 </code></pre>
 <p>列出可读文件和文件夹详细信息</p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost /<span class="token punctuation">]</span><span class="token comment"># ls -lh</span>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost /<span class="token punctuation">]</span><span class="token comment"># ls -lh</span>
 
 total 254K
 drwxr-xr-x   <span class="token number">2</span> root root <span class="token number">4</span>.0K Jun <span class="token number">12</span> 04:03 bin
@@ -323,12 +329,12 @@ drwxr-xr-x  <span class="token number">13</span> root root <span class="token nu
 drwxr-xr-x  <span class="token number">19</span> root root <span class="token number">4</span>.0K Jun <span class="token number">11</span> <span class="token number">23</span>:38 var
 </code></pre>
 <p>显示文件夹信息</p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost /<span class="token punctuation">]</span><span class="token comment"># ls -ld /etc/</span>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost /<span class="token punctuation">]</span><span class="token comment"># ls -ld /etc/</span>
 
 drwxr-xr-x <span class="token number">75</span> root root <span class="token number">4096</span> Oct <span class="token number">16</span> 04:02 /etc/
 </code></pre>
 <p>按时间列出文件和文件夹详细信息</p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost /<span class="token punctuation">]</span><span class="token comment"># ls -lt</span>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost /<span class="token punctuation">]</span><span class="token comment"># ls -lt</span>
 
 total <span class="token number">254</span>
 drwxrwxrwt   <span class="token number">3</span> root root <span class="token number">98304</span> Oct <span class="token number">16</span> 08:53 tmp
@@ -354,7 +360,7 @@ drwxr-xr-x   <span class="token number">2</span> root root  <span class="token n
 drwxr-xr-x   <span class="token number">2</span> root root  <span class="token number">4096</span> Nov  <span class="token number">8</span>  <span class="token number">2010</span> misc
 </code></pre>
 <p>按修改时间列出文件和文件夹详细信息</p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost /<span class="token punctuation">]</span><span class="token comment"># ls -ltr</span>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost /<span class="token punctuation">]</span><span class="token comment"># ls -ltr</span>
 
 total <span class="token number">254</span>
 drwxr-xr-x   <span class="token number">2</span> root root  <span class="token number">4096</span> Nov  <span class="token number">8</span>  <span class="token number">2010</span> misc
@@ -380,35 +386,44 @@ drwxr-xr-x  <span class="token number">75</span> root root  <span class="token n
 drwxrwxrwt   <span class="token number">3</span> root root <span class="token number">98304</span> Oct <span class="token number">16</span> 08:54 tmp
 </code></pre>
 <p>按照特殊字符对文件进行分类</p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost nginx-1.2.1<span class="token punctuation">]</span><span class="token comment"># ls -F</span>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost nginx-1.2.1<span class="token punctuation">]</span><span class="token comment"># ls -F</span>
 
 auto/  CHANGES  CHANGES.ru  conf/  configure*  contrib/  html/  LICENSE  Makefile  man/  objs/  README  src/
 </code></pre>
 <p>列出文件并标记颜色分类</p>
-<pre><code class="language-shell"><span class="token punctuation">[</span>root@localhost nginx-1.2.1<span class="token punctuation">]</span><span class="token comment"># ls --color=auto</span>
+<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost nginx-1.2.1<span class="token punctuation">]</span><span class="token comment"># ls --color=auto</span>
 
 auto  CHANGES  CHANGES.ru  conf  configure  contrib  html  LICENSE  Makefile  <span class="token function">man</span>  objs  README  src
 </code></pre>
-<h2 id="扩展知识">扩展知识</h2><h3 id="不同颜色代表的文件类型">不同颜色代表的文件类型</h3><ul>
-<li><p>蓝色：目录</p>
+<h2>扩展知识</h2>
+<h3>不同颜色代表的文件类型</h3>
+<ul>
+<li>
+<p>蓝色：目录</p>
 </li>
-<li><p>绿色：可执行文件</p>
+<li>
+<p>绿色：可执行文件</p>
 </li>
-<li><p>白色：一般性文件，如文本文件，配置文件等</p>
+<li>
+<p>白色：一般性文件，如文本文件，配置文件等</p>
 </li>
-<li><p>红色：压缩文件或归档文件</p>
+<li>
+<p>红色：压缩文件或归档文件</p>
 </li>
-<li><p>浅蓝色：链接文件</p>
+<li>
+<p>浅蓝色：链接文件</p>
 </li>
-<li><p>红色闪烁：链接文件存在问题</p>
+<li>
+<p>红色闪烁：链接文件存在问题</p>
 </li>
-<li><p>黄色：设备文件</p>
+<li>
+<p>黄色：设备文件</p>
 </li>
-<li><p>青黄色：管道文件</p>
+<li>
+<p>青黄色：管道文件</p>
 </li>
 </ul>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-
 </div>
 
 <div class="footer ">
@@ -431,7 +446,7 @@ auto  CHANGES  CHANGES.ru  conf  configure  contrib  html  LICENSE  Makefile  <s
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1628764653465"></script>
-<script type="text/javascript" src="../js/index.js?v=1628764653465"></script>
+<script type="text/javascript" src="../js/dt.js?v=1628769137288"></script>
+<script type="text/javascript" src="../js/index.js?v=1628769137288"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,ack,比grep好用的文本搜索工具">
     <title>ack 命令，Linux ack 命令详解：比grep好用的文本搜索工具 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628764653099">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628769137071">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -40,17 +40,21 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/ack.md">添加实例</a>
 </span>
 
-<h1 id="ack">ack</h1><p>比grep好用的文本搜索工具</p>
-<h2 id="安装">安装</h2><pre><code class="language-shell"><span class="token comment"># ubuntu下要安装ack-grep，因为在debian系中，ack这个名字被其他的软件占用了。</span>
+<h1>ack</h1>
+<p>比grep好用的文本搜索工具</p>
+<h2>安装</h2>
+<pre class="language-shell"><code class="language-shell"><span class="token comment"># ubuntu下要安装ack-grep，因为在debian系中，ack这个名字被其他的软件占用了。</span>
 <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> ack-grep
 <span class="token comment"># alpine Linux-apk软件包管理器 安装 ack</span>
 apk <span class="token function">install</span> ack
 </code></pre>
-<h2 id="参数">参数</h2><p>这些参数在linux上的适用频率是相当高的，尤其是你用vim做为IDE的话</p>
-<pre><code class="language-shell">-c<span class="token punctuation">(</span>统计<span class="token punctuation">)</span>/ -i<span class="token punctuation">(</span>忽略大小<span class="token punctuation">)</span>/ -h<span class="token punctuation">(</span>不显示名称<span class="token punctuation">)</span>/
+<h2>参数</h2>
+<p>这些参数在linux上的适用频率是相当高的，尤其是你用vim做为IDE的话</p>
+<pre class="language-shell"><code class="language-shell">-c<span class="token punctuation">(</span>统计<span class="token punctuation">)</span>/ -i<span class="token punctuation">(</span>忽略大小<span class="token punctuation">)</span>/ -h<span class="token punctuation">(</span>不显示名称<span class="token punctuation">)</span>/
 -l<span class="token punctuation">(</span>只显文件名<span class="token punctuation">)</span>/ -n<span class="token punctuation">(</span>加行号<span class="token punctuation">)</span>/ -v<span class="token punctuation">(</span>显示不匹配<span class="token punctuation">)</span>
 </code></pre>
-<h2 id="特点">特点</h2><p>ack官网列出了这工具的5大卖点：</p>
+<h2>特点</h2>
+<p>ack官网列出了这工具的5大卖点：</p>
 <ol>
 <li>速度非常快,因为它只搜索有意义的东西。</li>
 <li>更友好的搜索，忽略那些不是你源码的东西。</li>
@@ -58,45 +62,55 @@ apk <span class="token function">install</span> ack
 <li>非常轻便，移植性好。</li>
 <li>免费且开源</li>
 </ol>
-<h2 id="实例">实例</h2><p>在记忆的时候大体上可以分为这几个部分：</p>
+<h2>实例</h2>
+<p>在记忆的时候大体上可以分为这几个部分：</p>
 <blockquote>
-<p>Searching 代码搜索<br>Search output 搜索结果处理<br>File presentation 文件展示<br>File finding 文件查找<br>File inclusion/exclusion 文件过滤  </p>
+<p>Searching 代码搜索<br>
+Search output 搜索结果处理<br>
+File presentation 文件展示<br>
+File finding 文件查找<br>
+File inclusion/exclusion 文件过滤</p>
 </blockquote>
 <p>grep常用操作</p>
-<pre><code class="language-shell"><span class="token function">grep</span> -r <span class="token string">'hello_world'</span> <span class="token comment"># 简单用法</span>
+<pre class="language-shell"><code class="language-shell"><span class="token function">grep</span> -r <span class="token string">'hello_world'</span> <span class="token comment"># 简单用法</span>
 <span class="token function">grep</span> <span class="token string">'^hello_world'</span> <span class="token builtin class-name">.</span> <span class="token comment"># 简单正则</span>
 <span class="token function">ls</span> -l <span class="token operator">|</span> <span class="token function">grep</span> .py <span class="token comment"># 管道用法</span>
 </code></pre>
-<h3 id="searching">Searching</h3><p>简单的文本搜索，默认是递归的。</p>
+<h3>Searching</h3>
+<p>简单的文本搜索，默认是递归的。</p>
 <pre><code>ack-grep hello
 ack-grep -i hello
 ack-grep -v hello
 ack-grep -w hello
-ack-grep -Q <span class="token string">'hello*'</span>
+ack-grep -Q 'hello*'
 </code></pre>
-<h3 id="search-file">Search File</h3><p>对搜索结果进行处理，比如只显示一个文件的一个匹配项，或者xxx</p>
-<pre><code class="language-shell">ack-grep --line<span class="token operator">=</span><span class="token number">1</span>       <span class="token comment"># 输出所有文件第二行</span>
+<h3>Search File</h3>
+<p>对搜索结果进行处理，比如只显示一个文件的一个匹配项，或者xxx</p>
+<pre class="language-shell"><code class="language-shell">ack-grep --line<span class="token operator">=</span><span class="token number">1</span>       <span class="token comment"># 输出所有文件第二行</span>
 ack-grep -l <span class="token string">'hello'</span>     <span class="token comment"># 包含的文件名</span>
 ack-grep -L <span class="token string">'print'</span>     <span class="token comment"># 非包含文件名</span>
 </code></pre>
-<h3 id="file-presentation">File presentation</h3><p>输出的结果是以什么方式展示呢，这个部分有几个参数可以练习下</p>
-<pre><code class="language-shell">ack-grep hello --pager<span class="token operator">=</span><span class="token string">'less -R'</span>    <span class="token comment"># 以less形式展示</span>
+<h3>File presentation</h3>
+<p>输出的结果是以什么方式展示呢，这个部分有几个参数可以练习下</p>
+<pre class="language-shell"><code class="language-shell">ack-grep hello --pager<span class="token operator">=</span><span class="token string">'less -R'</span>    <span class="token comment"># 以less形式展示</span>
 ack-grep hello --noheading      <span class="token comment"># 不在头上显示文件</span>
 ack-grep hello --nocolor        <span class="token comment"># 不对匹配字符着色</span>
 </code></pre>
-<h3 id="file-finding">File finding</h3><p>没错，它可以查找文件，以省去你要不断的结合find和grep的麻烦，虽然在linux的思想是一个工具做好一件事。</p>
-<pre><code class="language-shell">ack-grep -f hello.py     <span class="token comment"># 查找全匹配文件</span>
-ack-grep -g hello.py&#36;    <span class="token comment"># 查找正则匹配文件</span>
+<h3>File finding</h3>
+<p>没错，它可以查找文件，以省去你要不断的结合find和grep的麻烦，虽然在linux的思想是一个工具做好一件事。</p>
+<pre class="language-shell"><code class="language-shell">ack-grep -f hello.py     <span class="token comment"># 查找全匹配文件</span>
+ack-grep -g hello.py$    <span class="token comment"># 查找正则匹配文件</span>
 ack-grep -g hello  --sort-files     <span class="token comment"># 查找然后排序</span>
 </code></pre>
-<h3 id="file-inclusion-exclusion">File Inclusion/Exclusion</h3><p>文件过滤，个人觉得这是一个很不错的功能。如果你曾经在搜索项目源码是不小心命中日志中的某个关键字的话，你会觉得这个有用。</p>
-<pre><code class="language-shell">ack-grep --python hello       <span class="token comment"># 查找所有python文件</span>
-ack-grep -G hello.py&#36; hello   <span class="token comment"># 查找匹配正则的文件</span>
+<h3>File Inclusion/Exclusion</h3>
+<p>文件过滤，个人觉得这是一个很不错的功能。如果你曾经在搜索项目源码是不小心命中日志中的某个关键字的话，你会觉得这个有用。</p>
+<pre class="language-shell"><code class="language-shell">ack-grep --python hello       <span class="token comment"># 查找所有python文件</span>
+ack-grep -G hello.py$ hello   <span class="token comment"># 查找匹配正则的文件</span>
 </code></pre>
-<h2 id="参考资料">参考资料</h2><ul>
+<h2>参考资料</h2>
+<ul>
 <li><a href="https://beyondgrep.com/">ack官网</a></li>
 </ul>
-
 </div>
 
 <div class="footer ">
@@ -119,7 +133,7 @@ ack-grep -G hello.py&#36; hello   <span class="token comment"># 查找匹配正�
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1628764653102"></script>
-<script type="text/javascript" src="../js/index.js?v=1628764653102"></script>
+<script type="text/javascript" src="../js/dt.js?v=1628769137072"></script>
+<script type="text/javascript" src="../js/index.js?v=1628769137072"></script>
 </body>
 </html>

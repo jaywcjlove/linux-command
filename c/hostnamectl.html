@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,hostnamectl,查询或更改系统主机名">
     <title>hostnamectl 命令，Linux hostnamectl 命令详解：查询或更改系统主机名 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628764653361">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628769137226">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -40,30 +40,36 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/hostnamectl.md">添加实例</a>
 </span>
 
-<h1 id="hostnamectl">hostnamectl</h1><p>查询或更改系统主机名</p>
-<h2 id="补充说明">补充说明</h2><p>hostnamectl可用于查询和更改系统主机名和相关设置。</p>
-<h3 id="语法">语法</h3><pre><code class="language-bash">hostnamectl <span class="token punctuation">[</span>选项<span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">]</span> 指令 <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span>
+<h1>hostnamectl</h1>
+<p>查询或更改系统主机名</p>
+<h2>补充说明</h2>
+<p>hostnamectl可用于查询和更改系统主机名和相关设置。</p>
+<h3>语法</h3>
+<pre class="language-bash"><code class="language-bash">hostnamectl <span class="token punctuation">[</span>选项<span class="token punctuation">..</span>.<span class="token punctuation">]</span> 指令 <span class="token punctuation">..</span>.
 </code></pre>
-<h3 id="指令">指令</h3><pre><code class="language-bash">status                 显示当前主机名设置
-set<span class="token operator">-</span>hostname NAME      设置系统主机名
-set<span class="token operator">-</span>icon<span class="token operator">-</span>name NAME     设置主机的图标名称
-set<span class="token operator">-</span>chassis NAME       设置主机的机箱类型 
-set<span class="token operator">-</span>deployment NAME    设置主机的部署环境 
-set<span class="token operator">-</span>location NAME      设置主机位置
+<h3>指令</h3>
+<pre class="language-bash"><code class="language-bash">status                 显示当前主机名设置
+set-hostname NAME      设置系统主机名
+set-icon-name NAME     设置主机的图标名称
+set-chassis NAME       设置主机的机箱类型 
+set-deployment NAME    设置主机的部署环境 
+set-location NAME      设置主机位置
 </code></pre>
-<h3 id="选项">选项</h3><pre><code class="language-bash"><span class="token operator">-</span>h <span class="token operator">--</span>help               显示此帮助
-    <span class="token operator">--</span>version           显示包的版本
-    <span class="token operator">--</span>no<span class="token operator">-</span>ask<span class="token operator">-</span>password   不提示输入密码
-<span class="token operator">-</span>H <span class="token operator">--</span>host<span class="token operator">=</span><span class="token punctuation">[</span>USER@<span class="token punctuation">]</span>HOST   在远程主机上操作
-<span class="token operator">-</span>M <span class="token operator">--</span>machine<span class="token operator">=</span>CONTAINER  在本地容器上执行操作。指定要连接到的容器名称。
-<span class="token operator">--</span>transient<span class="token punctuation">,</span> <span class="token operator">--</span><span class="token keyword">static</span><span class="token punctuation">,</span> <span class="token operator">--</span>pretty  
+<h3>选项</h3>
+<pre class="language-bash"><code class="language-bash">-h --help               显示此帮助
+    --version           显示包的版本
+    --no-ask-password   不提示输入密码
+-H --host<span class="token operator">=</span><span class="token punctuation">[</span><span class="token environment constant">USER</span>@<span class="token punctuation">]</span>HOST   在远程主机上操作
+-M --machine<span class="token operator">=</span>CONTAINER  在本地容器上执行操作。指定要连接到的容器名称。
+--transient, --static, --pretty  
                         如果调用了status（或者没有给出显式命令）并且指定了其中一个开关，hostnamectl将只打印出这个选定的主机名。
 </code></pre>
-<h3 id="实例">实例</h3><p>显示主机名设置</p>
-<pre><code class="language-bash">&#36; hostnamectl status
+<h3>实例</h3>
+<p>显示主机名设置</p>
+<pre class="language-bash"><code class="language-bash">$ hostnamectl status
 </code></pre>
 <p>改变主机名(永久修改,不用重启哦~)</p>
-<pre><code class="language-bash">&#36; sudo hostnamectl set<span class="token operator">-</span>hostname newname
+<pre class="language-bash"><code class="language-bash">$ <span class="token function">sudo</span> hostnamectl set-hostname newname
 </code></pre>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 </div>
@@ -88,7 +94,7 @@ set<span class="token operator">-</span>location NAME      设置主机位置
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1628764653361"></script>
-<script type="text/javascript" src="../js/index.js?v=1628764653361"></script>
+<script type="text/javascript" src="../js/dt.js?v=1628769137226"></script>
+<script type="text/javascript" src="../js/index.js?v=1628769137226"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,ldconfig,动态链接库管理命令">
     <title>ldconfig 命令，Linux ldconfig 命令详解：动态链接库管理命令 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628764653437">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628769137267">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -40,12 +40,16 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/ldconfig.md">添加实例</a>
 </span>
 
-<h1 id="ldconfig">ldconfig</h1><p>动态链接库管理命令</p>
-<h2 id="补充说明">补充说明</h2><p><strong>ldconfig命令</strong> 的用途主要是在默认搜寻目录<code>/lib</code>和<code>/usr/lib</code>以及动态库配置文件<code>/etc/ld.so.conf</code>内所列的目录下，搜索出可共享的动态链接库（格式如lib*.so*）,进而创建出动态装入程序(ld.so)所需的连接和缓存文件。缓存文件默认为<code>/etc/ld.so.cache</code>，此文件保存已排好序的动态链接库名字列表，为了让动态链接库为系统所共享，需运行动态链接库的管理命令ldconfig，此执行程序存放在<code>/sbin</code>目录下。</p>
+<h1>ldconfig</h1>
+<p>动态链接库管理命令</p>
+<h2>补充说明</h2>
+<p><strong>ldconfig命令</strong> 的用途主要是在默认搜寻目录<code>/lib</code>和<code>/usr/lib</code>以及动态库配置文件<code>/etc/ld.so.conf</code>内所列的目录下，搜索出可共享的动态链接库（格式如lib*.so*）,进而创建出动态装入程序(ld.so)所需的连接和缓存文件。缓存文件默认为<code>/etc/ld.so.cache</code>，此文件保存已排好序的动态链接库名字列表，为了让动态链接库为系统所共享，需运行动态链接库的管理命令ldconfig，此执行程序存放在<code>/sbin</code>目录下。</p>
 <p>ldconfig通常在系统启动时运行，而当用户安装了一个新的动态链接库时，就需要手工运行这个命令。</p>
-<h3 id="语法">语法</h3><pre><code class="language-shell">ldconfig <span class="token punctuation">[</span>-v<span class="token operator">|</span>--verbose<span class="token punctuation">]</span> <span class="token punctuation">[</span>-n<span class="token punctuation">]</span> <span class="token punctuation">[</span>-N<span class="token punctuation">]</span> <span class="token punctuation">[</span>-X<span class="token punctuation">]</span> <span class="token punctuation">[</span>-f CONF<span class="token punctuation">]</span> <span class="token punctuation">[</span>-C CACHE<span class="token punctuation">]</span> <span class="token punctuation">[</span>-r ROOT<span class="token punctuation">]</span> <span class="token punctuation">[</span>-l<span class="token punctuation">]</span> <span class="token punctuation">[</span>-p<span class="token operator">|</span>--print-cache<span class="token punctuation">]</span> <span class="token punctuation">[</span>-c FORMAT<span class="token punctuation">]</span> <span class="token punctuation">[</span>--format<span class="token operator">=</span>FORMAT<span class="token punctuation">]</span> <span class="token punctuation">[</span>-V<span class="token punctuation">]</span> -?<span class="token operator">|</span>--<span class="token punctuation">[</span>help<span class="token operator">|</span>--usage<span class="token punctuation">]</span> path<span class="token punctuation">..</span>. 
+<h3>语法</h3>
+<pre class="language-shell"><code class="language-shell">ldconfig <span class="token punctuation">[</span>-v<span class="token operator">|</span>--verbose<span class="token punctuation">]</span> <span class="token punctuation">[</span>-n<span class="token punctuation">]</span> <span class="token punctuation">[</span>-N<span class="token punctuation">]</span> <span class="token punctuation">[</span>-X<span class="token punctuation">]</span> <span class="token punctuation">[</span>-f CONF<span class="token punctuation">]</span> <span class="token punctuation">[</span>-C CACHE<span class="token punctuation">]</span> <span class="token punctuation">[</span>-r ROOT<span class="token punctuation">]</span> <span class="token punctuation">[</span>-l<span class="token punctuation">]</span> <span class="token punctuation">[</span>-p<span class="token operator">|</span>--print-cache<span class="token punctuation">]</span> <span class="token punctuation">[</span>-c FORMAT<span class="token punctuation">]</span> <span class="token punctuation">[</span>--format<span class="token operator">=</span>FORMAT<span class="token punctuation">]</span> <span class="token punctuation">[</span>-V<span class="token punctuation">]</span> -?<span class="token operator">|</span>--<span class="token punctuation">[</span>help<span class="token operator">|</span>--usage<span class="token punctuation">]</span> path<span class="token punctuation">..</span>. 
 </code></pre>
-<h3 id="选项">选项</h3><pre><code class="language-shell">-v或--verbose：用此选项时，ldconfig将显示正在扫描的目录及搜索到的动态链接库，还有它所创建的连接的名字。
+<h3>选项</h3>
+<pre class="language-shell"><code class="language-shell">-v或--verbose：用此选项时，ldconfig将显示正在扫描的目录及搜索到的动态链接库，还有它所创建的连接的名字。
 -n：用此选项时,ldconfig仅扫描命令行指定的目录，不扫描默认目录（/lib、/usr/lib），也不扫描配置文件/etc/ld.so.conf所列的目录。
 -N：此选项指示ldconfig不重建缓存文件（/etc/ld.so.cache），若未用-X选项，ldconfig照常更新文件的连接。
 -X：此选项指示ldconfig不更新文件的连接，若未用-N选项，则缓存文件正常更新。
@@ -58,15 +62,15 @@
 -V：此选项打印出ldconfig的版本信息，而后退出。
 -? 或 --help 或 --usage：这三个选项作用相同，都是让ldconfig打印出其帮助信息，而后退出。
 </code></pre>
-<p> <strong>ldconfig几个需要注意的地方：</strong> </p>
+<p><strong>ldconfig几个需要注意的地方：</strong></p>
 <ol>
-<li> 往<code>/lib</code>和<code>/usr/lib</code>里面加东西，是不用修改<code>/etc/ld.so.conf</code>的，但是完了之后要调一下ldconfig，不然这个library会找不到。</li>
-<li> 想往上面两个目录以外加东西的时候，一定要修改<code>/etc/ld.so.conf</code>，然后再调用ldconfig，不然也会找不到。</li>
-<li> 比如安装了一个mysql到<code>/usr/local/mysql</code>，mysql有一大堆library在<code>/usr/local/mysql/lib</code>下面，这时就需要在<code>/etc/ld.so.conf</code>下面加一行<code>/usr/local/mysql/lib</code>，保存过后ldconfig一下，新的library才能在程序运行时被找到。</li>
-<li> 如果想在这两个目录以外放lib，但是又不想在<code>/etc/ld.so.conf</code>中加东西（或者是没有权限加东西）。那也可以，就是export一个全局变量LD_LIBRARY_PATH，然后运行程序的时候就会去这个目录中找library。一般来讲这只是一种临时的解决方案，在没有权限或临时需要的时候使用。</li>
-<li> ldconfig做的这些东西都与运行程序时有关，跟编译时一点关系都没有。编译的时候还是该加-L就得加，不要混淆了。</li>
-<li> 总之，就是不管做了什么关于library的变动后，最好都ldconfig一下，不然会出现一些意想不到的结果。不会花太多的时间，但是会省很多的事。</li>
-<li> 再有，诸如libdb-4.3.so文件头中是会含有库名相关的信息的（即含“libdb-4.3.so”，可用strings命令察看），因此仅通过修改文件名以冒充某已被识别的库（如libdb-4.8.so）是行不通的。为此可在编译库的Makefile中直接修改配置信息，指定特别的库名。</li>
+<li>往<code>/lib</code>和<code>/usr/lib</code>里面加东西，是不用修改<code>/etc/ld.so.conf</code>的，但是完了之后要调一下ldconfig，不然这个library会找不到。</li>
+<li>想往上面两个目录以外加东西的时候，一定要修改<code>/etc/ld.so.conf</code>，然后再调用ldconfig，不然也会找不到。</li>
+<li>比如安装了一个mysql到<code>/usr/local/mysql</code>，mysql有一大堆library在<code>/usr/local/mysql/lib</code>下面，这时就需要在<code>/etc/ld.so.conf</code>下面加一行<code>/usr/local/mysql/lib</code>，保存过后ldconfig一下，新的library才能在程序运行时被找到。</li>
+<li>如果想在这两个目录以外放lib，但是又不想在<code>/etc/ld.so.conf</code>中加东西（或者是没有权限加东西）。那也可以，就是export一个全局变量LD_LIBRARY_PATH，然后运行程序的时候就会去这个目录中找library。一般来讲这只是一种临时的解决方案，在没有权限或临时需要的时候使用。</li>
+<li>ldconfig做的这些东西都与运行程序时有关，跟编译时一点关系都没有。编译的时候还是该加-L就得加，不要混淆了。</li>
+<li>总之，就是不管做了什么关于library的变动后，最好都ldconfig一下，不然会出现一些意想不到的结果。不会花太多的时间，但是会省很多的事。</li>
+<li>再有，诸如libdb-4.3.so文件头中是会含有库名相关的信息的（即含“libdb-4.3.so”，可用strings命令察看），因此仅通过修改文件名以冒充某已被识别的库（如libdb-4.8.so）是行不通的。为此可在编译库的Makefile中直接修改配置信息，指定特别的库名。</li>
 </ol>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 </div>
@@ -91,7 +95,7 @@
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1628764653438"></script>
-<script type="text/javascript" src="../js/index.js?v=1628764653438"></script>
+<script type="text/javascript" src="../js/dt.js?v=1628769137267"></script>
+<script type="text/javascript" src="../js/index.js?v=1628769137267"></script>
 </body>
 </html>

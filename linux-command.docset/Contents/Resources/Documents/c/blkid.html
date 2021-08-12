@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,blkid,查看块设备的文件系统类型、LABEL、UUID等信息">
     <title>blkid 命令，Linux blkid 命令详解：查看块设备的文件系统类型、LABEL、UUID等信息 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628764653149">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628769137102">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -40,58 +40,63 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/blkid.md">添加实例</a>
 </span>
 
-<h1 id="blkid">blkid</h1><p>查看块设备的文件系统类型、LABEL、UUID等信息</p>
-<h2 id="补充说明">补充说明</h2><p>在Linux下可以使用 <strong>blkid命令</strong> 对查询设备上所采用文件系统类型进行查询。blkid主要用来对系统的块设备（包括交换分区）所使用的文件系统类型、LABEL、UUID等信息进行查询。要使用这个命令必须安装e2fsprogs软件包。</p>
-<h3 id="语法">语法</h3><pre><code class="language-shell">blkid -L <span class="token operator">|</span> -U
+<h1>blkid</h1>
+<p>查看块设备的文件系统类型、LABEL、UUID等信息</p>
+<h2>补充说明</h2>
+<p>在Linux下可以使用 <strong>blkid命令</strong> 对查询设备上所采用文件系统类型进行查询。blkid主要用来对系统的块设备（包括交换分区）所使用的文件系统类型、LABEL、UUID等信息进行查询。要使用这个命令必须安装e2fsprogs软件包。</p>
+<h3>语法</h3>
+<pre class="language-shell"><code class="language-shell">blkid -L <span class="token operator">|</span> -U
 blkid <span class="token punctuation">[</span>-c <span class="token punctuation">]</span> <span class="token punctuation">[</span>-ghlLv<span class="token punctuation">]</span> <span class="token punctuation">[</span>-o<span class="token punctuation">]</span> <span class="token punctuation">[</span>-s <span class="token punctuation">]</span><span class="token punctuation">[</span>-t <span class="token punctuation">]</span> -<span class="token punctuation">[</span>w <span class="token punctuation">]</span> <span class="token punctuation">[</span> <span class="token punctuation">..</span>.<span class="token punctuation">]</span>
 blkid -p <span class="token punctuation">[</span>-s <span class="token punctuation">]</span> <span class="token punctuation">[</span>-O <span class="token punctuation">]</span> <span class="token punctuation">[</span>-S <span class="token punctuation">]</span><span class="token punctuation">[</span>-o<span class="token punctuation">]</span> <span class="token punctuation">..</span>.
 blkid -i <span class="token punctuation">[</span>-s <span class="token punctuation">]</span> <span class="token punctuation">[</span>-o<span class="token punctuation">]</span> <span class="token punctuation">..</span>.
 </code></pre>
-<h3 id="选项">选项</h3><pre><code class="language-shell">-c <span class="token operator">&lt;</span>file<span class="token operator">></span>   <span class="token comment"># 指定cache文件(default: /etc/blkid.tab, /dev/null = none)</span>
+<h3>选项</h3>
+<pre class="language-shell"><code class="language-shell">-c <span class="token operator">&#x3C;</span>file<span class="token operator">></span>   <span class="token comment"># 指定cache文件(default: /etc/blkid.tab, /dev/null = none)</span>
 -d          <span class="token comment"># don't encode non-printing characters</span>
 -h          <span class="token comment"># 显示帮助信息</span>
 -g          <span class="token comment"># garbage collect the blkid cache</span>
--o <span class="token operator">&lt;</span>format<span class="token operator">></span> <span class="token comment"># 指定输出格式</span>
+-o <span class="token operator">&#x3C;</span>format<span class="token operator">></span> <span class="token comment"># 指定输出格式</span>
 -k          <span class="token comment"># list all known filesystems/RAIDs and exit</span>
--s <span class="token operator">&lt;</span>tag<span class="token operator">></span>    <span class="token comment"># 显示指定信息，默认显示所有信息</span>
--t <span class="token operator">&lt;</span>token<span class="token operator">></span>  <span class="token comment"># find device with a specific token (NAME=value pair)</span>
+-s <span class="token operator">&#x3C;</span>tag<span class="token operator">></span>    <span class="token comment"># 显示指定信息，默认显示所有信息</span>
+-t <span class="token operator">&#x3C;</span>token<span class="token operator">></span>  <span class="token comment"># find device with a specific token (NAME=value pair)</span>
 -l          <span class="token comment"># look up only first device with token specified by -t</span>
--L <span class="token operator">&lt;</span>label<span class="token operator">></span>  <span class="token comment"># convert LABEL to device name</span>
--U <span class="token operator">&lt;</span>uuid<span class="token operator">></span>   <span class="token comment"># convert UUID to device name</span>
+-L <span class="token operator">&#x3C;</span>label<span class="token operator">></span>  <span class="token comment"># convert LABEL to device name</span>
+-U <span class="token operator">&#x3C;</span>uuid<span class="token operator">></span>   <span class="token comment"># convert UUID to device name</span>
 -v          <span class="token comment"># 显示版本信息</span>
--w <span class="token operator">&lt;</span>file<span class="token operator">></span>   <span class="token comment"># write cache to different file (/dev/null = no write)</span>
-<span class="token operator">&lt;</span>dev<span class="token operator">></span>       <span class="token comment"># specify device(s) to probe (default: all devices)</span>
+-w <span class="token operator">&#x3C;</span>file<span class="token operator">></span>   <span class="token comment"># write cache to different file (/dev/null = no write)</span>
+<span class="token operator">&#x3C;</span>dev<span class="token operator">></span>       <span class="token comment"># specify device(s) to probe (default: all devices)</span>
 Low-level probing options:
 -p          <span class="token comment"># low-level superblocks probing (bypass cache)</span>
 -i          <span class="token comment"># gather information about I/O limits</span>
--S <span class="token operator">&lt;</span>size<span class="token operator">></span>   <span class="token comment"># overwrite device size</span>
--O <span class="token operator">&lt;</span>offset<span class="token operator">></span> <span class="token comment"># probe at the given offset</span>
--u <span class="token operator">&lt;</span>list<span class="token operator">></span>   <span class="token comment"># filter by "usage" (e.g. -u filesystem,raid)</span>
--n <span class="token operator">&lt;</span>list<span class="token operator">></span>   <span class="token comment"># filter by filesystem type (e.g. -n vfat,ext3)</span>
+-S <span class="token operator">&#x3C;</span>size<span class="token operator">></span>   <span class="token comment"># overwrite device size</span>
+-O <span class="token operator">&#x3C;</span>offset<span class="token operator">></span> <span class="token comment"># probe at the given offset</span>
+-u <span class="token operator">&#x3C;</span>list<span class="token operator">></span>   <span class="token comment"># filter by "usage" (e.g. -u filesystem,raid)</span>
+-n <span class="token operator">&#x3C;</span>list<span class="token operator">></span>   <span class="token comment"># filter by filesystem type (e.g. -n vfat,ext3)</span>
 </code></pre>
-<h3 id="实例">实例</h3><p>1、列出当前系统中所有已挂载文件系统的类型：</p>
-<pre><code class="language-shell"><span class="token function">sudo</span> blkid
+<h3>实例</h3>
+<p>1、列出当前系统中所有已挂载文件系统的类型：</p>
+<pre class="language-shell"><code class="language-shell"><span class="token function">sudo</span> blkid
 </code></pre>
 <p>2、显示指定设备 UUID：</p>
-<pre><code class="language-shell"><span class="token function">sudo</span> blkid -s UUID /dev/sda5
+<pre class="language-shell"><code class="language-shell"><span class="token function">sudo</span> blkid -s UUID /dev/sda5
 </code></pre>
 <p>3、显示所有设备 UUID：</p>
-<pre><code class="language-shell"><span class="token function">sudo</span> blkid -s UUID
+<pre class="language-shell"><code class="language-shell"><span class="token function">sudo</span> blkid -s UUID
 </code></pre>
 <p>4、显示指定设备 LABEL：</p>
-<pre><code class="language-shell"><span class="token function">sudo</span> blkid -s LABEL /dev/sda5
+<pre class="language-shell"><code class="language-shell"><span class="token function">sudo</span> blkid -s LABEL /dev/sda5
 </code></pre>
 <p>5、显示所有设备 LABEL：</p>
-<pre><code class="language-shell"><span class="token function">sudo</span> blkid -s LABEL
+<pre class="language-shell"><code class="language-shell"><span class="token function">sudo</span> blkid -s LABEL
 </code></pre>
 <p>6、显示所有设备文件系统：</p>
-<pre><code class="language-shell"><span class="token function">sudo</span> blkid -s TYPE
+<pre class="language-shell"><code class="language-shell"><span class="token function">sudo</span> blkid -s TYPE
 </code></pre>
 <p>7、显示所有设备：</p>
-<pre><code class="language-shell"><span class="token function">sudo</span> blkid -o device
+<pre class="language-shell"><code class="language-shell"><span class="token function">sudo</span> blkid -o device
 </code></pre>
 <p>8、以列表方式查看详细信息：</p>
-<pre><code class="language-shell"><span class="token function">sudo</span> blkid -o list
+<pre class="language-shell"><code class="language-shell"><span class="token function">sudo</span> blkid -o list
 </code></pre>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 </div>
@@ -116,7 +121,7 @@ Low-level probing options:
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1628764653150"></script>
-<script type="text/javascript" src="../js/index.js?v=1628764653150"></script>
+<script type="text/javascript" src="../js/dt.js?v=1628769137102"></script>
+<script type="text/javascript" src="../js/index.js?v=1628769137102"></script>
 </body>
 </html>
