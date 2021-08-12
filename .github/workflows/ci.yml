@@ -50,10 +50,10 @@ jobs:
         name: ${{ steps.create_tag.outputs.version }}
         tag: ${{ steps.create_tag.outputs.version }}
         body: |
-          [![](https://img.shields.io/badge/Open%20in-unpkg-blue)](https://uiwjs.github.io/npm-unpkg/#/pkg/linux-command@${{steps.changelog.outputs.version}}/file/README.md) [![npm bundle size](https://img.shields.io/bundlephobia/minzip/linux-command)](https://bundlephobia.com/result?p=linux-command@${{steps.changelog.outputs.version}})
+          [![](https://img.shields.io/badge/Open%20in-unpkg-blue)](https://uiwjs.github.io/npm-unpkg/#/pkg/linux-command@${{steps.create_tag.outputs.versionNumber}}/file/README.md) [![npm bundle size](https://img.shields.io/bundlephobia/minzip/linux-command)](https://bundlephobia.com/result?p=linux-command@${{steps.create_tag.outputs.versionNumber}})
           
           ```bash
-          npm i linux-command@${{steps.changelog.outputs.version}}
+          npm i linux-command@${{steps.create_tag.outputs.versionNumber}}
           ```
 
           ${{ steps.changelog.outputs.compareurl }}
