@@ -14,15 +14,19 @@ jobs:
 
     - name: Generate Changelog
       id: changelog
-      uses: jaywcjlove/changelog-generator@v1.4.2
+      uses: jaywcjlove/changelog-generator@v1.4.3
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
-        head-ref: ${{steps.create_tag.outputs.version}}
         filter-author: (jaywcjlove|小弟调调™|dependabot\[bot\]|Renovate Bot)
-        filter: '[R|r]elease[d]\s+[v|V]\d(\.\d+){0,2}'
+        filter: (^[\s]+?[R|r]elease)|(^[R|r]elease)
+
 
     - run: npm install
     - run: npm run build
+
+    - run: npm install @jsdevtools/npm-publish -g
+    - run: npm-publish --token="${{ secrets.NPM_TOKEN }}" ./package.json
+
     - run: npm run dash
 
     - name: Deploy
@@ -31,3 +35,27 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./.deploy
         
+    - name: Create Tag
+      id: create_tag
+      uses: jaywcjlove/create-tag-action@v1.2.0
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        package-path: ./package.json
+
+    - name: Create Release
+      uses: ncipollo/release-action@v1
+      if: steps.create_tag.outputs.successful
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}
+        name: ${{ steps.create_tag.outputs.version }}
+        tag: ${{ steps.create_tag.outputs.version }}
+        body: |
+          [![](https://img.shields.io/badge/Open%20in-unpkg-blue)](https://uiwjs.github.io/npm-unpkg/#/pkg/linux-command@${{steps.changelog.outputs.version}}/file/README.md) [![npm bundle size](https://img.shields.io/bundlephobia/minzip/linux-command)](https://bundlephobia.com/result?p=linux-command@${{steps.changelog.outputs.version}})
+          
+          ```bash
+          npm i linux-command@${{steps.changelog.outputs.version}}
+          ```
+
+          ${{ steps.changelog.outputs.compareurl }}
+          
+          ${{ steps.changelog.outputs.changelog }}
