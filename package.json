@@ -2,10 +2,11 @@
   "name": "linux-command",
   "version": "1.6.1",
   "description": "Linux Command",
+  "homepage": "https://jaywcjlove.github.io/linux-command/",
   "main": "dist/data.json",
   "scripts": {
     "start": "npm run build",
-    "build": "node build/build.js",
+    "build": "node build/build.mjs",
     "dash": "npm run build && node build/dash.js"
   },
   "files": [
@@ -24,19 +25,23 @@
     "url": "git+https://github.com/jaywcjlove/linux-command.git"
   },
   "devDependencies": {
+    "@mapbox/rehype-prism": "0.7.0",
+    "unified": "10.1.0",
+    "rehype-stringify": "9.0.1",
+    "rehype-raw": "6.0.0",
+    "remark-parse": "10.0.0",
+    "remark-rehype": "9.0.0",
+    "rehype-attr": "1.4.2",
     "archiver": "5.1.0",
     "colors-cli": "1.0.27",
     "ejs": "3.1.6",
-    "fs-extra": "9.0.1",
-    "marked": "2.0.3",
-    "prismjs": "1.23.0",
+    "fs-extra": "10.0.0",
     "sitemap-generator": "8.5.1",
     "sqlite3": "4.1.1",
     "stylus": "0.54.8",
-    "uglify-js": "3.12.1"
+    "uglify-js": "3.14.1"
   },
-  "bugs": {
-    "url": "https://github.com/jaywcjlove/linux-command/issues"
-  },
-  "homepage": "https://jaywcjlove.github.io/linux-command/"
+  "engines": {
+    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+  }
 }
