@@ -417,11 +417,11 @@ auto  CHANGES  CHANGES.ru  conf  configure  contrib  html  LICENSE  Makefile  ma
 
 ### 不同颜色代表的文件类型
 
-* **蓝色**<!--rehype:style=background: blue;-->：目录
-* 绿色：可执行文件
-* 白色：一般性文件，如文本文件，配置文件等
-* 红色：压缩文件或归档文件
-* 浅蓝色：链接文件
+* `蓝色`<!--rehype:style=background: blue;color:white;-->：目录
+* `绿色`<!--rehype:style=background: green;color:white;-->：可执行文件
+* `白色`<!--rehype:style=background: #efefef;-->：一般性文件，如文本文件，配置文件等
+* `红色`<!--rehype:style=background: red;color:white;-->：压缩文件或归档文件
+* `浅蓝色`<!--rehype:style=background: #c4c3ff;-->：链接文件
 * 红色闪烁：链接文件存在问题
 * 黄色：设备文件
 * 青黄色：管道文件
