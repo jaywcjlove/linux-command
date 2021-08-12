@@ -417,20 +417,13 @@ auto  CHANGES  CHANGES.ru  conf  configure  contrib  html  LICENSE  Makefile  ma
 
 ### 不同颜色代表的文件类型
 
-* 蓝色：目录
-
+* **蓝色**<!--rehype:style=background: blue;-->：目录
 * 绿色：可执行文件
-
 * 白色：一般性文件，如文本文件，配置文件等
-
 * 红色：压缩文件或归档文件
-
 * 浅蓝色：链接文件
-
 * 红色闪烁：链接文件存在问题
-
 * 黄色：设备文件
-
 * 青黄色：管道文件
 
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
