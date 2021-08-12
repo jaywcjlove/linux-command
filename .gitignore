@@ -1,4 +1,5 @@
 node_modules
-.deploy
 npm-debug.log
+package-lock.json
+.deploy
 .DS_Store
