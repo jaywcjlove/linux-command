@@ -9,13 +9,13 @@ parted
 
 ###  语法
 
-```shellshell
+```shell
 parted(选项)(参数)
 ```
 
 ###  选项
 
-```shellshell
+```shell
 -h：显示帮助信息；
 -i：交互式模式；
 -s：脚本模式，不提示用户；

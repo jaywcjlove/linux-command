@@ -62,7 +62,7 @@ y  //用户输入
 
 查看从服务器到目的地的出站端口 443 是否被防火墙阻止
 
-```shellbash
+```shell
 nc -vz acme-v02.api.letsencrypt.org 443 -w2
 # Ncat: Version 7.50 ( https://nmap.org/ncat )
 # Ncat: Connected to 23.77.214.183:443.

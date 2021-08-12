@@ -39,7 +39,7 @@ pstree -p
 
 显示所有进程的所有详细信息，遇到相同的进程名可以压缩显示。
 
-```shellbash
+```shell
 pstree  -a
 ```
 

@@ -114,7 +114,7 @@ cp -a aaa ./bbb/
 
 复制到当前目录
 
-```sh
+```shell
 cp aaa.conf ./
 # 将 aaa.conf 复制到当前目录
 ```

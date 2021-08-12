@@ -49,7 +49,7 @@ help：显示网络对象支持的操作命令的帮助信息。
 
 ###  实例 
 
-```shellbash
+```shell
 ip link show                     # 显示网络接口信息
 ip link set eth0 up             # 开启网卡
 ip link set eth0 down            # 关闭网卡
