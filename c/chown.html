@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,chown,用来变更文件或目录的拥有者或所属群组">
     <title>chown 命令，Linux chown 命令详解：用来变更文件或目录的拥有者或所属群组 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628778908700">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628823324683">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -40,15 +40,15 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/chown.md">添加实例</a>
 </span>
 
-<h1>chown</h1>
+<h1 id="chown"><a href="#chown" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>chown</h1>
 <p>用来变更文件或目录的拥有者或所属群组</p>
-<h2>补充说明</h2>
+<h2 id="补充说明"><a href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>补充说明</h2>
 <p><strong>chown命令</strong> 改变某个文件或目录的所有者和所属的组，该命令可以向某个用户授权，使该用户变成指定文件的所有者或者改变文件所属的组。用户可以是用户或者是用户D，用户组可以是组名或组id。文件名可以使由空格分开的文件列表，在文件名中可以包含通配符。</p>
 <p>只有文件主和超级用户才可以便用该命令。</p>
-<h3>语法</h3>
+<h3 id="语法"><a href="#%E8%AF%AD%E6%B3%95" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>语法</h3>
 <pre class="language-shell"><code class="language-shell">chown<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
 </code></pre>
-<h3>选项</h3>
+<h3 id="选项"><a href="#%E9%80%89%E9%A1%B9" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>选项</h3>
 <pre class="language-shell"><code class="language-shell">-c或——changes：效果类似“-v”参数，但仅回报更改的部分；
 -f或--quite或——silent：不显示错误信息；
 -h或--no-dereference：只对符号连接的文件作修改，而不更改其他任何相关文件；
@@ -59,10 +59,10 @@
 --reference<span class="token operator">=</span><span class="token operator">&#x3C;</span>参考文件或目录<span class="token operator">></span>：把指定文件或目录的拥有者与所属群组全部设成和参考文件或目录的拥有者与所属群组相同；
 --version：显示版本信息。
 </code></pre>
-<h3>参数</h3>
+<h3 id="参数"><a href="#%E5%8F%82%E6%95%B0" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>参数</h3>
 <p>用户：组：指定所有者和所属工作组。当省略“：组”，仅改变文件所有者；<br>
 文件：指定要改变所有者和工作组的文件列表。支持多个文件和目标，支持shell通配符。</p>
-<h3>实例</h3>
+<h3 id="实例"><a href="#%E5%AE%9E%E4%BE%8B" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>实例</h3>
 <p>将目录<code>/usr/meng</code>及其下面的所有文件、子目录的文件主改成 liu：</p>
 <pre class="language-shell"><code class="language-shell"><span class="token function">chown</span> -R liu /usr/meng
 </code></pre>
@@ -89,7 +89,7 @@
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1628778908700"></script>
-<script type="text/javascript" src="../js/index.js?v=1628778908700"></script>
+<script type="text/javascript" src="../js/dt.js?v=1628823324684"></script>
+<script type="text/javascript" src="../js/index.js?v=1628823324684"></script>
 </body>
 </html>

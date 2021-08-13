@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,gdb,功能强大的程序调试器">
     <title>gdb 命令，Linux gdb 命令详解：功能强大的程序调试器 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628778908779">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628823324779">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -40,14 +40,14 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/gdb.md">添加实例</a>
 </span>
 
-<h1>gdb</h1>
+<h1 id="gdb"><a href="#gdb" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>gdb</h1>
 <p>功能强大的程序调试器</p>
-<h2>补充说明</h2>
+<h2 id="补充说明"><a href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>补充说明</h2>
 <p><strong>gdb命令</strong> 包含在GNU的gcc开发套件中，是功能强大的程序调试器。GDB中的命令固然很多，但我们只需掌握其中十个左右的命令，就大致可以完成日常的基本的程序调试工作。</p>
-<h3>语法</h3>
+<h3 id="语法"><a href="#%E8%AF%AD%E6%B3%95" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>语法</h3>
 <pre class="language-shell"><code class="language-shell">gdb<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
 </code></pre>
-<h3>选项</h3>
+<h3 id="选项"><a href="#%E9%80%89%E9%A1%B9" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>选项</h3>
 <pre class="language-shell"><code class="language-shell">-cd：设置工作目录；
 -q：安静模式，不打印介绍信息和版本信息；
 -d：添加文件查找路径；
@@ -67,9 +67,9 @@ display ... undisplay &#x3C;编号> | display，设置程序中断后欲显示�
 i | info的简写，用于显示各类信息，详情请查阅“help i”。 | (gdb) i r
 q | Quit的简写，退出GDB调试环境。 | (gdb) q
 help [命令名称] | GDB帮助命令，提供对GDB名种命令的解释说明。<br> 如果指定了“命令名称”参数，则显示该命令的详细说明；如果没有指定参数，则分类显示所有GDB命令，供用户进一步浏览和查询。 | (gdb) help</p>
-<h3>参数</h3>
+<h3 id="参数"><a href="#%E5%8F%82%E6%95%B0" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>参数</h3>
 <p>文件：二进制可执行程序。</p>
-<h3>实例</h3>
+<h3 id="实例"><a href="#%E5%AE%9E%E4%BE%8B" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>实例</h3>
 <p>以下是linux下dgb调试的一个实例，先给出一个示例用的小程序，C语言代码：</p>
 <pre class="language-shell"><code class="language-shell"><span class="token comment">#include &#x3C;stdio.h></span>
 int nGlobalVar <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
@@ -279,7 +279,7 @@ eax 0xbffff6a4 -1073744220
 <pre class="language-shell"><code class="language-shell"><span class="token punctuation">(</span>gdb<span class="token punctuation">)</span> q
 The program is running. <span class="token builtin class-name">exit</span> anyway? <span class="token punctuation">(</span>y or n<span class="token punctuation">)</span>
 </code></pre>
-<h2>补充内容</h2>
+<h2 id="补充内容"><a href="#%E8%A1%A5%E5%85%85%E5%86%85%E5%AE%B9" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>补充内容</h2>
 <blockquote>
 <p>gdb 教程：<a href="http://www.imooc.com/learn/394">慕课网-Linux C语言指针与内存-第三章</a></p>
 </blockquote>
@@ -343,7 +343,7 @@ q 退出调试
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1628778908780"></script>
-<script type="text/javascript" src="../js/index.js?v=1628778908780"></script>
+<script type="text/javascript" src="../js/dt.js?v=1628823324779"></script>
+<script type="text/javascript" src="../js/index.js?v=1628823324779"></script>
 </body>
 </html>

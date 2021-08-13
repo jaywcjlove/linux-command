@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,kill,发送信号到进程。">
     <title>kill 命令，Linux kill 命令详解：发送信号到进程。 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628778908840">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628823324864">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -40,35 +40,35 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/kill.md">添加实例</a>
 </span>
 
-<h1>kill</h1>
+<h1 id="kill"><a href="#kill" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>kill</h1>
 <p>发送信号到进程。</p>
-<h2>目录</h2>
+<h2 id="目录"><a href="#%E7%9B%AE%E5%BD%95" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>目录</h2>
 <ul>
 <li><a href="#%E5%86%85%E5%BB%BA%E5%91%BD%E4%BB%A4">bash内建命令</a></li>
 <li><a href="#%E5%A4%96%E9%83%A8%E5%91%BD%E4%BB%A4">GNU coreutils中的命令</a></li>
 </ul>
-<h2>内建命令</h2>
-<h4>概要</h4>
+<h2 id="内建命令"><a href="#%E5%86%85%E5%BB%BA%E5%91%BD%E4%BB%A4" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>内建命令</h2>
+<h4 id="概要"><a href="#%E6%A6%82%E8%A6%81" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>概要</h4>
 <pre class="language-shell"><code class="language-shell"><span class="token function">kill</span> <span class="token punctuation">[</span>-s sigspec <span class="token operator">|</span> -n signum <span class="token operator">|</span> -sigspec<span class="token punctuation">]</span> pid <span class="token operator">|</span> jobspec <span class="token punctuation">..</span>.
 <span class="token function">kill</span> -l <span class="token punctuation">[</span>sigspec<span class="token punctuation">]</span>
 </code></pre>
-<h4>主要用途</h4>
+<h4 id="主要用途"><a href="#%E4%B8%BB%E8%A6%81%E7%94%A8%E9%80%94" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>主要用途</h4>
 <ul>
 <li>发送信号到作业或进程（可以为多个）。</li>
 <li>列出信号。</li>
 </ul>
-<h4>选项</h4>
+<h4 id="选项"><a href="#%E9%80%89%E9%A1%B9" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>选项</h4>
 <pre class="language-shell"><code class="language-shell">-s sig    信号名称。
 -n sig    信号名称对应的数字。
 -l        列出信号名称。如果在该选项后提供了数字那么假设它是信号名称对应的数字。
 -L        等价于-l选项。
 </code></pre>
-<h4>参数</h4>
+<h4 id="参数"><a href="#%E5%8F%82%E6%95%B0" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>参数</h4>
 <p>pid：进程ID</p>
 <p>jobspec：作业标识符</p>
-<h4>返回值</h4>
+<h4 id="返回值"><a href="#%E8%BF%94%E5%9B%9E%E5%80%BC" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>返回值</h4>
 <p>返回状态为成功除非给出了非法选项、执行出现错误。</p>
-<h4>例子</h4>
+<h4 id="例子"><a href="#%E4%BE%8B%E5%AD%90" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>例子</h4>
 <pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>user2@pc<span class="token punctuation">]</span> <span class="token function">kill</span> -l <span class="token number">9</span>
 KILL
 
@@ -132,17 +132,17 @@ STOP   <span class="token number">19</span>    暂停（同 Ctrl + Z）
 <span class="token punctuation">[</span>user2@pc<span class="token punctuation">]</span> <span class="token function">jobs</span> -l
 <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span>+ <span class="token number">181537</span> Running                 <span class="token function">sleep</span> <span class="token number">90</span> <span class="token operator">&#x26;</span>
 </code></pre>
-<h4>注意</h4>
+<h4 id="注意"><a href="#%E6%B3%A8%E6%84%8F" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>注意</h4>
 <ol>
 <li><code>bash</code>的作业控制命令包括<code>bg fg kill wait disown suspend</code>。</li>
 <li>该命令是bash内建命令，相关的帮助信息请查看<code>help</code>命令。</li>
 </ol>
-<h2>外部命令</h2>
-<h4>概要</h4>
+<h2 id="外部命令"><a href="#%E5%A4%96%E9%83%A8%E5%91%BD%E4%BB%A4" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>外部命令</h2>
+<h4 id="概要-1"><a href="#%E6%A6%82%E8%A6%81-1" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>概要</h4>
 <pre class="language-shell"><code class="language-shell"><span class="token function">kill</span> <span class="token punctuation">[</span>-signal<span class="token operator">|</span>-s signal<span class="token operator">|</span>-p<span class="token punctuation">]</span> <span class="token punctuation">[</span>-q value<span class="token punctuation">]</span> <span class="token punctuation">[</span>-a<span class="token punctuation">]</span> <span class="token punctuation">[</span>--<span class="token punctuation">]</span> pid<span class="token operator">|</span>name<span class="token punctuation">..</span>.
 <span class="token function">kill</span> -l <span class="token punctuation">[</span>number<span class="token punctuation">]</span> <span class="token operator">|</span> -L
 </code></pre>
-<h4>主要用途</h4>
+<h4 id="主要用途-1"><a href="#%E4%B8%BB%E8%A6%81%E7%94%A8%E9%80%94-1" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>主要用途</h4>
 <ul>
 <li>
 <p>发送信号到进程（可以为多个）。</p>
@@ -151,7 +151,7 @@ STOP   <span class="token number">19</span>    暂停（同 Ctrl + Z）
 <p>列出信号。</p>
 </li>
 </ul>
-<h4>选项</h4>
+<h4 id="选项-1"><a href="#%E9%80%89%E9%A1%B9-1" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>选项</h4>
 <pre class="language-shell"><code class="language-shell">-s, --signal signal    要发送的信号，可能是信号名称或信号对应的数字。
 -l, --list <span class="token punctuation">[</span>number<span class="token punctuation">]</span>    打印信号名称或转换给定数字到信号名称。信号名称可参考文件（/usr/include/linux/signal.h）。
 -L, --table            和<span class="token string">'-l'</span>选项类似，但是输出信号名称以及信号对应的数字。
@@ -164,7 +164,7 @@ STOP   <span class="token number">19</span>    暂停（同 Ctrl + Z）
 --help                 显示帮助信息并退出。
 --version              显示版本信息并退出。
 </code></pre>
-<h4>参数</h4>
+<h4 id="参数-1"><a href="#%E5%8F%82%E6%95%B0-1" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>参数</h4>
 <p>接收信号的进程列表可以是PID以及name的混合组成。</p>
 <p>PID：每一个PID可以是以下四种情况之一：</p>
 <p>状态|说明
@@ -174,26 +174,26 @@ n | 当n大于0时，PID为n的进程接收信号。
 -1 | PID大于1的所有进程均接收信号。
 -n | 当n大于1时，进程组n中的所有进程接收信号。当给出了一个参数的形式为“-n”，想要让它表示一个进程组，那么必须首先指定一个信号，或参数前必须有一个“--”选项，否则它将被视为发送的信号。</p>
 <p>name：使用此名称调用的所有进程将接收信号。</p>
-<h4>例子</h4>
+<h4 id="例子-1"><a href="#%E4%BE%8B%E5%AD%90-1" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>例子</h4>
 <pre class="language-shell"><code class="language-shell"><span class="token operator">></span> <span class="token function">sleep</span> <span class="token number">20</span> <span class="token operator">&#x26;</span>
 
 <span class="token comment"># 列出对应的PID。</span>
 <span class="token operator">></span> <span class="token function">kill</span> -p <span class="token function">sleep</span>
 <span class="token number">23021</span>
 </code></pre>
-<h4>返回值</h4>
+<h4 id="返回值-1"><a href="#%E8%BF%94%E5%9B%9E%E5%80%BC-1" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>返回值</h4>
 <ul>
 <li>0 成功。</li>
 <li>1 失败。</li>
 <li>64 部分成功（当指定了多个进程时）。</li>
 </ul>
-<h4>注意</h4>
+<h4 id="注意-1"><a href="#%E6%B3%A8%E6%84%8F-1" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>注意</h4>
 <ol>
 <li>该命令是<code>GNU coreutils</code>包中的命令，相关的帮助信息请查看<code>man -s 1 kill</code>或<code>info coreutils 'kill invocation'</code>。</li>
 <li>启动或关闭内建命令请查看<code>enable</code>命令，关于同名优先级的问题请查看<code>builtin</code>命令的例子部分的相关讨论。</li>
 <li>与<code>kill</code>命令类似的有<code>xkill</code>，<code>pkill</code>,<code>killall</code>等，用于不同的目的和场景。</li>
 </ol>
-<h4>参考链接</h4>
+<h4 id="参考链接"><a href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>参考链接</h4>
 <p><a href="https://bash.cyberciti.biz/guide/Sending_signal_to_Processes">发送信号到进程</a></p>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 </div>
@@ -218,7 +218,7 @@ n | 当n大于0时，PID为n的进程接收信号。
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1628778908840"></script>
-<script type="text/javascript" src="../js/index.js?v=1628778908840"></script>
+<script type="text/javascript" src="../js/dt.js?v=1628823324864"></script>
+<script type="text/javascript" src="../js/index.js?v=1628823324864"></script>
 </body>
 </html>

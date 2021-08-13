@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,export,为shell变量或函数设置导出属性。">
     <title>export 命令，Linux export 命令详解：为shell变量或函数设置导出属性。 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628778908759">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628823324756">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -40,13 +40,13 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/export.md">添加实例</a>
 </span>
 
-<h1>export</h1>
+<h1 id="export"><a href="#export" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>export</h1>
 <p>为shell变量或函数设置导出属性。</p>
-<h2>概要</h2>
+<h2 id="概要"><a href="#%E6%A6%82%E8%A6%81" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>概要</h2>
 <pre><code>export [-fn] [name[=word]]...
 export -p
 </code></pre>
-<h2>主要用途</h2>
+<h2 id="主要用途"><a href="#%E4%B8%BB%E8%A6%81%E7%94%A8%E9%80%94" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>主要用途</h2>
 <ul>
 <li>定义一到多个变量并设置导出属性。</li>
 <li>修改一到多个变量的值并设置导出属性。</li>
@@ -56,7 +56,7 @@ export -p
 <li>删除一到多个函数的导出属性。</li>
 <li>显示全部拥有导出属性的函数。</li>
 </ul>
-<h2>选项</h2>
+<h2 id="选项"><a href="#%E9%80%89%E9%A1%B9" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>选项</h2>
 <pre class="language-shell"><code class="language-shell">-f：指向函数。
 -n：删除变量的导出属性。
 -p：显示全部拥有导出属性的变量。
@@ -64,12 +64,12 @@ export -p
 -nf：删除函数的导出属性。
 --：在它之后的选项无效。
 </code></pre>
-<h2>参数</h2>
+<h2 id="参数"><a href="#%E5%8F%82%E6%95%B0" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>参数</h2>
 <p>name（可选）：变量名或已定义函数名。</p>
 <p>value（可选）：变量的值。</p>
-<h3>返回值</h3>
+<h3 id="返回值"><a href="#%E8%BF%94%E5%9B%9E%E5%80%BC" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>返回值</h3>
 <p>export返回true除非你提供了非法选项或非法名称。</p>
-<h2>例子</h2>
+<h2 id="例子"><a href="#%E4%BE%8B%E5%AD%90" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>例子</h2>
 <pre class="language-shell"><code class="language-shell"><span class="token comment"># 显示全部拥有导出属性的变量。</span>
 <span class="token comment"># export -p</span>
 <span class="token comment"># export</span>
@@ -109,30 +109,30 @@ export -p
 <span class="token comment"># 添加当前位置到动态库环境变量</span>
 <span class="token builtin class-name">export</span> <span class="token assign-left variable">LD_LIBRARY_PATH</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">pwd</span><span class="token variable">)</span></span><span class="token builtin class-name">:</span><span class="token variable">${LD_LIBRARY_PATH}</span>
 </code></pre>
-<h2>错误用法</h2>
+<h2 id="错误用法"><a href="#%E9%94%99%E8%AF%AF%E7%94%A8%E6%B3%95" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>错误用法</h2>
 <ul>
 <li>对未定义的函数添加导出属性。</li>
 <li>对没有导出属性的函数/变量执行删除导出属性操作。</li>
 <li>在 <code>--</code> 后使用选项。</li>
 </ul>
-<h2>Q&#x26;A</h2>
-<h4>Q：对变量或函数设置导出属性有什么用？</h4>
+<h2 id="qa"><a href="#qa" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>Q&#x26;A</h2>
+<h4 id="q：对变量或函数设置导出属性有什么用？"><a href="#q%EF%BC%9A%E5%AF%B9%E5%8F%98%E9%87%8F%E6%88%96%E5%87%BD%E6%95%B0%E8%AE%BE%E7%BD%AE%E5%AF%BC%E5%87%BA%E5%B1%9E%E6%80%A7%E6%9C%89%E4%BB%80%E4%B9%88%E7%94%A8%EF%BC%9F" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>Q：对变量或函数设置导出属性有什么用？</h4>
 <p>A：它们会成为环境变量，可以在脚本中访问它们，尤其是脚本中调用的子进程需要时。（ <strong><a href="https://askubuntu.com/questions/26318/environment-variable-vs-shell-variable-whats-the-difference">参考链接4</a></strong> ）</p>
-<h4>Q：如果我编写的脚本修改了已有的环境变量的值，那么执行它会在当前终端生效吗？会影响之前以及之后打开的终端吗？</h4>
+<h4 id="q：如果我编写的脚本修改了已有的环境变量的值，那么执行它会在当前终端生效吗？会影响之前以及之后打开的终端吗？"><a href="#q%EF%BC%9A%E5%A6%82%E6%9E%9C%E6%88%91%E7%BC%96%E5%86%99%E7%9A%84%E8%84%9A%E6%9C%AC%E4%BF%AE%E6%94%B9%E4%BA%86%E5%B7%B2%E6%9C%89%E7%9A%84%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%9A%84%E5%80%BC%EF%BC%8C%E9%82%A3%E4%B9%88%E6%89%A7%E8%A1%8C%E5%AE%83%E4%BC%9A%E5%9C%A8%E5%BD%93%E5%89%8D%E7%BB%88%E7%AB%AF%E7%94%9F%E6%95%88%E5%90%97%EF%BC%9F%E4%BC%9A%E5%BD%B1%E5%93%8D%E4%B9%8B%E5%89%8D%E4%BB%A5%E5%8F%8A%E4%B9%8B%E5%90%8E%E6%89%93%E5%BC%80%E7%9A%84%E7%BB%88%E7%AB%AF%E5%90%97%EF%BC%9F" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>Q：如果我编写的脚本修改了已有的环境变量的值，那么执行它会在当前终端生效吗？会影响之前以及之后打开的终端吗？</h4>
 <p>A：只有通过<code>source</code>方式调用的脚本会生效，您可以查看<code>source</code>命令获得更多信息；其他方式只是在子shell中执行。
 之前的不会影响，之后的除非是修改了<code>~/.bashrc</code>这种启动终端时加载的脚本。（ <strong><a href="https://www.cnblogs.com/hongzg1982/articles/2101792.html">参考链接1</a></strong> ）</p>
-<h4>Q：我脚本文件中调用<code>~/.bashrc</code>中定义的函数和变量。为什么在新打开的终端中通过 <code>sh</code> 方式调用该脚本或直接运行</h4>
+<h4 id="q：我脚本文件中调用bashrc中定义的函数和变量。为什么在新打开的终端中通过-sh-方式调用该脚本或直接运行"><a href="#q%EF%BC%9A%E6%88%91%E8%84%9A%E6%9C%AC%E6%96%87%E4%BB%B6%E4%B8%AD%E8%B0%83%E7%94%A8bashrc%E4%B8%AD%E5%AE%9A%E4%B9%89%E7%9A%84%E5%87%BD%E6%95%B0%E5%92%8C%E5%8F%98%E9%87%8F%E3%80%82%E4%B8%BA%E4%BB%80%E4%B9%88%E5%9C%A8%E6%96%B0%E6%89%93%E5%BC%80%E7%9A%84%E7%BB%88%E7%AB%AF%E4%B8%AD%E9%80%9A%E8%BF%87-sh-%E6%96%B9%E5%BC%8F%E8%B0%83%E7%94%A8%E8%AF%A5%E8%84%9A%E6%9C%AC%E6%88%96%E7%9B%B4%E6%8E%A5%E8%BF%90%E8%A1%8C" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>Q：我脚本文件中调用<code>~/.bashrc</code>中定义的函数和变量。为什么在新打开的终端中通过 <code>sh</code> 方式调用该脚本或直接运行</h4>
 <p>这个当前用户有执行权限的脚本却不能使用这些函数和变量？<br>
 A：请在<code>~/.bashrc</code>文件中增加export它们的语句。另请参阅 <strong>知识点</strong> 段落。</p>
-<h4>Q：数组和关联数组也可以设置导出属性吗？</h4>
+<h4 id="q：数组和关联数组也可以设置导出属性吗？"><a href="#q%EF%BC%9A%E6%95%B0%E7%BB%84%E5%92%8C%E5%85%B3%E8%81%94%E6%95%B0%E7%BB%84%E4%B9%9F%E5%8F%AF%E4%BB%A5%E8%AE%BE%E7%BD%AE%E5%AF%BC%E5%87%BA%E5%B1%9E%E6%80%A7%E5%90%97%EF%BC%9F" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>Q：数组和关联数组也可以设置导出属性吗？</h4>
 <p>A：是可以的（如果你的bash支持它们），不过有些问题（ <strong><a href="https://stackoverflow.com/questions/5564418/exporting-an-array-in-bash-script">参考链接2</a></strong> ）。</p>
-<h4>Q：为什么我在查看变量或函数导出属性的时候显示的开头是<code>declare</code>？</h4>
+<h4 id="q：为什么我在查看变量或函数导出属性的时候显示的开头是declare？"><a href="#q%EF%BC%9A%E4%B8%BA%E4%BB%80%E4%B9%88%E6%88%91%E5%9C%A8%E6%9F%A5%E7%9C%8B%E5%8F%98%E9%87%8F%E6%88%96%E5%87%BD%E6%95%B0%E5%AF%BC%E5%87%BA%E5%B1%9E%E6%80%A7%E7%9A%84%E6%97%B6%E5%80%99%E6%98%BE%E7%A4%BA%E7%9A%84%E5%BC%80%E5%A4%B4%E6%98%AFdeclare%EF%BC%9F" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>Q：为什么我在查看变量或函数导出属性的时候显示的开头是<code>declare</code>？</h4>
 <p>A：因为<code>declare</code>也能够设置变量或函数的导出属性，详见<code>declare</code>命令。</p>
-<h3>注意</h3>
+<h3 id="注意"><a href="#%E6%B3%A8%E6%84%8F" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>注意</h3>
 <ol>
 <li>该命令是bash内建命令，相关的帮助信息请查看<code>help</code>命令。</li>
 </ol>
-<h3>知识点</h3>
+<h3 id="知识点"><a href="#%E7%9F%A5%E8%AF%86%E7%82%B9" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>知识点</h3>
 <p>在<code>info bash</code>或 <a href="http://www.gnu.org/software/bash/manual/bash.html">bash在线文档</a> 的
 <code>3.7.3</code>节提到了shell执行环境，其中涉及变量和函数的内容如下</p>
 <blockquote>
@@ -148,14 +148,14 @@ A：请在<code>~/.bashrc</code>文件中增加export它们的语句。另请参
 <p>变量是有名字的参数。</p>
 <p>那么子shell确实继承了父shell中带有导出属性的变量或函数。</p>
 <p>可参考链接： <a href="https://blog.csdn.net/soaringlee_fighting/article/details/78759448">执行脚本方式的区别</a></p>
-<h3>参考链接</h3>
+<h3 id="参考链接"><a href="#%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>参考链接</h3>
 <ol>
 <li><a href="https://www.cnblogs.com/hongzg1982/articles/2101792.html">关于bashrc profile文件的讨论</a></li>
 <li><a href="https://stackoverflow.com/questions/5564418/exporting-an-array-in-bash-script">关于export数组的讨论</a></li>
 <li><a href="https://unix.stackexchange.com/questions/22796/can-i-export-functions-in-bash">export -pf用法</a></li>
 <li><a href="https://askubuntu.com/questions/26318/environment-variable-vs-shell-variable-whats-the-difference">环境变量和shell变量的区别</a></li>
 </ol>
-<h3>扩展阅读</h3>
+<h3 id="扩展阅读"><a href="#%E6%89%A9%E5%B1%95%E9%98%85%E8%AF%BB" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>扩展阅读</h3>
 <p>一般来说，配置交叉编译工具链的时候需要指定编译工具的路径，此时就需要设置环境变量。查看已经存在的环境变量：</p>
 <pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># export</span>
 <span class="token builtin class-name">declare</span> -x <span class="token assign-left variable">G_BROKEN_FILENAMES</span><span class="token operator">=</span><span class="token string">"1"</span>
@@ -202,7 +202,7 @@ A：请在<code>~/.bashrc</code>文件中增加export它们的语句。另请参
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1628778908760"></script>
-<script type="text/javascript" src="../js/index.js?v=1628778908760"></script>
+<script type="text/javascript" src="../js/dt.js?v=1628823324756"></script>
+<script type="text/javascript" src="../js/index.js?v=1628823324756"></script>
 </body>
 </html>
