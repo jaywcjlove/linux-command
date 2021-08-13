@@ -8,7 +8,9 @@ import rehypeAttrs from 'rehype-attr';
 import * as rehypePrism from '@mapbox/rehype-prism';
 import rehypeRaw from 'rehype-raw';
 import stringify from 'rehype-stringify';
+import remarkSlug from 'remark-slug'
 import remarkParse from 'remark-parse';
+import remarkAutolinkHeadings from 'remark-autolink-headings';
 import remark2rehype from 'remark-rehype';
 import _ from 'colors-cli/toxic.js';
 
@@ -187,7 +189,7 @@ const cssPath = path.resolve(deployDir, 'css', 'index.css');
         const mdhtml = await markdownToHTML(READMESTR.toString());
         html = html.replace(/{{content}}/, mdhtml);
         await FS.outputFile(toPath, html);
-        console.log(`  ${'→'.green} ${toPath.replace(process.cwd(), '')}`);
+        console.log(`  ${'♻️ →'.green} ${toPath.replace(process.cwd(), '')}`);
         // marked(READMESTR.toString(), (err, mdhtml) => {
         //   if (err) return reject(err);
         //   html = html.replace(/{{content}}/, mdhtml);
@@ -208,14 +210,16 @@ const cssPath = path.resolve(deployDir, 'css', 'index.css');
 
 function markdownToHTML(str) {
   return unified()
-  .use(remarkParse)
-  .use(remark2rehype, { allowDangerousHtml: true })
-  .use(rehypeRaw)
-  .use(rehypePrism.default)
-  .use(rehypeAttrs, { properties: 'attr' })
-  .use(stringify)
-  .processSync(str)
-  .toString()
+    .use(remarkParse)
+    .use(remarkSlug)
+    .use(remarkAutolinkHeadings)
+    .use(remark2rehype, { allowDangerousHtml: true })
+    .use(rehypeRaw)
+    .use(rehypePrism.default)
+    .use(rehypeAttrs, { properties: 'attr' })
+    .use(stringify)
+    .processSync(str)
+    .toString()
 }
 
 /**

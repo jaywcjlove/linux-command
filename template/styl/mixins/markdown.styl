@@ -35,6 +35,25 @@
       }
     }
   }
+  h1, h2, h3, h4, h5, h6 {
+    a {
+      float: left;
+      margin-left: -20px;
+      visibility: hidden;
+    }
+    &:hover a {
+      visibility: visible;
+    }
+  }
+  .icon.icon-link {
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAYAAAAfSC3RAAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAADqADAAQAAAABAAAADgAAAAC98Dn6AAABq0lEQVQoFYVSTUsCURR13sw4YGmb6AOiReDsXIfVImsXbdwEfiKTkESrgjZChNu0RUQYCCJ+LNzUppYm/YA2Lg1cRFgELbIGv0Y7F3pBIvbgcebee8559755gumf5fF4JgVBSPT7/U1gA5h0u90nwiidz+ebA7GEbYPoHDgP3AZGpVHCXq93BqIiSZIzm83WiOv1ehlykZFCRVH2QfpKp9Nv/ADEzzC0ijzBsVgsirIsrzscjhWQ6plM5onXgsGgCtEl8jd/ZgyHw9O6rl9hBucP2WCM7eXz+SSJut1uGfkPtL78KwyFQjOtVqsENyvIEbPZfN9sNndgUkMHlU6nc4daAzVXLperM3L2+/2z7Xab3GxUMAxDhmitUCjEQX4fFJGGBQKBKRDLcB4XRXEVbo8QLyG+xg1+AqmLF34SiWgx9J0ATnARJTHTIWIXBDHsLVVVF6k9qvFFv2MDbsd0Ek9qmmbFvA8wKPPcINLPbOCKx3gB7S1gvgpaPOW5YShBeIHCEd6kCd80UxSo48pjwwQ8J9nt9ni1WqV4F5ve5K3FYjlIpVKvnDQMvwFCU8QdZ5XDSAAAAABJRU5ErkJggg==");
+    width: 23px;
+    height: 23px;
+    display: inline-block;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    background-position: 4px 4px;
+  }
 
   pre {
     margin-top: 1.5em
