@@ -32,7 +32,7 @@
     "remark-parse": "10.0.0",
     "remark-slug": "7.0.0",
     "remark-rehype": "9.0.0",
-    "remark-autolink-headings": "7.0.0",
+    "remark-autolink-headings": "7.0.1",
     "rehype-attr": "1.4.2",
     "archiver": "5.3.0",
     "colors-cli": "1.0.27",
