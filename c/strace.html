@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,strace,跟踪系统调用和信号">
     <title>strace 命令，Linux strace 命令详解：跟踪系统调用和信号 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628823325076">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1629336175951">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -40,12 +40,12 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/strace.md">添加实例</a>
 </span>
 
-<h1 id="strace"><a href="#strace" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>strace</h1>
+<h1 id="strace"><a aria-hidden="true" tabindex="-1" href="#strace"><span class="icon icon-link"></span></a>strace</h1>
 <p>跟踪系统调用和信号</p>
-<h2 id="补充说明"><a href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>补充说明</h2>
+<h2 id="补充说明"><a aria-hidden="true" tabindex="-1" href="#补充说明"><span class="icon icon-link"></span></a>补充说明</h2>
 <p><strong>strace命令</strong> 是一个集诊断、调试、统计与一体的工具，我们可以使用strace对应用的系统调用和信号传递的跟踪结果来对应用进行分析，以达到解决问题或者是了解应用工作过程的目的。当然strace与专业的调试工具比如说gdb之类的是没法相比的，因为它不是一个专业的调试器。</p>
 <p>strace的最简单的用法就是执行一个指定的命令，在指定的命令结束之后它也就退出了。在命令执行的过程中，strace会记录和解析命令进程的所有系统调用以及这个进程所接收到的所有的信号值。</p>
-<h3 id="语法"><a href="#%E8%AF%AD%E6%B3%95" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>语法</h3>
+<h3 id="语法"><a aria-hidden="true" tabindex="-1" href="#语法"><span class="icon icon-link"></span></a>语法</h3>
 <pre class="language-shell"><code class="language-shell"><span class="token function">strace</span>  <span class="token punctuation">[</span>  -dffhiqrtttTvxx  <span class="token punctuation">]</span> <span class="token punctuation">[</span> -acolumn <span class="token punctuation">]</span> <span class="token punctuation">[</span> -eexpr <span class="token punctuation">]</span> <span class="token punctuation">..</span>.
     <span class="token punctuation">[</span> -ofile <span class="token punctuation">]</span> <span class="token punctuation">[</span>-ppid <span class="token punctuation">]</span> <span class="token punctuation">..</span>.  <span class="token punctuation">[</span> -sstrsize <span class="token punctuation">]</span> <span class="token punctuation">[</span> -uusername <span class="token punctuation">]</span>
     <span class="token punctuation">[</span> -Evar<span class="token operator">=</span>val <span class="token punctuation">]</span> <span class="token punctuation">..</span>.  <span class="token punctuation">[</span> -Evar  <span class="token punctuation">]</span><span class="token punctuation">..</span>.
@@ -54,7 +54,7 @@
 <span class="token function">strace</span>  -c  <span class="token punctuation">[</span> -eexpr <span class="token punctuation">]</span> <span class="token punctuation">..</span>.  <span class="token punctuation">[</span> -Ooverhead <span class="token punctuation">]</span> <span class="token punctuation">[</span> -Ssortby <span class="token punctuation">]</span>
     <span class="token punctuation">[</span> <span class="token builtin class-name">command</span> <span class="token punctuation">[</span> arg<span class="token punctuation">..</span>.  <span class="token punctuation">]</span> <span class="token punctuation">]</span>
 </code></pre>
-<h3 id="选项"><a href="#%E9%80%89%E9%A1%B9" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>选项</h3>
+<h3 id="选项"><a aria-hidden="true" tabindex="-1" href="#选项"><span class="icon icon-link"></span></a>选项</h3>
 <pre class="language-shell"><code class="language-shell">-c 统计每一系统调用的所执行的时间,次数和出错的次数等.
 -d 输出strace关于标准错误的调试信息.
 -f 跟踪由fork调用所产生的子进程.
@@ -91,7 +91,7 @@ qualifier只能是 trace,abbrev,verbose,raw,signal,read,write其中之一.value�
 -s strsize 指定输出的字符串的最大长度.默认为32.文件名一直全部输出.
 -u username 以username的<span class="token environment constant">UID</span>和GID执行被跟踪的命令
 </code></pre>
-<h3 id="实例"><a href="#%E5%AE%9E%E4%BE%8B" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>实例</h3>
+<h3 id="实例"><a aria-hidden="true" tabindex="-1" href="#实例"><span class="icon icon-link"></span></a>实例</h3>
 <p><strong>追踪系统调用</strong></p>
 <p>现在我们做一个很简单的程序来演示strace的基本用法。这个程序的C语言代码如下：</p>
 <pre class="language-shell"><code class="language-shell"><span class="token comment"># filename test.c</span>
@@ -203,7 +203,7 @@ read<span class="token punctuation">(</span><span class="token number">0</span>,
 <span class="token number">100.00</span>    <span class="token number">0.000305</span>                    <span class="token number">68</span>        <span class="token number">47</span> total
 </code></pre>
 <p>这里很清楚的告诉你调用了那些系统函数，调用次数多少，消耗了多少时间等等这些信息，这个对我们分析一个程序来说是非常有用的。</p>
-<h3 id="常用参数说明"><a href="#%E5%B8%B8%E7%94%A8%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>常用参数说明</h3>
+<h3 id="常用参数说明"><a aria-hidden="true" tabindex="-1" href="#常用参数说明"><span class="icon icon-link"></span></a>常用参数说明</h3>
 <p>除了-c参数之外，strace还提供了其他有用的参数给我们，让我们能很方便的得到自己想要的信息，下面就对那些常用的参数一一做个介绍。</p>
 <p><strong>重定向输出</strong></p>
 <p>参数-o用在将strace的结果输出到文件中，如果不指定-o参数的话，默认的输出设备是STDERR，也就是说使用”-o filename”和” 2>filename”的结果是一样的。</p>
@@ -244,7 +244,7 @@ read<span class="token punctuation">(</span><span class="token number">0</span>,
 <p>strace不光能自己初始化一个进程进行trace，还能追踪现有的进程，参数-p就是取这个作用的，用法也很简单，具体如下。</p>
 <pre class="language-shell"><code class="language-shell"><span class="token function">strace</span> -p pid
 </code></pre>
-<h3 id="综合例子"><a href="#%E7%BB%BC%E5%90%88%E4%BE%8B%E5%AD%90" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>综合例子</h3>
+<h3 id="综合例子"><a aria-hidden="true" tabindex="-1" href="#综合例子"><span class="icon icon-link"></span></a>综合例子</h3>
 <p>说了那么多的功能和参数，现在我们来一个实用点的，就是研究下Oracle的lgwr进程，看看这个进程是不是像文档所说的那样没3s钟写一次log文件，考虑到lgwr写日志的触发条件比较多，我们需要找一个空闲的Oracle实例做这个实验。</p>
 <p>我们先要得到lgwr进程的pid，运行下面的命令</p>
 <pre class="language-shell"><code class="language-shell"><span class="token function">ps</span> -ef<span class="token operator">|</span><span class="token function">grep</span> lgwr
@@ -338,7 +338,7 @@ lrwx------    <span class="token number">1</span> oracle   dba            <span 
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1628823325076"></script>
-<script type="text/javascript" src="../js/index.js?v=1628823325076"></script>
+<script type="text/javascript" src="../js/dt.js?v=1629336175951"></script>
+<script type="text/javascript" src="../js/index.js?v=1629336175951"></script>
 </body>
 </html>

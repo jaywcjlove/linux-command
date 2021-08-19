@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,fishshell,比 bash 更好用的 shell">
     <title>fishshell 命令，Linux fishshell 命令详解：比 bash 更好用的 shell -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628823324767">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1629336175621">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -40,22 +40,22 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/fishshell.md">添加实例</a>
 </span>
 
-<h1 id="fishshell"><a href="#fishshell" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>fishshell</h1>
+<h1 id="fishshell"><a aria-hidden="true" tabindex="-1" href="#fishshell"><span class="icon icon-link"></span></a>fishshell</h1>
 <p>比 bash 更好用的 shell</p>
-<h2 id="安装"><a href="#%E5%AE%89%E8%A3%85" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>安装</h2>
+<h2 id="安装"><a aria-hidden="true" tabindex="-1" href="#安装"><span class="icon icon-link"></span></a>安装</h2>
 <pre class="language-shell"><code class="language-shell"><span class="token comment"># Ubuntu 和 Debian 的安装方法。</span>
 <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> fish
 <span class="token comment"># Mac 的安装方法。</span>
 brew <span class="token function">install</span> fish
 </code></pre>
-<h2 id="启动与帮助"><a href="#%E5%90%AF%E5%8A%A8%E4%B8%8E%E5%B8%AE%E5%8A%A9" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>启动与帮助</h2>
+<h2 id="启动与帮助"><a aria-hidden="true" tabindex="-1" href="#启动与帮助"><span class="icon icon-link"></span></a>启动与帮助</h2>
 <p>由于 <code>Fish</code> 的语法与 <code>Bash</code> 有很大差异，<code>Bash</code> 脚本一般不兼容。因此，建议不要将 <code>Fish</code> 设为默认 <code>Shell</code>，而是每次手动启动它。</p>
 <pre class="language-shell"><code class="language-shell"><span class="token comment"># 安装完成后，就可以启动 Fish。</span>
 $ fish
 <span class="token comment"># 使用过程中，如果需要帮助，可以输入 help 命令</span>
 $ <span class="token builtin class-name">help</span>
 </code></pre>
-<h2 id="彩色显示"><a href="#%E5%BD%A9%E8%89%B2%E6%98%BE%E7%A4%BA" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>彩色显示</h2>
+<h2 id="彩色显示"><a aria-hidden="true" tabindex="-1" href="#彩色显示"><span class="icon icon-link"></span></a>彩色显示</h2>
 <pre class="language-shell"><code class="language-shell"><span class="token comment"># 无效命令为红色</span>
 $ mkd
 <span class="token comment"># 有效命令为蓝色</span>
@@ -63,17 +63,17 @@ $ <span class="token function">mkdir</span>
 <span class="token comment"># 有效路径会有下划线。如果没有下划线，你就知道这个路径不存在。</span>
 $ <span class="token function">cat</span> ~/somefi 
 </code></pre>
-<h2 id="自动建议"><a href="#%E8%87%AA%E5%8A%A8%E5%BB%BA%E8%AE%AE" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>自动建议</h2>
+<h2 id="自动建议"><a aria-hidden="true" tabindex="-1" href="#自动建议"><span class="icon icon-link"></span></a>自动建议</h2>
 <p>Fish 会自动在光标后面给出建议，表示可能的选项，颜色为灰色。如果采纳建议，可以按下 <code>→</code> 或 <code>Control + F</code> 。如果只采纳一部分，可以按下 <code>Alt + →</code>。</p>
 <pre class="language-shell"><code class="language-shell">$ /bin/hostname <span class="token comment"># 命令建议</span>
 $ <span class="token function">grep</span> --ignore-case <span class="token comment"># 参数建议</span>
 $ <span class="token function">ls</span> node_modules <span class="token comment"># 路径建议</span>
 </code></pre>
-<h2 id="自动补全"><a href="#%E8%87%AA%E5%8A%A8%E8%A1%A5%E5%85%A8" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>自动补全</h2>
+<h2 id="自动补全"><a aria-hidden="true" tabindex="-1" href="#自动补全"><span class="icon icon-link"></span></a>自动补全</h2>
 <p>输入命令时，<code>Fish</code> 会自动显示匹配的上一条历史记录。如果没有匹配的历史记录，<code>Fish</code> 会猜测可能的结果，自动补全各种输入。比如，输入 <code>pyt</code> 再按下 <code>Tab</code> ，就会自动补全为 <code>python</code> 命令。</p>
 <p><code>Fish</code> 还可以自动补全 <code>Git</code> 分支。</p>
-<h2 id="脚本语法"><a href="#%E8%84%9A%E6%9C%AC%E8%AF%AD%E6%B3%95" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>脚本语法</h2>
-<h3 id="if-语句"><a href="#if-%E8%AF%AD%E5%8F%A5" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>if 语句</h3>
+<h2 id="脚本语法"><a aria-hidden="true" tabindex="-1" href="#脚本语法"><span class="icon icon-link"></span></a>脚本语法</h2>
+<h3 id="if-语句"><a aria-hidden="true" tabindex="-1" href="#if-语句"><span class="icon icon-link"></span></a>if 语句</h3>
 <pre class="language-shell"><code class="language-shell"><span class="token keyword">if</span> <span class="token function">grep</span> fish /etc/shells
     <span class="token builtin class-name">echo</span> Found fish
 <span class="token keyword">else</span> <span class="token keyword">if</span> <span class="token function">grep</span> <span class="token function">bash</span> /etc/shells
@@ -82,7 +82,7 @@ $ <span class="token function">ls</span> node_modules <span class="token comment
     <span class="token builtin class-name">echo</span> Got nothing
 end
 </code></pre>
-<h3 id="switch-语句"><a href="#switch-%E8%AF%AD%E5%8F%A5" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>switch 语句</h3>
+<h3 id="switch-语句"><a aria-hidden="true" tabindex="-1" href="#switch-语句"><span class="icon icon-link"></span></a>switch 语句</h3>
 <pre class="language-shell"><code class="language-shell">switch <span class="token punctuation">(</span>uname<span class="token punctuation">)</span>
 <span class="token keyword">case</span> Linux
     <span class="token builtin class-name">echo</span> Hi Tux<span class="token operator">!</span>
@@ -94,17 +94,17 @@ end
     <span class="token builtin class-name">echo</span> Hi, stranger<span class="token operator">!</span>
 end
 </code></pre>
-<h3 id="while-循环"><a href="#while-%E5%BE%AA%E7%8E%AF" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>while 循环</h3>
+<h3 id="while-循环"><a aria-hidden="true" tabindex="-1" href="#while-循环"><span class="icon icon-link"></span></a>while 循环</h3>
 <pre class="language-shell"><code class="language-shell"><span class="token keyword">while</span> <span class="token boolean">true</span>
     <span class="token builtin class-name">echo</span> <span class="token string">"Loop forever"</span>
 end
 </code></pre>
-<h3 id="for-循环"><a href="#for-%E5%BE%AA%E7%8E%AF" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>for 循环</h3>
+<h3 id="for-循环"><a aria-hidden="true" tabindex="-1" href="#for-循环"><span class="icon icon-link"></span></a>for 循环</h3>
 <pre class="language-shell"><code class="language-shell"><span class="token keyword">for</span> <span class="token for-or-select variable">file</span> <span class="token keyword">in</span> *.txt
     <span class="token function">cp</span> <span class="token variable">$file</span> <span class="token variable">$file</span>.bak
 end
 </code></pre>
-<h3 id="函数"><a href="#%E5%87%BD%E6%95%B0" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>函数</h3>
+<h3 id="函数"><a aria-hidden="true" tabindex="-1" href="#函数"><span class="icon icon-link"></span></a>函数</h3>
 <p><code>Fish</code> 的函数用来封装命令，或者为现有的命令起别名。</p>
 <pre class="language-shell"><code class="language-shell"><span class="token keyword">function</span> ll
     <span class="token function">ls</span> -lhG <span class="token variable">$argv</span>
@@ -116,7 +116,7 @@ end
 end
 </code></pre>
 <p>上面的代码重新定义 <code>ls</code> 命令。注意，函数体内的 <code>ls</code> 之前，要加上 <code>command</code>，否则会因为无限循环而报错。</p>
-<h3 id="提示符"><a href="#%E6%8F%90%E7%A4%BA%E7%AC%A6" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>提示符</h3>
+<h3 id="提示符"><a aria-hidden="true" tabindex="-1" href="#提示符"><span class="icon icon-link"></span></a>提示符</h3>
 <p><code>fish_prompt</code> 函数用于定义命令行提示符（prompt）。</p>
 <pre class="language-shell"><code class="language-shell"><span class="token keyword">function</span> fish_prompt
   set_color purple
@@ -130,7 +130,7 @@ end
 <pre><code>02/06/13
 /home/tutorial > 
 </code></pre>
-<h2 id="配置"><a href="#%E9%85%8D%E7%BD%AE" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>配置</h2>
+<h2 id="配置"><a aria-hidden="true" tabindex="-1" href="#配置"><span class="icon icon-link"></span></a>配置</h2>
 <p>Fish 的配置文件是 <code>~/.config/fish/config.fish</code>，每次 <code>Fish</code> 启动，就会自动加载这个文件。Fish 还提供 Web 界面配置该文件。</p>
 <pre class="language-shell"><code class="language-shell">$ fish_config <span class="token comment"># 浏览器打开 Web 界面配置</span>
 </code></pre>
@@ -165,7 +165,7 @@ Universal Variables：a variable whose value is shared across all instances of f
 <span class="token function">cp</span> file.txt file.txt.bak<span class="token punctuation">;</span> and <span class="token builtin class-name">echo</span> <span class="token string">'back success'</span><span class="token punctuation">;</span> or <span class="token builtin class-name">echo</span> <span class="token string">'back fail'</span> <span class="token comment"># combiner</span>
 functions <span class="token comment"># 列出 fish 下定义的函数</span>
 </code></pre>
-<h2 id="参考资料"><a href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>参考资料</h2>
+<h2 id="参考资料"><a aria-hidden="true" tabindex="-1" href="#参考资料"><span class="icon icon-link"></span></a>参考资料</h2>
 <ul>
 <li><a href="http://fishshell.com">fish-shell官网</a></li>
 </ul>
@@ -191,7 +191,7 @@ functions <span class="token comment"># 列出 fish 下定义的函数</span>
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1628823324768"></script>
-<script type="text/javascript" src="../js/index.js?v=1628823324768"></script>
+<script type="text/javascript" src="../js/dt.js?v=1629336175621"></script>
+<script type="text/javascript" src="../js/index.js?v=1629336175621"></script>
 </body>
 </html>

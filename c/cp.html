@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,cp,将源文件或目录复制到目标文件或目录中">
     <title>cp 命令，Linux cp 命令详解：将源文件或目录复制到目标文件或目录中 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628823324703">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1629336175550">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -40,14 +40,14 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/cp.md">添加实例</a>
 </span>
 
-<h1 id="cp"><a href="#cp" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>cp</h1>
+<h1 id="cp"><a aria-hidden="true" tabindex="-1" href="#cp"><span class="icon icon-link"></span></a>cp</h1>
 <p>将源文件或目录复制到目标文件或目录中</p>
-<h2 id="补充说明"><a href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>补充说明</h2>
+<h2 id="补充说明"><a aria-hidden="true" tabindex="-1" href="#补充说明"><span class="icon icon-link"></span></a>补充说明</h2>
 <p><strong>cp命令</strong> 用来将一个或多个源文件或者目录复制到指定的目的文件或目录。它可以将单个源文件复制成一个指定文件名的具体的文件或一个已经存在的目录下。cp命令还支持同时复制多个文件，当一次复制多个文件时，目标文件参数必须是一个已经存在的目录，否则将出现错误。</p>
-<h3 id="语法"><a href="#%E8%AF%AD%E6%B3%95" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>语法</h3>
+<h3 id="语法"><a aria-hidden="true" tabindex="-1" href="#语法"><span class="icon icon-link"></span></a>语法</h3>
 <pre class="language-shell"><code class="language-shell">cp<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
 </code></pre>
-<h3 id="选项"><a href="#%E9%80%89%E9%A1%B9" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>选项</h3>
+<h3 id="选项"><a aria-hidden="true" tabindex="-1" href="#选项"><span class="icon icon-link"></span></a>选项</h3>
 <pre class="language-shell"><code class="language-shell">-a：此参数的效果和同时指定<span class="token string">"-dpR"</span>参数相同；
 -d：当复制符号连接时，把目标文件或目录也建立为符号连接，并指向与源文件或目录连接的原始文件或目录；
 -f：强行复制文件或目录，不论目标文件或目录是否已存在；
@@ -61,12 +61,12 @@
 -b：覆盖已存在的文件目标前将目标文件备份；
 -v：详细显示命令执行的操作。
 </code></pre>
-<h3 id="参数"><a href="#%E5%8F%82%E6%95%B0" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>参数</h3>
+<h3 id="参数"><a aria-hidden="true" tabindex="-1" href="#参数"><span class="icon icon-link"></span></a>参数</h3>
 <ul>
 <li>源文件：制定源文件列表。默认情况下，cp命令不能复制目录，如果要复制目录，则必须使用<code>-R</code>选项；</li>
 <li>目标文件：指定目标文件。当“源文件”为多个文件时，要求“目标文件”为指定的目录。</li>
 </ul>
-<h3 id="实例"><a href="#%E5%AE%9E%E4%BE%8B" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>实例</h3>
+<h3 id="实例"><a aria-hidden="true" tabindex="-1" href="#实例"><span class="icon icon-link"></span></a>实例</h3>
 <p>下面的第一行中是 cp 命令和具体的参数（-r 是“递归”， -u 是“更新”，-v 是“详细”）。接下来的三行显示被复制文件的信息，最后一行显示命令行提示符。这样，只拷贝新的文件到我的存储设备上，我就使用 cp 的“更新”和“详细”选项。</p>
 <p>通常来说，参数 <code>-r</code> 也可用更详细的风格 <code>--recursive</code>。但是以简短的方式，也可以这么连用 <code>-ruv</code>。</p>
 <pre class="language-shell"><code class="language-shell"><span class="token function">cp</span> -r -u -v /usr/men/tmp ~/men/tmp
@@ -140,7 +140,7 @@ test1.py test1.py.~1~ test1.py.~2~
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1628823324704"></script>
-<script type="text/javascript" src="../js/index.js?v=1628823324704"></script>
+<script type="text/javascript" src="../js/dt.js?v=1629336175550"></script>
+<script type="text/javascript" src="../js/index.js?v=1629336175550"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,echo,输出指定的字符串或者变量">
     <title>echo 命令，Linux echo 命令详解：输出指定的字符串或者变量 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628823324744">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1629336175594">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -40,14 +40,14 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/echo.md">添加实例</a>
 </span>
 
-<h1 id="echo"><a href="#echo" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>echo</h1>
+<h1 id="echo"><a aria-hidden="true" tabindex="-1" href="#echo"><span class="icon icon-link"></span></a>echo</h1>
 <p>输出指定的字符串或者变量</p>
-<h2 id="补充说明"><a href="#%E8%A1%A5%E5%85%85%E8%AF%B4%E6%98%8E" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>补充说明</h2>
+<h2 id="补充说明"><a aria-hidden="true" tabindex="-1" href="#补充说明"><span class="icon icon-link"></span></a>补充说明</h2>
 <p><strong>echo命令</strong> 用于在shell中打印shell变量的值，或者直接输出指定的字符串。linux的echo命令，在shell编程中极为常用, 在终端下打印变量value的时候也是常常用到的，因此有必要了解下echo的用法echo命令的功能是在显示器上显示一段文字，一般起到一个提示的作用。</p>
-<h3 id="语法"><a href="#%E8%AF%AD%E6%B3%95" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>语法</h3>
+<h3 id="语法"><a aria-hidden="true" tabindex="-1" href="#语法"><span class="icon icon-link"></span></a>语法</h3>
 <pre class="language-shell"><code class="language-shell">echo<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
 </code></pre>
-<h3 id="选项"><a href="#%E9%80%89%E9%A1%B9" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>选项</h3>
+<h3 id="选项"><a aria-hidden="true" tabindex="-1" href="#选项"><span class="icon icon-link"></span></a>选项</h3>
 <pre class="language-shell"><code class="language-shell">-e：激活转义字符。
 </code></pre>
 <p>使用<code>-e</code>选项时，若字符串中出现以下字符，则特别加以处理，而不会将它当成一般文字输出：</p>
@@ -63,9 +63,9 @@
 <li><code>\\</code> 插入\字符；</li>
 <li><code>\nnn</code> 插入 <code>nnn</code>（八进制）所代表的ASCII字符；</li>
 </ul>
-<h3 id="参数"><a href="#%E5%8F%82%E6%95%B0" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>参数</h3>
+<h3 id="参数"><a aria-hidden="true" tabindex="-1" href="#参数"><span class="icon icon-link"></span></a>参数</h3>
 <p>变量：指定要打印的变量。</p>
-<h3 id="实例"><a href="#%E5%AE%9E%E4%BE%8B" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>实例</h3>
+<h3 id="实例"><a aria-hidden="true" tabindex="-1" href="#实例"><span class="icon icon-link"></span></a>实例</h3>
 <p>用echo命令打印带有色彩的文字：</p>
 <p><strong>文字色：</strong></p>
 <pre class="language-shell"><code class="language-shell"><span class="token builtin class-name">echo</span> -e <span class="token string">"<span class="token entity" title="\e">\e</span>[1;31mThis is red text<span class="token entity" title="\e">\e</span>[0m"</span>
@@ -108,7 +108,7 @@ Greed Background
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1628823324745"></script>
-<script type="text/javascript" src="../js/index.js?v=1628823324745"></script>
+<script type="text/javascript" src="../js/dt.js?v=1629336175594"></script>
+<script type="text/javascript" src="../js/index.js?v=1629336175594"></script>
 </body>
 </html>

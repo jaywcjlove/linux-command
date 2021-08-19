@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,trap,捕捉信号和其他事件并执行命令。">
     <title>trap 命令，Linux trap 命令详解：捕捉信号和其他事件并执行命令。 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1628823325114">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1629336175990">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -40,26 +40,26 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/trap.md">添加实例</a>
 </span>
 
-<h1 id="trap"><a href="#trap" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>trap</h1>
+<h1 id="trap"><a aria-hidden="true" tabindex="-1" href="#trap"><span class="icon icon-link"></span></a>trap</h1>
 <p>捕捉信号和其他事件并执行命令。</p>
-<h2 id="概要"><a href="#%E6%A6%82%E8%A6%81" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>概要</h2>
+<h2 id="概要"><a aria-hidden="true" tabindex="-1" href="#概要"><span class="icon icon-link"></span></a>概要</h2>
 <pre class="language-shell"><code class="language-shell"><span class="token builtin class-name">trap</span> <span class="token punctuation">[</span>-lp<span class="token punctuation">]</span> <span class="token punctuation">[</span><span class="token punctuation">[</span>arg<span class="token punctuation">]</span> signal_spec <span class="token punctuation">..</span>.<span class="token punctuation">]</span>
 </code></pre>
-<h2 id="主要用途"><a href="#%E4%B8%BB%E8%A6%81%E7%94%A8%E9%80%94" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>主要用途</h2>
+<h2 id="主要用途"><a aria-hidden="true" tabindex="-1" href="#主要用途"><span class="icon icon-link"></span></a>主要用途</h2>
 <ul>
 <li>用于指定在接收到信号后将要采取的动作。</li>
 <li>脚本程序被中断时执行清理工作。</li>
 </ul>
-<h2 id="选项"><a href="#%E9%80%89%E9%A1%B9" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>选项</h2>
+<h2 id="选项"><a aria-hidden="true" tabindex="-1" href="#选项"><span class="icon icon-link"></span></a>选项</h2>
 <pre class="language-shell"><code class="language-shell">-l    打印信号名称以及信号名称对应的数字。
 -p    显示与每个信号关联的trap命令。
 </code></pre>
-<h2 id="参数"><a href="#%E5%8F%82%E6%95%B0" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>参数</h2>
+<h2 id="参数"><a aria-hidden="true" tabindex="-1" href="#参数"><span class="icon icon-link"></span></a>参数</h2>
 <p>arg：接收到信号时执行的命令。</p>
 <p>signal_spec：信号名称或信号名称对应的数字。</p>
-<h2 id="返回值"><a href="#%E8%BF%94%E5%9B%9E%E5%80%BC" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>返回值</h2>
+<h2 id="返回值"><a aria-hidden="true" tabindex="-1" href="#返回值"><span class="icon icon-link"></span></a>返回值</h2>
 <p>如果表达式执行结果为成功时返回0，当参数 <code>signal_spec</code> 没有指定有效值时返回1。</p>
-<h2 id="关于信号"><a href="#%E5%85%B3%E4%BA%8E%E4%BF%A1%E5%8F%B7" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>关于信号</h2>
+<h2 id="关于信号"><a aria-hidden="true" tabindex="-1" href="#关于信号"><span class="icon icon-link"></span></a>关于信号</h2>
 <p>信号是一种进程间通信机制，它给应用程序提供一种异步的软件中断，使应用程序有机会接受其他程序活终端发送的命令(即信号)。应用程序收到信号后，有三种处理方式：忽略，默认，或捕捉。进程收到一个信号后，会检查对该信号的处理机制。如果是SIG_IGN，就忽略该信号；如果是SIG_DFT，则会采用系统默认的处理动作，通常是终止进程或忽略该信号；如果给该信号指定了一个处理函数(捕捉)，则会中断当前进程正在执行的任务，转而去执行该信号的处理函数，返回后再继续执行被中断的任务。</p>
 <p>在有些情况下，我们不希望自己的shell脚本在运行时刻被中断，比如说我们写得shell脚本设为某一用户的默认shell，使这一用户进入系统后只能作某一项工作，如数据库备份， 我们可不希望用户使用 Ctrl+C 等方法进入到shell状态做我们不希望做的事情。这便用到了信号处理。</p>
 <p>以下是一些你可能会遇到的常见信号：</p>
@@ -107,11 +107,11 @@
 </tr>
 </tbody>
 </table>
-<h2 id="例子"><a href="#%E4%BE%8B%E5%AD%90" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>例子</h2>
+<h2 id="例子"><a aria-hidden="true" tabindex="-1" href="#例子"><span class="icon icon-link"></span></a>例子</h2>
 <p>当shell收到 <code>HUP INT PIPE QUIT TERM</code> 这几个命令时，当前执行的程序会执行 <code>exit 1</code>。</p>
 <pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@pc root<span class="token punctuation">]</span>$ <span class="token builtin class-name">trap</span> <span class="token string">"exit 1"</span> HUP INT PIPE QUIT <span class="token environment constant">TERM</span>
 </code></pre>
-<h3 id="1-清理临时文件"><a href="#1-%E6%B8%85%E7%90%86%E4%B8%B4%E6%97%B6%E6%96%87%E4%BB%B6" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>1 清理临时文件</h3>
+<h3 id="1-清理临时文件"><a aria-hidden="true" tabindex="-1" href="#1-清理临时文件"><span class="icon icon-link"></span></a>1 清理临时文件</h3>
 <p>下面展示了如果有人试图从终端中止程序时，如何删除文件然后退出：</p>
 <pre class="language-shell"><code class="language-shell"><span class="token builtin class-name">trap</span> <span class="token string">"rm -f <span class="token variable">$WORKDIR</span>/work1 <span class="token variable">$WORKDIR</span>/dataout; exit"</span> <span class="token number">2</span>
 </code></pre>
@@ -119,18 +119,18 @@
 <p>添加信号1 <code>SIGHUP</code>：</p>
 <pre class="language-shell"><code class="language-shell">$ <span class="token builtin class-name">trap</span> <span class="token string">"rm <span class="token variable">$WORKDIR</span>/work1 <span class="token variable">$WORKDIR</span>/dataout; exit"</span> <span class="token number">1</span> <span class="token number">2</span>
 </code></pre>
-<h3 id="2-忽略信号"><a href="#2-%E5%BF%BD%E7%95%A5%E4%BF%A1%E5%8F%B7" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>2 忽略信号</h3>
+<h3 id="2-忽略信号"><a aria-hidden="true" tabindex="-1" href="#2-忽略信号"><span class="icon icon-link"></span></a>2 忽略信号</h3>
 <p>如果陷阱列出的命令是空的，指定的信号接收时，将被忽略：</p>
 <pre class="language-shell"><code class="language-shell">$ <span class="token builtin class-name">trap</span> <span class="token string">''</span> <span class="token number">2</span>
 </code></pre>
 <p>忽略多个信号：</p>
 <pre class="language-shell"><code class="language-shell">$ <span class="token builtin class-name">trap</span> <span class="token string">''</span> <span class="token number">1</span> <span class="token number">2</span> <span class="token number">3</span> <span class="token number">15</span>
 </code></pre>
-<h3 id="3-重置陷阱"><a href="#3-%E9%87%8D%E7%BD%AE%E9%99%B7%E9%98%B1" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>3 重置陷阱</h3>
+<h3 id="3-重置陷阱"><a aria-hidden="true" tabindex="-1" href="#3-重置陷阱"><span class="icon icon-link"></span></a>3 重置陷阱</h3>
 <p>当你改变了收到信号后采取的动作，你可以省略第一个参数来重置到默认行为。</p>
 <pre class="language-shell"><code class="language-shell">$ <span class="token builtin class-name">trap</span> <span class="token number">1</span> <span class="token number">2</span>
 </code></pre>
-<h3 id="注意"><a href="#%E6%B3%A8%E6%84%8F" aria-hidden="true" tabindex="-1"><span class="icon icon-link"></span></a>注意</h3>
+<h3 id="注意"><a aria-hidden="true" tabindex="-1" href="#注意"><span class="icon icon-link"></span></a>注意</h3>
 <ol>
 <li><code>trap -l</code> 等价于执行 <code>kill -l</code>。</li>
 <li>发送信号请查看 <code>kill</code> 命令。</li>
@@ -166,7 +166,7 @@
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1628823325115"></script>
-<script type="text/javascript" src="../js/index.js?v=1628823325115"></script>
+<script type="text/javascript" src="../js/dt.js?v=1629336175991"></script>
+<script type="text/javascript" src="../js/index.js?v=1629336175991"></script>
 </body>
 </html>
