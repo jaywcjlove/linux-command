@@ -7,10 +7,10 @@ import { unified } from 'unified';
 import rehypeAttrs from 'rehype-attr';
 import * as rehypePrism from '@mapbox/rehype-prism';
 import rehypeRaw from 'rehype-raw';
+import rehypeSlug from 'rehype-slug';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import stringify from 'rehype-stringify';
-import remarkSlug from 'remark-slug'
 import remarkParse from 'remark-parse';
-import remarkAutolinkHeadings from 'remark-autolink-headings';
 import remark2rehype from 'remark-rehype';
 import _ from 'colors-cli/toxic.js';
 
@@ -211,10 +211,10 @@ const cssPath = path.resolve(deployDir, 'css', 'index.css');
 function markdownToHTML(str) {
   return unified()
     .use(remarkParse)
-    .use(remarkSlug)
-    .use(remarkAutolinkHeadings)
     .use(remark2rehype, { allowDangerousHtml: true })
     .use(rehypeRaw)
+    .use(rehypeSlug)
+    .use(rehypeAutolinkHeadings)
     .use(rehypePrism.default)
     .use(rehypeAttrs, { properties: 'attr' })
     .use(stringify)
