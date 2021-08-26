@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,sed,功能强大的流式文本编辑器">
     <title>sed 命令，Linux sed 命令详解：功能强大的流式文本编辑器 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1629358261806">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1629987765463">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -44,7 +44,7 @@
 <p>功能强大的流式文本编辑器</p>
 <h2 id="补充说明"><a aria-hidden="true" tabindex="-1" href="#补充说明"><span class="icon icon-link"></span></a>补充说明</h2>
 <p><strong>sed</strong> 是一种流编辑器，它是文本处理中非常重要的工具，能够完美的配合正则表达式使用，功能不同凡响。处理时，把当前处理的行存储在临时缓冲区中，称为“模式空间”（pattern space），接着用sed命令处理缓冲区中的内容，处理完成后，把缓冲区的内容送往屏幕。接着处理下一行，这样不断重复，直到文件末尾。文件内容并没有 改变，除非你使用重定向存储输出。Sed主要用来自动编辑一个或多个文件；简化对文件的反复操作；编写转换程序等。</p>
-<h2 id="sed的选项、命令、替换标记"><a aria-hidden="true" tabindex="-1" href="#sed的选项、命令、替换标记"><span class="icon icon-link"></span></a>sed的选项、命令、替换标记</h2>
+<h2 id="sed的选项命令替换标记"><a aria-hidden="true" tabindex="-1" href="#sed的选项命令替换标记"><span class="icon icon-link"></span></a>sed的选项、命令、替换标记</h2>
 <p><strong>命令格式</strong></p>
 <pre class="language-shell"><code class="language-shell"><span class="token function">sed</span> <span class="token punctuation">[</span>options<span class="token punctuation">]</span> <span class="token string">'command'</span> file<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
 <span class="token function">sed</span> <span class="token punctuation">[</span>options<span class="token punctuation">]</span> -f scriptfile file<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
@@ -110,7 +110,7 @@ x<span class="token punctuation">\</span><span class="token punctuation">{</span
 x<span class="token punctuation">\</span><span class="token punctuation">{</span>m,n<span class="token punctuation">\</span><span class="token punctuation">}</span> <span class="token comment"># 重复字符x，至少m次，不多于n次，如：/0\{5,10\}/匹配5~10个0的行。  </span>
 </code></pre>
 <h2 id="sed用法实例"><a aria-hidden="true" tabindex="-1" href="#sed用法实例"><span class="icon icon-link"></span></a>sed用法实例</h2>
-<h3 id="替换操作：s命令"><a aria-hidden="true" tabindex="-1" href="#替换操作：s命令"><span class="icon icon-link"></span></a>替换操作：s命令</h3>
+<h3 id="替换操作s命令"><a aria-hidden="true" tabindex="-1" href="#替换操作s命令"><span class="icon icon-link"></span></a>替换操作：s命令</h3>
 <p>替换文本中的字符串：</p>
 <pre class="language-shell"><code class="language-shell"><span class="token function">sed</span> <span class="token string">'s/book/books/'</span> <span class="token function">file</span>
 </code></pre>
@@ -141,7 +141,7 @@ skskskSKSKSK
 <p>定界符出现在样式内部时，需要进行转义：</p>
 <pre class="language-shell"><code class="language-shell"><span class="token function">sed</span> <span class="token string">'s/\/bin/\/usr\/local\/bin/g'</span>
 </code></pre>
-<h3 id="删除操作：d命令"><a aria-hidden="true" tabindex="-1" href="#删除操作：d命令"><span class="icon icon-link"></span></a>删除操作：d命令</h3>
+<h3 id="删除操作d命令"><a aria-hidden="true" tabindex="-1" href="#删除操作d命令"><span class="icon icon-link"></span></a>删除操作：d命令</h3>
 <p>删除空白行：</p>
 <pre class="language-shell"><code class="language-shell"><span class="token function">sed</span> <span class="token string">'/^$/d'</span> <span class="token function">file</span>
 </code></pre>
@@ -191,7 +191,7 @@ BBB aaa
 <span class="token builtin class-name">echo</span> hello WORLD <span class="token operator">|</span> <span class="token function">sed</span> <span class="token string">"s/<span class="token variable">$test</span>/HELLO"</span>
 HELLO WORLD
 </code></pre>
-<h3 id="选定行的范围：（逗号）"><a aria-hidden="true" tabindex="-1" href="#选定行的范围：（逗号）"><span class="icon icon-link"></span></a>选定行的范围：,（逗号）</h3>
+<h3 id="选定行的范围逗号"><a aria-hidden="true" tabindex="-1" href="#选定行的范围逗号"><span class="icon icon-link"></span></a>选定行的范围：,（逗号）</h3>
 <p>所有在模板test和check所确定的范围内的行都被打印：</p>
 <pre class="language-shell"><code class="language-shell"><span class="token function">sed</span> -n <span class="token string">'/test/,/check/p'</span> <span class="token function">file</span>
 </code></pre>
@@ -201,7 +201,7 @@ HELLO WORLD
 <p>对于模板test和west之间的行，每行的末尾用字符串aaa bbb替换：</p>
 <pre class="language-shell"><code class="language-shell"><span class="token function">sed</span> <span class="token string">'/test/,/west/s/$/aaa bbb/'</span> <span class="token function">file</span>
 </code></pre>
-<h3 id="多点编辑：e命令"><a aria-hidden="true" tabindex="-1" href="#多点编辑：e命令"><span class="icon icon-link"></span></a>多点编辑：e命令</h3>
+<h3 id="多点编辑e命令"><a aria-hidden="true" tabindex="-1" href="#多点编辑e命令"><span class="icon icon-link"></span></a>多点编辑：e命令</h3>
 <p>-e选项允许在同一行里执行多条命令：</p>
 <pre class="language-shell"><code class="language-shell"><span class="token function">sed</span> -e <span class="token string">'1,5d'</span> -e <span class="token string">'s/test/check/'</span> <span class="token function">file</span>
 </code></pre>
@@ -209,46 +209,46 @@ HELLO WORLD
 <p>和 -e 等价的命令是 --expression：</p>
 <pre class="language-shell"><code class="language-shell"><span class="token function">sed</span> --expression<span class="token operator">=</span><span class="token string">'s/test/check/'</span> --expression<span class="token operator">=</span><span class="token string">'/love/d'</span> <span class="token function">file</span>
 </code></pre>
-<h3 id="从文件读入：r命令"><a aria-hidden="true" tabindex="-1" href="#从文件读入：r命令"><span class="icon icon-link"></span></a>从文件读入：r命令</h3>
+<h3 id="从文件读入r命令"><a aria-hidden="true" tabindex="-1" href="#从文件读入r命令"><span class="icon icon-link"></span></a>从文件读入：r命令</h3>
 <p>file里的内容被读进来，显示在与test匹配的行后面，如果匹配多行，则file的内容将显示在所有匹配行的下面：</p>
 <pre class="language-shell"><code class="language-shell"><span class="token function">sed</span> <span class="token string">'/test/r file'</span> filename
 </code></pre>
-<h3 id="写入文件：w命令"><a aria-hidden="true" tabindex="-1" href="#写入文件：w命令"><span class="icon icon-link"></span></a>写入文件：w命令  </h3>
+<h3 id="写入文件w命令-"><a aria-hidden="true" tabindex="-1" href="#写入文件w命令-"><span class="icon icon-link"></span></a>写入文件：w命令  </h3>
 <p>在example中所有包含test的行都被写入file里：</p>
 <pre class="language-shell"><code class="language-shell"><span class="token function">sed</span> -n <span class="token string">'/test/w file'</span> example
 </code></pre>
-<h3 id="追加（行下）：a命令"><a aria-hidden="true" tabindex="-1" href="#追加（行下）：a命令"><span class="icon icon-link"></span></a>追加（行下）：a\命令</h3>
+<h3 id="追加行下a命令"><a aria-hidden="true" tabindex="-1" href="#追加行下a命令"><span class="icon icon-link"></span></a>追加（行下）：a\命令</h3>
 <p>将 this is a test line 追加到 以test 开头的行后面：</p>
 <pre class="language-shell"><code class="language-shell"><span class="token function">sed</span> <span class="token string">'/^test/a\this is a test line'</span> <span class="token function">file</span>
 </code></pre>
 <p>在 test.conf 文件第2行之后插入 this is a test line：</p>
 <pre class="language-shell"><code class="language-shell"><span class="token function">sed</span> -i <span class="token string">'2a\this is a test line'</span> test.conf
 </code></pre>
-<h3 id="插入（行上）：i命令"><a aria-hidden="true" tabindex="-1" href="#插入（行上）：i命令"><span class="icon icon-link"></span></a>插入（行上）：i\命令</h3>
+<h3 id="插入行上i命令"><a aria-hidden="true" tabindex="-1" href="#插入行上i命令"><span class="icon icon-link"></span></a>插入（行上）：i\命令</h3>
 <p>将 this is a test line 追加到以test开头的行前面：</p>
 <pre class="language-shell"><code class="language-shell"><span class="token function">sed</span> <span class="token string">'/^test/i\this is a test line'</span> <span class="token function">file</span>
 </code></pre>
 <p>在test.conf文件第5行之前插入this is a test line：</p>
 <pre class="language-shell"><code class="language-shell"><span class="token function">sed</span> -i <span class="token string">'5i\this is a test line'</span> test.conf
 </code></pre>
-<h3 id="下一个：n命令"><a aria-hidden="true" tabindex="-1" href="#下一个：n命令"><span class="icon icon-link"></span></a>下一个：n命令</h3>
+<h3 id="下一个n命令"><a aria-hidden="true" tabindex="-1" href="#下一个n命令"><span class="icon icon-link"></span></a>下一个：n命令</h3>
 <p>如果test被匹配，则移动到匹配行的下一行，替换这一行的aa，变为bb，并打印该行，然后继续：</p>
 <pre class="language-shell"><code class="language-shell"><span class="token function">sed</span> <span class="token string">'/test/{ n; s/aa/bb/; }'</span> <span class="token function">file</span>
 </code></pre>
-<h3 id="变形：y命令"><a aria-hidden="true" tabindex="-1" href="#变形：y命令"><span class="icon icon-link"></span></a>变形：y命令</h3>
+<h3 id="变形y命令"><a aria-hidden="true" tabindex="-1" href="#变形y命令"><span class="icon icon-link"></span></a>变形：y命令</h3>
 <p>把1~10行内所有abcde转变为大写，注意，正则表达式元字符不能使用这个命令：</p>
 <pre class="language-shell"><code class="language-shell"><span class="token function">sed</span> <span class="token string">'1,10y/abcde/ABCDE/'</span> <span class="token function">file</span>
 </code></pre>
-<h3 id="退出：q命令"><a aria-hidden="true" tabindex="-1" href="#退出：q命令"><span class="icon icon-link"></span></a>退出：q命令</h3>
+<h3 id="退出q命令"><a aria-hidden="true" tabindex="-1" href="#退出q命令"><span class="icon icon-link"></span></a>退出：q命令</h3>
 <p>打印完第10行后，退出sed</p>
 <pre class="language-shell"><code class="language-shell"><span class="token function">sed</span> <span class="token string">'10q'</span> <span class="token function">file</span>
 </code></pre>
-<h3 id="保持和获取：h命令和g命令"><a aria-hidden="true" tabindex="-1" href="#保持和获取：h命令和g命令"><span class="icon icon-link"></span></a>保持和获取：h命令和G命令</h3>
+<h3 id="保持和获取h命令和g命令"><a aria-hidden="true" tabindex="-1" href="#保持和获取h命令和g命令"><span class="icon icon-link"></span></a>保持和获取：h命令和G命令</h3>
 <p>在sed处理文件的时候，每一行都被保存在一个叫模式空间的临时缓冲区中，除非行被删除或者输出被取消，否则所有被处理的行都将 打印在屏幕上。接着模式空间被清空，并存入新的一行等待处理。</p>
 <pre class="language-shell"><code class="language-shell"><span class="token function">sed</span> -e <span class="token string">'/test/h'</span> -e <span class="token string">'$G'</span> <span class="token function">file</span>
 </code></pre>
 <p>在这个例子里，匹配test的行被找到后，将存入模式空间，h命令将其复制并存入一个称为保持缓存区的特殊缓冲区内。第二条语句的意思是，当到达最后一行后，G命令取出保持缓冲区的行，然后把它放回模式空间中，且追加到现在已经存在于模式空间中的行的末尾。在这个例子中就是追加到最后一行。简单来说，任何包含test的行都被复制并追加到该文件的末尾。</p>
-<h3 id="保持和互换：h命令和x命令"><a aria-hidden="true" tabindex="-1" href="#保持和互换：h命令和x命令"><span class="icon icon-link"></span></a>保持和互换：h命令和x命令</h3>
+<h3 id="保持和互换h命令和x命令"><a aria-hidden="true" tabindex="-1" href="#保持和互换h命令和x命令"><span class="icon icon-link"></span></a>保持和互换：h命令和x命令</h3>
 <p>互换模式空间和保持缓冲区的内容。也就是把包含test与check的行互换：</p>
 <pre class="language-shell"><code class="language-shell"><span class="token function">sed</span> -e <span class="token string">'/test/h'</span> -e <span class="token string">'/check/x'</span> <span class="token function">file</span>
 </code></pre>
@@ -293,7 +293,7 @@ HELLO WORLD
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1629358261806"></script>
-<script type="text/javascript" src="../js/index.js?v=1629358261806"></script>
+<script type="text/javascript" src="../js/dt.js?v=1629987765464"></script>
+<script type="text/javascript" src="../js/index.js?v=1629987765464"></script>
 </body>
 </html>

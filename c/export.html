@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,export,为shell变量或函数设置导出属性。">
     <title>export 命令，Linux export 命令详解：为shell变量或函数设置导出属性。 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1629358261529">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1629987765231">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
@@ -116,17 +116,17 @@ export -p
 <li>在 <code>--</code> 后使用选项。</li>
 </ul>
 <h2 id="qa"><a aria-hidden="true" tabindex="-1" href="#qa"><span class="icon icon-link"></span></a>Q&#x26;A</h2>
-<h4 id="q：对变量或函数设置导出属性有什么用？"><a aria-hidden="true" tabindex="-1" href="#q：对变量或函数设置导出属性有什么用？"><span class="icon icon-link"></span></a>Q：对变量或函数设置导出属性有什么用？</h4>
+<h4 id="q对变量或函数设置导出属性有什么用"><a aria-hidden="true" tabindex="-1" href="#q对变量或函数设置导出属性有什么用"><span class="icon icon-link"></span></a>Q：对变量或函数设置导出属性有什么用？</h4>
 <p>A：它们会成为环境变量，可以在脚本中访问它们，尤其是脚本中调用的子进程需要时。（ <strong><a href="https://askubuntu.com/questions/26318/environment-variable-vs-shell-variable-whats-the-difference">参考链接4</a></strong> ）</p>
-<h4 id="q：如果我编写的脚本修改了已有的环境变量的值，那么执行它会在当前终端生效吗？会影响之前以及之后打开的终端吗？"><a aria-hidden="true" tabindex="-1" href="#q：如果我编写的脚本修改了已有的环境变量的值，那么执行它会在当前终端生效吗？会影响之前以及之后打开的终端吗？"><span class="icon icon-link"></span></a>Q：如果我编写的脚本修改了已有的环境变量的值，那么执行它会在当前终端生效吗？会影响之前以及之后打开的终端吗？</h4>
+<h4 id="q如果我编写的脚本修改了已有的环境变量的值那么执行它会在当前终端生效吗会影响之前以及之后打开的终端吗"><a aria-hidden="true" tabindex="-1" href="#q如果我编写的脚本修改了已有的环境变量的值那么执行它会在当前终端生效吗会影响之前以及之后打开的终端吗"><span class="icon icon-link"></span></a>Q：如果我编写的脚本修改了已有的环境变量的值，那么执行它会在当前终端生效吗？会影响之前以及之后打开的终端吗？</h4>
 <p>A：只有通过<code>source</code>方式调用的脚本会生效，您可以查看<code>source</code>命令获得更多信息；其他方式只是在子shell中执行。
 之前的不会影响，之后的除非是修改了<code>~/.bashrc</code>这种启动终端时加载的脚本。（ <strong><a href="https://www.cnblogs.com/hongzg1982/articles/2101792.html">参考链接1</a></strong> ）</p>
-<h4 id="q：我脚本文件中调用bashrc中定义的函数和变量。为什么在新打开的终端中通过-sh-方式调用该脚本或直接运行"><a aria-hidden="true" tabindex="-1" href="#q：我脚本文件中调用bashrc中定义的函数和变量。为什么在新打开的终端中通过-sh-方式调用该脚本或直接运行"><span class="icon icon-link"></span></a>Q：我脚本文件中调用<code>~/.bashrc</code>中定义的函数和变量。为什么在新打开的终端中通过 <code>sh</code> 方式调用该脚本或直接运行</h4>
+<h4 id="q我脚本文件中调用bashrc中定义的函数和变量为什么在新打开的终端中通过-sh-方式调用该脚本或直接运行"><a aria-hidden="true" tabindex="-1" href="#q我脚本文件中调用bashrc中定义的函数和变量为什么在新打开的终端中通过-sh-方式调用该脚本或直接运行"><span class="icon icon-link"></span></a>Q：我脚本文件中调用<code>~/.bashrc</code>中定义的函数和变量。为什么在新打开的终端中通过 <code>sh</code> 方式调用该脚本或直接运行</h4>
 <p>这个当前用户有执行权限的脚本却不能使用这些函数和变量？<br>
 A：请在<code>~/.bashrc</code>文件中增加export它们的语句。另请参阅 <strong>知识点</strong> 段落。</p>
-<h4 id="q：数组和关联数组也可以设置导出属性吗？"><a aria-hidden="true" tabindex="-1" href="#q：数组和关联数组也可以设置导出属性吗？"><span class="icon icon-link"></span></a>Q：数组和关联数组也可以设置导出属性吗？</h4>
+<h4 id="q数组和关联数组也可以设置导出属性吗"><a aria-hidden="true" tabindex="-1" href="#q数组和关联数组也可以设置导出属性吗"><span class="icon icon-link"></span></a>Q：数组和关联数组也可以设置导出属性吗？</h4>
 <p>A：是可以的（如果你的bash支持它们），不过有些问题（ <strong><a href="https://stackoverflow.com/questions/5564418/exporting-an-array-in-bash-script">参考链接2</a></strong> ）。</p>
-<h4 id="q：为什么我在查看变量或函数导出属性的时候显示的开头是declare？"><a aria-hidden="true" tabindex="-1" href="#q：为什么我在查看变量或函数导出属性的时候显示的开头是declare？"><span class="icon icon-link"></span></a>Q：为什么我在查看变量或函数导出属性的时候显示的开头是<code>declare</code>？</h4>
+<h4 id="q为什么我在查看变量或函数导出属性的时候显示的开头是declare"><a aria-hidden="true" tabindex="-1" href="#q为什么我在查看变量或函数导出属性的时候显示的开头是declare"><span class="icon icon-link"></span></a>Q：为什么我在查看变量或函数导出属性的时候显示的开头是<code>declare</code>？</h4>
 <p>A：因为<code>declare</code>也能够设置变量或函数的导出属性，详见<code>declare</code>命令。</p>
 <h3 id="注意"><a aria-hidden="true" tabindex="-1" href="#注意"><span class="icon icon-link"></span></a>注意</h3>
 <ol>
@@ -202,7 +202,7 @@ A：请在<code>~/.bashrc</code>文件中增加export它们的语句。另请参
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1629358261529"></script>
-<script type="text/javascript" src="../js/index.js?v=1629358261529"></script>
+<script type="text/javascript" src="../js/dt.js?v=1629987765231"></script>
+<script type="text/javascript" src="../js/index.js?v=1629987765231"></script>
 </body>
 </html>
