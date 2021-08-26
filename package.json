@@ -30,7 +30,7 @@
     "rehype-stringify": "9.0.1",
     "rehype-raw": "6.1.0",
     "rehype-slug": "5.0.0",
-    "rehype-autolink-headings": "6.0.0",
+    "rehype-autolink-headings": "6.1.0",
     "remark-parse": "10.0.0",
     "remark-rehype": "9.0.0",
     "rehype-attr": "1.4.2",
