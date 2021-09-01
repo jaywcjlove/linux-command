@@ -33,7 +33,7 @@
     "rehype-autolink-headings": "6.1.0",
     "remark-parse": "10.0.0",
     "remark-rehype": "9.0.0",
-    "rehype-attr": "1.4.2",
+    "rehype-attr": "2.0.0",
     "archiver": "5.3.0",
     "colors-cli": "1.0.27",
     "ejs": "3.1.6",
