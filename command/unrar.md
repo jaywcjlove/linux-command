@@ -10,6 +10,17 @@ unrar [选项][switch 命令] [文件名...][路径]
 unrar <command> [-<switch 1> -<switch N>] archive [files...] [path...]
 ```
 
+### 安装
+
+在 Linux 中输入以下命令下载安装包
+
+```shell
+wget https://www.rarlab.com/rar/rarlinux-6.0.2.tar.gz
+
+cd ~/Downloads/
+tar -zxvf rarlinux-6.0.2.tar.gz
+```
+
 ###  选项
 
 ```shell
