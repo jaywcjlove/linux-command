@@ -58,7 +58,6 @@ ARG（可选）：作为输入行的字符串，可以为任意数量。
 ```
 
 ```shell
-# 体彩超级大乐透：
 [user2@pc ~]$ shuf -i 1-35 -n 5|sort -n && shuf -i 1-12 -n 2|sort -n
 4
 17
