@@ -28,6 +28,7 @@ jobs:
     - run: npm-publish --token="${{ secrets.NPM_TOKEN }}" ./package.json
 
     - run: npm run dash
+    - run: rm -rf .deploy/linux-command.docset
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
