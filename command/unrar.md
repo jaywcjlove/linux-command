@@ -96,10 +96,3 @@ unrar x test.rar
 [root@linux ~]# unrar e test.rar
 ```
 
-### AUTHOR
-
-```shell
-This  manual  page  was  written by Petr Cech <cech@debian.org> according to "unrar -h"for the Debian
-GNU/Linux system (but may be used by others).
-```
-
