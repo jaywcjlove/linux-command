@@ -7,7 +7,7 @@ unrar
 
 ```shell
 unrar [选项][switch 命令] [文件名...][路径]
-   unrar <command> [-<switch 1> -<switch N>] archive [files...] [path...]
+unrar <command> [-<switch 1> -<switch N>] archive [files...] [path...]
 ```
 
 ###  选项
@@ -35,7 +35,7 @@ x             # 用绝对路径解压文件
 -o+        # 覆盖现有文件。
 -o-        # 不要覆盖现有文件
 -p<password>
-     	   # 设置密码。
+     	     # 设置密码。
 -p-        # 不查询密码
 -r         # 递归子目录。
 -u         # 更新文件。
@@ -54,10 +54,35 @@ x             # 用绝对路径解压文件
 
 ###  实例
 
-将压缩文件 text.rar 在当前目录下解压缩,并解压完整路径。
+将压缩文件 `text.rar` 在当前目录下解压缩,并解压完整路径。
 
 ```shell
 unrar x test.rar
+```
+
+将压缩文件 text.rar 在当前目录下解压缩,并解压完整路径：
+
+```shell
+[root@linux ~]# unrar x test.rar
+```
+
+查看rar包中的内容：
+
+```shell
+[root@linux ~]# unrar l test.rar
+```
+
+测试rar包是否能解压成功：
+
+```shell
+[root@linux ~]# unrar t test.rar
+```
+
+
+解压到当前文件夹：
+
+```shell
+[root@linux ~]# unrar e test.rar
 ```
 
 ### AUTHOR
