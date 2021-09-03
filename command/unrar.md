@@ -1,7 +1,7 @@
 unrar
 ===
 
-解压rar文件命令，从rar档案中提取文件
+解压rar文件命令，从 rar 压缩包中提取文件
 
 ###  语法
 
@@ -46,16 +46,16 @@ x             # 用绝对路径解压文件
 -o+        # 覆盖现有文件。
 -o-        # 不要覆盖现有文件
 -p<password>
-     	     # 设置密码。
+     	    # 设置密码。
 -p-        # 不查询密码
 -r         # 递归子目录。
 -u         # 更新文件。
 -v         # 列出所有卷。
 -x<file>
-     	   # 排除指定的文件。
+     	    # 排除指定的文件。
 -x@<list>
-     	   # 排除指定列表文件中的文件。
--x@        # 读取要从stdin中排除的文件名。
+     	    # 排除指定列表文件中的文件。
+-x@        # 读取要从 stdin 中排除的文件名。
 -y         # 对所有查询都假设为是。
 ```
 
@@ -102,3 +102,4 @@ unrar x test.rar
 This  manual  page  was  written by Petr Cech <cech@debian.org> according to "unrar -h"for the Debian
 GNU/Linux system (but may be used by others).
 ```
+
