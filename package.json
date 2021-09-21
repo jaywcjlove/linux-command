@@ -25,7 +25,7 @@
     "url": "git+https://github.com/jaywcjlove/linux-command.git"
   },
   "devDependencies": {
-    "@mapbox/rehype-prism": "0.7.0",
+    "@mapbox/rehype-prism": "0.8.0",
     "unified": "10.1.0",
     "rehype-stringify": "9.0.2",
     "rehype-raw": "6.1.0",
