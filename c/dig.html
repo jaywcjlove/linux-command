@@ -10,10 +10,9 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,dig,域名查询工具">
     <title>dig 命令，Linux dig 命令详解：域名查询工具 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1630702913417">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633360854441">
 </head>
 <body>
-<a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
 <div class="header header_list">
     <div class="logo">
         <a href="/">
@@ -40,15 +39,29 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/dig.md">添加实例</a>
 </span>
 
-<h1 id="dig"><a aria-hidden="true" tabindex="-1" href="#dig"><span class="icon icon-link"></span></a>dig</h1>
-<p>域名查询工具</p>
-<h2 id="补充说明"><a aria-hidden="true" tabindex="-1" href="#补充说明"><span class="icon icon-link"></span></a>补充说明</h2>
-<p><strong>dig命令</strong> 是常用的域名查询工具，可以用来测试域名系统工作是否正常。</p>
-<h3 id="语法"><a aria-hidden="true" tabindex="-1" href="#语法"><span class="icon icon-link"></span></a>语法</h3>
-<pre class="language-shell"><code class="language-shell">dig<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
+
+<div class="wmde-markdown"><a aria-label="View source on GitHub" target="__blank" class="github-corner" href="https://github.com/jaywcjlove/linux-command.git"><svg width="54" height="54" viewBox="0 0 250 250" aria-hidden="true" style="fill: rgb(32, 34, 37); color: rgb(255, 255, 255); position: fixed; z-index: 99999; border: 0px; top: 0px; right: 0px;">
+      <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+      <path style="transform-origin: 130px 106px;" class="octo-arm" fill="currentColor" d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"></path>
+      <path class="octo-body" fill="currentColor" d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"></path>
+    </svg></a>
+  <h1 id="dig"><a class="anchor" aria-hidden="true" tabindex="-1" href="#dig"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>dig</h1>
+  <p>域名查询工具</p>
+  <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>补充说明</h2>
+  <p><strong>dig命令</strong> 是常用的域名查询工具，可以用来测试域名系统工作是否正常。</p>
+  <h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>语法</h3>
+  <pre class="language-shell"><code class="language-shell">dig<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
 </code></pre>
-<h3 id="选项"><a aria-hidden="true" tabindex="-1" href="#选项"><span class="icon icon-link"></span></a>选项</h3>
-<pre class="language-shell"><code class="language-shell">@<span class="token operator">&#x3C;</span>服务器地址<span class="token operator">></span>：指定进行域名解析的域名服务器；
+  <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>选项</h3>
+  <pre class="language-shell"><code class="language-shell">@<span class="token operator">&#x3C;</span>服务器地址<span class="token operator">></span>：指定进行域名解析的域名服务器；
 -b<span class="token operator">&#x3C;</span>ip地址<span class="token operator">></span>：当主机具有多个IP地址，指定使用本机的哪个IP地址向域名服务器发送域名查询请求；
 -f<span class="token operator">&#x3C;</span>文件名称<span class="token operator">></span>：指定dig以批处理的方式运行，指定的文件中保存着需要批处理查询的DNS任务信息；
 -P：指定域名服务器所使用端口号；
@@ -58,15 +71,19 @@
 -6：使用IPv6；
 -h：显示指令帮助信息。
 </code></pre>
-<h3 id="参数"><a aria-hidden="true" tabindex="-1" href="#参数"><span class="icon icon-link"></span></a>参数</h3>
-<ul>
-<li>主机：指定要查询域名主机；</li>
-<li>查询类型：指定DNS查询的类型；</li>
-<li>查询类：指定查询DNS的class；</li>
-<li>查询选项：指定查询选项。</li>
-</ul>
-<h3 id="实例"><a aria-hidden="true" tabindex="-1" href="#实例"><span class="icon icon-link"></span></a>实例</h3>
-<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># dig www.jsdig.com</span>
+  <h3 id="参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参数"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>参数</h3>
+  <ul>
+    <li>主机：指定要查询域名主机；</li>
+    <li>查询类型：指定DNS查询的类型；</li>
+    <li>查询类：指定查询DNS的class；</li>
+    <li>查询选项：指定查询选项。</li>
+  </ul>
+  <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>实例</h3>
+  <pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># dig www.jsdig.com</span>
 
 <span class="token punctuation">;</span> <span class="token operator">&#x3C;&#x3C;</span><span class="token operator">>></span> DiG <span class="token number">9.3</span>.6-P1-RedHat-9.3.6-20.P1.el5_8.1 <span class="token operator">&#x3C;&#x3C;</span><span class="token operator">>></span> www.jsdig.com
 <span class="token punctuation">;</span><span class="token punctuation">;</span> global options:  printcmd
@@ -89,8 +106,9 @@ jsdig.com.            <span class="token number">8</span>       IN      NS      
 <span class="token punctuation">;</span><span class="token punctuation">;</span> SERVER: <span class="token number">202.96</span>.104.15<span class="token comment">#53(202.96.104.15)</span>
 <span class="token punctuation">;</span><span class="token punctuation">;</span> WHEN: Thu Dec <span class="token number">26</span> <span class="token number">11</span>:14:37 <span class="token number">2013</span>
 <span class="token punctuation">;</span><span class="token punctuation">;</span> MSG SIZE  rcvd: <span class="token number">121</span>
-</code></pre>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+</code></pre><!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+</div>
+
 </div>
 
 <div class="footer ">
@@ -113,7 +131,7 @@ jsdig.com.            <span class="token number">8</span>       IN      NS      
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1630702913418"></script>
-<script type="text/javascript" src="../js/index.js?v=1630702913418"></script>
+<script type="text/javascript" src="../js/dt.js?v=1633360854441"></script>
+<script type="text/javascript" src="../js/index.js?v=1633360854441"></script>
 </body>
 </html>

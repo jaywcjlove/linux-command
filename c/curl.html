@@ -10,10 +10,9 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,curl,利用URL规则在命令行下工作的文件传输工具">
     <title>curl 命令，Linux curl 命令详解：利用URL规则在命令行下工作的文件传输工具 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1630702913406">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633360854430">
 </head>
 <body>
-<a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
 <div class="header header_list">
     <div class="logo">
         <a href="/">
@@ -40,176 +39,571 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/curl.md">添加实例</a>
 </span>
 
-<h1 id="curl"><a aria-hidden="true" tabindex="-1" href="#curl"><span class="icon icon-link"></span></a>curl</h1>
-<p>利用URL规则在命令行下工作的文件传输工具</p>
-<h2 id="补充说明"><a aria-hidden="true" tabindex="-1" href="#补充说明"><span class="icon icon-link"></span></a>补充说明</h2>
-<p><strong>curl命令</strong> 是一个利用URL规则在命令行下工作的文件传输工具。它支持文件的上传和下载，所以是综合传输工具，但按传统，习惯称curl为下载工具。作为一款强力工具，curl支持包括HTTP、HTTPS、ftp等众多协议，还支持POST、cookies、认证、从指定偏移处下载部分文件、用户代理字符串、限速、文件大小、进度条等特征。做网页处理流程和数据检索自动化，curl可以祝一臂之力。</p>
-<h3 id="语法"><a aria-hidden="true" tabindex="-1" href="#语法"><span class="icon icon-link"></span></a>语法</h3>
-<pre class="language-shell"><code class="language-shell">curl<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
-</code></pre>
-<h3 id="选项"><a aria-hidden="true" tabindex="-1" href="#选项"><span class="icon icon-link"></span></a>选项</h3>
 
-
-<table border="0" cellpadding="0" cellspacing="0"><tbody>
-<tr><td>-a/--append</td><td>上传文件时，附加到目标文件</td></tr>
-<tr><td>-A/--user-agent <string></string></td><td>设置用户代理发送给服务器</td></tr>
-<tr><td>-anyauth</td><td>可以使用“任何”身份验证方法</td></tr>
-<tr><td>-b/--cookie <name=string file=""></name=string></td><td>cookie字符串或文件读取位置</td></tr>
-<tr><td>     --basic</td><td>使用HTTP基本验证</td></tr>
-<tr><td>-B/--use-ascii</td><td>使用ASCII /文本传输</td></tr>
-<tr><td>-c/--cookie-jar <file></file></td><td>操作结束后把cookie写入到这个文件中</td></tr>
-<tr><td>-C/--continue-at <offset></offset></td><td>断点续传</td></tr>
-<tr><td>-d/--data <data></data></td><td>HTTP POST方式传送数据</td></tr>
-<tr><td>     --data-ascii <data></data></td><td>以ascii的方式post数据</td></tr>
-<tr><td>     --data-binary <data></data></td><td>以二进制的方式post数据</td></tr>
-<tr><td>     --negotiate</td><td>使用HTTP身份验证</td></tr>
-<tr><td>     --digest</td><td>使用数字身份验证</td></tr>
-<tr><td>     --disable-eprt</td><td>禁止使用EPRT或LPRT</td></tr>
-<tr><td>     --disable-epsv</td><td>禁止使用EPSV</td></tr>
-<tr><td>-D/--dump-header <file></file></td><td>把header信息写入到该文件中</td></tr>
-<tr><td>     --egd-file <file></file></td><td>为随机数据(SSL)设置EGD socket路径</td></tr>
-<tr><td>     --tcp-nodelay</td><td>使用TCP_NODELAY选项</td></tr>
-<tr><td>-e/--referer</td><td>来源网址</td></tr>
-<tr><td>-E/--cert <cert:[passwd]></cert:[passwd]></td><td>客户端证书文件和密码 (SSL)</td></tr>
-<tr><td>     --cert-type <type></type></td><td>证书文件类型 (DER/PEM/ENG) (SSL)</td></tr>
-<tr><td>     --key <key></key></td><td>私钥文件名 (SSL)</td></tr>
-<tr><td>     --key-type <type></type></td><td>私钥文件类型 (DER/PEM/ENG) (SSL)</td></tr>
-<tr><td>     --pass <pass></pass></td><td>私钥密码 (SSL)</td></tr>
-<tr><td>     --engine <eng></eng></td><td>加密引擎使用 (SSL). "--engine list" for list</td></tr>
-<tr><td>     --cacert <file></file></td><td>CA证书 (SSL)</td></tr>
-<tr><td>     --capath <directory></directory></td><td>CA目录 (made using c_rehash) to verify peer against (SSL)</td></tr>
-<tr><td>     --ciphers <list></list></td><td>SSL密码</td></tr>
-<tr><td>     --compressed</td><td>要求返回是压缩的形势 (using deflate or gzip)</td></tr>
-<tr><td>     --connect-timeout <seconds></seconds></td><td>设置最大请求时间</td></tr>
-<tr><td>     --create-dirs</td><td>建立本地目录的目录层次结构</td></tr>
-<tr><td>     --crlf</td><td>上传是把LF转变成CRLF</td></tr>
-<tr><td>-f/--fail</td><td>连接失败时不显示http错误</td></tr>
-<tr><td>     --ftp-create-dirs</td><td>如果远程目录不存在，创建远程目录</td></tr>
-<tr><td>     --ftp-method [multicwd/nocwd/singlecwd]</td><td>控制CWD的使用</td></tr>
-<tr><td>     --ftp-pasv</td><td>使用 PASV/EPSV 代替端口</td></tr>
-<tr><td>     --ftp-skip-pasv-ip</td><td>使用PASV的时候,忽略该IP地址</td></tr>
-<tr><td>     --ftp-ssl</td><td>尝试用 SSL/TLS 来进行ftp数据传输</td></tr>
-<tr><td>     --ftp-ssl-reqd</td><td>要求用 SSL/TLS 来进行ftp数据传输</td></tr>
-<tr><td>-F/--form <name=content></name=content></td><td>模拟http表单提交数据</td></tr>
-<tr><td>     --form-string <name=string></name=string></td><td>模拟http表单提交数据</td></tr>
-<tr><td>-g/--globoff</td><td>禁用网址序列和范围使用{}和[]</td></tr>
-<tr><td>-G/--get</td><td>以get的方式来发送数据</td></tr>
-<tr><td>-H/--header <line></line></td><td>自定义头信息传递给服务器</td></tr>
-<tr><td>     --ignore-content-length</td><td>忽略的HTTP头信息的长度</td></tr>
-<tr><td>-i/--include</td><td>输出时包括protocol头信息</td></tr>
-<tr><td>-I/--head</td><td>只显示请求头信息</td></tr>
-<tr><td>-j/--junk-session-cookies</td><td>读取文件进忽略session cookie</td></tr>
-<tr><td>     --interface <interface></interface></td><td>使用指定网络接口/地址</td></tr>
-<tr><td>     --krb4 <level></level></td><td>使用指定安全级别的krb4</td></tr>
-<tr><td>-k/--insecure</td><td>允许不使用证书到SSL站点</td></tr>
-<tr><td>-K/--config</td><td>指定的配置文件读取</td></tr>
-<tr><td>-l/--list-only</td><td>列出ftp目录下的文件名称</td></tr>
-<tr><td>     --limit-rate <rate></rate></td><td>设置传输速度</td></tr>
-<tr><td>     --local-port<num></num></td><td>强制使用本地端口号</td></tr>
-<tr><td>-m/--max-time <seconds></seconds></td><td>设置最大传输时间</td></tr>
-<tr><td>     --max-redirs <num></num></td><td>设置最大读取的目录数</td></tr>
-<tr><td>     --max-filesize <bytes></bytes></td><td>设置最大下载的文件总量</td></tr>
-<tr><td>-M/--manual</td><td>显示全手动</td></tr>
-<tr><td>-n/--netrc</td><td>从netrc文件中读取用户名和密码</td></tr>
-<tr><td>     --netrc-optional</td><td>使用 .netrc 或者 URL来覆盖-n</td></tr>
-<tr><td>     --ntlm</td><td>使用 HTTP NTLM 身份验证</td></tr>
-<tr><td>-N/--no-buffer</td><td>禁用缓冲输出</td></tr>
-<tr><td>-o/--output</td><td>把输出写到该文件中</td></tr>
-<tr><td>-O/--remote-name</td><td>把输出写到该文件中，保留远程文件的文件名</td></tr>
-<tr><td>-p/--proxytunnel</td><td>使用HTTP代理</td></tr>
-<tr><td>     --proxy-anyauth</td><td>选择任一代理身份验证方法</td></tr>
-<tr><td>     --proxy-basic</td><td>在代理上使用基本身份验证</td></tr>
-<tr><td>     --proxy-digest</td><td>在代理上使用数字身份验证</td></tr>
-<tr><td>     --proxy-ntlm</td><td>在代理上使用ntlm身份验证</td></tr>
-<tr><td>-P/--ftp-port <address></address></td><td>使用端口地址，而不是使用PASV</td></tr>
-<tr><td>-q</td><td>作为第一个参数，关闭 .curlrc</td></tr>
-<tr><td>-Q/--quote <cmd></cmd></td><td>文件传输前，发送命令到服务器</td></tr>
-<tr><td>-r/--range <range></range></td><td>检索来自HTTP/1.1或FTP服务器字节范围</td></tr>
-<tr><td>--range-file</td><td>读取（SSL）的随机文件</td></tr>
-<tr><td>-R/--remote-time</td><td>在本地生成文件时，保留远程文件时间</td></tr>
-<tr><td>     --retry <num></num></td><td>传输出现问题时，重试的次数</td></tr>
-<tr><td>     --retry-delay <seconds></seconds></td><td>传输出现问题时，设置重试间隔时间</td></tr>
-<tr><td>     --retry-max-time <seconds></seconds></td><td>传输出现问题时，设置最大重试时间</td></tr>
-<tr><td>-s/--silent</td><td>静默模式。不输出任何东西</td></tr>
-<tr><td>-S/--show-error</td><td>显示错误</td></tr>
-<tr><td>     --socks4 <host[:port]></host[:port]></td><td>用socks4代理给定主机和端口</td></tr>
-<tr><td>     --socks5 <host[:port]></host[:port]></td><td>用socks5代理给定主机和端口</td></tr>
-<tr><td>     --stderr <file></file></td><td> </td></tr>
-<tr><td>-t/--telnet-option <opt=val></opt=val></td><td>Telnet选项设置</td></tr>
-<tr><td>     --trace <file></file></td><td>对指定文件进行debug</td></tr>
-<tr><td>     --trace-ascii <file></file></td><td>Like --跟踪但没有hex输出</td></tr>
-<tr><td>     --trace-time</td><td>跟踪/详细输出时，添加时间戳</td></tr>
-<tr><td>-T/--upload-file <file></file></td><td>上传文件</td></tr>
-<tr><td>     --url <url></url></td><td>Spet URL to work with</td></tr>
-<tr><td>-u/--user <user[:password]></user[:password]></td><td>设置服务器的用户和密码</td></tr>
-<tr><td>-U/--proxy-user <user[:password]></user[:password]></td><td>设置代理用户名和密码</td></tr>
-<tr><td>-w/--write-out [format]</td><td>什么输出完成后</td></tr>
-<tr><td>-x/--proxy <host[:port]></host[:port]></td><td>在给定的端口上使用HTTP代理</td></tr>
-<tr><td>-X/--request <command></td><td>指定什么命令</td></tr>
-<tr><td>-y/--speed-time</td><td>放弃限速所要的时间，默认为30</td></tr>
-<tr><td>-Y/--speed-limit</td><td>停止传输速度的限制，速度时间</td></tr>
-</tbody></table>
-<h3 id="实例"><a aria-hidden="true" tabindex="-1" href="#实例"><span class="icon icon-link"></span></a>实例</h3>
-<p><strong>文件下载</strong></p>
-<p>curl命令可以用来执行下载、发送各种HTTP请求，指定HTTP头部等操作。如果系统没有curl可以使用<code>yum install curl</code>安装，也可以下载安装。curl是将下载文件输出到stdout，将进度信息输出到stderr，不显示进度信息使用<code>--silent</code>选项。</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> URL --silent
+<div class="wmde-markdown"><a aria-label="View source on GitHub" target="__blank" class="github-corner" href="https://github.com/jaywcjlove/linux-command.git"><svg width="54" height="54" viewBox="0 0 250 250" aria-hidden="true" style="fill: rgb(32, 34, 37); color: rgb(255, 255, 255); position: fixed; z-index: 99999; border: 0px; top: 0px; right: 0px;">
+      <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+      <path style="transform-origin: 130px 106px;" class="octo-arm" fill="currentColor" d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"></path>
+      <path class="octo-body" fill="currentColor" d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"></path>
+    </svg></a>
+  <h1 id="curl"><a class="anchor" aria-hidden="true" tabindex="-1" href="#curl"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>curl</h1>
+  <p>利用URL规则在命令行下工作的文件传输工具</p>
+  <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>补充说明</h2>
+  <p><strong>curl命令</strong> 是一个利用URL规则在命令行下工作的文件传输工具。它支持文件的上传和下载，所以是综合传输工具，但按传统，习惯称curl为下载工具。作为一款强力工具，curl支持包括HTTP、HTTPS、ftp等众多协议，还支持POST、cookies、认证、从指定偏移处下载部分文件、用户代理字符串、限速、文件大小、进度条等特征。做网页处理流程和数据检索自动化，curl可以祝一臂之力。</p>
+  <h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>语法</h3>
+  <pre class="language-shell"><code class="language-shell">curl<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
 </code></pre>
-<p>这条命令是将下载文件输出到终端，所有下载的数据都被写入到stdout。</p>
-<p>使用选项<code>-O</code>将下载的数据写入到文件，必须使用文件的绝对地址：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> http://example.com/text.iso --silent -O
+  <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>选项</h3>
+  <table border="0" cellpadding="0" cellspacing="0">
+    <tbody>
+      <tr>
+        <td>-a/--append</td>
+        <td>上传文件时，附加到目标文件</td>
+      </tr>
+      <tr>
+        <td>-A/--user-agent
+          <string></string>
+        </td>
+        <td>设置用户代理发送给服务器</td>
+      </tr>
+      <tr>
+        <td>-anyauth</td>
+        <td>可以使用“任何”身份验证方法</td>
+      </tr>
+      <tr>
+        <td>-b/--cookie
+          <name=string file=""></name=string>
+        </td>
+        <td>cookie字符串或文件读取位置</td>
+      </tr>
+      <tr>
+        <td>     --basic</td>
+        <td>使用HTTP基本验证</td>
+      </tr>
+      <tr>
+        <td>-B/--use-ascii</td>
+        <td>使用ASCII /文本传输</td>
+      </tr>
+      <tr>
+        <td>-c/--cookie-jar
+          <file></file>
+        </td>
+        <td>操作结束后把cookie写入到这个文件中</td>
+      </tr>
+      <tr>
+        <td>-C/--continue-at
+          <offset></offset>
+        </td>
+        <td>断点续传</td>
+      </tr>
+      <tr>
+        <td>-d/--data<data></data></td>
+        <td>HTTP POST方式传送数据</td>
+      </tr>
+      <tr>
+        <td>     --data-ascii<data></data></td>
+        <td>以ascii的方式post数据</td>
+      </tr>
+      <tr>
+        <td>     --data-binary<data></data></td>
+        <td>以二进制的方式post数据</td>
+      </tr>
+      <tr>
+        <td>     --negotiate</td>
+        <td>使用HTTP身份验证</td>
+      </tr>
+      <tr>
+        <td>     --digest</td>
+        <td>使用数字身份验证</td>
+      </tr>
+      <tr>
+        <td>     --disable-eprt</td>
+        <td>禁止使用EPRT或LPRT</td>
+      </tr>
+      <tr>
+        <td>     --disable-epsv</td>
+        <td>禁止使用EPSV</td>
+      </tr>
+      <tr>
+        <td>-D/--dump-header
+          <file></file>
+        </td>
+        <td>把header信息写入到该文件中</td>
+      </tr>
+      <tr>
+        <td>     --egd-file
+          <file></file>
+        </td>
+        <td>为随机数据(SSL)设置EGD socket路径</td>
+      </tr>
+      <tr>
+        <td>     --tcp-nodelay</td>
+        <td>使用TCP_NODELAY选项</td>
+      </tr>
+      <tr>
+        <td>-e/--referer</td>
+        <td>来源网址</td>
+      </tr>
+      <tr>
+        <td>-E/--cert
+          <cert:[passwd]></cert:[passwd]>
+        </td>
+        <td>客户端证书文件和密码 (SSL)</td>
+      </tr>
+      <tr>
+        <td>     --cert-type
+          <type></type>
+        </td>
+        <td>证书文件类型 (DER/PEM/ENG) (SSL)</td>
+      </tr>
+      <tr>
+        <td>     --key
+          <key></key>
+        </td>
+        <td>私钥文件名 (SSL)</td>
+      </tr>
+      <tr>
+        <td>     --key-type
+          <type></type>
+        </td>
+        <td>私钥文件类型 (DER/PEM/ENG) (SSL)</td>
+      </tr>
+      <tr>
+        <td>     --pass
+          <pass></pass>
+        </td>
+        <td>私钥密码 (SSL)</td>
+      </tr>
+      <tr>
+        <td>     --engine
+          <eng></eng>
+        </td>
+        <td>加密引擎使用 (SSL). "--engine list" for list</td>
+      </tr>
+      <tr>
+        <td>     --cacert
+          <file></file>
+        </td>
+        <td>CA证书 (SSL)</td>
+      </tr>
+      <tr>
+        <td>     --capath
+          <directory></directory>
+        </td>
+        <td>CA目录 (made using c_rehash) to verify peer against (SSL)</td>
+      </tr>
+      <tr>
+        <td>     --ciphers
+          <list></list>
+        </td>
+        <td>SSL密码</td>
+      </tr>
+      <tr>
+        <td>     --compressed</td>
+        <td>要求返回是压缩的形势 (using deflate or gzip)</td>
+      </tr>
+      <tr>
+        <td>     --connect-timeout
+          <seconds></seconds>
+        </td>
+        <td>设置最大请求时间</td>
+      </tr>
+      <tr>
+        <td>     --create-dirs</td>
+        <td>建立本地目录的目录层次结构</td>
+      </tr>
+      <tr>
+        <td>     --crlf</td>
+        <td>上传是把LF转变成CRLF</td>
+      </tr>
+      <tr>
+        <td>-f/--fail</td>
+        <td>连接失败时不显示http错误</td>
+      </tr>
+      <tr>
+        <td>     --ftp-create-dirs</td>
+        <td>如果远程目录不存在，创建远程目录</td>
+      </tr>
+      <tr>
+        <td>     --ftp-method [multicwd/nocwd/singlecwd]</td>
+        <td>控制CWD的使用</td>
+      </tr>
+      <tr>
+        <td>     --ftp-pasv</td>
+        <td>使用 PASV/EPSV 代替端口</td>
+      </tr>
+      <tr>
+        <td>     --ftp-skip-pasv-ip</td>
+        <td>使用PASV的时候,忽略该IP地址</td>
+      </tr>
+      <tr>
+        <td>     --ftp-ssl</td>
+        <td>尝试用 SSL/TLS 来进行ftp数据传输</td>
+      </tr>
+      <tr>
+        <td>     --ftp-ssl-reqd</td>
+        <td>要求用 SSL/TLS 来进行ftp数据传输</td>
+      </tr>
+      <tr>
+        <td>-F/--form
+          <name=content></name=content>
+        </td>
+        <td>模拟http表单提交数据</td>
+      </tr>
+      <tr>
+        <td>     --form-string
+          <name=string></name=string>
+        </td>
+        <td>模拟http表单提交数据</td>
+      </tr>
+      <tr>
+        <td>-g/--globoff</td>
+        <td>禁用网址序列和范围使用{}和[]</td>
+      </tr>
+      <tr>
+        <td>-G/--get</td>
+        <td>以get的方式来发送数据</td>
+      </tr>
+      <tr>
+        <td>-H/--header
+          <line></line>
+        </td>
+        <td>自定义头信息传递给服务器</td>
+      </tr>
+      <tr>
+        <td>     --ignore-content-length</td>
+        <td>忽略的HTTP头信息的长度</td>
+      </tr>
+      <tr>
+        <td>-i/--include</td>
+        <td>输出时包括protocol头信息</td>
+      </tr>
+      <tr>
+        <td>-I/--head</td>
+        <td>只显示请求头信息</td>
+      </tr>
+      <tr>
+        <td>-j/--junk-session-cookies</td>
+        <td>读取文件进忽略session cookie</td>
+      </tr>
+      <tr>
+        <td>     --interface
+          <interface></interface>
+        </td>
+        <td>使用指定网络接口/地址</td>
+      </tr>
+      <tr>
+        <td>     --krb4
+          <level></level>
+        </td>
+        <td>使用指定安全级别的krb4</td>
+      </tr>
+      <tr>
+        <td>-k/--insecure</td>
+        <td>允许不使用证书到SSL站点</td>
+      </tr>
+      <tr>
+        <td>-K/--config</td>
+        <td>指定的配置文件读取</td>
+      </tr>
+      <tr>
+        <td>-l/--list-only</td>
+        <td>列出ftp目录下的文件名称</td>
+      </tr>
+      <tr>
+        <td>     --limit-rate
+          <rate></rate>
+        </td>
+        <td>设置传输速度</td>
+      </tr>
+      <tr>
+        <td>     --local-port
+          <num></num>
+        </td>
+        <td>强制使用本地端口号</td>
+      </tr>
+      <tr>
+        <td>-m/--max-time
+          <seconds></seconds>
+        </td>
+        <td>设置最大传输时间</td>
+      </tr>
+      <tr>
+        <td>     --max-redirs
+          <num></num>
+        </td>
+        <td>设置最大读取的目录数</td>
+      </tr>
+      <tr>
+        <td>     --max-filesize
+          <bytes></bytes>
+        </td>
+        <td>设置最大下载的文件总量</td>
+      </tr>
+      <tr>
+        <td>-M/--manual</td>
+        <td>显示全手动</td>
+      </tr>
+      <tr>
+        <td>-n/--netrc</td>
+        <td>从netrc文件中读取用户名和密码</td>
+      </tr>
+      <tr>
+        <td>     --netrc-optional</td>
+        <td>使用 .netrc 或者 URL来覆盖-n</td>
+      </tr>
+      <tr>
+        <td>     --ntlm</td>
+        <td>使用 HTTP NTLM 身份验证</td>
+      </tr>
+      <tr>
+        <td>-N/--no-buffer</td>
+        <td>禁用缓冲输出</td>
+      </tr>
+      <tr>
+        <td>-o/--output</td>
+        <td>把输出写到该文件中</td>
+      </tr>
+      <tr>
+        <td>-O/--remote-name</td>
+        <td>把输出写到该文件中，保留远程文件的文件名</td>
+      </tr>
+      <tr>
+        <td>-p/--proxytunnel</td>
+        <td>使用HTTP代理</td>
+      </tr>
+      <tr>
+        <td>     --proxy-anyauth</td>
+        <td>选择任一代理身份验证方法</td>
+      </tr>
+      <tr>
+        <td>     --proxy-basic</td>
+        <td>在代理上使用基本身份验证</td>
+      </tr>
+      <tr>
+        <td>     --proxy-digest</td>
+        <td>在代理上使用数字身份验证</td>
+      </tr>
+      <tr>
+        <td>     --proxy-ntlm</td>
+        <td>在代理上使用ntlm身份验证</td>
+      </tr>
+      <tr>
+        <td>-P/--ftp-port
+          <address></address>
+        </td>
+        <td>使用端口地址，而不是使用PASV</td>
+      </tr>
+      <tr>
+        <td>-q</td>
+        <td>作为第一个参数，关闭 .curlrc</td>
+      </tr>
+      <tr>
+        <td>-Q/--quote
+          <cmd></cmd>
+        </td>
+        <td>文件传输前，发送命令到服务器</td>
+      </tr>
+      <tr>
+        <td>-r/--range
+          <range></range>
+        </td>
+        <td>检索来自HTTP/1.1或FTP服务器字节范围</td>
+      </tr>
+      <tr>
+        <td>--range-file</td>
+        <td>读取（SSL）的随机文件</td>
+      </tr>
+      <tr>
+        <td>-R/--remote-time</td>
+        <td>在本地生成文件时，保留远程文件时间</td>
+      </tr>
+      <tr>
+        <td>     --retry
+          <num></num>
+        </td>
+        <td>传输出现问题时，重试的次数</td>
+      </tr>
+      <tr>
+        <td>     --retry-delay
+          <seconds></seconds>
+        </td>
+        <td>传输出现问题时，设置重试间隔时间</td>
+      </tr>
+      <tr>
+        <td>     --retry-max-time
+          <seconds></seconds>
+        </td>
+        <td>传输出现问题时，设置最大重试时间</td>
+      </tr>
+      <tr>
+        <td>-s/--silent</td>
+        <td>静默模式。不输出任何东西</td>
+      </tr>
+      <tr>
+        <td>-S/--show-error</td>
+        <td>显示错误</td>
+      </tr>
+      <tr>
+        <td>     --socks4
+          <host[:port]></host[:port]>
+        </td>
+        <td>用socks4代理给定主机和端口</td>
+      </tr>
+      <tr>
+        <td>     --socks5
+          <host[:port]></host[:port]>
+        </td>
+        <td>用socks5代理给定主机和端口</td>
+      </tr>
+      <tr>
+        <td>     --stderr
+          <file></file>
+        </td>
+        <td> </td>
+      </tr>
+      <tr>
+        <td>-t/--telnet-option
+          <opt=val></opt=val>
+        </td>
+        <td>Telnet选项设置</td>
+      </tr>
+      <tr>
+        <td>     --trace
+          <file></file>
+        </td>
+        <td>对指定文件进行debug</td>
+      </tr>
+      <tr>
+        <td>     --trace-ascii
+          <file></file>
+        </td>
+        <td>Like --跟踪但没有hex输出</td>
+      </tr>
+      <tr>
+        <td>     --trace-time</td>
+        <td>跟踪/详细输出时，添加时间戳</td>
+      </tr>
+      <tr>
+        <td>-T/--upload-file
+          <file></file>
+        </td>
+        <td>上传文件</td>
+      </tr>
+      <tr>
+        <td>     --url
+          <url></url>
+        </td>
+        <td>Spet URL to work with</td>
+      </tr>
+      <tr>
+        <td>-u/--user
+          <user[:password]></user[:password]>
+        </td>
+        <td>设置服务器的用户和密码</td>
+      </tr>
+      <tr>
+        <td>-U/--proxy-user
+          <user[:password]></user[:password]>
+        </td>
+        <td>设置代理用户名和密码</td>
+      </tr>
+      <tr>
+        <td>-w/--write-out [format]</td>
+        <td>什么输出完成后</td>
+      </tr>
+      <tr>
+        <td>-x/--proxy
+          <host[:port]></host[:port]>
+        </td>
+        <td>在给定的端口上使用HTTP代理</td>
+      </tr>
+      <tr>
+        <td>-X/--request
+          <command>
+        </td>
+        <td>指定什么命令</td>
+      </tr>
+      <tr>
+        <td>-y/--speed-time</td>
+        <td>放弃限速所要的时间，默认为30</td>
+      </tr>
+      <tr>
+        <td>-Y/--speed-limit</td>
+        <td>停止传输速度的限制，速度时间</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>实例</h3>
+  <p><strong>文件下载</strong></p>
+  <p>curl命令可以用来执行下载、发送各种HTTP请求，指定HTTP头部等操作。如果系统没有curl可以使用<code>yum install curl</code>安装，也可以下载安装。curl是将下载文件输出到stdout，将进度信息输出到stderr，不显示进度信息使用<code>--silent</code>选项。</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> URL --silent
 </code></pre>
-<p>选项<code>-o</code>将下载数据写入到指定名称的文件中，并使用<code>--progress</code>显示进度条：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> http://example.com/test.iso -o filename.iso --progress
+  <p>这条命令是将下载文件输出到终端，所有下载的数据都被写入到stdout。</p>
+  <p>使用选项<code>-O</code>将下载的数据写入到文件，必须使用文件的绝对地址：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> http://example.com/text.iso --silent -O
+</code></pre>
+  <p>选项<code>-o</code>将下载数据写入到指定名称的文件中，并使用<code>--progress</code>显示进度条：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> http://example.com/test.iso -o filename.iso --progress
 <span class="token comment">######################################### 100.0%</span>
 </code></pre>
-<p><strong>不输出错误和进度信息</strong></p>
-<p><code>-s</code> 参数将不输出错误和进度信息。</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -s https://www.example.com
+  <p><strong>不输出错误和进度信息</strong></p>
+  <p><code>-s</code> 参数将不输出错误和进度信息。</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -s https://www.example.com
 <span class="token comment"># 上面命令一旦发生错误，不会显示错误信息。不发生错误的话，会正常显示运行结果。</span>
 </code></pre>
-<p>如果想让 curl 不产生任何输出，可以使用下面的命令。</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -s -o /dev/null https://google.com
+  <p>如果想让 curl 不产生任何输出，可以使用下面的命令。</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -s -o /dev/null https://google.com
 </code></pre>
-<p><strong>断点续传</strong></p>
-<p>curl能够从特定的文件偏移处继续下载，它可以通过指定一个便宜量来下载部分文件：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> URL/File -C 偏移量
+  <p><strong>断点续传</strong></p>
+  <p>curl能够从特定的文件偏移处继续下载，它可以通过指定一个便宜量来下载部分文件：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> URL/File -C 偏移量
 
 <span class="token comment">#偏移量是以字节为单位的整数，如果让curl自动推断出正确的续传位置使用-C -：</span>
 <span class="token function">curl</span> -C -URL
 </code></pre>
-<p><strong>使用curl设置参照页字符串</strong></p>
-<p>参照页是位于HTTP头部中的一个字符串，用来表示用户是从哪个页面到达当前页面的，如果用户点击网页A中的某个连接，那么用户就会跳转到B网页，网页B头部的参照页字符串就包含网页A的URL。</p>
-<p>使用<code>--referer</code>选项指定参照页字符串：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> --referer http://www.google.com http://wangchujiang.com
+  <p><strong>使用curl设置参照页字符串</strong></p>
+  <p>参照页是位于HTTP头部中的一个字符串，用来表示用户是从哪个页面到达当前页面的，如果用户点击网页A中的某个连接，那么用户就会跳转到B网页，网页B头部的参照页字符串就包含网页A的URL。</p>
+  <p>使用<code>--referer</code>选项指定参照页字符串：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> --referer http://www.google.com http://wangchujiang.com
 </code></pre>
-<p><strong>用curl设置用户代理字符串</strong></p>
-<p>有些网站访问会提示只能使用IE浏览器来访问，这是因为这些网站设置了检查用户代理，可以使用curl把用户代理设置为IE，这样就可以访问了。使用<code>--user-agent</code>或者<code>-A</code>选项：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> URL --user-agent <span class="token string">"Mozilla/5.0"</span>
+  <p><strong>用curl设置用户代理字符串</strong></p>
+  <p>有些网站访问会提示只能使用IE浏览器来访问，这是因为这些网站设置了检查用户代理，可以使用curl把用户代理设置为IE，这样就可以访问了。使用<code>--user-agent</code>或者<code>-A</code>选项：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> URL --user-agent <span class="token string">"Mozilla/5.0"</span>
 <span class="token function">curl</span> URL -A <span class="token string">"Mozilla/5.0"</span>
 </code></pre>
-<p>其他HTTP头部信息也可以使用curl来发送，使用<code>-H</code>"头部信息" 传递多个头部信息，例如：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -H <span class="token string">"Host:wangchujiang.com"</span> -H <span class="token string">"accept-language:zh-cn"</span> URL
+  <p>其他HTTP头部信息也可以使用curl来发送，使用<code>-H</code>"头部信息" 传递多个头部信息，例如：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -H <span class="token string">"Host:wangchujiang.com"</span> -H <span class="token string">"accept-language:zh-cn"</span> URL
 </code></pre>
-<p><strong>curl的带宽控制和下载配额</strong></p>
-<p>使用<code>--limit-rate</code>限制curl的下载速度：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> URL --limit-rate 50k
+  <p><strong>curl的带宽控制和下载配额</strong></p>
+  <p>使用<code>--limit-rate</code>限制curl的下载速度：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> URL --limit-rate 50k
 </code></pre>
-<p>命令中用k（千字节）和m（兆字节）指定下载速度限制。</p>
-<p>使用<code>--max-filesize</code>指定可下载的最大文件大小：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> URL --max-filesize bytes
+  <p>命令中用k（千字节）和m（兆字节）指定下载速度限制。</p>
+  <p>使用<code>--max-filesize</code>指定可下载的最大文件大小：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> URL --max-filesize bytes
 </code></pre>
-<p>如果文件大小超出限制，命令则返回一个非0退出码，如果命令正常则返回0。</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> --limit-rate 200k https://example.com
+  <p>如果文件大小超出限制，命令则返回一个非0退出码，如果命令正常则返回0。</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> --limit-rate 200k https://example.com
 <span class="token comment"># 上面命令将带宽限制在每秒 200K 字节。</span>
 </code></pre>
-<p><strong>用curl进行认证</strong></p>
-<p>使用curl选项 -u 可以完成HTTP或者FTP的认证，可以指定密码，也可以不指定密码在后续操作中输入密码：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -u user:pwd http://wangchujiang.com
+  <p><strong>用curl进行认证</strong></p>
+  <p>使用curl选项 -u 可以完成HTTP或者FTP的认证，可以指定密码，也可以不指定密码在后续操作中输入密码：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -u user:pwd http://wangchujiang.com
 <span class="token function">curl</span> -u user http://wangchujiang.com
 </code></pre>
-<p><strong>只打印响应头部信息</strong></p>
-<p>通过<code>-I</code>或者<code>-head</code>可以只打印出HTTP头部信息：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost text<span class="token punctuation">]</span><span class="token comment"># curl -I http://wangchujiang.com</span>
+  <p><strong>只打印响应头部信息</strong></p>
+  <p>通过<code>-I</code>或者<code>-head</code>可以只打印出HTTP头部信息：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost text<span class="token punctuation">]</span><span class="token comment"># curl -I http://wangchujiang.com</span>
 HTTP/1.1 <span class="token number">200</span> OK
 Server: nginx/1.2.5
 date: Mon, <span class="token number">10</span> Dec <span class="token number">2012</span> 09:24:34 GMT
@@ -218,106 +612,106 @@ Connection: keep-alive
 Vary: Accept-Encoding
 X-Pingback: http://wangchujiang.com/xmlrpc.php
 </code></pre>
-<p><strong>get请求</strong></p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> <span class="token string">"http://www.wangchujiang.com"</span>    <span class="token comment"># 如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地</span>
+  <p><strong>get请求</strong></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> <span class="token string">"http://www.wangchujiang.com"</span>    <span class="token comment"># 如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地</span>
 <span class="token function">curl</span> -i <span class="token string">"http://www.wangchujiang.com"</span> <span class="token comment"># 显示全部信息</span>
 <span class="token function">curl</span> -l <span class="token string">"http://www.wangchujiang.com"</span> <span class="token comment"># 只显示头部信息</span>
 <span class="token function">curl</span> -v <span class="token string">"http://www.wangchujiang.com"</span> <span class="token comment"># 显示get请求全过程解析</span>
 </code></pre>
-<p><strong>post请求</strong></p>
-<pre class="language-shell"><code class="language-shell">$ <span class="token function">curl</span> -d <span class="token string">"param1=value1&#x26;param2=value2"</span> <span class="token string">"http://www.wangchujiang.com/login"</span>
+  <p><strong>post请求</strong></p>
+  <pre class="language-shell"><code class="language-shell">$ <span class="token function">curl</span> -d <span class="token string">"param1=value1&#x26;param2=value2"</span> <span class="token string">"http://www.wangchujiang.com/login"</span>
 
 <span class="token function">curl</span> -d<span class="token string">'login=emma＆password=123'</span> -X POST https://wangchujiang.com/login
 <span class="token comment"># 或者</span>
 $ <span class="token function">curl</span> -d <span class="token string">'login=emma'</span> -d <span class="token string">'password=123'</span> -X POST  https://wangchujiang.com/login
 </code></pre>
-<p><code>--data-urlencode</code> 参数等同于 <code>-d</code>，发送 <code>POST</code> 请求的数据体，区别在于会自动将发送的数据进行 <code>URL</code> 编码。</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> --data-urlencode <span class="token string">'comment=hello world'</span> https://wangchujiang.com/login
+  <p><code>--data-urlencode</code> 参数等同于 <code>-d</code>，发送 <code>POST</code> 请求的数据体，区别在于会自动将发送的数据进行 <code>URL</code> 编码。</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> --data-urlencode <span class="token string">'comment=hello world'</span> https://wangchujiang.com/login
 <span class="token comment"># 上面代码中，发送的数据hello world之间有一个空格，需要进行 URL 编码。</span>
 </code></pre>
-<p><strong>读取本地文本文件的数据，向服务器发送</strong></p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -d <span class="token string">'@data.txt'</span> https://wangchujiang.com/upload
+  <p><strong>读取本地文本文件的数据，向服务器发送</strong></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -d <span class="token string">'@data.txt'</span> https://wangchujiang.com/upload
 <span class="token comment"># 读取data.txt文件的内容，作为数据体向服务器发送。</span>
 </code></pre>
-<p><strong>json格式的post请求</strong></p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -l -H <span class="token string">"Content-type: application/json"</span> -X POST -d <span class="token string">'{"phone":"13521389587","password":"test"}'</span> http://wangchujiang.com/apis/users.json
+  <p><strong>json格式的post请求</strong></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -l -H <span class="token string">"Content-type: application/json"</span> -X POST -d <span class="token string">'{"phone":"13521389587","password":"test"}'</span> http://wangchujiang.com/apis/users.json
 </code></pre>
-<p><strong>向服务器发送 Cookie</strong></p>
-<p>使用<code>--cookie "COKKIES"</code>选项来指定cookie，多个cookie使用分号分隔：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> http://wangchujiang.com --cookie <span class="token string">"user=root;pass=123456"</span>
+  <p><strong>向服务器发送 Cookie</strong></p>
+  <p>使用<code>--cookie "COKKIES"</code>选项来指定cookie，多个cookie使用分号分隔：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> http://wangchujiang.com --cookie <span class="token string">"user=root;pass=123456"</span>
 </code></pre>
-<p>将cookie另存为一个文件，使用<code>--cookie-jar</code>选项：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> URL --cookie-jar cookie_file
+  <p>将cookie另存为一个文件，使用<code>--cookie-jar</code>选项：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> URL --cookie-jar cookie_file
 </code></pre>
-<p><code>-b</code> 参数用来向服务器发送 Cookie。</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -b <span class="token string">'foo=bar'</span> https://taobao.com
+  <p><code>-b</code> 参数用来向服务器发送 Cookie。</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -b <span class="token string">'foo=bar'</span> https://taobao.com
 <span class="token comment"># 上面命令会生成一个标头Cookie: foo=bar，向服务器发送一个名为foo、值为bar的 Cookie。</span>
 </code></pre>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -b <span class="token string">'foo1=bar'</span> -b <span class="token string">'foo2=baz'</span> https://taobao.com
+  <pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -b <span class="token string">'foo1=bar'</span> -b <span class="token string">'foo2=baz'</span> https://taobao.com
 <span class="token comment"># 上面命令发送两个 Cookie。</span>
 
 ```shell
 <span class="token function">curl</span> -b cookies.txt https://www.taobao.com
 <span class="token comment"># 上面命令读取本地文件 cookies.txt，里面是服务器设置的 Cookie（参见-c参数），将其发送到服务器。</span>
 </code></pre>
-<p><strong>Cookie 写入一个文件</strong></p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -c cookies.txt https://www.taobao.com
+  <p><strong>Cookie 写入一个文件</strong></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -c cookies.txt https://www.taobao.com
 <span class="token comment"># 上面命令将服务器的 HTTP 回应所设置 Cookie 写入文本文件cookies.txt。</span>
 </code></pre>
-<p><strong>请求的来源</strong></p>
-<p><code>-e</code> 参数用来设置 <code>HTTP</code> 的标头 <code>Referer</code>，表示请求的来源。</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -e <span class="token string">'https://taobao.com?q=example'</span> https://www.example.com
+  <p><strong>请求的来源</strong></p>
+  <p><code>-e</code> 参数用来设置 <code>HTTP</code> 的标头 <code>Referer</code>，表示请求的来源。</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -e <span class="token string">'https://taobao.com?q=example'</span> https://www.example.com
 <span class="token comment"># 上面命令将Referer标头设为 https://taobao.com?q=example。</span>
 </code></pre>
-<p><code>-H</code> 参数可以通过直接添加标头 <code>Referer</code>，达到同样效果。</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -H <span class="token string">'Referer: https://taobao.com?q=example'</span> https://www.example.com
+  <p><code>-H</code> 参数可以通过直接添加标头 <code>Referer</code>，达到同样效果。</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -H <span class="token string">'Referer: https://taobao.com?q=example'</span> https://www.example.com
 </code></pre>
-<p><strong>上传二进制文件</strong></p>
-<p><code>-F</code> 参数用来向服务器上传二进制文件。</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -F <span class="token string">'file=@photo.png'</span> https://taobao.com/profile
+  <p><strong>上传二进制文件</strong></p>
+  <p><code>-F</code> 参数用来向服务器上传二进制文件。</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -F <span class="token string">'file=@photo.png'</span> https://taobao.com/profile
 <span class="token comment"># 上面命令会给 HTTP 请求加上标头 Content-Type: multipart/form-data ，然后将文件photo.png作为file字段上传。</span>
 </code></pre>
-<p><code>-F</code> 参数可以指定 <code>MIME</code> 类型。</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -F <span class="token string">'file=@photo.png;type=image/png'</span> https://taobao.com/profile
+  <p><code>-F</code> 参数可以指定 <code>MIME</code> 类型。</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -F <span class="token string">'file=@photo.png;type=image/png'</span> https://taobao.com/profile
 <span class="token comment"># 上面命令指定 MIME 类型为image/png，否则 curl 会把 MIME 类型设为 application/octet-stream。</span>
 </code></pre>
-<p><code>-F</code> 参数也可以指定文件名。</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -F <span class="token string">'file=@photo.png;filename=me.png'</span> https://taobao.com/profile
+  <p><code>-F</code> 参数也可以指定文件名。</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -F <span class="token string">'file=@photo.png;filename=me.png'</span> https://taobao.com/profile
 <span class="token comment"># 上面命令中，原始文件名为photo.png，但是服务器接收到的文件名为me.png。</span>
 </code></pre>
-<p><strong>设置请求头</strong></p>
-<p><code>-H</code> 参数添加 <code>HTTP</code> 请求的标头。</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -H <span class="token string">'Accept-Language: en-US'</span> https://google.com
+  <p><strong>设置请求头</strong></p>
+  <p><code>-H</code> 参数添加 <code>HTTP</code> 请求的标头。</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -H <span class="token string">'Accept-Language: en-US'</span> https://google.com
 <span class="token comment"># 上面命令添加 HTTP 标头 Accept-Language: en-US。</span>
 </code></pre>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -H <span class="token string">'Accept-Language: en-US'</span> -H <span class="token string">'Secret-Message: xyzzy'</span> https://google.com
+  <pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -H <span class="token string">'Accept-Language: en-US'</span> -H <span class="token string">'Secret-Message: xyzzy'</span> https://google.com
 <span class="token comment"># 上面命令添加两个 HTTP 标头。</span>
 </code></pre>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -d <span class="token string">'{"login": "emma", "pass": "123"}'</span> -H <span class="token string">'Content-Type: application/json'</span> https://google.com/login
+  <pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -d <span class="token string">'{"login": "emma", "pass": "123"}'</span> -H <span class="token string">'Content-Type: application/json'</span> https://google.com/login
 <span class="token comment"># 上面命令添加 HTTP 请求的标头是 Content-Type: application/json，然后用 -d 参数发送 JSON 数据。</span>
 </code></pre>
-<p><strong>跳过 SSL 检测</strong></p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -k https://www.example.com
+  <p><strong>跳过 SSL 检测</strong></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -k https://www.example.com
 <span class="token comment"># 上面命令不会检查服务器的 SSL 证书是否正确。</span>
 </code></pre>
-<p><strong>请求跟随服务器的重定向</strong></p>
-<p><code>-L</code> 参数会让 <code>HTTP</code> 请求跟随服务器的重定向。<code>curl</code> 默认不跟随重定向。</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -L -d <span class="token string">'tweet=hi'</span> https://api.example.com/tweet
+  <p><strong>请求跟随服务器的重定向</strong></p>
+  <p><code>-L</code> 参数会让 <code>HTTP</code> 请求跟随服务器的重定向。<code>curl</code> 默认不跟随重定向。</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -L -d <span class="token string">'tweet=hi'</span> https://api.example.com/tweet
 </code></pre>
-<p><strong>调试参数</strong></p>
-<p><code>-v</code> 参数输出通信的整个过程，用于调试。</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -v https://www.example.com
+  <p><strong>调试参数</strong></p>
+  <p><code>-v</code> 参数输出通信的整个过程，用于调试。</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> -v https://www.example.com
 <span class="token comment"># --trace参数也可以用于调试，还会输出原始的二进制数据。</span>
 </code></pre>
-<pre class="language-shell"><code class="language-shell">$ <span class="token function">curl</span> --trace - https://www.example.com
+  <pre class="language-shell"><code class="language-shell">$ <span class="token function">curl</span> --trace - https://www.example.com
 </code></pre>
-<p><strong>获取本机外网ip</strong></p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> ipecho.net/plain
+  <p><strong>获取本机外网ip</strong></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">curl</span> ipecho.net/plain
 </code></pre>
-<p><strong>使用 curl 测试网站加载速度</strong></p>
-<p>命令有一个鲜为人知的选项，<code>-w</code>，该选项在请求结束之后打印本次请求的统计数据到标准输出。</p>
-<p>首先，我们定义控制打印行为的格式化字符串。新建文本文件 <code>fmt.txt</code>，并填入下面的内容：</p>
-<pre class="language-ruby"><code class="language-ruby">\n
+  <p><strong>使用 curl 测试网站加载速度</strong></p>
+  <p>命令有一个鲜为人知的选项，<code>-w</code>，该选项在请求结束之后打印本次请求的统计数据到标准输出。</p>
+  <p>首先，我们定义控制打印行为的格式化字符串。新建文本文件 <code>fmt.txt</code>，并填入下面的内容：</p>
+  <pre class="language-ruby"><code class="language-ruby">\n
 <span class="token constant">Response</span> <span class="token builtin">Time</span> <span class="token keyword">for</span><span class="token punctuation">:</span> <span class="token string">%{url_effective}</span>\n\n
 <span class="token constant">DNS</span> <span class="token constant">Lookup</span> <span class="token builtin">Time</span><span class="token punctuation">:</span>\t\t<span class="token string">%{time_namelookup}</span>s\n
 <span class="token constant">Redirection</span> <span class="token builtin">Time</span><span class="token punctuation">:</span>\t\t<span class="token string">%{time_redirect}</span>s\n
@@ -327,22 +721,22 @@ $ <span class="token function">curl</span> -d <span class="token string">'login=
 <span class="token constant">Start</span><span class="token operator">-</span>transfer <span class="token builtin">Time</span><span class="token punctuation">:</span>\t\t<span class="token string">%{time_starttransfer}</span>s\n\n
 <span class="token constant">Total</span> <span class="token builtin">Time</span><span class="token punctuation">:</span>\t\t\t<span class="token string">%{time_total}</span>s\n
 </code></pre>
-<p>curl 提供了很多置换变量，可以在格式化字符串中通过 <code>%{var}</code> 的形式使用。完整的变量列表可以在 <code>curl</code> 的 <code>manpage</code> 中查看。简单介绍一下我们使用的这几个变量：</p>
-<ul>
-<li><code>url_effective</code>: 执行完地址重定向之后的最终 URL；</li>
-<li><code>time_namelookup</code>: 从请求开始至完成名称解析所花的时间，单位为秒，下同；</li>
-<li><code>time_redirect</code>: 执行所有重定向所花的时间；</li>
-<li><code>time_connect</code>: 从请求开始至建立 TCP 连接所花的时间；</li>
-<li><code>time_appconnect</code>: 从请求开始至完成 SSL/SSH 握手所花的时间；</li>
-<li><code>time_pretransfer</code>: 从请求开始至服务器准备传送文件所花的时间，包含了传送协商时间；</li>
-<li><code>time_starttransfer</code>: 从请求开始至服务器准备传送第一个字节所花的时间；</li>
-<li><code>time_total</code>: 完整耗时。</li>
-</ul>
-<p>然后执行请求，通过 @filename 指定保存了格式化字符串的文件：</p>
-<pre class="language-shell"><code class="language-shell">$ <span class="token function">curl</span> -L -s -w @fmt.txt -o /dev/null http://www.google.com
+  <p>curl 提供了很多置换变量，可以在格式化字符串中通过 <code>%{var}</code> 的形式使用。完整的变量列表可以在 <code>curl</code> 的 <code>manpage</code> 中查看。简单介绍一下我们使用的这几个变量：</p>
+  <ul>
+    <li><code>url_effective</code>: 执行完地址重定向之后的最终 URL；</li>
+    <li><code>time_namelookup</code>: 从请求开始至完成名称解析所花的时间，单位为秒，下同；</li>
+    <li><code>time_redirect</code>: 执行所有重定向所花的时间；</li>
+    <li><code>time_connect</code>: 从请求开始至建立 TCP 连接所花的时间；</li>
+    <li><code>time_appconnect</code>: 从请求开始至完成 SSL/SSH 握手所花的时间；</li>
+    <li><code>time_pretransfer</code>: 从请求开始至服务器准备传送文件所花的时间，包含了传送协商时间；</li>
+    <li><code>time_starttransfer</code>: 从请求开始至服务器准备传送第一个字节所花的时间；</li>
+    <li><code>time_total</code>: 完整耗时。</li>
+  </ul>
+  <p>然后执行请求，通过 @filename 指定保存了格式化字符串的文件：</p>
+  <pre class="language-shell"><code class="language-shell">$ <span class="token function">curl</span> -L -s -w @fmt.txt -o /dev/null http://www.google.com
 </code></pre>
-<p>输出：</p>
-<pre class="language-c"><code class="language-c">Response Time <span class="token keyword">for</span><span class="token operator">:</span> http<span class="token operator">:</span><span class="token comment">//www.google.co.jp/?gfe_rd=cr&#x26;dcr=0&#x26;ei=cjIaWpTkHeiQ8QfnxYzoBA</span>
+  <p>输出：</p>
+  <pre class="language-c"><code class="language-c">Response Time <span class="token keyword">for</span><span class="token operator">:</span> http<span class="token operator">:</span><span class="token comment">//www.google.co.jp/?gfe_rd=cr&#x26;dcr=0&#x26;ei=cjIaWpTkHeiQ8QfnxYzoBA</span>
 
 DNS Lookup Time<span class="token operator">:</span>        <span class="token number">0.000038</span>s
 Redirection Time<span class="token operator">:</span>       <span class="token number">0.207271</span>s
@@ -353,8 +747,10 @@ Start<span class="token operator">-</span>transfer Time<span class="token operat
 
 Total Time<span class="token operator">:</span>             <span class="token number">0.467691</span>s
 </code></pre>
-<h3 id="要求返回是压缩的状态"><a aria-hidden="true" tabindex="-1" href="#要求返回是压缩的状态"><span class="icon icon-link"></span></a>要求返回是压缩的状态</h3>
-<pre class="language-shell"><code class="language-shell">▶ <span class="token function">curl</span> --compressed -o- -L https://yarnpkg.com/install.sh <span class="token operator">|</span> <span class="token function">bash</span>
+  <h3 id="要求返回是压缩的状态"><a class="anchor" aria-hidden="true" tabindex="-1" href="#要求返回是压缩的状态"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>要求返回是压缩的状态</h3>
+  <pre class="language-shell"><code class="language-shell">▶ <span class="token function">curl</span> --compressed -o- -L https://yarnpkg.com/install.sh <span class="token operator">|</span> <span class="token function">bash</span>
   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
                                  Dload  Upload   Total   Spent    Left  Speed
 <span class="token number">100</span>    <span class="token number">54</span>  <span class="token number">100</span>    <span class="token number">54</span>    <span class="token number">0</span>     <span class="token number">0</span>     <span class="token number">42</span>      <span class="token number">0</span>  <span class="token number">0</span>:00:01  <span class="token number">0</span>:00:01 --:--:--    <span class="token number">42</span>
@@ -375,8 +771,9 @@ Installing Yarn<span class="token operator">!</span>
 <span class="token number">100</span>    <span class="token number">97</span>  <span class="token number">100</span>    <span class="token number">97</span>    <span class="token number">0</span>     <span class="token number">0</span>    <span class="token number">325</span>      <span class="token number">0</span> --:--:-- --:--:-- --:--:--   <span class="token number">325</span>
 <span class="token number">100</span>   <span class="token number">647</span>  <span class="token number">100</span>   <span class="token number">647</span>    <span class="token number">0</span>     <span class="token number">0</span>   <span class="token number">1283</span>      <span class="token number">0</span> --:--:-- --:--:-- --:--:--  <span class="token number">1283</span>
 <span class="token number">100</span>   <span class="token number">832</span>  <span class="token number">100</span>   <span class="token number">832</span>    <span class="token number">0</span>     <span class="token number">0</span>   <span class="token number">1107</span>      <span class="token number">0</span> --:--:-- --:--:-- --:--:--  812k
-</code></pre>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+</code></pre><!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+</div>
+
 </div>
 
 <div class="footer ">
@@ -399,7 +796,7 @@ Installing Yarn<span class="token operator">!</span>
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1630702913406"></script>
-<script type="text/javascript" src="../js/index.js?v=1630702913406"></script>
+<script type="text/javascript" src="../js/dt.js?v=1633360854431"></script>
+<script type="text/javascript" src="../js/index.js?v=1633360854431"></script>
 </body>
 </html>

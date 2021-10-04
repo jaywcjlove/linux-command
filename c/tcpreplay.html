@@ -10,10 +10,9 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,tcpreplay,将PCAP包重新发送，用于性能或者功能测试">
     <title>tcpreplay 命令，Linux tcpreplay 命令详解：将PCAP包重新发送，用于性能或者功能测试 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1630702913746">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633360854787">
 </head>
 <body>
-<a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
 <div class="header header_list">
     <div class="logo">
         <a href="/">
@@ -40,12 +39,24 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/tcpreplay.md">添加实例</a>
 </span>
 
-<h1 id="tcpreplay"><a aria-hidden="true" tabindex="-1" href="#tcpreplay"><span class="icon icon-link"></span></a>tcpreplay</h1>
-<p>将PCAP包重新发送，用于性能或者功能测试</p>
-<h2 id="补充说明"><a aria-hidden="true" tabindex="-1" href="#补充说明"><span class="icon icon-link"></span></a>补充说明</h2>
-<p>简单的说， <strong>tcpreplay</strong> 是一种pcap包的重放工具，它可以将用ethreal、wireshark工具抓下来的包原样或经过任意修改后重放回去。它允许你对报文做任意的修改（主要是指对2层、3层、4层报文头），指定重放报文的速度等，这样tcpreplay就可以用来复现抓包的情景以定位bug，以极快的速度重放从而实现压力测试。</p>
-<h3 id="选项"><a aria-hidden="true" tabindex="-1" href="#选项"><span class="icon icon-link"></span></a>选项</h3>
-<pre class="language-shell"><code class="language-shell">-A <span class="token string">"&#x3C;args>"</span> 在使用 tcpdump 风格打印输出信息时，同时再调用tcpdump中的参数， 默认已经带有“-n,-l”，所以一般看到的都是ip地址，而没有主机名的打印，注意这个是在tcpreplay使用了-v参数时才能使用，不带-v不会报错，但是没有实际意义。格式：-vA “nnt”表示以tcpdump风格输出报文信息，并且不打印时间戳、主机名、端口服务名称。注意不要使用-c参数来指定打印的数据报文的个数，这样发送出去的报文也会变少。
+
+<div class="wmde-markdown"><a aria-label="View source on GitHub" target="__blank" class="github-corner" href="https://github.com/jaywcjlove/linux-command.git"><svg width="54" height="54" viewBox="0 0 250 250" aria-hidden="true" style="fill: rgb(32, 34, 37); color: rgb(255, 255, 255); position: fixed; z-index: 99999; border: 0px; top: 0px; right: 0px;">
+      <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+      <path style="transform-origin: 130px 106px;" class="octo-arm" fill="currentColor" d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"></path>
+      <path class="octo-body" fill="currentColor" d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"></path>
+    </svg></a>
+  <h1 id="tcpreplay"><a class="anchor" aria-hidden="true" tabindex="-1" href="#tcpreplay"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>tcpreplay</h1>
+  <p>将PCAP包重新发送，用于性能或者功能测试</p>
+  <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>补充说明</h2>
+  <p>简单的说， <strong>tcpreplay</strong> 是一种pcap包的重放工具，它可以将用ethreal、wireshark工具抓下来的包原样或经过任意修改后重放回去。它允许你对报文做任意的修改（主要是指对2层、3层、4层报文头），指定重放报文的速度等，这样tcpreplay就可以用来复现抓包的情景以定位bug，以极快的速度重放从而实现压力测试。</p>
+  <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>选项</h3>
+  <pre class="language-shell"><code class="language-shell">-A <span class="token string">"&#x3C;args>"</span> 在使用 tcpdump 风格打印输出信息时，同时再调用tcpdump中的参数， 默认已经带有“-n,-l”，所以一般看到的都是ip地址，而没有主机名的打印，注意这个是在tcpreplay使用了-v参数时才能使用，不带-v不会报错，但是没有实际意义。格式：-vA “nnt”表示以tcpdump风格输出报文信息，并且不打印时间戳、主机名、端口服务名称。注意不要使用-c参数来指定打印的数据报文的个数，这样发送出去的报文也会变少。
 -c <span class="token operator">&#x3C;</span>cachefile<span class="token operator">></span> 双网卡回放报文必选参数，后面紧跟cache文件名，该文件为tcpprep根据对应的pcap文件构造出来。 
 -D 把应用层的数据，使用dump mode写入到指定文件中去，和-w、-W 参数一起使用。 
 -e <span class="token operator">&#x3C;</span>ip1:ip<span class="token operator"><span class="token file-descriptor important">2</span>></span> 指定端点的ip，即把发送报文的和接收的报文的ip都修改称对应的参数值中指定的ip，但是这样发送的出的报文不会区分client和server。。 
@@ -75,35 +86,38 @@
 -V 查看版本号。
 -w <span class="token operator">&#x3C;</span>file<span class="token operator">></span> 将主网卡发送的报文写入一个文件中，参数后紧跟文件名。
 </code></pre>
-<h3 id="实例"><a aria-hidden="true" tabindex="-1" href="#实例"><span class="icon icon-link"></span></a>实例</h3>
-<p>**1、重放在客户端 ftp 连接的报文 **</p>
-<p>a、在客户端使用 ethereal 抓包，存为 ftp.pcap 文件。</p>
-<p>b、 将 ftp.pcap 文件进行 tcpprep 操作，制作 cache 文件。</p>
-<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@A ~<span class="token punctuation">]</span><span class="token comment"># tcpprep -an client -i ftp.pcap -o ftp.cache –v </span>
+  <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>实例</h3>
+  <p>**1、重放在客户端 ftp 连接的报文 **</p>
+  <p>a、在客户端使用 ethereal 抓包，存为 ftp.pcap 文件。</p>
+  <p>b、 将 ftp.pcap 文件进行 tcpprep 操作，制作 cache 文件。</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@A ~<span class="token punctuation">]</span><span class="token comment"># tcpprep -an client -i ftp.pcap -o ftp.cache –v </span>
 </code></pre>
-<p>c、 将 DUT 设备的两个接口和 PC 的两个接口使用网线连接，使用 tcpreplay 重 放报文。注意防火墙的配置为网桥（透明）模式。 </p>
-<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@A ~<span class="token punctuation">]</span><span class="token comment"># tcpreplay -c ftp.cache -i eth0 -j eth1 ftp.pcap -R –v </span>
+  <p>c、 将 DUT 设备的两个接口和 PC 的两个接口使用网线连接，使用 tcpreplay 重 放报文。注意防火墙的配置为网桥（透明）模式。 </p>
+  <pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@A ~<span class="token punctuation">]</span><span class="token comment"># tcpreplay -c ftp.cache -i eth0 -j eth1 ftp.pcap -R –v </span>
 </code></pre>
-<p>-R 参数表示全速发送，-v 显示打印信息。 </p>
-<p>**2、重放在客户端 BT 连接的报文 **</p>
-<p>a、在实验室 BT 下载一些台湾的娱乐节目和热门的大片，使用 ethereal 抓包， 存为 bt.pcap 文件。注意 pcap 文件大小的控制，对 pc 的内存要求比较高，我保 存了一个 600 多 M 的 pcap 文件用了 40 多分钟，大家有需要可以直接从实验室 copy。 </p>
-<p>b、将 bt.pcap 文件进行 tcpprep 操作，制作 cache 文件。</p>
-<pre class="language-shell"><code class="language-shell"> <span class="token punctuation">[</span>root@A ~<span class="token punctuation">]</span><span class="token comment"># tcpprep -an client -i bt.pcap -o bt.cache -C "100M BT Packet" –v</span>
+  <p>-R 参数表示全速发送，-v 显示打印信息。 </p>
+  <p>**2、重放在客户端 BT 连接的报文 **</p>
+  <p>a、在实验室 BT 下载一些台湾的娱乐节目和热门的大片，使用 ethereal 抓包， 存为 bt.pcap 文件。注意 pcap 文件大小的控制，对 pc 的内存要求比较高，我保 存了一个 600 多 M 的 pcap 文件用了 40 多分钟，大家有需要可以直接从实验室 copy。 </p>
+  <p>b、将 bt.pcap 文件进行 tcpprep 操作，制作 cache 文件。</p>
+  <pre class="language-shell"><code class="language-shell"> <span class="token punctuation">[</span>root@A ~<span class="token punctuation">]</span><span class="token comment"># tcpprep -an client -i bt.pcap -o bt.cache -C "100M BT Packet" –v</span>
 </code></pre>
-<p>制作 cache 文件，在 cache 文件中写入“100M BT Packet”的注释。 </p>
-<p>c、使用 tcpreplay 重放报文。 </p>
-<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@A ~<span class="token punctuation">]</span><span class="token comment"># tcpreplay -c bt.cache -i eth0 -j eth1 bt.pcap -v –R </span>
+  <p>制作 cache 文件，在 cache 文件中写入“100M BT Packet”的注释。 </p>
+  <p>c、使用 tcpreplay 重放报文。 </p>
+  <pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@A ~<span class="token punctuation">]</span><span class="token comment"># tcpreplay -c bt.cache -i eth0 -j eth1 bt.pcap -v –R </span>
 </code></pre>
-<p>**3、重放 tftp 服务器上抓到的报文 **</p>
-<p>a、在 tftp 服务器上使用 ethereal 抓包，存为 tftp.pcap 文件。 </p>
-<p>b、将 pcap 文件进行 tcpprep 的操作，制作 cache 文件。 </p>
-<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@A ~<span class="token punctuation">]</span><span class="token comment"># tcpprep -an server -i tftp.pcap -o tftp.cache –v </span>
+  <p>**3、重放 tftp 服务器上抓到的报文 **</p>
+  <p>a、在 tftp 服务器上使用 ethereal 抓包，存为 tftp.pcap 文件。 </p>
+  <p>b、将 pcap 文件进行 tcpprep 的操作，制作 cache 文件。 </p>
+  <pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@A ~<span class="token punctuation">]</span><span class="token comment"># tcpprep -an server -i tftp.pcap -o tftp.cache –v </span>
 </code></pre>
-<p>注意：我在测试的时候犯了一个错误，使用 DUT 的 tftp 升级来做实验，同时穿 过 DUT 重放报文，结果在网卡发送报文的后，DUT 的 mac 地址做了的回应，导致 交互过程没有穿过 DUT，这个问题比较搞笑，上午弄了半天才发现原因，开始还 以为 udp 的连接不能重放。 </p>
-<p>c、使用 tcpreplay 重放报文。 </p>
-<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@A ~<span class="token punctuation">]</span><span class="token comment"># tcpreplay -c tftp.cache -i eth0 -j eth1 tftp.pcap –v</span>
-</code></pre>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+  <p>注意：我在测试的时候犯了一个错误，使用 DUT 的 tftp 升级来做实验，同时穿 过 DUT 重放报文，结果在网卡发送报文的后，DUT 的 mac 地址做了的回应，导致 交互过程没有穿过 DUT，这个问题比较搞笑，上午弄了半天才发现原因，开始还 以为 udp 的连接不能重放。 </p>
+  <p>c、使用 tcpreplay 重放报文。 </p>
+  <pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@A ~<span class="token punctuation">]</span><span class="token comment"># tcpreplay -c tftp.cache -i eth0 -j eth1 tftp.pcap –v</span>
+</code></pre><!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+</div>
+
 </div>
 
 <div class="footer ">
@@ -126,7 +140,7 @@
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1630702913746"></script>
-<script type="text/javascript" src="../js/index.js?v=1630702913746"></script>
+<script type="text/javascript" src="../js/dt.js?v=1633360854787"></script>
+<script type="text/javascript" src="../js/index.js?v=1633360854787"></script>
 </body>
 </html>

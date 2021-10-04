@@ -10,10 +10,9 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,ip,网络配置工具">
     <title>ip 命令，Linux ip 命令详解：网络配置工具 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1630702913515">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633360854539">
 </head>
 <body>
-<a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
 <div class="header header_list">
     <div class="logo">
         <a href="/">
@@ -40,17 +39,31 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/ip.md">添加实例</a>
 </span>
 
-<h1 id="ip"><a aria-hidden="true" tabindex="-1" href="#ip"><span class="icon icon-link"></span></a>ip</h1>
-<p>网络配置工具</p>
-<h2 id="补充说明"><a aria-hidden="true" tabindex="-1" href="#补充说明"><span class="icon icon-link"></span></a>补充说明</h2>
-<p><strong>ip命令</strong> 用来显示或操纵Linux主机的路由、网络设备、策略路由和隧道，是Linux下较新的功能强大的网络配置工具。</p>
-<h3 id="语法"><a aria-hidden="true" tabindex="-1" href="#语法"><span class="icon icon-link"></span></a>语法</h3>
-<pre class="language-shell"><code class="language-shell">ip<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
+
+<div class="wmde-markdown"><a aria-label="View source on GitHub" target="__blank" class="github-corner" href="https://github.com/jaywcjlove/linux-command.git"><svg width="54" height="54" viewBox="0 0 250 250" aria-hidden="true" style="fill: rgb(32, 34, 37); color: rgb(255, 255, 255); position: fixed; z-index: 99999; border: 0px; top: 0px; right: 0px;">
+      <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+      <path style="transform-origin: 130px 106px;" class="octo-arm" fill="currentColor" d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"></path>
+      <path class="octo-body" fill="currentColor" d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"></path>
+    </svg></a>
+  <h1 id="ip"><a class="anchor" aria-hidden="true" tabindex="-1" href="#ip"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>ip</h1>
+  <p>网络配置工具</p>
+  <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>补充说明</h2>
+  <p><strong>ip命令</strong> 用来显示或操纵Linux主机的路由、网络设备、策略路由和隧道，是Linux下较新的功能强大的网络配置工具。</p>
+  <h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>语法</h3>
+  <pre class="language-shell"><code class="language-shell">ip<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
 Usage: <span class="token function">ip</span> <span class="token punctuation">[</span> OPTIONS <span class="token punctuation">]</span> OBJECT <span class="token punctuation">{</span> COMMAND <span class="token operator">|</span> <span class="token builtin class-name">help</span> <span class="token punctuation">}</span>
        <span class="token function">ip</span> <span class="token punctuation">[</span> -force <span class="token punctuation">]</span> -batch filename
 </code></pre>
-<h3 id="选项"><a aria-hidden="true" tabindex="-1" href="#选项"><span class="icon icon-link"></span></a>选项</h3>
-<pre class="language-shell"><code class="language-shell">OBJECT :<span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token function">link</span> <span class="token operator">|</span> address <span class="token operator">|</span> addrlabel <span class="token operator">|</span> route <span class="token operator">|</span> rule <span class="token operator">|</span> neigh <span class="token operator">|</span> ntable <span class="token operator">|</span>
+  <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>选项</h3>
+  <pre class="language-shell"><code class="language-shell">OBJECT :<span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token function">link</span> <span class="token operator">|</span> address <span class="token operator">|</span> addrlabel <span class="token operator">|</span> route <span class="token operator">|</span> rule <span class="token operator">|</span> neigh <span class="token operator">|</span> ntable <span class="token operator">|</span>
        tunnel <span class="token operator">|</span> tuntap <span class="token operator">|</span> maddress <span class="token operator">|</span> mroute <span class="token operator">|</span> mrule <span class="token operator">|</span> monitor <span class="token operator">|</span> xfrm <span class="token operator">|</span>
        netns <span class="token operator">|</span> l2tp <span class="token operator">|</span> macsec <span class="token operator">|</span> tcp_metrics <span class="token operator">|</span> token <span class="token punctuation">}</span>
        
@@ -62,8 +75,10 @@ Usage: <span class="token function">ip</span> <span class="token punctuation">[<
 -0：输出信息每条记录输出一行，即使内容较多也不换行显示；
 -r：显示主机时，不使用IP地址，而使用主机的域名。
 </code></pre>
-<h3 id="参数"><a aria-hidden="true" tabindex="-1" href="#参数"><span class="icon icon-link"></span></a>参数</h3>
-<pre class="language-shell"><code class="language-shell">OPTIONS :<span class="token operator">=</span> <span class="token punctuation">{</span> -V<span class="token punctuation">[</span>ersion<span class="token punctuation">]</span> <span class="token operator">|</span> -s<span class="token punctuation">[</span>tatistics<span class="token punctuation">]</span> <span class="token operator">|</span> -d<span class="token punctuation">[</span>etails<span class="token punctuation">]</span> <span class="token operator">|</span> -r<span class="token punctuation">[</span>esolve<span class="token punctuation">]</span> <span class="token operator">|</span>
+  <h3 id="参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参数"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>参数</h3>
+  <pre class="language-shell"><code class="language-shell">OPTIONS :<span class="token operator">=</span> <span class="token punctuation">{</span> -V<span class="token punctuation">[</span>ersion<span class="token punctuation">]</span> <span class="token operator">|</span> -s<span class="token punctuation">[</span>tatistics<span class="token punctuation">]</span> <span class="token operator">|</span> -d<span class="token punctuation">[</span>etails<span class="token punctuation">]</span> <span class="token operator">|</span> -r<span class="token punctuation">[</span>esolve<span class="token punctuation">]</span> <span class="token operator">|</span>
         -h<span class="token punctuation">[</span>uman-readable<span class="token punctuation">]</span> <span class="token operator">|</span> -iec <span class="token operator">|</span>
         -f<span class="token punctuation">[</span>amily<span class="token punctuation">]</span> <span class="token punctuation">{</span> inet <span class="token operator">|</span> inet6 <span class="token operator">|</span> ipx <span class="token operator">|</span> dnet <span class="token operator">|</span> bridge <span class="token operator">|</span> <span class="token function">link</span> <span class="token punctuation">}</span> <span class="token operator">|</span>
         -4 <span class="token operator">|</span> -6 <span class="token operator">|</span> -I <span class="token operator">|</span> -D <span class="token operator">|</span> -B <span class="token operator">|</span> -0 <span class="token operator">|</span>
@@ -75,8 +90,10 @@ Usage: <span class="token function">ip</span> <span class="token punctuation">[<
 具体操作：对指定的网络对象完成具体操作；
 help：显示网络对象支持的操作命令的帮助信息。
 </code></pre>
-<h3 id="实例"><a aria-hidden="true" tabindex="-1" href="#实例"><span class="icon icon-link"></span></a>实例</h3>
-<pre class="language-shell"><code class="language-shell"><span class="token function">ip</span> <span class="token function">link</span> show                     <span class="token comment"># 显示网络接口信息</span>
+  <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>实例</h3>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">ip</span> <span class="token function">link</span> show                     <span class="token comment"># 显示网络接口信息</span>
 <span class="token function">ip</span> <span class="token function">link</span> <span class="token builtin class-name">set</span> eth0 up             <span class="token comment"># 开启网卡</span>
 <span class="token function">ip</span> <span class="token function">link</span> <span class="token builtin class-name">set</span> eth0 down            <span class="token comment"># 关闭网卡</span>
 <span class="token function">ip</span> <span class="token function">link</span> <span class="token builtin class-name">set</span> eth0 promisc on      <span class="token comment"># 开启网卡的混合模式</span>
@@ -96,8 +113,8 @@ help：显示网络对象支持的操作命令的帮助信息。
 <span class="token function">ip</span> route del default          <span class="token comment"># 删除默认路由</span>
 <span class="token function">ip</span> route delete <span class="token number">192.168</span>.1.0/24 dev eth0 <span class="token comment"># 删除路由</span>
 </code></pre>
-<p><strong>用ip命令显示网络设备的运行状态</strong></p>
-<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ip link list</span>
+  <p><strong>用ip命令显示网络设备的运行状态</strong></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ip link list</span>
 <span class="token number">1</span>: lo: <span class="token operator">&#x3C;</span>LOOPBACK,UP,LOWER_UP<span class="token operator">></span> mtu <span class="token number">16436</span> qdisc noqueue
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
 <span class="token number">2</span>: eth0: <span class="token operator">&#x3C;</span>BROADCAST,MULTICAST,UP,LOWER_UP<span class="token operator">></span> mtu <span class="token number">1500</span> qdisc pfifo_fast qlen <span class="token number">1000</span>
@@ -105,8 +122,8 @@ help：显示网络对象支持的操作命令的帮助信息。
 <span class="token number">3</span>: eth1: <span class="token operator">&#x3C;</span>BROADCAST,MULTICAST,UP,LOWER_UP<span class="token operator">></span> mtu <span class="token number">1500</span> qdisc pfifo_fast qlen <span class="token number">1000</span>
     link/ether 00:16:3e:00:1e:52 brd ff:ff:ff:ff:ff:ff
 </code></pre>
-<p><strong>显示更加详细的设备信息</strong></p>
-<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ip -s link list</span>
+  <p><strong>显示更加详细的设备信息</strong></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ip -s link list</span>
 <span class="token number">1</span>: lo: <span class="token operator">&#x3C;</span>LOOPBACK,UP,LOWER_UP<span class="token operator">></span> mtu <span class="token number">16436</span> qdisc noqueue
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     RX: bytes  packets  errors  dropped overrun mcast   
@@ -126,8 +143,8 @@ help：显示网络对象支持的操作命令的帮助信息。
     TX: bytes  packets  errors  dropped carrier collsns
     <span class="token number">3486617396</span> <span class="token number">9691081</span>  <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>       <span class="token number">0</span>     
 </code></pre>
-<p><strong>显示核心路由表</strong></p>
-<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ip route list </span>
+  <p><strong>显示核心路由表</strong></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ip route list </span>
 <span class="token number">112.124</span>.12.0/22 dev eth1  proto kernel  scope <span class="token function">link</span>  src <span class="token number">112.124</span>.15.130
 <span class="token number">10.160</span>.0.0/20 dev eth0  proto kernel  scope <span class="token function">link</span>  src <span class="token number">10.160</span>.7.81
 <span class="token number">192.168</span>.0.0/16 via <span class="token number">10.160</span>.15.247 dev eth0
@@ -135,15 +152,16 @@ help：显示网络对象支持的操作命令的帮助信息。
 <span class="token number">10.0</span>.0.0/8 via <span class="token number">10.160</span>.15.247 dev eth0
 default via <span class="token number">112.124</span>.15.247 dev eth1
 </code></pre>
-<p><strong>显示邻居表</strong></p>
-<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ip neigh list</span>
+  <p><strong>显示邻居表</strong></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># ip neigh list</span>
 <span class="token number">112.124</span>.15.247 dev eth1 lladdr 00:00:0c:9f:f3:88 REACHABLE
 <span class="token number">10.160</span>.15.247 dev eth0 lladdr 00:00:0c:9f:f2:c0 STALE
 </code></pre>
-<p><strong>获取主机所有网络接口</strong></p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">ip</span> <span class="token function">link</span> <span class="token operator">|</span> <span class="token function">grep</span> -E <span class="token string">'^[0-9]'</span> <span class="token operator">|</span> <span class="token function">awk</span> -F: <span class="token string">'{print $2}'</span>
-</code></pre>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+  <p><strong>获取主机所有网络接口</strong></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">ip</span> <span class="token function">link</span> <span class="token operator">|</span> <span class="token function">grep</span> -E <span class="token string">'^[0-9]'</span> <span class="token operator">|</span> <span class="token function">awk</span> -F: <span class="token string">'{print $2}'</span>
+</code></pre><!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+</div>
+
 </div>
 
 <div class="footer ">
@@ -166,7 +184,7 @@ default via <span class="token number">112.124</span>.15.247 dev eth1
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1630702913516"></script>
-<script type="text/javascript" src="../js/index.js?v=1630702913516"></script>
+<script type="text/javascript" src="../js/dt.js?v=1633360854539"></script>
+<script type="text/javascript" src="../js/index.js?v=1633360854539"></script>
 </body>
 </html>

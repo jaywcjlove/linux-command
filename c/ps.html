@@ -10,10 +10,9 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,ps,报告当前系统的进程状态">
     <title>ps 命令，Linux ps 命令详解：报告当前系统的进程状态 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1630702913646">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633360854680">
 </head>
 <body>
-<a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
 <div class="header header_list">
     <div class="logo">
         <a href="/">
@@ -40,15 +39,29 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/ps.md">添加实例</a>
 </span>
 
-<h1 id="ps"><a aria-hidden="true" tabindex="-1" href="#ps"><span class="icon icon-link"></span></a>ps</h1>
-<p>报告当前系统的进程状态</p>
-<h2 id="补充说明"><a aria-hidden="true" tabindex="-1" href="#补充说明"><span class="icon icon-link"></span></a>补充说明</h2>
-<p><strong>ps命令</strong> 用于报告当前系统的进程状态。可以搭配kill指令随时中断、删除不必要的程序。ps命令是最基本同时也是非常强大的进程查看命令，使用该命令可以确定有哪些进程正在运行和运行的状态、进程是否结束、进程有没有僵死、哪些进程占用了过多的资源等等，总之大部分信息都是可以通过执行该命令得到的。</p>
-<h3 id="语法"><a aria-hidden="true" tabindex="-1" href="#语法"><span class="icon icon-link"></span></a>语法</h3>
-<pre class="language-shell"><code class="language-shell">ps<span class="token punctuation">(</span>选项<span class="token punctuation">)</span>
+
+<div class="wmde-markdown"><a aria-label="View source on GitHub" target="__blank" class="github-corner" href="https://github.com/jaywcjlove/linux-command.git"><svg width="54" height="54" viewBox="0 0 250 250" aria-hidden="true" style="fill: rgb(32, 34, 37); color: rgb(255, 255, 255); position: fixed; z-index: 99999; border: 0px; top: 0px; right: 0px;">
+      <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+      <path style="transform-origin: 130px 106px;" class="octo-arm" fill="currentColor" d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"></path>
+      <path class="octo-body" fill="currentColor" d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"></path>
+    </svg></a>
+  <h1 id="ps"><a class="anchor" aria-hidden="true" tabindex="-1" href="#ps"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>ps</h1>
+  <p>报告当前系统的进程状态</p>
+  <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>补充说明</h2>
+  <p><strong>ps命令</strong> 用于报告当前系统的进程状态。可以搭配kill指令随时中断、删除不必要的程序。ps命令是最基本同时也是非常强大的进程查看命令，使用该命令可以确定有哪些进程正在运行和运行的状态、进程是否结束、进程有没有僵死、哪些进程占用了过多的资源等等，总之大部分信息都是可以通过执行该命令得到的。</p>
+  <h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>语法</h3>
+  <pre class="language-shell"><code class="language-shell">ps<span class="token punctuation">(</span>选项<span class="token punctuation">)</span>
 </code></pre>
-<h3 id="选项"><a aria-hidden="true" tabindex="-1" href="#选项"><span class="icon icon-link"></span></a>选项</h3>
-<pre class="language-shell"><code class="language-shell">-a：显示所有终端机下执行的程序，除了阶段作业领导者之外。
+  <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>选项</h3>
+  <pre class="language-shell"><code class="language-shell">-a：显示所有终端机下执行的程序，除了阶段作业领导者之外。
 a：显示现行终端机下的所有程序，包括其他用户的程序。
 -A：显示所有程序。
 -c：显示CLS和PRI栏位。
@@ -111,9 +124,11 @@ X：采用旧式的Linux i386登陆格式显示程序状况。
 --version：此选项的效果和指定<span class="token string">"-V"</span>选项相同。
 --widty<span class="token operator">&#x3C;</span>每列字符数<span class="token operator">></span>：此选项的效果和指定<span class="token string">"-cols"</span>选项相同。
 </code></pre>
-<p>由于ps命令能够支持的系统类型相当的多，所以选项多的离谱！</p>
-<h3 id="实例"><a aria-hidden="true" tabindex="-1" href="#实例"><span class="icon icon-link"></span></a>实例</h3>
-<pre class="language-shell"><code class="language-shell"><span class="token function">ps</span> axo pid,comm,pcpu <span class="token comment"># 查看进程的PID、名称以及CPU 占用率</span>
+  <p>由于ps命令能够支持的系统类型相当的多，所以选项多的离谱！</p>
+  <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>实例</h3>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">ps</span> axo pid,comm,pcpu <span class="token comment"># 查看进程的PID、名称以及CPU 占用率</span>
 <span class="token function">ps</span> aux <span class="token operator">|</span> <span class="token function">sort</span> -rnk <span class="token number">4</span> <span class="token comment"># 按内存资源的使用量对进程进行排序</span>
 <span class="token function">ps</span> aux <span class="token operator">|</span> <span class="token function">sort</span> -nk <span class="token number">3</span>  <span class="token comment"># 按 CPU 资源的使用量对进程进行排序</span>
 <span class="token function">ps</span> -A <span class="token comment"># 显示所有进程信息</span>
@@ -131,33 +146,33 @@ X：采用旧式的Linux i386登陆格式显示程序状况。
 <span class="token function">ps</span> -aux <span class="token operator">|</span> <span class="token function">grep</span> named <span class="token comment"># 查看named进程详细信息</span>
 <span class="token function">ps</span> -o <span class="token builtin class-name">command</span> -p <span class="token number">91730</span> <span class="token operator">|</span> <span class="token function">sed</span> -n 2p <span class="token comment"># 通过进程id获取服务名称</span>
 </code></pre>
-<p>将目前属于您自己这次登入的 PID 与相关信息列示出来</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">ps</span> -l
+  <p>将目前属于您自己这次登入的 PID 与相关信息列示出来</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">ps</span> -l
 <span class="token comment">#  UID   PID  PPID        F CPU PRI NI       SZ    RSS WCHAN     S             ADDR TTY           TIME CMD</span>
 <span class="token comment">#  501   566   559     4006   0  31  0  4317620    228 -      Ss                  0 ttys001    0:00.05 /App...cOS/iTerm2 --server /usr/bin/login -fpl kenny /Ap...s/MacOS/iTerm2 --launch_shel</span>
 <span class="token comment">#  501   592   577     4006   0  31  0  4297048     52 -      S                   0 ttys001    0:00.63 -zsh</span>
 </code></pre>
-<ul>
-<li>F 代表这个程序的旗标 (flag)， 4 代表使用者为 super user</li>
-<li>S 代表这个程序的状态 (STAT)，关于各 STAT 的意义将在内文介绍</li>
-<li>UID 程序被该 UID 所拥有</li>
-<li>PID 就是这个程序的 ID ！</li>
-<li>PPID 则是其上级父程序的ID</li>
-<li>C CPU 使用的资源百分比</li>
-<li>PRI 这个是 Priority (优先执行序) 的缩写，详细后面介绍</li>
-<li>NI 这个是 Nice 值，在下一小节我们会持续介绍</li>
-<li>ADDR 这个是 kernel function，指出该程序在内存的那个部分。如果是个 running的程序，一般就是 "-"</li>
-<li>SZ 使用掉的内存大小</li>
-<li>WCHAN 目前这个程序是否正在运作当中，若为 - 表示正在运作</li>
-<li>TTY 登入者的终端机位置</li>
-<li>TIME 使用掉的 CPU 时间。</li>
-<li>CMD 所下达的指令为何</li>
-</ul>
-<blockquote>
-<p>在预设的情况下， <code>ps</code> 仅会列出与目前所在的 <code>bash shell</code> 有关的 <code>PID</code> 而已，所以， 当我使用 <code>ps -l</code> 的时候，只有三个 PID。</p>
-</blockquote>
-<p>列出目前所有的正在内存当中的程序</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">ps</span> aux
+  <ul>
+    <li>F 代表这个程序的旗标 (flag)， 4 代表使用者为 super user</li>
+    <li>S 代表这个程序的状态 (STAT)，关于各 STAT 的意义将在内文介绍</li>
+    <li>UID 程序被该 UID 所拥有</li>
+    <li>PID 就是这个程序的 ID ！</li>
+    <li>PPID 则是其上级父程序的ID</li>
+    <li>C CPU 使用的资源百分比</li>
+    <li>PRI 这个是 Priority (优先执行序) 的缩写，详细后面介绍</li>
+    <li>NI 这个是 Nice 值，在下一小节我们会持续介绍</li>
+    <li>ADDR 这个是 kernel function，指出该程序在内存的那个部分。如果是个 running的程序，一般就是 "-"</li>
+    <li>SZ 使用掉的内存大小</li>
+    <li>WCHAN 目前这个程序是否正在运作当中，若为 - 表示正在运作</li>
+    <li>TTY 登入者的终端机位置</li>
+    <li>TIME 使用掉的 CPU 时间。</li>
+    <li>CMD 所下达的指令为何</li>
+  </ul>
+  <blockquote>
+    <p>在预设的情况下， <code>ps</code> 仅会列出与目前所在的 <code>bash shell</code> 有关的 <code>PID</code> 而已，所以， 当我使用 <code>ps -l</code> 的时候，只有三个 PID。</p>
+  </blockquote>
+  <p>列出目前所有的正在内存当中的程序</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">ps</span> aux
 
 <span class="token comment"># USER               PID  %CPU %MEM      VSZ    RSS   TT  STAT STARTED      TIME COMMAND</span>
 <span class="token comment"># kenny             6155  21.3  1.7  7969944 284912   ??  S    二03下午 199:14.14 /Appl...OS/WeChat</span>
@@ -166,42 +181,43 @@ X：采用旧式的Linux i386登陆格式显示程序状况。
 <span class="token comment"># kenny             1408  10.7  2.1  5838592 347348   ??  S    二03下午 138:51.63 /Appl...nts/MacOS/Google Chrome</span>
 <span class="token comment"># kenny              327   5.8  0.5  5771984  79452   ??  S    二03下午   2:51.58 /Syst...pp/Contents/MacOS/Finder</span>
 </code></pre>
-<ul>
-<li>USER：该 process 属于那个使用者账号的</li>
-<li>PID ：该 process 的号码</li>
-<li>%CPU：该 process 使用掉的 CPU 资源百分比</li>
-<li>%MEM：该 process 所占用的物理内存百分比</li>
-<li>VSZ ：该 process 使用掉的虚拟内存量 (Kbytes)</li>
-<li>RSS ：该 process 占用的固定的内存量 (Kbytes)</li>
-<li>TTY ：该 process 是在那个终端机上面运作，若与终端机无关，则显示 ?，另外， tty1-tty6 是本机上面的登入者程序，若为 pts/0 等等的，则表示为由网络连接进主机的程序。</li>
-<li>STAT：该程序目前的状态，主要的状态有</li>
-<li>R ：该程序目前正在运作，或者是可被运作</li>
-<li>S ：该程序目前正在睡眠当中 (可说是 idle 状态)，但可被某些讯号 (signal) 唤醒。</li>
-<li>T ：该程序目前正在侦测或者是停止了</li>
-<li>Z ：该程序应该已经终止，但是其父程序却无法正常的终止他，造成 zombie (疆尸) 程序的状态</li>
-<li>START：该 process 被触发启动的时间</li>
-<li>TIME ：该 process 实际使用 CPU 运作的时间</li>
-<li>COMMAND：该程序的实际指令</li>
-</ul>
-<p>列出类似程序树的程序显示</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">ps</span> -axjf
+  <ul>
+    <li>USER：该 process 属于那个使用者账号的</li>
+    <li>PID ：该 process 的号码</li>
+    <li>%CPU：该 process 使用掉的 CPU 资源百分比</li>
+    <li>%MEM：该 process 所占用的物理内存百分比</li>
+    <li>VSZ ：该 process 使用掉的虚拟内存量 (Kbytes)</li>
+    <li>RSS ：该 process 占用的固定的内存量 (Kbytes)</li>
+    <li>TTY ：该 process 是在那个终端机上面运作，若与终端机无关，则显示 ?，另外， tty1-tty6 是本机上面的登入者程序，若为 pts/0 等等的，则表示为由网络连接进主机的程序。</li>
+    <li>STAT：该程序目前的状态，主要的状态有</li>
+    <li>R ：该程序目前正在运作，或者是可被运作</li>
+    <li>S ：该程序目前正在睡眠当中 (可说是 idle 状态)，但可被某些讯号 (signal) 唤醒。</li>
+    <li>T ：该程序目前正在侦测或者是停止了</li>
+    <li>Z ：该程序应该已经终止，但是其父程序却无法正常的终止他，造成 zombie (疆尸) 程序的状态</li>
+    <li>START：该 process 被触发启动的时间</li>
+    <li>TIME ：该 process 实际使用 CPU 运作的时间</li>
+    <li>COMMAND：该程序的实际指令</li>
+  </ul>
+  <p>列出类似程序树的程序显示</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">ps</span> -axjf
 
 <span class="token comment"># USER               PID  PPID  PGID   SESS JOBC STAT   TT       TIME COMMAND            UID   C STIME   TTY</span>
 <span class="token comment"># root                 1     0     1      0    0 Ss     ??   10:51.90 /sbin/launchd        0   0 二03下午 ??</span>
 <span class="token comment"># root                50     1    50      0    0 Ss     ??    0:10.07 /usr/sbin/syslog     0   0 二03下午 ??</span>
 <span class="token comment"># root                51     1    51      0    0 Ss     ??    0:29.90 /usr/libexec/Use     0   0 二03下午 ??</span>
 </code></pre>
-<p>找出与 cron 与 syslog 这两个服务有关的 PID 号码</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">ps</span> aux <span class="token operator">|</span> <span class="token function">egrep</span> <span class="token string">'(cron|syslog)'</span>
+  <p>找出与 cron 与 syslog 这两个服务有关的 PID 号码</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">ps</span> aux <span class="token operator">|</span> <span class="token function">egrep</span> <span class="token string">'(cron|syslog)'</span>
 
 <span class="token comment"># root                50   0.0  0.0  4305532   1284   ??  Ss   二03下午   0:10.08 /usr/sbin/syslogd</span>
 <span class="token comment"># kenny            90167   0.0  0.0  4258468    184 s007  R+    9:23下午   0:00.00 egrep (cron|syslog)</span>
 </code></pre>
-<p>把所有进程显示出来，并输出到ps001.txt文件</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">ps</span> -aux <span class="token operator">></span> ps001.txt
+  <p>把所有进程显示出来，并输出到ps001.txt文件</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">ps</span> -aux <span class="token operator">></span> ps001.txt
 </code></pre>
-<p>输出指定的字段</p>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+  <p>输出指定的字段</p><!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+</div>
+
 </div>
 
 <div class="footer ">
@@ -224,7 +240,7 @@ X：采用旧式的Linux i386登陆格式显示程序状况。
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1630702913647"></script>
-<script type="text/javascript" src="../js/index.js?v=1630702913647"></script>
+<script type="text/javascript" src="../js/dt.js?v=1633360854680"></script>
+<script type="text/javascript" src="../js/index.js?v=1633360854680"></script>
 </body>
 </html>

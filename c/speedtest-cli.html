@@ -10,10 +10,9 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,speedtest-cli,命令行下测试服务器外网速度">
     <title>speedtest-cli 命令，Linux speedtest-cli 命令详解：命令行下测试服务器外网速度 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1630702913716">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633360854756">
 </head>
 <body>
-<a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
 <div class="header header_list">
     <div class="logo">
         <a href="/">
@@ -40,36 +39,50 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/speedtest-cli.md">添加实例</a>
 </span>
 
-<h1 id="speedtest-cli"><a aria-hidden="true" tabindex="-1" href="#speedtest-cli"><span class="icon icon-link"></span></a>speedtest-cli</h1>
-<p>命令行下测试服务器外网速度</p>
-<h2 id="补充说明"><a aria-hidden="true" tabindex="-1" href="#补充说明"><span class="icon icon-link"></span></a>补充说明</h2>
-<p><strong>speedtest-cli</strong> 是一个使用python编写的命令行脚本，通过调用speedtest.net测试上下行的接口来完成速度测试，最后我会测试运维生存时间所在服务器的外网速度。项目地址：https://github.com/sivel/speedtest-cli</p>
-<h3 id="安装speedtestcli"><a aria-hidden="true" tabindex="-1" href="#安装speedtestcli"><span class="icon icon-link"></span></a>安装speedtest－cli</h3>
-<p>speedtest-cli需要在python 2.4-3.4的环境下，安装方法都很简单，自己选择以下最适合你的一种。</p>
-<p><strong>pip方式</strong></p>
-<pre class="language-shell"><code class="language-shell">＃ pip <span class="token function">install</span> speedtest－cli
+
+<div class="wmde-markdown"><a aria-label="View source on GitHub" target="__blank" class="github-corner" href="https://github.com/jaywcjlove/linux-command.git"><svg width="54" height="54" viewBox="0 0 250 250" aria-hidden="true" style="fill: rgb(32, 34, 37); color: rgb(255, 255, 255); position: fixed; z-index: 99999; border: 0px; top: 0px; right: 0px;">
+      <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+      <path style="transform-origin: 130px 106px;" class="octo-arm" fill="currentColor" d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"></path>
+      <path class="octo-body" fill="currentColor" d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"></path>
+    </svg></a>
+  <h1 id="speedtest-cli"><a class="anchor" aria-hidden="true" tabindex="-1" href="#speedtest-cli"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>speedtest-cli</h1>
+  <p>命令行下测试服务器外网速度</p>
+  <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>补充说明</h2>
+  <p><strong>speedtest-cli</strong> 是一个使用python编写的命令行脚本，通过调用speedtest.net测试上下行的接口来完成速度测试，最后我会测试运维生存时间所在服务器的外网速度。项目地址：<a href="https://github.com/sivel/speedtest-cli">https://github.com/sivel/speedtest-cli</a></p>
+  <h3 id="安装speedtestcli"><a class="anchor" aria-hidden="true" tabindex="-1" href="#安装speedtestcli"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>安装speedtest－cli</h3>
+  <p>speedtest-cli需要在python 2.4-3.4的环境下，安装方法都很简单，自己选择以下最适合你的一种。</p>
+  <p><strong>pip方式</strong></p>
+  <pre class="language-shell"><code class="language-shell">＃ pip <span class="token function">install</span> speedtest－cli
 </code></pre>
-<p><strong>easy_install方式</strong></p>
-<pre class="language-shell"><code class="language-shell">＃ easy_install speedtest-cli
+  <p><strong>easy_install方式</strong></p>
+  <pre class="language-shell"><code class="language-shell">＃ easy_install speedtest-cli
 </code></pre>
-<p><strong>github＋pip方式</strong></p>
-<pre class="language-shell"><code class="language-shell">＃ pip <span class="token function">install</span> git+https://github.com/sivel/speedtest-cli.git
+  <p><strong>github＋pip方式</strong></p>
+  <pre class="language-shell"><code class="language-shell">＃ pip <span class="token function">install</span> git+https://github.com/sivel/speedtest-cli.git
 </code></pre>
-<p>或者</p>
-<pre class="language-shell"><code class="language-shell">＃ <span class="token function">git</span> clone https://github.com/sivel/speedtest-cli.git
+  <p>或者</p>
+  <pre class="language-shell"><code class="language-shell">＃ <span class="token function">git</span> clone https://github.com/sivel/speedtest-cli.git
 ＃ python speedtest-cli/setup.py <span class="token function">install</span>
 </code></pre>
-<p><strong>下载脚本方式</strong></p>
-<pre class="language-shell"><code class="language-shell">＃ <span class="token function">wget</span> -O speedtest-cli https://raw.github.com/sivel/spe <span class="token punctuation">..</span>. er/speedtest_cli.py
+  <p><strong>下载脚本方式</strong></p>
+  <pre class="language-shell"><code class="language-shell">＃ <span class="token function">wget</span> -O speedtest-cli https://raw.github.com/sivel/spe <span class="token punctuation">..</span>. er/speedtest_cli.py
 ＃ <span class="token function">chmod</span> +x speedtest-cli
 </code></pre>
-<p>或者</p>
-<pre class="language-shell"><code class="language-shell">＃ <span class="token function">curl</span> -o speedtest-cli https://raw.github.com/sivel/spe <span class="token punctuation">..</span>. er/speedtest_cli.py
+  <p>或者</p>
+  <pre class="language-shell"><code class="language-shell">＃ <span class="token function">curl</span> -o speedtest-cli https://raw.github.com/sivel/spe <span class="token punctuation">..</span>. er/speedtest_cli.py
 ＃ <span class="token function">chmod</span> +x speedtest-cli
 </code></pre>
-<p>直接下载脚本，给予执行权限即可。</p>
-<h3 id="用法"><a aria-hidden="true" tabindex="-1" href="#用法"><span class="icon icon-link"></span></a>用法</h3>
-<pre class="language-shell"><code class="language-shell">-h, --help       show this <span class="token builtin class-name">help</span> message and <span class="token builtin class-name">exit</span>
+  <p>直接下载脚本，给予执行权限即可。</p>
+  <h3 id="用法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#用法"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>用法</h3>
+  <pre class="language-shell"><code class="language-shell">-h, --help       show this <span class="token builtin class-name">help</span> message and <span class="token builtin class-name">exit</span>
 --share          分享你的网速，该命令会在speedtest网站上生成网速测试结果的图片。
 --simple         Suppress verbose output, only show basic information
 --list           根据距离显示speedtest.net的测试服务器列表。
@@ -78,9 +91,11 @@
 --source<span class="token operator">=</span>SOURCE  Source <span class="token function">ip</span> address to <span class="token builtin class-name">bind</span> to
 --version        Show the version number and <span class="token builtin class-name">exit</span>
 </code></pre>
-<h3 id="实例"><a aria-hidden="true" tabindex="-1" href="#实例"><span class="icon icon-link"></span></a>实例</h3>
-<p>列出所有在中国的测试服务器：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@li229-122 ~<span class="token punctuation">]</span><span class="token comment"># speedtest-cli --list | grep China</span>
+  <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>实例</h3>
+  <p>列出所有在中国的测试服务器：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@li229-122 ~<span class="token punctuation">]</span><span class="token comment"># speedtest-cli --list | grep China</span>
 <span class="token number">1185</span><span class="token punctuation">)</span> China Unicom <span class="token punctuation">(</span>Changchun, China<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token number">10534.35</span> km<span class="token punctuation">]</span>
 <span class="token number">3784</span><span class="token punctuation">)</span> China Mobile <span class="token punctuation">(</span>Urumqi, China<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token number">10581.15</span> km<span class="token punctuation">]</span>
 <span class="token number">2667</span><span class="token punctuation">)</span> Beijing Normal University <span class="token punctuation">(</span>Beijing, China<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token number">11117.03</span> km<span class="token punctuation">]</span>
@@ -99,16 +114,16 @@
 <span class="token number">1536</span><span class="token punctuation">)</span> STC <span class="token punctuation">(</span>Hong Kong, China<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token number">13088.37</span> km<span class="token punctuation">]</span>
 <span class="token number">1890</span><span class="token punctuation">)</span> Telin <span class="token punctuation">(</span>Hong Kong, China<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token number">13088.37</span> km<span class="token punctuation">]</span>
 </code></pre>
-<p><strong>结果解释</strong></p>
-<pre class="language-shell"><code class="language-shell"><span class="token number">3633</span><span class="token punctuation">)</span> China Telecom <span class="token punctuation">(</span>Shanghai, China<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token number">11983.37</span> km<span class="token punctuation">]</span>
+  <p><strong>结果解释</strong></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token number">3633</span><span class="token punctuation">)</span> China Telecom <span class="token punctuation">(</span>Shanghai, China<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token number">11983.37</span> km<span class="token punctuation">]</span>
 </code></pre>
-<pre class="language-shell"><code class="language-shell"><span class="token number">3633</span>: 服务器id
+  <pre class="language-shell"><code class="language-shell"><span class="token number">3633</span>: 服务器id
 china telecom：isp，这里是中国电信
 shanghai,china ：服务器所在地址
 <span class="token number">11983.37</span> km：两台服务器地理位置之间距离，我这台机器在美国，和上海相距11983.37公里，很远呐.
 </code></pre>
-<p><strong>外网速度测试</strong></p>
-<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@li229-122 ~<span class="token punctuation">]</span><span class="token comment"># speedtest-cli --server=3633 --share</span>
+  <p><strong>外网速度测试</strong></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@li229-122 ~<span class="token punctuation">]</span><span class="token comment"># speedtest-cli --server=3633 --share</span>
 Retrieving speedtest.net configuration<span class="token punctuation">..</span>.
 Retrieving speedtest.net server list<span class="token punctuation">..</span>.
 Testing from Linode <span class="token punctuation">(</span><span class="token number">173.255</span>.219.122<span class="token punctuation">)</span><span class="token punctuation">..</span>.
@@ -118,8 +133,9 @@ Download: <span class="token number">24.84</span> Mbit/s
 Testing upload speed<span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span><span class="token punctuation">..</span>
 Upload: <span class="token number">4.57</span> Mbit/s
 Share results: http://www.speedtest.net/result/3240988007.png
-</code></pre>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+</code></pre><!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+</div>
+
 </div>
 
 <div class="footer ">
@@ -142,7 +158,7 @@ Share results: http://www.speedtest.net/result/3240988007.png
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1630702913717"></script>
-<script type="text/javascript" src="../js/index.js?v=1630702913717"></script>
+<script type="text/javascript" src="../js/dt.js?v=1633360854756"></script>
+<script type="text/javascript" src="../js/index.js?v=1633360854756"></script>
 </body>
 </html>

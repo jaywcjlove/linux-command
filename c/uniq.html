@@ -10,10 +10,9 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,uniq,显示或忽略重复的行。">
     <title>uniq 命令，Linux uniq 命令详解：显示或忽略重复的行。 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1630702913770">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633360854822">
 </head>
 <body>
-<a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
 <div class="header header_list">
     <div class="logo">
         <a href="/">
@@ -40,18 +39,32 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/uniq.md">添加实例</a>
 </span>
 
-<h1 id="uniq"><a aria-hidden="true" tabindex="-1" href="#uniq"><span class="icon icon-link"></span></a>uniq</h1>
-<p>显示或忽略重复的行。</p>
-<h2 id="概要"><a aria-hidden="true" tabindex="-1" href="#概要"><span class="icon icon-link"></span></a>概要</h2>
-<pre class="language-shell"><code class="language-shell"><span class="token function">uniq</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. <span class="token punctuation">[</span>INPUT <span class="token punctuation">[</span>OUTPUT<span class="token punctuation">]</span><span class="token punctuation">]</span>
+
+<div class="wmde-markdown"><a aria-label="View source on GitHub" target="__blank" class="github-corner" href="https://github.com/jaywcjlove/linux-command.git"><svg width="54" height="54" viewBox="0 0 250 250" aria-hidden="true" style="fill: rgb(32, 34, 37); color: rgb(255, 255, 255); position: fixed; z-index: 99999; border: 0px; top: 0px; right: 0px;">
+      <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+      <path style="transform-origin: 130px 106px;" class="octo-arm" fill="currentColor" d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"></path>
+      <path class="octo-body" fill="currentColor" d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"></path>
+    </svg></a>
+  <h1 id="uniq"><a class="anchor" aria-hidden="true" tabindex="-1" href="#uniq"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>uniq</h1>
+  <p>显示或忽略重复的行。</p>
+  <h2 id="概要"><a class="anchor" aria-hidden="true" tabindex="-1" href="#概要"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>概要</h2>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">uniq</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. <span class="token punctuation">[</span>INPUT <span class="token punctuation">[</span>OUTPUT<span class="token punctuation">]</span><span class="token punctuation">]</span>
 </code></pre>
-<h2 id="主要用途"><a aria-hidden="true" tabindex="-1" href="#主要用途"><span class="icon icon-link"></span></a>主要用途</h2>
-<ul>
-<li>将输入文件（或标准输入）中邻近的重复行写入到输出文件（或标准输出）中。</li>
-<li>当没有选项时，邻近的重复行将合并为一个。</li>
-</ul>
-<h2 id="选项"><a aria-hidden="true" tabindex="-1" href="#选项"><span class="icon icon-link"></span></a>选项</h2>
-<pre class="language-shell"><code class="language-shell">-c, --count                在每行开头增加重复次数。
+  <h2 id="主要用途"><a class="anchor" aria-hidden="true" tabindex="-1" href="#主要用途"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>主要用途</h2>
+  <ul>
+    <li>将输入文件（或标准输入）中邻近的重复行写入到输出文件（或标准输出）中。</li>
+    <li>当没有选项时，邻近的重复行将合并为一个。</li>
+  </ul>
+  <h2 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>选项</h2>
+  <pre class="language-shell"><code class="language-shell">-c, --count                在每行开头增加重复次数。
 -d, --repeated             所有邻近的重复行只被打印一次。
 -D                         所有邻近的重复行将全部打印。
 --all-repeated<span class="token punctuation">[</span><span class="token operator">=</span>METHOD<span class="token punctuation">]</span>    类似于 -D，但允许每组之间以空行分割。METHOD取值范围<span class="token punctuation">{</span>none<span class="token punctuation">(</span>默认<span class="token punctuation">)</span>，prepend，separate<span class="token punctuation">}</span>。
@@ -65,37 +78,46 @@
 --help                     显示帮助信息并退出。
 --version                  显示版本信息并退出。
 </code></pre>
-<h2 id="参数"><a aria-hidden="true" tabindex="-1" href="#参数"><span class="icon icon-link"></span></a>参数</h2>
-<p>INPUT（可选）：输入文件，不提供时为标准输入。</p>
-<p>OUTPUT（可选）：输出文件，不提供时为标准输出。</p>
-<h2 id="返回值"><a aria-hidden="true" tabindex="-1" href="#返回值"><span class="icon icon-link"></span></a>返回值</h2>
-<p>返回0表示成功，返回非0值表示失败。</p>
-<h2 id="例子"><a aria-hidden="true" tabindex="-1" href="#例子"><span class="icon icon-link"></span></a>例子</h2>
-<p>注意：命令2和命令3结果一样，命令1仅作了相邻行的去重。</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">uniq</span> file.txt
+  <h2 id="参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参数"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>参数</h2>
+  <p>INPUT（可选）：输入文件，不提供时为标准输入。</p>
+  <p>OUTPUT（可选）：输出文件，不提供时为标准输出。</p>
+  <h2 id="返回值"><a class="anchor" aria-hidden="true" tabindex="-1" href="#返回值"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>返回值</h2>
+  <p>返回0表示成功，返回非0值表示失败。</p>
+  <h2 id="例子"><a class="anchor" aria-hidden="true" tabindex="-1" href="#例子"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>例子</h2>
+  <p>注意：命令2和命令3结果一样，命令1仅作了相邻行的去重。</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">uniq</span> file.txt
 <span class="token function">sort</span> file.txt <span class="token operator">|</span> <span class="token function">uniq</span>
 <span class="token function">sort</span> -u file.txt
 </code></pre>
-<p>只显示单一行，区别在于是否执行排序：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">uniq</span> -u file.txt
+  <p>只显示单一行，区别在于是否执行排序：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">uniq</span> -u file.txt
 <span class="token function">sort</span> file.txt <span class="token operator">|</span> <span class="token function">uniq</span> -u
 </code></pre>
-<p>统计各行在文件中出现的次数：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">sort</span> file.txt <span class="token operator">|</span> <span class="token function">uniq</span> -c
+  <p>统计各行在文件中出现的次数：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">sort</span> file.txt <span class="token operator">|</span> <span class="token function">uniq</span> -c
 </code></pre>
-<p>在文件中找出重复的行：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">sort</span> file.txt <span class="token operator">|</span> <span class="token function">uniq</span> -d
+  <p>在文件中找出重复的行：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">sort</span> file.txt <span class="token operator">|</span> <span class="token function">uniq</span> -d
 </code></pre>
-<h3 id="注意"><a aria-hidden="true" tabindex="-1" href="#注意"><span class="icon icon-link"></span></a>注意</h3>
-<ol>
-<li>
-<p><code>uniq</code>只检测邻近的行是否重复，<code>sort -u</code>将输入文件先排序然后再处理重复行。</p>
-</li>
-<li>
-<p>该命令是<code>GNU coreutils</code>包中的命令，相关的帮助信息请查看<code>man -s 1 uniq</code>，<code>info coreutils 'uniq invocation'</code>。</p>
-</li>
-</ol>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+  <h3 id="注意"><a class="anchor" aria-hidden="true" tabindex="-1" href="#注意"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>注意</h3>
+  <ol>
+    <li>
+      <p><code>uniq</code>只检测邻近的行是否重复，<code>sort -u</code>将输入文件先排序然后再处理重复行。</p>
+    </li>
+    <li>
+      <p>该命令是<code>GNU coreutils</code>包中的命令，相关的帮助信息请查看<code>man -s 1 uniq</code>，<code>info coreutils 'uniq invocation'</code>。</p>
+    </li>
+  </ol><!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+</div>
+
 </div>
 
 <div class="footer ">
@@ -118,7 +140,7 @@
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1630702913770"></script>
-<script type="text/javascript" src="../js/index.js?v=1630702913770"></script>
+<script type="text/javascript" src="../js/dt.js?v=1633360854823"></script>
+<script type="text/javascript" src="../js/index.js?v=1633360854823"></script>
 </body>
 </html>

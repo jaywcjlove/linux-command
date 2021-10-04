@@ -10,10 +10,9 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,cp,将源文件或目录复制到目标文件或目录中">
     <title>cp 命令，Linux cp 命令详解：将源文件或目录复制到目标文件或目录中 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1630702913399">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633360854424">
 </head>
 <body>
-<a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
 <div class="header header_list">
     <div class="logo">
         <a href="/">
@@ -40,15 +39,29 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/cp.md">添加实例</a>
 </span>
 
-<h1 id="cp"><a aria-hidden="true" tabindex="-1" href="#cp"><span class="icon icon-link"></span></a>cp</h1>
-<p>将源文件或目录复制到目标文件或目录中</p>
-<h2 id="补充说明"><a aria-hidden="true" tabindex="-1" href="#补充说明"><span class="icon icon-link"></span></a>补充说明</h2>
-<p><strong>cp命令</strong> 用来将一个或多个源文件或者目录复制到指定的目的文件或目录。它可以将单个源文件复制成一个指定文件名的具体的文件或一个已经存在的目录下。cp命令还支持同时复制多个文件，当一次复制多个文件时，目标文件参数必须是一个已经存在的目录，否则将出现错误。</p>
-<h3 id="语法"><a aria-hidden="true" tabindex="-1" href="#语法"><span class="icon icon-link"></span></a>语法</h3>
-<pre class="language-shell"><code class="language-shell">cp<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
+
+<div class="wmde-markdown"><a aria-label="View source on GitHub" target="__blank" class="github-corner" href="https://github.com/jaywcjlove/linux-command.git"><svg width="54" height="54" viewBox="0 0 250 250" aria-hidden="true" style="fill: rgb(32, 34, 37); color: rgb(255, 255, 255); position: fixed; z-index: 99999; border: 0px; top: 0px; right: 0px;">
+      <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+      <path style="transform-origin: 130px 106px;" class="octo-arm" fill="currentColor" d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"></path>
+      <path class="octo-body" fill="currentColor" d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"></path>
+    </svg></a>
+  <h1 id="cp"><a class="anchor" aria-hidden="true" tabindex="-1" href="#cp"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>cp</h1>
+  <p>将源文件或目录复制到目标文件或目录中</p>
+  <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>补充说明</h2>
+  <p><strong>cp命令</strong> 用来将一个或多个源文件或者目录复制到指定的目的文件或目录。它可以将单个源文件复制成一个指定文件名的具体的文件或一个已经存在的目录下。cp命令还支持同时复制多个文件，当一次复制多个文件时，目标文件参数必须是一个已经存在的目录，否则将出现错误。</p>
+  <h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>语法</h3>
+  <pre class="language-shell"><code class="language-shell">cp<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
 </code></pre>
-<h3 id="选项"><a aria-hidden="true" tabindex="-1" href="#选项"><span class="icon icon-link"></span></a>选项</h3>
-<pre class="language-shell"><code class="language-shell">-a：此参数的效果和同时指定<span class="token string">"-dpR"</span>参数相同；
+  <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>选项</h3>
+  <pre class="language-shell"><code class="language-shell">-a：此参数的效果和同时指定<span class="token string">"-dpR"</span>参数相同；
 -d：当复制符号连接时，把目标文件或目录也建立为符号连接，并指向与源文件或目录连接的原始文件或目录；
 -f：强行复制文件或目录，不论目标文件或目录是否已存在；
 -i：覆盖既有文件之前先询问用户；
@@ -61,36 +74,40 @@
 -b：覆盖已存在的文件目标前将目标文件备份；
 -v：详细显示命令执行的操作。
 </code></pre>
-<h3 id="参数"><a aria-hidden="true" tabindex="-1" href="#参数"><span class="icon icon-link"></span></a>参数</h3>
-<ul>
-<li>源文件：制定源文件列表。默认情况下，cp命令不能复制目录，如果要复制目录，则必须使用<code>-R</code>选项；</li>
-<li>目标文件：指定目标文件。当“源文件”为多个文件时，要求“目标文件”为指定的目录。</li>
-</ul>
-<h3 id="实例"><a aria-hidden="true" tabindex="-1" href="#实例"><span class="icon icon-link"></span></a>实例</h3>
-<p>下面的第一行中是 cp 命令和具体的参数（-r 是“递归”， -u 是“更新”，-v 是“详细”）。接下来的三行显示被复制文件的信息，最后一行显示命令行提示符。这样，只拷贝新的文件到我的存储设备上，我就使用 cp 的“更新”和“详细”选项。</p>
-<p>通常来说，参数 <code>-r</code> 也可用更详细的风格 <code>--recursive</code>。但是以简短的方式，也可以这么连用 <code>-ruv</code>。</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">cp</span> -r -u -v /usr/men/tmp ~/men/tmp
+  <h3 id="参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参数"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>参数</h3>
+  <ul>
+    <li>源文件：制定源文件列表。默认情况下，cp命令不能复制目录，如果要复制目录，则必须使用<code>-R</code>选项；</li>
+    <li>目标文件：指定目标文件。当“源文件”为多个文件时，要求“目标文件”为指定的目录。</li>
+  </ul>
+  <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>实例</h3>
+  <p>下面的第一行中是 cp 命令和具体的参数（-r 是“递归”， -u 是“更新”，-v 是“详细”）。接下来的三行显示被复制文件的信息，最后一行显示命令行提示符。这样，只拷贝新的文件到我的存储设备上，我就使用 cp 的“更新”和“详细”选项。</p>
+  <p>通常来说，参数 <code>-r</code> 也可用更详细的风格 <code>--recursive</code>。但是以简短的方式，也可以这么连用 <code>-ruv</code>。</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">cp</span> -r -u -v /usr/men/tmp ~/men/tmp
 </code></pre>
-<p>版本备份 <code>--backup=numbered</code> 参数意思为“我要做个备份，而且是带编号的连续备份”。所以一个备份就是 1 号，第二个就是 2 号，等等。</p>
-<pre class="language-shell"><code class="language-shell">$ <span class="token function">cp</span> --force --backup<span class="token operator">=</span>numbered test1.py test1.py
+  <p>版本备份 <code>--backup=numbered</code> 参数意思为“我要做个备份，而且是带编号的连续备份”。所以一个备份就是 1 号，第二个就是 2 号，等等。</p>
+  <pre class="language-shell"><code class="language-shell">$ <span class="token function">cp</span> --force --backup<span class="token operator">=</span>numbered test1.py test1.py
 $ <span class="token function">ls</span>
 test1.py test1.py.~1~ test1.py.~2~
 </code></pre>
-<p>如果把一个文件复制到一个目标文件中，而目标文件已经存在，那么，该目标文件的内容将被破坏。此命令中所有参数既可以是绝对路径名，也可以是相对路径名。通常会用到点<code>.</code>或点点<code>..</code>的形式。例如，下面的命令将指定文件复制到当前目录下：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">cp</span> <span class="token punctuation">..</span>/mary/homework/assign <span class="token builtin class-name">.</span>
+  <p>如果把一个文件复制到一个目标文件中，而目标文件已经存在，那么，该目标文件的内容将被破坏。此命令中所有参数既可以是绝对路径名，也可以是相对路径名。通常会用到点<code>.</code>或点点<code>..</code>的形式。例如，下面的命令将指定文件复制到当前目录下：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">cp</span> <span class="token punctuation">..</span>/mary/homework/assign <span class="token builtin class-name">.</span>
 </code></pre>
-<p>所有目标文件指定的目录必须是己经存在的，cp命令不能创建目录。如果没有文件复制的权限，则系统会显示出错信息。</p>
-<p>将文件file复制到目录<code>/usr/men/tmp</code>下，并改名为file1</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">cp</span> <span class="token function">file</span> /usr/men/tmp/file1
+  <p>所有目标文件指定的目录必须是己经存在的，cp命令不能创建目录。如果没有文件复制的权限，则系统会显示出错信息。</p>
+  <p>将文件file复制到目录<code>/usr/men/tmp</code>下，并改名为file1</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">cp</span> <span class="token function">file</span> /usr/men/tmp/file1
 </code></pre>
-<p>将目录<code>/usr/men</code>下的所有文件及其子目录复制到目录<code>/usr/zh</code>中</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">cp</span> -r /usr/men /usr/zh
+  <p>将目录<code>/usr/men</code>下的所有文件及其子目录复制到目录<code>/usr/zh</code>中</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">cp</span> -r /usr/men /usr/zh
 </code></pre>
-<p>交互式地将目录<code>/usr/men</code>中的以m打头的所有.c文件复制到目录<code>/usr/zh</code>中</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">cp</span> -i /usr/men m*.c /usr/zh
+  <p>交互式地将目录<code>/usr/men</code>中的以m打头的所有.c文件复制到目录<code>/usr/zh</code>中</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">cp</span> -i /usr/men m*.c /usr/zh
 </code></pre>
-<p>我们在Linux下使用cp命令复制文件时候，有时候会需要覆盖一些同名文件，覆盖文件的时候都会有提示：需要不停的按Y来确定执行覆盖。文件数量不多还好，但是要是几百个估计按Y都要吐血了，于是折腾来半天总结了一个方法：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">cp</span> aaa/* /bbb
+  <p>我们在Linux下使用cp命令复制文件时候，有时候会需要覆盖一些同名文件，覆盖文件的时候都会有提示：需要不停的按Y来确定执行覆盖。文件数量不多还好，但是要是几百个估计按Y都要吐血了，于是折腾来半天总结了一个方法：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">cp</span> aaa/* /bbb
 <span class="token comment"># 复制目录aaa下所有到/bbb目录下，这时如果/bbb目录下有和aaa同名的文件，需要按Y来确认并且会略过aaa目录下的子目录。</span>
 
 <span class="token function">cp</span> -r aaa/* /bbb
@@ -102,22 +119,23 @@ test1.py test1.py.~1~ test1.py.~2~
 <span class="token punctuation">\</span>cp -r -a aaa/* /bbb
 <span class="token comment"># 成功，没有提示按Y、传递了目录属性、没有略过目录。</span>
 </code></pre>
-<p>递归强制复制目录到指定目录中覆盖已存在文件</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">cp</span> -rfb ./* <span class="token punctuation">..</span>/backup
+  <p>递归强制复制目录到指定目录中覆盖已存在文件</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">cp</span> -rfb ./* <span class="token punctuation">..</span>/backup
 <span class="token comment"># 将当前目录下所有文件，复制到当前目录的兄弟目录 backup 文件夹中</span>
 </code></pre>
-<p>拷贝目录下的隐藏文件如 <code>.babelrc</code></p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">cp</span> -r aaa/.* ./bbb
+  <p>拷贝目录下的隐藏文件如 <code>.babelrc</code></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">cp</span> -r aaa/.* ./bbb
 <span class="token comment"># 将 aaa 目录下的，所有`.`开头的文件，复制到 bbb 目录中。</span>
 
 <span class="token function">cp</span> -a aaa ./bbb/ 
 <span class="token comment"># 记住后面目录最好的'/' 带上 `-a` 参数</span>
 </code></pre>
-<p>复制到当前目录</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">cp</span> aaa.conf ./
+  <p>复制到当前目录</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">cp</span> aaa.conf ./
 <span class="token comment"># 将 aaa.conf 复制到当前目录</span>
-</code></pre>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+</code></pre><!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+</div>
+
 </div>
 
 <div class="footer ">
@@ -140,7 +158,7 @@ test1.py test1.py.~1~ test1.py.~2~
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1630702913400"></script>
-<script type="text/javascript" src="../js/index.js?v=1630702913400"></script>
+<script type="text/javascript" src="../js/dt.js?v=1633360854425"></script>
+<script type="text/javascript" src="../js/index.js?v=1633360854425"></script>
 </body>
 </html>

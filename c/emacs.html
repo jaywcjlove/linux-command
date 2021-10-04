@@ -10,10 +10,9 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,emacs,功能强大的全屏文本编辑器">
     <title>emacs 命令，Linux emacs 命令详解：功能强大的全屏文本编辑器 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1630702913442">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633360854467">
 </head>
 <body>
-<a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
 <div class="header header_list">
     <div class="logo">
         <a href="/">
@@ -40,15 +39,29 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/emacs.md">添加实例</a>
 </span>
 
-<h1 id="emacs"><a aria-hidden="true" tabindex="-1" href="#emacs"><span class="icon icon-link"></span></a>emacs</h1>
-<p>功能强大的全屏文本编辑器</p>
-<h2 id="补充说明"><a aria-hidden="true" tabindex="-1" href="#补充说明"><span class="icon icon-link"></span></a>补充说明</h2>
-<p><strong>emacs命令</strong> 是由GNU组织的创始人Richard Stallman开发的一个功能强大的全屏文本编辑器，它支持多种编程语言，具有很多优良的特性。有众多的系统管理员和软件开发者使用emacs。</p>
-<h3 id="语法"><a aria-hidden="true" tabindex="-1" href="#语法"><span class="icon icon-link"></span></a>语法</h3>
-<pre class="language-shell"><code class="language-shell">emacs<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
+
+<div class="wmde-markdown"><a aria-label="View source on GitHub" target="__blank" class="github-corner" href="https://github.com/jaywcjlove/linux-command.git"><svg width="54" height="54" viewBox="0 0 250 250" aria-hidden="true" style="fill: rgb(32, 34, 37); color: rgb(255, 255, 255); position: fixed; z-index: 99999; border: 0px; top: 0px; right: 0px;">
+      <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+      <path style="transform-origin: 130px 106px;" class="octo-arm" fill="currentColor" d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"></path>
+      <path class="octo-body" fill="currentColor" d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"></path>
+    </svg></a>
+  <h1 id="emacs"><a class="anchor" aria-hidden="true" tabindex="-1" href="#emacs"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>emacs</h1>
+  <p>功能强大的全屏文本编辑器</p>
+  <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>补充说明</h2>
+  <p><strong>emacs命令</strong> 是由GNU组织的创始人Richard Stallman开发的一个功能强大的全屏文本编辑器，它支持多种编程语言，具有很多优良的特性。有众多的系统管理员和软件开发者使用emacs。</p>
+  <h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>语法</h3>
+  <pre class="language-shell"><code class="language-shell">emacs<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
 </code></pre>
-<h3 id="选项"><a aria-hidden="true" tabindex="-1" href="#选项"><span class="icon icon-link"></span></a>选项</h3>
-<pre class="language-shell"><code class="language-shell">+<span class="token operator">&#x3C;</span>行号<span class="token operator">></span>：启动emacs编辑器，并将光标移动到制定行号的行；
+  <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>选项</h3>
+  <pre class="language-shell"><code class="language-shell">+<span class="token operator">&#x3C;</span>行号<span class="token operator">></span>：启动emacs编辑器，并将光标移动到制定行号的行；
 -q：启动emacs编辑器，而不加载初始化文件；
 -u<span class="token operator">&#x3C;</span>用户<span class="token operator">></span>：启动emacs编辑器时，加载指定用户的初始化文件；
 -t<span class="token operator">&#x3C;</span>文件<span class="token operator">></span>：启动emacs编辑器时，把指定的文件作为中端，不适用标准输入（stdin）与标准输出（stdout）；
@@ -56,20 +69,24 @@
 -l<span class="token operator">&#x3C;</span>lisp代码文件<span class="token operator">></span>：加载指定的lisp代码文件；
 -batch：以批处理模式运行emacs编辑器。
 </code></pre>
-<h3 id="参数"><a aria-hidden="true" tabindex="-1" href="#参数"><span class="icon icon-link"></span></a>参数</h3>
-<p>文件：指定要编辑的文本文件。</p>
-<h2 id="emacs命令操作大全"><a aria-hidden="true" tabindex="-1" href="#emacs命令操作大全"><span class="icon icon-link"></span></a>emacs命令操作大全</h2>
-<p>基本命令</p>
-<pre class="language-shell"><code class="language-shell">C-x C-c <span class="token builtin class-name">:</span> 退出Emacs
+  <h3 id="参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参数"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>参数</h3>
+  <p>文件：指定要编辑的文本文件。</p>
+  <h2 id="emacs命令操作大全"><a class="anchor" aria-hidden="true" tabindex="-1" href="#emacs命令操作大全"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>emacs命令操作大全</h2>
+  <p>基本命令</p>
+  <pre class="language-shell"><code class="language-shell">C-x C-c <span class="token builtin class-name">:</span> 退出Emacs
 C-x C-f <span class="token builtin class-name">:</span> 打开一个文件，如果文件不存在，则创建一个文件
 C-g <span class="token builtin class-name">:</span> 取消未完成的命令
 </code></pre>
-<p>编辑</p>
-<pre class="language-shell"><code class="language-shell">C-z <span class="token punctuation">(</span>redefined<span class="token punctuation">)</span>: Undo；原来C-z是挂起Emacs（然后用fg命令调出）；C-x u 是默认的命令； 移动一下光标，再C-z就可以redo
+  <p>编辑</p>
+  <pre class="language-shell"><code class="language-shell">C-z <span class="token punctuation">(</span>redefined<span class="token punctuation">)</span>: Undo；原来C-z是挂起Emacs（然后用fg命令调出）；C-x u 是默认的命令； 移动一下光标，再C-z就可以redo
 M-d <span class="token builtin class-name">:</span> 删除光标后的词语
 </code></pre>
-<p>移动光标</p>
-<pre class="language-shell"><code class="language-shell">C-v <span class="token builtin class-name">:</span> 向前翻页
+  <p>移动光标</p>
+  <pre class="language-shell"><code class="language-shell">C-v <span class="token builtin class-name">:</span> 向前翻页
 M-v <span class="token builtin class-name">:</span> 向后翻页
 M-r <span class="token builtin class-name">:</span> 将光标移动到屏幕中间那行
 C-a <span class="token builtin class-name">:</span> 移到行首
@@ -88,16 +105,16 @@ C-u 数字 命令 <span class="token builtin class-name">:</span> 执行多次<s
 M-x goto-line <span class="token builtin class-name">:</span> 移动到某一行
 C-l <span class="token builtin class-name">:</span> 重绘屏幕，效果就是当前编辑行移动窗口中央
 </code></pre>
-<p>Buffer 相关</p>
-<pre class="language-shell"><code class="language-shell">C-x k <span class="token builtin class-name">:</span> 关闭当前buffer
+  <p>Buffer 相关</p>
+  <pre class="language-shell"><code class="language-shell">C-x k <span class="token builtin class-name">:</span> 关闭当前buffer
 C-x b <span class="token builtin class-name">:</span> 切换到前一个编辑的buffer
 C-x C-b <span class="token builtin class-name">:</span> 列出当前所有buffer
 C-x C-s <span class="token builtin class-name">:</span> 保存当前buffer
 C-x s <span class="token builtin class-name">:</span> 保存所有未保存的buffer，会提示你是否需要保存
 C-x C-w <span class="token builtin class-name">:</span> 文件另存为
 </code></pre>
-<p>拷贝与粘贴</p>
-<pre class="language-shell"><code class="language-shell">M-space <span class="token punctuation">(</span>redefined<span class="token punctuation">)</span>: 设置mark<span class="token punctuation">;</span> C-@ 是默认命令
+  <p>拷贝与粘贴</p>
+  <pre class="language-shell"><code class="language-shell">M-space <span class="token punctuation">(</span>redefined<span class="token punctuation">)</span>: 设置mark<span class="token punctuation">;</span> C-@ 是默认命令
 C-w <span class="token punctuation">(</span>redefined<span class="token punctuation">)</span> <span class="token builtin class-name">:</span> 剪切一块区域；如果没有设置mark，则是剪切一行
 M-w <span class="token punctuation">(</span>redefined<span class="token punctuation">)</span> <span class="token builtin class-name">:</span> 拷贝一块区域；如果没有设置mark, 则是拷贝一行
 C-k <span class="token builtin class-name">:</span> 从当前位置剪切到行尾
@@ -106,7 +123,7 @@ M-y <span class="token builtin class-name">:</span> 用C-y拉回最近被除去�
 C-x r k <span class="token builtin class-name">:</span> 执行矩形区域的剪切
 C-x r y <span class="token builtin class-name">:</span> 执行矩形区域的粘贴
 </code></pre>
-<pre class="language-shell"><code class="language-shell">窗口操作
+  <pre class="language-shell"><code class="language-shell">窗口操作
 C-x <span class="token number">0</span> <span class="token builtin class-name">:</span> 关闭当前窗口
 C-x <span class="token number">1</span> <span class="token builtin class-name">:</span> 将当前窗口最大化
 C-x <span class="token number">2</span> <span class="token builtin class-name">:</span> 垂直分割窗口
@@ -120,40 +137,41 @@ C-x <span class="token operator">></span> <span class="token builtin class-name"
 <span class="token punctuation">(</span>C-u<span class="token punctuation">)</span> C-x <span class="token punctuation">{</span> <span class="token builtin class-name">:</span> 压窄当前窗口
 ESC C-v <span class="token builtin class-name">:</span> 在其它窗口进行卷屏操作
 </code></pre>
-<p>搜索和替换</p>
-<pre class="language-shell"><code class="language-shell">C-s <span class="token builtin class-name">:</span> 向前搜索（增量式搜索）；连续C-s，跳到下一个搜索到的目标
+  <p>搜索和替换</p>
+  <pre class="language-shell"><code class="language-shell">C-s <span class="token builtin class-name">:</span> 向前搜索（增量式搜索）；连续C-s，跳到下一个搜索到的目标
 C-s RET <span class="token builtin class-name">:</span> 普通搜索
 C-r <span class="token builtin class-name">:</span> 向前搜索
 C-s RET C-w <span class="token builtin class-name">:</span> 按单词查询
 M-% <span class="token builtin class-name">:</span> 查询替换，也就是替换前会询问一下
 M-x replace-string <span class="token builtin class-name">:</span> 普通替换
 </code></pre>
-<p>Tags</p>
-<pre class="language-shell"><code class="language-shell">M-<span class="token operator">!</span> etags .c .h <span class="token builtin class-name">:</span> 创建TAGS文件
+  <p>Tags</p>
+  <pre class="language-shell"><code class="language-shell">M-<span class="token operator">!</span> etags .c .h <span class="token builtin class-name">:</span> 创建TAGS文件
 M-. <span class="token builtin class-name">:</span> 跳到tag所在位置
 M-x list-tags <span class="token builtin class-name">:</span> 列出tags
 </code></pre>
-<p>书签</p>
-<pre class="language-shell"><code class="language-shell">C-x r m <span class="token builtin class-name">:</span> 设置书签bookmark
+  <p>书签</p>
+  <pre class="language-shell"><code class="language-shell">C-x r m <span class="token builtin class-name">:</span> 设置书签bookmark
 C-x r b <span class="token builtin class-name">:</span> 跳到bookmark处
 </code></pre>
-<p>帮助</p>
-<pre class="language-shell"><code class="language-shell">C-h ? <span class="token builtin class-name">:</span> 查看帮助信息
+  <p>帮助</p>
+  <pre class="language-shell"><code class="language-shell">C-h ? <span class="token builtin class-name">:</span> 查看帮助信息
 C-h f <span class="token builtin class-name">:</span> 查看一个函数
 C-h <span class="token function">v</span> <span class="token builtin class-name">:</span> 查看一个变量
 C-h k <span class="token builtin class-name">:</span> 查看一个键绑定 <span class="token punctuation">(</span>C－h c 也是查看键绑定，但是信息较简略<span class="token punctuation">)</span>
 C-h C-f <span class="token builtin class-name">:</span> 查看一个函数的info，非常有用
 C-h i <span class="token builtin class-name">:</span> 看Info
 </code></pre>
-<p>其它</p>
-<pre class="language-shell"><code class="language-shell">C-M-<span class="token punctuation">\</span> <span class="token builtin class-name">:</span> 对选中区域，按照某种格式<span class="token punctuation">(</span>比如C程序<span class="token punctuation">)</span>进行格式化
+  <p>其它</p>
+  <pre class="language-shell"><code class="language-shell">C-M-<span class="token punctuation">\</span> <span class="token builtin class-name">:</span> 对选中区域，按照某种格式<span class="token punctuation">(</span>比如C程序<span class="token punctuation">)</span>进行格式化
 C-x h <span class="token builtin class-name">:</span> 全部选中
 M-<span class="token operator">!</span> <span class="token builtin class-name">:</span> 执行外部shell命令
 M-x shell <span class="token builtin class-name">:</span> 模拟shell的buffer
 M-x term <span class="token builtin class-name">:</span> 模拟terminal, C-c k 关闭terminal
 C-x C-q <span class="token builtin class-name">:</span> 修改buffer的只读属性
-</code></pre>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+</code></pre><!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+</div>
+
 </div>
 
 <div class="footer ">
@@ -176,7 +194,7 @@ C-x C-q <span class="token builtin class-name">:</span> 修改buffer的只读属
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1630702913442"></script>
-<script type="text/javascript" src="../js/index.js?v=1630702913442"></script>
+<script type="text/javascript" src="../js/dt.js?v=1633360854467"></script>
+<script type="text/javascript" src="../js/index.js?v=1633360854467"></script>
 </body>
 </html>

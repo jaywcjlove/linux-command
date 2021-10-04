@@ -10,10 +10,9 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,talk,让用户和其他用户聊天">
     <title>talk 命令，Linux talk 命令详解：让用户和其他用户聊天 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1630702913744">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633360854784">
 </head>
 <body>
-<a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
 <div class="header header_list">
     <div class="logo">
         <a href="/">
@@ -40,53 +39,70 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/talk.md">添加实例</a>
 </span>
 
-<h1 id="talk"><a aria-hidden="true" tabindex="-1" href="#talk"><span class="icon icon-link"></span></a>talk</h1>
-<p>让用户和其他用户聊天</p>
-<h2 id="补充说明"><a aria-hidden="true" tabindex="-1" href="#补充说明"><span class="icon icon-link"></span></a>补充说明</h2>
-<p><strong>talk命令</strong> 是talk服务器的客户端工具，通过talk命令可以让用户和其他用户聊天。linux中talk命令参数程序的使用很简单，只要知道交谈对象的地址，就可以邀请对方交谈。</p>
-<h3 id="语法"><a aria-hidden="true" tabindex="-1" href="#语法"><span class="icon icon-link"></span></a>语法</h3>
-<pre class="language-shell"><code class="language-shell">talk<span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
+
+<div class="wmde-markdown"><a aria-label="View source on GitHub" target="__blank" class="github-corner" href="https://github.com/jaywcjlove/linux-command.git"><svg width="54" height="54" viewBox="0 0 250 250" aria-hidden="true" style="fill: rgb(32, 34, 37); color: rgb(255, 255, 255); position: fixed; z-index: 99999; border: 0px; top: 0px; right: 0px;">
+      <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+      <path style="transform-origin: 130px 106px;" class="octo-arm" fill="currentColor" d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"></path>
+      <path class="octo-body" fill="currentColor" d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"></path>
+    </svg></a>
+  <h1 id="talk"><a class="anchor" aria-hidden="true" tabindex="-1" href="#talk"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>talk</h1>
+  <p>让用户和其他用户聊天</p>
+  <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>补充说明</h2>
+  <p><strong>talk命令</strong> 是talk服务器的客户端工具，通过talk命令可以让用户和其他用户聊天。linux中talk命令参数程序的使用很简单，只要知道交谈对象的地址，就可以邀请对方交谈。</p>
+  <h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>语法</h3>
+  <pre class="language-shell"><code class="language-shell">talk<span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
 </code></pre>
-<h3 id="参数"><a aria-hidden="true" tabindex="-1" href="#参数"><span class="icon icon-link"></span></a>参数</h3>
-<ul>
-<li>用户：指定聊天的用户；</li>
-<li>终端：指定用户的终端。</li>
-</ul>
-<h3 id="实例"><a aria-hidden="true" tabindex="-1" href="#实例"><span class="icon icon-link"></span></a>实例</h3>
-<p>例如登录在主机rs6000.cic.test.com上的用户jdx希望和登录在主机tirc.cs.test.com上的用户wangxz进行交谈，则可以输入下面的命令：</p>
-<pre class="language-shell"><code class="language-shell">talk wangxz@tirc.cs.test.com
+  <h3 id="参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参数"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>参数</h3>
+  <ul>
+    <li>用户：指定聊天的用户；</li>
+    <li>终端：指定用户的终端。</li>
+  </ul>
+  <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>实例</h3>
+  <p>例如登录在主机rs6000.cic.test.com上的用户jdx希望和登录在主机tirc.cs.test.com上的用户wangxz进行交谈，则可以输入下面的命令：</p>
+  <pre class="language-shell"><code class="language-shell">talk wangxz@tirc.cs.test.com
 </code></pre>
-<p>Internet上的相关程序（Talk Daemon）就会传送一条信息邀请wangxz来交谈，这时用户wangxz的屏幕上就会出现如下信息，并响铃提示：</p>
-<pre class="language-shell"><code class="language-shell">Message from Talk_Daemon@tirc.cs.test.com at <span class="token number">21</span>:44 …
+  <p>Internet上的相关程序（Talk Daemon）就会传送一条信息邀请wangxz来交谈，这时用户wangxz的屏幕上就会出现如下信息，并响铃提示：</p>
+  <pre class="language-shell"><code class="language-shell">Message from Talk_Daemon@tirc.cs.test.com at <span class="token number">21</span>:44 …
 talk: connection requested by jdx@rs6000.cic.test.com
 talk: respond with:  talk jdx@rs6000.cic.test.com
 </code></pre>
-<p>这时，用户wangxz应该做的工作就是按照上面的信息提示，即输入linux中talk命令：</p>
-<pre class="language-shell"><code class="language-shell">talk jdx@rs6000.cic.test.com
+  <p>这时，用户wangxz应该做的工作就是按照上面的信息提示，即输入linux中talk命令：</p>
+  <pre class="language-shell"><code class="language-shell">talk jdx@rs6000.cic.test.com
 </code></pre>
-<p>之后，连接建立成功，两个用户就可以进行交谈了。这时，双方的终端屏幕上都将显示信息 <strong>[Connection established]</strong> 并响铃，同时屏幕被linux中talk命令程序以一条水平线分割为上下两部分，上半部分用来显示用户自己输入的内容，下半部分用来显示对方输入的内容。两个用户可以同时输入，他们输入的内容将会立即显示在双方的屏幕上。</p>
-<p>在用户进行输入时，可按 <strong>BACKSPACE</strong> 见来更正前一个字符，也可按 <strong>CTRL+w</strong> 来删除一个完整的单词，或者用 <strong>CTRL+U</strong> 来删除一整行，另外，用户还可以通过按 <strong>CTRL+L</strong> 来刷新屏幕。如果要结束交谈，可由任何一方按下 <strong>CTRL+C</strong> 来中断连接，但在结束对话前最好道声“再见”，并等待对方回应。linux中talk命令程序结束时，在屏幕上将回显示一条信息：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>Connection closing. Exiting<span class="token punctuation">]</span>
+  <p>之后，连接建立成功，两个用户就可以进行交谈了。这时，双方的终端屏幕上都将显示信息 <strong>[Connection established]</strong> 并响铃，同时屏幕被linux中talk命令程序以一条水平线分割为上下两部分，上半部分用来显示用户自己输入的内容，下半部分用来显示对方输入的内容。两个用户可以同时输入，他们输入的内容将会立即显示在双方的屏幕上。</p>
+  <p>在用户进行输入时，可按 <strong>BACKSPACE</strong> 见来更正前一个字符，也可按 <strong>CTRL+w</strong> 来删除一个完整的单词，或者用 <strong>CTRL+U</strong> 来删除一整行，另外，用户还可以通过按 <strong>CTRL+L</strong> 来刷新屏幕。如果要结束交谈，可由任何一方按下 <strong>CTRL+C</strong> 来中断连接，但在结束对话前最好道声“再见”，并等待对方回应。linux中talk命令程序结束时，在屏幕上将回显示一条信息：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>Connection closing. Exiting<span class="token punctuation">]</span>
 </code></pre>
-<p>并非每次要求对方交谈都能成功，有时对方没有登录，则linux中talk命令程序提示信息：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>Your party is not logged on<span class="token punctuation">]</span>
+  <p>并非每次要求对方交谈都能成功，有时对方没有登录，则linux中talk命令程序提示信息：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>Your party is not logged on<span class="token punctuation">]</span>
 </code></pre>
-<p>并退出；如果对方已登录，但因某种原因（如不是正在使用机器）没有响应，那么linux中talk命令程序将会每隔10秒钟给他发一条邀请信息，同时在自己的屏幕上显示：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>Ringing your party again<span class="token punctuation">]</span>
+  <p>并退出；如果对方已登录，但因某种原因（如不是正在使用机器）没有响应，那么linux中talk命令程序将会每隔10秒钟给他发一条邀请信息，同时在自己的屏幕上显示：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>Ringing your party again<span class="token punctuation">]</span>
 </code></pre>
-<p>如果用户不愿等待，则可以按 <strong>CTRL+C</strong> 终止linux中talk命令程序。还有的时候系统可能出现下面的信息：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>Checking <span class="token keyword">for</span> invitation on caller’s machine<span class="token punctuation">]</span>
+  <p>如果用户不愿等待，则可以按 <strong>CTRL+C</strong> 终止linux中talk命令程序。还有的时候系统可能出现下面的信息：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>Checking <span class="token keyword">for</span> invitation on caller’s machine<span class="token punctuation">]</span>
 </code></pre>
-<p>这说明双方的linux中talk命令程序不兼容，这时可以试试ntalk和ytalk命令，如果没有，就只好找系统管理员了。</p>
-<p>如果用户在做某些紧急工作（如编辑邮件）时不希望被linux中talk命令的邀请打搅，他可以使用命令：</p>
-<pre class="language-shell"><code class="language-shell">mesg n
+  <p>这说明双方的linux中talk命令程序不兼容，这时可以试试ntalk和ytalk命令，如果没有，就只好找系统管理员了。</p>
+  <p>如果用户在做某些紧急工作（如编辑邮件）时不希望被linux中talk命令的邀请打搅，他可以使用命令：</p>
+  <pre class="language-shell"><code class="language-shell">mesg n
 </code></pre>
-<p>来暂时拒绝交谈，这时如果有用户邀请他交谈，只能得到提示信息：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>Your party is refusing messages<span class="token punctuation">]</span>
+  <p>来暂时拒绝交谈，这时如果有用户邀请他交谈，只能得到提示信息：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>Your party is refusing messages<span class="token punctuation">]</span>
 </code></pre>
-<p>不过要注意的是，一旦完成紧急工作。最好立即打开信息接收开关（用命令<code>mesg y</code>），否则将会失去很多信息交流的机会。</p>
-<p>以上是linux中talk命令参数的是使用方法。</p>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+  <p>不过要注意的是，一旦完成紧急工作。最好立即打开信息接收开关（用命令<code>mesg y</code>），否则将会失去很多信息交流的机会。</p>
+  <p>以上是linux中talk命令参数的是使用方法。</p><!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+</div>
+
 </div>
 
 <div class="footer ">
@@ -109,7 +125,7 @@ talk: respond with:  talk jdx@rs6000.cic.test.com
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1630702913744"></script>
-<script type="text/javascript" src="../js/index.js?v=1630702913744"></script>
+<script type="text/javascript" src="../js/dt.js?v=1633360854785"></script>
+<script type="text/javascript" src="../js/index.js?v=1633360854785"></script>
 </body>
 </html>

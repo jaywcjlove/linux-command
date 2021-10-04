@@ -10,10 +10,9 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,enable,启动或禁用shell内建命令">
     <title>enable 命令，Linux enable 命令详解：启动或禁用shell内建命令 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1630702913444">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633360854467">
 </head>
 <body>
-<a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
 <div class="header header_list">
     <div class="logo">
         <a href="/">
@@ -40,48 +39,62 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/enable.md">添加实例</a>
 </span>
 
-<h1 id="enable"><a aria-hidden="true" tabindex="-1" href="#enable"><span class="icon icon-link"></span></a>enable</h1>
-<p>启动或禁用shell内建命令</p>
-<h3 id="概要"><a aria-hidden="true" tabindex="-1" href="#概要"><span class="icon icon-link"></span></a>概要</h3>
-<p>enable [-a] [-dnps] [-f filename] [name ...]</p>
-<h3 id="主要用途"><a aria-hidden="true" tabindex="-1" href="#主要用途"><span class="icon icon-link"></span></a>主要用途</h3>
-<ul>
-<li>
-<p>禁用一到多个内建命令。</p>
-</li>
-<li>
-<p>启用一到多个内建命令。</p>
-</li>
-<li>
-<p>直接调用与禁用的内建命令同名且在<code>$PATH</code>路径下找到的外部命令。</p>
-</li>
-<li>
-<p>打印所有内建命令，无论是否禁用。</p>
-</li>
-<li>
-<p>打印处于启用状态的内建命令。</p>
-</li>
-<li>
-<p>打印处于禁用状态的内建命令。</p>
-</li>
-<li>
-<p>打印处于启用状态的posix标准内建命令。</p>
-</li>
-<li>
-<p>打印处于禁用状态的posix标准内建命令。</p>
-</li>
-<li>
-<p>打印posix标准内建命令，无论是否禁用。</p>
-</li>
-<li>
-<p>从动态库中加载内建命令。</p>
-</li>
-<li>
-<p>移除从动态库中加载的内建命令。</p>
-</li>
-</ul>
-<h4 id="选项"><a aria-hidden="true" tabindex="-1" href="#选项"><span class="icon icon-link"></span></a>选项</h4>
-<pre class="language-shell"><code class="language-shell">-a 打印所有内建命令，无论是否禁用。
+
+<div class="wmde-markdown"><a aria-label="View source on GitHub" target="__blank" class="github-corner" href="https://github.com/jaywcjlove/linux-command.git"><svg width="54" height="54" viewBox="0 0 250 250" aria-hidden="true" style="fill: rgb(32, 34, 37); color: rgb(255, 255, 255); position: fixed; z-index: 99999; border: 0px; top: 0px; right: 0px;">
+      <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+      <path style="transform-origin: 130px 106px;" class="octo-arm" fill="currentColor" d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"></path>
+      <path class="octo-body" fill="currentColor" d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"></path>
+    </svg></a>
+  <h1 id="enable"><a class="anchor" aria-hidden="true" tabindex="-1" href="#enable"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>enable</h1>
+  <p>启动或禁用shell内建命令</p>
+  <h3 id="概要"><a class="anchor" aria-hidden="true" tabindex="-1" href="#概要"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>概要</h3>
+  <p>enable [-a] [-dnps] [-f filename] [name ...]</p>
+  <h3 id="主要用途"><a class="anchor" aria-hidden="true" tabindex="-1" href="#主要用途"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>主要用途</h3>
+  <ul>
+    <li>
+      <p>禁用一到多个内建命令。</p>
+    </li>
+    <li>
+      <p>启用一到多个内建命令。</p>
+    </li>
+    <li>
+      <p>直接调用与禁用的内建命令同名且在<code>$PATH</code>路径下找到的外部命令。</p>
+    </li>
+    <li>
+      <p>打印所有内建命令，无论是否禁用。</p>
+    </li>
+    <li>
+      <p>打印处于启用状态的内建命令。</p>
+    </li>
+    <li>
+      <p>打印处于禁用状态的内建命令。</p>
+    </li>
+    <li>
+      <p>打印处于启用状态的posix标准内建命令。</p>
+    </li>
+    <li>
+      <p>打印处于禁用状态的posix标准内建命令。</p>
+    </li>
+    <li>
+      <p>打印posix标准内建命令，无论是否禁用。</p>
+    </li>
+    <li>
+      <p>从动态库中加载内建命令。</p>
+    </li>
+    <li>
+      <p>移除从动态库中加载的内建命令。</p>
+    </li>
+  </ul>
+  <h4 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>选项</h4>
+  <pre class="language-shell"><code class="language-shell">-a 打印所有内建命令，无论是否禁用。
 -d 移除从动态库中加载的内建命令。
 -n 禁用内建命令或显示已禁用的内建命令。
 -p 以可复用格式打印。
@@ -90,13 +103,19 @@
 -ns 打印处于禁用状态的posix标准内建命令。
 -as 打印posix标准内建命令，无论是否禁用。
 </code></pre>
-<h4 id="参数"><a aria-hidden="true" tabindex="-1" href="#参数"><span class="icon icon-link"></span></a>参数</h4>
-<p>filename：动态库文件名。</p>
-<p>name（可选）：内建命令，可以为多个。</p>
-<h4 id="返回值"><a aria-hidden="true" tabindex="-1" href="#返回值"><span class="icon icon-link"></span></a>返回值</h4>
-<p>enable返回成功，除非name不是内建命令或有错误发生。</p>
-<h3 id="例子以下内容限于篇幅不再列出返回值部分"><a aria-hidden="true" tabindex="-1" href="#例子以下内容限于篇幅不再列出返回值部分"><span class="icon icon-link"></span></a>例子（以下内容限于篇幅不再列出返回值部分）</h3>
-<pre class="language-shell"><code class="language-shell"><span class="token comment"># posix special builtin</span>
+  <h4 id="参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参数"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>参数</h4>
+  <p>filename：动态库文件名。</p>
+  <p>name（可选）：内建命令，可以为多个。</p>
+  <h4 id="返回值"><a class="anchor" aria-hidden="true" tabindex="-1" href="#返回值"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>返回值</h4>
+  <p>enable返回成功，除非name不是内建命令或有错误发生。</p>
+  <h3 id="例子以下内容限于篇幅不再列出返回值部分"><a class="anchor" aria-hidden="true" tabindex="-1" href="#例子以下内容限于篇幅不再列出返回值部分"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>例子（以下内容限于篇幅不再列出返回值部分）</h3>
+  <pre class="language-shell"><code class="language-shell"><span class="token comment"># posix special builtin</span>
 <span class="token comment"># 假设没有任何内建命令被禁用</span>
 <span class="token comment"># 禁用两个posix标准内建命令</span>
 <span class="token builtin class-name">enable</span> -n <span class="token builtin class-name">set</span> <span class="token builtin class-name">source</span>
@@ -107,7 +126,7 @@
 <span class="token comment"># 打印处于启用状态的posix标准内建命令</span>
 <span class="token builtin class-name">enable</span> -s
 </code></pre>
-<pre class="language-shell"><code class="language-shell"><span class="token comment"># 假设没有任何内建命令被禁用</span>
+  <pre class="language-shell"><code class="language-shell"><span class="token comment"># 假设没有任何内建命令被禁用</span>
 <span class="token comment"># 禁用一到多个内建命令</span>
 <span class="token builtin class-name">enable</span> -n <span class="token builtin class-name">echo</span> <span class="token builtin class-name">pwd</span>
 <span class="token comment"># 打印所有内建命令，无论是否禁用。</span>
@@ -119,27 +138,34 @@
 <span class="token comment"># 启用一到多个内建命令</span>
 <span class="token builtin class-name">enable</span> <span class="token builtin class-name">pwd</span>
 </code></pre>
-<h3 id="qa"><a aria-hidden="true" tabindex="-1" href="#qa"><span class="icon icon-link"></span></a>Q&#x26;A</h3>
-<p>Q：请问<code>-f</code>，<code>-d</code>，<code>-p</code>的演示呢？</p>
-<p>A：说明一下，<code>-f</code>与<code>-d</code>限于个人能力没有找到合适的例子，如果您有更好的例子欢迎提pr；
-经过我验证<code>-p</code>选项是否使用好像没有区别，可以比较<code>enable -p|cat -A</code>和<code>enable|cat -A</code> 有什么区别。（注：<code>cat -A</code>用于显示不可见字符）</p>
-<p>Q：是否可以禁用<code>enable</code>自己？之后还能禁用或启用内建命令吗？</p>
-<p>A：可以；不能。</p>
-<h3 id="注意"><a aria-hidden="true" tabindex="-1" href="#注意"><span class="icon icon-link"></span></a>注意</h3>
-<blockquote>
-<p>linux shell命令执行时，shell总是先在自己的shell builtin中查找该命令，如果找到则执行该命令；如果找不到该命令，则会从环境变量<code>$PATH</code>指定的路径中依次去查找待执行的命令。看起来好像没有办法编写用户自己的命令来替代shell builtin命令。幸运的是，有了<code>enable</code>命令我们就能做到了。</p>
-</blockquote>
-<ol>
-<li>关于同名命令调用的优先级的知识，请先参考<code>builtin</code>命令的<em>提示</em>部分，然后继续阅读下面部分；</li>
-</ol>
-<p>当内建命令<code>echo</code>没有禁用时，如果要调用外部命令<code>echo</code>，只能这样写<code>/usr/bin/echo</code>；</p>
-<p>当我们禁用了<code>echo</code>后，优先级顺序变成了这样：</p>
-<p>函数 > 外部命令</p>
-<p>如果执行命令的环境没有<code>echo</code>函数，那么调用的<code>echo</code>就是外部命令。</p>
-<ol start="2">
-<li>该命令是bash内建命令，相关的帮助信息请查看 <code>help</code> 命令。</li>
-</ol>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+  <h3 id="qa"><a class="anchor" aria-hidden="true" tabindex="-1" href="#qa"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>Q&#x26;A</h3>
+  <p>Q：请问<code>-f</code>，<code>-d</code>，<code>-p</code>的演示呢？</p>
+  <p>
+    A：说明一下，<code>-f</code>与<code>-d</code>限于个人能力没有找到合适的例子，如果您有更好的例子欢迎提pr；
+    经过我验证<code>-p</code>选项是否使用好像没有区别，可以比较<code>enable -p|cat -A</code>和<code>enable|cat -A</code> 有什么区别。（注：<code>cat -A</code>用于显示不可见字符）
+  </p>
+  <p>Q：是否可以禁用<code>enable</code>自己？之后还能禁用或启用内建命令吗？</p>
+  <p>A：可以；不能。</p>
+  <h3 id="注意"><a class="anchor" aria-hidden="true" tabindex="-1" href="#注意"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>注意</h3>
+  <blockquote>
+    <p>linux shell命令执行时，shell总是先在自己的shell builtin中查找该命令，如果找到则执行该命令；如果找不到该命令，则会从环境变量<code>$PATH</code>指定的路径中依次去查找待执行的命令。看起来好像没有办法编写用户自己的命令来替代shell builtin命令。幸运的是，有了<code>enable</code>命令我们就能做到了。</p>
+  </blockquote>
+  <ol>
+    <li>关于同名命令调用的优先级的知识，请先参考<code>builtin</code>命令的<em>提示</em>部分，然后继续阅读下面部分；</li>
+  </ol>
+  <p>当内建命令<code>echo</code>没有禁用时，如果要调用外部命令<code>echo</code>，只能这样写<code>/usr/bin/echo</code>；</p>
+  <p>当我们禁用了<code>echo</code>后，优先级顺序变成了这样：</p>
+  <p>函数 > 外部命令</p>
+  <p>如果执行命令的环境没有<code>echo</code>函数，那么调用的<code>echo</code>就是外部命令。</p>
+  <ol start="2">
+    <li>该命令是bash内建命令，相关的帮助信息请查看 <code>help</code> 命令。</li>
+  </ol><!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+</div>
+
 </div>
 
 <div class="footer ">
@@ -162,7 +188,7 @@
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1630702913444"></script>
-<script type="text/javascript" src="../js/index.js?v=1630702913444"></script>
+<script type="text/javascript" src="../js/dt.js?v=1633360854468"></script>
+<script type="text/javascript" src="../js/index.js?v=1633360854468"></script>
 </body>
 </html>

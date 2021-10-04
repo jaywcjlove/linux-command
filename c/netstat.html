@@ -10,10 +10,9 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,netstat,查看Linux中网络系统状态信息">
     <title>netstat 命令，Linux netstat 命令详解：查看Linux中网络系统状态信息 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1630702913612">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633360854633">
 </head>
 <body>
-<a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
 <div class="header header_list">
     <div class="logo">
         <a href="/">
@@ -40,15 +39,29 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/netstat.md">添加实例</a>
 </span>
 
-<h1 id="netstat"><a aria-hidden="true" tabindex="-1" href="#netstat"><span class="icon icon-link"></span></a>netstat</h1>
-<p>查看Linux中网络系统状态信息</p>
-<h2 id="补充说明"><a aria-hidden="true" tabindex="-1" href="#补充说明"><span class="icon icon-link"></span></a>补充说明</h2>
-<p><strong>netstat命令</strong> 用来打印Linux中网络系统的状态信息，可让你得知整个Linux系统的网络情况。</p>
-<h3 id="语法"><a aria-hidden="true" tabindex="-1" href="#语法"><span class="icon icon-link"></span></a>语法</h3>
-<pre class="language-shell"><code class="language-shell">netstat<span class="token punctuation">(</span>选项<span class="token punctuation">)</span>
+
+<div class="wmde-markdown"><a aria-label="View source on GitHub" target="__blank" class="github-corner" href="https://github.com/jaywcjlove/linux-command.git"><svg width="54" height="54" viewBox="0 0 250 250" aria-hidden="true" style="fill: rgb(32, 34, 37); color: rgb(255, 255, 255); position: fixed; z-index: 99999; border: 0px; top: 0px; right: 0px;">
+      <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+      <path style="transform-origin: 130px 106px;" class="octo-arm" fill="currentColor" d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"></path>
+      <path class="octo-body" fill="currentColor" d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"></path>
+    </svg></a>
+  <h1 id="netstat"><a class="anchor" aria-hidden="true" tabindex="-1" href="#netstat"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>netstat</h1>
+  <p>查看Linux中网络系统状态信息</p>
+  <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>补充说明</h2>
+  <p><strong>netstat命令</strong> 用来打印Linux中网络系统的状态信息，可让你得知整个Linux系统的网络情况。</p>
+  <h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>语法</h3>
+  <pre class="language-shell"><code class="language-shell">netstat<span class="token punctuation">(</span>选项<span class="token punctuation">)</span>
 </code></pre>
-<h3 id="选项"><a aria-hidden="true" tabindex="-1" href="#选项"><span class="icon icon-link"></span></a>选项</h3>
-<pre class="language-shell"><code class="language-shell">-a或--all：显示所有连线中的Socket；
+  <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>选项</h3>
+  <pre class="language-shell"><code class="language-shell">-a或--all：显示所有连线中的Socket；
 -A<span class="token operator">&#x3C;</span>网络类型<span class="token operator">></span>或--<span class="token operator">&#x3C;</span>网络类型<span class="token operator">></span>：列出该网络类型连线中的相关地址；
 -c或--continuous：持续列出网络状态；
 -C或--cache：显示路由器配置的快取信息；
@@ -73,20 +86,22 @@
 -x或--unix：此参数的效果和指定<span class="token string">"-A unix"</span>参数相同；
 --ip或--inet：此参数的效果和指定<span class="token string">"-A inet"</span>参数相同。
 </code></pre>
-<h3 id="实例"><a aria-hidden="true" tabindex="-1" href="#实例"><span class="icon icon-link"></span></a>实例</h3>
-<p><strong>列出所有端口 (包括监听和未监听的)</strong></p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">netstat</span> -a     <span class="token comment">#列出所有端口</span>
+  <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>实例</h3>
+  <p><strong>列出所有端口 (包括监听和未监听的)</strong></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">netstat</span> -a     <span class="token comment">#列出所有端口</span>
 <span class="token function">netstat</span> -at    <span class="token comment">#列出所有tcp端口</span>
 <span class="token function">netstat</span> -au    <span class="token comment">#列出所有udp端口                             </span>
 </code></pre>
-<p><strong>列出所有处于监听状态的 Sockets</strong></p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">netstat</span> -l        <span class="token comment">#只显示监听端口</span>
+  <p><strong>列出所有处于监听状态的 Sockets</strong></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">netstat</span> -l        <span class="token comment">#只显示监听端口</span>
 <span class="token function">netstat</span> -lt       <span class="token comment">#只列出所有监听 tcp 端口</span>
 <span class="token function">netstat</span> -lu       <span class="token comment">#只列出所有监听 udp 端口</span>
 <span class="token function">netstat</span> -lx       <span class="token comment">#只列出所有监听 UNIX 端口</span>
 </code></pre>
-<p><strong>显示每个协议的统计信息</strong></p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">netstat</span> -s   显示所有端口的统计信息
+  <p><strong>显示每个协议的统计信息</strong></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">netstat</span> -s   显示所有端口的统计信息
 <span class="token function">netstat</span> -st   显示TCP端口的统计信息
 <span class="token function">netstat</span> -su   显示UDP端口的统计信息
 
@@ -97,110 +112,115 @@
 ​<span class="token variable">`</span></span>``shell
 <span class="token function">netstat</span> -pt
 </code></pre>
-<p><code>netstat -p</code>可以与其它开关一起使用，就可以添加“PID/进程名称”到netstat输出中，这样debugging的时候可以很方便的发现特定端口运行的程序。</p>
-<p><strong>在netstat输出中不显示主机，端口和用户名(host, port or user)</strong></p>
-<p>当你不想让主机，端口和用户名显示，使用<code>netstat -n</code>。将会使用数字代替那些名称。同样可以加速输出，因为不用进行比对查询。</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">netstat</span> -an
+  <p><code>netstat -p</code>可以与其它开关一起使用，就可以添加“PID/进程名称”到netstat输出中，这样debugging的时候可以很方便的发现特定端口运行的程序。</p>
+  <p><strong>在netstat输出中不显示主机，端口和用户名(host, port or user)</strong></p>
+  <p>当你不想让主机，端口和用户名显示，使用<code>netstat -n</code>。将会使用数字代替那些名称。同样可以加速输出，因为不用进行比对查询。</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">netstat</span> -an
 </code></pre>
-<p>如果只是不想让这三个名称中的一个被显示，使用以下命令:</p>
-<pre class="language-shell"><code class="language-shell">netsat -a --numeric-ports
+  <p>如果只是不想让这三个名称中的一个被显示，使用以下命令:</p>
+  <pre class="language-shell"><code class="language-shell">netsat -a --numeric-ports
 netsat -a --numeric-hosts
 netsat -a --numeric-users
 </code></pre>
-<p><strong>持续输出netstat信息</strong></p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">netstat</span> -c   <span class="token comment">#每隔一秒输出网络信息</span>
+  <p><strong>持续输出netstat信息</strong></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">netstat</span> -c   <span class="token comment">#每隔一秒输出网络信息</span>
 </code></pre>
-<p><strong>显示系统不支持的地址族(Address Families)</strong></p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">netstat</span> --verbose
+  <p><strong>显示系统不支持的地址族(Address Families)</strong></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">netstat</span> --verbose
 </code></pre>
-<p>在输出的末尾，会有如下的信息：</p>
-<pre class="language-shell"><code class="language-shell">netstat: no support <span class="token keyword">for</span> <span class="token variable"><span class="token variable">`</span>AF IPX' on this system.
+  <p>在输出的末尾，会有如下的信息：</p>
+  <pre class="language-shell"><code class="language-shell">netstat: no support <span class="token keyword">for</span> <span class="token variable"><span class="token variable">`</span>AF IPX' on this system.
 netstat: no support <span class="token keyword">for</span> <span class="token variable">`</span></span>AF AX25<span class="token string">' on this system.
 netstat: no support for `AF X25'</span> on this system.
 netstat: no support <span class="token keyword">for</span> `AF NETROM' on this system.
 </code></pre>
-<p><strong>显示核心路由信息</strong></p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">netstat</span> -r
+  <p><strong>显示核心路由信息</strong></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">netstat</span> -r
 </code></pre>
-<p>使用<code>netstat -rn</code>显示数字格式，不查询主机名称。</p>
-<p><strong>找出程序运行的端口</strong></p>
-<p>并不是所有的进程都能找到，没有权限的会不显示，使用 root 权限查看所有的信息。</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">netstat</span> -ap <span class="token operator">|</span> <span class="token function">grep</span> <span class="token function">ssh</span>
+  <p>使用<code>netstat -rn</code>显示数字格式，不查询主机名称。</p>
+  <p><strong>找出程序运行的端口</strong></p>
+  <p>并不是所有的进程都能找到，没有权限的会不显示，使用 root 权限查看所有的信息。</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">netstat</span> -ap <span class="token operator">|</span> <span class="token function">grep</span> <span class="token function">ssh</span>
 </code></pre>
-<p>找出运行在指定端口的进程：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">netstat</span> -an <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">':80'</span>
+  <p>找出运行在指定端口的进程：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">netstat</span> -an <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">':80'</span>
 </code></pre>
-<p><strong>通过端口找进程ID</strong></p>
-<pre class="language-bash"><code class="language-bash"><span class="token function">netstat</span> -anp<span class="token operator">|</span><span class="token function">grep</span> <span class="token number">8081</span> <span class="token operator">|</span> <span class="token function">grep</span> LISTEN<span class="token operator">|</span><span class="token function">awk</span> <span class="token string">'{printf $7}'</span><span class="token operator">|</span><span class="token function">cut</span> -d/ -f1
+  <p><strong>通过端口找进程ID</strong></p>
+  <pre class="language-bash"><code class="language-bash"><span class="token function">netstat</span> -anp<span class="token operator">|</span><span class="token function">grep</span> <span class="token number">8081</span> <span class="token operator">|</span> <span class="token function">grep</span> LISTEN<span class="token operator">|</span><span class="token function">awk</span> <span class="token string">'{printf $7}'</span><span class="token operator">|</span><span class="token function">cut</span> -d/ -f1
 </code></pre>
-<p><strong>显示网络接口列表</strong></p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">netstat</span> -i
+  <p><strong>显示网络接口列表</strong></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">netstat</span> -i
 </code></pre>
-<p>显示详细信息，像是ifconfig使用<code>netstat -ie</code>。</p>
-<p><strong>IP和TCP分析</strong></p>
-<p>查看连接某服务端口最多的的IP地址：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">netstat</span> -ntu <span class="token operator">|</span> <span class="token function">grep</span> :80 <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $5}'</span> <span class="token operator">|</span> <span class="token function">cut</span> -d: -f1 <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{++ip[$1]} END {for(i in ip) print ip[i],"\t",i}'</span> <span class="token operator">|</span> <span class="token function">sort</span> -nr
+  <p>显示详细信息，像是ifconfig使用<code>netstat -ie</code>。</p>
+  <p><strong>IP和TCP分析</strong></p>
+  <p>查看连接某服务端口最多的的IP地址：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">netstat</span> -ntu <span class="token operator">|</span> <span class="token function">grep</span> :80 <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{print $5}'</span> <span class="token operator">|</span> <span class="token function">cut</span> -d: -f1 <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{++ip[$1]} END {for(i in ip) print ip[i],"\t",i}'</span> <span class="token operator">|</span> <span class="token function">sort</span> -nr
 </code></pre>
-<p>TCP各种状态列表：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">netstat</span> -nt <span class="token operator">|</span> <span class="token function">grep</span> -e <span class="token number">127.0</span>.0.1 -e <span class="token number">0.0</span>.0.0 -e ::: -v <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'/^tcp/ {++state[$NF]} END {for(i in state) print i,"\t",state[i]}'</span>
+  <p>TCP各种状态列表：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">netstat</span> -nt <span class="token operator">|</span> <span class="token function">grep</span> -e <span class="token number">127.0</span>.0.1 -e <span class="token number">0.0</span>.0.0 -e ::: -v <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'/^tcp/ {++state[$NF]} END {for(i in state) print i,"\t",state[i]}'</span>
 </code></pre>
-<p>查看phpcgi进程数，如果接近预设值，说明不够用，需要增加：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">netstat</span> -anpo <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"php-cgi"</span> <span class="token operator">|</span> <span class="token function">wc</span> -l
+  <p>查看phpcgi进程数，如果接近预设值，说明不够用，需要增加：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">netstat</span> -anpo <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"php-cgi"</span> <span class="token operator">|</span> <span class="token function">wc</span> -l
 </code></pre>
-<h2 id="扩展知识"><a aria-hidden="true" tabindex="-1" href="#扩展知识"><span class="icon icon-link"></span></a>扩展知识</h2>
-<h3 id="网络连接状态详解"><a aria-hidden="true" tabindex="-1" href="#网络连接状态详解"><span class="icon icon-link"></span></a>网络连接状态详解</h3>
-<p><strong>共有12中可能的状态</strong>，前面11种是按照TCP连接建立的三次握手和TCP连接断开的四次挥手过程来描述的：</p>
-<ol>
-<li>
-<p>LISTEN：首先服务端需要打开一个socket进行监听，状态为 LISTEN，侦听来自远方TCP端口的连接请求 ；</p>
-</li>
-<li>
-<p>SYN_SENT：客户端通过应用程序调用connect进行active open，于是客户端tcp发送一个SYN以请求建立一个连接，之后状态置为 SYN_SENT，在发送连接请求后等待匹配的连接请求；</p>
-</li>
-<li>
-<p>SYN_RECV：服务端应发出ACK确认客户端的 SYN，同时自己向客户端发送一个SYN，之后状态置为，在收到和发送一个连接请求后等待对连接请求的确认；</p>
-</li>
-<li>
-<p>ESTABLISHED：代表一个打开的连接，双方可以进行或已经在数据交互了， 代表一个打开的连接，数据可以传送给用户；</p>
-</li>
-<li>
-<p>FIN_WAIT1：主动关闭(active close)端应用程序调用close，于是其TCP发出FIN请求主动关闭连接，之后进入FIN_WAIT1状态， 等待远程TCP的连接中断请求，或先前的连接中断请求的确认；</p>
-</li>
-<li>
-<p>CLOSE_WAIT：被动关闭(passive close)端TCP接到FIN后，就发出ACK以回应FIN请求(它的接收也作为文件结束符传递给上层应用程序)，并进入CLOSE_WAIT， 等待从本地用户发来的连接中断请求；</p>
-</li>
-<li>
-<p>FIN_WAIT2：主动关闭端接到ACK后，就进入了 FIN-WAIT-2，从远程TCP等待连接中断请求；</p>
-</li>
-<li>
-<p>LAST_ACK：被动关闭端一段时间后，接收到文件结束符的应用程 序将调用CLOSE关闭连接，这导致它的TCP也发送一个 FIN,等待对方的ACK.就进入了LAST-ACK，等待原来发向远程TCP的连接中断请求的确认；</p>
-</li>
-<li>
-<p>TIME_WAIT:在主动关闭端接收到FIN后，TCP 就发送ACK包，并进入TIME-WAIT状态，等待足够的时间以确保远程TCP接收到连接中断请求的确认；</p>
-</li>
-<li>
-<p>CLOSING: 比较少见，等待远程TCP对连接中断的确认；</p>
-</li>
-<li>
-<p>CLOSED: 被动关闭端在接受到ACK包后，就进入了closed的状态，连接结束，没有任何连接状态；</p>
-</li>
-<li>
-<p>UNKNOWN：未知的Socket状态；</p>
-</li>
-</ol>
-<p><strong>常见标志位</strong></p>
-<ul>
-<li>
-<p>SYN: (同步序列编号,Synchronize Sequence Numbers)该标志仅在三次握手建立TCP连接时有效。表示一个新的TCP连接请求。</p>
-</li>
-<li>
-<p>ACK: (确认编号,Acknowledgement Number)是对TCP请求的确认标志,同时提示对端系统已经成功接收所有数据。</p>
-</li>
-<li>
-<p>FIN: (结束标志,FINish)用来结束一个TCP回话.但对应端口仍处于开放状态,准备接收后续数据。</p>
-</li>
-</ul>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+  <h2 id="扩展知识"><a class="anchor" aria-hidden="true" tabindex="-1" href="#扩展知识"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>扩展知识</h2>
+  <h3 id="网络连接状态详解"><a class="anchor" aria-hidden="true" tabindex="-1" href="#网络连接状态详解"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>网络连接状态详解</h3>
+  <p><strong>共有12中可能的状态</strong>，前面11种是按照TCP连接建立的三次握手和TCP连接断开的四次挥手过程来描述的：</p>
+  <ol>
+    <li>
+      <p>LISTEN：首先服务端需要打开一个socket进行监听，状态为 LISTEN，侦听来自远方TCP端口的连接请求 ；</p>
+    </li>
+    <li>
+      <p>SYN_SENT：客户端通过应用程序调用connect进行active open，于是客户端tcp发送一个SYN以请求建立一个连接，之后状态置为 SYN_SENT，在发送连接请求后等待匹配的连接请求；</p>
+    </li>
+    <li>
+      <p>SYN_RECV：服务端应发出ACK确认客户端的 SYN，同时自己向客户端发送一个SYN，之后状态置为，在收到和发送一个连接请求后等待对连接请求的确认；</p>
+    </li>
+    <li>
+      <p>ESTABLISHED：代表一个打开的连接，双方可以进行或已经在数据交互了， 代表一个打开的连接，数据可以传送给用户；</p>
+    </li>
+    <li>
+      <p>FIN_WAIT1：主动关闭(active close)端应用程序调用close，于是其TCP发出FIN请求主动关闭连接，之后进入FIN_WAIT1状态， 等待远程TCP的连接中断请求，或先前的连接中断请求的确认；</p>
+    </li>
+    <li>
+      <p>CLOSE_WAIT：被动关闭(passive close)端TCP接到FIN后，就发出ACK以回应FIN请求(它的接收也作为文件结束符传递给上层应用程序)，并进入CLOSE_WAIT， 等待从本地用户发来的连接中断请求；</p>
+    </li>
+    <li>
+      <p>FIN_WAIT2：主动关闭端接到ACK后，就进入了 FIN-WAIT-2，从远程TCP等待连接中断请求；</p>
+    </li>
+    <li>
+      <p>LAST_ACK：被动关闭端一段时间后，接收到文件结束符的应用程 序将调用CLOSE关闭连接，这导致它的TCP也发送一个 FIN,等待对方的ACK.就进入了LAST-ACK，等待原来发向远程TCP的连接中断请求的确认；</p>
+    </li>
+    <li>
+      <p>TIME_WAIT:在主动关闭端接收到FIN后，TCP 就发送ACK包，并进入TIME-WAIT状态，等待足够的时间以确保远程TCP接收到连接中断请求的确认；</p>
+    </li>
+    <li>
+      <p>CLOSING: 比较少见，等待远程TCP对连接中断的确认；</p>
+    </li>
+    <li>
+      <p>CLOSED: 被动关闭端在接受到ACK包后，就进入了closed的状态，连接结束，没有任何连接状态；</p>
+    </li>
+    <li>
+      <p>UNKNOWN：未知的Socket状态；</p>
+    </li>
+  </ol>
+  <p><strong>常见标志位</strong></p>
+  <ul>
+    <li>
+      <p>SYN: (同步序列编号,Synchronize Sequence Numbers)该标志仅在三次握手建立TCP连接时有效。表示一个新的TCP连接请求。</p>
+    </li>
+    <li>
+      <p>ACK: (确认编号,Acknowledgement Number)是对TCP请求的确认标志,同时提示对端系统已经成功接收所有数据。</p>
+    </li>
+    <li>
+      <p>FIN: (结束标志,FINish)用来结束一个TCP回话.但对应端口仍处于开放状态,准备接收后续数据。</p>
+    </li>
+  </ul><!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+</div>
+
 </div>
 
 <div class="footer ">
@@ -223,7 +243,7 @@ netstat: no support <span class="token keyword">for</span> `AF NETROM' on this s
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1630702913612"></script>
-<script type="text/javascript" src="../js/index.js?v=1630702913612"></script>
+<script type="text/javascript" src="../js/dt.js?v=1633360854634"></script>
+<script type="text/javascript" src="../js/index.js?v=1633360854634"></script>
 </body>
 </html>

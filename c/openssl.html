@@ -10,10 +10,9 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,openssl,强大的安全套接字层密码库">
     <title>openssl 命令，Linux openssl 命令详解：强大的安全套接字层密码库 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1630702913627">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633360854654">
 </head>
 <body>
-<a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
 <div class="header header_list">
     <div class="logo">
         <a href="/">
@@ -40,124 +39,137 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/openssl.md">添加实例</a>
 </span>
 
-<h1 id="openssl"><a aria-hidden="true" tabindex="-1" href="#openssl"><span class="icon icon-link"></span></a>openssl</h1>
-<p>强大的安全套接字层密码库</p>
-<h2 id="补充说明"><a aria-hidden="true" tabindex="-1" href="#补充说明"><span class="icon icon-link"></span></a>补充说明</h2>
-<p><strong>OpenSSL</strong> 是一个强大的安全套接字层密码库，囊括主要的密码算法、常用的密钥和证书封装管理功能及SSL协议，并提供丰富的应用程序供测试或其它目的使用。在OpenSSL被曝出现严重安全漏洞后，发现多数通过SSL协议加密的网站使用名为OpenSSL的开源软件包。由于这是互联网应用最广泛的安全传输方法，被网银、在线支付、电商网站、门户网站、电子邮件等重要网站广泛使用，所以该漏洞影响范围广大。</p>
-<p>OpenSSL有两种运行模式：交互模式和批处理模式。</p>
-<p>直接输入openssl回车进入交互模式，输入带命令选项的openssl进入批处理模式。</p>
-<p>OpenSSL整个软件包大概可以分成三个主要的功能部分：密码算法库、SSL协议库以及应用程序。OpenSSL的目录结构自然也是围绕这三个功能部分进行规划的。 </p>
-<p><strong>对称加密算法</strong></p>
-<p>OpenSSL一共提供了8种对称加密算法，其中7种是分组加密算法，仅有的一种流加密算法是RC4。这7种分组加密算法分别是AES、DES、Blowfish、CAST、IDEA、RC2、RC5，都支持电子密码本模式（ECB）、加密分组链接模式（CBC）、加密反馈模式（CFB）和输出反馈模式（OFB）四种常用的分组密码加密模式。其中，AES使用的加密反馈模式（CFB）和输出反馈模式（OFB）分组长度是128位，其它算法使用的则是64位。事实上，DES算法里面不仅仅是常用的DES算法，还支持三个密钥和两个密钥3DES算法。 </p>
-<p><strong>非对称加密算法</strong></p>
-<p>OpenSSL一共实现了4种非对称加密算法，包括DH算法、RSA算法、DSA算法和椭圆曲线算法（EC）。DH算法一般用于密钥交换。RSA算法既可以用于密钥交换，也可以用于数字签名，当然，如果你能够忍受其缓慢的速度，那么也可以用于数据加密。DSA算法则一般只用于数字签名。</p>
-<p><strong>信息摘要算法</strong></p>
-<p>OpenSSL实现了5种信息摘要算法，分别是MD2、MD5、MDC2、SHA（SHA1）和RIPEMD。SHA算法事实上包括了SHA和SHA1两种信息摘要算法，此外，OpenSSL还实现了DSS标准中规定的两种信息摘要算法DSS和DSS1。 </p>
-<p><strong>密钥和证书管理</strong></p>
-<p>密钥和证书管理是PKI的一个重要组成部分，OpenSSL为之提供了丰富的功能，支持多种标准。 </p>
-<p>首先，OpenSSL实现了ASN.1的证书和密钥相关标准，提供了对证书、公钥、私钥、证书请求以及CRL等数据对象的DER、PEM和BASE64的编解码功能。OpenSSL提供了产生各种公开密钥对和对称密钥的方法、函数和应用程序，同时提供了对公钥和私钥的DER编解码功能。并实现了私钥的PKCS#12和PKCS#8的编解码功能。OpenSSL在标准中提供了对私钥的加密保护功能，使得密钥可以安全地进行存储和分发。 </p>
-<p>在此基础上，OpenSSL实现了对证书的X.509标准编解码、PKCS#12格式的编解码以及PKCS#7的编解码功能。并提供了一种文本数据库，支持证书的管理功能，包括证书密钥产生、请求产生、证书签发、吊销和验证等功能。 </p>
-<p>事实上，OpenSSL提供的CA应用程序就是一个小型的证书管理中心（CA），实现了证书签发的整个流程和证书管理的大部分机制。</p>
-<h3 id="实例"><a aria-hidden="true" tabindex="-1" href="#实例"><span class="icon icon-link"></span></a>实例</h3>
-<p><strong>1、使用 openssl 生成密码</strong></p>
-<p>几乎所有 Linux 发行版都包含 openssl。我们可以利用它的随机功能来生成可以用作密码的随机字母字符串。</p>
-<pre class="language-shell"><code class="language-shell">openssl rand -base64 <span class="token number">10</span>
+
+<div class="wmde-markdown"><a aria-label="View source on GitHub" target="__blank" class="github-corner" href="https://github.com/jaywcjlove/linux-command.git"><svg width="54" height="54" viewBox="0 0 250 250" aria-hidden="true" style="fill: rgb(32, 34, 37); color: rgb(255, 255, 255); position: fixed; z-index: 99999; border: 0px; top: 0px; right: 0px;">
+      <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+      <path style="transform-origin: 130px 106px;" class="octo-arm" fill="currentColor" d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"></path>
+      <path class="octo-body" fill="currentColor" d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"></path>
+    </svg></a>
+  <h1 id="openssl"><a class="anchor" aria-hidden="true" tabindex="-1" href="#openssl"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>openssl</h1>
+  <p>强大的安全套接字层密码库</p>
+  <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>补充说明</h2>
+  <p><strong>OpenSSL</strong> 是一个强大的安全套接字层密码库，囊括主要的密码算法、常用的密钥和证书封装管理功能及SSL协议，并提供丰富的应用程序供测试或其它目的使用。在OpenSSL被曝出现严重安全漏洞后，发现多数通过SSL协议加密的网站使用名为OpenSSL的开源软件包。由于这是互联网应用最广泛的安全传输方法，被网银、在线支付、电商网站、门户网站、电子邮件等重要网站广泛使用，所以该漏洞影响范围广大。</p>
+  <p>OpenSSL有两种运行模式：交互模式和批处理模式。</p>
+  <p>直接输入openssl回车进入交互模式，输入带命令选项的openssl进入批处理模式。</p>
+  <p>OpenSSL整个软件包大概可以分成三个主要的功能部分：密码算法库、SSL协议库以及应用程序。OpenSSL的目录结构自然也是围绕这三个功能部分进行规划的。 </p>
+  <p><strong>对称加密算法</strong></p>
+  <p>OpenSSL一共提供了8种对称加密算法，其中7种是分组加密算法，仅有的一种流加密算法是RC4。这7种分组加密算法分别是AES、DES、Blowfish、CAST、IDEA、RC2、RC5，都支持电子密码本模式（ECB）、加密分组链接模式（CBC）、加密反馈模式（CFB）和输出反馈模式（OFB）四种常用的分组密码加密模式。其中，AES使用的加密反馈模式（CFB）和输出反馈模式（OFB）分组长度是128位，其它算法使用的则是64位。事实上，DES算法里面不仅仅是常用的DES算法，还支持三个密钥和两个密钥3DES算法。 </p>
+  <p><strong>非对称加密算法</strong></p>
+  <p>OpenSSL一共实现了4种非对称加密算法，包括DH算法、RSA算法、DSA算法和椭圆曲线算法（EC）。DH算法一般用于密钥交换。RSA算法既可以用于密钥交换，也可以用于数字签名，当然，如果你能够忍受其缓慢的速度，那么也可以用于数据加密。DSA算法则一般只用于数字签名。</p>
+  <p><strong>信息摘要算法</strong></p>
+  <p>OpenSSL实现了5种信息摘要算法，分别是MD2、MD5、MDC2、SHA（SHA1）和RIPEMD。SHA算法事实上包括了SHA和SHA1两种信息摘要算法，此外，OpenSSL还实现了DSS标准中规定的两种信息摘要算法DSS和DSS1。 </p>
+  <p><strong>密钥和证书管理</strong></p>
+  <p>密钥和证书管理是PKI的一个重要组成部分，OpenSSL为之提供了丰富的功能，支持多种标准。 </p>
+  <p>首先，OpenSSL实现了ASN.1的证书和密钥相关标准，提供了对证书、公钥、私钥、证书请求以及CRL等数据对象的DER、PEM和BASE64的编解码功能。OpenSSL提供了产生各种公开密钥对和对称密钥的方法、函数和应用程序，同时提供了对公钥和私钥的DER编解码功能。并实现了私钥的PKCS#12和PKCS#8的编解码功能。OpenSSL在标准中提供了对私钥的加密保护功能，使得密钥可以安全地进行存储和分发。 </p>
+  <p>在此基础上，OpenSSL实现了对证书的X.509标准编解码、PKCS#12格式的编解码以及PKCS#7的编解码功能。并提供了一种文本数据库，支持证书的管理功能，包括证书密钥产生、请求产生、证书签发、吊销和验证等功能。 </p>
+  <p>事实上，OpenSSL提供的CA应用程序就是一个小型的证书管理中心（CA），实现了证书签发的整个流程和证书管理的大部分机制。</p>
+  <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>实例</h3>
+  <p><strong>1、使用 openssl 生成密码</strong></p>
+  <p>几乎所有 Linux 发行版都包含 openssl。我们可以利用它的随机功能来生成可以用作密码的随机字母字符串。</p>
+  <pre class="language-shell"><code class="language-shell">openssl rand -base64 <span class="token number">10</span>
 <span class="token comment"># nU9LlHO5nsuUvw==</span>
 </code></pre>
-<p>nU9LlHO5nsuUvw==</p>
-<p><strong>2、消息摘要算法应用例子</strong></p>
-<p>用SHA1算法计算文件file.txt的哈西值，输出到stdout：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl dgst -sha1 file.txt</span>
+  <p>nU9LlHO5nsuUvw==</p>
+  <p><strong>2、消息摘要算法应用例子</strong></p>
+  <p>用SHA1算法计算文件file.txt的哈西值，输出到stdout：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl dgst -sha1 file.txt</span>
 </code></pre>
-<p>用SHA1算法计算文件file.txt的哈西值，输出到文件digest.txt：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl sha1 -out digest.txt file.txt</span>
+  <p>用SHA1算法计算文件file.txt的哈西值，输出到文件digest.txt：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl sha1 -out digest.txt file.txt</span>
 </code></pre>
-<p>用DSS1(SHA1)算法为文件file.txt签名，输出到文件dsasign.bin。签名的private key必须为DSA算法产生的，保存在文件dsakey.pem中。</p>
-<pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl dgst -dss1 -sign dsakey.pem -out dsasign.bin file.txt</span>
+  <p>用DSS1(SHA1)算法为文件file.txt签名，输出到文件dsasign.bin。签名的private key必须为DSA算法产生的，保存在文件dsakey.pem中。</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl dgst -dss1 -sign dsakey.pem -out dsasign.bin file.txt</span>
 </code></pre>
-<p>用dss1算法验证file.txt的数字签名dsasign.bin，验证的private key为DSA算法产生的文件dsakey.pem。</p>
-<pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl dgst -dss1 -prverify dsakey.pem -signature dsasign.bin file.txt</span>
+  <p>用dss1算法验证file.txt的数字签名dsasign.bin，验证的private key为DSA算法产生的文件dsakey.pem。</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl dgst -dss1 -prverify dsakey.pem -signature dsasign.bin file.txt</span>
 </code></pre>
-<p>用sha1算法为文件file.txt签名,输出到文件rsasign.bin，签名的private key为RSA算法产生的文件rsaprivate.pem。</p>
-<pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl sha1 -sign rsaprivate.pem -out rsasign.bin file.txt</span>
+  <p>用sha1算法为文件file.txt签名,输出到文件rsasign.bin，签名的private key为RSA算法产生的文件rsaprivate.pem。</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl sha1 -sign rsaprivate.pem -out rsasign.bin file.txt</span>
 </code></pre>
-<p>用sha1算法验证file.txt的数字签名rsasign.bin，验证的public key为RSA算法生成的rsapublic.pem。</p>
-<pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl sha1 -verify rsapublic.pem -signature rsasign.bin file.txt</span>
+  <p>用sha1算法验证file.txt的数字签名rsasign.bin，验证的public key为RSA算法生成的rsapublic.pem。</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl sha1 -verify rsapublic.pem -signature rsasign.bin file.txt</span>
 </code></pre>
-<p><strong>3、对称加密应用例子</strong></p>
-<p>对称加密应用例子，用DES3算法的CBC模式加密文件plaintext.doc，加密结果输出到文件ciphertext.bin。</p>
-<pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl enc -des3 -salt -in plaintext.doc -out ciphertext.bin</span>
+  <p><strong>3、对称加密应用例子</strong></p>
+  <p>对称加密应用例子，用DES3算法的CBC模式加密文件plaintext.doc，加密结果输出到文件ciphertext.bin。</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl enc -des3 -salt -in plaintext.doc -out ciphertext.bin</span>
 </code></pre>
-<p>用DES3算法的OFB模式解密文件ciphertext.bin，提供的口令为trousers，输出到文件plaintext.doc。注意：因为模式不同，该命令不能对以上的文件进行解密。</p>
-<pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl enc -des-ede3-ofb -d -in ciphertext.bin -out plaintext.doc -pass pass:trousers</span>
+  <p>用DES3算法的OFB模式解密文件ciphertext.bin，提供的口令为trousers，输出到文件plaintext.doc。注意：因为模式不同，该命令不能对以上的文件进行解密。</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl enc -des-ede3-ofb -d -in ciphertext.bin -out plaintext.doc -pass pass:trousers</span>
 </code></pre>
-<p>用Blowfish的CFB模式加密plaintext.doc，口令从环境变量PASSWORD中取，输出到文件ciphertext.bin。</p>
-<pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl bf-cfb -salt -in plaintext.doc -out ciphertext.bin -pass env:PASSWORD</span>
+  <p>用Blowfish的CFB模式加密plaintext.doc，口令从环境变量PASSWORD中取，输出到文件ciphertext.bin。</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl bf-cfb -salt -in plaintext.doc -out ciphertext.bin -pass env:PASSWORD</span>
 </code></pre>
-<p>给文件ciphertext.bin用base64编码，输出到文件base64.txt。</p>
-<pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl base64 -in ciphertext.bin -out base64.txt</span>
+  <p>给文件ciphertext.bin用base64编码，输出到文件base64.txt。</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl base64 -in ciphertext.bin -out base64.txt</span>
 </code></pre>
-<p>用RC5算法的CBC模式加密文件plaintext.doc，输出到文件ciphertext.bin，salt、key和初始化向量(iv)在命令行指定。</p>
-<pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl rc5 -in plaintext.doc -out ciphertext.bin -S C62CB1D49F158ADC -iv E9EDACA1BD7090C6 -K 89D4B1678D604FAA3DBFFD030A314B29</span>
+  <p>用RC5算法的CBC模式加密文件plaintext.doc，输出到文件ciphertext.bin，salt、key和初始化向量(iv)在命令行指定。</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl rc5 -in plaintext.doc -out ciphertext.bin -S C62CB1D49F158ADC -iv E9EDACA1BD7090C6 -K 89D4B1678D604FAA3DBFFD030A314B29</span>
 </code></pre>
-<p><strong>4、Diffie-Hellman应用例子</strong></p>
-<p>使用生成因子2和随机的1024-bit的素数产生D0ffie-Hellman参数，输出保存到文件dhparam.pem</p>
-<pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl dhparam -out dhparam.pem -2 1024</span>
+  <p><strong>4、Diffie-Hellman应用例子</strong></p>
+  <p>使用生成因子2和随机的1024-bit的素数产生D0ffie-Hellman参数，输出保存到文件dhparam.pem</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl dhparam -out dhparam.pem -2 1024</span>
 </code></pre>
-<p>从dhparam.pem中读取Diffie-Hell参数，以C代码的形式，输出到stdout。</p>
-<pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl dhparam -in dhparam.pem -noout -C</span>
+  <p>从dhparam.pem中读取Diffie-Hell参数，以C代码的形式，输出到stdout。</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl dhparam -in dhparam.pem -noout -C</span>
 </code></pre>
-<p><strong>5、DSA应用例子应用例子</strong></p>
-<p>生成1024位DSA参数集，并输出到文件dsaparam.pem。</p>
-<pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl dsaparam -out dsaparam.pem 1024</span>
+  <p><strong>5、DSA应用例子应用例子</strong></p>
+  <p>生成1024位DSA参数集，并输出到文件dsaparam.pem。</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl dsaparam -out dsaparam.pem 1024</span>
 </code></pre>
-<p>使用参数文件dsaparam.pem生成DSA私钥匙，采用3DES加密后输出到文件dsaprivatekey.pem</p>
-<pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl gendsa -out dsaprivatekey.pem -des3 dsaparam.pem</span>
+  <p>使用参数文件dsaparam.pem生成DSA私钥匙，采用3DES加密后输出到文件dsaprivatekey.pem</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl gendsa -out dsaprivatekey.pem -des3 dsaparam.pem</span>
 </code></pre>
-<p>使用私钥匙dsaprivatekey.pem生成公钥匙，输出到dsapublickey.pem</p>
-<pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl dsa -in dsaprivatekey.pem -pubout -out dsapublickey.pem</span>
+  <p>使用私钥匙dsaprivatekey.pem生成公钥匙，输出到dsapublickey.pem</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl dsa -in dsaprivatekey.pem -pubout -out dsapublickey.pem</span>
 </code></pre>
-<p>从dsaprivatekey.pem中读取私钥匙，解密并输入新口令进行加密，然后写回文件dsaprivatekey.pem</p>
-<pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl dsa -in dsaprivatekey.pem -out dsaprivatekey.pem -des3 -passin</span>
+  <p>从dsaprivatekey.pem中读取私钥匙，解密并输入新口令进行加密，然后写回文件dsaprivatekey.pem</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl dsa -in dsaprivatekey.pem -out dsaprivatekey.pem -des3 -passin</span>
 </code></pre>
-<p><strong>6、RSA应用例子</strong></p>
-<p>产生1024位RSA私匙，用3DES加密它，口令为trousers，输出到文件rsaprivatekey.pem</p>
-<pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl genrsa -out rsaprivatekey.pem -passout pass:trousers -des3 1024</span>
+  <p><strong>6、RSA应用例子</strong></p>
+  <p>产生1024位RSA私匙，用3DES加密它，口令为trousers，输出到文件rsaprivatekey.pem</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl genrsa -out rsaprivatekey.pem -passout pass:trousers -des3 1024</span>
 </code></pre>
-<p>从文件rsaprivatekey.pem读取私匙，用口令trousers解密，生成的公钥匙输出到文件rsapublickey.pem</p>
-<pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl rsa -in rsaprivatekey.pem -passin pass:trousers -pubout -out rsapubckey.pem</span>
+  <p>从文件rsaprivatekey.pem读取私匙，用口令trousers解密，生成的公钥匙输出到文件rsapublickey.pem</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl rsa -in rsaprivatekey.pem -passin pass:trousers -pubout -out rsapubckey.pem</span>
 </code></pre>
-<p>用公钥匙rsapublickey.pem加密文件plain.txt，输出到文件cipher.txt</p>
-<pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl rsautl -encrypt -pubin -inkey rsapublickey.pem -in plain.txt -out cipher.txt</span>
+  <p>用公钥匙rsapublickey.pem加密文件plain.txt，输出到文件cipher.txt</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl rsautl -encrypt -pubin -inkey rsapublickey.pem -in plain.txt -out cipher.txt</span>
 </code></pre>
-<p>使用私钥匙rsaprivatekey.pem解密密文cipher.txt，输出到文件plain.txt</p>
-<pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl rsautl -decrypt -inkey rsaprivatekey.pem -in cipher.txt -out plain.txt</span>
+  <p>使用私钥匙rsaprivatekey.pem解密密文cipher.txt，输出到文件plain.txt</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl rsautl -decrypt -inkey rsaprivatekey.pem -in cipher.txt -out plain.txt</span>
 </code></pre>
-<p>用私钥匙rsaprivatekey.pem给文件plain.txt签名，输出到文件signature.bin</p>
-<pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl rsautl -sign -inkey rsaprivatekey.pem -in plain.txt -out signature.bin</span>
+  <p>用私钥匙rsaprivatekey.pem给文件plain.txt签名，输出到文件signature.bin</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl rsautl -sign -inkey rsaprivatekey.pem -in plain.txt -out signature.bin</span>
 </code></pre>
-<p>用公钥匙rsapublickey.pem验证签名signature.bin，输出到文件plain.txt</p>
-<pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl rsautl -verify -pubin -inkey rsapublickey.pem -in signature.bin -out plain</span>
+  <p>用公钥匙rsapublickey.pem验证签名signature.bin，输出到文件plain.txt</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl rsautl -verify -pubin -inkey rsapublickey.pem -in signature.bin -out plain</span>
 </code></pre>
-<p>从X.509证书文件cert.pem中获取公钥匙，用3DES加密mail.txt，输出到文件mail.enc</p>
-<pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl smime -encrypt -in mail.txt -des3 -out mail.enc cert.pem</span>
+  <p>从X.509证书文件cert.pem中获取公钥匙，用3DES加密mail.txt，输出到文件mail.enc</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl smime -encrypt -in mail.txt -des3 -out mail.enc cert.pem</span>
 </code></pre>
-<p>从X.509证书文件cert.pem中获取接收人的公钥匙，用私钥匙key.pem解密S/MIME消息mail.enc，结果输出到文件mail.txt</p>
-<pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl smime -decrypt -in mail.enc -recip cert.pem -inkey key.pem -out mail.txt</span>
+  <p>从X.509证书文件cert.pem中获取接收人的公钥匙，用私钥匙key.pem解密S/MIME消息mail.enc，结果输出到文件mail.txt</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl smime -decrypt -in mail.enc -recip cert.pem -inkey key.pem -out mail.txt</span>
 </code></pre>
-<p>cert.pem为X.509证书文件，用私匙key,pem为mail.txt签名，证书被包含在S/MIME消息中，输出到文件mail.sgn</p>
-<pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl smime -sign -in mail.txt -signer cert.pem -inkey key.pem -out mail.sgn</span>
+  <p>cert.pem为X.509证书文件，用私匙key,pem为mail.txt签名，证书被包含在S/MIME消息中，输出到文件mail.sgn</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl smime -sign -in mail.txt -signer cert.pem -inkey key.pem -out mail.sgn</span>
 </code></pre>
-<p>验证S/MIME消息mail.sgn，输出到文件mail.txt，签名者的证书应该作为S/MIME消息的一部分包含在mail.sgn中</p>
-<pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl smime -verify -in mail.sgn -out mail.txt</span>
+  <p>验证S/MIME消息mail.sgn，输出到文件mail.txt，签名者的证书应该作为S/MIME消息的一部分包含在mail.sgn中</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token comment"># openssl smime -verify -in mail.sgn -out mail.txt</span>
 </code></pre>
-<p>更多实例:</p>
-<pre class="language-shell"><code class="language-shell">openssl version -a
+  <p>更多实例:</p>
+  <pre class="language-shell"><code class="language-shell">openssl version -a
 openssl <span class="token builtin class-name">help</span>
 openssl genrsa -aes128 -out fd.key <span class="token number">2048</span> <span class="token comment"># pem format</span>
 openssl rsa -text -in fd.key
-</code></pre>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+</code></pre><!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+</div>
+
 </div>
 
 <div class="footer ">
@@ -180,7 +192,7 @@ openssl rsa -text -in fd.key
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1630702913628"></script>
-<script type="text/javascript" src="../js/index.js?v=1630702913628"></script>
+<script type="text/javascript" src="../js/dt.js?v=1633360854655"></script>
+<script type="text/javascript" src="../js/index.js?v=1633360854655"></script>
 </body>
 </html>

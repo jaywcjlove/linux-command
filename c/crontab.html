@@ -10,10 +10,9 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,crontab,提交和管理用户的需要周期性执行的任务">
     <title>crontab 命令，Linux crontab 命令详解：提交和管理用户的需要周期性执行的任务 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1630702913401">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633360854426">
 </head>
 <body>
-<a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
 <div class="header header_list">
     <div class="logo">
         <a href="/">
@@ -40,26 +39,44 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/crontab.md">添加实例</a>
 </span>
 
-<h1 id="crontab"><a aria-hidden="true" tabindex="-1" href="#crontab"><span class="icon icon-link"></span></a>crontab</h1>
-<p>提交和管理用户的需要周期性执行的任务</p>
-<h2 id="补充说明"><a aria-hidden="true" tabindex="-1" href="#补充说明"><span class="icon icon-link"></span></a>补充说明</h2>
-<p><strong>crontab命令</strong> 被用来提交和管理用户的需要周期性执行的任务，与windows下的计划任务类似，当安装完成操作系统后，默认会安装此服务工具，并且会自动启动crond进程，crond进程每分钟会定期检查是否有要执行的任务，如果有要执行的任务，则自动执行该任务。</p>
-<h3 id="语法"><a aria-hidden="true" tabindex="-1" href="#语法"><span class="icon icon-link"></span></a>语法</h3>
-<pre class="language-shell"><code class="language-shell">crontab<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
+
+<div class="wmde-markdown"><a aria-label="View source on GitHub" target="__blank" class="github-corner" href="https://github.com/jaywcjlove/linux-command.git"><svg width="54" height="54" viewBox="0 0 250 250" aria-hidden="true" style="fill: rgb(32, 34, 37); color: rgb(255, 255, 255); position: fixed; z-index: 99999; border: 0px; top: 0px; right: 0px;">
+      <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+      <path style="transform-origin: 130px 106px;" class="octo-arm" fill="currentColor" d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"></path>
+      <path class="octo-body" fill="currentColor" d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"></path>
+    </svg></a>
+  <h1 id="crontab"><a class="anchor" aria-hidden="true" tabindex="-1" href="#crontab"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>crontab</h1>
+  <p>提交和管理用户的需要周期性执行的任务</p>
+  <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>补充说明</h2>
+  <p><strong>crontab命令</strong> 被用来提交和管理用户的需要周期性执行的任务，与windows下的计划任务类似，当安装完成操作系统后，默认会安装此服务工具，并且会自动启动crond进程，crond进程每分钟会定期检查是否有要执行的任务，如果有要执行的任务，则自动执行该任务。</p>
+  <h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>语法</h3>
+  <pre class="language-shell"><code class="language-shell">crontab<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
 </code></pre>
-<h3 id="选项"><a aria-hidden="true" tabindex="-1" href="#选项"><span class="icon icon-link"></span></a>选项</h3>
-<pre class="language-shell"><code class="language-shell">-e：编辑该用户的计时器设置；
+  <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>选项</h3>
+  <pre class="language-shell"><code class="language-shell">-e：编辑该用户的计时器设置；
 -l：列出该用户的计时器设置；
 -r：删除该用户的计时器设置；
 -u<span class="token operator">&#x3C;</span>用户名称<span class="token operator">></span>：指定要设定计时器的用户名称。
 </code></pre>
-<h3 id="参数"><a aria-hidden="true" tabindex="-1" href="#参数"><span class="icon icon-link"></span></a>参数</h3>
-<p>crontab文件：指定包含待执行任务的crontab文件。</p>
-<h3 id="知识扩展"><a aria-hidden="true" tabindex="-1" href="#知识扩展"><span class="icon icon-link"></span></a>知识扩展</h3>
-<p>Linux下的任务调度分为两类： <strong>系统任务调度</strong> 和 <strong>用户任务调度</strong> 。</p>
-<p><strong>系统任务调度：</strong> 系统周期性所要执行的工作，比如写缓存数据到硬盘、日志清理等。在<code>/etc</code>目录下有一个crontab文件，这个就是系统任务调度的配置文件。</p>
-<p><code>/etc/crontab</code>文件包括下面几行：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token assign-left variable"><span class="token environment constant">SHELL</span></span><span class="token operator">=</span>/bin/bash
+  <h3 id="参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参数"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>参数</h3>
+  <p>crontab文件：指定包含待执行任务的crontab文件。</p>
+  <h3 id="知识扩展"><a class="anchor" aria-hidden="true" tabindex="-1" href="#知识扩展"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>知识扩展</h3>
+  <p>Linux下的任务调度分为两类： <strong>系统任务调度</strong> 和 <strong>用户任务调度</strong> 。</p>
+  <p><strong>系统任务调度：</strong> 系统周期性所要执行的工作，比如写缓存数据到硬盘、日志清理等。在<code>/etc</code>目录下有一个crontab文件，这个就是系统任务调度的配置文件。</p>
+  <p><code>/etc/crontab</code>文件包括下面几行：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token assign-left variable"><span class="token environment constant">SHELL</span></span><span class="token operator">=</span>/bin/bash
 <span class="token assign-left variable"><span class="token environment constant">PATH</span></span><span class="token operator">=</span>/sbin:/bin:/usr/sbin:/usr/bin
 <span class="token assign-left variable">MAILTO</span><span class="token operator">=</span><span class="token string">""</span><span class="token environment constant">HOME</span><span class="token operator">=</span>/
 
@@ -69,96 +86,99 @@
 <span class="token number">22</span> <span class="token number">4</span> * * <span class="token number">0</span> root run-parts /etc/cron.weekly
 <span class="token number">42</span> <span class="token number">4</span> <span class="token number">1</span> * * root run-parts /etc/cron.monthly
 </code></pre>
-<p>前四行是用来配置crond任务运行的环境变量，第一行SHELL变量指定了系统要使用哪个shell，这里是bash，第二行PATH变量指定了系统执行命令的路径，第三行MAILTO变量指定了crond的任务执行信息将通过电子邮件发送给root用户，如果MAILTO变量的值为空，则表示不发送任务执行信息给用户，第四行的HOME变量指定了在执行命令或者脚本时使用的主目录。</p>
-<p><strong>用户任务调度：</strong> 用户定期要执行的工作，比如用户数据备份、定时邮件提醒等。用户可以使用 crontab 工具来定制自己的计划任务。所有用户定义的crontab文件都被保存在<code>/var/spool/cron</code>目录中。其文件名与用户名一致，使用者权限文件如下：</p>
-<pre class="language-shell"><code class="language-shell">/etc/cron.deny     该文件中所列用户不允许使用crontab命令
+  <p>前四行是用来配置crond任务运行的环境变量，第一行SHELL变量指定了系统要使用哪个shell，这里是bash，第二行PATH变量指定了系统执行命令的路径，第三行MAILTO变量指定了crond的任务执行信息将通过电子邮件发送给root用户，如果MAILTO变量的值为空，则表示不发送任务执行信息给用户，第四行的HOME变量指定了在执行命令或者脚本时使用的主目录。</p>
+  <p><strong>用户任务调度：</strong> 用户定期要执行的工作，比如用户数据备份、定时邮件提醒等。用户可以使用 crontab 工具来定制自己的计划任务。所有用户定义的crontab文件都被保存在<code>/var/spool/cron</code>目录中。其文件名与用户名一致，使用者权限文件如下：</p>
+  <pre class="language-shell"><code class="language-shell">/etc/cron.deny     该文件中所列用户不允许使用crontab命令
 /etc/cron.allow    该文件中所列用户允许使用crontab命令
 /var/spool/cron/   所有用户crontab文件存放的目录,以用户名命名
 </code></pre>
-<p>crontab文件的含义：用户所建立的crontab文件中，每一行都代表一项任务，每行的每个字段代表一项设置，它的格式共分为六个字段，前五段是时间设定段，第六段是要执行的命令段，格式如下：</p>
-<pre class="language-shell"><code class="language-shell">minute   hour   day   month   week   <span class="token builtin class-name">command</span>     顺序：分 时 日 月 周
+  <p>crontab文件的含义：用户所建立的crontab文件中，每一行都代表一项任务，每行的每个字段代表一项设置，它的格式共分为六个字段，前五段是时间设定段，第六段是要执行的命令段，格式如下：</p>
+  <pre class="language-shell"><code class="language-shell">minute   hour   day   month   week   <span class="token builtin class-name">command</span>     顺序：分 时 日 月 周
 </code></pre>
-<p>其中：</p>
-<ul>
-<li>minute： 表示分钟，可以是从0到59之间的任何整数。</li>
-<li>hour：表示小时，可以是从0到23之间的任何整数。</li>
-<li>day：表示日期，可以是从1到31之间的任何整数。</li>
-<li>month：表示月份，可以是从1到12之间的任何整数。</li>
-<li>week：表示星期几，可以是从0到7之间的任何整数，这里的0或7代表星期日。</li>
-<li>command：要执行的命令，可以是系统命令，也可以是自己编写的脚本文件。</li>
-</ul>
-<p>在以上各个字段中，还可以使用以下特殊字符：</p>
-<ul>
-<li>星号（*）：代表所有可能的值，例如month字段如果是星号，则表示在满足其它字段的制约条件后每月都执行该命令操作。</li>
-<li>逗号（,）：可以用逗号隔开的值指定一个列表范围，例如，“1,2,5,7,8,9”</li>
-<li>中杠（-）：可以用整数之间的中杠表示一个整数范围，例如“2-6”表示“2,3,4,5,6”</li>
-<li>正斜线（/）：可以用正斜线指定时间的间隔频率，例如“0-23/2”表示每两小时执行一次。同时正斜线可以和星号一起使用，例如*/10，如果用在minute字段，表示每十分钟执行一次。</li>
-</ul>
-<p><strong>crond服务</strong></p>
-<pre class="language-shell"><code class="language-shell">/sbin/service crond start    <span class="token comment"># 启动服务</span>
+  <p>其中：</p>
+  <ul>
+    <li>minute： 表示分钟，可以是从0到59之间的任何整数。</li>
+    <li>hour：表示小时，可以是从0到23之间的任何整数。</li>
+    <li>day：表示日期，可以是从1到31之间的任何整数。</li>
+    <li>month：表示月份，可以是从1到12之间的任何整数。</li>
+    <li>week：表示星期几，可以是从0到7之间的任何整数，这里的0或7代表星期日。</li>
+    <li>command：要执行的命令，可以是系统命令，也可以是自己编写的脚本文件。</li>
+  </ul>
+  <p>在以上各个字段中，还可以使用以下特殊字符：</p>
+  <ul>
+    <li>星号（*）：代表所有可能的值，例如month字段如果是星号，则表示在满足其它字段的制约条件后每月都执行该命令操作。</li>
+    <li>逗号（,）：可以用逗号隔开的值指定一个列表范围，例如，“1,2,5,7,8,9”</li>
+    <li>中杠（-）：可以用整数之间的中杠表示一个整数范围，例如“2-6”表示“2,3,4,5,6”</li>
+    <li>正斜线（/）：可以用正斜线指定时间的间隔频率，例如“0-23/2”表示每两小时执行一次。同时正斜线可以和星号一起使用，例如*/10，如果用在minute字段，表示每十分钟执行一次。</li>
+  </ul>
+  <p><strong>crond服务</strong></p>
+  <pre class="language-shell"><code class="language-shell">/sbin/service crond start    <span class="token comment"># 启动服务</span>
 /sbin/service crond stop     <span class="token comment"># 关闭服务</span>
 /sbin/service crond restart  <span class="token comment"># 重启服务</span>
 /sbin/service crond reload   <span class="token comment"># 重新载入配置</span>
 </code></pre>
-<p>查看crontab服务状态：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">service</span> crond status
+  <p>查看crontab服务状态：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">service</span> crond status
 </code></pre>
-<p>手动启动crontab服务：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">service</span> crond start
+  <p>手动启动crontab服务：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">service</span> crond start
 </code></pre>
-<p>查看crontab服务是否已设置为开机启动，执行命令：</p>
-<pre class="language-shell"><code class="language-shell">ntsysv
+  <p>查看crontab服务是否已设置为开机启动，执行命令：</p>
+  <pre class="language-shell"><code class="language-shell">ntsysv
 </code></pre>
-<p>加入开机自动启动：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">chkconfig</span> –level <span class="token number">35</span> crond on
+  <p>加入开机自动启动：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">chkconfig</span> –level <span class="token number">35</span> crond on
 </code></pre>
-<h3 id="实例"><a aria-hidden="true" tabindex="-1" href="#实例"><span class="icon icon-link"></span></a>实例</h3>
-<p>每1分钟执行一次command</p>
-<pre class="language-shell"><code class="language-shell">* * * * * <span class="token builtin class-name">command</span>
+  <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>实例</h3>
+  <p>每1分钟执行一次command</p>
+  <pre class="language-shell"><code class="language-shell">* * * * * <span class="token builtin class-name">command</span>
 </code></pre>
-<p>每小时的第3和第15分钟执行</p>
-<pre class="language-shell"><code class="language-shell"><span class="token number">3,15</span> * * * * <span class="token builtin class-name">command</span>
+  <p>每小时的第3和第15分钟执行</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token number">3,15</span> * * * * <span class="token builtin class-name">command</span>
 </code></pre>
-<p>在上午8点到11点的第3和第15分钟执行</p>
-<pre class="language-shell"><code class="language-shell"><span class="token number">3,15</span> <span class="token number">8</span>-11 * * * <span class="token builtin class-name">command</span>
+  <p>在上午8点到11点的第3和第15分钟执行</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token number">3,15</span> <span class="token number">8</span>-11 * * * <span class="token builtin class-name">command</span>
 </code></pre>
-<p>每隔两天的上午8点到11点的第3和第15分钟执行</p>
-<pre class="language-shell"><code class="language-shell"><span class="token number">3,15</span> <span class="token number">8</span>-11 */2 * * <span class="token builtin class-name">command</span>
+  <p>每隔两天的上午8点到11点的第3和第15分钟执行</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token number">3,15</span> <span class="token number">8</span>-11 */2 * * <span class="token builtin class-name">command</span>
 </code></pre>
-<p>每个星期一的上午8点到11点的第3和第15分钟执行</p>
-<pre class="language-shell"><code class="language-shell"><span class="token number">3,15</span> <span class="token number">8</span>-11 * * <span class="token number">1</span> <span class="token builtin class-name">command</span>
+  <p>每个星期一的上午8点到11点的第3和第15分钟执行</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token number">3,15</span> <span class="token number">8</span>-11 * * <span class="token number">1</span> <span class="token builtin class-name">command</span>
 </code></pre>
-<p>每晚的21:30重启smb </p>
-<pre class="language-shell"><code class="language-shell"><span class="token number">30</span> <span class="token number">21</span> * * * /etc/init.d/smb restart
+  <p>每晚的21:30重启smb </p>
+  <pre class="language-shell"><code class="language-shell"><span class="token number">30</span> <span class="token number">21</span> * * * /etc/init.d/smb restart
 </code></pre>
-<p>每月1、10、22日的4 : 45重启smb </p>
-<pre class="language-shell"><code class="language-shell"><span class="token number">45</span> <span class="token number">4</span> <span class="token number">1,10</span>,22 * * /etc/init.d/smb restart
+  <p>每月1、10、22日的4 : 45重启smb </p>
+  <pre class="language-shell"><code class="language-shell"><span class="token number">45</span> <span class="token number">4</span> <span class="token number">1,10</span>,22 * * /etc/init.d/smb restart
 </code></pre>
-<p>每周六、周日的1:10重启smb</p>
-<pre class="language-shell"><code class="language-shell"><span class="token number">10</span> <span class="token number">1</span> * * <span class="token number">6,0</span> /etc/init.d/smb restart
+  <p>每周六、周日的1:10重启smb</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token number">10</span> <span class="token number">1</span> * * <span class="token number">6,0</span> /etc/init.d/smb restart
 </code></pre>
-<p>每天18 : 00至23 : 00之间每隔30分钟重启smb </p>
-<pre class="language-shell"><code class="language-shell"><span class="token number">0,30</span> <span class="token number">18</span>-23 * * * /etc/init.d/smb restart
+  <p>每天18 : 00至23 : 00之间每隔30分钟重启smb </p>
+  <pre class="language-shell"><code class="language-shell"><span class="token number">0,30</span> <span class="token number">18</span>-23 * * * /etc/init.d/smb restart
 </code></pre>
-<p>每星期六的晚上11:00 pm重启smb </p>
-<pre class="language-shell"><code class="language-shell"><span class="token number">0</span> <span class="token number">23</span> * * <span class="token number">6</span> /etc/init.d/smb restart
+  <p>每星期六的晚上11:00 pm重启smb </p>
+  <pre class="language-shell"><code class="language-shell"><span class="token number">0</span> <span class="token number">23</span> * * <span class="token number">6</span> /etc/init.d/smb restart
 </code></pre>
-<p>每一小时重启smb </p>
-<pre class="language-shell"><code class="language-shell">* */1 * * * /etc/init.d/smb restart
+  <p>每一小时重启smb </p>
+  <pre class="language-shell"><code class="language-shell">* */1 * * * /etc/init.d/smb restart
 </code></pre>
-<p>晚上11点到早上7点之间，每隔一小时重启smb</p>
-<pre class="language-shell"><code class="language-shell">* <span class="token number">23</span>-7/1 * * * /etc/init.d/smb restart
+  <p>晚上11点到早上7点之间，每隔一小时重启smb</p>
+  <pre class="language-shell"><code class="language-shell">* <span class="token number">23</span>-7/1 * * * /etc/init.d/smb restart
 </code></pre>
-<p>每月的4号与每周一到周三的11点重启smb </p>
-<pre class="language-shell"><code class="language-shell"><span class="token number">0</span> <span class="token number">11</span> <span class="token number">4</span> * mon-wed /etc/init.d/smb restart
+  <p>每月的4号与每周一到周三的11点重启smb </p>
+  <pre class="language-shell"><code class="language-shell"><span class="token number">0</span> <span class="token number">11</span> <span class="token number">4</span> * mon-wed /etc/init.d/smb restart
 </code></pre>
-<p>一月一号的4点重启smb</p>
-<pre class="language-shell"><code class="language-shell"><span class="token number">0</span> <span class="token number">4</span> <span class="token number">1</span> jan * /etc/init.d/smb restart
+  <p>一月一号的4点重启smb</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token number">0</span> <span class="token number">4</span> <span class="token number">1</span> jan * /etc/init.d/smb restart
 </code></pre>
-<p>每小时执行<code>/etc/cron.hourly</code>目录内的脚本</p>
-<pre class="language-shell"><code class="language-shell">01 * * * * root run-parts /etc/cron.hourly
-</code></pre>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+  <p>每小时执行<code>/etc/cron.hourly</code>目录内的脚本</p>
+  <pre class="language-shell"><code class="language-shell">01 * * * * root run-parts /etc/cron.hourly
+</code></pre><!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+</div>
+
 </div>
 
 <div class="footer ">
@@ -181,7 +201,7 @@
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1630702913402"></script>
-<script type="text/javascript" src="../js/index.js?v=1630702913402"></script>
+<script type="text/javascript" src="../js/dt.js?v=1633360854427"></script>
+<script type="text/javascript" src="../js/index.js?v=1633360854427"></script>
 </body>
 </html>

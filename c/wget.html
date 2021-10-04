@@ -10,10 +10,9 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,wget,Linux系统下载文件工具">
     <title>wget 命令，Linux wget 命令详解：Linux系统下载文件工具 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1630702913795">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633360854849">
 </head>
 <body>
-<a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner"> <svg viewBox="0 0 250 250"><!-- kenny wang <wowohoo@qq.com> https://github.com/jaywcjlove --> <title>logo</title> <desc>Linux Command Logo. https://github.com/jaywcjlove</desc><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg> </a>
 <div class="header header_list">
     <div class="logo">
         <a href="/">
@@ -40,24 +39,38 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/wget.md">添加实例</a>
 </span>
 
-<h1 id="wget"><a aria-hidden="true" tabindex="-1" href="#wget"><span class="icon icon-link"></span></a>wget</h1>
-<p>Linux系统下载文件工具</p>
-<h2 id="补充说明"><a aria-hidden="true" tabindex="-1" href="#补充说明"><span class="icon icon-link"></span></a>补充说明</h2>
-<p><strong>wget命令</strong> 用来从指定的URL下载文件。wget非常稳定，它在带宽很窄的情况下和不稳定网络中有很强的适应性，如果是由于网络的原因下载失败，wget会不断的尝试，直到整个文件下载完毕。如果是服务器打断下载过程，它会再次联到服务器上从停止的地方继续下载。这对从那些限定了链接时间的服务器上下载大文件非常有用。</p>
-<p>wget支持HTTP，HTTPS和FTP协议，可以使用HTTP代理。所谓的自动下载是指，wget可以在用户退出系统的之后在后台执行。这意味这你可以登录系统，启动一个wget下载任务，然后退出系统，wget将在后台执行直到任务完成，相对于其它大部分浏览器在下载大量数据时需要用户一直的参与，这省去了极大的麻烦。</p>
-<p>用于从网络上下载资源，没有指定目录，下载资源回默认为当前目录。wget虽然功能强大，但是使用起来还是比较简单：</p>
-<ol>
-<li><strong>支持断点下传功能</strong> 这一点，也是网络蚂蚁和FlashGet当年最大的卖点，现在，Wget也可以使用此功能，那些网络不是太好的用户可以放心了；</li>
-<li><strong>同时支持FTP和HTTP下载方式</strong> 尽管现在大部分软件可以使用HTTP方式下载，但是，有些时候，仍然需要使用FTP方式下载软件；</li>
-<li><strong>支持代理服务器</strong> 对安全强度很高的系统而言，一般不会将自己的系统直接暴露在互联网上，所以，支持代理是下载软件必须有的功能；</li>
-<li><strong>设置方便简单</strong> 可能，习惯图形界面的用户已经不是太习惯命令行了，但是，命令行在设置上其实有更多的优点，最少，鼠标可以少点很多次，也不要担心是否错点鼠标；</li>
-<li><strong>程序小，完全免费</strong> 程序小可以考虑不计，因为现在的硬盘实在太大了；完全免费就不得不考虑了，即使网络上有很多所谓的免费软件，但是，这些软件的广告却不是我们喜欢的。</li>
-</ol>
-<h3 id="语法"><a aria-hidden="true" tabindex="-1" href="#语法"><span class="icon icon-link"></span></a>语法</h3>
-<pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> <span class="token punctuation">[</span>参数<span class="token punctuation">]</span> <span class="token punctuation">[</span>URL地址<span class="token punctuation">]</span>
+
+<div class="wmde-markdown"><a aria-label="View source on GitHub" target="__blank" class="github-corner" href="https://github.com/jaywcjlove/linux-command.git"><svg width="54" height="54" viewBox="0 0 250 250" aria-hidden="true" style="fill: rgb(32, 34, 37); color: rgb(255, 255, 255); position: fixed; z-index: 99999; border: 0px; top: 0px; right: 0px;">
+      <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+      <path style="transform-origin: 130px 106px;" class="octo-arm" fill="currentColor" d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"></path>
+      <path class="octo-body" fill="currentColor" d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"></path>
+    </svg></a>
+  <h1 id="wget"><a class="anchor" aria-hidden="true" tabindex="-1" href="#wget"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>wget</h1>
+  <p>Linux系统下载文件工具</p>
+  <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>补充说明</h2>
+  <p><strong>wget命令</strong> 用来从指定的URL下载文件。wget非常稳定，它在带宽很窄的情况下和不稳定网络中有很强的适应性，如果是由于网络的原因下载失败，wget会不断的尝试，直到整个文件下载完毕。如果是服务器打断下载过程，它会再次联到服务器上从停止的地方继续下载。这对从那些限定了链接时间的服务器上下载大文件非常有用。</p>
+  <p>wget支持HTTP，HTTPS和FTP协议，可以使用HTTP代理。所谓的自动下载是指，wget可以在用户退出系统的之后在后台执行。这意味这你可以登录系统，启动一个wget下载任务，然后退出系统，wget将在后台执行直到任务完成，相对于其它大部分浏览器在下载大量数据时需要用户一直的参与，这省去了极大的麻烦。</p>
+  <p>用于从网络上下载资源，没有指定目录，下载资源回默认为当前目录。wget虽然功能强大，但是使用起来还是比较简单：</p>
+  <ol>
+    <li><strong>支持断点下传功能</strong> 这一点，也是网络蚂蚁和FlashGet当年最大的卖点，现在，Wget也可以使用此功能，那些网络不是太好的用户可以放心了；</li>
+    <li><strong>同时支持FTP和HTTP下载方式</strong> 尽管现在大部分软件可以使用HTTP方式下载，但是，有些时候，仍然需要使用FTP方式下载软件；</li>
+    <li><strong>支持代理服务器</strong> 对安全强度很高的系统而言，一般不会将自己的系统直接暴露在互联网上，所以，支持代理是下载软件必须有的功能；</li>
+    <li><strong>设置方便简单</strong> 可能，习惯图形界面的用户已经不是太习惯命令行了，但是，命令行在设置上其实有更多的优点，最少，鼠标可以少点很多次，也不要担心是否错点鼠标；</li>
+    <li><strong>程序小，完全免费</strong> 程序小可以考虑不计，因为现在的硬盘实在太大了；完全免费就不得不考虑了，即使网络上有很多所谓的免费软件，但是，这些软件的广告却不是我们喜欢的。</li>
+  </ol>
+  <h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>语法</h3>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> <span class="token punctuation">[</span>参数<span class="token punctuation">]</span> <span class="token punctuation">[</span>URL地址<span class="token punctuation">]</span>
 </code></pre>
-<h3 id="选项"><a aria-hidden="true" tabindex="-1" href="#选项"><span class="icon icon-link"></span></a>选项</h3>
-<pre class="language-shell"><code class="language-shell">启动参数：
+  <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>选项</h3>
+  <pre class="language-shell"><code class="language-shell">启动参数：
 
 -V, –-version 显示wget的版本后退出
 -h, –-help 打印语法帮助
@@ -158,126 +171,131 @@ FTP 选项参数：
 -np, –-no-parent 不要追溯到父目录
 <span class="token function">wget</span> -S –-spider url 不下载只显示过程
 </code></pre>
-<h3 id="参数"><a aria-hidden="true" tabindex="-1" href="#参数"><span class="icon icon-link"></span></a>参数</h3>
-<p>URL：下载指定的URL地址。</p>
-<h3 id="实例"><a aria-hidden="true" tabindex="-1" href="#实例"><span class="icon icon-link"></span></a>实例</h3>
-<p><strong>使用wget下载单个文件</strong></p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> http://www.jsdig.com/testfile.zip
+  <h3 id="参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参数"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>参数</h3>
+  <p>URL：下载指定的URL地址。</p>
+  <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
+        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
+      </svg></a>实例</h3>
+  <p><strong>使用wget下载单个文件</strong></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> http://www.jsdig.com/testfile.zip
 </code></pre>
-<p>以下的例子是从网络下载一个文件并保存在当前目录，在下载的过程中会显示进度条，包含（下载完成百分比，已经下载的字节，当前下载速度，剩余下载时间）。</p>
-<p><strong>下载并以不同的文件名保存</strong></p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> -O wordpress.zip http://www.jsdig.com/download.aspx?id<span class="token operator">=</span><span class="token number">1080</span>
+  <p>以下的例子是从网络下载一个文件并保存在当前目录，在下载的过程中会显示进度条，包含（下载完成百分比，已经下载的字节，当前下载速度，剩余下载时间）。</p>
+  <p><strong>下载并以不同的文件名保存</strong></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> -O wordpress.zip http://www.jsdig.com/download.aspx?id<span class="token operator">=</span><span class="token number">1080</span>
 </code></pre>
-<p>wget默认会以最后一个符合<code>/</code>的后面的字符来命令，对于动态链接的下载通常文件名会不正确。</p>
-<p>错误：下面的例子会下载一个文件并以名称<code>download.aspx?id=1080</code>保存:</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> http://www.jsdig.com/download?id<span class="token operator">=</span><span class="token number">1</span>
+  <p>wget默认会以最后一个符合<code>/</code>的后面的字符来命令，对于动态链接的下载通常文件名会不正确。</p>
+  <p>错误：下面的例子会下载一个文件并以名称<code>download.aspx?id=1080</code>保存:</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> http://www.jsdig.com/download?id<span class="token operator">=</span><span class="token number">1</span>
 </code></pre>
-<p>即使下载的文件是zip格式，它仍然以<code>download.php?id=1080</code>命名。</p>
-<p>正确：为了解决这个问题，我们可以使用参数<code>-O</code>来指定一个文件名：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> -O wordpress.zip http://www.jsdig.com/download.aspx?id<span class="token operator">=</span><span class="token number">1080</span>
+  <p>即使下载的文件是zip格式，它仍然以<code>download.php?id=1080</code>命名。</p>
+  <p>正确：为了解决这个问题，我们可以使用参数<code>-O</code>来指定一个文件名：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> -O wordpress.zip http://www.jsdig.com/download.aspx?id<span class="token operator">=</span><span class="token number">1080</span>
 </code></pre>
-<p><strong>wget限速下载</strong></p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> --limit-rate<span class="token operator">=</span>300k http://www.jsdig.com/testfile.zip
+  <p><strong>wget限速下载</strong></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> --limit-rate<span class="token operator">=</span>300k http://www.jsdig.com/testfile.zip
 </code></pre>
-<p>当你执行wget的时候，它默认会占用全部可能的宽带下载。但是当你准备下载一个大文件，而你还需要下载其它文件时就有必要限速了。</p>
-<p><strong>使用wget断点续传</strong></p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> -c http://www.jsdig.com/testfile.zip
+  <p>当你执行wget的时候，它默认会占用全部可能的宽带下载。但是当你准备下载一个大文件，而你还需要下载其它文件时就有必要限速了。</p>
+  <p><strong>使用wget断点续传</strong></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> -c http://www.jsdig.com/testfile.zip
 </code></pre>
-<p>使用<code>wget -c</code>重新启动下载中断的文件，对于我们下载大文件时突然由于网络等原因中断非常有帮助，我们可以继续接着下载而不是重新下载一个文件。需要继续中断的下载时可以使用<code>-c</code>参数。</p>
-<p><strong>使用wget后台下载</strong></p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> -b http://www.jsdig.com/testfile.zip
+  <p>使用<code>wget -c</code>重新启动下载中断的文件，对于我们下载大文件时突然由于网络等原因中断非常有帮助，我们可以继续接着下载而不是重新下载一个文件。需要继续中断的下载时可以使用<code>-c</code>参数。</p>
+  <p><strong>使用wget后台下载</strong></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> -b http://www.jsdig.com/testfile.zip
 
 Continuing <span class="token keyword">in</span> background, pid <span class="token number">1840</span>.
 Output will be written to `wget-log'.
 </code></pre>
-<p>对于下载非常大的文件的时候，我们可以使用参数<code>-b</code>进行后台下载，你可以使用以下命令来察看下载进度：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">tail</span> -f wget-log
+  <p>对于下载非常大的文件的时候，我们可以使用参数<code>-b</code>进行后台下载，你可以使用以下命令来察看下载进度：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">tail</span> -f wget-log
 </code></pre>
-<p><strong>伪装代理名称下载</strong></p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> --user-agent<span class="token operator">=</span><span class="token string">"Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.16 (KHTML, like Gecko) Chrome/10.0.648.204 Safari/534.16"</span> http://www.jsdig.com/testfile.zip
+  <p><strong>伪装代理名称下载</strong></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> --user-agent<span class="token operator">=</span><span class="token string">"Mozilla/5.0 (Windows; U; Windows NT 6.1; en-US) AppleWebKit/534.16 (KHTML, like Gecko) Chrome/10.0.648.204 Safari/534.16"</span> http://www.jsdig.com/testfile.zip
 </code></pre>
-<p>有些网站能通过根据判断代理名称不是浏览器而拒绝你的下载请求。不过你可以通过<code>--user-agent</code>参数伪装。</p>
-<p><strong>测试下载链接</strong></p>
-<p>当你打算进行定时下载，你应该在预定时间测试下载链接是否有效。我们可以增加<code>--spider</code>参数进行检查。</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> --spider URL
+  <p>有些网站能通过根据判断代理名称不是浏览器而拒绝你的下载请求。不过你可以通过<code>--user-agent</code>参数伪装。</p>
+  <p><strong>测试下载链接</strong></p>
+  <p>当你打算进行定时下载，你应该在预定时间测试下载链接是否有效。我们可以增加<code>--spider</code>参数进行检查。</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> --spider URL
 </code></pre>
-<p>如果下载链接正确，将会显示:</p>
-<pre class="language-shell"><code class="language-shell">Spider mode enabled. Check <span class="token keyword">if</span> remote <span class="token function">file</span> exists.
+  <p>如果下载链接正确，将会显示:</p>
+  <pre class="language-shell"><code class="language-shell">Spider mode enabled. Check <span class="token keyword">if</span> remote <span class="token function">file</span> exists.
 HTTP request sent, awaiting response<span class="token punctuation">..</span>. <span class="token number">200</span> OK
 Length: unspecified <span class="token punctuation">[</span>text/html<span class="token punctuation">]</span>
 Remote <span class="token function">file</span> exists and could contain further links,
 but recursion is disabled -- not retrieving.
 </code></pre>
-<p>这保证了下载能在预定的时间进行，但当你给错了一个链接，将会显示如下错误:</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> --spider url
+  <p>这保证了下载能在预定的时间进行，但当你给错了一个链接，将会显示如下错误:</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> --spider url
 Spider mode enabled. Check <span class="token keyword">if</span> remote <span class="token function">file</span> exists.
 HTTP request sent, awaiting response<span class="token punctuation">..</span>. <span class="token number">404</span> Not Found
 Remote <span class="token function">file</span> does not exist -- broken link<span class="token operator">!</span><span class="token operator">!</span><span class="token operator">!</span>
 </code></pre>
-<p>你可以在以下几种情况下使用<code>--spider</code>参数：</p>
-<ul>
-<li>定时下载之前进行检查</li>
-<li>间隔检测网站是否可用</li>
-<li>检查网站页面的死链接</li>
-</ul>
-<p><strong>增加重试次数</strong></p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> --tries<span class="token operator">=</span><span class="token number">40</span> URL
+  <p>你可以在以下几种情况下使用<code>--spider</code>参数：</p>
+  <ul>
+    <li>定时下载之前进行检查</li>
+    <li>间隔检测网站是否可用</li>
+    <li>检查网站页面的死链接</li>
+  </ul>
+  <p><strong>增加重试次数</strong></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> --tries<span class="token operator">=</span><span class="token number">40</span> URL
 </code></pre>
-<p>如果网络有问题或下载一个大文件也有可能失败。wget默认重试20次连接下载文件。如果需要，你可以使用<code>--tries</code>增加重试次数。</p>
-<p><strong>下载多个文件</strong></p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> -i filelist.txt
+  <p>如果网络有问题或下载一个大文件也有可能失败。wget默认重试20次连接下载文件。如果需要，你可以使用<code>--tries</code>增加重试次数。</p>
+  <p><strong>下载多个文件</strong></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> -i filelist.txt
 </code></pre>
-<p>首先，保存一份下载链接文件：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">cat</span> <span class="token operator">></span> filelist.txt
+  <p>首先，保存一份下载链接文件：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">cat</span> <span class="token operator">></span> filelist.txt
 url1
 url2
 url3
 url4
 </code></pre>
-<p>接着使用这个文件和参数<code>-i</code>下载。</p>
-<p><strong>镜像网站</strong></p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> --mirror -p --convert-links -P ./LOCAL URL
+  <p>接着使用这个文件和参数<code>-i</code>下载。</p>
+  <p><strong>镜像网站</strong></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> --mirror -p --convert-links -P ./LOCAL URL
 </code></pre>
-<p>下载整个网站到本地。</p>
-<ul>
-<li><code>--miror</code>开户镜像下载。</li>
-<li><code>-p</code>下载所有为了html页面显示正常的文件。</li>
-<li><code>--convert-links</code>下载后，转换成本地的链接。</li>
-<li><code>-P ./LOCAL</code>保存所有文件和目录到本地指定目录。</li>
-</ul>
-<p><strong>过滤指定格式下载</strong></p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> --reject<span class="token operator">=</span>gif ur
+  <p>下载整个网站到本地。</p>
+  <ul>
+    <li><code>--miror</code>开户镜像下载。</li>
+    <li><code>-p</code>下载所有为了html页面显示正常的文件。</li>
+    <li><code>--convert-links</code>下载后，转换成本地的链接。</li>
+    <li><code>-P ./LOCAL</code>保存所有文件和目录到本地指定目录。</li>
+  </ul>
+  <p><strong>过滤指定格式下载</strong></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> --reject<span class="token operator">=</span>gif ur
 </code></pre>
-<p>下载一个网站，但你不希望下载图片，可以使用这条命令。</p>
-<p><strong>把下载信息存入日志文件</strong></p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> -o download.log URL
+  <p>下载一个网站，但你不希望下载图片，可以使用这条命令。</p>
+  <p><strong>把下载信息存入日志文件</strong></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> -o download.log URL
 </code></pre>
-<p>不希望下载信息直接显示在终端而是在一个日志文件，可以使用。</p>
-<p><strong>限制总下载文件大小</strong></p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> -Q5m -i filelist.txt
+  <p>不希望下载信息直接显示在终端而是在一个日志文件，可以使用。</p>
+  <p><strong>限制总下载文件大小</strong></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> -Q5m -i filelist.txt
 </code></pre>
-<p>当你想要下载的文件超过5M而退出下载，你可以使用。注意：这个参数对单个文件下载不起作用，只能递归下载时才有效。</p>
-<p><strong>下载指定格式文件</strong></p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> -r -A.pdf url
+  <p>当你想要下载的文件超过5M而退出下载，你可以使用。注意：这个参数对单个文件下载不起作用，只能递归下载时才有效。</p>
+  <p><strong>下载指定格式文件</strong></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> -r -A.pdf url
 </code></pre>
-<p>可以在以下情况使用该功能：</p>
-<ul>
-<li>下载一个网站的所有图片。</li>
-<li>下载一个网站的所有视频。</li>
-<li>下载一个网站的所有PDF文件。</li>
-</ul>
-<p><strong>FTP下载</strong></p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> ftp-url
+  <p>可以在以下情况使用该功能：</p>
+  <ul>
+    <li>下载一个网站的所有图片。</li>
+    <li>下载一个网站的所有视频。</li>
+    <li>下载一个网站的所有PDF文件。</li>
+  </ul>
+  <p><strong>FTP下载</strong></p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> ftp-url
 <span class="token function">wget</span> --ftp-user<span class="token operator">=</span>USERNAME --ftp-password<span class="token operator">=</span>PASSWORD url
 </code></pre>
-<p>可以使用wget来完成ftp链接的下载。</p>
-<p>使用wget匿名ftp下载：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> ftp-url
+  <p>可以使用wget来完成ftp链接的下载。</p>
+  <p>使用wget匿名ftp下载：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> ftp-url
 </code></pre>
-<p>使用wget用户名和密码认证的ftp下载：</p>
-<pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> --ftp-user<span class="token operator">=</span>USERNAME --ftp-password<span class="token operator">=</span>PASSWORD url
-</code></pre>
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+  <p>使用wget用户名和密码认证的ftp下载：</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">wget</span> --ftp-user<span class="token operator">=</span>USERNAME --ftp-password<span class="token operator">=</span>PASSWORD url
+</code></pre><!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+</div>
+
 </div>
 
 <div class="footer ">
@@ -300,7 +318,7 @@ url4
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1630702913796"></script>
-<script type="text/javascript" src="../js/index.js?v=1630702913796"></script>
+<script type="text/javascript" src="../js/dt.js?v=1633360854849"></script>
+<script type="text/javascript" src="../js/index.js?v=1633360854849"></script>
 </body>
 </html>
