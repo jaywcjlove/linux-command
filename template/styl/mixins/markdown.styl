@@ -1,5 +1,39 @@
 
-.markdown-body {
+mq-mobile = "screen and (max-width: 479px)"
+
+.edit_btn {
+  position relative
+  right 38px
+  float right
+  top 110px
+  z-index 2
+
+  @media mq-mobile {
+    top 140px
+    right 15px
+  }
+  .split {
+    display inline-block
+    height 13px
+    vertical-align middle
+    width 1px
+    border-left 1px solid #dfdfdf
+    margin -1px 0 0 0
+  }
+  a {
+    text-decoration none
+    background #2196F3
+    color #fff
+    border-radius 3px
+    padding 2px 5px
+    &:hover{
+      color #333
+      background #e6e6e6
+    }
+  }
+}
+
+.wmde-markdown {
   padding 70px 35px 30px 35px
   word-wrap break-word
   font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
@@ -7,33 +41,7 @@
   line-height 1.6
   color #333
   @media mq-mobile {
-      padding-right 0
-  }
-  .edit_btn {
-    position relative
-    right 0
-    float right
-    top 48px
-    z-index 2
-    .split {
-      display inline-block
-      height 13px
-      vertical-align middle
-      width 1px
-      border-left 1px solid #dfdfdf
-      margin -1px 0 0 0
-    }
-    a {
-      text-decoration none
-      background #2196F3
-      color #fff
-      border-radius 3px
-      padding 2px 5px
-      &:hover{
-        color #333
-        background #e6e6e6
-      }
-    }
+    padding: 120px 15px 30px 15px;
   }
   h1, h2, h3, h4, h5, h6 {
     a {
