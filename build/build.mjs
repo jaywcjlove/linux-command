@@ -201,7 +201,7 @@ const cssPath = path.resolve(deployDir, 'css', 'index.css');
 }
 
 function markdownToHTML(str) {
-  return create({ markdown: str, document: undefined, 'github-corners': 'https://github.com/jaywcjlove/linux-command.git' });
+  return create({ markdown: str, document: undefined });
 }
 
 /**
