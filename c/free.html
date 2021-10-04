@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,free,显示内存的使用情况">
     <title>free 命令，Linux free 命令详解：显示内存的使用情况 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633360972292">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633361360875">
 </head>
 <body>
 <div class="header header_list">
@@ -174,11 +174,12 @@ DirectMap1G:     <span class="token number">5242880</span> kB
   <p>Buffer cache是针对磁盘块的缓存，也就是在没有文件系统的情况下，直接对磁盘进行操作的数据会缓存到buffer cache中，例如，文件系统的元数据都会缓存到buffer cache中。</p>
   <p>简单说来，page cache用来缓存文件数据，buffer cache用来缓存磁盘数据。在有文件系统的情况下，对文件操作，那么数据会缓存到page cache，如果直接采用dd等工具对磁盘进行读写，那么数据会缓存到buffer cache。</p>
   <p>所以我们看linux,只要不用swap的交换空间,就不用担心自己的内存太少.如果常常swap用很多,可能你就要考虑加物理内存了.这也是linux看内存是否够用的标准.</p>
-  <p>如果是应用服务器的话，一般只看第二行，+buffers/cache,即对应用程序来说free的内存太少了，也是该考虑优化程序或加内存了。</p><!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+  <p>如果是应用服务器的话，一般只看第二行，+buffers/cache,即对应用程序来说free的内存太少了，也是该考虑优化程序或加内存了。</p>
 </div>
 
 </div>
 
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 <div class="footer ">
   <a target="_blank" href="https://github.com/jaywcjlove/linux-command/new/master/command">添加命令</a> |
   <a href="../hot.html">命令列表</a> |
@@ -199,7 +200,7 @@ DirectMap1G:     <span class="token number">5242880</span> kB
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1633360972292"></script>
-<script type="text/javascript" src="../js/index.js?v=1633360972292"></script>
+<script type="text/javascript" src="../js/dt.js?v=1633361360875"></script>
+<script type="text/javascript" src="../js/index.js?v=1633361360875"></script>
 </body>
 </html>

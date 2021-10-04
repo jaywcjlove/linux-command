@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,sudo,以其他身份来执行命令">
     <title>sudo 命令，Linux sudo 命令详解：以其他身份来执行命令 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633360972559">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633361361173">
 </head>
 <body>
 <div class="header header_list">
@@ -168,11 +168,12 @@ install.log.syslog
   <p>重定向没有被记录在案！为什么？因为在命令运行之前，shell把重定向的工作做完了，sudo根本就没看到重定向。这也有个好处，下面的手段不会得逞：</p>
   <pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>foobar@localhost ~<span class="token punctuation">]</span>$ <span class="token function">sudo</span> <span class="token function">ls</span> /root <span class="token operator">></span> /etc/shadowbash: /etc/shadow: 权限不够
 </code></pre>
-  <p>sudo 有自己的方式来保护安全。以root的身份执行<code>sudo-V</code>，查看一下sudo的设置。因为考虑到安全问题，一部分环境变量并没有传递给sudo后面的命令，或者被检查后再传递的，比如：PATH，HOME，SHELL等。当然，你也可以通过sudoers来配置这些环境变量。</p><!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+  <p>sudo 有自己的方式来保护安全。以root的身份执行<code>sudo-V</code>，查看一下sudo的设置。因为考虑到安全问题，一部分环境变量并没有传递给sudo后面的命令，或者被检查后再传递的，比如：PATH，HOME，SHELL等。当然，你也可以通过sudoers来配置这些环境变量。</p>
 </div>
 
 </div>
 
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 <div class="footer ">
   <a target="_blank" href="https://github.com/jaywcjlove/linux-command/new/master/command">添加命令</a> |
   <a href="../hot.html">命令列表</a> |
@@ -193,7 +194,7 @@ install.log.syslog
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1633360972560"></script>
-<script type="text/javascript" src="../js/index.js?v=1633360972560"></script>
+<script type="text/javascript" src="../js/dt.js?v=1633361361173"></script>
+<script type="text/javascript" src="../js/index.js?v=1633361361173"></script>
 </body>
 </html>

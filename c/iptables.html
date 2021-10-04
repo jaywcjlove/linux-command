@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,iptables,Linux上常用的防火墙软件">
     <title>iptables 命令，Linux iptables 命令详解：Linux上常用的防火墙软件 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633360972349">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633361360945">
 </head>
 <body>
 <div class="header header_list">
@@ -600,11 +600,12 @@ iptables -t nat -A POST_ROUTING -d <span class="token number">10.10</span>.188.2
 <span class="token comment">#场景五</span>
 iptables -I INPUT -p tcp --syn --dport <span class="token number">80</span> -m connlimit --connlimit-above <span class="token number">100</span> -j REJECT <span class="token comment"># 限制并发连接访问数</span>
 iptables -I INPUT -m limit --limit <span class="token number">3</span>/hour --limit-burst <span class="token number">10</span> -j ACCEPT <span class="token comment"># limit模块; --limit-burst 默认为5</span>
-</code></pre><!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+</code></pre>
 </div>
 
 </div>
 
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 <div class="footer ">
   <a target="_blank" href="https://github.com/jaywcjlove/linux-command/new/master/command">添加命令</a> |
   <a href="../hot.html">命令列表</a> |
@@ -625,7 +626,7 @@ iptables -I INPUT -m limit --limit <span class="token number">3</span>/hour --li
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1633360972349"></script>
-<script type="text/javascript" src="../js/index.js?v=1633360972349"></script>
+<script type="text/javascript" src="../js/dt.js?v=1633361360946"></script>
+<script type="text/javascript" src="../js/index.js?v=1633361360946"></script>
 </body>
 </html>

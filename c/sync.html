@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,sync,用于强制被改变的内容立刻写入磁盘">
     <title>sync 命令，Linux sync 命令详解：用于强制被改变的内容立刻写入磁盘 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633360972564">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633361361178">
 </head>
 <body>
 <div class="header header_list">
@@ -76,11 +76,12 @@
   </ul>
   <p>linux系统为了提高读写磁盘的效率，会先将数据放在一块buffer中。在写磁盘时并不是立即将数据写到磁盘中，而是先写入这块buffer中了。此时如果重启系统，就可能造成数据丢失。</p>
   <p>sync命令用来flush文件系统buffer，这样数据才会真正的写到磁盘中，并且buffer才能够释放出来，flush就是用来清空buffer。sync命令会强制将数据写入磁盘中，并释放该数据对应的buffer，所以常常会在写磁盘后输入sync命令来将数据真正的写入磁盘。</p>
-  <p>如果不去手动的输入sync命令来真正的去写磁盘，linux系统也会周期性的去sync数据。</p><!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+  <p>如果不去手动的输入sync命令来真正的去写磁盘，linux系统也会周期性的去sync数据。</p>
 </div>
 
 </div>
 
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 <div class="footer ">
   <a target="_blank" href="https://github.com/jaywcjlove/linux-command/new/master/command">添加命令</a> |
   <a href="../hot.html">命令列表</a> |
@@ -101,7 +102,7 @@
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1633360972564"></script>
-<script type="text/javascript" src="../js/index.js?v=1633360972564"></script>
+<script type="text/javascript" src="../js/dt.js?v=1633361361178"></script>
+<script type="text/javascript" src="../js/index.js?v=1633361361178"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,tcpreplay,将PCAP包重新发送，用于性能或者功能测试">
     <title>tcpreplay 命令，Linux tcpreplay 命令详解：将PCAP包重新发送，用于性能或者功能测试 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633360972650">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633361361187">
 </head>
 <body>
 <div class="header header_list">
@@ -115,11 +115,12 @@
   <p>注意：我在测试的时候犯了一个错误，使用 DUT 的 tftp 升级来做实验，同时穿 过 DUT 重放报文，结果在网卡发送报文的后，DUT 的 mac 地址做了的回应，导致 交互过程没有穿过 DUT，这个问题比较搞笑，上午弄了半天才发现原因，开始还 以为 udp 的连接不能重放。 </p>
   <p>c、使用 tcpreplay 重放报文。 </p>
   <pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@A ~<span class="token punctuation">]</span><span class="token comment"># tcpreplay -c tftp.cache -i eth0 -j eth1 tftp.pcap –v</span>
-</code></pre><!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+</code></pre>
 </div>
 
 </div>
 
+<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 <div class="footer ">
   <a target="_blank" href="https://github.com/jaywcjlove/linux-command/new/master/command">添加命令</a> |
   <a href="../hot.html">命令列表</a> |
@@ -140,7 +141,7 @@
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1633360972651"></script>
-<script type="text/javascript" src="../js/index.js?v=1633360972651"></script>
+<script type="text/javascript" src="../js/dt.js?v=1633361361188"></script>
+<script type="text/javascript" src="../js/index.js?v=1633361361188"></script>
 </body>
 </html>
