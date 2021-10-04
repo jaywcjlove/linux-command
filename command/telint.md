@@ -24,4 +24,3 @@ telint(选项)(参数)
 运行等级：指定要切换的运行等级。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

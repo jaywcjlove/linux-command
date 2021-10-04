@@ -81,4 +81,3 @@ seq -s"`echo -e "\n"`" 9 11
 得到的是个错误结果，不过一般也没有这个必要，它默认的就是回车作为分隔符。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

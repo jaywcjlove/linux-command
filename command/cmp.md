@@ -60,4 +60,3 @@ testfile testfile1           #有差异：第8字节，第2行
 注意：在比较结果中，只能够显示第一比较结果。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

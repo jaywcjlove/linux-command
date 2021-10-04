@@ -96,4 +96,4 @@ md5sum: testfile.md5: no properly formatted MD5 checksum lines found
 这里，testfile.md5只有一行信息，但是我认为地给它多加了一个字符，导致非法。如果md5文件正常那么`-w`有没有都一样。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

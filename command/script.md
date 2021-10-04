@@ -117,4 +117,4 @@ sudo chmod 733 /var/log/script-records/
 最后，执行命令`source /etc/profile`即可。任意用户（`UID ≥ 0`）在终端执行的所有操作都会被安静地记录下来，以天为单位存储。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

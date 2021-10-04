@@ -36,4 +36,3 @@ temp_file_name="/tmp/file.$"
 `$$`是系统预定义变量，显示当前所在进程的进程号，用`.$$`作为添加的后缀会被扩展成当前运行脚本的进程id。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

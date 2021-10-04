@@ -102,4 +102,3 @@ route add default gw 192.168.120.240
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

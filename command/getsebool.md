@@ -40,4 +40,3 @@ setsebool -P httpd_enable_homedirs=0    # 0是关闭  1是开启
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

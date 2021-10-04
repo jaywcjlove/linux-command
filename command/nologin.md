@@ -56,4 +56,3 @@ touch /etc/nologin
 除root以外的用户不能登录了。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

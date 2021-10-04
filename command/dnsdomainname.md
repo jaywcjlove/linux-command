@@ -30,4 +30,3 @@ Result: h_addr_list=`10.160.7.81'
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

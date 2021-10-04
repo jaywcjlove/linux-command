@@ -46,4 +46,3 @@ dpkg --configure package   # 配置包
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

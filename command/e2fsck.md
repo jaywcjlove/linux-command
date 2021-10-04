@@ -62,4 +62,3 @@ e2fsck -a -y /dev/sda1
 执行e2fsck或fsck前请先umount partition，否则有机会令档案系统毁损。如果需要对根目录`/`进行检查及修复，便需要进入singal user mode执行。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -25,4 +25,3 @@ logsave(选项)(参数)
 *   指令：需要执行的指令。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

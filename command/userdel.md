@@ -38,4 +38,3 @@ userdel -r linuxde    # 删除用户linuxde，其家目录及文件一并删除�
 其实也有最简单的办法，但这种办法有点不安全，也就是直接在`/etc/passwd`中删除您想要删除用户的记录；但最好不要这样做，`/etc/passwd`是极为重要的文件，可能您一不小心会操作失误。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

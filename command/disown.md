@@ -122,4 +122,4 @@ bash: warning: deleting stopped job 1 with process group 28756
 
 - [disown的用法](https://www.cyberciti.biz/faq/unix-linux-disown-command-examples-usage-syntax/)
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

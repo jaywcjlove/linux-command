@@ -53,4 +53,3 @@ jingang1:x:521:521::/home/jingang1:/sbin/nologin
 关于用户名、UID、GID及用户的家目录是怎么回事，您可以读相应的参考文档。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

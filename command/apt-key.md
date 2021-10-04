@@ -27,4 +27,3 @@ apt-key update        # 更新本地trusted数据库，删除过期没用的key�
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

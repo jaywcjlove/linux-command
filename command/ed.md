@@ -38,4 +38,3 @@ q # 退出ed编辑器。
 文件：待编辑的文件。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

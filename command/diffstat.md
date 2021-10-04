@@ -65,4 +65,3 @@ testfile | 2 +-             #统计信息输出显示
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

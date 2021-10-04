@@ -70,4 +70,3 @@ fuser -d /usr文件
 `/dev/mem`  也用于系统映像。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

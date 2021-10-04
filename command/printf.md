@@ -186,4 +186,4 @@ value1
    - [POSIX printf格式说明符](https://pubs.opengroup.org/onlinepubs/9699919799/functions/printf.html)
    的`Description`段落。
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

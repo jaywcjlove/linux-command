@@ -18,4 +18,3 @@ clear
 直接输入clear命令当前终端上的任何信息就可被清除。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

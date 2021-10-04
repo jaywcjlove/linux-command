@@ -187,4 +187,4 @@ $ echo '42' | jq '"The input was \(.), which is one less than \(.+1)"'
 
 ```
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

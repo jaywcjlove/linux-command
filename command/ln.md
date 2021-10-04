@@ -141,4 +141,4 @@ total 0
 *   当用`ls -l`命令列出文件时，可以看到符号链接名后有一个箭头指向源文件或目录，例如`lrwxrwxrwx … 14 jun 20 10:20 /etc/motd->/original_file`其中，表示“文件大小”的数字“14”恰好说明源文件名`original_file`由14个字符构成。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

@@ -38,4 +38,3 @@ xauth(选项)(参数)
 *   source：从指定文件读取包含xauth的内容指令。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

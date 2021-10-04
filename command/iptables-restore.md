@@ -29,4 +29,4 @@ iptables-restore < iptables.bak
 iptables.bak是iptables-save命令所备份的文件。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

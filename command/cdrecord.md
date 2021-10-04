@@ -59,4 +59,3 @@ cdrecord --dev=0,3,0 --blank=fast
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

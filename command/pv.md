@@ -110,4 +110,3 @@ $ pv -d $(ps -ef | grep -v grep | grep "<脚本或命令的关键字>" | awk '{p
 1. 选项"-d, --watchfd PID[:FD]", 是在1.6.6版本中才有的参数,如果使用需要`pv`升级到大于等于1.6.6的版本
 2. CentOS7的Yum仓库里`pv`最新的是1.4.6版本,1.6.6版本是发布在CentOS8里面的,如果需要,可以将CentOS8里的pv下载到本地电脑上或者本地的Yum私服里, 这个是[下载地址](http://www.rpmfind.net/linux/rpm2html/search.php?query=pv&submit=Search+...&system=EPEL&arch=), 可以根据自己不同的架构下载, 1.6.6的安装: `rpm -ivh pv-1.6.6-7.el8.x86_64.rpm -U`
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

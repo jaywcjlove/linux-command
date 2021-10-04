@@ -27,4 +27,3 @@ rsh(选项)(参数)
 *   指令：指定要在远程主机上执行的命令。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

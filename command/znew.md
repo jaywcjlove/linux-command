@@ -29,4 +29,3 @@ znew(选项)(参数)
 文件：指定compress指令压缩生成的“.Z”压缩包。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

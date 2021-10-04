@@ -95,4 +95,3 @@ CREATE_MAIL_SPOOL=yes
 从上述命令可以看到，在密码过期后5天，密码自动失效，这个用户将无法登陆系统了。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

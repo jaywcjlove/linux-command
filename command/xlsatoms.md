@@ -21,4 +21,3 @@ xlsatoms(选项)
 * -range<列表范围>：设置成分清单的列表范围。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

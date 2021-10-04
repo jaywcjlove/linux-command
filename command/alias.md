@@ -131,4 +131,4 @@ A：运行cd依然会切换目录，运行ls依然会列出文件夹的内容；
 [Linux命令详解：\[8\]alias创建自己的命令](https://jingyan.baidu.com/article/ac6a9a5e6738422b653eac01.html)
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

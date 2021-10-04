@@ -25,4 +25,3 @@ y/n：y表示运行向当前终端写信息，n表示禁止向当前终端写信
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

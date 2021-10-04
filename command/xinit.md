@@ -20,4 +20,3 @@ xinit(参数)
 * 服务器端选项：服务器端选项指令及选项。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

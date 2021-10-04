@@ -63,4 +63,3 @@ env | grep mylove             #显示环境变量值
 此时，该命令执行后，将输出查询到的环境变量值。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

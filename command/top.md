@@ -89,4 +89,3 @@ Swap:  5144568k total,       56k used,  5144512k free,  2013180k cached
 *  2013180k cached[缓冲的交换区总量],
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

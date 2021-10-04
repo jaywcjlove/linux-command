@@ -40,4 +40,3 @@ Volume group "vg2000" successfully extended
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -184,4 +184,4 @@ declare -x USER="root"
 [3]: https://unix.stackexchange.com/questions/22796/can-i-export-functions-in-bash
 [4]: https://askubuntu.com/questions/26318/environment-variable-vs-shell-variable-whats-the-difference
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

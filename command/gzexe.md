@@ -24,4 +24,3 @@ gzexe(选项)(参数)
 文件：指定需要压缩的可执行文件。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

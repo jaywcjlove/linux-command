@@ -35,4 +35,3 @@ convertquota -u /data     //转换文件系统"/data"上的用户磁盘配额文
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

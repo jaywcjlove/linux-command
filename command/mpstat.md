@@ -92,4 +92,3 @@ Average:     all    9.27    0.00   16.18    0.30    1.50    7.64    0.00   65.11
 上两表显示出当要正确反映系统的情况，需要正确使用命令的参数。vmstat 和iostat 也需要注意这一问题。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

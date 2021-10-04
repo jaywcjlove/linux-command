@@ -54,4 +54,3 @@ Uploading /Users/my/Downloads/re-produce.gif to /export/sftp/re-produce.gif
 /Users/my/Downloads/re-produce.gif            100%  257KB  86.6KB/s   00:02
 ```
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -96,4 +96,3 @@ wa的值高时，说明IO等待比较严重，这可能由于磁盘大量作随�
 *   id: 空闲时间百分比
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

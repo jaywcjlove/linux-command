@@ -38,4 +38,3 @@ eject(选项)(参数)
 设备名：指定弹出的设备名称。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

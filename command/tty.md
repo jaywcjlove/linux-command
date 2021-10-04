@@ -45,4 +45,4 @@ ps -ef | egrep "pts/2 " | grep -v grep
 
 1. 该命令是`GNU coreutils`包中的命令，相关的帮助信息请查看`man -s 1 tty`，`info coreutils 'tty invocation'`。
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

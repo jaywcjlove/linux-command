@@ -200,4 +200,3 @@ Filesystem blocks quota limit grace file quota limit grace
 2.  如果不带任何参数运行quota的话，查看的是你自己的配额使用情况。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

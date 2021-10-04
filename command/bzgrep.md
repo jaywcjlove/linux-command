@@ -19,4 +19,3 @@ bzgrep(参数)
 *   .bz2文件：指定要搜索的.bz2压缩包。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

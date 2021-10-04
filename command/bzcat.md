@@ -36,4 +36,3 @@ bzcat man.config.bz2
 此时屏幕上会显示 man.config.bz2 解压缩之后的文件内容。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

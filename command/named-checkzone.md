@@ -40,4 +40,4 @@ zonesh.com/IN: loaded serial 1268360234
 OK
 ```
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

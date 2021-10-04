@@ -81,4 +81,4 @@ date >/root/2013.log
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

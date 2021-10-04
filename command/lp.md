@@ -71,4 +71,3 @@ lp -s myfile
 *   >0：没有输出设备可用，或者出现一个错误。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

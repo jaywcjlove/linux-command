@@ -24,4 +24,3 @@ expand(选项)(参数)
 文件：指定要转换制表符为空白的文件。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

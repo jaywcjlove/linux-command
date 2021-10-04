@@ -18,4 +18,3 @@ ex（参数）
 文件：指定待编辑的文件。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

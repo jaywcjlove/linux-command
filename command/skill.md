@@ -123,4 +123,3 @@ snice +4 -u oracle
 注意，NI 列（nice 值）现在是 4，优先级现在设置为 20，而不是 15。这对于降低优先级非常有帮助。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

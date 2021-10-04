@@ -187,4 +187,4 @@ ps -aux > ps001.txt
 
 输出指定的字段
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

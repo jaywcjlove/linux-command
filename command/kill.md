@@ -187,4 +187,4 @@ name：使用此名称调用的所有进程将接收信号。
 #### 参考链接
 [发送信号到进程](https://bash.cyberciti.biz/guide/Sending_signal_to_Processes)
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

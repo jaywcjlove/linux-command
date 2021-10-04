@@ -32,4 +32,3 @@ updatedb -U /usr/local/  更新指定命令的slocate数据库
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -363,4 +363,3 @@ lrwx------    1 oracle   dba            64 Dec 30 10:55 25 -> /db/databases/orcl
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -68,4 +68,3 @@ logwatch --service sshd --detail High                       只看sshd的日志�
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -172,4 +172,3 @@ ethtool -s eth0 speed 100
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -69,4 +69,4 @@ pwd [OPTION]...
 3. 在不禁用内建且当前环境没有定义`pwd`函数的情况下，使用`/usr/bin/pwd`指向`coreutils`的`pwd`，使用`pwd`指向bash内建的`pwd`。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

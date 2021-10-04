@@ -24,4 +24,3 @@ xclip -i /etc/passwd
 然后到别的地方就能复制出来，利用鼠标中键。或者是更舒服的 shift+insert。 我现在最常用的方法是通过键盘绑定来管理 X master selections 的内容。比如 alt+F1 就能把我的 ~/f1 的内容复制到 X master selections，alt+F2 复制 ~/f2 的内容。这样就能把你需要经常用到的内容方便的进行复制粘贴。比如常用的密码啥的。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -53,4 +53,3 @@ fsck
 结束后同样使用reboot命令重启系统这样就好了！
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -25,4 +25,3 @@ paste(选项)(参数)
 文件列表：指定需要合并的文件列表。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

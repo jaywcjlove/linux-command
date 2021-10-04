@@ -70,4 +70,3 @@ eth0: 100 Mbit, full duplex, link ok
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

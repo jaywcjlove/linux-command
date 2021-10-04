@@ -114,4 +114,3 @@ gcc -o testfun.o test.o -o test    #将testfun.o和test.o链接成test
 以上两种方法相比较，第一中方法编译时需要所有文件重新编译，而第二种方法可以只重新编译修改的文件，未修改的文件不用重新编译。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

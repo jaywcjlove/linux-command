@@ -28,4 +28,3 @@ rlogin(选项)(参数)
 远程主机：指定要登录的远程主机（ip地址或者域名）。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

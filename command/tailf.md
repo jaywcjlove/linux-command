@@ -39,4 +39,4 @@ tailf -n 5 log2014.log   # 显示文件最后5行内容
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

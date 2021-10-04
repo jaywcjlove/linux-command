@@ -45,4 +45,3 @@ ldd显示可执行模块的dependency的工作原理，其实质是通过ld-linu
 实际上可以直接执行ld-linux.so模块，如：`/lib/ld-linux.so.2 --list program`（这相当于ldd program）
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

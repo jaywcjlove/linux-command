@@ -326,4 +326,4 @@ $ rsync -av --include="*.txt" --exclude='*' source/ destination
 
 上面命令指定同步时，排除所有文件，但是会包括 `TXT` 文件。
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

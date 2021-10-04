@@ -48,4 +48,3 @@ strings /bin/ls | grep -i libc
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

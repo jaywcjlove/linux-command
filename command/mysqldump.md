@@ -59,4 +59,3 @@ mysqldump -u linuxde -p -d --add-drop-table smgp_apps_linuxde > linuxde_db.sql
 `-d`没有数据，`--add-drop-tabl`e每个create语句之前增加一个`drop table`
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

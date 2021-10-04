@@ -426,4 +426,4 @@ auto  CHANGES  CHANGES.ru  conf  configure  contrib  html  LICENSE  Makefile  ma
 * 黄色：设备文件
 * 青黄色：管道文件
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

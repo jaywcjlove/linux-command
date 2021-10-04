@@ -126,4 +126,3 @@ F7表示减小nice值(增大优先级)，F8增大nice值(减小优先级)，选�
 **F10:退出htop**
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
