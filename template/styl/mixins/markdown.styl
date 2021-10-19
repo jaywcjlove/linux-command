@@ -5,11 +5,10 @@ mq-mobile = "screen and (max-width: 479px)"
   position relative
   right 38px
   float right
-  top 110px
+  top 26px
   z-index 2
 
   @media mq-mobile {
-    top 140px
     right 15px
   }
   .split {
@@ -33,7 +32,11 @@ mq-mobile = "screen and (max-width: 479px)"
   }
 }
 
-.wmde-markdown {
+.markdown-body .markdown-body {
+  padding-top: 0 !important;
+}
+
+.markdown-body {
   padding 70px 35px 30px 35px
   word-wrap break-word
   font-family: "SFMono-Regular",Consolas,"Liberation Mono",Menlo,Courier,monospace;
