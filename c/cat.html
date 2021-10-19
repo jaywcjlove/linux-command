@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,cat,连接多个文件并打印到标准输出。">
     <title>cat 命令，Linux cat 命令详解：连接多个文件并打印到标准输出。 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633942653339">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1634623060575">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner">
@@ -50,31 +50,21 @@
 </span>
 
 
-<div class="wmde-markdown">
-  <h1 id="cat"><a class="anchor" aria-hidden="true" tabindex="-1" href="#cat"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>cat</h1>
+<div class="markdown-body">
+  <h1 id="cat"><a class="anchor" aria-hidden="true" tabindex="-1" href="#cat"><span class="octicon octicon-link"></span></a>cat</h1>
   <p>连接多个文件并打印到标准输出。</p>
-  <h2 id="概要"><a class="anchor" aria-hidden="true" tabindex="-1" href="#概要"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>概要</h2>
+  <h2 id="概要"><a class="anchor" aria-hidden="true" tabindex="-1" href="#概要"><span class="octicon octicon-link"></span></a>概要</h2>
   <pre class="language-shell"><code class="language-shell"><span class="token function">cat</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. <span class="token punctuation">[</span>FILE<span class="token punctuation">]</span><span class="token punctuation">..</span>.
 </code></pre>
-  <h2 id="主要用途"><a class="anchor" aria-hidden="true" tabindex="-1" href="#主要用途"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>主要用途</h2>
+  <h2 id="主要用途"><a class="anchor" aria-hidden="true" tabindex="-1" href="#主要用途"><span class="octicon octicon-link"></span></a>主要用途</h2>
   <ul>
     <li>显示文件内容，如果没有文件或文件为<code>-</code>则读取标准输入。</li>
     <li>将多个文件的内容进行连接并打印到标准输出。</li>
     <li>显示文件内容中的不可见字符（控制字符、换行符、制表符等）。</li>
   </ul>
-  <h2 id="参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参数"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>参数</h2>
+  <h2 id="参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参数"><span class="octicon octicon-link"></span></a>参数</h2>
   <p>FILE（可选）：要处理的文件，可以为一或多个。</p>
-  <h2 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>选项</h2>
+  <h2 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><span class="octicon octicon-link"></span></a>选项</h2>
   <pre class="language-shell"><code class="language-shell">长选项与短选项等价
 
 -A, --show-all           等价于<span class="token string">"-vET"</span>组合选项。
@@ -104,8 +94,8 @@
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1633942653340"></script>
-<script type="text/javascript" src="../js/index.js?v=1633942653340"></script>
+<script type="text/javascript" src="../js/dt.js?v=1634623060576"></script>
+<script type="text/javascript" src="../js/index.js?v=1634623060576"></script>
 </body>
 </html></span>字符。
 -n, --number             对所有行编号，从1开始编号。
@@ -118,13 +108,9 @@ var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); h
 --help                   显示帮助信息并退出。
 --version                显示版本信息并退出。
 </code></pre>
-  <h2 id="返回值"><a class="anchor" aria-hidden="true" tabindex="-1" href="#返回值"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>返回值</h2>
+  <h2 id="返回值"><a class="anchor" aria-hidden="true" tabindex="-1" href="#返回值"><span class="octicon octicon-link"></span></a>返回值</h2>
   <p>返回状态为成功除非给出了非法选项或非法参数。</p>
-  <h2 id="例子"><a class="anchor" aria-hidden="true" tabindex="-1" href="#例子"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>例子</h2>
+  <h2 id="例子"><a class="anchor" aria-hidden="true" tabindex="-1" href="#例子"><span class="octicon octicon-link"></span></a>例子</h2>
   <pre class="language-shell"><code class="language-shell"><span class="token comment"># 合并显示多个文件</span>
 <span class="token function">cat</span> ./1.log ./2.log ./3.log
 <span class="token comment"># 显示文件中的非打印字符、tab、换行符</span>
@@ -138,17 +124,13 @@ var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); h
 <span class="token comment"># 将标准输入的内容和文件内容一并显示</span>
 <span class="token builtin class-name">echo</span> <span class="token string">'######'</span> <span class="token operator">|</span><span class="token function">cat</span> - test.log
 </code></pre>
-  <h3 id="注意"><a class="anchor" aria-hidden="true" tabindex="-1" href="#注意"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>注意</h3>
+  <h3 id="注意"><a class="anchor" aria-hidden="true" tabindex="-1" href="#注意"><span class="octicon octicon-link"></span></a>注意</h3>
   <ol>
     <li>该命令是<code>GNU coreutils</code>包中的命令，相关的帮助信息请查看<code>man -s 1 cat</code>或<code>info coreutils 'cat invocation'</code>。</li>
     <li>当使用<code>cat</code>命令查看<strong>体积较大的文件</strong>时，文本在屏幕上迅速闪过（滚屏），用户往往看不清所显示的内容，为了控制滚屏，可以按<code>Ctrl+s</code>键停止滚屏；按<code>Ctrl+q</code>键恢复滚屏；按<code>Ctrl+c</code>（中断）键可以终止该命令的执行，返回Shell提示符状态。</li>
     <li>建议您查看<strong>体积较大的文件</strong>时使用<code>less</code>、<code>more</code>命令或<code>emacs</code>、<code>vi</code>等文本编辑器。</li>
   </ol>
-  <h3 id="参考链接"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参考链接"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>参考链接</h3>
+  <h3 id="参考链接"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参考链接"><span class="octicon octicon-link"></span></a>参考链接</h3>
   <ol>
     <li><a href="https://superuser.com/questions/328054/is-there-an-lfd-key-on-my-keyboard">Question about LFD key</a></li>
   </ol>
@@ -177,7 +159,7 @@ var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); h
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1633942653340"></script>
-<script type="text/javascript" src="../js/index.js?v=1633942653340"></script>
+<script type="text/javascript" src="../js/dt.js?v=1634623060576"></script>
+<script type="text/javascript" src="../js/index.js?v=1634623060576"></script>
 </body>
 </html>

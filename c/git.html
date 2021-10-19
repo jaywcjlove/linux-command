@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,git,是目前世界上最先进的分布式版本控制系统">
     <title>git 命令，Linux git 命令详解：是目前世界上最先进的分布式版本控制系统 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633942653477">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1634623060674">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner">
@@ -50,14 +50,10 @@
 </span>
 
 
-<div class="wmde-markdown">
-  <h1 id="git"><a class="anchor" aria-hidden="true" tabindex="-1" href="#git"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>git</h1>
+<div class="markdown-body">
+  <h1 id="git"><a class="anchor" aria-hidden="true" tabindex="-1" href="#git"><span class="octicon octicon-link"></span></a>git</h1>
   <p>是目前世界上最先进的分布式版本控制系统</p>
-  <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>补充说明</h2>
+  <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><span class="octicon octicon-link"></span></a>补充说明</h2>
   <p><strong>git命令</strong> 很多人都知道，Linus在1991年创建了开源的Linux，从此，Linux系统不断发展，已经成为最大的服务器系统软件了。</p>
   <p>Linus虽然创建了Linux，但Linux的壮大是靠全世界热心的志愿者参与的，这么多人在世界各地为Linux编写代码，那Linux的代码是如何管理的呢？</p>
   <p>事实是，在2002年以前，世界各地的志愿者把源代码文件通过diff的方式发给Linus，然后由Linus本人通过手工方式合并代码！</p>
@@ -69,18 +65,14 @@
   <p>Git迅速成为最流行的分布式版本控制系统，尤其是2008年，GitHub网站上线了，它为开源项目免费提供Git存储，无数开源项目开始迁移至GitHub，包括jQuery，PHP，Ruby等等。</p>
   <p>历史就是这么偶然，如果不是当年BitMover公司威胁Linux社区，可能现在我们就没有免费而超级好用的Git了。</p>
   <p><a href="https://github.com/jaywcjlove/handbook/blob/master/other/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%B8%85%E5%8D%95.md">Git常用命令清单</a></p>
-  <h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>语法</h3>
+  <h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><span class="octicon octicon-link"></span></a>语法</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> <span class="token punctuation">[</span>--version<span class="token punctuation">]</span> <span class="token punctuation">[</span>--help<span class="token punctuation">]</span> <span class="token punctuation">[</span>-C <span class="token operator">&#x3C;</span>path<span class="token operator">></span><span class="token punctuation">]</span> <span class="token punctuation">[</span>-c <span class="token assign-left variable">name</span><span class="token operator">=</span>value<span class="token punctuation">]</span>
    <span class="token punctuation">[</span>--exec-path<span class="token punctuation">[</span><span class="token operator">=</span><span class="token operator">&#x3C;</span>path<span class="token operator">></span><span class="token punctuation">]</span><span class="token punctuation">]</span> <span class="token punctuation">[</span>--html-path<span class="token punctuation">]</span> <span class="token punctuation">[</span>--man-path<span class="token punctuation">]</span> <span class="token punctuation">[</span>--info-path<span class="token punctuation">]</span>
    <span class="token punctuation">[</span>-p <span class="token operator">|</span> --paginate <span class="token operator">|</span> --no-pager<span class="token punctuation">]</span> <span class="token punctuation">[</span>--no-replace-objects<span class="token punctuation">]</span> <span class="token punctuation">[</span>--bare<span class="token punctuation">]</span>
    <span class="token punctuation">[</span>--git-dir<span class="token operator">=</span><span class="token operator">&#x3C;</span>path<span class="token operator">></span><span class="token punctuation">]</span> <span class="token punctuation">[</span>--work-tree<span class="token operator">=</span><span class="token operator">&#x3C;</span>path<span class="token operator">></span><span class="token punctuation">]</span> <span class="token punctuation">[</span>--namespace<span class="token operator">=</span><span class="token operator">&#x3C;</span>name<span class="token operator">></span><span class="token punctuation">]</span>
    <span class="token operator">&#x3C;</span>command<span class="token operator">></span> <span class="token punctuation">[</span><span class="token operator">&#x3C;</span>args<span class="token operator">></span><span class="token punctuation">]</span>
 </code></pre>
-  <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>选项</h3>
+  <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><span class="octicon octicon-link"></span></a>选项</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">add</span>              将文件内容添加到索引
 bisect           通过二进制查找引入错误的更改
 branch           列出，创建或删除分支
@@ -103,9 +95,7 @@ show             显示各种类型的对象
 status           显示工作树状态
 tag              创建，列出，删除或验证使用GPG签名的标签对象
 </code></pre>
-  <h3 id="例子"><a class="anchor" aria-hidden="true" tabindex="-1" href="#例子"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>例子</h3>
+  <h3 id="例子"><a class="anchor" aria-hidden="true" tabindex="-1" href="#例子"><span class="octicon octicon-link"></span></a>例子</h3>
   <p>init</p>
   <p><code>git init</code> #初始化</p>
   <p>status</p>
@@ -132,38 +122,26 @@ $ <span class="token function">git</span> clone file:///opt/git/project.git
 $ <span class="token function">git</span> clone ftp<span class="token punctuation">[</span>s<span class="token punctuation">]</span>://example.com/path/to/repo.git/
 $ <span class="token function">git</span> clone rsync://example.com/path/to/repo.git/
 </code></pre>
-  <h2 id="配置"><a class="anchor" aria-hidden="true" tabindex="-1" href="#配置"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>配置</h2>
+  <h2 id="配置"><a class="anchor" aria-hidden="true" tabindex="-1" href="#配置"><span class="octicon octicon-link"></span></a>配置</h2>
   <p>首先是配置帐号信息 <code>ssh -T git@github.com</code> 测试。</p>
-  <h2 id="修改项目中的个人信息"><a class="anchor" aria-hidden="true" tabindex="-1" href="#修改项目中的个人信息"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>修改项目中的个人信息</h2>
+  <h2 id="修改项目中的个人信息"><a class="anchor" aria-hidden="true" tabindex="-1" href="#修改项目中的个人信息"><span class="octicon octicon-link"></span></a>修改项目中的个人信息</h2>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> <span class="token builtin class-name">help</span> config <span class="token comment"># 获取帮助信息，查看修改个人信息的参数  </span>
 <span class="token function">git</span> config --global user.name <span class="token string">"小弟调调"</span>           <span class="token comment"># 修改全局名字</span>
 <span class="token function">git</span> config --global user.email <span class="token string">"wowohoo@qq.com"</span>  <span class="token comment"># 修改全局邮箱</span>
 <span class="token function">git</span> config --list         <span class="token comment"># 查看配置的信息  </span>
 </code></pre>
-  <h3 id="配置自动换行"><a class="anchor" aria-hidden="true" tabindex="-1" href="#配置自动换行"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>配置自动换行</h3>
+  <h3 id="配置自动换行"><a class="anchor" aria-hidden="true" tabindex="-1" href="#配置自动换行"><span class="octicon octicon-link"></span></a>配置自动换行</h3>
   <p>自动转换坑太大，提交到git是自动将换行符转换为lf</p>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> config --global core.autocrlf input
 </code></pre>
-  <h2 id="常见使用场景"><a class="anchor" aria-hidden="true" tabindex="-1" href="#常见使用场景"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>常见使用场景</h2>
-  <h3 id="创建ssh密钥"><a class="anchor" aria-hidden="true" tabindex="-1" href="#创建ssh密钥"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>创建SSH密钥</h3>
+  <h2 id="常见使用场景"><a class="anchor" aria-hidden="true" tabindex="-1" href="#常见使用场景"><span class="octicon octicon-link"></span></a>常见使用场景</h2>
+  <h3 id="创建ssh密钥"><a class="anchor" aria-hidden="true" tabindex="-1" href="#创建ssh密钥"><span class="octicon octicon-link"></span></a>创建SSH密钥</h3>
   <p>这个密钥用来跟 github 通信，在本地终端里生成然后上传到 github</p>
   <pre class="language-shell"><code class="language-shell">ssh-keygen -t rsa -C <span class="token string">'wowohoo@qq.com'</span> <span class="token comment"># 生成密钥  </span>
 ssh-keygen -t rsa -C <span class="token string">"wowohoo@qq.com"</span> -f ~/.ssh/ww_rsa <span class="token comment"># 指定生成目录文件名字</span>
 <span class="token function">ssh</span> -T git@github.com <span class="token comment"># 测试是否成功  </span>
 </code></pre>
-  <h3 id="多账号ssh配置"><a class="anchor" aria-hidden="true" tabindex="-1" href="#多账号ssh配置"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>多账号ssh配置</h3>
+  <h3 id="多账号ssh配置"><a class="anchor" aria-hidden="true" tabindex="-1" href="#多账号ssh配置"><span class="octicon octicon-link"></span></a>多账号ssh配置</h3>
   <p><strong>1.生成指定名字的密钥</strong></p>
   <p><code>ssh-keygen -t rsa -C "邮箱地址" -f ~/.ssh/jslite_rsa</code><br>会生成 <code>jslite_rsa</code> 和 <code>jslite_rsa.pub</code> 这两个文件</p>
   <p><strong>2.密钥复制到托管平台上</strong></p>
@@ -208,9 +186,7 @@ ssh-add -l  <span class="token comment"># 查看所有的key</span>
 ssh-add -D  <span class="token comment"># 删除所有的key</span>
 ssh-add -d  ~/.ssh/jslite_rsa <span class="token comment"># 删除指定的key</span>
 </code></pre>
-  <h3 id="免密码登录远程服务器"><a class="anchor" aria-hidden="true" tabindex="-1" href="#免密码登录远程服务器"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>免密码登录远程服务器</h3>
+  <h3 id="免密码登录远程服务器"><a class="anchor" aria-hidden="true" tabindex="-1" href="#免密码登录远程服务器"><span class="octicon octicon-link"></span></a>免密码登录远程服务器</h3>
   <pre class="language-shell"><code class="language-shell">$ ssh-keygen -t rsa -P <span class="token string">''</span> -f ~/.ssh/aliyunserver.key
 $ ssh-copy-id -i ~/.ssh/aliyunserver.key.pub root@192.168.182.112 <span class="token comment"># 这里需要输入密码一次</span>
 </code></pre>
@@ -222,9 +198,7 @@ $ ssh-copy-id -i ~/.ssh/aliyunserver.key.pub root@192.168.182.112 <span class="t
   IdentityFile ~/.ssh/aliyunserver.key
 </code></pre>
   <p>上面配置完了，可以通过命令登录，不需要输入IP地址和密码 <code>ssh aliyun1</code></p>
-  <h3 id="https协议下提交代码免密码"><a class="anchor" aria-hidden="true" tabindex="-1" href="#https协议下提交代码免密码"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>https协议下提交代码免密码</h3>
+  <h3 id="https协议下提交代码免密码"><a class="anchor" aria-hidden="true" tabindex="-1" href="#https协议下提交代码免密码"><span class="octicon octicon-link"></span></a>https协议下提交代码免密码</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> clone https://github.com/username/rep.git
 </code></pre>
   <p>通过上面方式克隆可能需要密码，解决办法：进入当前克隆的项目 <code>vi rep/.git/config</code> 编辑 <code>config</code>, 按照下面方式修改，你就可以提交代码不用输入密码了。</p>
@@ -243,9 +217,7 @@ $ ssh-copy-id -i ~/.ssh/aliyunserver.key.pub root@192.168.182.112 <span class="t
 	remote <span class="token operator">=</span> origin
 	merge <span class="token operator">=</span> refs/heads/master
 </code></pre>
-  <h3 id="文件推向3个git库"><a class="anchor" aria-hidden="true" tabindex="-1" href="#文件推向3个git库"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>文件推向3个git库</h3>
+  <h3 id="文件推向3个git库"><a class="anchor" aria-hidden="true" tabindex="-1" href="#文件推向3个git库"><span class="octicon octicon-link"></span></a>文件推向3个git库</h3>
   <p><strong>1. 增加3个远程库地址</strong></p>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> remote <span class="token function">add</span> origin https://github.com/JSLite/JSLite.git  
 <span class="token function">git</span> remote set-url --add origin https://gitlab.com/wang/JSLite.js.git  
@@ -280,21 +252,15 @@ $ <span class="token function">git</span> fetch -p
 </code></pre>
   <p><strong>5.更改pull</strong></p>
   <p>只需要更改config文件里，那三个url的顺序即可，fetch-url会直接对应排行第一的那个utl连接。</p>
-  <h3 id="修改远程仓库地址"><a class="anchor" aria-hidden="true" tabindex="-1" href="#修改远程仓库地址"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>修改远程仓库地址</h3>
+  <h3 id="修改远程仓库地址"><a class="anchor" aria-hidden="true" tabindex="-1" href="#修改远程仓库地址"><span class="octicon octicon-link"></span></a>修改远程仓库地址</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> remote remove origin  <span class="token comment"># 删除该远程路径  </span>
 <span class="token function">git</span> remote <span class="token function">add</span> origin git@jslite.github.com:JSLite/JSLite.git  <span class="token comment"># 添加远程路径 </span>
 </code></pre>
-  <h3 id="撤销远程记录"><a class="anchor" aria-hidden="true" tabindex="-1" href="#撤销远程记录"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>撤销远程记录</h3>
+  <h3 id="撤销远程记录"><a class="anchor" aria-hidden="true" tabindex="-1" href="#撤销远程记录"><span class="octicon octicon-link"></span></a>撤销远程记录</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> reset --hard HEAD~1 <span class="token comment"># 撤销一条记录   </span>
 <span class="token function">git</span> push -f origin HEAD:master <span class="token comment"># 同步到远程仓库  </span>
 </code></pre>
-  <h3 id="放弃本地的文件修改"><a class="anchor" aria-hidden="true" tabindex="-1" href="#放弃本地的文件修改"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>放弃本地的文件修改</h3>
+  <h3 id="放弃本地的文件修改"><a class="anchor" aria-hidden="true" tabindex="-1" href="#放弃本地的文件修改"><span class="octicon octicon-link"></span></a>放弃本地的文件修改</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> reset --hard FETCH_HEAD <span class="token comment"># FETCH_HEAD表示上一次成功git pull之后形成的commit点。然后git pull</span>
 </code></pre>
   <p><code>git reset --hard FETCH_HEAD</code> 出现错误</p>
@@ -309,9 +275,7 @@ See git-pull<span class="token punctuation">(</span><span class="token number">1
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> checkout -b temp <span class="token comment"># 新建+切换到temp分支 </span>
 <span class="token function">git</span> checkout master
 </code></pre>
-  <h3 id="最简单放弃本地修改内容"><a class="anchor" aria-hidden="true" tabindex="-1" href="#最简单放弃本地修改内容"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>最简单放弃本地修改内容</h3>
+  <h3 id="最简单放弃本地修改内容"><a class="anchor" aria-hidden="true" tabindex="-1" href="#最简单放弃本地修改内容"><span class="octicon octicon-link"></span></a>最简单放弃本地修改内容</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token comment"># 如果有的修改以及加入暂存区的话</span>
 <span class="token function">git</span> reset --hard 
 <span class="token comment"># 还原所有修改，不会删除新增的文件</span>
@@ -322,29 +286,21 @@ See git-pull<span class="token punctuation">(</span><span class="token number">1
   <p>通过存储暂存区stash，在删除暂存区的方法放弃本地修改。</p>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> stash <span class="token operator">&#x26;&#x26;</span> <span class="token function">git</span> stash drop 
 </code></pre>
-  <h3 id="回滚到某个commit提交"><a class="anchor" aria-hidden="true" tabindex="-1" href="#回滚到某个commit提交"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>回滚到某个commit提交</h3>
+  <h3 id="回滚到某个commit提交"><a class="anchor" aria-hidden="true" tabindex="-1" href="#回滚到某个commit提交"><span class="octicon octicon-link"></span></a>回滚到某个commit提交</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> revert HEAD~1 <span class="token comment"># 撤销一条记录 会弹出 commit 编辑</span>
 <span class="token function">git</span> push <span class="token comment"># 提交回滚</span>
 </code></pre>
-  <h3 id="回退到某一个版本"><a class="anchor" aria-hidden="true" tabindex="-1" href="#回退到某一个版本"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>回退到某一个版本</h3>
+  <h3 id="回退到某一个版本"><a class="anchor" aria-hidden="true" tabindex="-1" href="#回退到某一个版本"><span class="octicon octicon-link"></span></a>回退到某一个版本</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> reset --hard <span class="token operator">&#x3C;</span>hash<span class="token operator">></span>
 <span class="token comment"># 例如 git reset --hard a3hd73r</span>
 <span class="token comment"># --hard代表丢弃工作区的修改，让工作区与版本代码一模一样，与之对应，</span>
 <span class="token comment"># --soft参数代表保留工作区的修改。</span>
 </code></pre>
-  <h3 id="去掉某个commit"><a class="anchor" aria-hidden="true" tabindex="-1" href="#去掉某个commit"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>去掉某个commit</h3>
+  <h3 id="去掉某个commit"><a class="anchor" aria-hidden="true" tabindex="-1" href="#去掉某个commit"><span class="octicon octicon-link"></span></a>去掉某个commit</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token comment"># 实质是新建了一个与原来完全相反的commit，抵消了原来commit的效果</span>
 <span class="token function">git</span> revert <span class="token operator">&#x3C;</span>commit-hash<span class="token operator">></span> 
 </code></pre>
-  <h3 id="新建一个空分支"><a class="anchor" aria-hidden="true" tabindex="-1" href="#新建一个空分支"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>新建一个空分支</h3>
+  <h3 id="新建一个空分支"><a class="anchor" aria-hidden="true" tabindex="-1" href="#新建一个空分支"><span class="octicon octicon-link"></span></a>新建一个空分支</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token comment"># 这种方式新建的分支(gh-pages)是没有 commit 记录的</span>
 <span class="token function">git</span> checkout --orphan gh-pages
 <span class="token comment"># 删除新建的gh-pages分支原本的内容，如果不删除，提交将作为当前分支的第一个commit</span>
@@ -352,9 +308,7 @@ See git-pull<span class="token punctuation">(</span><span class="token number">1
 <span class="token comment"># 查看一下状态 有可能上面一条命令，没有删除还没有提交的的文件</span>
 <span class="token function">git</span> state 
 </code></pre>
-  <h3 id="合并多个commit"><a class="anchor" aria-hidden="true" tabindex="-1" href="#合并多个commit"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>合并多个commit</h3>
+  <h3 id="合并多个commit"><a class="anchor" aria-hidden="true" tabindex="-1" href="#合并多个commit"><span class="octicon octicon-link"></span></a>合并多个commit</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token comment"># 这个命令，将最近4个commit合并为1个，HEAD代表当前版本。</span>
 <span class="token comment"># 将进入VIM界面，你可以修改提交信息。</span>
 <span class="token function">git</span> rebase -i HEAD~4 
@@ -373,9 +327,7 @@ See git-pull<span class="token punctuation">(</span><span class="token number">1
 <span class="token comment"># 将修改强制推送到前端</span>
 <span class="token function">git</span> push -f origin master
 </code></pre>
-  <h3 id="修改远程commit记录"><a class="anchor" aria-hidden="true" tabindex="-1" href="#修改远程commit记录"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>修改远程Commit记录</h3>
+  <h3 id="修改远程commit记录"><a class="anchor" aria-hidden="true" tabindex="-1" href="#修改远程commit记录"><span class="octicon octicon-link"></span></a>修改远程Commit记录</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> commit --amend
 <span class="token comment"># amend只能修改没有提交到线上的，最后一次commit记录</span>
 <span class="token function">git</span> rebase -i HEAD~3
@@ -413,19 +365,13 @@ pick <span class="token number">6293516</span> feat<span class="token punctuatio
 <span class="token comment"># 最后，确保别人没有提交进行push，最好不要加 -f 强制推送</span>
 <span class="token function">git</span> push -f origin master
 </code></pre>
-  <h3 id="添加忽略文件"><a class="anchor" aria-hidden="true" tabindex="-1" href="#添加忽略文件"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>添加忽略文件</h3>
+  <h3 id="添加忽略文件"><a class="anchor" aria-hidden="true" tabindex="-1" href="#添加忽略文件"><span class="octicon octicon-link"></span></a>添加忽略文件</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token builtin class-name">echo</span> node_modules/ <span class="token operator">>></span> .gitignore
 </code></pre>
-  <h3 id="利用commit关闭一个issue"><a class="anchor" aria-hidden="true" tabindex="-1" href="#利用commit关闭一个issue"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>利用commit关闭一个issue</h3>
+  <h3 id="利用commit关闭一个issue"><a class="anchor" aria-hidden="true" tabindex="-1" href="#利用commit关闭一个issue"><span class="octicon octicon-link"></span></a>利用commit关闭一个issue</h3>
   <p>这个功能在Github上可以玩儿，Gitlab上特别老的版本不能玩儿哦，那么如何跟随着commit关闭一个issue呢? 在confirm merge的时候可以使用一下命令来关闭相关issue:</p>
   <p><code>fixes #xxx</code>、 <code>fixed #xxx</code>、 <code>fix #xxx</code>、 <code>closes #xxx</code>、 <code>close #xxx</code>、 <code>closed #xxx</code>、</p>
-  <h3 id="同步fork的上游仓库"><a class="anchor" aria-hidden="true" tabindex="-1" href="#同步fork的上游仓库"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>同步fork的上游仓库</h3>
+  <h3 id="同步fork的上游仓库"><a class="anchor" aria-hidden="true" tabindex="-1" href="#同步fork的上游仓库"><span class="octicon octicon-link"></span></a>同步fork的上游仓库</h3>
   <p><a href="https://help.github.com/articles/syncing-a-fork/">Github教程同步fork教程</a>，<a href="http://www.miss77.net/549.html">在Github上同步一个分支(fork)</a></p>
   <p><strong>设置添加多个远程仓库地址。</strong></p>
   <p>在同步之前，需要创建一个远程点指向上游仓库(repo).如果你已经派生了一个原始仓库，可以按照如下方法做。</p>
@@ -466,9 +412,7 @@ $ <span class="token function">git</span> remote -v
 <span class="token comment">#  delete mode 100644 README</span>
 <span class="token comment">#  create mode 100644 README.md</span>
 </code></pre>
-  <h3 id="批量修改历史commit中的名字和邮箱"><a class="anchor" aria-hidden="true" tabindex="-1" href="#批量修改历史commit中的名字和邮箱"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>批量修改历史commit中的名字和邮箱</h3>
+  <h3 id="批量修改历史commit中的名字和邮箱"><a class="anchor" aria-hidden="true" tabindex="-1" href="#批量修改历史commit中的名字和邮箱"><span class="octicon octicon-link"></span></a>批量修改历史commit中的名字和邮箱</h3>
   <p><strong>1.克隆仓库</strong></p>
   <p>注意参数，这个不是普通的clone，clone下来的仓库并不能参与开发</p>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> clone --bare https://github.com/user/repo.git
@@ -510,18 +454,14 @@ Ref <span class="token string">'refs/heads/master'</span> was rewritten
 <span class="token comment"># 或者指定分枝</span>
 <span class="token function">git</span> pull origin master --allow-unrelated-histories
 </code></pre>
-  <h3 id="查看某个文件历史"><a class="anchor" aria-hidden="true" tabindex="-1" href="#查看某个文件历史"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>查看某个文件历史</h3>
+  <h3 id="查看某个文件历史"><a class="anchor" aria-hidden="true" tabindex="-1" href="#查看某个文件历史"><span class="octicon octicon-link"></span></a>查看某个文件历史</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> log --pretty<span class="token operator">=</span>oneline 文件名  <span class="token comment"># 列出文件的所有改动历史  </span>
 <span class="token function">git</span> show c178bf49   <span class="token comment"># 某次的改动的修改记录  </span>
 <span class="token function">git</span> log -p c178bf49 <span class="token comment"># 某次的改动的修改记录  </span>
 <span class="token function">git</span> blame 文件名     <span class="token comment"># 显示文件的每一行是在那个版本最后修改。  </span>
 <span class="token function">git</span> whatchanged 文件名  <span class="token comment"># 显示某个文件的每个版本提交信息：提交日期，提交人员，版本号，提交备注（没有修改细节）  </span>
 </code></pre>
-  <h3 id="打造自己的git命令"><a class="anchor" aria-hidden="true" tabindex="-1" href="#打造自己的git命令"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>打造自己的git命令</h3>
+  <h3 id="打造自己的git命令"><a class="anchor" aria-hidden="true" tabindex="-1" href="#打造自己的git命令"><span class="octicon octicon-link"></span></a>打造自己的git命令</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> config --global alias.st status
 <span class="token function">git</span> config --global alias.br branch
 <span class="token function">git</span> config --global alias.co checkout
@@ -530,44 +470,26 @@ Ref <span class="token string">'refs/heads/master'</span> was rewritten
   <p>配置好后再输入git命令的时候就不用再输入一大段了，例如我们要查看状态，只需：</p>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> st
 </code></pre>
-  <h3 id="中文乱码的解决方案"><a class="anchor" aria-hidden="true" tabindex="-1" href="#中文乱码的解决方案"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>中文乱码的解决方案</h3>
+  <h3 id="中文乱码的解决方案"><a class="anchor" aria-hidden="true" tabindex="-1" href="#中文乱码的解决方案"><span class="octicon octicon-link"></span></a>中文乱码的解决方案</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> config --global core.quotepath <span class="token boolean">false</span>
 </code></pre>
-  <h2 id="新建仓库"><a class="anchor" aria-hidden="true" tabindex="-1" href="#新建仓库"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>新建仓库</h2>
-  <h3 id="init"><a class="anchor" aria-hidden="true" tabindex="-1" href="#init"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>init</h3>
+  <h2 id="新建仓库"><a class="anchor" aria-hidden="true" tabindex="-1" href="#新建仓库"><span class="octicon octicon-link"></span></a>新建仓库</h2>
+  <h3 id="init"><a class="anchor" aria-hidden="true" tabindex="-1" href="#init"><span class="octicon octicon-link"></span></a>init</h3>
   <p><code>git init</code> #初始化</p>
-  <h3 id="status"><a class="anchor" aria-hidden="true" tabindex="-1" href="#status"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>status</h3>
+  <h3 id="status"><a class="anchor" aria-hidden="true" tabindex="-1" href="#status"><span class="octicon octicon-link"></span></a>status</h3>
   <p><code>git status</code> #获取状态</p>
-  <h3 id="add"><a class="anchor" aria-hidden="true" tabindex="-1" href="#add"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>add</h3>
+  <h3 id="add"><a class="anchor" aria-hidden="true" tabindex="-1" href="#add"><span class="octicon octicon-link"></span></a>add</h3>
   <p><code>git add file</code> # .或*代表全部添加<br><code>git rm --cached &#x3C;added_file_to_undo></code> # 在commit之前撤销git add操作<br><code>git reset head</code> # 好像比上面<code>git rm --cached</code>更方便</p>
-  <h3 id="commit"><a class="anchor" aria-hidden="true" tabindex="-1" href="#commit"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>commit</h3>
+  <h3 id="commit"><a class="anchor" aria-hidden="true" tabindex="-1" href="#commit"><span class="octicon octicon-link"></span></a>commit</h3>
   <p><code>git commit -m "message"</code> #此处注意乱码</p>
-  <h3 id="remote"><a class="anchor" aria-hidden="true" tabindex="-1" href="#remote"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>remote</h3>
+  <h3 id="remote"><a class="anchor" aria-hidden="true" tabindex="-1" href="#remote"><span class="octicon octicon-link"></span></a>remote</h3>
   <p><code>git remote add origin git@github.com:JSLite/test.git</code> #添加源</p>
-  <h3 id="push"><a class="anchor" aria-hidden="true" tabindex="-1" href="#push"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>push</h3>
+  <h3 id="push"><a class="anchor" aria-hidden="true" tabindex="-1" href="#push"><span class="octicon octicon-link"></span></a>push</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> push -u origin master <span class="token comment"># push同事设置默认跟踪分支  </span>
 <span class="token function">git</span> push origin master  
 <span class="token function">git</span> push -f origin master <span class="token comment"># 强制推送文件，缩写 -f（全写--force）</span>
 </code></pre>
-  <h2 id="clone"><a class="anchor" aria-hidden="true" tabindex="-1" href="#clone"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>clone</h2>
+  <h2 id="clone"><a class="anchor" aria-hidden="true" tabindex="-1" href="#clone"><span class="octicon octicon-link"></span></a>clone</h2>
   <p><code>git clone git://github.com/JSLite/JSLite.js.git</code><br><code>git clone git://github.com/JSLite/JSLite.js.git mypro</code> #克隆到自定义文件夹<br><code>git clone [user@]example.com:path/to/repo.git/</code> #SSH协议还有另一种写法。</p>
   <p>git clone支持多种协议，除了HTTP(s)以外，还支持SSH、Git、本地文件协议等，下面是一些例子。<code>git clone &#x3C;版本库的网址> &#x3C;本地目录名></code></p>
   <pre class="language-shell"><code class="language-shell">$ <span class="token function">git</span> clone http<span class="token punctuation">[</span>s<span class="token punctuation">]</span>://example.com/path/to/repo.git/
@@ -578,32 +500,22 @@ $ <span class="token function">git</span> clone file:///opt/git/project.git
 $ <span class="token function">git</span> clone ftp<span class="token punctuation">[</span>s<span class="token punctuation">]</span>://example.com/path/to/repo.git/
 $ <span class="token function">git</span> clone rsync://example.com/path/to/repo.git/
 </code></pre>
-  <h2 id="本地"><a class="anchor" aria-hidden="true" tabindex="-1" href="#本地"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>本地</h2>
-  <h3 id="help"><a class="anchor" aria-hidden="true" tabindex="-1" href="#help"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>help</h3>
+  <h2 id="本地"><a class="anchor" aria-hidden="true" tabindex="-1" href="#本地"><span class="octicon octicon-link"></span></a>本地</h2>
+  <h3 id="help"><a class="anchor" aria-hidden="true" tabindex="-1" href="#help"><span class="octicon octicon-link"></span></a>help</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> <span class="token builtin class-name">help</span> config <span class="token comment"># 获取帮助信息  </span>
 </code></pre>
-  <h3 id="add-1"><a class="anchor" aria-hidden="true" tabindex="-1" href="#add-1"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>add</h3>
+  <h3 id="add-1"><a class="anchor" aria-hidden="true" tabindex="-1" href="#add-1"><span class="octicon octicon-link"></span></a>add</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> <span class="token function">add</span> *   <span class="token comment"># 跟踪新文件   </span>
 <span class="token function">git</span> <span class="token function">add</span> -u <span class="token punctuation">[</span>path<span class="token punctuation">]</span>   <span class="token comment"># 添加[指定路径下]已跟踪文件   </span>
 </code></pre>
-  <h3 id="rm"><a class="anchor" aria-hidden="true" tabindex="-1" href="#rm"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>rm</h3>
+  <h3 id="rm"><a class="anchor" aria-hidden="true" tabindex="-1" href="#rm"><span class="octicon octicon-link"></span></a>rm</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">rm</span> *<span class="token operator">&#x26;</span><span class="token function">git</span> <span class="token function">rm</span> *          <span class="token comment"># 移除文件  </span>
 <span class="token function">git</span> <span class="token function">rm</span> -f *            <span class="token comment"># 移除文件  </span>
 <span class="token function">git</span> <span class="token function">rm</span> --cached *      <span class="token comment"># 取消跟踪  </span>
 <span class="token function">git</span> <span class="token function">mv</span> file_from file_to  <span class="token comment"># 重命名跟踪文件  </span>
 <span class="token function">git</span> log   <span class="token comment"># 查看提交记录  </span>
 </code></pre>
-  <h3 id="commit-1"><a class="anchor" aria-hidden="true" tabindex="-1" href="#commit-1"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>commit</h3>
+  <h3 id="commit-1"><a class="anchor" aria-hidden="true" tabindex="-1" href="#commit-1"><span class="octicon octicon-link"></span></a>commit</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> commit <span class="token comment">#提交更新   </span>
 <span class="token function">git</span> commit -m <span class="token string">'message'</span> <span class="token comment">#提交说明   </span>
 <span class="token function">git</span> commit -a <span class="token comment">#跳过使用暂存区域，把所有已经跟踪过的文件暂存起来一并提交   </span>
@@ -635,8 +547,8 @@ $ <span class="token function">git</span> clone rsync://example.com/path/to/repo
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1633942653478"></script>
-<script type="text/javascript" src="../js/index.js?v=1633942653478"></script>
+<script type="text/javascript" src="../js/dt.js?v=1634623060675"></script>
+<script type="text/javascript" src="../js/index.js?v=1634623060675"></script>
 </body>
 </html><span class="token entity" title="\n">\n</span><span class="token entity" title="\n">\n</span>'</span>'1.详细描述<span class="token string">'
 </div>
@@ -662,39 +574,31 @@ var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); h
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1633942653478"></script>
-<script type="text/javascript" src="../js/index.js?v=1633942653478"></script>
+<script type="text/javascript" src="../js/dt.js?v=1634623060675"></script>
+<script type="text/javascript" src="../js/index.js?v=1634623060675"></script>
 </body>
 </html></span><span class="token punctuation">\</span>n<span class="token string">''</span><span class="token number">2</span>.详细描述' <span class="token comment">#提交简要描述和详细描述  </span>
 </code></pre>
-  <h3 id="reset"><a class="anchor" aria-hidden="true" tabindex="-1" href="#reset"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>reset</h3>
+  <h3 id="reset"><a class="anchor" aria-hidden="true" tabindex="-1" href="#reset"><span class="octicon octicon-link"></span></a>reset</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> reset HEAD *  <span class="token comment"># 取消已经暂存的文件   </span>
 <span class="token function">git</span> reset --mixed HEAD * <span class="token comment"># 同上   </span>
 <span class="token function">git</span> reset --soft HEAD *  <span class="token comment"># 重置到指定状态，不会修改索引区和工作树   </span>
 <span class="token function">git</span> reset --hard HEAD *  <span class="token comment"># 重置到指定状态，会修改索引区和工作树   </span>
 <span class="token function">git</span> reset -- files *     <span class="token comment"># 重置index区文件   </span>
 </code></pre>
-  <h3 id="revert"><a class="anchor" aria-hidden="true" tabindex="-1" href="#revert"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>revert</h3>
+  <h3 id="revert"><a class="anchor" aria-hidden="true" tabindex="-1" href="#revert"><span class="octicon octicon-link"></span></a>revert</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> revert HEAD   <span class="token comment"># 撤销前一次操作   </span>
 <span class="token function">git</span> revert HEAD~  <span class="token comment"># 撤销前前一次操作   </span>
 <span class="token function">git</span> revert commit <span class="token comment"># 撤销指定操作   </span>
 </code></pre>
-  <h3 id="checkout"><a class="anchor" aria-hidden="true" tabindex="-1" href="#checkout"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>checkout</h3>
+  <h3 id="checkout"><a class="anchor" aria-hidden="true" tabindex="-1" href="#checkout"><span class="octicon octicon-link"></span></a>checkout</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> checkout -- <span class="token function">file</span>  <span class="token comment"># 取消对文件的修改（从暂存区——覆盖worktree file）  </span>
 <span class="token function">git</span> checkout branch<span class="token operator">|</span>tag<span class="token operator">|</span>commit -- file_name  <span class="token comment"># 从仓库取出file覆盖当前分支   </span>
 <span class="token function">git</span> checkout HEAD~1 <span class="token punctuation">[</span>文件<span class="token punctuation">]</span>  <span class="token comment"># 将会更新 working directory 去匹配某次 commit   </span>
 <span class="token function">git</span> checkout -- <span class="token builtin class-name">.</span>          <span class="token comment"># 从暂存区取出文件覆盖工作区   </span>
 <span class="token function">git</span> checkout -b gh-pages  0c304c9  <span class="token comment"># 这个表示 从当前分支 commit 哈希值为 0c304c9 的节点，分一个新的分支gh-pages出来，并切换到 gh-pages   </span>
 </code></pre>
-  <h3 id="diff"><a class="anchor" aria-hidden="true" tabindex="-1" href="#diff"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>diff</h3>
+  <h3 id="diff"><a class="anchor" aria-hidden="true" tabindex="-1" href="#diff"><span class="octicon octicon-link"></span></a>diff</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> <span class="token function">diff</span> <span class="token function">file</span>     <span class="token comment"># 查看指定文件的差异   </span>
 <span class="token function">git</span> <span class="token function">diff</span> --stat   <span class="token comment"># 查看简单的diff结果   </span>
 <span class="token function">git</span> <span class="token function">diff</span>  <span class="token comment"># 比较Worktree和Index之间的差异   </span>
@@ -706,9 +610,7 @@ var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); h
 <span class="token function">git</span> <span class="token function">diff</span> master<span class="token punctuation">..</span>test   <span class="token comment"># 上面这条命令只显示两个分支间的差异  </span>
 <span class="token function">git</span> <span class="token function">diff</span> master<span class="token punctuation">..</span>.test    <span class="token comment"># 你想找出‘master’,‘test’的共有 父分支和'test'分支之间的差异，你用3个‘.'来取代前面的两个'.'  </span>
 </code></pre>
-  <h3 id="stash"><a class="anchor" aria-hidden="true" tabindex="-1" href="#stash"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>stash</h3>
+  <h3 id="stash"><a class="anchor" aria-hidden="true" tabindex="-1" href="#stash"><span class="octicon octicon-link"></span></a>stash</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> stash <span class="token comment"># 将工作区现场（已跟踪文件）储藏起来，等以后恢复后继续工作。   </span>
 <span class="token function">git</span> stash list  <span class="token comment"># 查看保存的工作现场   </span>
 <span class="token function">git</span> stash apply <span class="token comment"># 恢复工作现场   </span>
@@ -716,20 +618,14 @@ var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); h
 <span class="token function">git</span> stash pop   <span class="token comment"># 恢复的同时直接删除stash内容   </span>
 <span class="token function">git</span> stash apply stash@<span class="token punctuation">{</span><span class="token number">0</span><span class="token punctuation">}</span> <span class="token comment"># 恢复指定的工作现场，当你保存了不只一份工作现场时。   </span>
 </code></pre>
-  <h3 id="merge"><a class="anchor" aria-hidden="true" tabindex="-1" href="#merge"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>merge</h3>
+  <h3 id="merge"><a class="anchor" aria-hidden="true" tabindex="-1" href="#merge"><span class="octicon octicon-link"></span></a>merge</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> merge --squash <span class="token builtin class-name">test</span> <span class="token comment"># 合并压缩，将test上的commit压缩为一条   </span>
 </code></pre>
-  <h3 id="cherry-pick"><a class="anchor" aria-hidden="true" tabindex="-1" href="#cherry-pick"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>cherry-pick</h3>
+  <h3 id="cherry-pick"><a class="anchor" aria-hidden="true" tabindex="-1" href="#cherry-pick"><span class="octicon octicon-link"></span></a>cherry-pick</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> cherry-pick commit    <span class="token comment"># 拣选合并，将commit合并到当前分支   </span>
 <span class="token function">git</span> cherry-pick -n commit <span class="token comment"># 拣选多个提交，合并完后可以继续拣选下一个提交   </span>
 </code></pre>
-  <h3 id="rebase"><a class="anchor" aria-hidden="true" tabindex="-1" href="#rebase"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>rebase</h3>
+  <h3 id="rebase"><a class="anchor" aria-hidden="true" tabindex="-1" href="#rebase"><span class="octicon octicon-link"></span></a>rebase</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> rebase master   <span class="token comment"># 将master分之上超前的提交，变基到当前分支  </span>
 <span class="token function">git</span> rebase --onto master 169a6  <span class="token comment"># 限制回滚范围，rebase当前分支从169a6以后的提交  </span>
 <span class="token function">git</span> rebase --interactive <span class="token comment"># 交互模式，修改commit   </span>
@@ -737,12 +633,8 @@ var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); h
 <span class="token function">git</span> rebase --skip        <span class="token comment"># 跳过   </span>
 <span class="token function">git</span> rebase --abort       <span class="token comment"># 取消合并    </span>
 </code></pre>
-  <h2 id="分支branch"><a class="anchor" aria-hidden="true" tabindex="-1" href="#分支branch"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>分支branch</h2>
-  <h3 id="删除"><a class="anchor" aria-hidden="true" tabindex="-1" href="#删除"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>删除</h3>
+  <h2 id="分支branch"><a class="anchor" aria-hidden="true" tabindex="-1" href="#分支branch"><span class="octicon octicon-link"></span></a>分支branch</h2>
+  <h3 id="删除"><a class="anchor" aria-hidden="true" tabindex="-1" href="#删除"><span class="octicon octicon-link"></span></a>删除</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> push origin :branchName  <span class="token comment"># 删除远程分支  </span>
 <span class="token function">git</span> push origin --delete new <span class="token comment"># 删除远程分支new   </span>
 <span class="token function">git</span> branch -d branchName     <span class="token comment"># 删除本地分支，强制删除用-D  </span>
@@ -750,30 +642,20 @@ var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); h
 <span class="token function">git</span> branch -D <span class="token builtin class-name">test</span>      <span class="token comment"># 强制删除本地test分支   </span>
 <span class="token function">git</span> remote prune origin <span class="token comment"># 远程删除了，本地还能看到远程存在，这条命令删除远程不存在的分支</span>
 </code></pre>
-  <h3 id="提交"><a class="anchor" aria-hidden="true" tabindex="-1" href="#提交"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>提交</h3>
+  <h3 id="提交"><a class="anchor" aria-hidden="true" tabindex="-1" href="#提交"><span class="octicon octicon-link"></span></a>提交</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> push -u origin branchName <span class="token comment"># 提交分支到远程origin主机中  </span>
 </code></pre>
-  <h3 id="拉取"><a class="anchor" aria-hidden="true" tabindex="-1" href="#拉取"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>拉取</h3>
+  <h3 id="拉取"><a class="anchor" aria-hidden="true" tabindex="-1" href="#拉取"><span class="octicon octicon-link"></span></a>拉取</h3>
   <p><code>git fetch -p</code> #拉取远程分支时，自动清理 远程分支已删除，本地还存在的对应同名分支。</p>
-  <h3 id="分支合并"><a class="anchor" aria-hidden="true" tabindex="-1" href="#分支合并"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>分支合并</h3>
+  <h3 id="分支合并"><a class="anchor" aria-hidden="true" tabindex="-1" href="#分支合并"><span class="octicon octicon-link"></span></a>分支合并</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> merge branchName      <span class="token comment"># 合并分支 - 将分支branchName和当前所在分支合并   </span>
 <span class="token function">git</span> merge origin/master   <span class="token comment"># 在本地分支上合并远程分支。   </span>
 <span class="token function">git</span> rebase origin/master  <span class="token comment"># 在本地分支上合并远程分支。   </span>
 <span class="token function">git</span> merge <span class="token builtin class-name">test</span>            <span class="token comment"># 将test分支合并到当前分支   </span>
 </code></pre>
-  <h3 id="重命名"><a class="anchor" aria-hidden="true" tabindex="-1" href="#重命名"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>重命名</h3>
+  <h3 id="重命名"><a class="anchor" aria-hidden="true" tabindex="-1" href="#重命名"><span class="octicon octicon-link"></span></a>重命名</h3>
   <p><code>git branch -m old new</code> #重命名分支</p>
-  <h3 id="查看"><a class="anchor" aria-hidden="true" tabindex="-1" href="#查看"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>查看</h3>
+  <h3 id="查看"><a class="anchor" aria-hidden="true" tabindex="-1" href="#查看"><span class="octicon octicon-link"></span></a>查看</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> branch      <span class="token comment"># 列出本地分支   </span>
 <span class="token function">git</span> branch -r   <span class="token comment"># 列出远端分支   </span>
 <span class="token function">git</span> branch -a   <span class="token comment"># 列出所有分支   </span>
@@ -782,30 +664,22 @@ var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); h
 <span class="token function">git</span> branch --no-merge   <span class="token comment"># 查看为合并到当前分支的分支   </span>
 <span class="token function">git</span> remote show origin  <span class="token comment"># 可以查看remote地址，远程分支</span>
 </code></pre>
-  <h3 id="新建"><a class="anchor" aria-hidden="true" tabindex="-1" href="#新建"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>新建</h3>
+  <h3 id="新建"><a class="anchor" aria-hidden="true" tabindex="-1" href="#新建"><span class="octicon octicon-link"></span></a>新建</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> branch <span class="token builtin class-name">test</span> <span class="token comment"># 新建test分支  </span>
 <span class="token function">git</span> branch newBrach 3defc69 <span class="token comment"># 指定哈希3defc69，新建分支名字为newBrach</span>
 <span class="token function">git</span> checkout -b newBrach origin/master <span class="token comment"># 取回远程主机的更新以后，在它的基础上创建一个新的分支  </span>
 <span class="token function">git</span> checkout -b newBrach 3defc69 <span class="token comment"># 以哈希值3defc69，新建 newBrach 分支，并切换到该分支</span>
 </code></pre>
-  <h3 id="连接"><a class="anchor" aria-hidden="true" tabindex="-1" href="#连接"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>连接</h3>
+  <h3 id="连接"><a class="anchor" aria-hidden="true" tabindex="-1" href="#连接"><span class="octicon octicon-link"></span></a>连接</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> branch --set-upstream dev origin/dev     <span class="token comment"># 将本地dev分支与远程dev分支之间建立链接  </span>
 <span class="token function">git</span> branch --set-upstream master origin/next <span class="token comment"># 手动建立追踪关系  </span>
 </code></pre>
-  <h3 id="分支切换"><a class="anchor" aria-hidden="true" tabindex="-1" href="#分支切换"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>分支切换</h3>
+  <h3 id="分支切换"><a class="anchor" aria-hidden="true" tabindex="-1" href="#分支切换"><span class="octicon octicon-link"></span></a>分支切换</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> checkout <span class="token builtin class-name">test</span>     <span class="token comment"># 切换到test分支   </span>
 <span class="token function">git</span> checkout -b <span class="token builtin class-name">test</span>  <span class="token comment"># 新建+切换到test分支   </span>
 <span class="token function">git</span> checkout -b <span class="token builtin class-name">test</span> dev <span class="token comment"># 基于dev新建test分支，并切换   </span>
 </code></pre>
-  <h2 id="远端"><a class="anchor" aria-hidden="true" tabindex="-1" href="#远端"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>远端</h2>
+  <h2 id="远端"><a class="anchor" aria-hidden="true" tabindex="-1" href="#远端"><span class="octicon octicon-link"></span></a>远端</h2>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> fetch <span class="token operator">&#x3C;</span>远程主机名<span class="token operator">></span> <span class="token operator">&#x3C;</span>分支名<span class="token operator">></span>   <span class="token comment"># fetch取回所有分支（branch）的更新  </span>
 <span class="token function">git</span> fetch origin remotebranch<span class="token punctuation">[</span>:localbranch<span class="token punctuation">]</span>   <span class="token comment">#  从远端拉去分支[到本地指定分支]   </span>
 <span class="token function">git</span> merge origin/branch   <span class="token comment"># 合并远端上指定分支   </span>
@@ -815,9 +689,7 @@ var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); h
 <span class="token function">git</span> push origin :remotebranch   <span class="token comment"># 删除远端指定分支   </span>
 <span class="token function">git</span> checkout -b <span class="token punctuation">[</span>--track<span class="token punctuation">]</span> <span class="token builtin class-name">test</span> origin/dev <span class="token comment"># 基于远端dev分支，新建本地test分支[同时设置跟踪]  </span>
 </code></pre>
-  <h2 id="submodule"><a class="anchor" aria-hidden="true" tabindex="-1" href="#submodule"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>submodule</h2>
+  <h2 id="submodule"><a class="anchor" aria-hidden="true" tabindex="-1" href="#submodule"><span class="octicon octicon-link"></span></a>submodule</h2>
   <p>克隆项目同时克隆submodule</p>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> clone https://github.com/jaywcjlove/handbook.git --depth<span class="token operator">=</span><span class="token number">1</span> --recurse-submodules
 </code></pre>
@@ -836,14 +708,10 @@ var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); h
 <span class="token function">git</span> submodule foreach --recursive <span class="token function">git</span> submodule init
 <span class="token function">git</span> submodule foreach --recursive <span class="token function">git</span> submodule update
 </code></pre>
-  <h2 id="删除文件"><a class="anchor" aria-hidden="true" tabindex="-1" href="#删除文件"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>删除文件</h2>
+  <h2 id="删除文件"><a class="anchor" aria-hidden="true" tabindex="-1" href="#删除文件"><span class="octicon octicon-link"></span></a>删除文件</h2>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> <span class="token function">rm</span> -rf node_modules/
 </code></pre>
-  <h2 id="remote-1"><a class="anchor" aria-hidden="true" tabindex="-1" href="#remote-1"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>remote</h2>
+  <h2 id="remote-1"><a class="anchor" aria-hidden="true" tabindex="-1" href="#remote-1"><span class="octicon octicon-link"></span></a>remote</h2>
   <p>git是一个分布式代码管理工具，所以可以支持多个仓库，在git里，服务器上的仓库在本地称之为remote。个人开发时，多源用的可能不多，但多源其实非常有用。</p>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> remote <span class="token function">add</span> origin1 git@github.com:yanhaijing/data.js.git  
 <span class="token function">git</span> remote    <span class="token comment"># 显示全部源  </span>
@@ -852,9 +720,7 @@ var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); h
 <span class="token function">git</span> remote <span class="token function">rm</span> origin    <span class="token comment"># 删除  </span>
 <span class="token function">git</span> remote show origin  <span class="token comment"># 查看指定源的全部信息  </span>
 </code></pre>
-  <h2 id="标签tag"><a class="anchor" aria-hidden="true" tabindex="-1" href="#标签tag"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>标签tag</h2>
+  <h2 id="标签tag"><a class="anchor" aria-hidden="true" tabindex="-1" href="#标签tag"><span class="octicon octicon-link"></span></a>标签tag</h2>
   <p>当开发到一定阶段时，给程序打标签是非常棒的功能。</p>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> tag -a v0.1 -m <span class="token string">'my version 1.4'</span> <span class="token comment"># 新建带注释标签   </span>
 <span class="token function">git</span> push origin --tags              <span class="token comment"># 一次性推送所有分支 </span>
@@ -870,9 +736,7 @@ var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); h
 <span class="token function">git</span> pull --all <span class="token comment"># 获取远程所有内容包括tag  </span>
 <span class="token function">git</span> --git-dir<span class="token operator">=</span><span class="token string">'&#x3C;绝对地址>/.git'</span> describe --tags HEAD <span class="token comment"># 查看本地版本信息  </span>
 </code></pre>
-  <h2 id="日志log"><a class="anchor" aria-hidden="true" tabindex="-1" href="#日志log"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>日志log</h2>
+  <h2 id="日志log"><a class="anchor" aria-hidden="true" tabindex="-1" href="#日志log"><span class="octicon octicon-link"></span></a>日志log</h2>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> config format.pretty oneline  <span class="token comment">#显示历史记录时，每个提交的信息只显示一行   </span>
 <span class="token function">git</span> config color.ui <span class="token boolean">true</span> <span class="token comment">#彩色的 git 输出   </span>
 <span class="token function">git</span> log <span class="token comment">#查看最近的提交日志   </span>
@@ -951,9 +815,7 @@ var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); h
     </tbody>
   </table>
   <p><a href="https://git-scm.com/docs/git-log#_pretty_formats">Pretty Formats</a></p>
-  <h2 id="重写历史"><a class="anchor" aria-hidden="true" tabindex="-1" href="#重写历史"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>重写历史</h2>
+  <h2 id="重写历史"><a class="anchor" aria-hidden="true" tabindex="-1" href="#重写历史"><span class="octicon octicon-link"></span></a>重写历史</h2>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> commit --amend    <span class="token comment"># 改变最近一次提交  </span>
 <span class="token function">git</span> rebase -i HEAD~3  <span class="token comment"># 修改最近三次的提交说明，或者其中任意一次  </span>
 <span class="token function">git</span> commit --amend    <span class="token comment"># 保存好了，这些指示很明确地告诉了你该干什么  </span>
@@ -967,22 +829,16 @@ pick a5f4a0d added cat-file
   <pre><code>pick 310154e updated README formatting and added blame
 pick f7f3f6d changed my name a bit
 </code></pre>
-  <h3 id="删除仓库"><a class="anchor" aria-hidden="true" tabindex="-1" href="#删除仓库"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>删除仓库</h3>
+  <h3 id="删除仓库"><a class="anchor" aria-hidden="true" tabindex="-1" href="#删除仓库"><span class="octicon octicon-link"></span></a>删除仓库</h3>
   <pre><code>cd ..
 rm -rf repo.git
 </code></pre>
   <p><a href="https://help.github.com/articles/changing-author-info/">Github官方教程</a></p>
-  <h2 id="其它"><a class="anchor" aria-hidden="true" tabindex="-1" href="#其它"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>其它</h2>
+  <h2 id="其它"><a class="anchor" aria-hidden="true" tabindex="-1" href="#其它"><span class="octicon octicon-link"></span></a>其它</h2>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> <span class="token builtin class-name">help</span> *  <span class="token comment"># 获取命令的帮助信息  </span>
 <span class="token function">git</span> status  <span class="token comment"># 获取当前的状态，非常有用，因为git会提示接下来的能做的操作  </span>
 </code></pre>
-  <h2 id="报错问题解决"><a class="anchor" aria-hidden="true" tabindex="-1" href="#报错问题解决"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>报错问题解决</h2>
+  <h2 id="报错问题解决"><a class="anchor" aria-hidden="true" tabindex="-1" href="#报错问题解决"><span class="octicon octicon-link"></span></a>报错问题解决</h2>
   <p><strong>1. <code>git fatal: protocol error: bad line length character: No s</code></strong></p>
   <p>解决办法：更换remote地址为 <code>http/https</code> 的</p>
   <p><strong>2. <code>The requested URL returned error: 403 Forbidden while accessing</code></strong></p>
@@ -1005,9 +861,7 @@ rm -rf repo.git
   <p>解决这个问题方法是：</p>
   <pre class="language-shell"><code class="language-shell"><span class="token function">git</span> config --global core.quotepath <span class="token boolean">false</span>
 </code></pre>
-  <h2 id="参考资料"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参考资料"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>参考资料</h2>
+  <h2 id="参考资料"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参考资料"><span class="octicon octicon-link"></span></a>参考资料</h2>
   <ul>
     <li><a href="http://git-scm.com/">Git官网</a></li>
     <li><a href="https://try.github.io/"><strong>Github 15分钟学习Git</strong></a></li>
@@ -1055,7 +909,7 @@ rm -rf repo.git
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1633942653478"></script>
-<script type="text/javascript" src="../js/index.js?v=1633942653478"></script>
+<script type="text/javascript" src="../js/dt.js?v=1634623060675"></script>
+<script type="text/javascript" src="../js/index.js?v=1634623060675"></script>
 </body>
 </html>

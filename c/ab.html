@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,ab,Apache服务器的性能测试工具">
     <title>ab 命令，Linux ab 命令详解：Apache服务器的性能测试工具 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633942653271">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1634623060528">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner">
@@ -50,18 +50,12 @@
 </span>
 
 
-<div class="wmde-markdown">
-  <h1 id="ab"><a class="anchor" aria-hidden="true" tabindex="-1" href="#ab"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>ab</h1>
+<div class="markdown-body">
+  <h1 id="ab"><a class="anchor" aria-hidden="true" tabindex="-1" href="#ab"><span class="octicon octicon-link"></span></a>ab</h1>
   <p>Apache服务器的性能测试工具</p>
-  <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>补充说明</h2>
+  <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><span class="octicon octicon-link"></span></a>补充说明</h2>
   <p><strong>ab命令</strong> 是一个测试你 Apache http 服务器的工具，你可以通过这个工具，指定一个单位时间内向 apache 发出的请求数量来看看你的 Apache 和机器配合的性能如何。</p>
-  <h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>语法</h3>
+  <h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><span class="octicon octicon-link"></span></a>语法</h3>
   <pre class="language-shell"><code class="language-shell">ab <span class="token punctuation">[</span> -A auth-username:password <span class="token punctuation">]</span> <span class="token punctuation">[</span> -c concurrency <span class="token punctuation">]</span> <span class="token punctuation">[</span> -C cookie-name<span class="token operator">=</span>value
 <span class="token punctuation">]</span> <span class="token punctuation">[</span> -d <span class="token punctuation">]</span> <span class="token punctuation">[</span> -e csv-file <span class="token punctuation">]</span> <span class="token punctuation">[</span> -g gnuplot-file <span class="token punctuation">]</span> <span class="token punctuation">[</span> -h <span class="token punctuation">]</span> <span class="token punctuation">[</span> -H custom-header <span class="token punctuation">]</span> <span class="token punctuation">[</span>
 -i  <span class="token punctuation">]</span>  <span class="token punctuation">[</span>  -k  <span class="token punctuation">]</span>  <span class="token punctuation">[</span>  -n  requests  <span class="token punctuation">]</span> <span class="token punctuation">[</span> -p POST-file <span class="token punctuation">]</span> <span class="token punctuation">[</span> -P proxy-auth-user‐
@@ -70,9 +64,7 @@ name:password <span class="token punctuation">]</span> <span class="token punctu
 <span class="token punctuation">]</span>  <span class="token punctuation">[</span>  -y  <span class="token operator">&#x3C;</span>tr<span class="token operator">></span>-attributes  <span class="token punctuation">]</span>  <span class="token punctuation">[</span>  -z   <span class="token operator">&#x3C;</span>td<span class="token operator">></span>-attributes   <span class="token punctuation">]</span>   <span class="token punctuation">[</span>http://<span class="token punctuation">]</span>host‐
 name<span class="token punctuation">[</span>:port<span class="token punctuation">]</span>/path
 </code></pre>
-  <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>选项</h3>
+  <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><span class="octicon octicon-link"></span></a>选项</h3>
   <pre class="language-shell"><code class="language-shell">-A auth-username:password
       <span class="token comment">#  支持基本的验证证书,用户名和密码之间使用"冒号"                    :</span>
       <span class="token comment"># 分隔开,ab将以明文方式传送过去.不管服务器是不是需要</span>
@@ -164,9 +156,7 @@ name<span class="token punctuation">[</span>:port<span class="token punctuation"
 -z <span class="token operator">&#x3C;</span>td<span class="token operator">></span>-attributes
       <span class="token comment"># 用于生成html表格每列的属性名 (&#x3C;td>)</span>
 </code></pre>
-  <h3 id="参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参数"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>参数</h3>
+  <h3 id="参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参数"><span class="octicon octicon-link"></span></a>参数</h3>
   <p>主机：被测试主机。</p>
 </div>
 
@@ -193,7 +183,7 @@ name<span class="token punctuation">[</span>:port<span class="token punctuation"
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1633942653272"></script>
-<script type="text/javascript" src="../js/index.js?v=1633942653272"></script>
+<script type="text/javascript" src="../js/dt.js?v=1634623060528"></script>
+<script type="text/javascript" src="../js/index.js?v=1634623060528"></script>
 </body>
 </html>

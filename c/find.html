@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,find,在指定目录下查找文件">
     <title>find 命令，Linux find 命令详解：在指定目录下查找文件 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633942653454">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1634623060658">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner">
@@ -50,23 +50,15 @@
 </span>
 
 
-<div class="wmde-markdown">
-  <h1 id="find"><a class="anchor" aria-hidden="true" tabindex="-1" href="#find"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>find</h1>
+<div class="markdown-body">
+  <h1 id="find"><a class="anchor" aria-hidden="true" tabindex="-1" href="#find"><span class="octicon octicon-link"></span></a>find</h1>
   <p>在指定目录下查找文件</p>
-  <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>补充说明</h2>
+  <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><span class="octicon octicon-link"></span></a>补充说明</h2>
   <p><strong>find命令</strong> 用来在指定目录下查找文件。任何位于参数之前的字符串都将被视为欲查找的目录名。如果使用该命令时，不设置任何参数，则find命令将在当前目录下查找子目录与文件。并且将查找到的子目录和文件全部进行显示。</p>
-  <h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>语法</h3>
+  <h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><span class="octicon octicon-link"></span></a>语法</h3>
   <pre class="language-shell"><code class="language-shell">find<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
 </code></pre>
-  <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>选项</h3>
+  <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><span class="octicon octicon-link"></span></a>选项</h3>
   <pre class="language-shell"><code class="language-shell">-amin<span class="token operator">&#x3C;</span>分钟<span class="token operator">></span>：查找在指定时间曾被存取过的文件或目录，单位以分钟计算；
 -anewer<span class="token operator">&#x3C;</span>参考文件或目录<span class="token operator">></span>：查找其存取时间较指定文件或目录的存取时间更接近现在的文件或目录；
 -atime<span class="token operator">&#x3C;</span><span class="token number">24</span>小时数<span class="token operator">></span>：查找在指定时间曾被存取过的文件或目录，单位以24小时计算；
@@ -123,19 +115,13 @@
 -xdev：将范围局限在先行的文件系统中；
 -xtype<span class="token operator">&#x3C;</span>文件类型<span class="token operator">></span>：此参数的效果和指定“-type”参数类似，差别在于它针对符号连接检查。
 </code></pre>
-  <h3 id="参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参数"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>参数</h3>
+  <h3 id="参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参数"><span class="octicon octicon-link"></span></a>参数</h3>
   <p>起始目录：查找文件的起始目录。</p>
-  <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>实例</h3>
+  <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><span class="octicon octicon-link"></span></a>实例</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token comment"># 当前目录搜索所有文件，文件内容 包含 “140.206.111.111” 的内容</span>
 <span class="token function">find</span> <span class="token builtin class-name">.</span> -type f -name <span class="token string">"*"</span> <span class="token operator">|</span> <span class="token function">xargs</span> <span class="token function">grep</span> <span class="token string">"140.206.111.111"</span>
 </code></pre>
-  <h4 id="根据文件或者正则表达式进行匹配"><a class="anchor" aria-hidden="true" tabindex="-1" href="#根据文件或者正则表达式进行匹配"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>根据文件或者正则表达式进行匹配</h4>
+  <h4 id="根据文件或者正则表达式进行匹配"><a class="anchor" aria-hidden="true" tabindex="-1" href="#根据文件或者正则表达式进行匹配"><span class="octicon octicon-link"></span></a>根据文件或者正则表达式进行匹配</h4>
   <p>列出当前目录及子目录下所有文件和文件夹</p>
   <pre class="language-shell"><code class="language-shell"><span class="token function">find</span> <span class="token builtin class-name">.</span>
 </code></pre>
@@ -161,15 +147,11 @@
   <p>同上，但忽略大小写</p>
   <pre class="language-shell"><code class="language-shell"><span class="token function">find</span> <span class="token builtin class-name">.</span> -iregex <span class="token string">".*\(\.txt\|\.pdf\)$"</span>
 </code></pre>
-  <h4 id="否定参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#否定参数"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>否定参数</h4>
+  <h4 id="否定参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#否定参数"><span class="octicon octicon-link"></span></a>否定参数</h4>
   <p>找出/home下不是以.txt结尾的文件</p>
   <pre class="language-shell"><code class="language-shell"><span class="token function">find</span> /home <span class="token operator">!</span> -name <span class="token string">"*.txt"</span>
 </code></pre>
-  <h4 id="根据文件类型进行搜索"><a class="anchor" aria-hidden="true" tabindex="-1" href="#根据文件类型进行搜索"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>根据文件类型进行搜索</h4>
+  <h4 id="根据文件类型进行搜索"><a class="anchor" aria-hidden="true" tabindex="-1" href="#根据文件类型进行搜索"><span class="octicon octicon-link"></span></a>根据文件类型进行搜索</h4>
   <pre class="language-shell"><code class="language-shell"><span class="token function">find</span> <span class="token builtin class-name">.</span> -type 类型参数
 </code></pre>
   <p>类型参数列表：</p>
@@ -182,18 +164,14 @@
     <li><strong>s</strong> 套接字</li>
     <li><strong>p</strong> Fifo</li>
   </ul>
-  <h4 id="基于目录深度搜索"><a class="anchor" aria-hidden="true" tabindex="-1" href="#基于目录深度搜索"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>基于目录深度搜索</h4>
+  <h4 id="基于目录深度搜索"><a class="anchor" aria-hidden="true" tabindex="-1" href="#基于目录深度搜索"><span class="octicon octicon-link"></span></a>基于目录深度搜索</h4>
   <p>向下最大深度限制为3</p>
   <pre class="language-shell"><code class="language-shell"><span class="token function">find</span> <span class="token builtin class-name">.</span> -maxdepth <span class="token number">3</span> -type f
 </code></pre>
   <p>搜索出深度距离当前目录至少2个子目录的所有文件</p>
   <pre class="language-shell"><code class="language-shell"><span class="token function">find</span> <span class="token builtin class-name">.</span> -mindepth <span class="token number">2</span> -type f
 </code></pre>
-  <h4 id="根据文件时间戳进行搜索"><a class="anchor" aria-hidden="true" tabindex="-1" href="#根据文件时间戳进行搜索"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>根据文件时间戳进行搜索</h4>
+  <h4 id="根据文件时间戳进行搜索"><a class="anchor" aria-hidden="true" tabindex="-1" href="#根据文件时间戳进行搜索"><span class="octicon octicon-link"></span></a>根据文件时间戳进行搜索</h4>
   <pre class="language-shell"><code class="language-shell"><span class="token function">find</span> <span class="token builtin class-name">.</span> -type f 时间戳
 </code></pre>
   <p>UNIX/Linux文件系统每个文件都有三种时间戳：</p>
@@ -217,9 +195,7 @@
   <p>找出比file.log修改时间更长的所有文件</p>
   <pre class="language-shell"><code class="language-shell"><span class="token function">find</span> <span class="token builtin class-name">.</span> -type f -newer file.log
 </code></pre>
-  <h4 id="根据文件大小进行匹配"><a class="anchor" aria-hidden="true" tabindex="-1" href="#根据文件大小进行匹配"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>根据文件大小进行匹配</h4>
+  <h4 id="根据文件大小进行匹配"><a class="anchor" aria-hidden="true" tabindex="-1" href="#根据文件大小进行匹配"><span class="octicon octicon-link"></span></a>根据文件大小进行匹配</h4>
   <pre class="language-shell"><code class="language-shell"><span class="token function">find</span> <span class="token builtin class-name">.</span> -type f -size 文件大小单元
 </code></pre>
   <p>文件大小单元：</p>
@@ -240,15 +216,11 @@
   <p>搜索等于10KB的文件</p>
   <pre class="language-shell"><code class="language-shell"><span class="token function">find</span> <span class="token builtin class-name">.</span> -type f -size 10k
 </code></pre>
-  <h4 id="删除匹配文件"><a class="anchor" aria-hidden="true" tabindex="-1" href="#删除匹配文件"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>删除匹配文件</h4>
+  <h4 id="删除匹配文件"><a class="anchor" aria-hidden="true" tabindex="-1" href="#删除匹配文件"><span class="octicon octicon-link"></span></a>删除匹配文件</h4>
   <p>删除当前目录下所有.txt文件</p>
   <pre class="language-shell"><code class="language-shell"><span class="token function">find</span> <span class="token builtin class-name">.</span> -type f -name <span class="token string">"*.txt"</span> -delete
 </code></pre>
-  <h4 id="根据文件权限所有权进行匹配"><a class="anchor" aria-hidden="true" tabindex="-1" href="#根据文件权限所有权进行匹配"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>根据文件权限/所有权进行匹配</h4>
+  <h4 id="根据文件权限所有权进行匹配"><a class="anchor" aria-hidden="true" tabindex="-1" href="#根据文件权限所有权进行匹配"><span class="octicon octicon-link"></span></a>根据文件权限/所有权进行匹配</h4>
   <p>当前目录下搜索出权限为777的文件</p>
   <pre class="language-shell"><code class="language-shell"><span class="token function">find</span> <span class="token builtin class-name">.</span> -type f -perm <span class="token number">777</span>
 </code></pre>
@@ -261,9 +233,7 @@
   <p>找出当前目录用户组sunk拥有的所有文件</p>
   <pre class="language-shell"><code class="language-shell"><span class="token function">find</span> <span class="token builtin class-name">.</span> -type f -group sunk
 </code></pre>
-  <h4 id="借助-exec选项与其他命令结合使用"><a class="anchor" aria-hidden="true" tabindex="-1" href="#借助-exec选项与其他命令结合使用"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>借助<code>-exec</code>选项与其他命令结合使用</h4>
+  <h4 id="借助-exec选项与其他命令结合使用"><a class="anchor" aria-hidden="true" tabindex="-1" href="#借助-exec选项与其他命令结合使用"><span class="octicon octicon-link"></span></a>借助<code>-exec</code>选项与其他命令结合使用</h4>
   <p>找出当前目录下所有root的文件，并把所有权更改为用户tom</p>
   <pre class="language-shell"><code class="language-shell"><span class="token function">find</span> .-type f -user root -exec <span class="token function">chown</span> tom <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token punctuation">\</span><span class="token punctuation">;</span>
 </code></pre>
@@ -284,9 +254,7 @@
   <p>因为单行命令中-exec参数中无法使用多个命令，以下方法可以实现在-exec之后接受多条命令</p>
   <pre class="language-shell"><code class="language-shell">-exec ./text.sh <span class="token punctuation">{</span><span class="token punctuation">}</span> <span class="token punctuation">\</span><span class="token punctuation">;</span>
 </code></pre>
-  <h4 id="搜索但跳过指定的目录"><a class="anchor" aria-hidden="true" tabindex="-1" href="#搜索但跳过指定的目录"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>搜索但跳过指定的目录</h4>
+  <h4 id="搜索但跳过指定的目录"><a class="anchor" aria-hidden="true" tabindex="-1" href="#搜索但跳过指定的目录"><span class="octicon octicon-link"></span></a>搜索但跳过指定的目录</h4>
   <p>查找当前目录或者子目录下所有.txt文件，但是跳过子目录sk</p>
   <pre class="language-shell"><code class="language-shell"><span class="token function">find</span> <span class="token builtin class-name">.</span> -path <span class="token string">"./sk"</span> -prune -o -name <span class="token string">"*.txt"</span> -print
 </code></pre>
@@ -299,15 +267,11 @@
   <blockquote>
     <p>⚠️ 如果写相对路径必须加上<code>./</code></p>
   </blockquote>
-  <h4 id="find其他技巧收集"><a class="anchor" aria-hidden="true" tabindex="-1" href="#find其他技巧收集"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>find其他技巧收集</h4>
+  <h4 id="find其他技巧收集"><a class="anchor" aria-hidden="true" tabindex="-1" href="#find其他技巧收集"><span class="octicon octicon-link"></span></a>find其他技巧收集</h4>
   <p>要列出所有长度为零的文件</p>
   <pre class="language-shell"><code class="language-shell"><span class="token function">find</span> <span class="token builtin class-name">.</span> -empty
 </code></pre>
-  <h4 id="其它实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#其它实例"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>其它实例</h4>
+  <h4 id="其它实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#其它实例"><span class="octicon octicon-link"></span></a>其它实例</h4>
   <pre class="language-shell"><code class="language-shell"><span class="token function">find</span> ~ -name <span class="token string">'*jpg'</span> <span class="token comment"># 主目录中找到所有的 jpg 文件。 -name 参数允许你将结果限制为与给定模式匹配的文件。</span>
 <span class="token function">find</span> ~ -iname <span class="token string">'*jpg'</span> <span class="token comment"># -iname 就像 -name，但是不区分大小写</span>
 <span class="token function">find</span> ~ <span class="token punctuation">(</span> -iname <span class="token string">'jpeg'</span> -o -iname <span class="token string">'jpg'</span> <span class="token punctuation">)</span> <span class="token comment"># 一些图片可能是 .jpeg 扩展名。幸运的是，我们可以将模式用“或”（表示为 -o）来组合。</span>
@@ -358,7 +322,7 @@
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1633942653455"></script>
-<script type="text/javascript" src="../js/index.js?v=1633942653455"></script>
+<script type="text/javascript" src="../js/dt.js?v=1634623060659"></script>
+<script type="text/javascript" src="../js/index.js?v=1634623060659"></script>
 </body>
 </html>

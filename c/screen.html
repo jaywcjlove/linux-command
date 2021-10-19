@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,screen,用于命令行终端切换">
     <title>screen 命令，Linux screen 命令详解：用于命令行终端切换 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633942653755">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1634623060871">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner">
@@ -50,28 +50,20 @@
 </span>
 
 
-<div class="wmde-markdown">
-  <h1 id="screen"><a class="anchor" aria-hidden="true" tabindex="-1" href="#screen"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>screen</h1>
+<div class="markdown-body">
+  <h1 id="screen"><a class="anchor" aria-hidden="true" tabindex="-1" href="#screen"><span class="octicon octicon-link"></span></a>screen</h1>
   <p>用于命令行终端切换</p>
-  <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>补充说明</h2>
+  <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><span class="octicon octicon-link"></span></a>补充说明</h2>
   <p><strong>Screen</strong> 是一款由GNU计划开发的用于命令行终端切换的自由软件。用户可以通过该软件同时连接多个本地或远程的命令行会话，并在其间自由切换。GNU Screen可以看作是窗口管理器的命令行界面版本。它提供了统一的管理多个会话的界面和相应的功能。</p>
   <p><strong>会话恢复</strong></p>
   <p>只要Screen本身没有终止，在其内部运行的会话都可以恢复。这一点对于远程登录的用户特别有用——即使网络连接中断，用户也不会失去对已经打开的命令行会话的控制。只要再次登录到主机上执行screen -r就可以恢复会话的运行。同样在暂时离开的时候，也可以执行分离命令detach，在保证里面的程序正常运行的情况下让Screen挂起（切换到后台）。这一点和图形界面下的VNC很相似。</p>
   <p><strong>多窗口</strong></p>
   <p>在Screen环境下，所有的会话都独立的运行，并拥有各自的编号、输入、输出和窗口缓存。用户可以通过快捷键在不同的窗口下切换，并可以自由的重定向各个窗口的输入和输出。Screen实现了基本的文本操作，如复制粘贴等；还提供了类似滚动条的功能，可以查看窗口状况的历史记录。窗口还可以被分区和命名，还可以监视后台窗口的活动。 会话共享 Screen可以让一个或多个用户从不同终端多次登录一个会话，并共享会话的所有特性（比如可以看到完全相同的输出）。它同时提供了窗口访问权限的机制，可以对窗口进行密码保护。</p>
   <p>GNU's Screen 官方站点：<a href="http://www.gnu.org/software/screen/">http://www.gnu.org/software/screen/</a></p>
-  <h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>语法</h3>
+  <h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><span class="octicon octicon-link"></span></a>语法</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token comment"># screen -AmRvx -[ls -wipe][-d &#x3C;作业名称>][-h &#x3C;行数>][-r &#x3C;作业名称>][-s ][-S &#x3C;作业名称>]</span>
 </code></pre>
-  <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>选项</h3>
+  <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><span class="octicon octicon-link"></span></a>选项</h3>
   <pre class="language-shell"><code class="language-shell">-A 　将所有的视窗都调整为目前终端机的大小。
 -d <span class="token operator">&#x3C;</span>作业名称<span class="token operator">></span> 　将指定的screen作业离线。
 -h <span class="token operator">&#x3C;</span>行数<span class="token operator">></span> 　指定视窗的缓冲区行数。
@@ -85,9 +77,7 @@
 -ls或--list 　显示目前所有的screen作业。
 -wipe 　检查目前所有的screen作业，并删除已经无法使用的screen作业。
 </code></pre>
-  <h3 id="常用screen参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#常用screen参数"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>常用screen参数</h3>
+  <h3 id="常用screen参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#常用screen参数"><span class="octicon octicon-link"></span></a>常用screen参数</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">screen</span> -S yourname -<span class="token operator">></span> 新建一个叫yourname的session
 <span class="token function">screen</span> -ls -<span class="token operator">></span> 列出当前所有的session
 <span class="token function">screen</span> -r yourname -<span class="token operator">></span> 回到yourname这个session
@@ -121,9 +111,7 @@ C-a  -<span class="token operator">></span> 进入 copy mode，在 copy mode 下
     Esc 结束 copy mode 
 C-a <span class="token punctuation">]</span> -<span class="token operator">></span> paste，把刚刚在 copy mode 选定的内容贴上
 </code></pre>
-  <h3 id="使用-screen"><a class="anchor" aria-hidden="true" tabindex="-1" href="#使用-screen"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>使用 screen</h3>
+  <h3 id="使用-screen"><a class="anchor" aria-hidden="true" tabindex="-1" href="#使用-screen"><span class="octicon octicon-link"></span></a>使用 screen</h3>
   <p><strong>安装screen</strong></p>
   <p>流行的Linux发行版（例如Red Hat Enterprise Linux）通常会自带screen实用程序，如果没有的话，可以从GNU screen的官方网站下载。</p>
   <pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@TS-DEV ~<span class="token punctuation">]</span><span class="token comment"># yum install screen</span>
@@ -178,9 +166,7 @@ There are screens on:
 <span class="token comment">#或者</span>
 <span class="token punctuation">[</span>root@TS-DEV ~<span class="token punctuation">]</span><span class="token comment"># screen -XS test quit</span>
 </code></pre>
-  <h3 id="screen-高级应用"><a class="anchor" aria-hidden="true" tabindex="-1" href="#screen-高级应用"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>screen 高级应用 </h3>
+  <h3 id="screen-高级应用"><a class="anchor" aria-hidden="true" tabindex="-1" href="#screen-高级应用"><span class="octicon octicon-link"></span></a>screen 高级应用 </h3>
   <p><strong>会话共享</strong></p>
   <p>还有一种比较好玩的会话恢复，可以实现会话共享。假设你在和朋友在不同地点以相同用户登录一台机器，然后你创建一个screen会话，你朋友可以在他的终端上命令：</p>
   <pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@TS-DEV ~<span class="token punctuation">]</span><span class="token comment"># screen -x</span>
@@ -232,7 +218,7 @@ There are screens on:
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1633942653755"></script>
-<script type="text/javascript" src="../js/index.js?v=1633942653755"></script>
+<script type="text/javascript" src="../js/dt.js?v=1634623060871"></script>
+<script type="text/javascript" src="../js/index.js?v=1634623060871"></script>
 </body>
 </html>

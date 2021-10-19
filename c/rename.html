@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,rename,用字符串替换的方式批量改变文件名">
     <title>rename 命令，Linux rename 命令详解：用字符串替换的方式批量改变文件名 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633942653728">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1634623060851">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner">
@@ -50,14 +50,10 @@
 </span>
 
 
-<div class="wmde-markdown">
-  <h1 id="rename"><a class="anchor" aria-hidden="true" tabindex="-1" href="#rename"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>rename</h1>
+<div class="markdown-body">
+  <h1 id="rename"><a class="anchor" aria-hidden="true" tabindex="-1" href="#rename"><span class="octicon octicon-link"></span></a>rename</h1>
   <p>用字符串替换的方式批量改变文件名</p>
-  <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>补充说明</h2>
+  <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><span class="octicon octicon-link"></span></a>补充说明</h2>
   <p>rename命令存在两个版本用法上有所区别</p>
   <pre class="language-bash"><code class="language-bash">C语言版本, 支持通配符
 <span class="token punctuation">[</span>常用通配符说明<span class="token punctuation">]</span>
@@ -83,18 +79,14 @@ $ <span class="token function">rename</span> --version
 $ <span class="token function">rename</span> --version
 rename，来自 util-linux <span class="token number">2.23</span>.2
 </code></pre>
-  <h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>语法</h3>
+  <h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><span class="octicon octicon-link"></span></a>语法</h3>
   <pre class="language-bash"><code class="language-bash"><span class="token comment"># Perl版本</span>
 <span class="token function">rename</span> <span class="token punctuation">[</span> -h<span class="token operator">|</span>-m<span class="token operator">|</span>-V <span class="token punctuation">]</span> <span class="token punctuation">[</span> -v <span class="token punctuation">]</span> <span class="token punctuation">[</span> -0 <span class="token punctuation">]</span> <span class="token punctuation">[</span> -n <span class="token punctuation">]</span> <span class="token punctuation">[</span> -f <span class="token punctuation">]</span> <span class="token punctuation">[</span> -d <span class="token punctuation">]</span> <span class="token punctuation">[</span> -e<span class="token operator">|</span>-E perlexpr<span class="token punctuation">]</span>*<span class="token operator">|</span>perlexpr <span class="token punctuation">[</span> files <span class="token punctuation">]</span>
 
 <span class="token comment"># C语言版本</span>
 <span class="token function">rename</span> <span class="token punctuation">[</span>选项<span class="token punctuation">]</span> 表达式 替换的字符 文件<span class="token punctuation">..</span>.
 </code></pre>
-  <h3 id="参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参数"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>参数</h3>
+  <h3 id="参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参数"><span class="octicon octicon-link"></span></a>参数</h3>
   <pre class="language-bash"><code class="language-bash"><span class="token comment"># Perl版本</span>
 -v, --verbose
         详细：成功重命名的文件的打印名称。
@@ -143,13 +135,9 @@ rename，来自 util-linux <span class="token number">2.23</span>.2
 -h, --help
         显示帮助文本并退出
 </code></pre>
-  <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>实例</h3>
+  <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><span class="octicon octicon-link"></span></a>实例</h3>
   <hr>
-  <h4 id="perl版本"><a class="anchor" aria-hidden="true" tabindex="-1" href="#perl版本"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>Perl版本</h4>
+  <h4 id="perl版本"><a class="anchor" aria-hidden="true" tabindex="-1" href="#perl版本"><span class="octicon octicon-link"></span></a>Perl版本</h4>
   <p>将1.txt 2.txt重命名为1.log 2.log</p>
   <pre class="language-bash"><code class="language-bash">$ <span class="token function">rename</span> -v <span class="token string">"s/txt/log/g"</span> <span class="token number">1</span>.txt <span class="token number">2</span>.txt
 <span class="token number">1</span>.txt renamed as <span class="token number">1</span>.log
@@ -165,9 +153,7 @@ rename，来自 util-linux <span class="token number">2.23</span>.2
   <pre class="language-bash"><code class="language-bash"><span class="token function">rename</span> <span class="token string">"s//.txt//"</span> *   <span class="token comment"># 把所有以.txt结尾的文件名的.txt删掉</span>
 </code></pre>
   <hr>
-  <h5 id="c语言版本"><a class="anchor" aria-hidden="true" tabindex="-1" href="#c语言版本"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>C语言版本</h5>
+  <h5 id="c语言版本"><a class="anchor" aria-hidden="true" tabindex="-1" href="#c语言版本"><span class="octicon octicon-link"></span></a>C语言版本</h5>
   <p>将1.txt 2.txt重命名为1.log 2.log</p>
   <pre class="language-bash"><code class="language-bash">$ <span class="token function">rename</span> -v txt log <span class="token number">1</span>.txt <span class="token number">2</span>.txt
 <span class="token variable"><span class="token variable">`</span><span class="token number">1</span>.txt' -<span class="token operator">></span> <span class="token variable">`</span></span><span class="token number">1</span>.log<span class="token string">'
@@ -211,7 +197,7 @@ rename，来自 util-linux <span class="token number">2.23</span>.2
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1633942653728"></script>
-<script type="text/javascript" src="../js/index.js?v=1633942653728"></script>
+<script type="text/javascript" src="../js/dt.js?v=1634623060852"></script>
+<script type="text/javascript" src="../js/index.js?v=1634623060852"></script>
 </body>
 </html>

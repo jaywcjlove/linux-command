@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,ssh,openssh套件中的客户端连接工具">
     <title>ssh 命令，Linux ssh 命令详解：openssh套件中的客户端连接工具 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633942653794">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1634623060900">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner">
@@ -50,23 +50,15 @@
 </span>
 
 
-<div class="wmde-markdown">
-  <h1 id="ssh"><a class="anchor" aria-hidden="true" tabindex="-1" href="#ssh"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>ssh</h1>
+<div class="markdown-body">
+  <h1 id="ssh"><a class="anchor" aria-hidden="true" tabindex="-1" href="#ssh"><span class="octicon octicon-link"></span></a>ssh</h1>
   <p>openssh套件中的客户端连接工具</p>
-  <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>补充说明</h2>
+  <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><span class="octicon octicon-link"></span></a>补充说明</h2>
   <p><strong>ssh命令</strong> 是openssh套件中的客户端连接工具，可以给予ssh加密协议实现安全的远程登录服务器。</p>
-  <h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>语法</h3>
+  <h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><span class="octicon octicon-link"></span></a>语法</h3>
   <pre class="language-shell"><code class="language-shell">ssh<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
 </code></pre>
-  <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>选项</h3>
+  <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><span class="octicon octicon-link"></span></a>选项</h3>
   <pre class="language-shell"><code class="language-shell">-1：强制使用ssh协议版本1；
 -2：强制使用ssh协议版本2；
 -4：强制使用IPv4地址；
@@ -88,16 +80,12 @@
 -x：关闭X11转发功能；
 -y：开启信任X11转发功能。
 </code></pre>
-  <h3 id="参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参数"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>参数</h3>
+  <h3 id="参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参数"><span class="octicon octicon-link"></span></a>参数</h3>
   <ul>
     <li>远程主机：指定要连接的远程ssh服务器；</li>
     <li>指令：要在远程ssh服务器上执行的指令。</li>
   </ul>
-  <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>实例</h3>
+  <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><span class="octicon octicon-link"></span></a>实例</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token comment"># ssh 用户名@远程服务器地址</span>
 <span class="token function">ssh</span> user1@172.24.210.101
 <span class="token comment"># 指定端口</span>
@@ -109,16 +97,12 @@ ssh-keygen <span class="token comment"># 为当前用户生成 ssh 公钥 + 私�
 ssh-keygen -f keyfile -i -m key_format -e -m key_format <span class="token comment"># key_format: RFC4716/SSH2(default) PKCS8 PEM</span>
 ssh-copy-id user@ip:port <span class="token comment"># 将当前用户的公钥复制到需要 ssh 的服务器的 ~/.ssh/authorized_keys，之后可以免密登录</span>
 </code></pre>
-  <h3 id="背后故事"><a class="anchor" aria-hidden="true" tabindex="-1" href="#背后故事"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>背后故事</h3>
+  <h3 id="背后故事"><a class="anchor" aria-hidden="true" tabindex="-1" href="#背后故事"><span class="octicon octicon-link"></span></a>背后故事</h3>
   <blockquote>
     <p>英文：Tatu Ylonen<br>编译：Linux中国/kenxx<br>来源：<a href="https://linux.cn/article-8476-1.html">https://linux.cn/article-8476-1.html</a></p>
   </blockquote>
   <p>为什么 SSH（安全终端）的端口号是 22 呢，这不是一个巧合，这其中有个我（Tatu Ylonen，SSH 协议的设计者）未曾诉说的故事。</p>
-  <h4 id="将-ssh-协议端口号设为-22-的故事"><a class="anchor" aria-hidden="true" tabindex="-1" href="#将-ssh-协议端口号设为-22-的故事"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>将 SSH 协议端口号设为 22 的故事</h4>
+  <h4 id="将-ssh-协议端口号设为-22-的故事"><a class="anchor" aria-hidden="true" tabindex="-1" href="#将-ssh-协议端口号设为-22-的故事"><span class="octicon octicon-link"></span></a>将 SSH 协议端口号设为 22 的故事</h4>
   <p>1995 年春我编写了 SSH 协议的最初版本，那时候 telnet 和 FTP 正被广泛使用。</p>
   <p>当时我设计 SSH 协议想着是为了替代 telnet（端口 23）和 ftp（端口21）两个协议的，而端口 22 是空闲的。我想当然地就选择了夹在 telnet 和 ftp 的端口中间的数字。我觉得端口号虽然是个小事但似乎又存在着某种信念。但我到底要怎么拿到那个端口号呢？我未曾拥有过任何一个端口号，但我却认识几个拥有端口号的人！</p>
   <p>在那时取得端口号的事情其实说来挺简单的。毕竟当时的因特网（Internet）并不是很大，是因特网爆炸的早期。端口号分配的活儿是 IANA（Internet Assigned Numbers Authority，互联网数字分配机构）干的。在那时这机构可相当于是因特网先驱 <a href="https://en.wikipedia.org/wiki/Jon_Postel">Jon Postel</a> 和 <a href="https://en.wikipedia.org/wiki/Joyce_K._Reynolds">Joyce K. Reynolds</a> 一般的存在。Jon 参与编写了多项主要的协议标准，例如 IP（RFC 791）、ICMP（RFC 792）和 TCP（RFC 793）等一些你应该早有耳闻的协议。</p>
@@ -140,38 +124,26 @@ ssh-copy-id user@ip:port <span class="token comment"># 将当前用户的公钥�
   </blockquote>
   <p>这就搞定了！SSH 的端口正式使用 22！！！</p>
   <p>1995 年 7 月 12 日上午 2 点 21 分，我给我在赫尔辛基理工大学的测试者们宣布了 SSH 的最后 beta 版本。当日下午 5 点 23 分，我给测试者们宣布了 ssh-1.0.0 版本。1995 年 7 月 12 日，下午 5 点 51 分，我将一份 SSH（安全终端）的宣告发给了 <a href="mailto:cypherpunks@toad.com">cypherpunks@toad.com</a> 的邮件列表，此外我还将其发给了一些新闻组、邮件列表和一些在因特网上讨论相关话题的人们。</p>
-  <h4 id="如何更改-ssh-服务的端口号"><a class="anchor" aria-hidden="true" tabindex="-1" href="#如何更改-ssh-服务的端口号"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>如何更改 SSH 服务的端口号</h4>
+  <h4 id="如何更改-ssh-服务的端口号"><a class="anchor" aria-hidden="true" tabindex="-1" href="#如何更改-ssh-服务的端口号"><span class="octicon octicon-link"></span></a>如何更改 SSH 服务的端口号</h4>
   <p>SSH 服务器是默认运行在 22 号端口上的。然而，由于某些原因需要，它也可以运行在别的端口上。比如为了方便测试使用，又比如在同一个宿主机上运行多个不同的配置。当然，极少情况下，不使用 root 权限运行它也可以，比如某些必须运行在非特权的端口的情况（端口号大于等于 1024）。</p>
   <p>端口号可以在配置文件 /etc/ssh/sshd_config 中将 Port 22 更改。也可以使用 -p 选项运行 sshd。SSH 客户端和 sftp 程序也可以使用 -p 选项。</p>
-  <h4 id="配置-ssh-协议穿越防火墙"><a class="anchor" aria-hidden="true" tabindex="-1" href="#配置-ssh-协议穿越防火墙"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>配置 SSH 协议穿越防火墙</h4>
+  <h4 id="配置-ssh-协议穿越防火墙"><a class="anchor" aria-hidden="true" tabindex="-1" href="#配置-ssh-协议穿越防火墙"><span class="octicon octicon-link"></span></a>配置 SSH 协议穿越防火墙</h4>
   <p>SSH 是少数通常被许可穿越防火墙的协议之一。通常的做法是不限制出站的 SSH 连接，尤其常见于一些较小的或者比较技术型的组织中，而入站的 SSH 连接通常会限制到一台或者是少数几台服务器上。</p>
-  <h4 id="出站的-ssh-连接"><a class="anchor" aria-hidden="true" tabindex="-1" href="#出站的-ssh-连接"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>出站的 SSH 连接</h4>
+  <h4 id="出站的-ssh-连接"><a class="anchor" aria-hidden="true" tabindex="-1" href="#出站的-ssh-连接"><span class="octicon octicon-link"></span></a>出站的 SSH 连接</h4>
   <p>在防火墙中配置出站的 SSH 连接十分简单。如果完全限制了外发连接，那么只需要创建一个允许 TCP 端口 22 可以外发的规则即可。如果你想限制目标地址，你可以限制该规则仅允许访问你的组织放在云端的外部服务器或保护该云端的跳板服务器即可。</p>
-  <h4 id="反向通道是有风险的"><a class="anchor" aria-hidden="true" tabindex="-1" href="#反向通道是有风险的"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>反向通道是有风险的</h4>
+  <h4 id="反向通道是有风险的"><a class="anchor" aria-hidden="true" tabindex="-1" href="#反向通道是有风险的"><span class="octicon octicon-link"></span></a>反向通道是有风险的</h4>
   <p>其实不限制出站的 SSH 连接虽然是可以的，但是是存在风险的，SSH 协议是支持 通道访问 的。最初的想法是在外部服务器搭建一个 SSH 服务监听来自各处的连接，将进入的连接转发到组织，并让这个连接可以访问某个内部服务器。</p>
   <p>在某些场景下这当然非常的方便。开发者和系统管理员经常使用它打开一个通道以便于他们可以远程访问，比如在家里或者在旅行中使用笔记本电脑等场景。</p>
   <p>然而通常来讲这些做法是违背安全策略的，跳过了防火墙管理员和安全团队保护的控制无疑是违背安全策略的，比如这些： PCI、HIPAA、NIST SP 800-53 等。它可以被黑客和外国情报机构用来在组织内留下后门。</p>
   <p>CryptoAuditor 是一款可以控制通道穿过防火墙或者一组云端服务器入口的产品。该款产品可以配合 通用 SSH 密钥管理器（Universal SSH Key Manager） 来获得对 主机密钥（host keys）的访问，以在启用防火墙并阻挡未授权转发的场景中解密 SSH 会话。</p>
-  <h4 id="入站的-ssh-访问"><a class="anchor" aria-hidden="true" tabindex="-1" href="#入站的-ssh-访问"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>入站的 SSH 访问</h4>
+  <h4 id="入站的-ssh-访问"><a class="anchor" aria-hidden="true" tabindex="-1" href="#入站的-ssh-访问"><span class="octicon octicon-link"></span></a>入站的 SSH 访问</h4>
   <p>对于入站访问而言，这里有几点需要说一下：</p>
   <p>
     配置防火墙，并转发所有去往 22 端口的连接只能流向到一个特定的内部网络 IP 地址或者一个 DMZ 主机。在该 IP 上运行 CryptoAuditor 或者跳板机来控制和审查所有访问该组织的连接。
     在防火墙上使用不同的端口访问不同的服务器。
     只允许使用 IPsec 协议这样的 VPN（虚拟专用网）登录后连接 SSH 服务。
   </p>
-  <h4 id="通过-iptables-服务限制-ssh-访问"><a class="anchor" aria-hidden="true" tabindex="-1" href="#通过-iptables-服务限制-ssh-访问"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>通过 iptables 服务限制 SSH 访问</h4>
+  <h4 id="通过-iptables-服务限制-ssh-访问"><a class="anchor" aria-hidden="true" tabindex="-1" href="#通过-iptables-服务限制-ssh-访问"><span class="octicon octicon-link"></span></a>通过 iptables 服务限制 SSH 访问</h4>
   <p>iptables 是一款内建在 Linux 内核的宿主防火墙。通常配置用于保护服务器以防止被访问那些未明确开启的端口。</p>
   <p>如果服务器上启用了 iptables，使用下面的命令将可以允许进入的 SSH 访问，当然命令需要以 root 身份运行。</p>
   <pre class="language-shell"><code class="language-shell">iptables -A INPUT -p tcp --dport <span class="token number">22</span> -m conntrack --ctstate NEW,ESTABLISHED -j ACCEPT
@@ -205,7 +177,7 @@ iptables -A OUTPUT -p tcp --sport <span class="token number">22</span> -m conntr
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1633942653795"></script>
-<script type="text/javascript" src="../js/index.js?v=1633942653795"></script>
+<script type="text/javascript" src="../js/dt.js?v=1634623060900"></script>
+<script type="text/javascript" src="../js/index.js?v=1634623060900"></script>
 </body>
 </html>

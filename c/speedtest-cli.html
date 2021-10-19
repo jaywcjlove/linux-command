@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,speedtest-cli,命令行下测试服务器外网速度">
     <title>speedtest-cli 命令，Linux speedtest-cli 命令详解：命令行下测试服务器外网速度 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633942653784">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1634623060892">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner">
@@ -50,18 +50,12 @@
 </span>
 
 
-<div class="wmde-markdown">
-  <h1 id="speedtest-cli"><a class="anchor" aria-hidden="true" tabindex="-1" href="#speedtest-cli"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>speedtest-cli</h1>
+<div class="markdown-body">
+  <h1 id="speedtest-cli"><a class="anchor" aria-hidden="true" tabindex="-1" href="#speedtest-cli"><span class="octicon octicon-link"></span></a>speedtest-cli</h1>
   <p>命令行下测试服务器外网速度</p>
-  <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>补充说明</h2>
+  <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><span class="octicon octicon-link"></span></a>补充说明</h2>
   <p><strong>speedtest-cli</strong> 是一个使用python编写的命令行脚本，通过调用speedtest.net测试上下行的接口来完成速度测试，最后我会测试运维生存时间所在服务器的外网速度。项目地址：<a href="https://github.com/sivel/speedtest-cli">https://github.com/sivel/speedtest-cli</a></p>
-  <h3 id="安装speedtestcli"><a class="anchor" aria-hidden="true" tabindex="-1" href="#安装speedtestcli"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>安装speedtest－cli</h3>
+  <h3 id="安装speedtestcli"><a class="anchor" aria-hidden="true" tabindex="-1" href="#安装speedtestcli"><span class="octicon octicon-link"></span></a>安装speedtest－cli</h3>
   <p>speedtest-cli需要在python 2.4-3.4的环境下，安装方法都很简单，自己选择以下最适合你的一种。</p>
   <p><strong>pip方式</strong></p>
   <pre class="language-shell"><code class="language-shell">＃ pip <span class="token function">install</span> speedtest－cli
@@ -85,9 +79,7 @@
 ＃ <span class="token function">chmod</span> +x speedtest-cli
 </code></pre>
   <p>直接下载脚本，给予执行权限即可。</p>
-  <h3 id="用法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#用法"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>用法</h3>
+  <h3 id="用法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#用法"><span class="octicon octicon-link"></span></a>用法</h3>
   <pre class="language-shell"><code class="language-shell">-h, --help       show this <span class="token builtin class-name">help</span> message and <span class="token builtin class-name">exit</span>
 --share          分享你的网速，该命令会在speedtest网站上生成网速测试结果的图片。
 --simple         Suppress verbose output, only show basic information
@@ -97,9 +89,7 @@
 --source<span class="token operator">=</span>SOURCE  Source <span class="token function">ip</span> address to <span class="token builtin class-name">bind</span> to
 --version        Show the version number and <span class="token builtin class-name">exit</span>
 </code></pre>
-  <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>实例</h3>
+  <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><span class="octicon octicon-link"></span></a>实例</h3>
   <p>列出所有在中国的测试服务器：</p>
   <pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@li229-122 ~<span class="token punctuation">]</span><span class="token comment"># speedtest-cli --list | grep China</span>
 <span class="token number">1185</span><span class="token punctuation">)</span> China Unicom <span class="token punctuation">(</span>Changchun, China<span class="token punctuation">)</span> <span class="token punctuation">[</span><span class="token number">10534.35</span> km<span class="token punctuation">]</span>
@@ -165,7 +155,7 @@ Share results: http://www.speedtest.net/result/3240988007.png
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1633942653785"></script>
-<script type="text/javascript" src="../js/index.js?v=1633942653785"></script>
+<script type="text/javascript" src="../js/dt.js?v=1634623060893"></script>
+<script type="text/javascript" src="../js/index.js?v=1634623060893"></script>
 </body>
 </html>

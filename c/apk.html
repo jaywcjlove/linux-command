@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,apk,Alpine Linux 下的包管理工具">
     <title>apk 命令，Linux apk 命令详解：Alpine Linux 下的包管理工具 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633942653277">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1634623060533">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner">
@@ -50,14 +50,10 @@
 </span>
 
 
-<div class="wmde-markdown">
-  <h1 id="apk"><a class="anchor" aria-hidden="true" tabindex="-1" href="#apk"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>apk</h1>
+<div class="markdown-body">
+  <h1 id="apk"><a class="anchor" aria-hidden="true" tabindex="-1" href="#apk"><span class="octicon octicon-link"></span></a>apk</h1>
   <p>Alpine Linux 下的包管理工具</p>
-  <h2 id="使用实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#使用实例"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>使用实例</h2>
+  <h2 id="使用实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#使用实例"><span class="octicon octicon-link"></span></a>使用实例</h2>
   <pre class="language-shell"><code class="language-shell">apk <span class="token function">install</span> xxx
 apk search xxx <span class="token comment"># 支持正则</span>
 apk info xxx <span class="token comment"># 查看包的详细信息</span>
@@ -65,33 +61,25 @@ apk show <span class="token comment"># list local package</span>
 <span class="token comment"># 卸载并删除 包</span>
 apk del openssh openntp <span class="token function">vim</span>
 </code></pre>
-  <h3 id="升级"><a class="anchor" aria-hidden="true" tabindex="-1" href="#升级"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>升级</h3>
+  <h3 id="升级"><a class="anchor" aria-hidden="true" tabindex="-1" href="#升级"><span class="octicon octicon-link"></span></a>升级</h3>
   <p>upgrade命令升级系统已安装的所以软件包（一般包括内核），当然也可指定仅升级部分软件包（通过-u或–upgrade选择指定）。</p>
   <pre class="language-shell"><code class="language-shell">apk update <span class="token comment"># 更新最新本地镜像源</span>
 apk upgrade <span class="token comment"># 升级软件</span>
 apk <span class="token function">add</span> --upgrade busybox <span class="token comment"># 指定升级部分软件包</span>
 </code></pre>
-  <h3 id="搜索"><a class="anchor" aria-hidden="true" tabindex="-1" href="#搜索"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>搜索</h3>
+  <h3 id="搜索"><a class="anchor" aria-hidden="true" tabindex="-1" href="#搜索"><span class="octicon octicon-link"></span></a>搜索</h3>
   <pre class="language-shell"><code class="language-shell">apk search <span class="token comment"># 查找所以可用软件包</span>
 apk search -v <span class="token comment"># 查找所以可用软件包及其描述内容</span>
 apk search -v <span class="token string">'acf*'</span> <span class="token comment"># 通过软件包名称查找软件包</span>
 apk search -v -d <span class="token string">'docker'</span> <span class="token comment"># 通过描述文件查找特定的软件包</span>
 </code></pre>
-  <h3 id="查看包信息"><a class="anchor" aria-hidden="true" tabindex="-1" href="#查看包信息"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>查看包信息</h3>
+  <h3 id="查看包信息"><a class="anchor" aria-hidden="true" tabindex="-1" href="#查看包信息"><span class="octicon octicon-link"></span></a>查看包信息</h3>
   <p>info命令用于显示软件包的信息。</p>
   <pre class="language-shell"><code class="language-shell">apk info <span class="token comment"># 列出所有已安装的软件包</span>
 apk info -a zlib <span class="token comment"># 显示完整的软件包信息</span>
 apk info --who-owns /sbin/lbu <span class="token comment"># 显示指定文件属于的包</span>
 </code></pre>
-  <h2 id="笔记"><a class="anchor" aria-hidden="true" tabindex="-1" href="#笔记"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>笔记</h2>
+  <h2 id="笔记"><a class="anchor" aria-hidden="true" tabindex="-1" href="#笔记"><span class="octicon octicon-link"></span></a>笔记</h2>
   <p>还是蛮喜欢 alpine 的，简单纯粹</p>
   <pre class="language-shell"><code class="language-shell">apk <span class="token function">add</span> iproute2 <span class="token comment"># ss vs netstat</span>
 ss -ptl
@@ -199,7 +187,7 @@ apk <span class="token function">add</span> dropbear <span class="token comment"
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1633942653279"></script>
-<script type="text/javascript" src="../js/index.js?v=1633942653279"></script>
+<script type="text/javascript" src="../js/dt.js?v=1634623060533"></script>
+<script type="text/javascript" src="../js/index.js?v=1634623060533"></script>
 </body>
 </html>

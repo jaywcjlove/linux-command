@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,export,为shell变量或函数设置导出属性。">
     <title>export 命令，Linux export 命令详解：为shell变量或函数设置导出属性。 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633942653445">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1634623060652">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner">
@@ -50,20 +50,14 @@
 </span>
 
 
-<div class="wmde-markdown">
-  <h1 id="export"><a class="anchor" aria-hidden="true" tabindex="-1" href="#export"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>export</h1>
+<div class="markdown-body">
+  <h1 id="export"><a class="anchor" aria-hidden="true" tabindex="-1" href="#export"><span class="octicon octicon-link"></span></a>export</h1>
   <p>为shell变量或函数设置导出属性。</p>
-  <h2 id="概要"><a class="anchor" aria-hidden="true" tabindex="-1" href="#概要"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>概要</h2>
+  <h2 id="概要"><a class="anchor" aria-hidden="true" tabindex="-1" href="#概要"><span class="octicon octicon-link"></span></a>概要</h2>
   <pre><code>export [-fn] [name[=word]]...
 export -p
 </code></pre>
-  <h2 id="主要用途"><a class="anchor" aria-hidden="true" tabindex="-1" href="#主要用途"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>主要用途</h2>
+  <h2 id="主要用途"><a class="anchor" aria-hidden="true" tabindex="-1" href="#主要用途"><span class="octicon octicon-link"></span></a>主要用途</h2>
   <ul>
     <li>定义一到多个变量并设置导出属性。</li>
     <li>修改一到多个变量的值并设置导出属性。</li>
@@ -73,9 +67,7 @@ export -p
     <li>删除一到多个函数的导出属性。</li>
     <li>显示全部拥有导出属性的函数。</li>
   </ul>
-  <h2 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>选项</h2>
+  <h2 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><span class="octicon octicon-link"></span></a>选项</h2>
   <pre class="language-shell"><code class="language-shell">-f：指向函数。
 -n：删除变量的导出属性。
 -p：显示全部拥有导出属性的变量。
@@ -83,18 +75,12 @@ export -p
 -nf：删除函数的导出属性。
 --：在它之后的选项无效。
 </code></pre>
-  <h2 id="参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参数"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>参数</h2>
+  <h2 id="参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参数"><span class="octicon octicon-link"></span></a>参数</h2>
   <p>name（可选）：变量名或已定义函数名。</p>
   <p>value（可选）：变量的值。</p>
-  <h3 id="返回值"><a class="anchor" aria-hidden="true" tabindex="-1" href="#返回值"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>返回值</h3>
+  <h3 id="返回值"><a class="anchor" aria-hidden="true" tabindex="-1" href="#返回值"><span class="octicon octicon-link"></span></a>返回值</h3>
   <p>export返回true除非你提供了非法选项或非法名称。</p>
-  <h2 id="例子"><a class="anchor" aria-hidden="true" tabindex="-1" href="#例子"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>例子</h2>
+  <h2 id="例子"><a class="anchor" aria-hidden="true" tabindex="-1" href="#例子"><span class="octicon octicon-link"></span></a>例子</h2>
   <pre class="language-shell"><code class="language-shell"><span class="token comment"># 显示全部拥有导出属性的变量。</span>
 <span class="token comment"># export -p</span>
 <span class="token comment"># export</span>
@@ -134,49 +120,31 @@ export -p
 <span class="token comment"># 添加当前位置到动态库环境变量</span>
 <span class="token builtin class-name">export</span> <span class="token assign-left variable">LD_LIBRARY_PATH</span><span class="token operator">=</span><span class="token variable"><span class="token variable">$(</span><span class="token builtin class-name">pwd</span><span class="token variable">)</span></span><span class="token builtin class-name">:</span><span class="token variable">${LD_LIBRARY_PATH}</span>
 </code></pre>
-  <h2 id="错误用法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#错误用法"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>错误用法</h2>
+  <h2 id="错误用法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#错误用法"><span class="octicon octicon-link"></span></a>错误用法</h2>
   <ul>
     <li>对未定义的函数添加导出属性。</li>
     <li>对没有导出属性的函数/变量执行删除导出属性操作。</li>
     <li>在 <code>--</code> 后使用选项。</li>
   </ul>
-  <h2 id="qa"><a class="anchor" aria-hidden="true" tabindex="-1" href="#qa"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>Q&#x26;A</h2>
-  <h4 id="q对变量或函数设置导出属性有什么用"><a class="anchor" aria-hidden="true" tabindex="-1" href="#q对变量或函数设置导出属性有什么用"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>Q：对变量或函数设置导出属性有什么用？</h4>
+  <h2 id="qa"><a class="anchor" aria-hidden="true" tabindex="-1" href="#qa"><span class="octicon octicon-link"></span></a>Q&#x26;A</h2>
+  <h4 id="q对变量或函数设置导出属性有什么用"><a class="anchor" aria-hidden="true" tabindex="-1" href="#q对变量或函数设置导出属性有什么用"><span class="octicon octicon-link"></span></a>Q：对变量或函数设置导出属性有什么用？</h4>
   <p>A：它们会成为环境变量，可以在脚本中访问它们，尤其是脚本中调用的子进程需要时。（ <strong><a href="https://askubuntu.com/questions/26318/environment-variable-vs-shell-variable-whats-the-difference">参考链接4</a></strong> ）</p>
-  <h4 id="q如果我编写的脚本修改了已有的环境变量的值那么执行它会在当前终端生效吗会影响之前以及之后打开的终端吗"><a class="anchor" aria-hidden="true" tabindex="-1" href="#q如果我编写的脚本修改了已有的环境变量的值那么执行它会在当前终端生效吗会影响之前以及之后打开的终端吗"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>Q：如果我编写的脚本修改了已有的环境变量的值，那么执行它会在当前终端生效吗？会影响之前以及之后打开的终端吗？</h4>
+  <h4 id="q如果我编写的脚本修改了已有的环境变量的值那么执行它会在当前终端生效吗会影响之前以及之后打开的终端吗"><a class="anchor" aria-hidden="true" tabindex="-1" href="#q如果我编写的脚本修改了已有的环境变量的值那么执行它会在当前终端生效吗会影响之前以及之后打开的终端吗"><span class="octicon octicon-link"></span></a>Q：如果我编写的脚本修改了已有的环境变量的值，那么执行它会在当前终端生效吗？会影响之前以及之后打开的终端吗？</h4>
   <p>
     A：只有通过<code>source</code>方式调用的脚本会生效，您可以查看<code>source</code>命令获得更多信息；其他方式只是在子shell中执行。
     之前的不会影响，之后的除非是修改了<code>~/.bashrc</code>这种启动终端时加载的脚本。（ <strong><a href="https://www.cnblogs.com/hongzg1982/articles/2101792.html">参考链接1</a></strong> ）
   </p>
-  <h4 id="q我脚本文件中调用bashrc中定义的函数和变量为什么在新打开的终端中通过-sh-方式调用该脚本或直接运行"><a class="anchor" aria-hidden="true" tabindex="-1" href="#q我脚本文件中调用bashrc中定义的函数和变量为什么在新打开的终端中通过-sh-方式调用该脚本或直接运行"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>Q：我脚本文件中调用<code>~/.bashrc</code>中定义的函数和变量。为什么在新打开的终端中通过 <code>sh</code> 方式调用该脚本或直接运行</h4>
+  <h4 id="q我脚本文件中调用bashrc中定义的函数和变量为什么在新打开的终端中通过-sh-方式调用该脚本或直接运行"><a class="anchor" aria-hidden="true" tabindex="-1" href="#q我脚本文件中调用bashrc中定义的函数和变量为什么在新打开的终端中通过-sh-方式调用该脚本或直接运行"><span class="octicon octicon-link"></span></a>Q：我脚本文件中调用<code>~/.bashrc</code>中定义的函数和变量。为什么在新打开的终端中通过 <code>sh</code> 方式调用该脚本或直接运行</h4>
   <p>这个当前用户有执行权限的脚本却不能使用这些函数和变量？<br>A：请在<code>~/.bashrc</code>文件中增加export它们的语句。另请参阅 <strong>知识点</strong> 段落。</p>
-  <h4 id="q数组和关联数组也可以设置导出属性吗"><a class="anchor" aria-hidden="true" tabindex="-1" href="#q数组和关联数组也可以设置导出属性吗"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>Q：数组和关联数组也可以设置导出属性吗？</h4>
+  <h4 id="q数组和关联数组也可以设置导出属性吗"><a class="anchor" aria-hidden="true" tabindex="-1" href="#q数组和关联数组也可以设置导出属性吗"><span class="octicon octicon-link"></span></a>Q：数组和关联数组也可以设置导出属性吗？</h4>
   <p>A：是可以的（如果你的bash支持它们），不过有些问题（ <strong><a href="https://stackoverflow.com/questions/5564418/exporting-an-array-in-bash-script">参考链接2</a></strong> ）。</p>
-  <h4 id="q为什么我在查看变量或函数导出属性的时候显示的开头是declare"><a class="anchor" aria-hidden="true" tabindex="-1" href="#q为什么我在查看变量或函数导出属性的时候显示的开头是declare"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>Q：为什么我在查看变量或函数导出属性的时候显示的开头是<code>declare</code>？</h4>
+  <h4 id="q为什么我在查看变量或函数导出属性的时候显示的开头是declare"><a class="anchor" aria-hidden="true" tabindex="-1" href="#q为什么我在查看变量或函数导出属性的时候显示的开头是declare"><span class="octicon octicon-link"></span></a>Q：为什么我在查看变量或函数导出属性的时候显示的开头是<code>declare</code>？</h4>
   <p>A：因为<code>declare</code>也能够设置变量或函数的导出属性，详见<code>declare</code>命令。</p>
-  <h3 id="注意"><a class="anchor" aria-hidden="true" tabindex="-1" href="#注意"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>注意</h3>
+  <h3 id="注意"><a class="anchor" aria-hidden="true" tabindex="-1" href="#注意"><span class="octicon octicon-link"></span></a>注意</h3>
   <ol>
     <li>该命令是bash内建命令，相关的帮助信息请查看<code>help</code>命令。</li>
   </ol>
-  <h3 id="知识点"><a class="anchor" aria-hidden="true" tabindex="-1" href="#知识点"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>知识点</h3>
+  <h3 id="知识点"><a class="anchor" aria-hidden="true" tabindex="-1" href="#知识点"><span class="octicon octicon-link"></span></a>知识点</h3>
   <p>
     在<code>info bash</code>或 <a href="http://www.gnu.org/software/bash/manual/bash.html">bash在线文档</a> 的
     <code>3.7.3</code>节提到了shell执行环境，其中涉及变量和函数的内容如下
@@ -194,18 +162,14 @@ export -p
   <p>变量是有名字的参数。</p>
   <p>那么子shell确实继承了父shell中带有导出属性的变量或函数。</p>
   <p>可参考链接： <a href="https://blog.csdn.net/soaringlee_fighting/article/details/78759448">执行脚本方式的区别</a></p>
-  <h3 id="参考链接"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参考链接"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>参考链接</h3>
+  <h3 id="参考链接"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参考链接"><span class="octicon octicon-link"></span></a>参考链接</h3>
   <ol>
     <li><a href="https://www.cnblogs.com/hongzg1982/articles/2101792.html">关于bashrc profile文件的讨论</a></li>
     <li><a href="https://stackoverflow.com/questions/5564418/exporting-an-array-in-bash-script">关于export数组的讨论</a></li>
     <li><a href="https://unix.stackexchange.com/questions/22796/can-i-export-functions-in-bash">export -pf用法</a></li>
     <li><a href="https://askubuntu.com/questions/26318/environment-variable-vs-shell-variable-whats-the-difference">环境变量和shell变量的区别</a></li>
   </ol>
-  <h3 id="扩展阅读"><a class="anchor" aria-hidden="true" tabindex="-1" href="#扩展阅读"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>扩展阅读</h3>
+  <h3 id="扩展阅读"><a class="anchor" aria-hidden="true" tabindex="-1" href="#扩展阅读"><span class="octicon octicon-link"></span></a>扩展阅读</h3>
   <p>一般来说，配置交叉编译工具链的时候需要指定编译工具的路径，此时就需要设置环境变量。查看已经存在的环境变量：</p>
   <pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># export</span>
 <span class="token builtin class-name">declare</span> -x <span class="token assign-left variable">G_BROKEN_FILENAMES</span><span class="token operator">=</span><span class="token string">"1"</span>
@@ -254,7 +218,7 @@ export -p
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1633942653446"></script>
-<script type="text/javascript" src="../js/index.js?v=1633942653446"></script>
+<script type="text/javascript" src="../js/dt.js?v=1634623060652"></script>
+<script type="text/javascript" src="../js/index.js?v=1634623060652"></script>
 </body>
 </html>

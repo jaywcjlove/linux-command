@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,ip,网络配置工具">
     <title>ip 命令，Linux ip 命令详解：网络配置工具 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633942653532">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1634623060711">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner">
@@ -50,25 +50,17 @@
 </span>
 
 
-<div class="wmde-markdown">
-  <h1 id="ip"><a class="anchor" aria-hidden="true" tabindex="-1" href="#ip"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>ip</h1>
+<div class="markdown-body">
+  <h1 id="ip"><a class="anchor" aria-hidden="true" tabindex="-1" href="#ip"><span class="octicon octicon-link"></span></a>ip</h1>
   <p>网络配置工具</p>
-  <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>补充说明</h2>
+  <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><span class="octicon octicon-link"></span></a>补充说明</h2>
   <p><strong>ip命令</strong> 用来显示或操纵Linux主机的路由、网络设备、策略路由和隧道，是Linux下较新的功能强大的网络配置工具。</p>
-  <h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>语法</h3>
+  <h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><span class="octicon octicon-link"></span></a>语法</h3>
   <pre class="language-shell"><code class="language-shell">ip<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
 Usage: <span class="token function">ip</span> <span class="token punctuation">[</span> OPTIONS <span class="token punctuation">]</span> OBJECT <span class="token punctuation">{</span> COMMAND <span class="token operator">|</span> <span class="token builtin class-name">help</span> <span class="token punctuation">}</span>
        <span class="token function">ip</span> <span class="token punctuation">[</span> -force <span class="token punctuation">]</span> -batch filename
 </code></pre>
-  <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>选项</h3>
+  <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><span class="octicon octicon-link"></span></a>选项</h3>
   <pre class="language-shell"><code class="language-shell">OBJECT :<span class="token operator">=</span> <span class="token punctuation">{</span> <span class="token function">link</span> <span class="token operator">|</span> address <span class="token operator">|</span> addrlabel <span class="token operator">|</span> route <span class="token operator">|</span> rule <span class="token operator">|</span> neigh <span class="token operator">|</span> ntable <span class="token operator">|</span>
        tunnel <span class="token operator">|</span> tuntap <span class="token operator">|</span> maddress <span class="token operator">|</span> mroute <span class="token operator">|</span> mrule <span class="token operator">|</span> monitor <span class="token operator">|</span> xfrm <span class="token operator">|</span>
        netns <span class="token operator">|</span> l2tp <span class="token operator">|</span> macsec <span class="token operator">|</span> tcp_metrics <span class="token operator">|</span> token <span class="token punctuation">}</span>
@@ -81,9 +73,7 @@ Usage: <span class="token function">ip</span> <span class="token punctuation">[<
 -0：输出信息每条记录输出一行，即使内容较多也不换行显示；
 -r：显示主机时，不使用IP地址，而使用主机的域名。
 </code></pre>
-  <h3 id="参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参数"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>参数</h3>
+  <h3 id="参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参数"><span class="octicon octicon-link"></span></a>参数</h3>
   <pre class="language-shell"><code class="language-shell">OPTIONS :<span class="token operator">=</span> <span class="token punctuation">{</span> -V<span class="token punctuation">[</span>ersion<span class="token punctuation">]</span> <span class="token operator">|</span> -s<span class="token punctuation">[</span>tatistics<span class="token punctuation">]</span> <span class="token operator">|</span> -d<span class="token punctuation">[</span>etails<span class="token punctuation">]</span> <span class="token operator">|</span> -r<span class="token punctuation">[</span>esolve<span class="token punctuation">]</span> <span class="token operator">|</span>
         -h<span class="token punctuation">[</span>uman-readable<span class="token punctuation">]</span> <span class="token operator">|</span> -iec <span class="token operator">|</span>
         -f<span class="token punctuation">[</span>amily<span class="token punctuation">]</span> <span class="token punctuation">{</span> inet <span class="token operator">|</span> inet6 <span class="token operator">|</span> ipx <span class="token operator">|</span> dnet <span class="token operator">|</span> bridge <span class="token operator">|</span> <span class="token function">link</span> <span class="token punctuation">}</span> <span class="token operator">|</span>
@@ -96,9 +86,7 @@ Usage: <span class="token function">ip</span> <span class="token punctuation">[<
 具体操作：对指定的网络对象完成具体操作；
 help：显示网络对象支持的操作命令的帮助信息。
 </code></pre>
-  <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>实例</h3>
+  <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><span class="octicon octicon-link"></span></a>实例</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">ip</span> <span class="token function">link</span> show                     <span class="token comment"># 显示网络接口信息</span>
 <span class="token function">ip</span> <span class="token function">link</span> <span class="token builtin class-name">set</span> eth0 up             <span class="token comment"># 开启网卡</span>
 <span class="token function">ip</span> <span class="token function">link</span> <span class="token builtin class-name">set</span> eth0 down            <span class="token comment"># 关闭网卡</span>
@@ -191,7 +179,7 @@ default via <span class="token number">112.124</span>.15.247 dev eth1
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1633942653532"></script>
-<script type="text/javascript" src="../js/index.js?v=1633942653532"></script>
+<script type="text/javascript" src="../js/dt.js?v=1634623060712"></script>
+<script type="text/javascript" src="../js/index.js?v=1634623060712"></script>
 </body>
 </html>

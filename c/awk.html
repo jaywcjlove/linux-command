@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,awk,文本和数据进行处理的编程语言">
     <title>awk 命令，Linux awk 命令详解：文本和数据进行处理的编程语言 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633942653307">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1634623060554">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner">
@@ -50,18 +50,12 @@
 </span>
 
 
-<div class="wmde-markdown">
-  <h1 id="awk"><a class="anchor" aria-hidden="true" tabindex="-1" href="#awk"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>awk</h1>
+<div class="markdown-body">
+  <h1 id="awk"><a class="anchor" aria-hidden="true" tabindex="-1" href="#awk"><span class="octicon octicon-link"></span></a>awk</h1>
   <p>文本和数据进行处理的编程语言</p>
-  <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>补充说明</h2>
+  <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><span class="octicon octicon-link"></span></a>补充说明</h2>
   <p><strong>awk</strong> 是一种编程语言，用于在linux/unix下对文本和数据进行处理。数据可以来自标准输入(stdin)、一个或多个文件，或其它命令的输出。它支持用户自定义函数和动态正则表达式等先进功能，是linux/unix下的一个强大编程工具。它在命令行中使用，但更多是作为脚本来使用。awk有很多内建的功能，比如数组、函数等，这是它和C语言的相同之处，灵活性是awk最大的优势。</p>
-  <h2 id="awk命令格式和选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#awk命令格式和选项"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>awk命令格式和选项</h2>
+  <h2 id="awk命令格式和选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#awk命令格式和选项"><span class="octicon octicon-link"></span></a>awk命令格式和选项</h2>
   <p><strong>语法形式</strong></p>
   <pre class="language-shell"><code class="language-shell"><span class="token function">awk</span> <span class="token punctuation">[</span>options<span class="token punctuation">]</span> <span class="token string">'script'</span> <span class="token assign-left variable">var</span><span class="token operator">=</span>value file<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
 <span class="token function">awk</span> <span class="token punctuation">[</span>options<span class="token punctuation">]</span> -f scriptfile <span class="token assign-left variable">var</span><span class="token operator">=</span>value file<span class="token punctuation">(</span>s<span class="token punctuation">)</span>
@@ -73,13 +67,9 @@
     <li><strong>-f scripfile</strong> 从脚本文件中读取awk命令</li>
     <li><strong>-m[fr] val</strong> 对val值设置内在限制，-mf选项限制分配给val的最大块数目；-mr选项限制记录的最大数目。这两个功能是Bell实验室版awk的扩展功能，在标准awk中不适用。</li>
   </ul>
-  <h2 id="awk模式和操作"><a class="anchor" aria-hidden="true" tabindex="-1" href="#awk模式和操作"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>awk模式和操作</h2>
+  <h2 id="awk模式和操作"><a class="anchor" aria-hidden="true" tabindex="-1" href="#awk模式和操作"><span class="octicon octicon-link"></span></a>awk模式和操作</h2>
   <p>awk脚本是由模式和操作组成的。</p>
-  <h3 id="模式"><a class="anchor" aria-hidden="true" tabindex="-1" href="#模式"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>模式</h3>
+  <h3 id="模式"><a class="anchor" aria-hidden="true" tabindex="-1" href="#模式"><span class="octicon octicon-link"></span></a>模式</h3>
   <p>模式可以是以下任意一个：</p>
   <ul>
     <li>/正则表达式/：使用通配符的扩展集。</li>
@@ -87,9 +77,7 @@
     <li>模式匹配表达式：用运算符<code>~</code>（匹配）和<code>!~</code>（不匹配）。</li>
     <li>BEGIN语句块、pattern语句块、END语句块：参见awk的工作原理</li>
   </ul>
-  <h3 id="操作"><a class="anchor" aria-hidden="true" tabindex="-1" href="#操作"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>操作</h3>
+  <h3 id="操作"><a class="anchor" aria-hidden="true" tabindex="-1" href="#操作"><span class="octicon octicon-link"></span></a>操作</h3>
   <p>操作由一个或多个命令、函数、表达式组成，之间由换行符或分号隔开，并位于大括号内，主要部分是：</p>
   <ul>
     <li>变量或数组赋值</li>
@@ -97,18 +85,14 @@
     <li>内置函数</li>
     <li>控制流语句</li>
   </ul>
-  <h2 id="awk脚本基本结构"><a class="anchor" aria-hidden="true" tabindex="-1" href="#awk脚本基本结构"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>awk脚本基本结构</h2>
+  <h2 id="awk脚本基本结构"><a class="anchor" aria-hidden="true" tabindex="-1" href="#awk脚本基本结构"><span class="octicon octicon-link"></span></a>awk脚本基本结构</h2>
   <pre class="language-shell"><code class="language-shell"><span class="token function">awk</span> <span class="token string">'BEGIN{ print "start" } pattern{ commands } END{ print "end" }'</span> <span class="token function">file</span>
 </code></pre>
   <p>一个awk脚本通常由：BEGIN语句块、能够使用模式匹配的通用语句块、END语句块3部分组成，这三个部分是可选的。任意一个部分都可以不出现在脚本中，脚本通常是被 <strong>单引号</strong> 或 <strong>双引号</strong> 中，例如：</p>
   <pre class="language-shell"><code class="language-shell"><span class="token function">awk</span> <span class="token string">'BEGIN{ i=0 } { i++ } END{ print i }'</span> filename
 <span class="token function">awk</span> <span class="token string">"BEGIN{ i=0 } { i++ } END{ print i }"</span> filename
 </code></pre>
-  <h3 id="awk的工作原理"><a class="anchor" aria-hidden="true" tabindex="-1" href="#awk的工作原理"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>awk的工作原理</h3>
+  <h3 id="awk的工作原理"><a class="anchor" aria-hidden="true" tabindex="-1" href="#awk的工作原理"><span class="octicon octicon-link"></span></a>awk的工作原理</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token function">awk</span> <span class="token string">'BEGIN{ commands } pattern{ commands } END{ commands }'</span>
 </code></pre>
   <ul>
@@ -135,9 +119,7 @@ v1 v2 v3
 <span class="token assign-left variable">v1</span><span class="token operator">=</span>v2<span class="token operator">=</span>v3
 </code></pre>
   <p>{ }类似一个循环体，会对文件中的每一行进行迭代，通常变量初始化语句（如：i=0）以及打印文件头部的语句放入BEGIN语句块中，将打印的结果等语句放在END语句块中。</p>
-  <h2 id="awk内置变量预定义变量"><a class="anchor" aria-hidden="true" tabindex="-1" href="#awk内置变量预定义变量"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>awk内置变量（预定义变量）</h2>
+  <h2 id="awk内置变量预定义变量"><a class="anchor" aria-hidden="true" tabindex="-1" href="#awk内置变量预定义变量"><span class="octicon octicon-link"></span></a>awk内置变量（预定义变量）</h2>
   <p>说明：[A][N][P][G]表示第一个支持变量的工具，[A]=awk、[N]=nawk、[P]=POSIXawk、[G]=gawk</p>
   <pre class="language-shell"><code class="language-shell"> **<span class="token variable">$n</span>**  当前记录的第n个字段，比如n为1表示第一个字段，n为2表示第二个字段。 
  **<span class="token variable">$0</span>**  这个变量包含执行过程中当前行的文本内容。
@@ -205,9 +187,7 @@ f4
 等于
 <span class="token number">15</span>
 </code></pre>
-  <h2 id="将外部变量值传递给awk"><a class="anchor" aria-hidden="true" tabindex="-1" href="#将外部变量值传递给awk"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>将外部变量值传递给awk</h2>
+  <h2 id="将外部变量值传递给awk"><a class="anchor" aria-hidden="true" tabindex="-1" href="#将外部变量值传递给awk"><span class="octicon octicon-link"></span></a>将外部变量值传递给awk</h2>
   <p>借助 <strong><code>-v</code>选项</strong> ，可以将外部值（并非来自stdin）传递给awk：</p>
   <pre class="language-shell"><code class="language-shell"><span class="token assign-left variable">VAR</span><span class="token operator">=</span><span class="token number">10000</span>
 <span class="token builtin class-name">echo</span> <span class="token operator">|</span> <span class="token function">awk</span> -v <span class="token assign-left variable">VARIABLE</span><span class="token operator">=</span><span class="token variable">$VAR</span> <span class="token string">'{ print VARIABLE }'</span>
@@ -221,18 +201,12 @@ f4
   <pre class="language-shell"><code class="language-shell"><span class="token function">awk</span> <span class="token string">'{ print v1,v2 }'</span> <span class="token assign-left variable">v1</span><span class="token operator">=</span><span class="token variable">$var1</span> <span class="token assign-left variable">v2</span><span class="token operator">=</span><span class="token variable">$var2</span> filename
 </code></pre>
   <p>以上方法中，变量之间用空格分隔作为awk的命令行参数跟随在BEGIN、{}和END语句块之后。</p>
-  <h2 id="查找进程pid"><a class="anchor" aria-hidden="true" tabindex="-1" href="#查找进程pid"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>查找进程pid</h2>
+  <h2 id="查找进程pid"><a class="anchor" aria-hidden="true" tabindex="-1" href="#查找进程pid"><span class="octicon octicon-link"></span></a>查找进程pid</h2>
   <pre class="language-shell"><code class="language-shell"><span class="token function">netstat</span> -antup <span class="token operator">|</span> <span class="token function">grep</span> <span class="token number">7770</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{ print $NF NR}'</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{ print $1}'</span>
 </code></pre>
-  <h2 id="awk运算与判断"><a class="anchor" aria-hidden="true" tabindex="-1" href="#awk运算与判断"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>awk运算与判断</h2>
+  <h2 id="awk运算与判断"><a class="anchor" aria-hidden="true" tabindex="-1" href="#awk运算与判断"><span class="octicon octicon-link"></span></a>awk运算与判断</h2>
   <p>作为一种程序设计语言所应具有的特点之一，awk支持多种运算，这些运算与C语言提供的基本相同。awk还提供了一系列内置的运算函数（如log、sqr、cos、sin等）和一些用于对字符串进行操作（运算）的函数（如length、substr等等）。这些函数的引用大大的提高了awk的运算功能。作为对条件转移指令的一部分，关系判断是每种程序设计语言都具备的功能，awk也不例外，awk中允许进行多种测试，作为样式匹配，还提供了模式匹配表达式~（匹配）和!~（不匹配）。作为对测试的一种扩充，awk也支持用逻辑运算符。</p>
-  <h3 id="算术运算符"><a class="anchor" aria-hidden="true" tabindex="-1" href="#算术运算符"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>算术运算符</h3>
+  <h3 id="算术运算符"><a class="anchor" aria-hidden="true" tabindex="-1" href="#算术运算符"><span class="octicon octicon-link"></span></a>算术运算符</h3>
   <table>
     <thead>
       <tr>
@@ -268,9 +242,7 @@ f4
 <span class="token number">0</span> <span class="token number">2</span>
 </code></pre>
   <p>注意：所有用作算术运算符进行操作，操作数自动转为数值，所有非数值都变为0</p>
-  <h3 id="赋值运算符"><a class="anchor" aria-hidden="true" tabindex="-1" href="#赋值运算符"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>赋值运算符</h3>
+  <h3 id="赋值运算符"><a class="anchor" aria-hidden="true" tabindex="-1" href="#赋值运算符"><span class="octicon octicon-link"></span></a>赋值运算符</h3>
   <table>
     <thead>
       <tr>
@@ -288,9 +260,7 @@ f4
   <p>例：</p>
   <pre class="language-shell"><code class="language-shell"><span class="token assign-left variable">a</span><span class="token operator">+=</span><span class="token number">5</span><span class="token punctuation">;</span> 等价于：a<span class="token operator">=</span>a+5<span class="token punctuation">;</span> 其它同类
 </code></pre>
-  <h3 id="逻辑运算符"><a class="anchor" aria-hidden="true" tabindex="-1" href="#逻辑运算符"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>逻辑运算符</h3>
+  <h3 id="逻辑运算符"><a class="anchor" aria-hidden="true" tabindex="-1" href="#逻辑运算符"><span class="octicon octicon-link"></span></a>逻辑运算符</h3>
   <table>
     <thead>
       <tr>
@@ -313,9 +283,7 @@ f4
   <pre class="language-shell"><code class="language-shell"><span class="token function">awk</span> <span class="token string">'BEGIN{a=1;b=2;print (a>5 &#x26;&#x26; b&#x3C;=2),(a>5 || b&#x3C;=2);}'</span>
 <span class="token number">0</span> <span class="token number">1</span>
 </code></pre>
-  <h3 id="正则运算符"><a class="anchor" aria-hidden="true" tabindex="-1" href="#正则运算符"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>正则运算符</h3>
+  <h3 id="正则运算符"><a class="anchor" aria-hidden="true" tabindex="-1" href="#正则运算符"><span class="octicon octicon-link"></span></a>正则运算符</h3>
   <table>
     <thead>
       <tr>
@@ -352,9 +320,7 @@ $ 行尾
   <pre class="language-shell"><code class="language-shell"><span class="token function">awk</span> <span class="token string">'BEGIN{a="100testa";if(a ~ /^100*/){print "ok";}}'</span>
 ok
 </code></pre>
-  <h3 id="关系运算符"><a class="anchor" aria-hidden="true" tabindex="-1" href="#关系运算符"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>关系运算符</h3>
+  <h3 id="关系运算符"><a class="anchor" aria-hidden="true" tabindex="-1" href="#关系运算符"><span class="octicon octicon-link"></span></a>关系运算符</h3>
   <table>
     <thead>
       <tr>
@@ -374,9 +340,7 @@ ok
 ok
 </code></pre>
   <p>注意：> &#x3C; 可以作为字符串比较，也可以用作数值比较，关键看操作数如果是字符串就会转换为字符串比较。两个都为数字才转为数值比较。字符串比较：按照ASCII码顺序比较。</p>
-  <h3 id="其它运算符"><a class="anchor" aria-hidden="true" tabindex="-1" href="#其它运算符"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>其它运算符</h3>
+  <h3 id="其它运算符"><a class="anchor" aria-hidden="true" tabindex="-1" href="#其它运算符"><span class="octicon octicon-link"></span></a>其它运算符</h3>
   <table>
     <thead>
       <tr>
@@ -413,16 +377,10 @@ ok
   <pre><code>awk 'BEGIN{a="b";arr[0]="b";arr["b"]="c";print (a in arr);}'
 1
 </code></pre>
-  <h3 id="运算级优先级表"><a class="anchor" aria-hidden="true" tabindex="-1" href="#运算级优先级表"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>运算级优先级表</h3>
+  <h3 id="运算级优先级表"><a class="anchor" aria-hidden="true" tabindex="-1" href="#运算级优先级表"><span class="octicon octicon-link"></span></a>运算级优先级表</h3>
   <p>!级别越高越优先<br>级别越高越优先</p>
-  <h2 id="awk高级输入输出"><a class="anchor" aria-hidden="true" tabindex="-1" href="#awk高级输入输出"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>awk高级输入输出</h2>
-  <h3 id="读取下一条记录"><a class="anchor" aria-hidden="true" tabindex="-1" href="#读取下一条记录"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>读取下一条记录</h3>
+  <h2 id="awk高级输入输出"><a class="anchor" aria-hidden="true" tabindex="-1" href="#awk高级输入输出"><span class="octicon octicon-link"></span></a>awk高级输入输出</h2>
+  <h3 id="读取下一条记录"><a class="anchor" aria-hidden="true" tabindex="-1" href="#读取下一条记录"><span class="octicon octicon-link"></span></a>读取下一条记录</h3>
   <p>awk中<code>next</code>语句使用：在循环逐行匹配，如果遇到next，就会跳过当前行，直接忽略下面语句。而进行下一行匹配。next语句一般用于多行合并：</p>
   <pre class="language-shell"><code class="language-shell"><span class="token function">cat</span> text.txt
 a
@@ -458,9 +416,7 @@ web02<span class="token punctuation">[</span><span class="token number">192.168<
 web03<span class="token punctuation">[</span><span class="token number">192.168</span>.2.102<span class="token punctuation">]</span>:   mysqld            ok
 web03<span class="token punctuation">[</span><span class="token number">192.168</span>.2.102<span class="token punctuation">]</span>:   httpd               ok
 </code></pre>
-  <h3 id="简单地读取一条记录"><a class="anchor" aria-hidden="true" tabindex="-1" href="#简单地读取一条记录"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>简单地读取一条记录</h3>
+  <h3 id="简单地读取一条记录"><a class="anchor" aria-hidden="true" tabindex="-1" href="#简单地读取一条记录"><span class="octicon octicon-link"></span></a>简单地读取一条记录</h3>
   <p><code>awk getline</code>用法：输出重定向需用到<code>getline函数</code>。getline从标准输入、管道或者当前正在处理的文件之外的其他输入文件获得输入。它负责从输入获得下一行的内容，并给NF,NR和FNR等内建变量赋值。如果得到一条记录，getline函数返回1，如果到达文件的末尾就返回0，如果出现错误，例如打开文件失败，就返回-1。</p>
   <p>getline语法：getline var，变量var包含了特定行的内容。</p>
   <p>awk getline从整体上来说，用法说明：</p>
@@ -478,37 +434,27 @@ web03<span class="token punctuation">[</span><span class="token number">192.168<
   <p>命令ls的输出传递给geline作为输入，循环使getline从ls的输出中读取一行，并把它打印到屏幕。这里没有输入文件，因为BEGIN块在打开输入文件前执行，所以可以忽略输入文件。</p>
   <pre class="language-shell"><code class="language-shell"><span class="token function">awk</span> <span class="token string">'BEGIN{ while( "ls" | getline) print }'</span>
 </code></pre>
-  <h3 id="关闭文件"><a class="anchor" aria-hidden="true" tabindex="-1" href="#关闭文件"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>关闭文件</h3>
+  <h3 id="关闭文件"><a class="anchor" aria-hidden="true" tabindex="-1" href="#关闭文件"><span class="octicon octicon-link"></span></a>关闭文件</h3>
   <p>awk中允许在程序中关闭一个输入或输出文件，方法是使用awk的close语句。</p>
   <pre class="language-shell"><code class="language-shell">close<span class="token punctuation">(</span><span class="token string">"filename"</span><span class="token punctuation">)</span>
 </code></pre>
   <p>filename可以是getline打开的文件，也可以是stdin，包含文件名的变量或者getline使用的确切命令。或一个输出文件，可以是stdout，包含文件名的变量或使用管道的确切命令。</p>
-  <h3 id="输出到一个文件"><a class="anchor" aria-hidden="true" tabindex="-1" href="#输出到一个文件"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>输出到一个文件</h3>
+  <h3 id="输出到一个文件"><a class="anchor" aria-hidden="true" tabindex="-1" href="#输出到一个文件"><span class="octicon octicon-link"></span></a>输出到一个文件</h3>
   <p>awk中允许用如下方式将结果输出到一个文件：</p>
   <pre class="language-shell"><code class="language-shell"><span class="token builtin class-name">echo</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{printf("hello word!n") > "datafile"}'</span>
 <span class="token comment"># 或</span>
 <span class="token builtin class-name">echo</span> <span class="token operator">|</span> <span class="token function">awk</span> <span class="token string">'{printf("hello word!n") >> "datafile"}'</span>
 </code></pre>
-  <h2 id="设置字段定界符"><a class="anchor" aria-hidden="true" tabindex="-1" href="#设置字段定界符"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>设置字段定界符</h2>
+  <h2 id="设置字段定界符"><a class="anchor" aria-hidden="true" tabindex="-1" href="#设置字段定界符"><span class="octicon octicon-link"></span></a>设置字段定界符</h2>
   <p>默认的字段定界符是空格，可以使用<code>-F "定界符"</code> 明确指定一个定界符：</p>
   <pre class="language-shell"><code class="language-shell"><span class="token function">awk</span> -F: <span class="token string">'{ print $NF }'</span> /etc/passwd
 <span class="token comment"># 或</span>
 <span class="token function">awk</span> <span class="token string">'BEGIN{ FS=":" } { print $NF }'</span> /etc/passwd
 </code></pre>
   <p>在<code>BEGIN语句块</code>中则可以用<code>OFS=“定界符”</code>设置输出字段的定界符。</p>
-  <h2 id="流程控制语句"><a class="anchor" aria-hidden="true" tabindex="-1" href="#流程控制语句"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>流程控制语句</h2>
+  <h2 id="流程控制语句"><a class="anchor" aria-hidden="true" tabindex="-1" href="#流程控制语句"><span class="octicon octicon-link"></span></a>流程控制语句</h2>
   <p>在linux awk的while、do-while和for语句中允许使用break,continue语句来控制流程走向，也允许使用exit这样的语句来退出。break中断当前正在执行的循环并跳到循环外执行下一条语句。if 是流程选择用法。awk中，流程控制语句，语法结构，与c语言类型。有了这些语句，其实很多shell程序都可以交给awk，而且性能是非常快的。下面是各个语句用法。</p>
-  <h3 id="条件判断语句"><a class="anchor" aria-hidden="true" tabindex="-1" href="#条件判断语句"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>条件判断语句</h3>
+  <h3 id="条件判断语句"><a class="anchor" aria-hidden="true" tabindex="-1" href="#条件判断语句"><span class="octicon octicon-link"></span></a>条件判断语句</h3>
   <pre class="language-shell"><code class="language-shell">if<span class="token punctuation">(</span>表达式<span class="token punctuation">)</span>
   语句1
 <span class="token keyword">else</span>
@@ -539,12 +485,8 @@ if(test>90){
 very good
 </code></pre>
   <p>每条命令语句后面可以用<code>;</code> <strong>分号</strong> 结尾。</p>
-  <h3 id="循环语句"><a class="anchor" aria-hidden="true" tabindex="-1" href="#循环语句"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>循环语句</h3>
-  <h3 id="-while语句"><a class="anchor" aria-hidden="true" tabindex="-1" href="#-while语句"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a># while语句</h3>
+  <h3 id="循环语句"><a class="anchor" aria-hidden="true" tabindex="-1" href="#循环语句"><span class="octicon octicon-link"></span></a>循环语句</h3>
+  <h3 id="-while语句"><a class="anchor" aria-hidden="true" tabindex="-1" href="#-while语句"><span class="octicon octicon-link"></span></a># while语句</h3>
   <pre class="language-shell"><code class="language-shell">while<span class="token punctuation">(</span>表达式<span class="token punctuation">)</span>
   <span class="token punctuation">{</span>语句<span class="token punctuation">}</span>
 </code></pre>
@@ -560,9 +502,7 @@ print total;
 }'</span>
 <span class="token number">5050</span>
 </code></pre>
-  <h3 id="-for循环"><a class="anchor" aria-hidden="true" tabindex="-1" href="#-for循环"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a># for循环</h3>
+  <h3 id="-for循环"><a class="anchor" aria-hidden="true" tabindex="-1" href="#-for循环"><span class="octicon octicon-link"></span></a># for循环</h3>
   <p>for循环有两种格式：</p>
   <p>格式1：</p>
   <pre class="language-shell"><code class="language-shell">for<span class="token punctuation">(</span>变量 <span class="token keyword">in</span> 数组<span class="token punctuation">)</span>
@@ -599,9 +539,7 @@ print total;
 }'</span>
 <span class="token number">5050</span>
 </code></pre>
-  <h3 id="-do循环"><a class="anchor" aria-hidden="true" tabindex="-1" href="#-do循环"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a># do循环</h3>
+  <h3 id="-do循环"><a class="anchor" aria-hidden="true" tabindex="-1" href="#-do循环"><span class="octicon octicon-link"></span></a># do循环</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token keyword">do</span>
 <span class="token punctuation">{</span>语句<span class="token punctuation">}</span> while<span class="token punctuation">(</span>条件<span class="token punctuation">)</span>
 </code></pre>
@@ -614,22 +552,16 @@ do {total+=i;i++;} while(i&#x3C;=100)
 }'</span>
 <span class="token number">5050</span>
 </code></pre>
-  <h3 id="其他语句"><a class="anchor" aria-hidden="true" tabindex="-1" href="#其他语句"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>其他语句</h3>
+  <h3 id="其他语句"><a class="anchor" aria-hidden="true" tabindex="-1" href="#其他语句"><span class="octicon octicon-link"></span></a>其他语句</h3>
   <ul>
     <li><strong>break</strong> 当 break 语句用于 while 或 for 语句时，导致退出程序循环。</li>
     <li><strong>continue</strong> 当 continue 语句用于 while 或 for 语句时，使程序循环移动到下一个迭代。</li>
     <li><strong>next</strong> 能能够导致读入下一个输入行，并返回到脚本的顶部。这可以避免对当前输入行执行其他的操作过程。</li>
     <li><strong>exit</strong> 语句使主输入循环退出并将控制转移到END,如果END存在的话。如果没有定义END规则，或在END中应用exit语句，则终止脚本的执行。</li>
   </ul>
-  <h2 id="数组应用"><a class="anchor" aria-hidden="true" tabindex="-1" href="#数组应用"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>数组应用</h2>
+  <h2 id="数组应用"><a class="anchor" aria-hidden="true" tabindex="-1" href="#数组应用"><span class="octicon octicon-link"></span></a>数组应用</h2>
   <p>数组是awk的灵魂，处理文本中最不能少的就是它的数组处理。因为数组索引（下标）可以是数字和字符串在awk中数组叫做关联数组(associative arrays)。awk 中的数组不必提前声明，也不必声明大小。数组元素用0或空字符串来初始化，这根据上下文而定。</p>
-  <h3 id="数组的定义"><a class="anchor" aria-hidden="true" tabindex="-1" href="#数组的定义"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>数组的定义</h3>
+  <h3 id="数组的定义"><a class="anchor" aria-hidden="true" tabindex="-1" href="#数组的定义"><span class="octicon octicon-link"></span></a>数组的定义</h3>
   <p>数字做数组索引（下标）：</p>
   <pre class="language-shell"><code class="language-shell">Array<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">"sun"</span>
 Array<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span><span class="token operator">=</span><span class="token string">"kai"</span>
@@ -644,9 +576,7 @@ Array<span class="token punctuation">[</span><span class="token string">"birth"<
   <pre class="language-shell"><code class="language-shell"><span class="token punctuation">{</span> for<span class="token punctuation">(</span>item <span class="token keyword">in</span> array<span class="token punctuation">)</span> <span class="token punctuation">{</span>print array<span class="token punctuation">[</span>item<span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>       <span class="token comment">#输出的顺序是随机的</span>
 <span class="token punctuation">{</span> for<span class="token punctuation">(</span>i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&#x3C;=</span>len<span class="token punctuation">;</span>i++<span class="token punctuation">)</span> <span class="token punctuation">{</span>print array<span class="token punctuation">[</span>i<span class="token punctuation">]</span><span class="token punctuation">}</span><span class="token punctuation">;</span> <span class="token punctuation">}</span>         <span class="token comment">#Len是数组的长度</span>
 </code></pre>
-  <h3 id="数组相关函数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#数组相关函数"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>数组相关函数</h3>
+  <h3 id="数组相关函数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#数组相关函数"><span class="octicon octicon-link"></span></a>数组相关函数</h3>
   <p><strong>得到数组长度：</strong></p>
   <pre class="language-shell"><code class="language-shell"><span class="token function">awk</span> <span class="token string">'BEGIN{info="it is a test";lens=split(info,tA," ");print length(tA),lens;}'</span>
 <span class="token number">4</span> <span class="token number">4</span>
@@ -691,9 +621,7 @@ b b1
 b b1
 </code></pre>
   <p><code>delete array[key]</code>可以删除，对应数组<code>key</code>的，序列值。</p>
-  <h3 id="二维多维数组使用"><a class="anchor" aria-hidden="true" tabindex="-1" href="#二维多维数组使用"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>二维、多维数组使用</h3>
+  <h3 id="二维多维数组使用"><a class="anchor" aria-hidden="true" tabindex="-1" href="#二维多维数组使用"><span class="octicon octicon-link"></span></a>二维、多维数组使用</h3>
   <p>awk的多维数组在本质上是一维数组，更确切一点，awk在存储上并不支持多维数组。awk提供了逻辑上模拟二维数组的访问方式。例如，<code>array[2,4]=1</code>这样的访问是允许的。awk使用一个特殊的字符串<code>SUBSEP(�34)</code>作为分割字段，在上面的例子中，关联数组array存储的键值实际上是2�344。</p>
   <p>类似一维数组的成员测试，多维数组可以使用<code>if ( (i,j) in array)</code>这样的语法，但是下标必须放置在圆括号中。类似一维数组的循环访问，多维数组使用<code>for ( item in array )</code>这样的语法遍历数组。与一维数组不同的是，多维数组必须使用<code>split()</code>函数来访问单独的下标分量。</p>
   <pre class="language-shell"><code class="language-shell"><span class="token function">awk</span> <span class="token string">'BEGIN{
@@ -728,13 +656,9 @@ for(m in tarr){
 }
 }'</span>
 </code></pre>
-  <h2 id="内置函数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#内置函数"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>内置函数</h2>
+  <h2 id="内置函数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#内置函数"><span class="octicon octicon-link"></span></a>内置函数</h2>
   <p>awk内置函数，主要分以下3种类似：算数函数、字符串函数、其它一般函数、时间函数。</p>
-  <h3 id="算术函数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#算术函数"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>算术函数</h3>
+  <h3 id="算术函数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#算术函数"><span class="octicon octicon-link"></span></a>算术函数</h3>
   <table>
     <thead>
       <tr>
@@ -795,9 +719,7 @@ for(m in tarr){
 <span class="token function">awk</span> <span class="token string">'BEGIN{srand();fr=int(100*rand());print fr;}'</span>
 <span class="token number">41</span> 
 </code></pre>
-  <h3 id="字符串函数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#字符串函数"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>字符串函数</h3>
+  <h3 id="字符串函数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#字符串函数"><span class="octicon octicon-link"></span></a>字符串函数</h3>
   <table>
     <thead>
       <tr>
@@ -929,9 +851,7 @@ s is a tes
   <pre class="language-shell"><code class="language-shell"><span class="token function">awk</span> <span class="token string">'BEGIN{n1=124.113;n2=-1.224;n3=1.2345; printf("%.2f,%.2u,%.2g,%X,%on",n1,n2,n3,n1,n1);}'</span>
 <span class="token number">124.11</span>,18446744073709551615,1.2,7C,174
 </code></pre>
-  <h3 id="一般函数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#一般函数"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>一般函数</h3>
+  <h3 id="一般函数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#一般函数"><span class="octicon octicon-link"></span></a>一般函数</h3>
   <table>
     <thead>
       <tr>
@@ -986,9 +906,7 @@ drwxr-xr-x <span class="token number">14</span> chengmo chengmo     <span class=
 drwxr-xr-x <span class="token number">95</span> root   root       <span class="token number">4096</span> <span class="token number">10</span>-08 <span class="token number">14</span>:01 <span class="token punctuation">..</span>
 </code></pre>
   <p>b返回值，是执行结果。</p>
-  <h3 id="时间函数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#时间函数"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>时间函数</h3>
+  <h3 id="时间函数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#时间函数"><span class="octicon octicon-link"></span></a>时间函数</h3>
   <table>
     <thead>
       <tr>
@@ -1154,7 +1072,7 @@ drwxr-xr-x <span class="token number">95</span> root   root       <span class="t
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1633942653308"></script>
-<script type="text/javascript" src="../js/index.js?v=1633942653308"></script>
+<script type="text/javascript" src="../js/dt.js?v=1634623060555"></script>
+<script type="text/javascript" src="../js/index.js?v=1634623060555"></script>
 </body>
 </html>

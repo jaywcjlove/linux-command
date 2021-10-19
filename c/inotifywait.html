@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,inotifywait,异步文件系统监控机制">
     <title>inotifywait 命令，Linux inotifywait 命令详解：异步文件系统监控机制 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633942653527">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1634623060707">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner">
@@ -50,14 +50,10 @@
 </span>
 
 
-<div class="wmde-markdown">
-  <h1 id="inotifywait"><a class="anchor" aria-hidden="true" tabindex="-1" href="#inotifywait"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>inotifywait</h1>
+<div class="markdown-body">
+  <h1 id="inotifywait"><a class="anchor" aria-hidden="true" tabindex="-1" href="#inotifywait"><span class="octicon octicon-link"></span></a>inotifywait</h1>
   <p>异步文件系统监控机制</p>
-  <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>补充说明</h2>
+  <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><span class="octicon octicon-link"></span></a>补充说明</h2>
   <p><strong>Inotify</strong> 一种强大的、细粒度的、异步文件系统监控机制，它满足各种各样的文件监控需要，可以监控文件系统的访问属性、读写属性、权限属性、删除创建、移动等操作，也就是可以监控文件发生的一切变化。。</p>
   <p><strong>inotify-tools</strong> 是一个C库和一组命令行的工作提供Linux下inotify的简单接口。inotify-tools安装后会得到<code>inotifywait</code>和<code>inotifywatch</code>这两条命令：</p>
   <ul>
@@ -73,9 +69,7 @@ total <span class="token number">0</span>
 -rw-r--r-- <span class="token number">1</span> root root <span class="token number">0</span> Jan  <span class="token number">4</span> <span class="token number">15</span>:41 max_user_instances
 -rw-r--r-- <span class="token number">1</span> root root <span class="token number">0</span> Jan  <span class="token number">4</span> <span class="token number">15</span>:41 max_user_watches
 </code></pre>
-  <h3 id="安装inotify-tools"><a class="anchor" aria-hidden="true" tabindex="-1" href="#安装inotify-tools"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>安装inotify-tools</h3>
+  <h3 id="安装inotify-tools"><a class="anchor" aria-hidden="true" tabindex="-1" href="#安装inotify-tools"><span class="octicon octicon-link"></span></a>安装inotify-tools</h3>
   <ul>
     <li>inotify-tools项目地址：<a href="https://github.com/rvoicilas/inotify-tools">https://github.com/rvoicilas/inotify-tools</a></li>
     <li>inotify-tools下载地址：<a href="http://github.com/downloads/rvoicilas/inotify-tools/inotify-tools-3.14.tar.gz">http://github.com/downloads/rvoicilas/inotify-tools/inotify-tools-3.14.tar.gz</a></li>
@@ -88,9 +82,7 @@ total <span class="token number">0</span>
 <span class="token function">make</span> <span class="token function">install</span>
 </code></pre>
   <p>其他Linux发行版安装方法可以参见：<a href="https://github.com/rvoicilas/inotify-tools/wiki#wiki-getting">https://github.com/rvoicilas/inotify-tools/wiki#wiki-getting</a></p>
-  <h3 id="inotify相关参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#inotify相关参数"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>inotify相关参数</h3>
+  <h3 id="inotify相关参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#inotify相关参数"><span class="octicon octicon-link"></span></a>inotify相关参数</h3>
   <p>inotify定义了下列的接口参数，可以用来限制inotify消耗kernel memory的大小。由于这些参数都是内存参数，因此，可以根据应用需求，实时的调节其大小：</p>
   <ul>
     <li><code>/proc/sys/fs/inotify/max_queued_evnets</code>表示调用inotify_init时分配给inotify instance中可排队的event的数目的最大值，超出这个值的事件被丢弃，但会触发IN_Q_OVERFLOW事件。</li>
@@ -108,9 +100,7 @@ total <span class="token number">0</span>
 <span class="token number">32</span>位系统：ln -s /usr/local/lib/libinotifytools.so.0 /usr/lib/libinotifytools.so.0
 <span class="token number">64</span>位系统：ln -s /usr/local/lib/libinotifytools.so.0 /usr/lib64/libinotifytools.so.0
 </code></pre>
-  <h3 id="inotifywait命令使用"><a class="anchor" aria-hidden="true" tabindex="-1" href="#inotifywait命令使用"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>inotifywait命令使用</h3>
+  <h3 id="inotifywait命令使用"><a class="anchor" aria-hidden="true" tabindex="-1" href="#inotifywait命令使用"><span class="octicon octicon-link"></span></a>inotifywait命令使用</h3>
   <pre class="language-shell"><code class="language-shell"><span class="token shebang important">#!/bin/bash</span>
 <span class="token comment">#filename watchdir.sh</span>
 <span class="token assign-left variable">path</span><span class="token operator">=</span><span class="token variable">$1</span>
@@ -135,9 +125,7 @@ total <span class="token number">0</span>
 04/01/13/16:35 /data/wsdata/tools/ j.jsp~
 04/01/13/16:35 /data/wsdata/tools/ .j.jsp.swp
 </code></pre>
-  <h3 id="inotifywait命令参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#inotifywait命令参数"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>inotifywait命令参数</h3>
+  <h3 id="inotifywait命令参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#inotifywait命令参数"><span class="octicon octicon-link"></span></a>inotifywait命令参数</h3>
   <ul>
     <li><code>-m</code>是要持续监视变化。</li>
     <li><code>-r</code>使用递归形式监视目录。</li>
@@ -146,9 +134,7 @@ total <span class="token number">0</span>
     <li><code>--timefmt</code>是指定时间的输出格式。</li>
     <li><code>--format</code>指定文件变化的详细信息。</li>
   </ul>
-  <h3 id="可监听的事件"><a class="anchor" aria-hidden="true" tabindex="-1" href="#可监听的事件"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>可监听的事件</h3>
+  <h3 id="可监听的事件"><a class="anchor" aria-hidden="true" tabindex="-1" href="#可监听的事件"><span class="octicon octicon-link"></span></a>可监听的事件</h3>
   <table>
     <thead>
       <tr>
@@ -216,7 +202,7 @@ total <span class="token number">0</span>
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1633942653527"></script>
-<script type="text/javascript" src="../js/index.js?v=1633942653527"></script>
+<script type="text/javascript" src="../js/dt.js?v=1634623060707"></script>
+<script type="text/javascript" src="../js/index.js?v=1634623060707"></script>
 </body>
 </html>

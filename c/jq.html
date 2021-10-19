@@ -10,7 +10,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,jq,一个灵活的轻量级命令行JSON处理器">
     <title>jq 命令，Linux jq 命令详解：一个灵活的轻量级命令行JSON处理器 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1633942653552">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1634623060725">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner">
@@ -50,37 +50,27 @@
 </span>
 
 
-<div class="wmde-markdown">
-  <h1 id="jq"><a class="anchor" aria-hidden="true" tabindex="-1" href="#jq"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>jq</h1>
+<div class="markdown-body">
+  <h1 id="jq"><a class="anchor" aria-hidden="true" tabindex="-1" href="#jq"><span class="octicon octicon-link"></span></a>jq</h1>
   <p>一个灵活的轻量级命令行JSON处理器</p>
-  <h3 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>补充说明</h3>
+  <h3 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><span class="octicon octicon-link"></span></a>补充说明</h3>
   <p>jq 是 stedolan 开发的一个轻量级的和灵活的命令行JSON处理器，源码请参考 <a href="https://github.com/stedolan/jq">jq 项目主页</a></p>
   <p>jq 用于处理JSON输入，将给定过滤器应用于其JSON文本输入并在标准输出上将过滤器的结果生成为JSON。</p>
   <p>最简单的过滤器是<code>.</code>，它将jq的输入未经修改地复制到其输出中（格式设置除外）。</p>
   <p>请注意，jq 当前仅支持64位双精度浮点数（IEEE754）。</p>
-  <h3 id="安装"><a class="anchor" aria-hidden="true" tabindex="-1" href="#安装"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>安装</h3>
+  <h3 id="安装"><a class="anchor" aria-hidden="true" tabindex="-1" href="#安装"><span class="octicon octicon-link"></span></a>安装</h3>
   <pre class="language-bash"><code class="language-bash"><span class="token comment"># Debian系，如 Ubuntu</span>
 <span class="token function">sudo</span> <span class="token function">apt-get</span> <span class="token function">install</span> jq
 
 <span class="token comment"># RedHat系, 如 CentOS</span>
 yum <span class="token function">install</span> jq
 </code></pre>
-  <h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>语法</h3>
+  <h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><span class="octicon octicon-link"></span></a>语法</h3>
   <pre class="language-bash"><code class="language-bash">jq <span class="token punctuation">[</span>options<span class="token punctuation">]</span> <span class="token operator">&#x3C;</span>jq filter<span class="token operator">></span> <span class="token punctuation">[</span>file<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
 jq <span class="token punctuation">[</span>options<span class="token punctuation">]</span> --args <span class="token operator">&#x3C;</span>jq filter<span class="token operator">></span> <span class="token punctuation">[</span>strings<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
 jq <span class="token punctuation">[</span>options<span class="token punctuation">]</span> --jsonargs <span class="token operator">&#x3C;</span>jq filter<span class="token operator">></span> <span class="token punctuation">[</span>JSON_TEXTS<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
 </code></pre>
-  <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>选项</h3>
+  <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><span class="octicon octicon-link"></span></a>选项</h3>
   <pre class="language-bash"><code class="language-bash">-c               紧凑而不是漂亮的输出<span class="token punctuation">;</span>
 -n               使用<span class="token variable"><span class="token variable">`</span>null<span class="token variable">`</span></span>作为单个输入值<span class="token punctuation">;</span>
 -e               根据输出设置退出状态代码<span class="token punctuation">;</span>
@@ -99,9 +89,7 @@ jq <span class="token punctuation">[</span>options<span class="token punctuation
 --jsonargs       其余的参数是JSON参数，而不是文件<span class="token punctuation">;</span>
 --               终止参数处理<span class="token punctuation">;</span>
 </code></pre>
-  <h3 id="例子"><a class="anchor" aria-hidden="true" tabindex="-1" href="#例子"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true">
-        <path fill-rule="evenodd" d="M7.775 3.275a.75.75 0 001.06 1.06l1.25-1.25a2 2 0 112.83 2.83l-2.5 2.5a2 2 0 01-2.83 0 .75.75 0 00-1.06 1.06 3.5 3.5 0 004.95 0l2.5-2.5a3.5 3.5 0 00-4.95-4.95l-1.25 1.25zm-4.69 9.64a2 2 0 010-2.83l2.5-2.5a2 2 0 012.83 0 .75.75 0 001.06-1.06 3.5 3.5 0 00-4.95 0l-2.5 2.5a3.5 3.5 0 004.95 4.95l1.25-1.25a.75.75 0 00-1.06-1.06l-1.25 1.25a2 2 0 01-2.83 0z"></path>
-      </svg></a>例子</h3>
+  <h3 id="例子"><a class="anchor" aria-hidden="true" tabindex="-1" href="#例子"><span class="octicon octicon-link"></span></a>例子</h3>
   <p><code>.</code>: 以漂亮的方式输出</p>
   <pre class="language-bash"><code class="language-bash">$ <span class="token builtin class-name">echo</span> <span class="token string">'{ "foo": { "bar": { "baz": 123 } } }'</span> <span class="token operator">|</span> jq <span class="token string">'.'</span>
 <span class="token punctuation">{</span>
@@ -222,7 +210,7 @@ jq <span class="token punctuation">[</span>options<span class="token punctuation
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1633942653553"></script>
-<script type="text/javascript" src="../js/index.js?v=1633942653553"></script>
+<script type="text/javascript" src="../js/dt.js?v=1634623060726"></script>
+<script type="text/javascript" src="../js/index.js?v=1634623060726"></script>
 </body>
 </html>
