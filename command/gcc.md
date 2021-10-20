@@ -5,7 +5,7 @@ gcc
 
 ## 补充说明
 
-**gcc命令** 使用GNU推出的基于C/C++的编译器，是开放源代码领域应用最广泛的编译器，具有功能强大，编译代码支持性能优化等特点。现在很多程序员都应用GCC，怎样才能更好的应用GCC。目前，GCC可以用来编译C/C++、FORTRAN、JAVA、OBJC、ADA等语言的程序，可根据需要选择安装支持的语言。
+**gcc命令** 使用GNU推出的基于 `C/C++` 的编译器，是开放源代码领域应用最广泛的编译器，具有功能强大，编译代码支持性能优化等特点。现在很多程序员都应用 `GCC`，怎样才能更好的应用 `GCC`。目前，`GCC` 可以用来编译 `C/C++`、`FORTRAN`、`JAVA`、`OBJC`、`ADA`等语言的程序，可根据需要选择安装支持的语言。
 
 ###  语法
 
@@ -39,7 +39,7 @@ C源文件：指定C语言源代码文件。
 gcc test.c
 ```
 
-将test.c预处理、汇编、编译并链接形成可执行文件。这里未指定输出文件，默认输出为a.out。
+将 `test.c` 预处理、汇编、编译并链接形成可执行文件。这里未指定输出文件，默认输出为 `a.out`。
 
 **选项 -o** 
 
@@ -47,7 +47,7 @@ gcc test.c
 gcc test.c -o test
 ```
 
-将test.c预处理、汇编、编译并链接形成可执行文件test。-o选项用来指定输出文件的文件名。
+将 `test.c` 预处理、汇编、编译并链接形成可执行文件 `test`。`-o` 选项用来指定输出文件的文件名。
 
 **选项 -E** 
 
@@ -55,7 +55,7 @@ gcc test.c -o test
 gcc -E test.c -o test.i
 ```
 
-将test.c预处理输出test.i文件。
+将 `test.c` 预处理输出 `test.i` 文件。
 
 **选项 -S** 
 
@@ -63,7 +63,7 @@ gcc -E test.c -o test.i
 gcc -S test.i
 ```
 
-将预处理输出文件test.i汇编成test.s文件。
+将预处理输出文件 `test.i` 汇编成 `test.s` 文件。
 
 **选项 -c** 
 
@@ -71,7 +71,7 @@ gcc -S test.i
 gcc -c test.s
 ```
 
-将汇编输出文件test.s编译输出test.o文件。
+将汇编输出文件 `test.s` 编译输出 `test.o` 文件。
 
 **无选项链接** 
 
@@ -79,7 +79,7 @@ gcc -c test.s
 gcc test.o -o test
 ```
 
-将编译输出文件test.o链接成最终可执行文件test。
+将编译输出文件 `test.o` 链接成最终可执行文件 `test`。
 
 **选项 -O** 
 
@@ -93,7 +93,7 @@ gcc -O1 test.c -o test
 
 如果有多个源文件，基本上有两种编译方法：
 
-假设有两个源文件为test.c和testfun.c
+假设有两个源文件为 `test.c` 和 `testfun.c`
 
 **多个文件一起编译** 
 
@@ -101,7 +101,7 @@ gcc -O1 test.c -o test
 gcc testfun.c test.c -o test
 ```
 
-将testfun.c和test.c分别编译后链接成test可执行文件。
+将 `testfun.c` 和 `test.c` 分别编译后链接成 `test` 可执行文件。
 
 **分别编译各个源文件，之后对编译后输出的目标文件链接。** 
 
