@@ -1,7 +1,5 @@
-
-<%- include('header',{src:""}); %>
-<%- include('search',{type: "list"}); %>
-
+<%- include('partial/header'); %>
+<%- include('widget/search',{type: "list"}); %>
 <div class="hotlist">
   <ul>
   <%describe.arr.forEach(function(page,item){%>
@@ -9,5 +7,5 @@
   <%});%>
   </ul>
 </div>
-
-<%- include('footer',{type: 'list'}); %>
+<%- include('widget/footer',{type: "list"}); %>
+<%- include('partial/footer'); %>

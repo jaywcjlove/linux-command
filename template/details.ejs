@@ -1,7 +1,5 @@
-
-<%-include('header'); %>
-<%- include('search',{type: "list"}); %>
-
+<%- include('partial/header'); %>
+<%- include('widget/search',{type: "list"}); %>
 <div class="markdown-body">
 <% if(md_path){ %>
 <span class="edit_btn">
@@ -12,5 +10,5 @@
 <% } %>
 {{content}}
 </div>
-
-<%- include('footer',{type: "list"}); %>
+<%- include('widget/footer',{type: "list"}); %>
+<%- include('partial/footer'); %>

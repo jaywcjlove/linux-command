@@ -1,5 +1,5 @@
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
-<div class="footer <%if(type=='index'){%> footer_index <%}%>">
+<div class="footer <%if(type=='home'){%> home <%}%>">
   <a target="_blank" href="https://github.com/jaywcjlove/linux-command/new/master/command">添加命令</a> |
   <a href="<%=relative_path%>hot.html">命令列表</a> |
   <a href="https://github.com/jaywcjlove/oscnews">Chrome 插件</a> |
@@ -11,15 +11,9 @@
   <a href="https://github.com/jaywcjlove/linux-command">Github</a> |
   <a href="https://jaywcjlove.github.io/linux-command/">短地址：https://git.io/linux</a>
   <br />
-  收藏本站请使用Ctrl+D或者Command+d
+  收藏本站请使用 Ctrl+D 或者Command+d
   <br /> 共搜集到
   <span id="commands_info">
     <%=describe.command_length?describe.command_length:''%>
   </span> 个Linux命令
 </div>
-<script>
-var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="<%=relative_path%>js/dt.js?v=<%=new Date().getTime()%>"></script>
-<script type="text/javascript" src="<%=relative_path%>js/index.js?v=<%=new Date().getTime()%>"></script>
-</body>
-</html>

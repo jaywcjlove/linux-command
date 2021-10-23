@@ -183,10 +183,27 @@ a {
   color #616161
   font-size 14px
   font-weight 300
-  border-top: 1px solid #efefef;
-  padding-bottom: 50px;
-  &.footer_index {
-    border-top: 0
+  border-top 1px solid #efefef
+  padding-bottom 50px;
+  padding 31px 6px 50px 6px
+  &.home {
+    border-top 0
+  }
+}
+.header.home {
+  .header_inner {
+    display flex
+    flex-direction column
+    align-items center
+  }
+  .logo {
+    min-height 140px
+    display flex
+    align-items center
+  }
+  .search {
+    display flex
+    min-width 320px
   }
 }
 
@@ -208,9 +225,6 @@ a {
       height 37px
       width 136px
     }
-  }
-  .footer {
-    display none
   }
 }
 
@@ -269,7 +283,7 @@ a {
   }
 }
 
-.header_inner, .hotlist {
+.header_inner, .hotlist, .search_list {
   max-width 920px
   margin 0 auto
 }

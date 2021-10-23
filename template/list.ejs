@@ -1,6 +1,5 @@
-
-<%- include('header',{src:""}); %>
-<%- include('search',{type: "list"}); %>
+<%- include('partial/header'); %>
+<%- include('widget/search',{type: "list"}); %>
 
 <div class="search_list">
     <ul id="search_list_result">
@@ -11,4 +10,5 @@
     </ul>
 </div>
 
-<%- include('footer',{type: 'list'}); %>
+<%- include('widget/footer',{type: "list"}); %>
+<%- include('partial/footer'); %>
