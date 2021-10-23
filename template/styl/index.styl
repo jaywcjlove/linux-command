@@ -24,6 +24,10 @@ a.github-corner {
     z-index 99
     width 70px
     height 70px
+    @media mq-mobile {
+      width 46px
+      height 46px
+    }
   }
 }
 a {
@@ -40,12 +44,10 @@ a {
   width 517px
   margin 0 auto 0
   padding 0 10px
-  .logo {
-    text-align center
-    padding-top 50px
-    padding-bottom 50px
+  .logo a {
+    display flex
   }
-  .box{
+  .box {
     position relative
   }
   .search {
@@ -73,7 +75,7 @@ a {
       width 100%
       padding 5px
       border-radius 5px 5px 5px 5px
-      li{
+      li {
         line-height 23px
         span{
           padding 0 8px
@@ -122,9 +124,7 @@ a {
       }
     }
     .enter-input {
-      width 1%
       white-space nowrap
-      vertical-align middle
       button {
         margin 0
         left -1px
@@ -149,25 +149,25 @@ a {
         border-radius 0 5px 5px 0
         border-color $border-color
         color #333
-        &:focus,&:active:focus{
+        &:focus,&:active:focus {
           outline thin dotted
           outline 5px auto -webkit-focus-ring-color
           outline-offset -2px
         }
-        &:active{
+        &:active {
           color #333
           background-color #e6e6e6
           border-color #b4b4b4
           background-image none
           box-shadow inset 0 8px 32px -8px rgba(0,0,0,0.3)
         }
-        &:focus{
+        &:focus {
           color #333
           background-color #e6e6e6
           border-color #999
           text-decoration none
         }
-        &:hover{
+        &:hover {
           color #333
           background-color #e6e6e6
           border-color #b4b4b4
@@ -177,7 +177,7 @@ a {
   }
 }
 
-.footer{
+.footer {
   text-align center
   padding-top 31px
   color #616161
@@ -190,7 +190,6 @@ a {
   }
 }
 
-
 .header.header_list {
   width auto
   position fixed
@@ -199,47 +198,41 @@ a {
   z-index 99
 }
 
-.header_list{
+.header_list {
   padding 10px 10px 10px 13px 
   border-bottom 1px solid #EEEEEE
-  .logo{
-    float left
-    padding-top 3px
-    padding-bottom 0
+  .logo {
     padding-right 24px
     text-align left
-    svg{
+    svg {
       height 37px
       width 136px
     }
   }
-  .search{
-    max-width 517px
-  }
-  .footer{
+  .footer {
     display none
   }
 }
 
-.search_list{
+.search_list {
   padding 79px 27px 
-  a{
+  a {
     font-size 16px
-    strong{
+    strong {
       font-weight bold
     }
-    .kw{
+    .kw {
       color #f00
       font-style inherit
       font-weight bold
     }
-    &:hover{
-      .kw{
+    &:hover {
+      .kw {
         color #333
       }
     }
   }
-  li{
+  li {
     padding 10px 0 10px 0
     list-style-type none
     p {
@@ -249,16 +242,15 @@ a {
   }
 }
 
-.hotlist{
+.hotlist {
   padding 79px 27px 
-  a{
+  a {
     font-size 16px
-    strong{
+    strong {
       font-weight bold
     }
-    &:hover{ }
   }
-  li{
+  li {
     padding 5px 0 5px 0
     list-style-type none
     p{
@@ -270,12 +262,10 @@ a {
 
 .header_list .header_inner {
   display: flex;
+  align-items: center;
   .search {
-    flex 1
-    max-width inherit
-    .enter-input button {
-      top -2px
-    }
+    flex: 1;
+    display: flex;
   }
 }
 
@@ -288,29 +278,28 @@ a {
   .header{
     width inherit
     .search .enter-input {
-      button{
-        padding: 9px 14px;
+      button {
+        padding 9px 14px
       }
     }
   }
-  .header_list{
-    .logo svg{
+  .header_list {
+    padding: 10px 10px 10px 13px
+    .logo {
+      float inherit
+      padding-right 10px
+      text-align center
+    }
+    .logo svg {
       width 96px
     }
     .search {
-      .query{
+      .query {
         line-height 31px
       }
     }
   }
-  .header_list .logo{
-    float inherit
-    padding-right 10px
-    padding-top 8px
-    padding-bottom 14px
-    text-align center
-  }
   .search_list, .hotlist {
-    padding 129px 27px
+    padding 78px 27px
   }
 }
