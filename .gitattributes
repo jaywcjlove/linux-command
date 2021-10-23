@@ -1,2 +1,3 @@
 *.js linguist-language=html
 *.ejs linguist-language=html
+*.md linguist-detectable=true
