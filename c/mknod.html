@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,mknod,创建字符设备文件和块设备文件">
     <title>mknod 命令，Linux mknod 命令详解：创建字符设备文件和块设备文件 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1634984349148">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1634993730561">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner">
@@ -50,6 +50,7 @@
 </span>
 
 
+
 <div class="markdown-body">
   <h1 id="mknod"><a class="anchor" aria-hidden="true" tabindex="-1" href="#mknod"><span class="octicon octicon-link"></span></a>mknod</h1>
   <p>创建字符设备文件和块设备文件</p>
@@ -83,6 +84,7 @@ crw-rw—- <span class="token number">1</span> root dialout <span class="token n
   <p>打开一个文件就是调用这个文件file_operations中的open操作。不同类型的文件有不同的file_operations成员函数，如普通的磁盘数据文件， 接口函数完成磁盘数据块读写操作；而对于各种设备文件，则最终调用各自驱动程序中的I/O函数进行具体设备的操作。这样，应用程序根本不必考虑操作的是设 备还是普通文件，可一律当作文件处理，具有非常清晰统一的I/O接口。所以file_operations是文件层次的I/O接口。</p>
 </div>
 
+
 </div>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 <div class="footer ">
@@ -105,7 +107,7 @@ crw-rw—- <span class="token number">1</span> root dialout <span class="token n
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1634984349149"></script>
-<script type="text/javascript" src="../js/index.js?v=1634984349149"></script>
+<script type="text/javascript" src="../js/dt.js?v=1634993730562"></script>
+<script type="text/javascript" src="../js/index.js?v=1634993730562"></script>
 </body>
 </html>

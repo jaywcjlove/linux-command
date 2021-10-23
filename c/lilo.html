@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,lilo,安装核心载入开机管理程序">
     <title>lilo 命令，Linux lilo 命令详解：安装核心载入开机管理程序 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1634984349087">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1634993729964">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner">
@@ -48,6 +48,7 @@
 <span class="split"></span>
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/lilo.md">添加实例</a>
 </span>
+
 
 
 <div class="markdown-body">
@@ -145,6 +146,7 @@ compact
   <p>关于第一次尝试 LILO 的最后一点建议是：我发现使用软盘引导磁盘比使用硬盘实现 LILO 配置更为安全。为此，必须在 lilo.conf 文件中使用<code>boot=/dev/fd0</code>替换<code>boot=/dev/hda</code>。那样，如果弄乱了lilo.conf文件 中的任何配置，都可以取出引导磁盘并像先前一样引导到 Linux。当使用软盘进行引导一切正常以后，可以将lilo.conf修改回<code>boot=/dev/hda</code>，然后最后一次运行<code>/sbin/lilo</code>来上传修改。</p>
 </div>
 
+
 </div>
 <!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
 <div class="footer ">
@@ -167,7 +169,7 @@ compact
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1634984349088"></script>
-<script type="text/javascript" src="../js/index.js?v=1634984349088"></script>
+<script type="text/javascript" src="../js/dt.js?v=1634993729964"></script>
+<script type="text/javascript" src="../js/index.js?v=1634993729964"></script>
 </body>
 </html>
