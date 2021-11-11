@@ -86,7 +86,7 @@ rsync [OPTION]... rsync://[USER@]HOST[:PORT]/SRC [DEST]
 --port=PORT 指定其他的rsync服务端口。
 --blocking-io 对远程shell使用阻塞IO。
 -stats 给出某些文件的传输状态。
---progress 在传输时现实传输过程。
+--progress 在传输时显示传输过程。
 --log-format=formAT 指定日志文件格式。
 --password-file=FILE 从FILE中得到密码。
 --bwlimit=KBPS 限制I/O带宽，KBytes per second。
