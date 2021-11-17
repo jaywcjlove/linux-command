@@ -5,11 +5,11 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-    <meta name="description" content="ipcs:分析消息队列共享内存和信号量  - 最专业的Linux命令大全，内容包含Linux命令手册、详解、学习，值得收藏的Linux命令速查手册。">
-    <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,ipcs,分析消息队列共享内存和信号量 ">
-    <title>ipcs 命令，Linux ipcs 命令详解：分析消息队列共享内存和信号量  -  Linux 命令搜索引擎</title>
+    <meta name="description" content="ipcs:分析消息队列共享内存和信号量 - 最专业的Linux命令大全，内容包含Linux命令手册、详解、学习，值得收藏的Linux命令速查手册。">
+    <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,ipcs,分析消息队列共享内存和信号量">
+    <title>ipcs 命令，Linux ipcs 命令详解：分析消息队列共享内存和信号量 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1636951573150">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1637158670936">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner">
@@ -60,20 +60,40 @@
   <pre class="language-shell"><code class="language-shell">ipcs<span class="token punctuation">(</span>选项<span class="token punctuation">)</span>
 </code></pre>
   <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><span class="octicon octicon-link"></span></a>选项</h3>
-  <pre class="language-shell"><code class="language-shell">-a：显示全部可显示的信息；
--q：显示活动的消息队列信息；
--m：显示活动的共享内存信息；
--s：显示活动的信号量信息。
+  <h4 id="资源选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#资源选项"><span class="octicon octicon-link"></span></a>资源选项</h4>
+  <pre class="language-shell"><code class="language-shell">-a, --all 				显示全部<span class="token punctuation">(</span>默认值<span class="token punctuation">)</span>
+-q, --queues 			消息队列
+-m, --shmems 			共享内存
+-s, --semaphores 	信号量
+</code></pre>
+  <h4 id="输出选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#输出选项"><span class="octicon octicon-link"></span></a>输出选项</h4>
+  <pre class="language-shell"><code class="language-shell">-t, --time 				显示最后一次操作时间
+-p, --pid 				显示创建者和最后一次操作者的PID
+-c, --creator 		显示创建者和拥有者的 userid, groupid
+-l, --limits 			显示对资源的限制
+-u, --summary			显示当前状态摘要
+--human 					以友好的方式显示大小<span class="token punctuation">(</span>eg: 500K<span class="token punctuation">)</span>
+-b, --bytes      	以字节为单位显示大小<span class="token punctuation">(</span>仅影响<span class="token variable"><span class="token variable">`</span>-l<span class="token variable">`</span></span>选项<span class="token punctuation">)</span>
+</code></pre>
+  <h4 id="通用选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#通用选项"><span class="octicon octicon-link"></span></a>通用选项</h4>
+  <pre class="language-shell"><code class="language-shell">-i, --id <span class="token operator">&#x3C;</span>id<span class="token operator">></span>  	显示指定ID的资源
+-h, --help     	显示帮助文档并退出
+-V, --version  	显示版本信息并退出
 </code></pre>
   <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><span class="octicon octicon-link"></span></a>实例</h3>
   <pre class="language-shell"><code class="language-shell">ipcs -a
 ------ Shared Memory Segments --------
-key        shmid      owner      perms      bytes      nattch     status      
-0x7401833d <span class="token number">2654208</span>    root      <span class="token number">600</span>        <span class="token number">4</span>          <span class="token number">0</span>                       
-0x00000000 <span class="token number">3145729</span>    root      <span class="token number">600</span>        <span class="token number">4194304</span>    <span class="token number">9</span>          dest         
-0x7401833c <span class="token number">2621442</span>    root      <span class="token number">600</span>        <span class="token number">4</span>          <span class="token number">0</span>                       
+key        shmid      owner      perms      bytes      nattch     status
+0x7401833d <span class="token number">2654208</span>    root      <span class="token number">600</span>        <span class="token number">4</span>          <span class="token number">0</span>
+0x00000000 <span class="token number">3145729</span>    root      <span class="token number">600</span>        <span class="token number">4194304</span>    <span class="token number">9</span>          dest
+0x7401833c <span class="token number">2621442</span>    root      <span class="token number">600</span>        <span class="token number">4</span>          <span class="token number">0</span>
 0xd201012b <span class="token number">3080195</span>    root      <span class="token number">600</span>        <span class="token number">1720</span>       <span class="token number">2</span>
 </code></pre>
+  <h3 id="相关命令"><a class="anchor" aria-hidden="true" tabindex="-1" href="#相关命令"><span class="octicon octicon-link"></span></a>相关命令</h3>
+  <ul>
+    <li><code>ipcrm</code>: 删除 IPC 资源</li>
+    <li><code>ipcmk</code>: 创建 IPC 资源</li>
+  </ul>
 </div>
 
 
@@ -99,7 +119,7 @@ key        shmid      owner      perms      bytes      nattch     status
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1636951573151"></script>
-<script type="text/javascript" src="../js/index.js?v=1636951573151"></script>
+<script type="text/javascript" src="../js/dt.js?v=1637158670936"></script>
+<script type="text/javascript" src="../js/index.js?v=1637158670936"></script>
 </body>
 </html>
