@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,systemctl,系统服务管理器指令">
     <title>systemctl 命令，Linux systemctl 命令详解：系统服务管理器指令 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1637159205330">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1638357226128">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner">
@@ -108,7 +108,13 @@
     </tbody>
   </table>
   <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><span class="octicon octicon-link"></span></a>实例</h3>
-  <pre class="language-shell"><code class="language-shell">systemctl start nfs-server.service <span class="token builtin class-name">.</span> <span class="token comment"># 启动nfs服务</span>
+  <pre class="language-shell"><div onclick="copied(this)" data-code="systemctl start nfs-server.service . # 启动nfs服务
+systemctl enable nfs-server.service # 设置开机自启动
+systemctl disable nfs-server.service # 停止开机自启动
+systemctl status nfs-server.service # 查看服务当前状态
+systemctl restart nfs-server.service # 重新启动某服务
+systemctl list-units --type=service # 查看所有已启动的服务
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell">systemctl start nfs-server.service <span class="token builtin class-name">.</span> <span class="token comment"># 启动nfs服务</span>
 systemctl <span class="token builtin class-name">enable</span> nfs-server.service <span class="token comment"># 设置开机自启动</span>
 systemctl disable nfs-server.service <span class="token comment"># 停止开机自启动</span>
 systemctl status nfs-server.service <span class="token comment"># 查看服务当前状态</span>
@@ -116,13 +122,17 @@ systemctl restart nfs-server.service <span class="token comment"># 重新启�
 systemctl list-units --type<span class="token operator">=</span>service <span class="token comment"># 查看所有已启动的服务</span>
 </code></pre>
   <p>开启防火墙22端口</p>
-  <pre class="language-shell"><code class="language-shell">iptables -I INPUT -p tcp --dport <span class="token number">22</span> -j accept
+  <pre class="language-shell"><div onclick="copied(this)" data-code="iptables -I INPUT -p tcp --dport 22 -j accept
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell">iptables -I INPUT -p tcp --dport <span class="token number">22</span> -j accept
 </code></pre>
   <p>如果仍然有问题，就可能是SELinux导致的</p>
   <p>关闭SElinux：</p>
   <p>修改<code>/etc/selinux/config</code>文件中的<code>SELINUX=""</code>为disabled，然后重启。</p>
   <p>彻底关闭防火墙：</p>
-  <pre class="language-shell"><code class="language-shell"><span class="token function">sudo</span> systemctl status firewalld.service
+  <pre class="language-shell"><div onclick="copied(this)" data-code="sudo systemctl status firewalld.service
+sudo systemctl stop firewalld.service          
+sudo systemctl disable firewalld.service
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell"><span class="token function">sudo</span> systemctl status firewalld.service
 <span class="token function">sudo</span> systemctl stop firewalld.service          
 <span class="token function">sudo</span> systemctl disable firewalld.service
 </code></pre>
@@ -151,7 +161,7 @@ systemctl list-units --type<span class="token operator">=</span>service <span 
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1637159205330"></script>
-<script type="text/javascript" src="../js/index.js?v=1637159205330"></script>
+<script type="text/javascript" src="../js/dt.js?v=1638357226128"></script>
+<script type="text/javascript" src="../js/index.js?v=1638357226128"></script>
 </body>
 </html>

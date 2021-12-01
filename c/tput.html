@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,tput,通过terminfo数据库对终端会话进行初始化和操作">
     <title>tput 命令，Linux tput 命令详解：通过terminfo数据库对终端会话进行初始化和操作 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1637159205656">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1638357226452">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner">
@@ -61,7 +61,14 @@
   <p>与 UNIX 中的大多数命令一样，tput 命令既可以用在 shell 命令行中也可以用在 shell 脚本中。为让您更好地理解 tput，本文首先从命令行讲起，然后紧接着讲述 shell 脚本示例。</p>
   <p><strong>光标属性</strong></p>
   <p>在 UNIX shell 脚本中或在命令行中，移动光标或更改光标属性可能是非常有用的。有些情况下，您可能需要输入敏感信息（如密码），或在屏幕上两个不同的区域输入信息。在此类情况下，使用 tput 可能会对您有所帮助。</p>
-  <pre class="language-shell"><code class="language-shell">tput <span class="token function">clear</span> <span class="token comment"># 清屏</span>
+  <pre class="language-shell"><div onclick="copied(this)" data-code="tput clear # 清屏
+tput sc # 保存当前光标位置
+tput cup 10 13 # 将光标移动到 row col
+tput civis # 光标不可见
+tput cnorm # 光标可见
+tput rc # 显示输出
+exit 0
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell">tput <span class="token function">clear</span> <span class="token comment"># 清屏</span>
 tput sc <span class="token comment"># 保存当前光标位置</span>
 tput cup <span class="token number">10</span> <span class="token number">13</span> <span class="token comment"># 将光标移动到 row col</span>
 tput civis <span class="token comment"># 光标不可见</span>
@@ -74,19 +81,24 @@ tput rc <span class="token comment"># 显示输出</span>
   <p>要在设备上将光标移动到第 5 列 (X) 的第 1 行 (Y)，只需执行 tput cup 5 1。另一个示例是 tput cup 23 45，此命令将使光标移动到第 23 列上的第 45 行。</p>
   <p><strong>移动光标并显示信息</strong></p>
   <p>另一种有用的光标定位技巧是移动光标，执行用于显示信息的命令，然后返回到前一光标位置：</p>
-  <pre class="language-shell"><code class="language-shell"><span class="token punctuation">(</span>tput sc <span class="token punctuation">;</span> tput cup <span class="token number">23</span> <span class="token number">45</span> <span class="token punctuation">;</span> <span class="token builtin class-name">echo</span> “Input from tput/echo at <span class="token number">23</span>/45” <span class="token punctuation">;</span> tput rc<span class="token punctuation">)</span>
+  <pre class="language-shell"><div onclick="copied(this)" data-code="(tput sc ; tput cup 23 45 ; echo “Input from tput/echo at 23/45” ; tput rc)
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell"><span class="token punctuation">(</span>tput sc <span class="token punctuation">;</span> tput cup <span class="token number">23</span> <span class="token number">45</span> <span class="token punctuation">;</span> <span class="token builtin class-name">echo</span> “Input from tput/echo at <span class="token number">23</span>/45” <span class="token punctuation">;</span> tput rc<span class="token punctuation">)</span>
 </code></pre>
   <p>下面我们分析一下 subshell 命令：</p>
-  <pre class="language-shell"><code class="language-shell">tput sc
+  <pre class="language-shell"><div onclick="copied(this)" data-code="tput sc
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell">tput sc
 </code></pre>
   <p>必须首先保存当前的光标位置。要保存当前的光标位置，请包括 sc 选项或“save cursor position”。</p>
-  <pre class="language-shell"><code class="language-shell">tput cup <span class="token number">23</span> <span class="token number">45</span>
+  <pre class="language-shell"><div onclick="copied(this)" data-code="tput cup 23 45
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell">tput cup <span class="token number">23</span> <span class="token number">45</span>
 </code></pre>
   <p>在保存了光标位置后，光标坐标将移动到 (23,45)。</p>
-  <pre class="language-shell"><code class="language-shell"><span class="token builtin class-name">echo</span> “Input from tput/echo at <span class="token number">23</span>/45”
+  <pre class="language-shell"><div onclick="copied(this)" data-code="echo “Input from tput/echo at 23/45”
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell"><span class="token builtin class-name">echo</span> “Input from tput/echo at <span class="token number">23</span>/45”
 </code></pre>
   <p>将信息显示到 stdout 中。</p>
-  <pre class="language-shell"><code class="language-shell">tput rc
+  <pre class="language-shell"><div onclick="copied(this)" data-code="tput rc
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell">tput rc
 </code></pre>
   <p>在显示了这些信息之后，光标必须返回到使用 tput sc 保存的原始位置。要使光标返回到其上次保存的位置，请包括 rc 选项或“restore cursor position”。</p>
   <p>注意：由于本文首先详细介绍了通过命令行执行 tput，因此您可能会觉得在自己的 subshell 中执行命令要比单独执行每条命令然后在每条命令执行之前显示提示更简洁。</p>
@@ -106,14 +118,29 @@ tput rc <span class="token comment"># 显示输出</span>
     <li>7：白色</li>
   </ul>
   <p>执行以下示例命令可以将背景颜色更改为黄色，将前景颜色更改为红色：</p>
-  <pre class="language-shell"><code class="language-shell">tput setb <span class="token number">6</span> tput setf <span class="token number">4</span>
+  <pre class="language-shell"><div onclick="copied(this)" data-code="tput setb 6 tput setf 4
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell">tput setb <span class="token number">6</span> tput setf <span class="token number">4</span>
 </code></pre>
   <p>要反显当前的颜色方案，只需执行<code>tput rev</code>。</p>
   <p>有时，仅为文本着色还不够，也就是说，您想要通过另一种方式引起用户的注意。可以通过两种方式达到这一目的：一是将文本设置为粗体，二是为文本添加下划线。</p>
   <p>要将文本更改为粗体，请使用 bold 选项。要开始添加下划线，请使用 smul 选项。在完成显示带下划线的文本后，请使用 rmul 选项。</p>
   <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><span class="octicon octicon-link"></span></a>实例</h3>
   <p>使输出的字符串有颜色，底色，加粗：</p>
-  <pre class="language-shell"><code class="language-shell"><span class="token shebang important">#!/bin/bash</span>
+  <pre class="language-shell"><div onclick="copied(this)" data-code="#!/bin/bash
+printf $(tput setaf 2; tput bold)&#x27;color show\n\n&#x27;$(tput sgr0)
+
+for((i=0; i<=7; i++)); do
+    echo $(tput setaf $i)&#x22;show me the money&#x22;$(tput sgr0)
+done
+
+printf &#x27;\n&#x27;$(tput setaf 2; tput setab 0; tput bold)&#x27;background color show&#x27;$(tput sgr0)&#x27;\n\n&#x27;
+
+for((i=0,j=7; i<=7; i++,j--)); do
+    echo $(tput setaf $i; tput setab $j; tput bold)&#x22;show me the money&#x22;$(tput sgr0)
+done
+
+exit 0
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell"><span class="token shebang important">#!/bin/bash</span>
 <span class="token builtin class-name">printf</span> <span class="token variable"><span class="token variable">$(</span>tput setaf <span class="token number">2</span><span class="token punctuation">;</span> tput bold<span class="token variable">)</span></span><span class="token string">'color show\n\n'</span><span class="token variable"><span class="token variable">$(</span>tput sgr0<span class="token variable">)</span></span>
 
 <span class="token keyword">for</span><span class="token variable"><span class="token punctuation">((</span>i<span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span> i<span class="token operator">&#x3C;=</span><span class="token number">7</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">))</span></span><span class="token punctuation">;</span> <span class="token keyword">do</span>
@@ -129,7 +156,55 @@ tput rc <span class="token comment"># 显示输出</span>
 <span class="token builtin class-name">exit</span> <span class="token number">0</span>
 </code></pre>
   <p>输出格式控制函数：</p>
-  <pre class="language-shell"><code class="language-shell"><span class="token shebang important">#!/bin/bash</span>
+  <pre class="language-shell"><div onclick="copied(this)" data-code="#!/bin/bash
+
+# $1 str       print string
+# $2 color     0-7 设置颜色
+# $3 bgcolor   0-7 设置背景颜色
+# $4 bold      0-1 设置粗体
+# $5 underline 0-1 设置下划线
+
+function format_output(){
+    str=$1
+    color=$2
+    bgcolor=$3
+    bold=$4
+    underline=$5
+    normal=$(tput sgr0)
+
+    case &#x22;$color&#x22; in
+        0|1|2|3|4|5|6|7)
+            setcolor=$(tput setaf $color;) ;;
+        *)
+            setcolor=&#x22;&#x22; ;;
+    esac
+
+    case &#x22;$bgcolor&#x22; in
+        0|1|2|3|4|5|6|7)
+            setbgcolor=$(tput setab $bgcolor;) ;;
+        *)
+            setbgcolor=&#x22;&#x22; ;;
+    esac
+
+    if [ &#x22;$bold&#x22; = &#x22;1&#x22; ]; then
+        setbold=$(tput bold;)
+    else
+        setbold=&#x22;&#x22;
+    fi
+
+    if [ &#x22;$underline&#x22; = &#x22;1&#x22; ]; then
+        setunderline=$(tput smul;)
+    else
+        setunderline=&#x22;&#x22;
+    fi
+
+    printf &#x22;$setcolor$setbgcolor$setbold$setunderline$str$normal\n&#x22;
+}
+
+format_output &#x22;Yesterday Once more&#x22; 2 5 1 1
+
+exit 0
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell"><span class="token shebang important">#!/bin/bash</span>
 
 <span class="token comment"># $1 str       print string</span>
 <span class="token comment"># $2 color     0-7 设置颜色</span>
@@ -179,7 +254,38 @@ format_output <span class="token string">"Yesterday Once more"</span> <span clas
 <span class="token builtin class-name">exit</span> <span class="token number">0</span>
 </code></pre>
   <p>光标属性例子：</p>
-  <pre class="language-shell"><code class="language-shell"><span class="token shebang important">#!/bin/bash</span>
+  <pre class="language-shell"><div onclick="copied(this)" data-code="#!/bin/bash
+# clear the screen
+tput clear
+# Move cursor to screen location X,Y (top left is 0,0)
+tput cup 3 15
+# set a foreground colour using ANSI escape
+tput setaf 3
+echo &#x22;XYX Corp LTD.&#x22;
+tput sgr0
+tput cup 5 17
+# Set reverse video mode
+tput rev
+echo &#x22;M A I N - M E N U&#x22;
+tput sgr0
+tput cup 7 15
+echo &#x22;1\. User Management&#x22;
+tput cup 8 15
+echo &#x22;2\. service Management&#x22;
+tput cup 9 15
+echo &#x22;3\. Process Management&#x22;
+tput cup 10 15
+echo &#x22;4\. Backup&#x22;
+# Set bold mode
+tput bold
+tput cup 12 15
+read -p &#x22;Enter your choice [1-4] &#x22; choice
+tput clear
+tput sgr0
+tput rc
+
+exit 0
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell"><span class="token shebang important">#!/bin/bash</span>
 <span class="token comment"># clear the screen</span>
 tput <span class="token function">clear</span>
 <span class="token comment"># Move cursor to screen location X,Y (top left is 0,0)</span>
@@ -236,7 +342,7 @@ tput rc
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1637159205657"></script>
-<script type="text/javascript" src="../js/index.js?v=1637159205657"></script>
+<script type="text/javascript" src="../js/dt.js?v=1638357226452"></script>
+<script type="text/javascript" src="../js/index.js?v=1638357226452"></script>
 </body>
 </html>

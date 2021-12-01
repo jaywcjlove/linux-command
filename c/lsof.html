@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,lsof,显示Linux系统当前已打开的所有文件列表 `lsof -p pid`">
     <title>lsof 命令，Linux lsof 命令详解：显示Linux系统当前已打开的所有文件列表 `lsof -p pid` -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1637159202574">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1638357223559">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner">
@@ -58,10 +58,23 @@
   <p><strong>lsof命令</strong> 用于查看你进程打开的文件，打开文件的进程，进程打开的端口(TCP、UDP)。找回/恢复删除的文件。是十分方便的系统监视工具，因为lsof命令需要访问核心内存和各种文件，所以需要root用户执行。</p>
   <p>在linux环境下，任何事物都以文件的形式存在，通过文件不仅仅可以访问常规数据，还可以访问网络连接和硬件。所以如传输控制协议 (TCP) 和用户数据报协议 (UDP) 套接字等，系统在后台都为该应用程序分配了一个文件描述符，无论这个文件的本质如何，该文件描述符为应用程序与基础操作系统之间的交互提供了通用接口。因为应用程序打开文件的描述符列表提供了大量关于这个应用程序本身的信息，因此通过lsof工具能够查看这个列表对系统监测以及排错将是很有帮助的。</p>
   <h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><span class="octicon octicon-link"></span></a>语法</h3>
-  <pre class="language-shell"><code class="language-shell"><span class="token function">lsof</span> <span class="token punctuation">(</span>选项<span class="token punctuation">)</span>
+  <pre class="language-shell"><div onclick="copied(this)" data-code="lsof (选项)
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell"><span class="token function">lsof</span> <span class="token punctuation">(</span>选项<span class="token punctuation">)</span>
 </code></pre>
   <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><span class="octicon octicon-link"></span></a>选项</h3>
-  <pre class="language-shell"><code class="language-shell">-a：列出打开文件存在的进程；
+  <pre class="language-shell"><div onclick="copied(this)" data-code="-a：列出打开文件存在的进程；
+-c<进程名>：列出指定进程所打开的文件；
+-g：列出GID号进程详情；
+-d<文件号>：列出占用该文件号的进程；
++d<目录>：列出目录下被打开的文件；
++D<目录>：递归列出目录下被打开的文件；
+-n<目录>：列出使用NFS的文件；
+-i<条件>：列出符合条件的进程（协议、:端口、 @ip ）
+-p<进程号>：列出指定进程号所打开的文件；
+-u：列出UID号进程详情；
+-h：显示帮助信息；
+-v：显示版本信息
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell">-a：列出打开文件存在的进程；
 -c<span class="token operator">&#x3C;</span>进程名<span class="token operator">></span>：列出指定进程所打开的文件；
 -g：列出GID号进程详情；
 -d<span class="token operator">&#x3C;</span>文件号<span class="token operator">></span>：列出占用该文件号的进程；
@@ -75,7 +88,34 @@
 -v：显示版本信息
 </code></pre>
   <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><span class="octicon octicon-link"></span></a>实例</h3>
-  <pre class="language-shell"><code class="language-shell"><span class="token function">lsof</span>
+  <pre class="language-shell"><div onclick="copied(this)" data-code="lsof
+command     PID USER   FD      type             DEVICE     SIZE       NODE NAME
+init          1 root  cwd       DIR                8,2     4096          2 /
+init          1 root  rtd       DIR                8,2     4096          2 /
+init          1 root  txt       REG                8,2    43496    6121706 /sbin/init
+init          1 root  mem       REG                8,2   143600    7823908 /lib64/ld-2.5.so
+init          1 root  mem       REG                8,2  1722304    7823915 /lib64/libc-2.5.so
+init          1 root  mem       REG                8,2    23360    7823919 /lib64/libdl-2.5.so
+init          1 root  mem       REG                8,2    95464    7824116 /lib64/libselinux.so.1
+init          1 root  mem       REG                8,2   247496    7823947 /lib64/libsepol.so.1
+init          1 root   10u     FIFO               0,17                1233 /dev/initctl
+migration     2 root  cwd       DIR                8,2     4096          2 /
+migration     2 root  rtd       DIR                8,2     4096          2 /
+migration     2 root  txt   unknown                                        /proc/2/exe
+ksoftirqd     3 root  cwd       DIR                8,2     4096          2 /
+ksoftirqd     3 root  rtd       DIR                8,2     4096          2 /
+ksoftirqd     3 root  txt   unknown                                        /proc/3/exe
+migration     4 root  cwd       DIR                8,2     4096          2 /
+migration     4 root  rtd       DIR                8,2     4096          2 /
+migration     4 root  txt   unknown                                        /proc/4/exe
+ksoftirqd     5 root  cwd       DIR                8,2     4096          2 /
+ksoftirqd     5 root  rtd       DIR                8,2     4096          2 /
+ksoftirqd     5 root  txt   unknown                                        /proc/5/exe
+events/0      6 root  cwd       DIR                8,2     4096          2 /
+events/0      6 root  rtd       DIR                8,2     4096          2 /
+events/0      6 root  txt   unknown                                        /proc/6/exe
+events/1      7 root  cwd       DIR                8,2     4096          2 /
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell"><span class="token function">lsof</span>
 <span class="token builtin class-name">command</span>     PID <span class="token environment constant">USER</span>   FD      <span class="token builtin class-name">type</span>             DEVICE     SIZE       NODE NAME
 init          <span class="token number">1</span> root  cwd       DIR                <span class="token number">8,2</span>     <span class="token number">4096</span>          <span class="token number">2</span> /
 init          <span class="token number">1</span> root  rtd       DIR                <span class="token number">8,2</span>     <span class="token number">4096</span>          <span class="token number">2</span> /
@@ -168,13 +208,16 @@ events/1      <span class="token number">7</span> root  cwd       DIR           
     <li>REG：常规文件</li>
   </ol>
   <p>列出指定进程号所打开的文件:</p>
-  <pre class="language-shell"><code class="language-shell"><span class="token function">lsof</span> -p <span class="token variable">$pid</span>
+  <pre class="language-shell"><div onclick="copied(this)" data-code="lsof -p $pid
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell"><span class="token function">lsof</span> -p <span class="token variable">$pid</span>
 </code></pre>
   <p>获取端口对应的进程ID=>pid</p>
-  <pre class="language-shell"><code class="language-shell"><span class="token function">lsof</span> -i:9981 -P -t -sTCP:LISTEN
+  <pre class="language-shell"><div onclick="copied(this)" data-code="lsof -i:9981 -P -t -sTCP:LISTEN
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell"><span class="token function">lsof</span> -i:9981 -P -t -sTCP:LISTEN
 </code></pre>
   <p>列出打开文件的进程:</p>
-  <pre class="language-shell"><code class="language-shell"><span class="token function">lsof</span> <span class="token variable">$filename</span>
+  <pre class="language-shell"><div onclick="copied(this)" data-code="lsof $filename
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell"><span class="token function">lsof</span> <span class="token variable">$filename</span>
 </code></pre>
 </div>
 
@@ -201,7 +244,7 @@ events/1      <span class="token number">7</span> root  cwd       DIR           
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1637159202574"></script>
-<script type="text/javascript" src="../js/index.js?v=1637159202574"></script>
+<script type="text/javascript" src="../js/dt.js?v=1638357223559"></script>
+<script type="text/javascript" src="../js/index.js?v=1638357223559"></script>
 </body>
 </html>

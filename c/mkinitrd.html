@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,mkinitrd,建立要载入ramdisk的映像文件">
     <title>mkinitrd 命令，Linux mkinitrd 命令详解：建立要载入ramdisk的映像文件 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1637159202829">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1638357224174">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner">
@@ -58,10 +58,17 @@
   <p><strong>mkinitrd命令</strong> 建立要载入ramdisk的映像文件，以供Linux开机时载入ramdisk。</p>
   <p>这个是重新封包核心的命令，例如你自己修改了一个设备的驱动，如果这个驱动要加入核心级别的话，就需要对核心进行重新封包，把新加的配置编译到核心内部去！</p>
   <h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><span class="octicon octicon-link"></span></a>语法</h3>
-  <pre class="language-shell"><code class="language-shell">mkinitrd<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
+  <pre class="language-shell"><div onclick="copied(this)" data-code="mkinitrd(选项)(参数)
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell">mkinitrd<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
 </code></pre>
   <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><span class="octicon octicon-link"></span></a>选项</h3>
-  <pre class="language-shell"><code class="language-shell">-f：若指定的映像问家名称与现有文件重复，则覆盖现有的文件；
+  <pre class="language-shell"><div onclick="copied(this)" data-code="-f：若指定的映像问家名称与现有文件重复，则覆盖现有的文件；
+-v：执行时显示详细的信息；
+--omit-scsi-modules：不要载入SCSI模块；
+--preload=<模块名称>：指定要载入的模块；
+--with=<模块名称>：指定要载入的模块；
+--version：显示版本信息。
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell">-f：若指定的映像问家名称与现有文件重复，则覆盖现有的文件；
 -v：执行时显示详细的信息；
 --omit-scsi-modules：不要载入SCSI模块；
 --preload<span class="token operator">=</span><span class="token operator">&#x3C;</span>模块名称<span class="token operator">></span>：指定要载入的模块；
@@ -74,7 +81,30 @@
     <li>内核版本：指定内核版本。</li>
   </ul>
   <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><span class="octicon octicon-link"></span></a>实例</h3>
-  <pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@localhost tmp<span class="token punctuation">]</span><span class="token comment"># mkinitrd -v -f myinitrd.img $(uname -r)</span>
+  <pre class="language-shell"><div onclick="copied(this)" data-code="[root@localhost tmp]# mkinitrd -v -f myinitrd.img $(uname -r)
+Creating initramfs
+WARNING: using /tmp for temporary files
+Looking for deps of module ide-disk
+Looking for deps of module ext3  jbd
+Looking for deps of module jbd
+Using modules:  ./kernel/fs/jbd/jbd.ko ./kernel/fs/ext3/ext3.ko
+/sbin/nash -> /tmp/initrd.Vz3928/bin/nash
+/sbin/insmod.static -> /tmp/initrd.Vz3928/bin/insmod
+/sbin/udev.static -> /tmp/initrd.Vz3928/sbin/udev
+/etc/udev/udev.conf -> /tmp/initrd.Vz3928/etc/udev/udev.conf
+copy from /lib/modules/2.6.9-5.EL/./kernel/fs/jbd/jbd.ko(elf32-i386) to /tmp/initrd.Vz3928/lib/jbd.ko(elf32-i386)
+copy from /lib/modules/2.6.9-5.EL/./kernel/fs/ext3/ext3.ko(elf32-i386) to /tmp/initrd.Vz3928/lib/ext3.ko(elf32-i386)
+Loading module jbd
+Loading module ext3
+
+[root@localhost tmp]# file myinitrd.img
+myinitrd.img: gzip compressed data, from Unix, max compression
+
+[root@localhost tmp]# mv myinitrd.img  myinitrd.img.gz
+[root@localhost tmp]# gzip -d myinitrd.img.gz
+[root@localhost tmp]# file myinitrd.img
+myinitrd.img: ASCII cpio archive (SVR4 with no CRC)
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell"><span class="token punctuation">[</span>root@localhost tmp<span class="token punctuation">]</span><span class="token comment"># mkinitrd -v -f myinitrd.img $(uname -r)</span>
 Creating initramfs
 WARNING: using /tmp <span class="token keyword">for</span> temporary files
 Looking <span class="token keyword">for</span> deps of module ide-disk
@@ -123,7 +153,7 @@ myinitrd.img: ASCII cpio archive <span class="token punctuation">(</span>SVR4 wi
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1637159202830"></script>
-<script type="text/javascript" src="../js/index.js?v=1637159202830"></script>
+<script type="text/javascript" src="../js/dt.js?v=1638357224174"></script>
+<script type="text/javascript" src="../js/index.js?v=1638357224174"></script>
 </body>
 </html>
