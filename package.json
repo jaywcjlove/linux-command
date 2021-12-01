@@ -29,7 +29,7 @@
     "colors-cli": "1.0.28",
     "ejs": "3.1.6",
     "fs-extra": "10.0.0",
-    "markdown-to-html-cli": "3.1.6",
+    "markdown-to-html-cli": "3.2.1",
     "sitemap-generator": "8.5.1",
     "sqlite3": "5.0.2",
     "stylus": "0.55.0",
