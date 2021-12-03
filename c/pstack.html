@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,pstack,显示每个进程的栈跟踪">
     <title>pstack 命令，Linux pstack 命令详解：显示每个进程的栈跟踪 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1638364724455">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1638547164681">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner">
@@ -62,32 +62,23 @@
   <p>命令软件包下载地址：<a href="https://packages.debian.org/sid/pstack">https://packages.debian.org/sid/pstack</a></p>
   <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><span class="octicon octicon-link"></span></a>实例</h3>
   <p>pstree以树结构显示进程</p>
-  <pre class="language-shell"><div onclick="copied(this)" data-code="pstree -p work | grep ad
-sshd(22669)---bash(22670)---ad_preprocess(4551)-+-{ad_preprocess}(4552)
-                                                |-{ad_preprocess}(4553)
-                                                |-{ad_preprocess}(4554)
-                                                |-{ad_preprocess}(4555)
-                                                |-{ad_preprocess}(4556)
-                                                &#x60;-{ad_preprocess}(4557)
-" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell">pstree -p work <span class="token operator">|</span> <span class="token function">grep</span> ad
+  <pre class="language-shell"><code class="language-shell">pstree -p work <span class="token operator">|</span> <span class="token function">grep</span> ad
 sshd<span class="token punctuation">(</span><span class="token number">22669</span><span class="token punctuation">)</span>---bash<span class="token punctuation">(</span><span class="token number">22670</span><span class="token punctuation">)</span>---ad_preprocess<span class="token punctuation">(</span><span class="token number">4551</span><span class="token punctuation">)</span>-+-<span class="token punctuation">{</span>ad_preprocess<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token number">4552</span><span class="token punctuation">)</span>
                                                 <span class="token operator">|</span>-<span class="token punctuation">{</span>ad_preprocess<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token number">4553</span><span class="token punctuation">)</span>
                                                 <span class="token operator">|</span>-<span class="token punctuation">{</span>ad_preprocess<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token number">4554</span><span class="token punctuation">)</span>
                                                 <span class="token operator">|</span>-<span class="token punctuation">{</span>ad_preprocess<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token number">4555</span><span class="token punctuation">)</span>
                                                 <span class="token operator">|</span>-<span class="token punctuation">{</span>ad_preprocess<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token number">4556</span><span class="token punctuation">)</span>
                                                 `-<span class="token punctuation">{</span>ad_preprocess<span class="token punctuation">}</span><span class="token punctuation">(</span><span class="token number">4557</span><span class="token punctuation">)</span>
-</code></pre>
+</code><div onclick="copied(this)" data-code="pstree -p work | grep ad
+sshd(22669)---bash(22670)---ad_preprocess(4551)-+-{ad_preprocess}(4552)
+                                                |-{ad_preprocess}(4553)
+                                                |-{ad_preprocess}(4554)
+                                                |-{ad_preprocess}(4555)
+                                                |-{ad_preprocess}(4556)
+                                                &#x60;-{ad_preprocess}(4557)
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
   <p>work为工作用户，-p为显示进程识别码，ad_preprocess共启动了6个子线程，加上主线程共7个线程。</p>
-  <pre class="language-shell"><div onclick="copied(this)" data-code="ps -Lf 4551
-UID        PID  PPID   LWP  C NLWP STIME TTY      stat   time CMD
-work      4551 22670  4551  2    7 16:30 pts/2    Sl+    0:02 ./ad_preprocess
-work      4551 22670  4552  0    7 16:30 pts/2    Sl+    0:00 ./ad_preprocess
-work      4551 22670  4553  0    7 16:30 pts/2    Sl+    0:00 ./ad_preprocess
-work      4551 22670  4554  0    7 16:30 pts/2    Sl+    0:00 ./ad_preprocess
-work      4551 22670  4555  0    7 16:30 pts/2    Sl+    0:00 ./ad_preprocess
-work      4551 22670  4556  0    7 16:30 pts/2    Sl+    0:00 ./ad_preprocess
-work      4551 22670  4557  0    7 16:30 pts/2    Sl+    0:00 ./ad_preprocess
-" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell"><span class="token function">ps</span> -Lf <span class="token number">4551</span>
+  <pre class="language-shell"><code class="language-shell"><span class="token function">ps</span> -Lf <span class="token number">4551</span>
 <span class="token environment constant">UID</span>        PID  <span class="token environment constant">PPID</span>   LWP  C NLWP STIME TTY      <span class="token function">stat</span>   <span class="token function">time</span> CMD
 work      <span class="token number">4551</span> <span class="token number">22670</span>  <span class="token number">4551</span>  <span class="token number">2</span>    <span class="token number">7</span> <span class="token number">16</span>:30 pts/2    Sl+    <span class="token number">0</span>:02 ./ad_preprocess
 work      <span class="token number">4551</span> <span class="token number">22670</span>  <span class="token number">4552</span>  <span class="token number">0</span>    <span class="token number">7</span> <span class="token number">16</span>:30 pts/2    Sl+    <span class="token number">0</span>:00 ./ad_preprocess
@@ -96,63 +87,19 @@ work      <span class="token number">4551</span> <span class="token number">2267
 work      <span class="token number">4551</span> <span class="token number">22670</span>  <span class="token number">4555</span>  <span class="token number">0</span>    <span class="token number">7</span> <span class="token number">16</span>:30 pts/2    Sl+    <span class="token number">0</span>:00 ./ad_preprocess
 work      <span class="token number">4551</span> <span class="token number">22670</span>  <span class="token number">4556</span>  <span class="token number">0</span>    <span class="token number">7</span> <span class="token number">16</span>:30 pts/2    Sl+    <span class="token number">0</span>:00 ./ad_preprocess
 work      <span class="token number">4551</span> <span class="token number">22670</span>  <span class="token number">4557</span>  <span class="token number">0</span>    <span class="token number">7</span> <span class="token number">16</span>:30 pts/2    Sl+    <span class="token number">0</span>:00 ./ad_preprocess
-</code></pre>
+</code><div onclick="copied(this)" data-code="ps -Lf 4551
+UID        PID  PPID   LWP  C NLWP STIME TTY      stat   time CMD
+work      4551 22670  4551  2    7 16:30 pts/2    Sl+    0:02 ./ad_preprocess
+work      4551 22670  4552  0    7 16:30 pts/2    Sl+    0:00 ./ad_preprocess
+work      4551 22670  4553  0    7 16:30 pts/2    Sl+    0:00 ./ad_preprocess
+work      4551 22670  4554  0    7 16:30 pts/2    Sl+    0:00 ./ad_preprocess
+work      4551 22670  4555  0    7 16:30 pts/2    Sl+    0:00 ./ad_preprocess
+work      4551 22670  4556  0    7 16:30 pts/2    Sl+    0:00 ./ad_preprocess
+work      4551 22670  4557  0    7 16:30 pts/2    Sl+    0:00 ./ad_preprocess
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
   <p>进程共启动了7个线程</p>
   <p>pstack显示每个进程的栈跟踪：</p>
-  <pre class="language-shell"><div onclick="copied(this)" data-code="pstack 4551
-Thread 7 (Thread 1084229984 (LWP 4552)):
-#0  0x000000302afc63dc in epoll_wait () from /lib64/tls/libc.so.6
-#1  0x00000000006f0730 in ub::EPollEx::poll ()
-#2  0x00000000006f172a in ub::NetReactor::callback ()
-#3  0x00000000006fbbbb in ub::UBTask::CALLBACK ()
-#4  0x000000302b80610a in start_thread () from /lib64/tls/libpthread.so.0
-#5  0x000000302afc6003 in clone () from /lib64/tls/libc.so.6
-#6  0x0000000000000000 in ?? ()
-Thread 6 (Thread 1094719840 (LWP 4553)):
-#0  0x000000302afc63dc in epoll_wait () from /lib64/tls/libc.so.6
-#1  0x00000000006f0730 in ub::EPollEx::poll ()
-#2  0x00000000006f172a in ub::NetReactor::callback ()
-#3  0x00000000006fbbbb in ub::UBTask::CALLBACK ()
-#4  0x000000302b80610a in start_thread () from /lib64/tls/libpthread.so.0
-#5  0x000000302afc6003 in clone () from /lib64/tls/libc.so.6
-#6  0x0000000000000000 in ?? ()
-Thread 5 (Thread 1105209696 (LWP 4554)):
-#0  0x000000302b80baa5 in __nanosleep_nocancel ()
-#1  0x000000000079e758 in comcm::ms_sleep ()
-#2  0x00000000006c8581 in ub::UbClientManager::healthyCheck ()
-#3  0x00000000006c8471 in ub::UbClientManager::start_healthy_check ()
-#4  0x000000302b80610a in start_thread () from /lib64/tls/libpthread.so.0
-#5  0x000000302afc6003 in clone () from /lib64/tls/libc.so.6
-#6  0x0000000000000000 in ?? ()
-Thread 4 (Thread 1115699552 (LWP 4555)):
-#0  0x000000302b80baa5 in __nanosleep_nocancel ()
-#1  0x0000000000482b0e in armor::armor_check_thread ()
-#2  0x000000302b80610a in start_thread () from /lib64/tls/libpthread.so.0
-#3  0x000000302afc6003 in clone () from /lib64/tls/libc.so.6
-#4  0x0000000000000000 in ?? ()
-Thread 3 (Thread 1126189408 (LWP 4556)):
-#0  0x000000302af8f1a5 in __nanosleep_nocancel () from /lib64/tls/libc.so.6
-#1  0x000000302af8f010 in sleep () from /lib64/tls/libc.so.6
-#2  0x000000000044c972 in Business_config_manager::run ()
-#3  0x0000000000457b83 in Thread::run_thread ()
-#4  0x000000302b80610a in start_thread () from /lib64/tls/libpthread.so.0
-#5  0x000000302afc6003 in clone () from /lib64/tls/libc.so.6
-#6  0x0000000000000000 in ?? ()
-Thread 2 (Thread 1136679264 (LWP 4557)):
-#0  0x000000302af8f1a5 in __nanosleep_nocancel () from /lib64/tls/libc.so.6
-#1  0x000000302af8f010 in sleep () from /lib64/tls/libc.so.6
-#2  0x00000000004524bb in Process_thread::sleep_period ()
-#3  0x0000000000452641 in Process_thread::run ()
-#4  0x0000000000457b83 in Thread::run_thread ()
-#5  0x000000302b80610a in start_thread () from /lib64/tls/libpthread.so.0
-#6  0x000000302afc6003 in clone () from /lib64/tls/libc.so.6
-#7  0x0000000000000000 in ?? ()
-Thread 1 (Thread 182894129792 (LWP 4551)):
-#0  0x000000302af8f1a5 in __nanosleep_nocancel () from /lib64/tls/libc.so.6
-#1  0x000000302af8f010 in sleep () from /lib64/tls/libc.so.6
-#2  0x0000000000420d79 in Ad_preprocess::run ()
-#3  0x0000000000450ad0 in main ()
-" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell">pstack <span class="token number">4551</span>
+  <pre class="language-shell"><code class="language-shell">pstack <span class="token number">4551</span>
 Thread <span class="token number">7</span> <span class="token punctuation">(</span>Thread <span class="token number">1084229984</span> <span class="token punctuation">(</span>LWP <span class="token number">4552</span><span class="token punctuation">))</span>:
 <span class="token comment">#0  0x000000302afc63dc in epoll_wait () from /lib64/tls/libc.so.6</span>
 <span class="token comment">#1  0x00000000006f0730 in ub::EPollEx::poll ()</span>
@@ -205,7 +152,60 @@ Thread <span class="token number">1</span> <span class="token punctuation">(</sp
 <span class="token comment">#1  0x000000302af8f010 in sleep () from /lib64/tls/libc.so.6</span>
 <span class="token comment">#2  0x0000000000420d79 in Ad_preprocess::run ()</span>
 <span class="token comment">#3  0x0000000000450ad0 in main ()</span>
-</code></pre>
+</code><div onclick="copied(this)" data-code="pstack 4551
+Thread 7 (Thread 1084229984 (LWP 4552)):
+#0  0x000000302afc63dc in epoll_wait () from /lib64/tls/libc.so.6
+#1  0x00000000006f0730 in ub::EPollEx::poll ()
+#2  0x00000000006f172a in ub::NetReactor::callback ()
+#3  0x00000000006fbbbb in ub::UBTask::CALLBACK ()
+#4  0x000000302b80610a in start_thread () from /lib64/tls/libpthread.so.0
+#5  0x000000302afc6003 in clone () from /lib64/tls/libc.so.6
+#6  0x0000000000000000 in ?? ()
+Thread 6 (Thread 1094719840 (LWP 4553)):
+#0  0x000000302afc63dc in epoll_wait () from /lib64/tls/libc.so.6
+#1  0x00000000006f0730 in ub::EPollEx::poll ()
+#2  0x00000000006f172a in ub::NetReactor::callback ()
+#3  0x00000000006fbbbb in ub::UBTask::CALLBACK ()
+#4  0x000000302b80610a in start_thread () from /lib64/tls/libpthread.so.0
+#5  0x000000302afc6003 in clone () from /lib64/tls/libc.so.6
+#6  0x0000000000000000 in ?? ()
+Thread 5 (Thread 1105209696 (LWP 4554)):
+#0  0x000000302b80baa5 in __nanosleep_nocancel ()
+#1  0x000000000079e758 in comcm::ms_sleep ()
+#2  0x00000000006c8581 in ub::UbClientManager::healthyCheck ()
+#3  0x00000000006c8471 in ub::UbClientManager::start_healthy_check ()
+#4  0x000000302b80610a in start_thread () from /lib64/tls/libpthread.so.0
+#5  0x000000302afc6003 in clone () from /lib64/tls/libc.so.6
+#6  0x0000000000000000 in ?? ()
+Thread 4 (Thread 1115699552 (LWP 4555)):
+#0  0x000000302b80baa5 in __nanosleep_nocancel ()
+#1  0x0000000000482b0e in armor::armor_check_thread ()
+#2  0x000000302b80610a in start_thread () from /lib64/tls/libpthread.so.0
+#3  0x000000302afc6003 in clone () from /lib64/tls/libc.so.6
+#4  0x0000000000000000 in ?? ()
+Thread 3 (Thread 1126189408 (LWP 4556)):
+#0  0x000000302af8f1a5 in __nanosleep_nocancel () from /lib64/tls/libc.so.6
+#1  0x000000302af8f010 in sleep () from /lib64/tls/libc.so.6
+#2  0x000000000044c972 in Business_config_manager::run ()
+#3  0x0000000000457b83 in Thread::run_thread ()
+#4  0x000000302b80610a in start_thread () from /lib64/tls/libpthread.so.0
+#5  0x000000302afc6003 in clone () from /lib64/tls/libc.so.6
+#6  0x0000000000000000 in ?? ()
+Thread 2 (Thread 1136679264 (LWP 4557)):
+#0  0x000000302af8f1a5 in __nanosleep_nocancel () from /lib64/tls/libc.so.6
+#1  0x000000302af8f010 in sleep () from /lib64/tls/libc.so.6
+#2  0x00000000004524bb in Process_thread::sleep_period ()
+#3  0x0000000000452641 in Process_thread::run ()
+#4  0x0000000000457b83 in Thread::run_thread ()
+#5  0x000000302b80610a in start_thread () from /lib64/tls/libpthread.so.0
+#6  0x000000302afc6003 in clone () from /lib64/tls/libc.so.6
+#7  0x0000000000000000 in ?? ()
+Thread 1 (Thread 182894129792 (LWP 4551)):
+#0  0x000000302af8f1a5 in __nanosleep_nocancel () from /lib64/tls/libc.so.6
+#1  0x000000302af8f010 in sleep () from /lib64/tls/libc.so.6
+#2  0x0000000000420d79 in Ad_preprocess::run ()
+#3  0x0000000000450ad0 in main ()
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 </div>
 
 
@@ -231,7 +231,7 @@ Thread <span class="token number">1</span> <span class="token punctuation">(</sp
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1638364724456"></script>
-<script type="text/javascript" src="../js/index.js?v=1638364724456"></script>
+<script type="text/javascript" src="../js/dt.js?v=1638547164681"></script>
+<script type="text/javascript" src="../js/index.js?v=1638547164681"></script>
 </body>
 </html>

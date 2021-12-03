@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,restorecon,恢复文件的安全上下文">
     <title>restorecon 命令，Linux restorecon 命令详解：恢复文件的安全上下文 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1638364724909">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1638547165099">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner">
@@ -57,11 +57,11 @@
   <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><span class="octicon octicon-link"></span></a>补充说明</h2>
   <p><strong>restorecon命令</strong> 用来恢复SELinux文件属性即恢复文件的安全上下文。</p>
   <h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><span class="octicon octicon-link"></span></a>语法</h3>
-  <pre class="language-shell"><div onclick="copied(this)" data-code="restorecon [-iFnrRv] [-e excludedir ] [-o filename ] [-f filename | pathname...]
-" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell">restorecon <span class="token punctuation">[</span>-iFnrRv<span class="token punctuation">]</span> <span class="token punctuation">[</span>-e excludedir <span class="token punctuation">]</span> <span class="token punctuation">[</span>-o filename <span class="token punctuation">]</span> <span class="token punctuation">[</span>-f filename <span class="token operator">|</span> pathname<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
-</code></pre>
+  <pre class="language-shell"><code class="language-shell">restorecon <span class="token punctuation">[</span>-iFnrRv<span class="token punctuation">]</span> <span class="token punctuation">[</span>-e excludedir <span class="token punctuation">]</span> <span class="token punctuation">[</span>-o filename <span class="token punctuation">]</span> <span class="token punctuation">[</span>-f filename <span class="token operator">|</span> pathname<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+</code><div onclick="copied(this)" data-code="restorecon [-iFnrRv] [-e excludedir ] [-o filename ] [-f filename | pathname...]
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
   <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><span class="octicon octicon-link"></span></a>选项</h3>
-  <pre class="language-shell"><div onclick="copied(this)" data-code="-i：忽略不存在的文件。
+  <pre class="language-shell"><code class="language-shell">-i：忽略不存在的文件。
 -f：infilename 文件 infilename 中记录要处理的文件。
 -e：directory 排除目录。
 -R/-r：递归处理目录。
@@ -69,7 +69,7 @@
 -o/outfilename：保存文件列表到 outfilename，在文件不正确情况下。
 -v：将过程显示到屏幕上。
 -F：强制恢复文件安全语境。
-" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell">-i：忽略不存在的文件。
+</code><div onclick="copied(this)" data-code="-i：忽略不存在的文件。
 -f：infilename 文件 infilename 中记录要处理的文件。
 -e：directory 排除目录。
 -R/-r：递归处理目录。
@@ -77,33 +77,11 @@
 -o/outfilename：保存文件列表到 outfilename，在文件不正确情况下。
 -v：将过程显示到屏幕上。
 -F：强制恢复文件安全语境。
-</code></pre>
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
   <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><span class="octicon octicon-link"></span></a>实例</h3>
   <p>假设CentOS安装了apache，网页默认的主目录是<code>/var/www/html</code>，我们经常遇到这样的问题，在其他目录中创建了一个网页文件，然后用mv移动到网页默认目录<code>/var/www/html</code>中，但是在浏览器中却打不开这个文件，这很可能是因为这个文件的SELinux配置信息是继承原来那个目录的，与<code>/var/www/html</code>目录不同，使用mv移动的时候，这个SELinux配置信息也一起移动过来了，从而导致无法打开页面，具体请看下面的实例：</p>
   <p>使用CentOS举例,如果默认没有安装apache，确保网络连接，使用下面的命令安装</p>
-  <pre class="language-shell"><div onclick="copied(this)" data-code="[root@jsdig.com ~]# yum install httpd
- # 我们在root的家目录新建一个html文件 
-[root@jsdig.com ~]# pwd
-/root
-
-[root@jsdig.com ~]# vi index.html
-
-# 随便输入一段文字，保存退出 
-welcome to www.jsdig.com
-
-# 将这个文件mv到网页默认目录下 
-[root@jsdig.com ~]# mv index.html /var/www/html/
-
-# 
-# 这个时候我们使用firefox浏览器输入127.0.0.1/index.html发现打不开，
-# 查看一下SELinux的日志文件，发现了下面这一段报错信息，从这个报错信息不难看出，
-# 进程httpd访问网页主目录中的index.html时被SELinux阻止，原因是因为，SELinux配置信息不正确,
-# 正确的SELinux配置信息应该是scontext=后面的部分，
-# 而index.html文件的SELinux配置信息却是tcontext=后面的部分，
-# 从tcontext=的第三段“admin_home_t”不难看出，这个文件的SELinux配置信息是root用户家目录的。
-# 
-type=AVC msg=audit(1378974214.610:465): avc:  denied  { open } for  pid=2359 comm=&#x22;httpd&#x22; path=&#x22;/var/www/html/index.html&#x22; dev=&#x22;sda1&#x22; ino=1317685 scontext=system_u:system_r:httpd_t:s0 tcontext=unconfined_u:object_r:admin_home_t:s0 tclass=file
-" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell"><span class="token punctuation">[</span>root@jsdig.com ~<span class="token punctuation">]</span><span class="token comment"># yum install httpd</span>
+  <pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@jsdig.com ~<span class="token punctuation">]</span><span class="token comment"># yum install httpd</span>
  <span class="token comment"># 我们在root的家目录新建一个html文件 </span>
 <span class="token punctuation">[</span>root@jsdig.com ~<span class="token punctuation">]</span><span class="token comment"># pwd</span>
 /root
@@ -125,23 +103,45 @@ welcome to www.jsdig.com
 <span class="token comment"># 从tcontext=的第三段“admin_home_t”不难看出，这个文件的SELinux配置信息是root用户家目录的。</span>
 <span class="token comment"># </span>
 <span class="token assign-left variable">type</span><span class="token operator">=</span>AVC <span class="token assign-left variable">msg</span><span class="token operator">=</span>audit<span class="token punctuation">(</span><span class="token number">1378974214.610</span>:465<span class="token punctuation">)</span>: avc:  denied  <span class="token punctuation">{</span> <span class="token function">open</span> <span class="token punctuation">}</span> <span class="token keyword">for</span>  <span class="token assign-left variable">pid</span><span class="token operator">=</span><span class="token number">2359</span> <span class="token assign-left variable">comm</span><span class="token operator">=</span><span class="token string">"httpd"</span> <span class="token assign-left variable">path</span><span class="token operator">=</span><span class="token string">"/var/www/html/index.html"</span> <span class="token assign-left variable">dev</span><span class="token operator">=</span><span class="token string">"sda1"</span> <span class="token assign-left variable">ino</span><span class="token operator">=</span><span class="token number">1317685</span> <span class="token assign-left variable">scontext</span><span class="token operator">=</span>system_u:system_r:httpd_t:s0 <span class="token assign-left variable">tcontext</span><span class="token operator">=</span>unconfined_u:object_r:admin_home_t:s0 <span class="token assign-left variable">tclass</span><span class="token operator">=</span>file
-</code></pre>
-  <p>使用ls -Z也可以看出,文件和目录的SELinux信息不匹配</p>
-  <pre class="language-shell"><div onclick="copied(this)" data-code="[root@jsdig.com html]# ls -Z /var/www/html/
-.... unconfined_u:object_r:admin_home_t:s0 index.html
+</code><div onclick="copied(this)" data-code="[root@jsdig.com ~]# yum install httpd
+ # 我们在root的家目录新建一个html文件 
+[root@jsdig.com ~]# pwd
+/root
 
-[root@jsdig.com html]# ls -Zd /var/www/html/
-.... system_u:object_r:httpd_sys_content_t:s0 /var/www/html/
-" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell"><span class="token punctuation">[</span>root@jsdig.com html<span class="token punctuation">]</span><span class="token comment"># ls -Z /var/www/html/</span>
+[root@jsdig.com ~]# vi index.html
+
+# 随便输入一段文字，保存退出 
+welcome to www.jsdig.com
+
+# 将这个文件mv到网页默认目录下 
+[root@jsdig.com ~]# mv index.html /var/www/html/
+
+# 
+# 这个时候我们使用firefox浏览器输入127.0.0.1/index.html发现打不开，
+# 查看一下SELinux的日志文件，发现了下面这一段报错信息，从这个报错信息不难看出，
+# 进程httpd访问网页主目录中的index.html时被SELinux阻止，原因是因为，SELinux配置信息不正确,
+# 正确的SELinux配置信息应该是scontext=后面的部分，
+# 而index.html文件的SELinux配置信息却是tcontext=后面的部分，
+# 从tcontext=的第三段“admin_home_t”不难看出，这个文件的SELinux配置信息是root用户家目录的。
+# 
+type=AVC msg=audit(1378974214.610:465): avc:  denied  { open } for  pid=2359 comm=&#x22;httpd&#x22; path=&#x22;/var/www/html/index.html&#x22; dev=&#x22;sda1&#x22; ino=1317685 scontext=system_u:system_r:httpd_t:s0 tcontext=unconfined_u:object_r:admin_home_t:s0 tclass=file
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+  <p>使用ls -Z也可以看出,文件和目录的SELinux信息不匹配</p>
+  <pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@jsdig.com html<span class="token punctuation">]</span><span class="token comment"># ls -Z /var/www/html/</span>
 <span class="token punctuation">..</span><span class="token punctuation">..</span> unconfined_u:object_r:admin_home_t:s0 index.html
 
 <span class="token punctuation">[</span>root@jsdig.com html<span class="token punctuation">]</span><span class="token comment"># ls -Zd /var/www/html/</span>
 <span class="token punctuation">..</span><span class="token punctuation">..</span> system_u:object_r:httpd_sys_content_t:s0 /var/www/html/
-</code></pre>
+</code><div onclick="copied(this)" data-code="[root@jsdig.com html]# ls -Z /var/www/html/
+.... unconfined_u:object_r:admin_home_t:s0 index.html
+
+[root@jsdig.com html]# ls -Zd /var/www/html/
+.... system_u:object_r:httpd_sys_content_t:s0 /var/www/html/
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
   <p>使用restorecon来恢复网页主目录中所有文件的SELinux配置信息(如果目标为一个目录，可以添加-R参数递归)</p>
-  <pre class="language-shell"><div onclick="copied(this)" data-code="[root@jsdig.com html]# restorecon -R /var/www/html/
-" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell"><span class="token punctuation">[</span>root@jsdig.com html<span class="token punctuation">]</span><span class="token comment"># restorecon -R /var/www/html/</span>
-</code></pre>
+  <pre class="language-shell"><code class="language-shell"><span class="token punctuation">[</span>root@jsdig.com html<span class="token punctuation">]</span><span class="token comment"># restorecon -R /var/www/html/</span>
+</code><div onclick="copied(this)" data-code="[root@jsdig.com html]# restorecon -R /var/www/html/
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 </div>
 
 
@@ -167,7 +167,7 @@ welcome to www.jsdig.com
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1638364724909"></script>
-<script type="text/javascript" src="../js/index.js?v=1638364724909"></script>
+<script type="text/javascript" src="../js/dt.js?v=1638547165099"></script>
+<script type="text/javascript" src="../js/index.js?v=1638547165099"></script>
 </body>
 </html>

@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,printf,格式化并输出结果。">
     <title>printf 命令，Linux printf 命令详解：格式化并输出结果。 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1638364724362">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1638547164610">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner">
@@ -61,64 +61,35 @@
   </ul>
   <h2 id="内建命令"><a class="anchor" aria-hidden="true" tabindex="-1" href="#内建命令"><span class="octicon octicon-link"></span></a>内建命令</h2>
   <h4 id="概要"><a class="anchor" aria-hidden="true" tabindex="-1" href="#概要"><span class="octicon octicon-link"></span></a>概要</h4>
-  <pre class="language-shell"><div onclick="copied(this)" data-code="printf [-v var] format [arguments]
-" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell"><span class="token builtin class-name">printf</span> <span class="token punctuation">[</span>-v var<span class="token punctuation">]</span> <span class="token function">format</span> <span class="token punctuation">[</span>arguments<span class="token punctuation">]</span>
-</code></pre>
+  <pre class="language-shell"><code class="language-shell"><span class="token builtin class-name">printf</span> <span class="token punctuation">[</span>-v var<span class="token punctuation">]</span> <span class="token function">format</span> <span class="token punctuation">[</span>arguments<span class="token punctuation">]</span>
+</code><div onclick="copied(this)" data-code="printf [-v var] format [arguments]
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
   <h4 id="主要用途"><a class="anchor" aria-hidden="true" tabindex="-1" href="#主要用途"><span class="octicon octicon-link"></span></a>主要用途</h4>
   <ul>
     <li>格式化参数并输出。</li>
   </ul>
   <h4 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><span class="octicon octicon-link"></span></a>选项</h4>
-  <pre class="language-shell"><div onclick="copied(this)" data-code="-v var：将结果输出到变量var中而不是输出到标准输出。
-" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell">-v var：将结果输出到变量var中而不是输出到标准输出。
-</code></pre>
+  <pre class="language-shell"><code class="language-shell">-v var：将结果输出到变量var中而不是输出到标准输出。
+</code><div onclick="copied(this)" data-code="-v var：将结果输出到变量var中而不是输出到标准输出。
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
   <h4 id="参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参数"><span class="octicon octicon-link"></span></a>参数</h4>
   <p>format：输出格式。</p>
   <p>arguments：一到多个参数。</p>
-  <pre class="language-shell"><div onclick="copied(this)" data-code="转义序列：除了支持printf(1)和printf(3)的转义序列，内建printf还支持以下转义序列：
-
-%b       展开参数中的反斜杠转义字符。
-%q       将参数扩起以用作shell输入。
-%(fmt)T  根据strftime(3)中的转义字符来输出日期时间字符串。
-" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell">转义序列：除了支持printf<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>和printf<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>的转义序列，内建printf还支持以下转义序列：
+  <pre class="language-shell"><code class="language-shell">转义序列：除了支持printf<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>和printf<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>的转义序列，内建printf还支持以下转义序列：
 
 %b       展开参数中的反斜杠转义字符。
 %q       将参数扩起以用作shell输入。
 %<span class="token punctuation">(</span>fmt<span class="token punctuation">)</span>T  根据strftime<span class="token punctuation">(</span><span class="token number">3</span><span class="token punctuation">)</span>中的转义字符来输出日期时间字符串。
-</code></pre>
+</code><div onclick="copied(this)" data-code="转义序列：除了支持printf(1)和printf(3)的转义序列，内建printf还支持以下转义序列：
+
+%b       展开参数中的反斜杠转义字符。
+%q       将参数扩起以用作shell输入。
+%(fmt)T  根据strftime(3)中的转义字符来输出日期时间字符串。
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
   <h4 id="返回值"><a class="anchor" aria-hidden="true" tabindex="-1" href="#返回值"><span class="octicon octicon-link"></span></a>返回值</h4>
   <p>返回状态为成功除非给出了非法选项、写错误、赋值错误。</p>
   <h4 id="例子"><a class="anchor" aria-hidden="true" tabindex="-1" href="#例子"><span class="octicon octicon-link"></span></a>例子</h4>
-  <pre class="language-shell"><div onclick="copied(this)" data-code="# %-5s 格式为左对齐且宽度为5的字符串代替（&#x27;-&#x27;表示左对齐），不使用则默认右对齐。
-# %-4.2f 格式为左对齐宽度为4，保留两位小数。
-
-printf &#x22;%-5s %-10s %-4s\n&#x22; NO Name Mark
-printf &#x22;%-5s %-10s %-4.2f\n&#x22; 01 Tom 90.3456
-printf &#x22;%-5s %-10s %-4.2f\n&#x22; 02 Jack 89.2345
-printf &#x22;%-5s %-10s %-4.2f\n&#x22; 03 Jeff 98.4323
-
-# 输出
-NO    Name       Mark
-01    Tom        90.35
-02    Jack       89.23
-03    Jeff       98.43
-
-
-# %b %q %(fmt)T 的例子。
-# see it again with a newline.
-printf &#x22;%s\n&#x22; &#x27;hello world&#x27;
-# 展开换行符，和上面的结果一样。
-printf &#x22;%b&#x22; &#x27;hello world\n&#x27;
-
-printf &#x27;%q\n&#x27; &#x27;a b c&#x27;
-# 输出
-a\ b\ c
-
-# %z为时区，%n为换行符。
-printf &#x22;%(%F %T %z%n)T&#x22;
-# 输出
-2019-09-10 01:48:07 +0000
-" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell"><span class="token comment"># %-5s 格式为左对齐且宽度为5的字符串代替（'-'表示左对齐），不使用则默认右对齐。</span>
+  <pre class="language-shell"><code class="language-shell"><span class="token comment"># %-5s 格式为左对齐且宽度为5的字符串代替（'-'表示左对齐），不使用则默认右对齐。</span>
 <span class="token comment"># %-4.2f 格式为左对齐宽度为4，保留两位小数。</span>
 
 <span class="token builtin class-name">printf</span> <span class="token string">"%-5s %-10s %-4s<span class="token entity" title="\n">\n</span>"</span> NO Name Mark
@@ -147,53 +118,61 @@ a<span class="token punctuation">\</span> b<span class="token punctuation">\</sp
 <span class="token builtin class-name">printf</span> <span class="token string">"%(%F %T %z%n)T"</span>
 <span class="token comment"># 输出</span>
 <span class="token number">2019</span>-09-10 01:48:07 +0000
-</code></pre>
+</code><div onclick="copied(this)" data-code="# %-5s 格式为左对齐且宽度为5的字符串代替（&#x27;-&#x27;表示左对齐），不使用则默认右对齐。
+# %-4.2f 格式为左对齐宽度为4，保留两位小数。
+
+printf &#x22;%-5s %-10s %-4s\n&#x22; NO Name Mark
+printf &#x22;%-5s %-10s %-4.2f\n&#x22; 01 Tom 90.3456
+printf &#x22;%-5s %-10s %-4.2f\n&#x22; 02 Jack 89.2345
+printf &#x22;%-5s %-10s %-4.2f\n&#x22; 03 Jeff 98.4323
+
+# 输出
+NO    Name       Mark
+01    Tom        90.35
+02    Jack       89.23
+03    Jeff       98.43
+
+
+# %b %q %(fmt)T 的例子。
+# see it again with a newline.
+printf &#x22;%s\n&#x22; &#x27;hello world&#x27;
+# 展开换行符，和上面的结果一样。
+printf &#x22;%b&#x22; &#x27;hello world\n&#x27;
+
+printf &#x27;%q\n&#x27; &#x27;a b c&#x27;
+# 输出
+a\ b\ c
+
+# %z为时区，%n为换行符。
+printf &#x22;%(%F %T %z%n)T&#x22;
+# 输出
+2019-09-10 01:48:07 +0000
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
   <h4 id="注意"><a class="anchor" aria-hidden="true" tabindex="-1" href="#注意"><span class="octicon octicon-link"></span></a>注意</h4>
   <ol>
     <li>该命令是bash内建命令，相关的帮助信息请查看<code>help</code>命令。</li>
   </ol>
   <h2 id="外部命令"><a class="anchor" aria-hidden="true" tabindex="-1" href="#外部命令"><span class="octicon octicon-link"></span></a>外部命令</h2>
   <h4 id="概要-1"><a class="anchor" aria-hidden="true" tabindex="-1" href="#概要-1"><span class="octicon octicon-link"></span></a>概要</h4>
-  <pre class="language-shell"><div onclick="copied(this)" data-code="printf FORMAT [ARGUMENT]...
-printf OPTION
-" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell"><span class="token builtin class-name">printf</span> FORMAT <span class="token punctuation">[</span>ARGUMENT<span class="token punctuation">]</span><span class="token punctuation">..</span>.
+  <pre class="language-shell"><code class="language-shell"><span class="token builtin class-name">printf</span> FORMAT <span class="token punctuation">[</span>ARGUMENT<span class="token punctuation">]</span><span class="token punctuation">..</span>.
 <span class="token builtin class-name">printf</span> OPTION
-</code></pre>
+</code><div onclick="copied(this)" data-code="printf FORMAT [ARGUMENT]...
+printf OPTION
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
   <h4 id="主要用途-1"><a class="anchor" aria-hidden="true" tabindex="-1" href="#主要用途-1"><span class="octicon octicon-link"></span></a>主要用途</h4>
   <ul>
     <li>格式化参数并输出。</li>
   </ul>
   <h4 id="选项-1"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项-1"><span class="octicon octicon-link"></span></a>选项</h4>
-  <pre class="language-shell"><div onclick="copied(this)" data-code="--help 显示帮助信息并退出。
+  <pre class="language-shell"><code class="language-shell">--help 显示帮助信息并退出。
 --version 显示版本信息并退出。
-" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell">--help 显示帮助信息并退出。
+</code><div onclick="copied(this)" data-code="--help 显示帮助信息并退出。
 --version 显示版本信息并退出。
-</code></pre>
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
   <h4 id="参数-1"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参数-1"><span class="octicon octicon-link"></span></a>参数</h4>
   <p>format：输出格式。</p>
   <p>arguments：一到多个参数。</p>
-  <pre class="language-shell"><div onclick="copied(this)" data-code="在这里忽略了（%b %q），如果你安装的coreutils版本支持它们，那么请参考上面的例子。
-支持的转义序列：
-
-\&#x22;          双引号
-\\          反斜杠
-\a          响铃
-\b          退格
-\c          截断输出
-\e          退出
-\f          翻页
-\n          换行
-\r          回车
-\t          水平制表符
-\v          竖直制表符
-\NNN        八进制数 (1到3位数字)
-\xHH        十六进制数 (1到2位数字)
-\uHHHH      Unicode字符附加4位十六进制数字
-\UHHHHHHHH  Unicode字符附加8位十六进制数字
-%%          百分号
-
-以及&#x27;diouxXfeEgGcs&#x27;中的一个结尾的C格式规范，将被转换为正确的类型并处理可变宽度。
-" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell">在这里忽略了（%b %q），如果你安装的coreutils版本支持它们，那么请参考上面的例子。
+  <pre class="language-shell"><code class="language-shell">在这里忽略了（%b %q），如果你安装的coreutils版本支持它们，那么请参考上面的例子。
 支持的转义序列：
 
 <span class="token punctuation">\</span>"          双引号
@@ -214,35 +193,30 @@ printf OPTION
 %%          百分号
 
 以及<span class="token string">'diouxXfeEgGcs'</span>中的一个结尾的C格式规范，将被转换为正确的类型并处理可变宽度。
-</code></pre>
+</code><div onclick="copied(this)" data-code="在这里忽略了（%b %q），如果你安装的coreutils版本支持它们，那么请参考上面的例子。
+支持的转义序列：
+
+\&#x22;          双引号
+\\          反斜杠
+\a          响铃
+\b          退格
+\c          截断输出
+\e          退出
+\f          翻页
+\n          换行
+\r          回车
+\t          水平制表符
+\v          竖直制表符
+\NNN        八进制数 (1到3位数字)
+\xHH        十六进制数 (1到2位数字)
+\uHHHH      Unicode字符附加4位十六进制数字
+\UHHHHHHHH  Unicode字符附加8位十六进制数字
+%%          百分号
+
+以及&#x27;diouxXfeEgGcs&#x27;中的一个结尾的C格式规范，将被转换为正确的类型并处理可变宽度。
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
   <h4 id="例子-1"><a class="anchor" aria-hidden="true" tabindex="-1" href="#例子-1"><span class="octicon octicon-link"></span></a>例子</h4>
-  <pre class="language-shell"><div onclick="copied(this)" data-code="# 使用 /usr/bin/printf 确保调用的不是内建命令。
-# 当然，在你关闭内建printf以及确认当前环境没有printf函数的情况下，可直接使用printf，详见末尾&#x22;注意&#x22;的链接。
-
-# 按行打印数组和关联数组的下标及值。
-
-# 声明数组可以不加&#x27;declare -a&#x27;或&#x27;local -a&#x27;（在函数内声明的局部变量）。
-arr=(&#x27;line1&#x27; &#x27;line2&#x27;)
-/usr/bin/printf &#x22;%s\n&#x22; ${!arr[@]}
-# 输出下标
-0
-1
-/usr/bin/printf &#x22;%s\n&#x22; ${arr[@]}
-# 输出值
-line1
-line2
-
-#声明关联数组（也就是字典）必须加&#x27;declare -A&#x27;或&#x27;local -A&#x27;（在函数内声明的局部变量）。
-declare -A assoc_arr=([&#x27;key1&#x27;]=&#x27;value1&#x27; [&#x27;key2&#x27;]=&#x27;value2&#x27;)
-/usr/bin/printf &#x22;%s\n&#x22; ${!assoc_arr[@]}
-# 输出键。
-key2
-key1
-/usr/bin/printf &#x22;%s\n&#x22; ${assoc_arr[@]}
-# 输出值。
-value2
-value1
-" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell"><span class="token comment"># 使用 /usr/bin/printf 确保调用的不是内建命令。</span>
+  <pre class="language-shell"><code class="language-shell"><span class="token comment"># 使用 /usr/bin/printf 确保调用的不是内建命令。</span>
 <span class="token comment"># 当然，在你关闭内建printf以及确认当前环境没有printf函数的情况下，可直接使用printf，详见末尾"注意"的链接。</span>
 
 <span class="token comment"># 按行打印数组和关联数组的下标及值。</span>
@@ -268,7 +242,33 @@ key1
 <span class="token comment"># 输出值。</span>
 value2
 value1
-</code></pre>
+</code><div onclick="copied(this)" data-code="# 使用 /usr/bin/printf 确保调用的不是内建命令。
+# 当然，在你关闭内建printf以及确认当前环境没有printf函数的情况下，可直接使用printf，详见末尾&#x22;注意&#x22;的链接。
+
+# 按行打印数组和关联数组的下标及值。
+
+# 声明数组可以不加&#x27;declare -a&#x27;或&#x27;local -a&#x27;（在函数内声明的局部变量）。
+arr=(&#x27;line1&#x27; &#x27;line2&#x27;)
+/usr/bin/printf &#x22;%s\n&#x22; ${!arr[@]}
+# 输出下标
+0
+1
+/usr/bin/printf &#x22;%s\n&#x22; ${arr[@]}
+# 输出值
+line1
+line2
+
+#声明关联数组（也就是字典）必须加&#x27;declare -A&#x27;或&#x27;local -A&#x27;（在函数内声明的局部变量）。
+declare -A assoc_arr=([&#x27;key1&#x27;]=&#x27;value1&#x27; [&#x27;key2&#x27;]=&#x27;value2&#x27;)
+/usr/bin/printf &#x22;%s\n&#x22; ${!assoc_arr[@]}
+# 输出键。
+key2
+key1
+/usr/bin/printf &#x22;%s\n&#x22; ${assoc_arr[@]}
+# 输出值。
+value2
+value1
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
   <h4 id="返回值-1"><a class="anchor" aria-hidden="true" tabindex="-1" href="#返回值-1"><span class="octicon octicon-link"></span></a>返回值</h4>
   <p>返回状态为成功除非给出了非法选项等。</p>
   <h4 id="注意-1"><a class="anchor" aria-hidden="true" tabindex="-1" href="#注意-1"><span class="octicon octicon-link"></span></a>注意</h4>
@@ -323,7 +323,7 @@ value1
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1638364724363"></script>
-<script type="text/javascript" src="../js/index.js?v=1638364724363"></script>
+<script type="text/javascript" src="../js/dt.js?v=1638547164610"></script>
+<script type="text/javascript" src="../js/index.js?v=1638547164610"></script>
 </body>
 </html>

@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,enable,启动或禁用shell内建命令">
     <title>enable 命令，Linux enable 命令详解：启动或禁用shell内建命令 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1638364720687">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1638547161277">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner">
@@ -93,7 +93,7 @@
     </li>
   </ul>
   <h4 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><span class="octicon octicon-link"></span></a>选项</h4>
-  <pre class="language-shell"><div onclick="copied(this)" data-code="-a 打印所有内建命令，无论是否禁用。
+  <pre class="language-shell"><code class="language-shell">-a 打印所有内建命令，无论是否禁用。
 -d 移除从动态库中加载的内建命令。
 -n 禁用内建命令或显示已禁用的内建命令。
 -p 以可复用格式打印。
@@ -101,7 +101,7 @@
 -f 动态库中加载内建命令。
 -ns 打印处于禁用状态的posix标准内建命令。
 -as 打印posix标准内建命令，无论是否禁用。
-" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell">-a 打印所有内建命令，无论是否禁用。
+</code><div onclick="copied(this)" data-code="-a 打印所有内建命令，无论是否禁用。
 -d 移除从动态库中加载的内建命令。
 -n 禁用内建命令或显示已禁用的内建命令。
 -p 以可复用格式打印。
@@ -109,24 +109,14 @@
 -f 动态库中加载内建命令。
 -ns 打印处于禁用状态的posix标准内建命令。
 -as 打印posix标准内建命令，无论是否禁用。
-</code></pre>
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
   <h4 id="参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参数"><span class="octicon octicon-link"></span></a>参数</h4>
   <p>filename：动态库文件名。</p>
   <p>name（可选）：内建命令，可以为多个。</p>
   <h4 id="返回值"><a class="anchor" aria-hidden="true" tabindex="-1" href="#返回值"><span class="octicon octicon-link"></span></a>返回值</h4>
   <p>enable返回成功，除非name不是内建命令或有错误发生。</p>
   <h3 id="例子以下内容限于篇幅不再列出返回值部分"><a class="anchor" aria-hidden="true" tabindex="-1" href="#例子以下内容限于篇幅不再列出返回值部分"><span class="octicon octicon-link"></span></a>例子（以下内容限于篇幅不再列出返回值部分）</h3>
-  <pre class="language-shell"><div onclick="copied(this)" data-code="# posix special builtin
-# 假设没有任何内建命令被禁用
-# 禁用两个posix标准内建命令
-enable -n set source
-# 打印处于禁用状态的posix标准内建命令
-enable -ns
-# 打印posix标准内建命令，无论是否禁用。
-enable -as
-# 打印处于启用状态的posix标准内建命令
-enable -s
-" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell"><span class="token comment"># posix special builtin</span>
+  <pre class="language-shell"><code class="language-shell"><span class="token comment"># posix special builtin</span>
 <span class="token comment"># 假设没有任何内建命令被禁用</span>
 <span class="token comment"># 禁用两个posix标准内建命令</span>
 <span class="token builtin class-name">enable</span> -n <span class="token builtin class-name">set</span> <span class="token builtin class-name">source</span>
@@ -136,19 +126,18 @@ enable -s
 <span class="token builtin class-name">enable</span> -as
 <span class="token comment"># 打印处于启用状态的posix标准内建命令</span>
 <span class="token builtin class-name">enable</span> -s
-</code></pre>
-  <pre class="language-shell"><div onclick="copied(this)" data-code="# 假设没有任何内建命令被禁用
-# 禁用一到多个内建命令
-enable -n echo pwd
-# 打印所有内建命令，无论是否禁用。
-enable -a
-# 打印处于启用状态的内建命令
-enable
-# 打印处于禁用状态的内建命令
-enable -n
-# 启用一到多个内建命令
-enable pwd
-" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div><code class="language-shell"><span class="token comment"># 假设没有任何内建命令被禁用</span>
+</code><div onclick="copied(this)" data-code="# posix special builtin
+# 假设没有任何内建命令被禁用
+# 禁用两个posix标准内建命令
+enable -n set source
+# 打印处于禁用状态的posix标准内建命令
+enable -ns
+# 打印posix标准内建命令，无论是否禁用。
+enable -as
+# 打印处于启用状态的posix标准内建命令
+enable -s
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+  <pre class="language-shell"><code class="language-shell"><span class="token comment"># 假设没有任何内建命令被禁用</span>
 <span class="token comment"># 禁用一到多个内建命令</span>
 <span class="token builtin class-name">enable</span> -n <span class="token builtin class-name">echo</span> <span class="token builtin class-name">pwd</span>
 <span class="token comment"># 打印所有内建命令，无论是否禁用。</span>
@@ -159,7 +148,18 @@ enable pwd
 <span class="token builtin class-name">enable</span> -n
 <span class="token comment"># 启用一到多个内建命令</span>
 <span class="token builtin class-name">enable</span> <span class="token builtin class-name">pwd</span>
-</code></pre>
+</code><div onclick="copied(this)" data-code="# 假设没有任何内建命令被禁用
+# 禁用一到多个内建命令
+enable -n echo pwd
+# 打印所有内建命令，无论是否禁用。
+enable -a
+# 打印处于启用状态的内建命令
+enable
+# 打印处于禁用状态的内建命令
+enable -n
+# 启用一到多个内建命令
+enable pwd
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
   <h3 id="qa"><a class="anchor" aria-hidden="true" tabindex="-1" href="#qa"><span class="octicon octicon-link"></span></a>Q&#x26;A</h3>
   <p>Q：请问<code>-f</code>，<code>-d</code>，<code>-p</code>的演示呢？</p>
   <p>
@@ -207,7 +207,7 @@ enable pwd
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1638364720688"></script>
-<script type="text/javascript" src="../js/index.js?v=1638364720688"></script>
+<script type="text/javascript" src="../js/dt.js?v=1638547161278"></script>
+<script type="text/javascript" src="../js/index.js?v=1638547161278"></script>
 </body>
 </html>
