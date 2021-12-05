@@ -55,6 +55,50 @@ mq-mobile = "screen and (max-width: 479px)"
   }
 }
 
+
+.markdown-body pre[class*="language-"] {
+  position: relative;
+}
+.markdown-body pre[class*="language-"] .copied {
+  visibility: hidden;
+  display: flex;
+  position: absolute;
+  cursor: pointer;
+  color: #a5afbb;
+  top: 6px;
+  right: 6px;
+  border-radius: 5px;
+  background: #e3e3e3;
+  padding: 6px;
+  font-size: 12px;
+  transition: all .3s;
+}
+.markdown-body pre[class*="language-"]:hover .copied {
+  visibility: visible;
+}
+.markdown-body pre[class*="language-"]:hover .copied:hover {
+  background: #4caf50;
+  color: #fff;
+}
+.markdown-body pre[class*="language-"]:hover .copied:active,
+.markdown-body pre[class*="language-"] .active {
+  background: #2e9b33;
+  color: #fff;
+}
+
+.markdown-body pre[class*="language-"] .copied .octicon-copy {
+  display: block;
+}
+.markdown-body pre[class*="language-"] .copied .octicon-check {
+  display: none;
+}
+.markdown-body pre[class*="language-"] .active .octicon-copy {
+  display: none;
+}
+.markdown-body pre[class*="language-"] .active .octicon-check {
+  display: block;
+}
+
 .markdown-body .octicon {
   display: inline-block;
   fill: currentColor;

@@ -1,5 +1,17 @@
 <%- include('partial/header'); %>
 <%- include('widget/search',{type: "list"}); %>
+<script src="https://unpkg.com/@uiw/copy-to-clipboard/dist/copy-to-clipboard.umd.js"></script>
+<script>
+function copied(target, str) {
+  target.classList.add('active');
+  copyTextToClipboard(target.dataset.code, function() {
+    setTimeout(() => {
+      target.classList.remove('active');
+    }, 2000);
+  });
+}
+</script>
+
 <div class="markdown-body">
 <% if(md_path){ %>
 <span class="edit_btn">
