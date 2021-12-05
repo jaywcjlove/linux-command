@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,htop,[非内部命令]一个互动的进程查看器，可以动态观察系统进程状况">
     <title>htop 命令，Linux htop 命令详解：[非内部命令]一个互动的进程查看器，可以动态观察系统进程状况 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1638547162567">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1638683183244">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner">
@@ -41,6 +41,18 @@
       </div>
   </div>
 </div>
+<script src="https://unpkg.com/@uiw/copy-to-clipboard/dist/copy-to-clipboard.umd.js"></script>
+<script>
+function copied(target, str) {
+  target.classList.add('active');
+  copyTextToClipboard(target.dataset.code, function() {
+    setTimeout(() => {
+      target.classList.remove('active');
+    }, 2000);
+  });
+}
+</script>
+
 <div class="markdown-body">
 
 <span class="edit_btn">
@@ -280,7 +292,7 @@ F7表示减小nice值(增大优先级)，F8增大nice值(减小优先级)，选�
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1638547162567"></script>
-<script type="text/javascript" src="../js/index.js?v=1638547162567"></script>
+<script type="text/javascript" src="../js/dt.js?v=1638683183245"></script>
+<script type="text/javascript" src="../js/index.js?v=1638683183245"></script>
 </body>
 </html>
