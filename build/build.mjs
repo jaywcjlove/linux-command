@@ -204,12 +204,13 @@ function markdownToHTML(str) {
   return new Promise((resolve, reject) => {
     try {
       const stylStr = FS.readFileSync(stylPath, 'utf8');
+      const stylMD = FS.readFileSync(path.resolve('node_modules/markdown-to-html-cli/github.css'), 'utf8');
       stylus(stylStr.toString())
         .set('filename', stylPath)
         .set('compress', true)
         .render((err, css) => {
           if (err) throw err;
-          resolve(css);
+          resolve(`${stylMD.replace(/\n/, '')}\n${css}`);
         });
     } catch (err) {
       reject(err);
