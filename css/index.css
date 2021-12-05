@@ -19,10 +19,10 @@ body { margin: 0; }
   vertical-align: text-bottom;
 }
 
-.markdown-body pre[class*="language-"] {
+.markdown-body pre {
   position: relative;
 }
-.markdown-body pre[class*="language-"] .copied {
+.markdown-body pre .copied {
   visibility: hidden;
   display: flex;
   position: absolute;
@@ -36,29 +36,28 @@ body { margin: 0; }
   font-size: 12px;
   transition: all .3s;
 }
-.markdown-body pre[class*="language-"]:hover .copied {
+.markdown-body pre:hover .copied {
   visibility: visible;
 }
-.markdown-body pre[class*="language-"]:hover .copied:hover {
+.markdown-body pre:hover .copied:hover {
   background: #4caf50;
   color: #fff;
 }
-.markdown-body pre[class*="language-"]:hover .copied:active,
-.markdown-body pre[class*="language-"] .active {
+.markdown-body pre:hover .copied:active,
+.markdown-body pre .copied.active {
   background: #2e9b33;
   color: #fff;
 }
-
-.markdown-body pre[class*="language-"] .copied .octicon-copy {
+.markdown-body pre .copied .octicon-copy {
   display: block;
 }
-.markdown-body pre[class*="language-"] .copied .octicon-check {
+.markdown-body pre .copied .octicon-check {
   display: none;
 }
-.markdown-body pre[class*="language-"] .active .octicon-copy {
+.markdown-body pre .active .octicon-copy {
   display: none;
 }
-.markdown-body pre[class*="language-"] .active .octicon-check {
+.markdown-body pre .active .octicon-check {
   display: block;
 }
 
