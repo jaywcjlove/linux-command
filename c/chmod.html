@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,chmod,用来变更文件或目录的权限">
     <title>chmod 命令，Linux chmod 命令详解：用来变更文件或目录的权限 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1638931453555">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1639914138656">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner">
@@ -156,7 +156,7 @@ ls -la
 <span class="token comment"># 当前用户具有所有权限，组用户有读写权限，其他用户只有读权限。</span>
 <span class="token function">chmod</span> <span class="token assign-left variable">u</span><span class="token operator">=</span>rwx, <span class="token assign-left variable">g</span><span class="token operator">=</span>rw, <span class="token assign-left variable">o</span><span class="token operator">=</span>r ./test.log
 <span class="token comment"># 等价的八进制数表示：</span>
-<span class="token function">chmod</span> <span class="token number">754</span> ./test.log
+<span class="token function">chmod</span> <span class="token number">764</span> ./test.log
 <span class="token comment"># 将目录以及目录下的文件都设置为所有用户拥有读写权限。</span>
 <span class="token comment"># 注意，使用'-R'选项一定要保留当前用户的执行和读取权限，否则会报错！</span>
 <span class="token function">chmod</span> -R <span class="token assign-left variable">a</span><span class="token operator">=</span>rw ./testdir/
@@ -171,7 +171,7 @@ chmod a-w ./test.log
 # 当前用户具有所有权限，组用户有读写权限，其他用户只有读权限。
 chmod u=rwx, g=rw, o=r ./test.log
 # 等价的八进制数表示：
-chmod 754 ./test.log
+chmod 764 ./test.log
 # 将目录以及目录下的文件都设置为所有用户拥有读写权限。
 # 注意，使用&#x27;-R&#x27;选项一定要保留当前用户的执行和读取权限，否则会报错！
 chmod -R a=rw ./testdir/
@@ -215,7 +215,7 @@ chmod --reference=./1.log  ./test.log
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1638931453556"></script>
-<script type="text/javascript" src="../js/index.js?v=1638931453556"></script>
+<script type="text/javascript" src="../js/dt.js?v=1639914138657"></script>
+<script type="text/javascript" src="../js/index.js?v=1639914138657"></script>
 </body>
 </html>
