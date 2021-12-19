@@ -82,7 +82,7 @@ chmod a-w ./test.log
 # 当前用户具有所有权限，组用户有读写权限，其他用户只有读权限。
 chmod u=rwx, g=rw, o=r ./test.log
 # 等价的八进制数表示：
-chmod 754 ./test.log
+chmod 764 ./test.log
 # 将目录以及目录下的文件都设置为所有用户拥有读写权限。
 # 注意，使用'-R'选项一定要保留当前用户的执行和读取权限，否则会报错！
 chmod -R a=rw ./testdir/
