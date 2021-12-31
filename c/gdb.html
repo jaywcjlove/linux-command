@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,gdb,功能强大的程序调试器">
     <title>gdb 命令，Linux gdb 命令详解：功能强大的程序调试器 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1639983499148">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1640938632862">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner">
@@ -87,66 +87,66 @@ function copied(target, str) {
   <table>
     <thead>
       <tr>
-        <th align="none">命令</th>
-        <th align="none">解释</th>
-        <th align="none">示例</th>
+        <th>命令</th>
+        <th>解释</th>
+        <th>示例</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td align="none">file &#x3C;文件名></td>
-        <td align="none">加载被调试的可执行程序文件。<br>因为一般都在被调试程序所在目录下执行GDB，因而文本名不需要带路径。</td>
-        <td align="none">(gdb) file gdb-sample</td>
+        <td>file &#x3C;文件名></td>
+        <td>加载被调试的可执行程序文件。<br>因为一般都在被调试程序所在目录下执行GDB，因而文本名不需要带路径。</td>
+        <td>(gdb) file gdb-sample</td>
       </tr>
       <tr>
-        <td align="none">r</td>
-        <td align="none">Run的简写，运行被调试的程序。<br>如果此前没有下过断点，则执行完整个程序；如果有断点，则程序暂停在第一个可用断点处。</td>
-        <td align="none">(gdb) r</td>
+        <td>r</td>
+        <td>Run的简写，运行被调试的程序。<br>如果此前没有下过断点，则执行完整个程序；如果有断点，则程序暂停在第一个可用断点处。</td>
+        <td>(gdb) r</td>
       </tr>
       <tr>
-        <td align="none">c</td>
-        <td align="none">Continue的简写，继续执行被调试程序，直至下一个断点或程序结束。</td>
-        <td align="none">(gdb) c</td>
+        <td>c</td>
+        <td>Continue的简写，继续执行被调试程序，直至下一个断点或程序结束。</td>
+        <td>(gdb) c</td>
       </tr>
       <tr>
-        <td align="none">b &#x3C;行号><br>b &#x3C;函数名称><br>b *&#x3C;函数名称><br>b *&#x3C;代码地址> d [编号]</td>
-        <td align="none">b: Breakpoint的简写，设置断点。两可以使用“行号”“函数名称”“执行地址”等方式指定断点位置。<br>其中在函数名称前面加“*”符号表示将断点设置在“由编译器生成的prolog代码处”。如果不了解汇编，可以不予理会此用法。 d: Delete breakpoint的简写，删除指定编号的某个断点，或删除所有断点。断点编号从1开始递增。</td>
-        <td align="none">(gdb) b 8(gdb) b main<br>(gdb) b *main<br>(gdb) b *0x804835c (gdb) d</td>
+        <td>b &#x3C;行号><br>b &#x3C;函数名称><br>b *&#x3C;函数名称><br>b *&#x3C;代码地址> d [编号]</td>
+        <td>b: Breakpoint的简写，设置断点。两可以使用“行号”“函数名称”“执行地址”等方式指定断点位置。<br>其中在函数名称前面加“*”符号表示将断点设置在“由编译器生成的prolog代码处”。如果不了解汇编，可以不予理会此用法。 d: Delete breakpoint的简写，删除指定编号的某个断点，或删除所有断点。断点编号从1开始递增。</td>
+        <td>(gdb) b 8(gdb) b main<br>(gdb) b *main<br>(gdb) b *0x804835c (gdb) d</td>
       </tr>
       <tr>
-        <td align="none">s, n</td>
-        <td align="none">s: 执行一行源程序代码，如果此行代码中有函数调用，则进入该函数；<br>n: 执行一行源程序代码，此行代码中的函数调用也一并执行。 s 相当于其它调试器中的“Step Into (单步跟踪进入)”；<br>n 相当于其它调试器中的“Step Over (单步跟踪)”。 这两个命令必须在有源代码调试信息的情况下才可以使用（GCC编译时使用“-g”参数）。</td>
-        <td align="none">(gdb) s<br>(gdb) n</td>
+        <td>s, n</td>
+        <td>s: 执行一行源程序代码，如果此行代码中有函数调用，则进入该函数；<br>n: 执行一行源程序代码，此行代码中的函数调用也一并执行。 s 相当于其它调试器中的“Step Into (单步跟踪进入)”；<br>n 相当于其它调试器中的“Step Over (单步跟踪)”。 这两个命令必须在有源代码调试信息的情况下才可以使用（GCC编译时使用“-g”参数）。</td>
+        <td>(gdb) s<br>(gdb) n</td>
       </tr>
       <tr>
-        <td align="none">si, ni</td>
-        <td align="none">si命令类似于s命令，ni命令类似于n命令。所不同的是，这两个命令（si/ni）所针对的是汇编指令，而s/n针对的是源代码。</td>
-        <td align="none">(gdb) si<br>(gdb) ni</td>
+        <td>si, ni</td>
+        <td>si命令类似于s命令，ni命令类似于n命令。所不同的是，这两个命令（si/ni）所针对的是汇编指令，而s/n针对的是源代码。</td>
+        <td>(gdb) si<br>(gdb) ni</td>
       </tr>
       <tr>
-        <td align="none">p &#x3C;变量名称></td>
-        <td align="none">Print的简写，显示指定变量（临时变量或全局变量）的值。</td>
-        <td align="none">(gdb) p i<br>(gdb) p nGlobalVar</td>
+        <td>p &#x3C;变量名称></td>
+        <td>Print的简写，显示指定变量（临时变量或全局变量）的值。</td>
+        <td>(gdb) p i<br>(gdb) p nGlobalVar</td>
       </tr>
       <tr>
-        <td align="none">display ... undisplay &#x3C;编号></td>
-        <td align="none">display，设置程序中断后欲显示的数据及其格式。<br>例如，如果希望每次程序中断后可以看到即将被执行的下一条汇编指令，可以使用命令<br>“display /i $pc”<br>其中 $pc 代表当前汇编指令，/i 表示以十六进行显示。当需要关心汇编代码时，此命令相当有用。 undispaly，取消先前的display设置，编号从1开始递增。</td>
-        <td align="none">(gdb) display /i $pc (gdb) undisplay 1</td>
+        <td>display ... undisplay &#x3C;编号></td>
+        <td>display，设置程序中断后欲显示的数据及其格式。<br>例如，如果希望每次程序中断后可以看到即将被执行的下一条汇编指令，可以使用命令<br>“display /i $pc”<br>其中 $pc 代表当前汇编指令，/i 表示以十六进行显示。当需要关心汇编代码时，此命令相当有用。 undispaly，取消先前的display设置，编号从1开始递增。</td>
+        <td>(gdb) display /i $pc (gdb) undisplay 1</td>
       </tr>
       <tr>
-        <td align="none">i</td>
-        <td align="none">info的简写，用于显示各类信息，详情请查阅“help i”。</td>
-        <td align="none">(gdb) i r</td>
+        <td>i</td>
+        <td>info的简写，用于显示各类信息，详情请查阅“help i”。</td>
+        <td>(gdb) i r</td>
       </tr>
       <tr>
-        <td align="none">q</td>
-        <td align="none">Quit的简写，退出GDB调试环境。</td>
-        <td align="none">(gdb) q</td>
+        <td>q</td>
+        <td>Quit的简写，退出GDB调试环境。</td>
+        <td>(gdb) q</td>
       </tr>
       <tr>
-        <td align="none">help [命令名称]</td>
-        <td align="none">GDB帮助命令，提供对GDB名种命令的解释说明。<br>如果指定了“命令名称”参数，则显示该命令的详细说明；如果没有指定参数，则分类显示所有GDB命令，供用户进一步浏览和查询。</td>
-        <td align="none">(gdb) help</td>
+        <td>help [命令名称]</td>
+        <td>GDB帮助命令，提供对GDB名种命令的解释说明。<br>如果指定了“命令名称”参数，则显示该命令的详细说明；如果没有指定参数，则分类显示所有GDB命令，供用户进一步浏览和查询。</td>
+        <td>(gdb) help</td>
       </tr>
     </tbody>
   </table>
@@ -617,7 +617,7 @@ int main(){
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1639983499149"></script>
-<script type="text/javascript" src="../js/index.js?v=1639983499149"></script>
+<script type="text/javascript" src="../js/dt.js?v=1640938632863"></script>
+<script type="text/javascript" src="../js/index.js?v=1640938632863"></script>
 </body>
 </html>

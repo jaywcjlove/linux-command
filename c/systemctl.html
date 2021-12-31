@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,systemctl,系统服务管理器指令">
     <title>systemctl 命令，Linux systemctl 命令详解：系统服务管理器指令 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1639983503255">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1640938636802">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner">
@@ -71,51 +71,51 @@ function copied(target, str) {
   <table>
     <thead>
       <tr>
-        <th align="none">任务</th>
-        <th align="none">旧指令</th>
-        <th align="none">新指令</th>
+        <th>任务</th>
+        <th>旧指令</th>
+        <th>新指令</th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td align="none">使某服务自动启动</td>
-        <td align="none">chkconfig --level 3 httpd on</td>
-        <td align="none">systemctl enable httpd.service</td>
+        <td>使某服务自动启动</td>
+        <td>chkconfig --level 3 httpd on</td>
+        <td>systemctl enable httpd.service</td>
       </tr>
       <tr>
-        <td align="none">使某服务不自动启动</td>
-        <td align="none">chkconfig --level 3 httpd off</td>
-        <td align="none">systemctl disable httpd.service</td>
+        <td>使某服务不自动启动</td>
+        <td>chkconfig --level 3 httpd off</td>
+        <td>systemctl disable httpd.service</td>
       </tr>
       <tr>
-        <td align="none">检查服务状态</td>
-        <td align="none">service httpd status</td>
-        <td align="none">systemctl status httpd.service （服务详细信息） systemctl is-active httpd.service （仅显示是否 Active)</td>
+        <td>检查服务状态</td>
+        <td>service httpd status</td>
+        <td>systemctl status httpd.service （服务详细信息） systemctl is-active httpd.service （仅显示是否 Active)</td>
       </tr>
       <tr>
-        <td align="none">显示所有已启动的服务</td>
-        <td align="none">chkconfig --list</td>
-        <td align="none">systemctl list-units --type=service</td>
+        <td>显示所有已启动的服务</td>
+        <td>chkconfig --list</td>
+        <td>systemctl list-units --type=service</td>
       </tr>
       <tr>
-        <td align="none">启动服务</td>
-        <td align="none">service httpd start</td>
-        <td align="none">systemctl start httpd.service</td>
+        <td>启动服务</td>
+        <td>service httpd start</td>
+        <td>systemctl start httpd.service</td>
       </tr>
       <tr>
-        <td align="none">停止服务</td>
-        <td align="none">service httpd stop</td>
-        <td align="none">systemctl stop httpd.service</td>
+        <td>停止服务</td>
+        <td>service httpd stop</td>
+        <td>systemctl stop httpd.service</td>
       </tr>
       <tr>
-        <td align="none">重启服务</td>
-        <td align="none">service httpd restart</td>
-        <td align="none">systemctl restart httpd.service</td>
+        <td>重启服务</td>
+        <td>service httpd restart</td>
+        <td>systemctl restart httpd.service</td>
       </tr>
       <tr>
-        <td align="none">重载服务</td>
-        <td align="none">service httpd reload</td>
-        <td align="none">systemctl reload httpd.service</td>
+        <td>重载服务</td>
+        <td>service httpd reload</td>
+        <td>systemctl reload httpd.service</td>
       </tr>
     </tbody>
   </table>
@@ -173,7 +173,7 @@ sudo systemctl disable firewalld.service
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1639983503256"></script>
-<script type="text/javascript" src="../js/index.js?v=1639983503256"></script>
+<script type="text/javascript" src="../js/dt.js?v=1640938636803"></script>
+<script type="text/javascript" src="../js/index.js?v=1640938636803"></script>
 </body>
 </html>
