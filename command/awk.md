@@ -51,11 +51,10 @@ awk脚本是由模式和操作组成的。
 awk 'BEGIN{ print "start" } pattern{ commands } END{ print "end" }' file
 ```
 
-一个awk脚本通常由：BEGIN语句块、能够使用模式匹配的通用语句块、END语句块3部分组成，这三个部分是可选的。任意一个部分都可以不出现在脚本中，脚本通常是被 **单引号** 或 **双引号** 中，例如：
+一个awk脚本通常由：BEGIN语句块、能够使用模式匹配的通用语句块、END语句块3部分组成，这三个部分是可选的。任意一个部分都可以不出现在脚本中，脚本通常是被 **单引号** 中，例如：
 
 ```shell
 awk 'BEGIN{ i=0 } { i++ } END{ print i }' filename
-awk "BEGIN{ i=0 } { i++ } END{ print i }" filename
 ```
 
 ###  awk的工作原理 
