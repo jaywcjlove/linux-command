@@ -11,13 +11,13 @@
 
 [Web](#web-版本) | [微信小程序](#微信小程序版本) | [Dash](#dash-版本) | [Alfred](#alfred-版本) | [KDE/Krunner](https://github.com/roachsinai/krunner-linuxcommands) | [Android](https://github.com/Ernest-su/LinuxCmd.git) | [Mac/Win/Linux](https://github.com/haloislet/linux-command) | [Chrome Plugin](#chrome-插件) | [命令行工具](#命令行工具)
 
-#### Web 版本
+### Web 版本
 
 [Github Web](http://jaywcjlove.github.io/linux-command/) | [Gitee Web](http://jaywcjlove.gitee.io/linux-command/) | [Githack](https://raw.githack.com/jaywcjlove/linux-command/gh-pages/index.html) | [Statically](https://cdn.statically.io/gh/jaywcjlove/linux-command/gh-pages/index.html)
 
 扫描二维码移动端预览搜索，也可通过二维码下面链接地址打开使用，下面网站是通过 Github Action 自动更新。
 
-⚠️ [Gitee Web](http://jaywcjlove.gitee.io/linux-command/) 存在 `违禁违规` 内容问题 [#283](https://github.com/jaywcjlove/linux-command/issues/283)
+⚠️ [Gitee Web](http://jaywcjlove.gitee.io/linux-command/) 存在 `违禁违规` 内容问题 [#283](https://github.com/jaywcjlove/linux-command/issues/283)。
 
 [![Linux 命令大全](https://user-images.githubusercontent.com/1680273/123261718-ab585380-d529-11eb-86e1-e97cdcd78150.png)](https://jaywcjlove.github.io/linux-command/)
 
@@ -25,13 +25,19 @@
 
 [![Linux 命令大全](https://user-images.githubusercontent.com/1680273/123261829-ce830300-d529-11eb-8cea-a39059b972dd.gif)](https://jaywcjlove.github.io/linux-command/)
 
-#### 微信小程序版本
+你可以随意部署 web 版，这非常简单，只需要克隆 [`gh-pages`](https://github.com/jaywcjlove/linux-command/tree/gh-pages) 分支代码到你的静态服务就可以了。你也可以将 [`command`](https://github.com/jaywcjlove/linux-command/tree/master/command) 目录中的 Markdown 文件拿去自己生成 HTML。
+
+⚠️ 你们拿过去部署的静态网站，还是希望挂个 GitHub 地址，这样大家共同维护命令文档，让文档更加完善，更加丰富，当然你删除本站所有信息相关信息，其实我也不太在意，默认允许你们随意搞，我不负任何负责。如果您也部署了一份，可以将网址放到下面 :)。
+
+[`linux.devonline.net`](http://linux.devonline.net/)，[`linux.ftqq.com`](https://linux.ftqq.com/)，[`linux.gaomeluo.com`](https://linux.gaomeluo.com)，[`atoolbox.net`](http://www.atoolbox.net/Tool.php?Id=826)，[`xiaoshanseo.com`](https://tools.xiaoshanseo.com/Tools/linux-command/)，[`262235.xyz`](https://262235.xyz/linux-command/)，[`cmsblogs.cn`](https://linux.cmsblogs.cn/)，[`loquy.cn`](https://www.loquy.cn/linux-command/)，[`bqrdh.com`](https://tools.bqrdh.com/linux-command/)，[`buyao.vip`](https://demo.buyao.vip/linux/)
+
+### 微信小程序版本
 
 微信小程序版本，由 [**@Matz Yang**](https://github.com/MatzYang) 提供 [#260](https://github.com/jaywcjlove/linux-command/issues/260)。
 
 <img width="180" src="https://user-images.githubusercontent.com/1445225/123251478-d50b7d80-d51d-11eb-80e4-01e18212fc4d.png" />
 
-#### Chrome 插件
+### Chrome 插件
 
 可在[源码仓库](https://github.com/jaywcjlove/oscnews)预览效果，[Github下载 crx 文件安装](https://github.com/jaywcjlove/oscnews/releases) 或者[开源中国下载 crx 文件安装](https://gitee.com/jaywcjlove/oscnews/releases) 也可通过 Chrome Web Store 下载：
 
@@ -39,19 +45,19 @@
 
 [![Chrome Web Store 下载](./assets/chrome-extensions.gif)](https://github.com/jaywcjlove/oscnews)
 
-#### Alfred 版本
+### Alfred 版本
 
 [Alfred 版本下载](https://github.com/jaywcjlove/linux-command/releases)， 下图是界面效果。 
 
 [![Linux 命令大全](./assets/alfred.png)](https://github.com/jaywcjlove/linux-command/releases)
 
-#### Dash 版本
+### Dash 版本
 
 由 [**@SHANG殇**](https://github.com/xinshangshangxin) 提供的 `Dash` 版本 [#91](https://github.com/jaywcjlove/linux-command/pull/91)，可配合 `alfred` 玩耍，下载 [linux-command.docset.zip](https://jaywcjlove.github.io/linux-command/linux-command.docset.zip) 文件解压，点击安装即可。
 
 [![](https://user-images.githubusercontent.com/8779091/57193499-5b475d00-6f6e-11e9-879d-e7e8fdc40ced.gif)](https://github.com/jaywcjlove/linux-command/releases)
 
-#### 命令行工具
+### 命令行工具
 
 - [`@chenjiandongx/how`](https://github.com/chenjiandongx/how) Python 版 [#129](https://github.com/jaywcjlove/linux-command/issues/129)，由 [**@陈键冬**](https://github.com/chenjiandongx) 提供。
 - [`@chenjiandongx/pls`](https://github.com/chenjiandongx/pls) Golang 版 [#129](https://github.com/jaywcjlove/linux-command/issues/129)，由 [**@陈键冬**](https://github.com/chenjiandongx) 提供。
