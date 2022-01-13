@@ -119,6 +119,12 @@ line.
 grep -c "text" file_name
 ```
 
+搜索命令行历史记录中 输入过 `git` 命令的记录：
+
+```shell
+history | grep git
+```
+
 输出包含匹配字符串的行数  **-n**  选项：
 
 ```shell
