@@ -253,3 +253,17 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 [![小弟调调™](https://github.com/jaywcjlove.png?size=100)](https://github.com/jaywcjlove) | [![ZhuangZhu-74](https://github.com/ZhuangZhu-74.png?size=100)](https://github.com/ZhuangZhu-74) | [![Huck Huang](https://github.com/huckhuang.png?size=100)](https://github.com/huckhuang)
 ---|---|---
 [小弟调调™](http://wangchujiang.com) | [ZhuangZhu-74](https://github.com/ZhuangZhu-74) | [Huck Huang](https://github.com/huckhuang)
+
+## Contributors
+
+As always, thanks to our amazing contributors!
+
+<a href="https://github.com/jaywcjlove/linux-command/graphs/contributors">
+  <img src="https://jaywcjlove.github.io/linux-command/CONTRIBUTORS.svg" />
+</a>
+
+Made with [github-action-contributors](https://github.com/jaywcjlove/github-action-contributors).
+
+## License
+
+Licensed under the MIT License.
