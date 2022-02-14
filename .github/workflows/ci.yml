@@ -21,18 +21,18 @@ jobs:
         filter-author: (小弟调调™|Renovate Bot)
         filter: (^[\s]+?[R|r]elease)|(^[R|r]elease)
 
+    - name: Generate Contributors Images
+      uses: jaywcjlove/github-action-contributors@main
+      with:
+        filter-author: (renovate\[bot\]|renovate-bot|dependabot\[bot\])
+        output: CONTRIBUTORS.svg
+        avatarSize: 42
 
     - run: npm install
     - run: npm run build
     - run: npm run dash
     - run: rm -rf .deploy/linux-command.docset
-
-    - name: Generate Contributors Images
-      uses: jaywcjlove/github-action-contributors@main
-      with:
-        filter-author: (renovate\[bot\]|renovate-bot|dependabot\[bot\])
-        output: .deploy/CONTRIBUTORS.svg
-        avatarSize: 42
+    - run: cp -rp CONTRIBUTORS.svg .deploy/
 
     - run: npm install @jsdevtools/npm-publish -g
     - run: npm-publish --token="${{ secrets.NPM_TOKEN }}" ./package.json
