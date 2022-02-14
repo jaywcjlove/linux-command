@@ -12,6 +12,7 @@ const rootIndexJSPath = path.resolve(process.cwd(), 'template', 'js', 'index.js'
 const dataJsonPath = path.resolve(process.cwd(), 'dist', 'data.json');
 const dataJsonMinPath = path.resolve(process.cwd(), 'dist', 'data.min.json');
 const cssPath = path.resolve(deployDir, 'css', 'index.css');
+const contributorsPath = path.resolve(deployDir, 'CONTRIBUTORS.svg');
 
 ;(async () => {
   try {
@@ -69,6 +70,24 @@ const cssPath = path.resolve(deployDir, 'css', 'index.css');
         d: '最专业的Linux命令大全，命令搜索引擎，内容包含Linux命令手册、详解、学习，值得收藏的Linux命令速查手册。',
         arr: jsonData.data,
         command_length: jsonData.data.length
+      }
+    );
+
+    let svgStr = '';
+    if (FS.existsSync(contributorsPath)) {
+      svgStr = (await FS.readFile(contributorsPath)).toString();
+    }
+
+    await createTmpToHTML(
+      path.resolve(process.cwd(), 'template', 'contributors.ejs'),
+      path.resolve(deployDir, 'contributors.html'),
+      {
+        p: '/contributors.html',
+        n: '搜索',
+        d: '最专业的Linux命令大全，命令搜索引擎，内容包含Linux命令手册、详解、学习，值得收藏的Linux命令速查手册。',
+        arr: jsonData.data,
+        command_length: jsonData.data.length,
+        contributors: svgStr,
       }
     );
     

@@ -1,0 +1,8 @@
+<%- include('partial/header'); %>
+<%- include('widget/search',{type: "list"}); %>
+<div class="contributors">
+  <h1>Contributors</h1>
+  <div><%=describe.contributors ? describe.contributors : '' %></div>
+</div>
+<%- include('widget/footer',{type: "list"}); %>
+<%- include('partial/footer'); %>
