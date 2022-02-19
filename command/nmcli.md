@@ -40,16 +40,16 @@ OBJECT
 ###  实例
 
 ```shell
-nmcli connection show           # 查看当前连接状态
-nmcli connection reload         # 重启服务
-nmcli connection show -active   # 显示活动的连接
-nmcli connection show "lan eth0"# 显示指定一个网络连接配置
-nmcli device status             # 显示设备状态
-nmcli device show eno16777736   # 显示指定接口属性
-nmcli device show               # 显示全部接口属性
-nmcli con up static             # 启用static连接配置
-nmcli con up default            # 启用default连接配置 
-nmcli con add help              # 查看帮助
+nmcli connection show            # 查看当前连接状态
+nmcli connection reload          # 重启服务
+nmcli connection show -active    # 显示活动的连接
+nmcli connection show "lan eth0" # 显示指定一个网络连接配置
+nmcli device status              # 显示设备状态
+nmcli device show eno16777736    # 显示指定接口属性
+nmcli device show                # 显示全部接口属性
+nmcli con up static              # 启用static连接配置
+nmcli con up default             # 启用default连接配置 
+nmcli con add help               # 查看帮助
 
 ```
 
