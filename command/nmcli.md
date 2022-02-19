@@ -54,6 +54,7 @@ nmcli con add help              # 查看帮助
 ```
 
 ### 创建网络会话
+
 ```shell
 nmcli connection add con-name company ifname ens33 autoconnect no type ethernet ip4 192.168.1.2/24 gw4 192.168.1.1
 # con-name 指定会话名称，
