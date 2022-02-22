@@ -21,22 +21,22 @@ ln [选项]... [-T] 目标 链接名	(第一种格式)
 ###  选项
 
 ```shell
-    --backup[=CONTROL]  为每个已存在的目标文件创建备份文件
--b        类似--backup，但不接受任何参数
--d, -F, --directory   创建指向目录的硬链接(只适用于超级用户)
--f, --force     强行删除任何已存在的目标文件
--i, --interactive           覆盖既有文件之前先询问用户
--L, --logical               取消引用作为符号链接的目标
--n, --no-dereference        把符号链接的目的目录视为一般文件
--P, --physical              直接将硬链接到符号链接
--r, --relative              创建相对于链接位置的符号链接
--s, --symbolic              对源文件建立符号链接，而非硬链接
--S, --suffix=SUFFIX         用"-b"参数备份目标文件后，备份文件的字尾会被加上一个备份字符串，预设的备份字符串是符号“~”，用户可通过“-S”参数来改变它
--t, --target-directory=DIRECTORY  指定要在其中创建链接的DIRECTORY
--T, --no-target-directory   将“LINK_NAME”视为常规文件
--v, --verbose               打印每个链接文件的名称
-    --help    显示此帮助信息并退出
-    --version   显示版本信息并退出
+--backup[=CONTROL]      # 为每个已存在的目标文件创建备份文件
+-b                      # 类似--backup，但不接受任何参数
+-d, -F, --directory         # 创建指向目录的硬链接(只适用于超级用户)
+-f, --force                 # 强行删除任何已存在的目标文件
+-i, --interactive           # 覆盖既有文件之前先询问用户
+-L, --logical               # 取消引用作为符号链接的目标
+-n, --no-dereference        # 把符号链接的目的目录视为一般文件
+-P, --physical              # 直接将硬链接到符号链接
+-r, --relative              # 创建相对于链接位置的符号链接
+-s, --symbolic              # 对源文件建立符号链接，而非硬链接
+-S, --suffix=SUFFIX         # 用"-b"参数备份目标文件后，备份文件的字尾会被加上一个备份字符串，预设的备份字符串是符号“~”，用户可通过“-S”参数来改变它
+-t, --target-directory=DIRECTORY # 指定要在其中创建链接的DIRECTORY
+-T, --no-target-directory   # 将“LINK_NAME”视为常规文件
+-v, --verbose               # 打印每个链接文件的名称
+--help      # 显示此帮助信息并退出
+--version   # 显示版本信息并退出
 ```
 
 ###  参数
@@ -53,7 +53,7 @@ simple, never   # 永远使用普通方式备份
 
 ###  实例
 
-将目录`/usr/mengqc/mub1`下的文件m2.c链接到目录`/usr/liu`下的文件a2.c
+将目录`/usr/mengqc/mub1` 下的文件 m2.c 链接到目录 `/usr/liu` 下的文件 a2.c
 
 ```shell
 cd /usr/mengqc
@@ -62,6 +62,8 @@ ln /mub1/m2.c /usr/liu/a2.c
 
 在执行ln命令之前，目录`/usr/liu`中不存在a2.c文件。执行ln之后，在`/usr/liu`目录中才有a2.c这一项，表明m2.c和a2.c链接起来（注意，二者在物理上是同一文件），利用`ls -l`命令可以看到链接数的变化。
 
+**创建软链接**
+
 在目录`/usr/liu`下建立一个符号链接文件abc，使它指向目录`/usr/mengqc/mub1`
 
 ```shell
@@ -69,6 +71,27 @@ ln -s /usr/mengqc/mub1 /usr/liu/abc
 ```
 
 执行该命令后，`/usr/mengqc/mub1`代表的路径将存放在名为`/usr/liu/abc`的文件中。
+
+**创建硬链接**
+
+给文件创建硬链接，为 `log2022.log` 创建硬链接 `ln2022`，`log2022.log` 与 `ln2022` 的各项属性相同
+
+```shell
+ln log2022.log ln2022
+```
+
+输出：
+
+```
+[root@localhost test]# ll
+lrwxrwxrwx 1 root root     11 12-07 16:01 link2013 -> log2022.log
+-rw-r--r-- 1 root bin      61 11-13 06:03 log2022.log
+[root@localhost test]# ln log2022.log ln2022
+[root@localhost test]# ll
+lrwxrwxrwx 1 root root     11 12-07 16:01 link2013 -> log2022.log
+-rw-r--r-- 2 root bin      61 11-13 06:03 ln2022
+-rw-r--r-- 2 root bin      61 11-13 06:03 log2022.log
+```
 
 ## 扩展知识
 
@@ -80,9 +103,21 @@ ln功能说明：是为某一个文件在另外一个位置建立一个同步的
 
 > :warning: ln命令会保持每一处链接文件的同步性，也就是说，不论你改动了哪一处，其它的文件都会发生相同的变化。
 
+### 软链接：
+
+1. 软链接，以路径的形式存在。类似于Windows操作系统中的快捷方式
+2. 软链接可以 跨文件系统 ，硬链接不可以
+3. 软链接可以对一个不存在的文件名进行链接
+4. 软链接可以对目录进行链接
+
 ###  硬链接
 
 建立硬链接时，在另外的目录或本目录中增加目标文件的一个目录项，这样，一个文件就登记在多个目录中。如下所示的m2.c文件就在目录mub1和liu中都建立了目录项。
+
+
+1. 硬链接，以文件副本的形式存在。但不占用实际空间。
+2. 不允许给目录创建硬链接
+3. 硬链接只有在同一个文件系统中才能创建
 
 ```shell
 ls -ailR
@@ -116,7 +151,7 @@ total 8
 *   不能对目录文件做硬链接。
 *   不能在不同的文件系统之间做硬链接。就是说，链接文件和被链接文件必须位于同一个文件系统中。
 
-###  符号链接
+### 符号链接(软连接)
 
 符号链接也称为软链接，是将一个路径名链接到一个文件。这些文件是一种特别类型的文件。事实上，它只是一个文本文件（如下所示的abc文件），其中包含它提供链接的另一个文件的路径名，如虚线箭头所示。另一个文件是实际包含所有数据的文件。所有读、写文件内容的命令被用于符号链接时，将沿着链接方向前进来访问实际的文件。
 
