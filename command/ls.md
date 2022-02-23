@@ -186,7 +186,7 @@ $ ls --human-readable --size -1 -S --classify # 按文件大小排序
 $ du -sh * | sort -h # 按文件大小排序(同上)
 ```
 
-显示当前目录下包括影藏文件在内的所有文件列表
+显示当前目录下包括隐藏文件在内的所有文件列表
 
 ```shell
 [root@localhost ~]# ls -a
