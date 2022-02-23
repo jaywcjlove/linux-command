@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,alias,定义或显示别名。">
     <title>alias 命令，Linux alias 命令详解：定义或显示别名。 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1645582605963">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1645582653316">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner">
@@ -176,9 +176,12 @@ alias ls=ls --color=never
   <p>A：运行cd依然会切换目录，运行ls依然会列出文件夹的内容；不要这样定义。</p>
   <h3 id="注意"><a class="anchor" aria-hidden="true" tabindex="-1" href="#注意"><span class="octicon octicon-link"></span></a>注意</h3>
   <ol>
-    <li>执行脚本时请注意：</li>
-    <li>使用 <code>source</code> 命令执行的bash脚本如果执行了 <code>alias</code> 或 <code>unalias</code> 命令，那么有可能会对终端环境的别名设置产生影响；终端环境的别名设置也可能改变运行结果；</li>
-    <li>通过 <code>sh</code> 方式调用的 bash 脚本或直接运行当前用户有执行权限的脚本不受终端环境的别名影响。</li>
+    <li>执行脚本时请注意：
+      <ul>
+        <li>使用 <code>source</code> 命令执行的bash脚本如果执行了 <code>alias</code> 或 <code>unalias</code> 命令，那么有可能会对终端环境的别名设置产生影响；终端环境的别名设置也可能改变运行结果；</li>
+        <li>通过 <code>sh</code> 方式调用的 bash 脚本或直接运行当前用户有执行权限的脚本不受终端环境的别名影响。</li>
+      </ul>
+    </li>
     <li>删除别名，请查看<code>unalias</code>命令。</li>
     <li>建议您不要对 <code>mv cp rm</code> 等命令的别名设置危险的 <code>-f</code> 选项，比如 <code>alias rm='rm -f'</code>。</li>
     <li>需要注意别名是否和其他命令有冲突的情况。</li>
@@ -211,7 +214,7 @@ alias ls=ls --color=never
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1645582605963"></script>
-<script type="text/javascript" src="../js/index.js?v=1645582605963"></script>
+<script type="text/javascript" src="../js/dt.js?v=1645582653317"></script>
+<script type="text/javascript" src="../js/index.js?v=1645582653317"></script>
 </body>
 </html>
