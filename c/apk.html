@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,apk,Alpine Linux 下的包管理工具">
     <title>apk 命令，Linux apk 命令详解：Alpine Linux 下的包管理工具 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1645715496982">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1646306085103">
 </head>
 <body>
 <a href="https://github.com/jaywcjlove/linux-command" target="_blank" class="github-corner">
@@ -177,11 +177,11 @@ apk <span class="token function">add</span> build-base gcc abuild binutils binut
 apk <span class="token function">add</span> cmake cmake-doc extra-cmake-modules extra-cmake-modules-doc
 apk <span class="token function">add</span> ccache ccache-doc
 
-apk <span class="token function">add</span> docker <span class="token comment"># docker</span>
-rc-update <span class="token function">add</span> docker boot
-rc-service docker start
+apk <span class="token function">add</span> <span class="token function">docker</span> <span class="token comment"># docker</span>
+rc-update <span class="token function">add</span> <span class="token function">docker</span> boot
+rc-service <span class="token function">docker</span> start
 apk <span class="token function">add</span> py-pip
-pip <span class="token function">install</span> docker-compose
+pip <span class="token function">install</span> <span class="token function">docker-compose</span>
 <span class="token function">ln</span> -s /usr/bin/docker-compose /usr/bin/doc
 
 <span class="token comment"># application</span>
@@ -296,7 +296,7 @@ apk add dropbear # another openssh implementation
 </div>
 <script>
 var _hmt = _hmt || []; (function() {var hm = document.createElement("script"); hm.src = "https://hm.baidu.com/hm.js?a542c0213a9aa8ae29fccdc8a18b91ef"; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s); })(); </script>
-<script type="text/javascript" src="../js/dt.js?v=1645715496983"></script>
-<script type="text/javascript" src="../js/index.js?v=1645715496983"></script>
+<script type="text/javascript" src="../js/dt.js?v=1646306085104"></script>
+<script type="text/javascript" src="../js/index.js?v=1646306085104"></script>
 </body>
 </html>
