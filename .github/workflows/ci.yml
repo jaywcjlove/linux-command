@@ -70,7 +70,7 @@ jobs:
           ${{ steps.changelog.outputs.changelog }}
 
 
-          Document uiw@${{ steps.changelog.outputs.tag }}:  
+          Document linux-command@${{ steps.changelog.outputs.tag }}:  
           https://raw.githack.com/jaywcjlove/linux-command/${{ steps.changelog.outputs.gh-pages-short-hash }}/index.html
 
     - run: npm install @jsdevtools/npm-publish -g
