@@ -1,4 +1,4 @@
-name: GitHub Actions Build and Deploy linux-command
+name: CI
 on:
   push:
     branches:
