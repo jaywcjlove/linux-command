@@ -14,7 +14,7 @@
 
 当前仓库搜集了 570 多个 Linux 命令，是一个非盈利性的仓库，生成了一个 web 网站方便使用，目前网站没有任何广告，内容包含 Linux 命令手册、详解、学习，内容来自网络和网友的补充，非常值得收藏的 Linux 命令速查手册。版权归属原作者，对任何法律问题及风险不承担任何责任，没有任何商业目的，如果认为侵犯了您的版权，请来信告知。我不能完全保证内容的正确性。通过使用本站内容带来的风险与我无关。当使用本站时，代表您已接受了本站的使用条款和隐私条款。
 
-[Web](#web-版本) | [微信小程序](#微信小程序版本) | [Dash](#dash-版本) | [Alfred](#alfred-版本) | [KDE/Krunner](https://github.com/roachsinai/krunner-linuxcommands) | [Android](https://github.com/Ernest-su/LinuxCmd.git) | [Mac/Win/Linux](https://github.com/haloislet/linux-command) | [Chrome Plugin](#chrome-插件) | [命令行工具](#命令行工具)
+[Web](#web-版本) | [微信小程序](#微信小程序版本) | [Dash](#dash-版本) | [Raycast](#raycast-版本) | [Alfred](#alfred-版本) | [KDE/Krunner](https://github.com/roachsinai/krunner-linuxcommands) | [Android](https://github.com/Ernest-su/LinuxCmd.git) | [Mac/Win/Linux](https://github.com/haloislet/linux-command) | [Chrome Plugin](#chrome-插件) | [命令行工具](#命令行工具)
 
 ### Web 版本
 
@@ -48,19 +48,53 @@
 
 [![Chrome Web Store 下载](http://jaywcjlove.github.io/sb/download/chrome-web-store.svg)](https://chrome.google.com/webstore/detail/oscnews/iheapfheanfjcemgneblljhaebonakbg)
 
-[![Chrome Web Store 下载](./assets/chrome-extensions.gif)](https://github.com/jaywcjlove/oscnews)
+<details>
+<summary>Chrome 插件截图</summary>
+
+<a href="https://github.com/jaywcjlove/oscnew"><img width="556" alt="Chrome 插件截图" src="./assets/chrome-extensions.gif" /></a>
+
+</details>
+
+### Raycast 版本
+
+[Raycast 版本安装](https://www.raycast.com/jaywcjlove/linux-command)， ([**#338**](https://github.com/jaywcjlove/linux-command/issues/338))下图是界面效果： 
+
+<details>
+<summary>Raycast 版本截图</summary>
+
+<img width="556" alt="Raycast 版本截图" src="https://user-images.githubusercontent.com/1680273/156889676-a4c5d6c5-3d0d-4ceb-a573-83f328c94756.png" />
+
+<img width="556" alt="Raycast 版本截图" src="https://user-images.githubusercontent.com/1680273/156889683-e0d54e59-994a-4ef6-85e8-2ae3e7163a87.png" />
+
+<img width="556" alt="Raycast 版本截图" src="https://user-images.githubusercontent.com/1680273/156889728-c45290b0-100a-4a4c-a7cd-42bf3fe2b2f4.png" />
+
+<img width="556" alt="Raycast 版本截图" src="https://user-images.githubusercontent.com/1680273/156889699-42a8fb60-e239-49ce-b5db-a4b0875faa5f.png" />
+
+</details>
+
 
 ### Alfred 版本
 
 [Alfred 版本下载](https://github.com/jaywcjlove/linux-command/releases)， 下图是界面效果。 
 
-[![Linux 命令大全](./assets/alfred.png)](https://github.com/jaywcjlove/linux-command/releases)
+<details>
+<summary>Alfred 版本截图</summary>
+
+<a href="https://github.com/jaywcjlove/linux-command/releases"><img width="556" alt="Alfred 版本截图" src="./assets/alfred.png" /></a>
+
+</details>
 
 ### Dash 版本
 
 由 [**@SHANG殇**](https://github.com/xinshangshangxin) 提供的 `Dash` 版本 [#91](https://github.com/jaywcjlove/linux-command/pull/91)，可配合 `alfred` 玩耍，下载 [linux-command.docset.zip](https://jaywcjlove.github.io/linux-command/linux-command.docset.zip) 文件解压，点击安装即可。
 
-[![](https://user-images.githubusercontent.com/8779091/57193499-5b475d00-6f6e-11e9-879d-e7e8fdc40ced.gif)](https://github.com/jaywcjlove/linux-command/releases)
+
+<details>
+<summary>Dash 版本截图</summary>
+
+<a href="https://github.com/jaywcjlove/linux-command/releases"><img width="556" alt="Dash 版本截图" src="https://user-images.githubusercontent.com/8779091/57193499-5b475d00-6f6e-11e9-879d-e7e8fdc40ced.gif" /></a>
+
+</details>
 
 ### 命令行工具
 
