@@ -2434,9 +2434,9 @@
     "p": "/tee",
     "d": "从标准输入读取数据并重定向到标准输出和文件。"
   },
-  "telint": {
-    "n": "telint",
-    "p": "/telint",
+  "telinit": {
+    "n": "telinit",
+    "p": "/telinit",
     "d": "切换当前正在运行系统的运行等级"
   },
   "telnet": {
