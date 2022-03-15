@@ -12,7 +12,7 @@ const rootIndexJSPath = path.resolve(process.cwd(), 'template', 'js', 'index.js'
 const dataJsonPath = path.resolve(process.cwd(), 'dist', 'data.json');
 const dataJsonMinPath = path.resolve(process.cwd(), 'dist', 'data.min.json');
 const cssPath = path.resolve(deployDir, 'css', 'index.css');
-const contributorsPath = path.resolve(deployDir, 'CONTRIBUTORS.svg');
+const contributorsPath = path.resolve(process.cwd(), 'CONTRIBUTORS.svg');
 
 ;(async () => {
   try {
