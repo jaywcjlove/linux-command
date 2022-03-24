@@ -1,5 +1,6 @@
 sed
 ===
+`Stream Editor`
 
 功能强大的流式文本编辑器
 

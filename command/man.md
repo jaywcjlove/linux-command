@@ -1,5 +1,6 @@
 man
 ===
+`Manual`
 
 查看Linux中的指令帮助
 
