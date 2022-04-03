@@ -34,7 +34,7 @@
     "markdown-to-html-cli": "~3.4.1",
     "sitemap-generator": "~8.5.1",
     "sqlite3": "~5.0.2",
-    "stylus": "~0.56.0",
+    "stylus": "~0.57.0",
     "uglify-js": "~3.15.2"
   },
   "engines": {
