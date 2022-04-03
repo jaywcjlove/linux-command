@@ -1,43 +1,19 @@
 @import('mixins/reset.styl')
-@import('mixins/css.styl')
 @import('mixins/markdown.styl')
 
 mq-mobile = "screen and (max-width: 479px)"
 
-a.github-corner { 
-  position: fixed
-  z-index: 9999
-  top: 0
-  right: 0
-  &:hover {
-    .octo-arm{
-      animation: octocat-wave 560ms ease-in-out
-    }
-  }
-  svg {
-    fill #f1f1f1
-    color #000
-    position absolute
-    top 0
-    border 0
-    right 0
-    z-index 99
-    width 70px
-    height 70px
-    @media mq-mobile {
-      width 46px
-      height 46px
-    }
-  }
+[data-color-mode*='dark'], [data-color-mode*='dark'] body {
+  color-scheme: dark;
+  --color-header-bg: #3a3a3a8f;
+  --color-header-border: #323232;
+  --color-hover: #ffffff30;
 }
-a {
-  transition: all .2s ease-in
-}
-
-@keyframes octocat-wave{
-  0%,100%{-webkit-transform:rotate(0);transform:rotate(0)}
-  20%,60%{-webkit-transform:rotate(-25deg);transform:rotate(-25deg)}
-  40%,80%{-webkit-transform:rotate(10deg);transform:rotate(10deg)}
+[data-color-mode*='light'], [data-color-mode*='light'] body {
+  color-scheme: light;
+  --color-header-bg: #ffffff52;
+  --color-header-border: #d3d3d3;
+  --color-hover: #f2f2f2;
 }
 
 .warpper {
@@ -56,6 +32,7 @@ a {
   padding 0 10px
   .logo a {
     display flex
+    color: currentColor;
   }
   .box {
     position relative
@@ -77,9 +54,9 @@ a {
       position absolute
       display none
       z-index 999
-      box-shadow 1px 1px 3px #ededed
-      border 1px solid #d5d5d5
-      background #fff
+      box-shadow 1px 1px 3px var(--color-theme-bg)
+      border 1px solid var(--color-header-border)
+      background var(--color-theme-bg)
       min-width 100px
       top 39px
       width 100%
@@ -95,9 +72,8 @@ a {
       a {
         display block
         padding 2px 6px 2px 6px
-        color #555555
         &:hover {
-          background-color #f2f2f2
+          background-color var(--color-hover)
         }
         .kw {
           color #f00
@@ -120,8 +96,7 @@ a {
       font-size 14px
       font-weight bold
       line-height 1.42857143
-      color #555
-      background-color #fff
+      background-color: transparent;
       background-image none
       border 1px solid $border-color
       border-radius 5px 0 0 5px
@@ -153,12 +128,10 @@ a {
         cursor pointer
         user-select none
         background-image none
-        background-color #fff
         border 1px solid transparent
         border-collapse separate
         border-radius 0 5px 5px 0
         border-color $border-color
-        color #333
         &:focus,&:active:focus {
           outline thin dotted
           outline 5px auto -webkit-focus-ring-color
@@ -190,10 +163,9 @@ a {
 .footer {
   text-align center
   padding-top 31px
-  color #616161
   font-size 14px
   font-weight 300
-  border-top 1px solid #efefef
+  border-top 1px solid var(--color-header-border)
   padding-bottom 50px;
   padding 31px 6px 50px 6px
   &.home {
@@ -221,15 +193,15 @@ a {
   width auto
   position fixed
   width 100%
-  background #fff
+  background var(--color-theme-bg)
   backdrop-filter saturate(180%) blur(0.4rem)
-  background-color hsla(0, 0%, 100%, .55)
+  background-color var(--color-header-bg)
   z-index 99
 }
 
 .header_list {
   padding 10px 10px 10px 13px 
-  border-bottom 1px solid #EEEEEE
+  border-bottom 1px solid var(--color-header-border)
   .logo {
     padding-right 24px
     text-align left
@@ -303,8 +275,6 @@ a {
 .contributors {
   padding 79px 27px
   max-width: 960px;
-  color: #24292f;
-  background-color: #ffffff;
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
   font-size: 16px;
   line-height: 1.5;

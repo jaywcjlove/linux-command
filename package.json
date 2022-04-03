@@ -25,11 +25,13 @@
     "url": "git+https://github.com/jaywcjlove/linux-command.git"
   },
   "devDependencies": {
+    "@uiw/github-corners": "~1.5.11",
+    "@wcj/dark-mode": "~1.0.14",
     "archiver": "~5.3.0",
     "colors-cli": "~1.0.28",
     "ejs": "~3.1.6",
     "fs-extra": "~10.0.1",
-    "markdown-to-html-cli": "~3.2.5",
+    "markdown-to-html-cli": "~3.4.1",
     "sitemap-generator": "~8.5.1",
     "sqlite3": "~5.0.2",
     "stylus": "~0.56.0",

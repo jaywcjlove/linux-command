@@ -24,7 +24,9 @@ const contributorsPath = path.resolve(process.cwd(), 'CONTRIBUTORS.svg');
     await FS.ensureDir(path.resolve(deployDir, 'c'));
     await FS.copySync(faviconPath, path.resolve(deployDir, 'img', 'favicon.ico'));
     
-    await FS.copyFile(path.resolve(process.cwd(), 'template', 'js', 'copy-to-clipboard.js'), path.resolve(deployDir, 'js', 'copy-to-clipboard.js'))
+    await FS.copyFile(path.resolve(process.cwd(), 'template', 'js', 'copy-to-clipboard.js'), path.resolve(deployDir, 'js', 'copy-to-clipboard.js'));
+    await FS.copyFile(path.resolve(process.cwd(), 'node_modules/@wcj/dark-mode/main.js'), path.resolve(deployDir, 'js', 'dark-mode.min.js'));
+    await FS.copyFile(path.resolve(process.cwd(), 'node_modules/@uiw/github-corners/lib/index.js'), path.resolve(deployDir, 'js', 'github-corners.js'));
 
     const jsData = await FS.readFileSync(rootIndexJSPath);
     await FS.outputFile(path.resolve(deployDir, 'js', 'index.js'), UglifyJS.minify(jsData.toString()).code)
@@ -214,7 +216,7 @@ const contributorsPath = path.resolve(process.cwd(), 'CONTRIBUTORS.svg');
 }
 
 function markdownToHTML(str) {
-  return create({ markdown: str, document: undefined });
+  return create({ markdown: str, document: undefined, 'dark-mode': false });
 }
 
 /**
@@ -226,13 +228,12 @@ function markdownToHTML(str) {
   return new Promise((resolve, reject) => {
     try {
       const stylStr = FS.readFileSync(stylPath, 'utf8');
-      const stylMD = FS.readFileSync(path.resolve('node_modules/markdown-to-html-cli/github.css'), 'utf8');
       stylus(stylStr.toString())
         .set('filename', stylPath)
         .set('compress', true)
         .render((err, css) => {
           if (err) throw err;
-          resolve(`${stylMD.replace(/\n/, '')}\n${css}`);
+          resolve(`${css}`);
         });
     } catch (err) {
       reject(err);

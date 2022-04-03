@@ -10,5 +10,8 @@
     <title><%=describe.n?describe.n+'':''%> 命令，Linux <%=describe.n?describe.n+'':''%> 命令详解：<%=describe.d?describe.d+' - ':''%> Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="<%=relative_path%>img/favicon.ico">
     <link rel="stylesheet" type="text/css" href="<%=relative_path%>css/index.css?v=<%=new Date().getTime()%>">
+    <script type="module" src="<%=relative_path%>js/dark-mode.min.js"></script>
+    <script type="module" src="<%=relative_path%>js/github-corners.js"></script>
 </head>
 <body>
+<dark-mode permanent dark="Dark" light="Light" style="position: fixed;left: 10px;top: 8px; z-index: 999;"></dark-mode>
