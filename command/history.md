@@ -42,15 +42,10 @@ filename：可选，表示历史文件；默认调用顺序为`filename`、环�
 
 ## 例子
 
-使用history命令显示最近使用的10条历史命令
+使用history命令显示最近使用的 5 条历史命令
 
 ```shell
-[root@localhost ~]# history 10
-   92  ls
-   93  cd ..
-   94  ls
-   95  exit
-   96  ls -a
+[root@localhost ~]# history 5
    97  cd .ssh/
    98  ls
    99  cat known_hosts
@@ -64,7 +59,14 @@ filename：可选，表示历史文件；默认调用顺序为`filename`、环�
 [root@localhost ~]# history -c
 ```
 
-更多实例:
+删除制定的行
+
+```shell
+[root@localhost ~]# history -d <指定行号>
+[root@localhost ~]# history -d 2243
+```
+
+快捷执行一条历史命令
 
 ```shell
 # 执行第 n 条历史命令
