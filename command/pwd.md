@@ -1,12 +1,7 @@
 pwd
 ===
 
-显示当前工作目录的绝对路径。
-
-## 目录
-
-- [bash内建命令](#内建命令)
-- [GNU coreutils中的命令](#外部命令)
+显示当前工作目录的绝对路径。执行 pwd 指令可立刻得知您目前所在的工作目录的绝对路径名称。
 
 ## 内建命令
 
@@ -15,10 +10,6 @@ pwd
 ```shell
 pwd [-LP]
 ```
-
-#### 主要用途
-
-- 显示当前工作目录。
 
 #### 选项
 
@@ -69,4 +60,30 @@ pwd [OPTION]...
 3. 在不禁用内建且当前环境没有定义`pwd`函数的情况下，使用`/usr/bin/pwd`指向`coreutils`的`pwd`，使用`pwd`指向bash内建的`pwd`。
 
 
+## 例子
 
+查看当前所在路径
+
+```shell
+[root@localhost var]# pwd
+/var
+```
+
+```shell
+[root@localhost ~]# cd /var/   #进入/var目录，该目录下有个mail连接文件，方便对比查看
+[root@localhost var]# ll
+total 164
+...
+lrwxrwxrwx  1 root root   10 Oct 17  2015 mail -> spool/mail
+
+[root@localhost var]# cd mail/   # 进入 mail 目录，mail 为连接文件。
+[root@localhost mail]# pwd       # 默认，使用连接文件，直接显示连接文件全路径。
+/var/mail
+```
+
+不使用逻辑路径，连接文件最终指向的文件
+
+```shell
+[root@localhost mail]# pwd -P    
+/var/spool/mail
+```
