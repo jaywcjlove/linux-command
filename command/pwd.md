@@ -69,9 +69,11 @@ pwd [OPTION]...
 /var
 ```
 
+显示软连接文件最终指向的文件路径
+
 ```shell
-[root@localhost ~]# cd /var/   #进入/var目录，该目录下有个mail连接文件，方便对比查看
-[root@localhost var]# ll
+[root@localhost ~]# cd /var/   # 进入/var目录，该目录下有个 mail 软连接文件
+[root@localhost var]# ls -al
 total 164
 ...
 lrwxrwxrwx  1 root root   10 Oct 17  2015 mail -> spool/mail
@@ -81,7 +83,7 @@ lrwxrwxrwx  1 root root   10 Oct 17  2015 mail -> spool/mail
 /var/mail
 ```
 
-不使用逻辑路径，连接文件最终指向的文件
+使用 `-P` 参数，显示的不是逻辑路径，而是连接(软连接)文件最终指向的文件
 
 ```shell
 [root@localhost mail]# pwd -P    
