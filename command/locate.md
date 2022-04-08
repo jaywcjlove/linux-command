@@ -16,7 +16,11 @@ locate指令和find找寻档案的功能类似，但locate是透过update程序�
 ### 语法
 
 ```shell
-locate [选择参数] [样式]
+locate [-d  path | --database=path] [-e | -E | --[non-]existing] [-i |
+       --ignore-case] [-0 | --null] [-c | --count] [-w |  --wholename]  [-b  |
+       --basename]  [-l  N  |  --limit=N]  [-S | --statistics] [-r | --regex ]
+       [--regextype R] [--max-database-age D] [-P | -H  |  --nofollow]  [-L  |
+       --follow] [--version] [-A | --all] [-p | --print] [--help] pattern...
 ```
 
 ### 选项
@@ -46,7 +50,7 @@ locate [选择参数] [样式]
 
 ### 实例
 
-实例1：查找和pwd相关的所有文件
+实例1：查找和 `pwd` 相关的所有文件
 
 ```shell
 root ~ # locate pwd
@@ -67,7 +71,7 @@ root ~ # locate pwd
 /usr/share/help/el/empathy/irc-join-pwd.page
 ```
 
-实例2： 搜索etc目录下所有以sh开头的文件
+实例2： 搜索 etc 目录下所有以 sh 开头的文件
 
 ```shell
 root ~ # locate /etc/sh
@@ -88,4 +92,9 @@ root ~ # locate /etc/m
 /etc/mate-settings-daemon
 ```
 
+忽略大小写搜索当前用户目录下所有以 `r` 开头的文件 ：
+
+```shell
+locate -i ~/r
+```
 
