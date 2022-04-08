@@ -84,16 +84,46 @@ linux [master●] % pv ~/Downloads/CentOS-7-x86_64-Minimal-1511.iso > ~/Desktop/
 pv -L 2m /media/himanshu/1AC2-A8E3/fNf.mkv > ./Desktop/fnf.mkv 
 ```
 
+复制文件时显示进度条（如果没有指定选项，默认使用 -p, -t, -e, -r 和 -b 选项）
+
+```bash
+$ pv getiot.db > getiot.db.bak
+```
+将 `/var/log/syslog` 文件打包成 zip 压缩包，并显示进度
+
+```bash
+$ pv /var/log/syslog | zip > syslog.zip
+```
+
+使用 tar 命令解压缩时显示进度条
+
+```bash
+$ pv rootfs.tar.bz2 | tar -jxf - -C rootfs/
+12.3MiB 0:00:02 [6.15MiB/s] [=========>                                     ] 21% ETA 0:00:07
+````
+
+解压完成
+
+```bash
+$ pv rootfs.tar.bz2 | tar -jxf - -C rootfs/
+57.8MiB 0:00:10 [5.53MiB/s] [==============================================>] 100%
+```
+
+字符一个个匀速在命令行中显示出来
 
 ```shell
-# 字符一个个匀速在命令行中显示出来
 echo "Tecmint[dot]com is a community of Linux Nerds and Geeks" | pv -qL 10
+```
 
-# 压缩文件展示进度信息
+压缩文件展示进度信息
+
+```shell
 pv /media/himanshu/1AC2-A8E3/fnf.mkv | gzip > ./Desktop/fnf.log.gz 
+```
 
+用 dd 命令将 iso 写入磁盘，pv来实现进度条的显示
 
-# 用 dd 命令将 iso 写入磁盘，pv来实现进度条的显示
+```shell
 sudo pv -cN source < /Users/kacperwang/Downloads/CentOS-7-x86_64-Everything-1511.iso | sudo dd of=/dev/disk2 bs=4m
 ## 显示下面进度
 source:  5.2GiB 5:11:41 [ 503KiB/s] [=====================>       ] 71% ETA 2:01:56
