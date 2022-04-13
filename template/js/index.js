@@ -29,7 +29,9 @@
     goToIndex: function () {
       var elma = document.getElementsByTagName('A');
       for (var i = 0; i < elma.length; i++) {
-        if (elma[i].pathname === '/') elma[i].href = this.root_path + '/';
+        if (elma[i].pathname === '/' && !/^https?:/i.test(elma[i].protocol)) {
+          elma[i].href = this.root_path + '/';
+        }
       }
     },
     bindEvent: function (elm, type, handle) {
