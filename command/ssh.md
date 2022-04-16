@@ -27,7 +27,7 @@ ssh(选项)(参数)
 -F：指定ssh指令的配置文件；
 -f：后台执行ssh指令；
 -g：允许远程主机连接主机的转发端口；
--i：指定身份文件；
+-i：指定身份(私钥)文件；
 -l：指定连接远程服务器登录用户名；
 -N：不执行远程指令；
 -o：指定配置选项；
@@ -52,7 +52,7 @@ ssh user1@172.24.210.101
 ssh -p 2211 root@140.206.185.170
 
 # ssh 大家族
-ssh user@ip -p22 # 默认用户名为当前用户名，默认端口为 22
+ssh -p 22 user@ip  # 默认用户名为当前用户名，默认端口为 22
 ssh-keygen # 为当前用户生成 ssh 公钥 + 私钥
 ssh-keygen -f keyfile -i -m key_format -e -m key_format # key_format: RFC4716/SSH2(default) PKCS8 PEM
 ssh-copy-id user@ip:port # 将当前用户的公钥复制到需要 ssh 的服务器的 ~/.ssh/authorized_keys，之后可以免密登录
