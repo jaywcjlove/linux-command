@@ -39,7 +39,7 @@ jobs:
 
     - name: get tag version
       id: tag_version
-      uses: jaywcjlove/changelog-generator@v1.5.0
+      uses: jaywcjlove/changelog-generator@v1.5.3
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
@@ -52,7 +52,7 @@ jobs:
 
     - name: Generate Changelog
       id: changelog
-      uses: jaywcjlove/changelog-generator@v1.5.0
+      uses: jaywcjlove/changelog-generator@v1.5.3
       with:
         filter-author: (小弟调调™)
         filter: (^[\s]+?[R|r]elease)|(^[R|r]elease)
