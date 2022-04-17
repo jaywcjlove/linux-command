@@ -11,7 +11,7 @@ jobs:
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v2
       with:
-        node-version: 14
+        node-version: 16
 
     - name: Generate Contributors Images
       uses: jaywcjlove/github-action-contributors@main
@@ -21,7 +21,13 @@ jobs:
 
     - run: npm install
     - run: npm run build
-    - run: npm run dash
+    - run: node build/dash.js
+
+    - name: Compress linux-command.docset.
+      run: zip -r -y linux-command.docset.zip . -x "node_modules/*"
+      working-directory: .deploy/linux-command.docset
+    - run: cp -rp .deploy/linux-command.docset/linux-command.docset.zip ../../
+
     - run: rm -rf .deploy/linux-command.docset
     - run: cp CONTRIBUTORS.svg .deploy
 
@@ -55,6 +61,7 @@ jobs:
       uses: ncipollo/release-action@v1
       if: steps.create_tag.outputs.successful
       with:
+        artifacts: 'linux-command.docset.zip'
         token: ${{ secrets.GITHUB_TOKEN }}
         name: ${{ steps.create_tag.outputs.version }}
         tag: ${{ steps.create_tag.outputs.version }}
