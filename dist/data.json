@@ -2469,6 +2469,11 @@
     "p": "/time",
     "d": "统计给定命令所花费的总时间"
   },
+  "timedatectl": {
+    "n": "timedatectl",
+    "p": "/timedatectl",
+    "d": "用于在 Linux 中设置或查询系统时间、日期和时区等配置。"
+  },
   "times": {
     "n": "times",
     "p": "/times",
