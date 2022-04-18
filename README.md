@@ -240,10 +240,6 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 ### 软件工具
 
 - [超赞的Linux软件](https://www.gitbook.com/book/alim0x/awesome-linux-software-zh_cn/details) Github仓库[Zh](https://github.com/alim0x/Awesome-Linux-Software-zh_CN) [En](https://github.com/VoLuong/Awesome-Linux-Software)
-- [程序员喜欢的9款最佳的Linux文件比较工具](http://os.51cto.com/art/201607/513796.htm)
-- [提高 Linux 开发效率的 5 个工具](http://www.codeceo.com/article/5-linux-productivity-tools.html)
-- [你要了解的11款面向Linux系统的一流备份实用工具](http://os.51cto.com/art/201603/508027.htm)
-- [16个很有用的在线工具](http://www.simlinux.com/archives/264.html)
 - Adobe软件的最佳替代品 [原文在这里](https://linux.cn/article-8928-1.html)
   - [Evince (Adobe Acrobat Reader)](https://wiki.gnome.org/Apps/Evince) 一个“支持多种文档格式的文档查看器”，可以查看PDF，还支持各种漫画书格式
   - [Pixlr (Adobe Photoshop)](https://pixlr.com/) 一个强大的图像编辑工具
@@ -261,13 +257,10 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 - 搜狐开源镜像站：http://mirrors.sohu.com/
 - 北京交通大学：http://mirror.bjtu.edu.cn/ \<教育网荐\>
 - 兰州大学：http://mirror.lzu.edu.cn/ \<西北高校FTP搜索引擎\>
-- 厦门大学：http://mirrors.xmu.edu.cn/
 - 上海交通大学：http://ftp.sjtu.edu.cn/
 - 清华大学：http://mirrors.tuna.tsinghua.edu.cn/
-  - http://mirrors6.tuna.tsinghua.edu.cn/
   - http://mirrors4.tuna.tsinghua.edu.cn/
 - 中国科学技术大学：http://mirrors.ustc.edu.cn/ 
-  - http://ipv4.ustc.edu.cn/ \<教育网、电信\>
   - http://ipv6.ustc.edu.cn/ \<IPv6 only\>
 - 东北大学：http://mirror.neu.edu.cn/
 - 浙江大学：http://mirrors.zju.edu.cn/
