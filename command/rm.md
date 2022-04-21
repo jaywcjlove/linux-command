@@ -60,6 +60,12 @@ find .  -name "package-lock.json" -exec rm -rf {} \;
 find ./docs -name "*.html" -exec rm -rf {} \;
 ```
 
+**删除当前项目下 *.html 结尾的文件**
+
+```shell
+rm -rf *.html
+```
+
 **删除当前目录下的 node_modules 目录**
 
 ```shell
