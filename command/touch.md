@@ -39,4 +39,14 @@ touch ex2
 
 在当前目录下建立一个空文件ex2，然后，利用`ls -l`命令可以发现文件ex2的大小为0，表示它是空文件。
 
+批量创建文件
 
+```shell
+touch file{1..5}.txt
+```
+
+创建 `job1.md` 文件，并写入 `job 1`
+
+```shell
+echo "job 1" > job1.md
+```
