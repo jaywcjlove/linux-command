@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,curl,利用URL规则在命令行下工作的文件传输工具">
     <title>curl 命令，Linux curl 命令详解：利用URL规则在命令行下工作的文件传输工具 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1650951396771">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1650975470736">
     <script src="../js/dark-mode.min.js"></script>
     <script type="module" src="../js/github-corners.js"></script>
 </head>
@@ -121,486 +121,203 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
 </span></code><div onclick="copied(this)" data-code="curl(选项)(参数)
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><span class="octicon octicon-link"></span></a>选项</h3>
-<table border="0" cellpadding="0" cellspacing="0">
-  <tbody>
-    <tr>
-      <td>-a/--append</td>
-      <td>上传文件时，附加到目标文件</td>
-    </tr>
-    <tr>
-      <td>-A/--user-agent
-        <string></string>
-      </td>
-      <td>设置用户代理发送给服务器</td>
-    </tr>
-    <tr>
-      <td>-anyauth</td>
-      <td>可以使用“任何”身份验证方法</td>
-    </tr>
-    <tr>
-      <td>-b/--cookie
-        <name=string file=""></name=string>
-      </td>
-      <td>cookie字符串或文件读取位置</td>
-    </tr>
-    <tr>
-      <td>     --basic</td>
-      <td>使用HTTP基本验证</td>
-    </tr>
-    <tr>
-      <td>-B/--use-ascii</td>
-      <td>使用ASCII /文本传输</td>
-    </tr>
-    <tr>
-      <td>-c/--cookie-jar
-        <file></file>
-      </td>
-      <td>操作结束后把cookie写入到这个文件中</td>
-    </tr>
-    <tr>
-      <td>-C/--continue-at
-        <offset></offset>
-      </td>
-      <td>断点续传</td>
-    </tr>
-    <tr>
-      <td>-d/--data<data></data></td>
-      <td>HTTP POST方式传送数据</td>
-    </tr>
-    <tr>
-      <td>     --data-ascii<data></data></td>
-      <td>以ascii的方式post数据</td>
-    </tr>
-    <tr>
-      <td>     --data-binary<data></data></td>
-      <td>以二进制的方式post数据</td>
-    </tr>
-    <tr>
-      <td>     --negotiate</td>
-      <td>使用HTTP身份验证</td>
-    </tr>
-    <tr>
-      <td>     --digest</td>
-      <td>使用数字身份验证</td>
-    </tr>
-    <tr>
-      <td>     --disable-eprt</td>
-      <td>禁止使用EPRT或LPRT</td>
-    </tr>
-    <tr>
-      <td>     --disable-epsv</td>
-      <td>禁止使用EPSV</td>
-    </tr>
-    <tr>
-      <td>-D/--dump-header
-        <file></file>
-      </td>
-      <td>把header信息写入到该文件中</td>
-    </tr>
-    <tr>
-      <td>     --egd-file
-        <file></file>
-      </td>
-      <td>为随机数据(SSL)设置EGD socket路径</td>
-    </tr>
-    <tr>
-      <td>     --tcp-nodelay</td>
-      <td>使用TCP_NODELAY选项</td>
-    </tr>
-    <tr>
-      <td>-e/--referer</td>
-      <td>来源网址</td>
-    </tr>
-    <tr>
-      <td>-E/--cert
-        <cert:[passwd]></cert:[passwd]>
-      </td>
-      <td>客户端证书文件和密码 (SSL)</td>
-    </tr>
-    <tr>
-      <td>     --cert-type
-        <type></type>
-      </td>
-      <td>证书文件类型 (DER/PEM/ENG) (SSL)</td>
-    </tr>
-    <tr>
-      <td>     --key
-        <key></key>
-      </td>
-      <td>私钥文件名 (SSL)</td>
-    </tr>
-    <tr>
-      <td>     --key-type
-        <type></type>
-      </td>
-      <td>私钥文件类型 (DER/PEM/ENG) (SSL)</td>
-    </tr>
-    <tr>
-      <td>     --pass
-        <pass></pass>
-      </td>
-      <td>私钥密码 (SSL)</td>
-    </tr>
-    <tr>
-      <td>     --engine
-        <eng></eng>
-      </td>
-      <td>加密引擎使用 (SSL). "--engine list" for list</td>
-    </tr>
-    <tr>
-      <td>     --cacert
-        <file></file>
-      </td>
-      <td>CA证书 (SSL)</td>
-    </tr>
-    <tr>
-      <td>     --capath
-        <directory></directory>
-      </td>
-      <td>CA目录 (made using c_rehash) to verify peer against (SSL)</td>
-    </tr>
-    <tr>
-      <td>     --ciphers
-        <list></list>
-      </td>
-      <td>SSL密码</td>
-    </tr>
-    <tr>
-      <td>     --compressed</td>
-      <td>要求返回是压缩的形势 (using deflate or gzip)</td>
-    </tr>
-    <tr>
-      <td>     --connect-timeout
-        <seconds></seconds>
-      </td>
-      <td>设置最大请求时间</td>
-    </tr>
-    <tr>
-      <td>     --create-dirs</td>
-      <td>建立本地目录的目录层次结构</td>
-    </tr>
-    <tr>
-      <td>     --crlf</td>
-      <td>上传是把LF转变成CRLF</td>
-    </tr>
-    <tr>
-      <td>-f/--fail</td>
-      <td>连接失败时不显示http错误</td>
-    </tr>
-    <tr>
-      <td>     --ftp-create-dirs</td>
-      <td>如果远程目录不存在，创建远程目录</td>
-    </tr>
-    <tr>
-      <td>     --ftp-method [multicwd/nocwd/singlecwd]</td>
-      <td>控制CWD的使用</td>
-    </tr>
-    <tr>
-      <td>     --ftp-pasv</td>
-      <td>使用 PASV/EPSV 代替端口</td>
-    </tr>
-    <tr>
-      <td>     --ftp-skip-pasv-ip</td>
-      <td>使用PASV的时候,忽略该IP地址</td>
-    </tr>
-    <tr>
-      <td>     --ftp-ssl</td>
-      <td>尝试用 SSL/TLS 来进行ftp数据传输</td>
-    </tr>
-    <tr>
-      <td>     --ftp-ssl-reqd</td>
-      <td>要求用 SSL/TLS 来进行ftp数据传输</td>
-    </tr>
-    <tr>
-      <td>-F/--form
-        <name=content></name=content>
-      </td>
-      <td>模拟http表单提交数据</td>
-    </tr>
-    <tr>
-      <td>     --form-string
-        <name=string></name=string>
-      </td>
-      <td>模拟http表单提交数据</td>
-    </tr>
-    <tr>
-      <td>-g/--globoff</td>
-      <td>禁用网址序列和范围使用{}和[]</td>
-    </tr>
-    <tr>
-      <td>-G/--get</td>
-      <td>以get的方式来发送数据</td>
-    </tr>
-    <tr>
-      <td>-H/--header
-        <line></line>
-      </td>
-      <td>自定义头信息传递给服务器</td>
-    </tr>
-    <tr>
-      <td>     --ignore-content-length</td>
-      <td>忽略的HTTP头信息的长度</td>
-    </tr>
-    <tr>
-      <td>-i/--include</td>
-      <td>输出时包括protocol头信息</td>
-    </tr>
-    <tr>
-      <td>-I/--head</td>
-      <td>只显示请求头信息</td>
-    </tr>
-    <tr>
-      <td>-j/--junk-session-cookies</td>
-      <td>读取文件进忽略session cookie</td>
-    </tr>
-    <tr>
-      <td>     --interface
-        <interface></interface>
-      </td>
-      <td>使用指定网络接口/地址</td>
-    </tr>
-    <tr>
-      <td>     --krb4
-        <level></level>
-      </td>
-      <td>使用指定安全级别的krb4</td>
-    </tr>
-    <tr>
-      <td>-k/--insecure</td>
-      <td>允许不使用证书到SSL站点</td>
-    </tr>
-    <tr>
-      <td>-K/--config</td>
-      <td>指定的配置文件读取</td>
-    </tr>
-    <tr>
-      <td>-l/--list-only</td>
-      <td>列出ftp目录下的文件名称</td>
-    </tr>
-    <tr>
-      <td>     --limit-rate
-        <rate></rate>
-      </td>
-      <td>设置传输速度</td>
-    </tr>
-    <tr>
-      <td>     --local-port
-        <num></num>
-      </td>
-      <td>强制使用本地端口号</td>
-    </tr>
-    <tr>
-      <td>-m/--max-time
-        <seconds></seconds>
-      </td>
-      <td>设置最大传输时间</td>
-    </tr>
-    <tr>
-      <td>     --max-redirs
-        <num></num>
-      </td>
-      <td>设置最大读取的目录数</td>
-    </tr>
-    <tr>
-      <td>     --max-filesize
-        <bytes></bytes>
-      </td>
-      <td>设置最大下载的文件总量</td>
-    </tr>
-    <tr>
-      <td>-M/--manual</td>
-      <td>显示全手动</td>
-    </tr>
-    <tr>
-      <td>-n/--netrc</td>
-      <td>从netrc文件中读取用户名和密码</td>
-    </tr>
-    <tr>
-      <td>     --netrc-optional</td>
-      <td>使用 .netrc 或者 URL来覆盖-n</td>
-    </tr>
-    <tr>
-      <td>     --ntlm</td>
-      <td>使用 HTTP NTLM 身份验证</td>
-    </tr>
-    <tr>
-      <td>-N/--no-buffer</td>
-      <td>禁用缓冲输出</td>
-    </tr>
-    <tr>
-      <td>-o/--output</td>
-      <td>把输出写到该文件中</td>
-    </tr>
-    <tr>
-      <td>-O/--remote-name</td>
-      <td>把输出写到该文件中，保留远程文件的文件名</td>
-    </tr>
-    <tr>
-      <td>-p/--proxytunnel</td>
-      <td>使用HTTP代理</td>
-    </tr>
-    <tr>
-      <td>     --proxy-anyauth</td>
-      <td>选择任一代理身份验证方法</td>
-    </tr>
-    <tr>
-      <td>     --proxy-basic</td>
-      <td>在代理上使用基本身份验证</td>
-    </tr>
-    <tr>
-      <td>     --proxy-digest</td>
-      <td>在代理上使用数字身份验证</td>
-    </tr>
-    <tr>
-      <td>     --proxy-ntlm</td>
-      <td>在代理上使用ntlm身份验证</td>
-    </tr>
-    <tr>
-      <td>-P/--ftp-port
-        <address></address>
-      </td>
-      <td>使用端口地址，而不是使用PASV</td>
-    </tr>
-    <tr>
-      <td>-q</td>
-      <td>作为第一个参数，关闭 .curlrc</td>
-    </tr>
-    <tr>
-      <td>-Q/--quote
-        <cmd></cmd>
-      </td>
-      <td>文件传输前，发送命令到服务器</td>
-    </tr>
-    <tr>
-      <td>-r/--range
-        <range></range>
-      </td>
-      <td>检索来自HTTP/1.1或FTP服务器字节范围</td>
-    </tr>
-    <tr>
-      <td>--range-file</td>
-      <td>读取（SSL）的随机文件</td>
-    </tr>
-    <tr>
-      <td>-R/--remote-time</td>
-      <td>在本地生成文件时，保留远程文件时间</td>
-    </tr>
-    <tr>
-      <td>     --retry
-        <num></num>
-      </td>
-      <td>传输出现问题时，重试的次数</td>
-    </tr>
-    <tr>
-      <td>     --retry-delay
-        <seconds></seconds>
-      </td>
-      <td>传输出现问题时，设置重试间隔时间</td>
-    </tr>
-    <tr>
-      <td>     --retry-max-time
-        <seconds></seconds>
-      </td>
-      <td>传输出现问题时，设置最大重试时间</td>
-    </tr>
-    <tr>
-      <td>-s/--silent</td>
-      <td>静默模式。不输出任何东西</td>
-    </tr>
-    <tr>
-      <td>-S/--show-error</td>
-      <td>显示错误</td>
-    </tr>
-    <tr>
-      <td>     --socks4
-        <host[:port]></host[:port]>
-      </td>
-      <td>用socks4代理给定主机和端口</td>
-    </tr>
-    <tr>
-      <td>     --socks5
-        <host[:port]></host[:port]>
-      </td>
-      <td>用socks5代理给定主机和端口</td>
-    </tr>
-    <tr>
-      <td>     --stderr
-        <file></file>
-      </td>
-      <td> </td>
-    </tr>
-    <tr>
-      <td>-t/--telnet-option
-        <opt=val></opt=val>
-      </td>
-      <td>Telnet选项设置</td>
-    </tr>
-    <tr>
-      <td>     --trace
-        <file></file>
-      </td>
-      <td>对指定文件进行debug</td>
-    </tr>
-    <tr>
-      <td>     --trace-ascii
-        <file></file>
-      </td>
-      <td>Like --跟踪但没有hex输出</td>
-    </tr>
-    <tr>
-      <td>     --trace-time</td>
-      <td>跟踪/详细输出时，添加时间戳</td>
-    </tr>
-    <tr>
-      <td>-T/--upload-file
-        <file></file>
-      </td>
-      <td>上传文件</td>
-    </tr>
-    <tr>
-      <td>     --url
-        <url></url>
-      </td>
-      <td>Spet URL to work with</td>
-    </tr>
-    <tr>
-      <td>-u/--user
-        <user[:password]></user[:password]>
-      </td>
-      <td>设置服务器的用户和密码</td>
-    </tr>
-    <tr>
-      <td>-U/--proxy-user
-        <user[:password]></user[:password]>
-      </td>
-      <td>设置代理用户名和密码</td>
-    </tr>
-    <tr>
-      <td>-w/--write-out [format]</td>
-      <td>什么输出完成后</td>
-    </tr>
-    <tr>
-      <td>-x/--proxy
-        <host[:port]></host[:port]>
-      </td>
-      <td>在给定的端口上使用HTTP代理</td>
-    </tr>
-    <tr>
-      <td>-X/--request
-        <command>
-      </td>
-      <td>指定什么命令</td>
-    </tr>
-    <tr>
-      <td>-y/--speed-time</td>
-      <td>放弃限速所要的时间，默认为30</td>
-    </tr>
-    <tr>
-      <td>-Y/--speed-limit</td>
-      <td>停止传输速度的限制，速度时间</td>
-    </tr>
-  </tbody>
-</table>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1">-a/--append                                   <span class="token comment"># 上传文件时，附加到目标文件 </span>
+</span><span class="code-line line-number" line="2">-A/--user-agent                               <span class="token comment"># 设置用户代理发送给服务器 </span>
+</span><span class="code-line line-number" line="3">-anyauth                                      <span class="token comment"># 可以使用“任何”身份验证方法 </span>
+</span><span class="code-line line-number" line="4">-b/--cookie                                   <span class="token comment"># cookie字符串或文件读取位置 </span>
+</span><span class="code-line line-number" line="5">     --basic                                  <span class="token comment"># 使用HTTP基本验证 </span>
+</span><span class="code-line line-number" line="6">-B/--use-ascii                                <span class="token comment"># 使用ASCII /文本传输 </span>
+</span><span class="code-line line-number" line="7">-c/--cookie-jar                               <span class="token comment"># 操作结束后把cookie写入到这个文件中 </span>
+</span><span class="code-line line-number" line="8">-C/--continue-at                              <span class="token comment"># 断点续传 </span>
+</span><span class="code-line line-number" line="9">-d/--data                                     <span class="token comment"># HTTP POST方式传送数据 </span>
+</span><span class="code-line line-number" line="10">     --data-ascii                             <span class="token comment"># 以ascii的方式post数据 </span>
+</span><span class="code-line line-number" line="11">     --data-binary                            <span class="token comment"># 以二进制的方式post数据 </span>
+</span><span class="code-line line-number" line="12">     --negotiate                              <span class="token comment"># 使用HTTP身份验证 </span>
+</span><span class="code-line line-number" line="13">     --digest                                 <span class="token comment"># 使用数字身份验证 </span>
+</span><span class="code-line line-number" line="14">     --disable-eprt                           <span class="token comment"># 禁止使用EPRT或LPRT </span>
+</span><span class="code-line line-number" line="15">     --disable-epsv                           <span class="token comment"># 禁止使用EPSV </span>
+</span><span class="code-line line-number" line="16">-D/--dump-header                              <span class="token comment"># 把header信息写入到该文件中 </span>
+</span><span class="code-line line-number" line="17">     --egd-file                               <span class="token comment"># 为随机数据(SSL)设置EGD socket路径 </span>
+</span><span class="code-line line-number" line="18">     --tcp-nodelay                            <span class="token comment"># 使用TCP\_NODELAY选项 </span>
+</span><span class="code-line line-number" line="19">-e/--referer                                  <span class="token comment"># 来源网址 </span>
+</span><span class="code-line line-number" line="20">-E/--cert                                     <span class="token comment"># 客户端证书文件和密码 (SSL)</span>
+</span><span class="code-line line-number" line="21">     --cert-type                              <span class="token comment"># 证书文件类型 (DER/PEM/ENG) (SSL)</span>
+</span><span class="code-line line-number" line="22">     --key                                    <span class="token comment"># 私钥文件名 (SSL)</span>
+</span><span class="code-line line-number" line="23">     --key-type                               <span class="token comment"># 私钥文件类型 (DER/PEM/ENG) (SSL)</span>
+</span><span class="code-line line-number" line="24">     --pass                                   <span class="token comment"># 私钥密码 (SSL)</span>
+</span><span class="code-line line-number" line="25">     --engine                                 <span class="token comment"># 加密引擎使用 (SSL). "--engine list" for list </span>
+</span><span class="code-line line-number" line="26">     --cacert                                 <span class="token comment"># CA证书 (SSL)</span>
+</span><span class="code-line line-number" line="27">     --capath                                 <span class="token comment"># CA目录 (made using c\_rehash) to verify peer against (SSL)</span>
+</span><span class="code-line line-number" line="28">     --ciphers                                <span class="token comment"># SSL密码 </span>
+</span><span class="code-line line-number" line="29">     --compressed                             <span class="token comment"># 要求返回是压缩的形势 (using deflate or gzip)</span>
+</span><span class="code-line line-number" line="30">     --connect-timeout                        <span class="token comment"># 设置最大请求时间 </span>
+</span><span class="code-line line-number" line="31">     --create-dirs                            <span class="token comment"># 建立本地目录的目录层次结构 </span>
+</span><span class="code-line line-number" line="32">     --crlf                                   <span class="token comment"># 上传是把LF转变成CRLF </span>
+</span><span class="code-line line-number" line="33">-f/--fail                                     <span class="token comment"># 连接失败时不显示http错误 </span>
+</span><span class="code-line line-number" line="34">     --ftp-create-dirs                        <span class="token comment"># 如果远程目录不存在，创建远程目录 </span>
+</span><span class="code-line line-number" line="35">     --ftp-method <span class="token punctuation">\</span><span class="token punctuation">[</span>multicwd/nocwd/singlecwd<span class="token punctuation">]</span> <span class="token comment"># 控制CWD的使用 </span>
+</span><span class="code-line line-number" line="36">     --ftp-pasv                               <span class="token comment"># 使用 PASV/EPSV 代替端口 </span>
+</span><span class="code-line line-number" line="37">     --ftp-skip-pasv-ip                       <span class="token comment"># 使用PASV的时候,忽略该IP地址 </span>
+</span><span class="code-line line-number" line="38">     --ftp-ssl                                <span class="token comment"># 尝试用 SSL/TLS 来进行ftp数据传输 </span>
+</span><span class="code-line line-number" line="39">     --ftp-ssl-reqd                           <span class="token comment"># 要求用 SSL/TLS 来进行ftp数据传输 </span>
+</span><span class="code-line line-number" line="40">-F/--form                                     <span class="token comment"># 模拟http表单提交数据 </span>
+</span><span class="code-line line-number" line="41">     --form-string                            <span class="token comment"># 模拟http表单提交数据 </span>
+</span><span class="code-line line-number" line="42">-g/--globoff                                  <span class="token comment"># 禁用网址序列和范围使用{}和\[] </span>
+</span><span class="code-line line-number" line="43">-G/--get                                      <span class="token comment"># 以get的方式来发送数据 </span>
+</span><span class="code-line line-number" line="44">-H/--header                                   <span class="token comment"># 自定义头信息传递给服务器 </span>
+</span><span class="code-line line-number" line="45">     --ignore-content-length                  <span class="token comment"># 忽略的HTTP头信息的长度 </span>
+</span><span class="code-line line-number" line="46">-i/--include                                  <span class="token comment"># 输出时包括protocol头信息 </span>
+</span><span class="code-line line-number" line="47">-I/--head                                     <span class="token comment"># 只显示请求头信息 </span>
+</span><span class="code-line line-number" line="48">-j/--junk-session-cookies                     <span class="token comment"># 读取文件进忽略session cookie </span>
+</span><span class="code-line line-number" line="49">     --interface                              <span class="token comment"># 使用指定网络接口/地址 </span>
+</span><span class="code-line line-number" line="50">     --krb4                                   <span class="token comment"># 使用指定安全级别的krb4 </span>
+</span><span class="code-line line-number" line="51">-k/--insecure                                 <span class="token comment"># 允许不使用证书到SSL站点 </span>
+</span><span class="code-line line-number" line="52">-K/--config                                   <span class="token comment"># 指定的配置文件读取 </span>
+</span><span class="code-line line-number" line="53">-l/--list-only                                <span class="token comment"># 列出ftp目录下的文件名称 </span>
+</span><span class="code-line line-number" line="54">     --limit-rate                             <span class="token comment"># 设置传输速度 </span>
+</span><span class="code-line line-number" line="55">     --local-port                             <span class="token comment"># 强制使用本地端口号 </span>
+</span><span class="code-line line-number" line="56">-m/--max-time                                 <span class="token comment"># 设置最大传输时间 </span>
+</span><span class="code-line line-number" line="57">     --max-redirs                             <span class="token comment"># 设置最大读取的目录数 </span>
+</span><span class="code-line line-number" line="58">     --max-filesize                           <span class="token comment"># 设置最大下载的文件总量 </span>
+</span><span class="code-line line-number" line="59">-M/--manual                                   <span class="token comment"># 显示全手动 </span>
+</span><span class="code-line line-number" line="60">-n/--netrc                                    <span class="token comment"># 从netrc文件中读取用户名和密码 </span>
+</span><span class="code-line line-number" line="61">     --netrc-optional                         <span class="token comment"># 使用 .netrc 或者 URL来覆盖-n </span>
+</span><span class="code-line line-number" line="62">     --ntlm                                   <span class="token comment"># 使用 HTTP NTLM 身份验证 </span>
+</span><span class="code-line line-number" line="63">-N/--no-buffer                                <span class="token comment"># 禁用缓冲输出 </span>
+</span><span class="code-line line-number" line="64">-o/--output                                   <span class="token comment"># 把输出写到该文件中 </span>
+</span><span class="code-line line-number" line="65">-O/--remote-name                              <span class="token comment"># 把输出写到该文件中，保留远程文件的文件名 </span>
+</span><span class="code-line line-number" line="66">-p/--proxytunnel                              <span class="token comment"># 使用HTTP代理 </span>
+</span><span class="code-line line-number" line="67">     --proxy-anyauth                          <span class="token comment"># 选择任一代理身份验证方法 </span>
+</span><span class="code-line line-number" line="68">     --proxy-basic                            <span class="token comment"># 在代理上使用基本身份验证 </span>
+</span><span class="code-line line-number" line="69">     --proxy-digest                           <span class="token comment"># 在代理上使用数字身份验证 </span>
+</span><span class="code-line line-number" line="70">     --proxy-ntlm                             <span class="token comment"># 在代理上使用ntlm身份验证 </span>
+</span><span class="code-line line-number" line="71">-P/--ftp-port                                 <span class="token comment"># 使用端口地址，而不是使用PASV </span>
+</span><span class="code-line line-number" line="72">-q                                            <span class="token comment"># 作为第一个参数，关闭 .curlrc </span>
+</span><span class="code-line line-number" line="73">-Q/--quote                                    <span class="token comment"># 文件传输前，发送命令到服务器 </span>
+</span><span class="code-line line-number" line="74">-r/--range                                    <span class="token comment"># 检索来自HTTP/1.1或FTP服务器字节范围 </span>
+</span><span class="code-line line-number" line="75">--range-file                                  <span class="token comment"># 读取（SSL）的随机文件 </span>
+</span><span class="code-line line-number" line="76">-R/--remote-time                              <span class="token comment"># 在本地生成文件时，保留远程文件时间 </span>
+</span><span class="code-line line-number" line="77">     --retry                                  <span class="token comment"># 传输出现问题时，重试的次数 </span>
+</span><span class="code-line line-number" line="78">     --retry-delay                            <span class="token comment"># 传输出现问题时，设置重试间隔时间 </span>
+</span><span class="code-line line-number" line="79">     --retry-max-time                         <span class="token comment"># 传输出现问题时，设置最大重试时间 </span>
+</span><span class="code-line line-number" line="80">-s/--silent                                   <span class="token comment"># 静默模式。不输出任何东西 </span>
+</span><span class="code-line line-number" line="81">-S/--show-error                               <span class="token comment"># 显示错误 </span>
+</span><span class="code-line line-number" line="82">     --socks4                                 <span class="token comment"># 用socks4代理给定主机和端口 </span>
+</span><span class="code-line line-number" line="83">     --socks5                                 <span class="token comment"># 用socks5代理给定主机和端口 </span>
+</span><span class="code-line line-number" line="84">     --stderr                                 <span class="token comment">#   </span>
+</span><span class="code-line line-number" line="85">-t/--telnet-option                            <span class="token comment"># Telnet选项设置 </span>
+</span><span class="code-line line-number" line="86">     --trace                                  <span class="token comment"># 对指定文件进行debug </span>
+</span><span class="code-line line-number" line="87">     --trace-ascii                            <span class="token comment"># Like --跟踪但没有hex输出 </span>
+</span><span class="code-line line-number" line="88">     --trace-time                             <span class="token comment"># 跟踪/详细输出时，添加时间戳 </span>
+</span><span class="code-line line-number" line="89">-T/--upload-file                              <span class="token comment"># 上传文件 </span>
+</span><span class="code-line line-number" line="90">     --url                                    <span class="token comment"># Spet URL to work with </span>
+</span><span class="code-line line-number" line="91">-u/--user                                     <span class="token comment"># 设置服务器的用户和密码 </span>
+</span><span class="code-line line-number" line="92">-U/--proxy-user                               <span class="token comment"># 设置代理用户名和密码 </span>
+</span><span class="code-line line-number" line="93">-w/--write-out <span class="token punctuation">\</span><span class="token punctuation">[</span>format<span class="token punctuation">]</span>                      <span class="token comment"># 什么输出完成后 </span>
+</span><span class="code-line line-number" line="94">-x/--proxy                                    <span class="token comment"># 在给定的端口上使用HTTP代理 </span>
+</span><span class="code-line line-number" line="95">-X/--request                                  <span class="token comment"># 指定什么命令 </span>
+</span><span class="code-line line-number" line="96">-y/--speed-time                               <span class="token comment"># 放弃限速所要的时间，默认为30 </span>
+</span><span class="code-line line-number" line="97">-Y/--speed-limit                              <span class="token comment"># 停止传输速度的限制，速度时间 </span>
+</span><span class="code-line line-number" line="98">
+</span></code><div onclick="copied(this)" data-code="-a/--append                                   # 上传文件时，附加到目标文件 
+-A/--user-agent                               # 设置用户代理发送给服务器 
+-anyauth                                      # 可以使用“任何”身份验证方法 
+-b/--cookie                                   # cookie字符串或文件读取位置 
+     --basic                                  # 使用HTTP基本验证 
+-B/--use-ascii                                # 使用ASCII /文本传输 
+-c/--cookie-jar                               # 操作结束后把cookie写入到这个文件中 
+-C/--continue-at                              # 断点续传 
+-d/--data                                     # HTTP POST方式传送数据 
+     --data-ascii                             # 以ascii的方式post数据 
+     --data-binary                            # 以二进制的方式post数据 
+     --negotiate                              # 使用HTTP身份验证 
+     --digest                                 # 使用数字身份验证 
+     --disable-eprt                           # 禁止使用EPRT或LPRT 
+     --disable-epsv                           # 禁止使用EPSV 
+-D/--dump-header                              # 把header信息写入到该文件中 
+     --egd-file                               # 为随机数据(SSL)设置EGD socket路径 
+     --tcp-nodelay                            # 使用TCP\_NODELAY选项 
+-e/--referer                                  # 来源网址 
+-E/--cert                                     # 客户端证书文件和密码 (SSL)
+     --cert-type                              # 证书文件类型 (DER/PEM/ENG) (SSL)
+     --key                                    # 私钥文件名 (SSL)
+     --key-type                               # 私钥文件类型 (DER/PEM/ENG) (SSL)
+     --pass                                   # 私钥密码 (SSL)
+     --engine                                 # 加密引擎使用 (SSL). &#x22;--engine list&#x22; for list 
+     --cacert                                 # CA证书 (SSL)
+     --capath                                 # CA目录 (made using c\_rehash) to verify peer against (SSL)
+     --ciphers                                # SSL密码 
+     --compressed                             # 要求返回是压缩的形势 (using deflate or gzip)
+     --connect-timeout                        # 设置最大请求时间 
+     --create-dirs                            # 建立本地目录的目录层次结构 
+     --crlf                                   # 上传是把LF转变成CRLF 
+-f/--fail                                     # 连接失败时不显示http错误 
+     --ftp-create-dirs                        # 如果远程目录不存在，创建远程目录 
+     --ftp-method \[multicwd/nocwd/singlecwd] # 控制CWD的使用 
+     --ftp-pasv                               # 使用 PASV/EPSV 代替端口 
+     --ftp-skip-pasv-ip                       # 使用PASV的时候,忽略该IP地址 
+     --ftp-ssl                                # 尝试用 SSL/TLS 来进行ftp数据传输 
+     --ftp-ssl-reqd                           # 要求用 SSL/TLS 来进行ftp数据传输 
+-F/--form                                     # 模拟http表单提交数据 
+     --form-string                            # 模拟http表单提交数据 
+-g/--globoff                                  # 禁用网址序列和范围使用{}和\[] 
+-G/--get                                      # 以get的方式来发送数据 
+-H/--header                                   # 自定义头信息传递给服务器 
+     --ignore-content-length                  # 忽略的HTTP头信息的长度 
+-i/--include                                  # 输出时包括protocol头信息 
+-I/--head                                     # 只显示请求头信息 
+-j/--junk-session-cookies                     # 读取文件进忽略session cookie 
+     --interface                              # 使用指定网络接口/地址 
+     --krb4                                   # 使用指定安全级别的krb4 
+-k/--insecure                                 # 允许不使用证书到SSL站点 
+-K/--config                                   # 指定的配置文件读取 
+-l/--list-only                                # 列出ftp目录下的文件名称 
+     --limit-rate                             # 设置传输速度 
+     --local-port                             # 强制使用本地端口号 
+-m/--max-time                                 # 设置最大传输时间 
+     --max-redirs                             # 设置最大读取的目录数 
+     --max-filesize                           # 设置最大下载的文件总量 
+-M/--manual                                   # 显示全手动 
+-n/--netrc                                    # 从netrc文件中读取用户名和密码 
+     --netrc-optional                         # 使用 .netrc 或者 URL来覆盖-n 
+     --ntlm                                   # 使用 HTTP NTLM 身份验证 
+-N/--no-buffer                                # 禁用缓冲输出 
+-o/--output                                   # 把输出写到该文件中 
+-O/--remote-name                              # 把输出写到该文件中，保留远程文件的文件名 
+-p/--proxytunnel                              # 使用HTTP代理 
+     --proxy-anyauth                          # 选择任一代理身份验证方法 
+     --proxy-basic                            # 在代理上使用基本身份验证 
+     --proxy-digest                           # 在代理上使用数字身份验证 
+     --proxy-ntlm                             # 在代理上使用ntlm身份验证 
+-P/--ftp-port                                 # 使用端口地址，而不是使用PASV 
+-q                                            # 作为第一个参数，关闭 .curlrc 
+-Q/--quote                                    # 文件传输前，发送命令到服务器 
+-r/--range                                    # 检索来自HTTP/1.1或FTP服务器字节范围 
+--range-file                                  # 读取（SSL）的随机文件 
+-R/--remote-time                              # 在本地生成文件时，保留远程文件时间 
+     --retry                                  # 传输出现问题时，重试的次数 
+     --retry-delay                            # 传输出现问题时，设置重试间隔时间 
+     --retry-max-time                         # 传输出现问题时，设置最大重试时间 
+-s/--silent                                   # 静默模式。不输出任何东西 
+-S/--show-error                               # 显示错误 
+     --socks4                                 # 用socks4代理给定主机和端口 
+     --socks5                                 # 用socks5代理给定主机和端口 
+     --stderr                                 #   
+-t/--telnet-option                            # Telnet选项设置 
+     --trace                                  # 对指定文件进行debug 
+     --trace-ascii                            # Like --跟踪但没有hex输出 
+     --trace-time                             # 跟踪/详细输出时，添加时间戳 
+-T/--upload-file                              # 上传文件 
+     --url                                    # Spet URL to work with 
+-u/--user                                     # 设置服务器的用户和密码 
+-U/--proxy-user                               # 设置代理用户名和密码 
+-w/--write-out \[format]                      # 什么输出完成后 
+-x/--proxy                                    # 在给定的端口上使用HTTP代理 
+-X/--request                                  # 指定什么命令 
+-y/--speed-time                               # 放弃限速所要的时间，默认为30 
+-Y/--speed-limit                              # 停止传输速度的限制，速度时间 
+
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><span class="octicon octicon-link"></span></a>实例</h3>
 <p><strong>文件下载</strong></p>
 <p>curl命令可以用来执行下载、发送各种HTTP请求，指定HTTP头部等操作。如果系统没有curl可以使用<code>yum install curl</code>安装，也可以下载安装。curl是将下载文件输出到stdout，将进度信息输出到stderr，不显示进度信息使用<code>--silent</code>选项。</p>
@@ -702,11 +419,11 @@ X-Pingback: http://wangchujiang.com/xmlrpc.php
 <p><strong>get请求</strong></p>
 <pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">curl</span> <span class="token string">"http://www.wangchujiang.com"</span>    <span class="token comment"># 如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地</span>
 </span><span class="code-line line-number" line="2"><span class="token function">curl</span> -i <span class="token string">"http://www.wangchujiang.com"</span> <span class="token comment"># 显示全部信息</span>
-</span><span class="code-line line-number" line="3"><span class="token function">curl</span> -l <span class="token string">"http://www.wangchujiang.com"</span> <span class="token comment"># 只显示头部信息</span>
+</span><span class="code-line line-number" line="3"><span class="token function">curl</span> -l <span class="token string">"http://www.wangchujiang.com"</span> <span class="token comment"># 显示页面内容</span>
 </span><span class="code-line line-number" line="4"><span class="token function">curl</span> -v <span class="token string">"http://www.wangchujiang.com"</span> <span class="token comment"># 显示get请求全过程解析</span>
 </span></code><div onclick="copied(this)" data-code="curl &#x22;http://www.wangchujiang.com&#x22;    # 如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地
 curl -i &#x22;http://www.wangchujiang.com&#x22; # 显示全部信息
-curl -l &#x22;http://www.wangchujiang.com&#x22; # 只显示头部信息
+curl -l &#x22;http://www.wangchujiang.com&#x22; # 显示页面内容
 curl -v &#x22;http://www.wangchujiang.com&#x22; # 显示get请求全过程解析
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p><strong>post请求</strong></p>
@@ -1017,7 +734,7 @@ function copied(target, str) {
     577
   </span> 个Linux命令，超过 <a href="../contributors.html">50+</a> 贡献者
 </div>
-<script type="text/javascript" src="../js/dt.js?v=1650951396772"></script>
-<script type="text/javascript" src="../js/index.js?v=1650951396772"></script>
+<script type="text/javascript" src="../js/dt.js?v=1650975470736"></script>
+<script type="text/javascript" src="../js/index.js?v=1650975470736"></script>
 </body>
 </html>
