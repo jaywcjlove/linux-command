@@ -40,4 +40,8 @@ testfile_2:Linux is a free unix-type opterating system
 testfile_2:Linux test
 ```
 
+过滤注释行和空白行
 
+```shell
+egrep -v '^\s*(#|$)' filename
+```
