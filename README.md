@@ -107,8 +107,8 @@
 
 <img width="556" alt="Android 版本截图" src="https://github.com/Ernest-su/LinuxCmd/raw/master/screenshot/screenshot2.png" />
 
-
 </details>
+
 ### 命令行工具
 
 - [`@chenjiandongx/how`](https://github.com/chenjiandongx/how) Python 版 [#129](https://github.com/jaywcjlove/linux-command/issues/129)，由 [**@陈键冬**](https://github.com/chenjiandongx) 提供。
