@@ -96,6 +96,19 @@
 
 </details>
 
+### Android 版本
+
+[Android 版本下载](https://github.com/Ernest-su/LinuxCmd/releases)， 下图是界面效果。 
+
+<details>
+<summary>Android 版本截图</summary>
+
+<img width="556" alt="Android 版本截图" src="https://github.com/Ernest-su/LinuxCmd/raw/master/screenshot/screenshot1.png" />
+
+<img width="556" alt="Android 版本截图" src="https://github.com/Ernest-su/LinuxCmd/raw/master/screenshot/screenshot2.png" />
+
+
+</details>
 ### 命令行工具
 
 - [`@chenjiandongx/how`](https://github.com/chenjiandongx/how) Python 版 [#129](https://github.com/jaywcjlove/linux-command/issues/129)，由 [**@陈键冬**](https://github.com/chenjiandongx) 提供。
