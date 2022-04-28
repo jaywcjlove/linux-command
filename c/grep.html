@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,grep,强大的文本搜索工具">
     <title>grep 命令，Linux grep 命令详解：强大的文本搜索工具 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1651028037117">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1651131479604">
     <script src="../js/dark-mode.min.js"></script>
     <script type="module" src="../js/github-corners.js"></script>
 </head>
@@ -303,15 +303,17 @@ grep &#x22;text&#x22; -n file_1 file_2
 <p>选项 <strong>-e</strong> 制动多个匹配样式：</p>
 <pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token builtin class-name">echo</span> this is a text line <span class="token operator">|</span> <span class="token function">grep</span> -e <span class="token string">"is"</span> -e <span class="token string">"line"</span> -o
 </span><span class="code-line line-number" line="2">is
-</span><span class="code-line line-number" line="3">line
-</span><span class="code-line line-number" line="4">
-</span><span class="code-line line-number" line="5"><span class="token comment">#也可以使用 **-f** 选项来匹配多个样式，在样式文件中逐行写出需要匹配的字符。</span>
-</span><span class="code-line line-number" line="6"><span class="token function">cat</span> patfile
-</span><span class="code-line line-number" line="7">aaa
-</span><span class="code-line line-number" line="8">bbb
-</span><span class="code-line line-number" line="9">
-</span><span class="code-line line-number" line="10"><span class="token builtin class-name">echo</span> aaa bbb ccc ddd eee <span class="token operator">|</span> <span class="token function">grep</span> -f patfile -o
+</span><span class="code-line line-number" line="3">is
+</span><span class="code-line line-number" line="4">line
+</span><span class="code-line line-number" line="5">
+</span><span class="code-line line-number" line="6"><span class="token comment">#也可以使用 **-f** 选项来匹配多个样式，在样式文件中逐行写出需要匹配的字符。</span>
+</span><span class="code-line line-number" line="7"><span class="token function">cat</span> patfile
+</span><span class="code-line line-number" line="8">aaa
+</span><span class="code-line line-number" line="9">bbb
+</span><span class="code-line line-number" line="10">
+</span><span class="code-line line-number" line="11"><span class="token builtin class-name">echo</span> aaa bbb ccc ddd eee <span class="token operator">|</span> <span class="token function">grep</span> -f patfile -o
 </span></code><div onclick="copied(this)" data-code="echo this is a text line | grep -e &#x22;is&#x22; -e &#x22;line&#x22; -o
+is
 is
 line
 
@@ -501,7 +503,7 @@ function copied(target, str) {
     577
   </span> 个Linux命令，超过 <a href="../contributors.html">50+</a> 贡献者
 </div>
-<script type="text/javascript" src="../js/dt.js?v=1651028037117"></script>
-<script type="text/javascript" src="../js/index.js?v=1651028037117"></script>
+<script type="text/javascript" src="../js/dt.js?v=1651131479605"></script>
+<script type="text/javascript" src="../js/index.js?v=1651131479605"></script>
 </body>
 </html>
