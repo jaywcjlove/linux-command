@@ -171,6 +171,7 @@ echo "hello world" | grep -i "HELLO"
 ```shell
 echo this is a text line | grep -e "is" -e "line" -o
 is
+is
 line
 
 #也可以使用 **-f** 选项来匹配多个样式，在样式文件中逐行写出需要匹配的字符。
