@@ -57,6 +57,13 @@ man sleep
 man 3 sleep
 ```
 
+### 相关命令
+
+* `tldr`: 简化版的使用手册，并不会像man一样把所有的使用参数和说明都列出来，而是只显示常用的几个使用Sample和说明
+  * 开源地址: [https://github.com/tldr-pages/tldr/](https://github.com/tldr-pages/tldr/)
+  * 官网: [https://tldr.sh/](https://tldr.sh/)
+  * 在线版本: [https://tldr.ostera.io/](https://tldr.ostera.io/)
+
 
 
 
