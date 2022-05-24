@@ -82,3 +82,23 @@ jobs:
 
     - run: npm install @jsdevtools/npm-publish -g
     - run: npm-publish --token="${{ secrets.NPM_TOKEN }}" ./package.json
+
+    - run: rm -rf .deploy/linux-command.docset.zip
+
+    # Create Docker Image
+    - name: Docker login
+      if: steps.create_tag.outputs.successful
+      run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
+    
+    - name: Build linux-command image
+      if: steps.create_tag.outputs.successful
+      run: docker image build -t linux-command .
+
+    - name: Tags & Push image
+      if: steps.create_tag.outputs.successful
+      run: |
+        echo "outputs.tag - ${{ steps.changelog.outputs.version }}"
+        docker tag linux-command ${{ secrets.DOCKER_USER }}/linux-command:${{steps.changelog.outputs.version}}
+        docker tag linux-command ${{ secrets.DOCKER_USER }}/linux-command:latest
+        docker push ${{ secrets.DOCKER_USER }}/linux-command:${{steps.changelog.outputs.version}}
+        docker push ${{ secrets.DOCKER_USER }}/linux-command:latest

@@ -14,7 +14,7 @@
 
 当前仓库搜集了 570 多个 Linux 命令，是一个非盈利性的仓库，生成了一个 web 网站方便使用，目前网站没有任何广告，内容包含 Linux 命令手册、详解、学习，内容来自网络和网友的补充，非常值得收藏的 Linux 命令速查手册。版权归属原作者，对任何法律问题及风险不承担任何责任，没有任何商业目的，如果认为侵犯了您的版权，请来信告知。我不能完全保证内容的正确性。通过使用本站内容带来的风险与我无关。当使用本站时，代表您已接受了本站的使用条款和隐私条款。
 
-[Web](#web-版本) | [微信小程序](#微信小程序版本) | [Dash](#dash-版本) | [Raycast](#raycast-版本) | [Alfred](#alfred-版本) | [KDE/Krunner](https://github.com/roachsinai/krunner-linuxcommands) | [Android](https://github.com/Ernest-su/LinuxCmd.git) | [Mac/Win/Linux](https://github.com/haloislet/linux-command) | [Chrome Plugin](#chrome-插件) | [命令行工具](#命令行工具)
+[Web](#web-版本) | [微信小程序](#微信小程序版本) | [Dash](#dash-版本) | [Raycast](#raycast-版本) | [Alfred](#alfred-版本) | [KDE/Krunner](https://github.com/roachsinai/krunner-linuxcommands) | [Android](https://github.com/Ernest-su/LinuxCmd.git) | [Mac/Win/Linux](https://github.com/haloislet/linux-command) | [Chrome Plugin](#chrome-插件) | [命令行工具](#命令行工具) | [Docker](#docker)
 
 ### Web 版本
 
@@ -114,6 +114,28 @@
 - [`@chenjiandongx/how`](https://github.com/chenjiandongx/how) Python 版 [#129](https://github.com/jaywcjlove/linux-command/issues/129)，由 [**@陈键冬**](https://github.com/chenjiandongx) 提供。
 - [`@chenjiandongx/pls`](https://github.com/chenjiandongx/pls) Golang 版 [#129](https://github.com/jaywcjlove/linux-command/issues/129)，由 [**@陈键冬**](https://github.com/chenjiandongx) 提供。
 
+
+## Docker
+
+[![Docker Image Version (latest by date)](https://img.shields.io/docker/v/wcjiang/linux-command)](https://hub.docker.com/r/wcjiang/linux-command) [![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/wcjiang/linux-command)](https://hub.docker.com/r/wcjiang/linux-command) [![Docker Pulls](https://img.shields.io/docker/pulls/wcjiang/linux-command)](https://hub.docker.com/r/wcjiang/linux-command)
+
+轻松通过 docker 部署 linux-command 网站。
+
+```bash
+docker pull wcjiang/linux-command
+```
+
+```bash
+docker run --name linux-command --rm -d -p 9665:80 wcjiang/linux-command:latest
+# Or
+docker run --name linux-command -itd -p 9665:80 wcjiang/linux-command:latest
+```
+
+在浏览器中访问以下 URL
+
+```bash
+http://localhost:9665/
+```
 
 ## 目录
 
