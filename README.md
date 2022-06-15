@@ -124,12 +124,16 @@
 
 ```bash
 docker pull wcjiang/linux-command
+# Or
+docker pull ghcr.io/jaywcjlove/linux-command:latest
 ```
 
 ```bash
 docker run --name linux-command --rm -d -p 9665:80 wcjiang/linux-command:latest
 # Or
 docker run --name linux-command -itd -p 9665:80 wcjiang/linux-command:latest
+# Or
+docker run --name linux-command -itd -p 9665:80 ghcr.io/jaywcjlove/linux-command:latest
 ```
 
 在浏览器中访问以下 URL
