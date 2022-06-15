@@ -12,30 +12,30 @@ Neofetch是一个在终端上显示带有发行徽标的系统信息工具，neo
 
 Neofetch是一个开源工具，[项目地址](https://github.com/dylanaraps/neofetch)
 
-
 ### 安装
+
 Debian/Ubuntu
+
 ```shell
 sudo apt install neofetch -y
 ```
 
 CentOS
+
 ```shell
 sudo yum install neofetch -y
 sudo dnf install neofetch -y
 ```
+
 [更多系统安装](https://github.com/dylanaraps/neofetch/wiki/Installation)
-
-
-
 ###  语法
 
 ```
 neofetach
 ```
 
-
 ###  返回
+
 **回显**
 
 macOS:
@@ -60,6 +60,7 @@ macOS:
 ```
 
 Ubuntu:
+
 ```shell
             .-/+oossssoo+/-.               root@root 
         `:+ssssssssssssssssss+:`           ------------ 
