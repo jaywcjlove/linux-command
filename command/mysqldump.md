@@ -32,6 +32,7 @@ mysqldump(选项)
 --password：连接MySQL服务器的密码；
 --port：MySQL服务器的端口号；
 --user：连接MySQL服务器的用户名。
+--skip-lock-tables: 不锁表导出
 ```
 
 ###  实例
@@ -57,5 +58,13 @@ mysqldump -u linuxde -p -d --add-drop-table smgp_apps_linuxde > linuxde_db.sql
 ```
 
 `-d`没有数据，`--add-drop-tabl`e每个create语句之前增加一个`drop table`
+
+### 问题解决
+
+**锁表失败**
+```
+mysqldump: Got error: 1044: "Access denied for user 'appuser'@'1%' to database 'tc_mall'" when doing LOCK TABLES
+```
+可使用`--skip-lock-tables`在导出数据阶段跳过锁表流程
 
 
