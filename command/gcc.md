@@ -21,6 +21,8 @@ gcc(选项)(参数)
 -S：将C代码转换为汇编代码；
 -wall：显示警告信息；
 -c：仅执行编译操作，不进行连接操作。
+-l：用来指定程序要链接的库，-l参数紧接着就是库名
+-I：寻找头文件的目录
 ```
 
 ###  参数
@@ -113,4 +115,13 @@ gcc -o testfun.o test.o -o test    #将testfun.o和test.o链接成test
 
 以上两种方法相比较，第一中方法编译时需要所有文件重新编译，而第二种方法可以只重新编译修改的文件，未修改的文件不用重新编译。
 
+**加载动态链接库**
+```shell
+gcc hello.c -lpthread -o hello
+```
+
+**手动添加文件头路径**
+```shell
+gcc hello.c -lpthread -I /lib64/ -o hello
+```
 
