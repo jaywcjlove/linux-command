@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,mpstat,显示各个可用CPU的状态">
     <title>mpstat 命令，Linux mpstat 命令详解：显示各个可用CPU的状态 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1655570947684">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1655863405984">
     <script src="../js/dark-mode.min.js"></script>
     <script type="module" src="../js/github-corners.js"></script>
 </head>
@@ -128,6 +128,16 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
 <ul>
   <li>间隔时间：每次报告的间隔时间（秒）；</li>
   <li>次数：显示报告的次数。</li>
+</ul>
+<h3 id="表头含义"><a class="anchor" aria-hidden="true" tabindex="-1" href="#表头含义"><span class="octicon octicon-link"></span></a>表头含义</h3>
+<ul>
+  <li>%user：表示处理用户进程所使用 CPU 的百分比。</li>
+  <li>%nice：表示使用 nice 命令对进程进行降级时 CPU 的百分比。</li>
+  <li>%system：表示内核进程使用的 CPU 百分比。</li>
+  <li>iowait：表示等待进行I/O所占用CPU时间百分比。</li>
+  <li>irq：表示用于处理系统中断的CPU百分比。</li>
+  <li>soft：表示用于处理软件中断的CPU百分比。</li>
+  <li>idle：CPU的空闲时间百分比。</li>
 </ul>
 <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><span class="octicon octicon-link"></span></a>实例</h3>
 <p>当mpstat不带参数时，输出为从系统启动以来的平均值。</p>
@@ -280,7 +290,7 @@ function copied(target, str) {
     578
   </span> 个Linux命令，超过 <a href="../contributors.html">50+</a> 贡献者
 </div>
-<script type="text/javascript" src="../js/dt.js?v=1655570947684"></script>
-<script type="text/javascript" src="../js/index.js?v=1655570947684"></script>
+<script type="text/javascript" src="../js/dt.js?v=1655863405984"></script>
+<script type="text/javascript" src="../js/index.js?v=1655863405984"></script>
 </body>
 </html>
