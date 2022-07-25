@@ -40,9 +40,32 @@ echo(选项)(参数)
 
 ###  实例 
 
+```shell
+/bin/echo Hello, world!
+```
+
+在上面的命令中，两个词（Hello 和 world！）作为单独的参数传递给 echo，并且 echo 按顺序打印它们，用空格分隔
+
+下一个命令产生相同的输出：
+
+```shell
+/bin/echo 'Hello, World!'
+```
+
+但是，与第一个示例不同，上述命令提供了单引号字符串 'Hello, world!' 作为一个单一的一个参数。
+
+单引号将可靠地保护它免受 shell 解释，将特殊字符和转义序列逐字传递给 echo。
+
+例如，在 `bash shell` 中，变量名前面有一个美元符号 ($)。 在下一个命令中，引号内的变量名按字面意思处理； 在引号之外，它被转换为它的值。
+
+```shell
+/bin/echo 'The value of $PATH is' $PATH
+# The value of $PATH is /home/hope/bin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+```
+
 用echo命令打印带有色彩的文字：
 
- **文字色：** 
+**文字色：** 
 
 ```shell
 echo -e "\e[1;31mThis is red text\e[0m"
@@ -53,6 +76,17 @@ This is red text
 *   `\e[0m` 将颜色重新置回
 
 颜色码：重置=0，黑色=30，红色=31，绿色=32，黄色=33，蓝色=34，洋红=35，青色=36，白色=37
+
+```shell
+echo -e "\x1b[30;1m 0 黑色 \x1b[0m"\
+"\x1b[31;1m 1 红色 \x1b[0m"\
+"\x1b[32;1m 2 绿色 \x1b[0m"\
+"\x1b[33;1m 3 黄色 \x1b[0m"\
+"\x1b[34;1m 4 蓝色 \x1b[0m"\
+"\x1b[35;1m 5 洋红 \x1b[0m"\
+"\x1b[36;1m 6 青色 \x1b[0m"\
+"\x1b[37;1m 7 白色 \x1b[0m"
+```
 
  **背景色** ：
 
@@ -73,3 +107,8 @@ echo -e "\033[37;31;5mMySQL Server Stop...\033[39;49;0m"
 
 
 
+**输出内容结尾不添加换行符**
+
+```shell
+echo -n 'hello'
+```
