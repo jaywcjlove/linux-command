@@ -60,7 +60,8 @@ echo(选项)(参数)
 
 ```shell
 /bin/echo 'The value of $PATH is' $PATH
-# The value of $PATH is /home/hope/bin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+# The value of $PATH is
+# /home/hope/bin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 ```
 
 用echo命令打印带有色彩的文字：
