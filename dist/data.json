@@ -1614,6 +1614,11 @@
     "p": "/ncftp",
     "d": "是增强的的FTP工具"
   },
+  "neofetch": {
+    "n": "neofetch",
+    "p": "/neofetch",
+    "d": "显示带有发行徽标的系统信息的工具"
+  },
   "nethogs": {
     "n": "nethogs",
     "p": "/nethogs",
@@ -1773,6 +1778,11 @@
     "n": "pidof",
     "p": "/pidof",
     "d": "查找指定名称的进程的进程号ID号"
+  },
+  "pidstat": {
+    "n": "pidstat",
+    "p": "/pidstat",
+    "d": "监控进程的系统资源占用情况"
   },
   "pigz": {
     "n": "pigz",
