@@ -322,6 +322,12 @@ tar [选项...] [FILE]...
 
 ### 实例
 
+将 `/home/vivek/bin/` 目录打包，并使用 gzip 算法压缩。保存为 `/tmp/bin-backup.tar.gz` 文件。
+
+```
+tar -zcvf /tmp/bin-backup.tar.gz /home/vivek/bin/
+```
+
 ```shell
 - z：有gzip属性的
 - j：有bz2属性的
