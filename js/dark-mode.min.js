@@ -137,6 +137,9 @@ class DarkMode extends HTMLElement {
   _changeContent() {
     this.icon.textContent = this.mode === LIGHT ? '🌒' : '🌞';
     this.text.textContent = this.mode === LIGHT ? this.getAttribute(DARK) : this.getAttribute(LIGHT);
+    if (!this.text.textContent && this.text.parentElement && this.text) {
+      this.text.parentElement.removeChild(this.text)
+    }
   }
   _initializeDOM() {
     var shadow = this.attachShadow({ mode: 'open' });
