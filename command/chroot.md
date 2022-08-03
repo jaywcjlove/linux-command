@@ -21,25 +21,25 @@ chroot
 
 chroot 的作用就是切换系统的根位置，而这个作用最为明显的是在系统初始引导磁盘的处理过程中使用，从初始 RAM 磁盘 (initrd) 切换系统的根位置并执行真正的 init。另外，当系统出现一些问题时，我们也可以使用 chroot 来切换到一个临时的系统。
 
-### 语法  
+###  语法
 
 ```shell
 chroot(选项)(参数)
 ```
 
-### 选项  
+###  选项
 
 ```shell
 --help：在线帮助；
 --version：显示版本信息。
 ```
 
-### 参数  
+###  参数
 
 *   目录：指定新的根目录；
 *   指令：指定要执行的指令。
 
-### 实例  
+###  实例
 
 **将target作为根目录（运行其中的`/bin/sh`）:** 
 
@@ -119,4 +119,3 @@ chroot newRoot /a.out
 这样就能够正确运行a.out了，因为a.out使用到了其他的动态连接库，所以需要将库拷贝到newRoot中，如果没有其他库那么直接拷贝a.out就能运行。例如静态编译后的busybox，其安装目录中的`/bin/busybox`就没有依赖其他库。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

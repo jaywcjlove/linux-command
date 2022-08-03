@@ -7,13 +7,13 @@ mail
 
 **mail命令** 是命令行的电子邮件发送和接收工具。操作的界面不像elm或pine那么容易使用，但功能非常完整。
 
-### 语法  
+###  语法
 
 ```shell
 mail(选项)(参数)
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -b<地址>：指定密件副本的收信人地址；
@@ -28,11 +28,11 @@ mail(选项)(参数)
 -v：执行时，显示详细的信息。
 ```
 
-### 参数  
+###  参数
 
 邮件地址：收信人的电子邮箱地址。
 
-### 实例  
+###  实例
 
  **直接使用shell当编辑器** 
 
@@ -87,4 +87,3 @@ uuencode test.txt test | mail -s "hello,see the attachement" admin@jsdig.com<mai
 这里我主要介绍的是在CentOS下使用mail发送电子邮件的一些使用方法，需要的要求是你的linux必须安装了sendmail并开启了，同时保证可以连接外网。另外，文章中提到的命令本人都经过亲自测试，保证完全可用，不过你需要将命令中的电子邮件地址换成自己的电子邮件地址。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

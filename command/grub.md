@@ -7,13 +7,13 @@ grub
 
 **grub命令** 是多重引导程序grub的命令行shell工具。
 
-### 语法  
+###  语法
 
 ```shell
 grub(选项)
 ```
 
-### 选项  
+###  选项
 
 ```shell
 --batch：打开批处理模式；
@@ -29,7 +29,7 @@ grub(选项)
 --read-only：只读模式。
 ```
 
-### 实例  
+###  实例
 
 利用grub命令来启动损坏的Linux系统，可能你的电脑因为某些原因损坏不能自动启动了。当然原因很多，可能的现象也很多。
 
@@ -69,4 +69,3 @@ boot
 这里的关键问题是如何确定系统的几个分区：`/boot` `/` `/sbin`
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -7,7 +7,7 @@ setfacl
 
 **setfacl命令** 是用来在命令行里设置ACL（访问控制列表）。在命令行里，一系列的命令跟随以一系列的文件名。
 
-### 选项  
+###  选项
 
 ```shell
 -b,--remove-all：删除所有扩展的acl规则，基本的acl规则(所有者，群组，其他）将被保留。
@@ -278,4 +278,3 @@ mount -o remount, acl [mount point]
 如果用chmod命令改变Linux file permission的时候相应的ACL值也会改变，反之改变ACL的值，相应的file permission也会改变。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

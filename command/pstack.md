@@ -9,7 +9,7 @@ pstack
 
 命令软件包下载地址：https://packages.debian.org/sid/pstack
 
-### 实例  
+###  实例
 
 pstree以树结构显示进程
 
@@ -98,4 +98,3 @@ Thread 1 (Thread 182894129792 (LWP 4551)):
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

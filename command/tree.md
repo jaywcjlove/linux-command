@@ -18,7 +18,7 @@ tree(选项)(参数)
 ```shell
 ------- 列表选项 -------
 -a            # 显示所有文件和目录。
--d            # 先是目录名称而非文件。
+-d            # 显示目录名称而非文件。
 -l            # 如遇到性质为符号连接的目录，直接列出该连接所指向的原始目录。
 -f            # 在每个文件或目录之前，显示完整的相对路径名称。
 -x            # 将范围局限在现行的文件系统中，若指定目录下的某些子目录，其存放于另一个文件系统上，则将该目录予以排除在寻找范围外。
@@ -106,4 +106,17 @@ tree -L 2 > /home/www/tree.txt # 当前目录结果存到 tree.txt 文件中
 tree -I 'node_modules|icon|font' -L 2
 ```
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+非树状结构列出目录`/private/`下的所有文件
+
+```
+tree -if /private/
+/private
+/private/a1
+/private/a2
+/private/etc
+/private/etc/b1
+/private/etc/b2
+/private/tftpboot
+```
+
+

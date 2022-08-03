@@ -7,13 +7,13 @@ ltrace
 
 **ltrace命令** 是用来跟踪进程调用库函数的情况。
 
-### 语法  
+###  语法
 
 ```shell
 ltrace [option ...] [command [arg ...]]
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -a 对齐具体某个列的返回值。
@@ -39,7 +39,7 @@ ltrace [option ...] [command [arg ...]]
 -x NAME treat the global NAME like a library subroutine.（求翻译）
 ```
 
-### 实例  
+###  实例
 
 最基本应用，不带任何参数：
 
@@ -85,4 +85,3 @@ SYS_mmap2(0x424000, 4096, 3, 2066, 3) = 0x424000
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

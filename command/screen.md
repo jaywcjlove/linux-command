@@ -17,13 +17,13 @@ screen
 
 GNU's Screen 官方站点：http://www.gnu.org/software/screen/
 
-### 语法  
+###  语法
 
 ```shell
 # screen -AmRvx -[ls -wipe][-d <作业名称>][-h <行数>][-r <作业名称>][-s ][-S <作业名称>]
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -A 　将所有的视窗都调整为目前终端机的大小。
@@ -40,7 +40,7 @@ GNU's Screen 官方站点：http://www.gnu.org/software/screen/
 -wipe 　检查目前所有的screen作业，并删除已经无法使用的screen作业。
 ```
 
-### 常用screen参数  
+###  常用screen参数
 
 ```shell
 screen -S yourname -> 新建一个叫yourname的session
@@ -80,7 +80,7 @@ C-a  -> 进入 copy mode，在 copy mode 下可以回滚、搜索、复制就像
 C-a ] -> paste，把刚刚在 copy mode 选定的内容贴上
 ```
 
-### 使用 screen  
+###  使用 screen
 
  **安装screen** 
 
@@ -156,15 +156,34 @@ Screen默认会为窗口命名为编号和窗口中运行程序名的组合，�
 如果由于某种原因其中一个会话死掉了（例如人为杀掉该会话），这时screen -list会显示该会话为dead状态。使用screen -wipe命令清除该会话：
 
 
- **关闭或杀死窗口** 
+ **关闭或杀死一个Screen会话** 
 
-正常情况下，当你退出一个窗口中最后一个程序（通常是bash）后，这个窗口就关闭了。另一个关闭窗口的方法是使用C-a k，这个快捷键杀死当前的窗口，同时也将杀死这个窗口中正在运行的进程。
+正常情况下，当你退出一个窗口中最后一个程序（通常是bash）后，这个窗口就关闭了。另一个关闭窗口的方法是使用`ctrl`+`a` 键，然后按下`k`键，最后当提示你是否要杀死这个会话时按下`y`键，这个快捷键会杀死当前的窗口，同时也将杀死这个窗口中正在运行的进程。
 
 如果一个Screen会话中最后一个窗口被关闭了，那么整个Screen会话也就退出了，screen进程会被终止。
 
 除了依次退出/杀死当前Screen会话中所有窗口这种方法之外，还可以使用快捷键C-a :，然后输入quit命令退出Screen会话。需要注意的是，这样退出会杀死所有窗口并退出其中运行的所有程序。其实C-a :这个快捷键允许用户直接输入的命令有很多，包括分屏可以输入split等，这也是实现Screen功能的一个途径，不过个人认为还是快捷键比较方便些。
 
-### screen 高级应用   
+此外，这里再介绍另外一种快速杀死一个Screen会话的命令：
+
+```shell
+[root@TS-DEV ~]# screen -ls   #列出存在的会话
+[root@TS-DEV ~]# screen -XS "会话id或者名称" quit
+```
+
+**示例：**
+
+```shell
+[root@TS-DEV ~]# screen -ls
+There are screens on:
+	11235.test	(01/25/2021 03:35:31 PM)	(Detached)
+1 Sockets in /run/screen/S-root.
+[root@TS-DEV ~]# screen -XS 11235 quit
+#或者
+[root@TS-DEV ~]# screen -XS test quit
+```
+
+###  screen 高级应用 
 
  **会话共享** 
 
@@ -212,4 +231,3 @@ screen的另一个很强大的功能就是可以在不同窗口之间进行复�
 以多用户功能为例，screen默认是以单用户模式运行的，你需要在配置文件中指定multiuser on 来打开多用户模式，通过acl*（acladd,acldel,aclchg...）命令，你可以灵活配置其他用户访问你的screen会话。更多配置文件内容请参考screen的man页。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

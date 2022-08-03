@@ -7,13 +7,13 @@ elinks
 
 **elinks命令** 能实现一个纯文本界面的WWW浏览器，操作方式与“lynx”类似。
 
-### 语法  
+###  语法
 
 ```shell
 elinks(选项)(参数)
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -anonymous：是否使用匿名帐号方式；
@@ -24,9 +24,8 @@ elinks(选项)(参数)
 -h：显示帮助信息。
 ```
 
-### 参数  
+###  参数
 
 URL：指定要访问的URL地址。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

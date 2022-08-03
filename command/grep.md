@@ -5,9 +5,9 @@ grep
 
 ## 补充说明
 
-**grep** （global search regular expression(RE) and print out the line，全面搜索正则表达式并把行打印出来）是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹配的行打印出来。用于过滤/搜索的特定字符。可使用正则表达式能多种命令配合使用，使用上十分灵活。
+**grep** （global search regular expression(RE) and print out the line，全面搜索正则表达式并把行打印出来）是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹配的行打印出来。用于过滤/搜索的特定字符。可使用正则表达式能配合多种命令使用，使用上十分灵活。
 
-### 选项  
+###  选项 
 
 ```shell
 -a --text  # 不要忽略二进制数据。
@@ -28,6 +28,7 @@ grep
 -l --file-with-matches   # 列出文件内容符合指定的范本样式的文件名称。
 -L --files-without-match # 列出文件内容不符合指定的范本样式的文件名称。
 -n --line-number         # 在显示符合范本样式的那一列之前，标示出该列的编号。
+-P --perl-regexp         # PATTERN 是一个 Perl 正则表达式
 -q --quiet或--silent     # 不显示任何信息。
 -R/-r  --recursive       # 此参数的效果和指定“-d recurse”参数相同。
 -s --no-messages  # 不显示错误信息。
@@ -95,6 +96,12 @@ grep -E "[1-9]+"
 # 或
 egrep "[1-9]+"
 ```
+使用正则表达式  **-P**  选项：
+
+```shell
+grep -P "(\d{3}\-){2}\d{4}" file_name
+```
+
 
 只输出文件中匹配到的部分  **-o**  选项：
 
@@ -110,6 +117,12 @@ line.
 
 ```shell
 grep -c "text" file_name
+```
+
+搜索命令行历史记录中 输入过 `git` 命令的记录：
+
+```shell
+history | grep git
 ```
 
 输出包含匹配字符串的行数  **-n**  选项：
@@ -137,7 +150,7 @@ echo gun is not unix | grep -b -o "not"
 grep -l "text" file1 file2 file3...
 ```
 
-### grep递归搜索文件  
+###  grep递归搜索文件 
 
 在多级目录中对文本进行递归搜索：
 
@@ -157,6 +170,7 @@ echo "hello world" | grep -i "HELLO"
 
 ```shell
 echo this is a text line | grep -e "is" -e "line" -o
+is
 is
 line
 
@@ -239,4 +253,4 @@ b
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

@@ -7,13 +7,13 @@ lpq
 
 **lpq命令** 用于显示打印队列中的打印任务的状态信息。
 
-### 语法  
+### 语法
 
 ```shell
 lpq(选项)
 ```
 
-### 选项  
+### 选项
 
 ```shell
 -E：强制使用加密方式与服务器连接；
@@ -26,4 +26,3 @@ lpq(选项)
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

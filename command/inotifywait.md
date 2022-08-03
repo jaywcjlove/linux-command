@@ -26,7 +26,7 @@ total 0
 -rw-r--r-- 1 root root 0 Jan  4 15:41 max_user_watches
 ```
 
-### 安装inotify-tools  
+###  安装inotify-tools
 
 *   inotify-tools项目地址：https://github.com/rvoicilas/inotify-tools
 *   inotify-tools下载地址：http://github.com/downloads/rvoicilas/inotify-tools/inotify-tools-3.14.tar.gz
@@ -42,7 +42,7 @@ make install
 
 其他Linux发行版安装方法可以参见：https://github.com/rvoicilas/inotify-tools/wiki#wiki-getting
 
-### inotify相关参数  
+###  inotify相关参数
 
 inotify定义了下列的接口参数，可以用来限制inotify消耗kernel memory的大小。由于这些参数都是内存参数，因此，可以根据应用需求，实时的调节其大小：
 
@@ -69,7 +69,7 @@ inotifywait: error while loading shared libraries: libinotifytools.so.0: cannot 
 64位系统：ln -s /usr/local/lib/libinotifytools.so.0 /usr/lib64/libinotifytools.so.0
 ```
 
-### inotifywait命令使用  
+###  inotifywait命令使用
 
 ```shell
 #!/bin/bash
@@ -97,7 +97,7 @@ path=$1
 04/01/13/16:35 /data/wsdata/tools/ .j.jsp.swp
 ```
 
-### inotifywait命令参数  
+###  inotifywait命令参数
 
 * `-m`是要持续监视变化。
 * `-r`使用递归形式监视目录。
@@ -106,48 +106,16 @@ path=$1
 * `--timefmt`是指定时间的输出格式。
 * `--format`指定文件变化的详细信息。
 
-#### 可监听的事件  
+### 可监听的事件
 
-<table border="0" height="193" style="width: 100%;" width="74">
-<tbody>
-<tr>
-<th>事件</th>
-<th>描述</th>
-</tr>
-<tr>
-<td>access</td>
-<td> **访问** ，读取文件。</td>
-</tr>
-<tr>
-<td>modify</td>
-<td> **修改** ，文件内容被修改。</td>
-</tr>
-<tr>
-<td>attrib</td>
-<td> **属性** ，文件元数据被修改。</td>
-</tr>
-<tr>
-<td>move</td>
-<td> **移动** ，对文件进行移动操作。</td>
-</tr>
-<tr>
-<td>create</td>
-<td> **创建** ，生成新文件</td>
-</tr>
-<tr>
-<td>open</td>
-<td> **打开** ，对文件进行打开操作。</td>
-</tr>
-<tr>
-<td>close</td>
-<td> **关闭** ，对文件进行关闭操作。</td>
-</tr>
-<tr>
-<td>delete</td>
-<td> **删除** ，文件被删除。</td>
-</tr>
-</tbody>
-</table>
+事件 | 描述
+--- | ---
+access | **访问** ，读取文件。
+modify | **修改** ，文件内容被修改。
+attrib | **属性** ，文件元数据被修改。
+move | **移动** ，对文件进行移动操作。
+create | **创建** ，生成新文件
+open | **打开** ，对文件进行打开操作。
+close | **关闭** ，对文件进行关闭操作。
+delete | **删除** ，文件被删除。
 
-
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

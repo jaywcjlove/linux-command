@@ -18,13 +18,13 @@ wget支持HTTP，HTTPS和FTP协议，可以使用HTTP代理。所谓的自动下
 5. **程序小，完全免费** 程序小可以考虑不计，因为现在的硬盘实在太大了；完全免费就不得不考虑了，即使网络上有很多所谓的免费软件，但是，这些软件的广告却不是我们喜欢的。
 
 
-### 语法  
+###  语法
 
 ```shell
 wget [参数] [URL地址]
 ```
 
-### 选项  
+###  选项
 
 ```shell
 启动参数：
@@ -32,7 +32,7 @@ wget [参数] [URL地址]
 -V, –-version 显示wget的版本后退出
 -h, –-help 打印语法帮助
 -b, –-background 启动后转入后台执行
--e, –-execute=COMMAND 执行 `.wgetrc’格式的命令，wgetrc格式参见/etc/wgetrc或~/.wgetrc
+-e, –-execute=COMMAND 执行 .wgetrc 格式的命令，wgetrc格式参见/etc/wgetrc或~/.wgetrc
 
 记录和输入文件参数：
 
@@ -66,7 +66,7 @@ wget [参数] [URL地址]
 –random-wait 在下载之间等待0…2*WAIT秒
 -Y, –-proxy=on/off 打开或关闭代理
 -Q, –-quota=NUMBER 设置下载的容量限制
-–limit-rate=RATE 限定下载输率
+-–limit-rate=RATE 限定下载输率
 
 目录参数：
 
@@ -82,11 +82,11 @@ HTTP 选项参数：
 -–http-passwd=PASS 设定http密码为 PASS
 -C, –-cache=on/off 允许/不允许服务器端的数据缓存 (一般情况下允许)
 -E, –-html-extension 将所有text/html文档以.html扩展名保存
--–ignore-length 忽略 `Content-Length’头域
+-–ignore-length 忽略 Content-Length 头域
 -–header=STRING 在headers中插入字符串 STRING
 -–proxy-user=USER 设定代理的用户名为 USER
 -–proxy-passwd=PASS 设定代理的密码为 PASS
--–referer=URL 在HTTP请求中包含 `Referer: URL’头
+-–referer=URL 在HTTP请求中包含  Referer: URL 头
 -s, –-save-headers 保存HTTP头到文件
 -U, –-user-agent=AGENT 设定代理的名称为 AGENT而不是 Wget/VERSION
 -–no-http-keep-alive 关闭 HTTP活动链接 (永远链接)
@@ -96,7 +96,7 @@ HTTP 选项参数：
 
 FTP 选项参数：
 
--nr, -–dont-remove-listing 不移走 `.listing’文件
+-nr, -–dont-remove-listing 不移走 .listing 文件
 -g, -–glob=on/off 打开或关闭文件名的 globbing机制
 -–passive-ftp 使用被动传输模式 (缺省值).
 -–active-ftp 使用主动传输模式
@@ -129,11 +129,11 @@ FTP 选项参数：
 wget -S –-spider url 不下载只显示过程
 ```
 
-### 参数  
+###  参数
 
 URL：下载指定的URL地址。
 
-### 实例  
+###  实例
 
 **使用wget下载单个文件** 
 
@@ -157,7 +157,7 @@ wget默认会以最后一个符合`/`的后面的字符来命令，对于动态�
 wget http://www.jsdig.com/download?id=1
 ```
 
-即使下载的文件是zip格式，它仍然以`download.php?id=1080`命令。
+即使下载的文件是zip格式，它仍然以`download.php?id=1080`命名。
 
 正确：为了解决这个问题，我们可以使用参数`-O`来指定一个文件名：
 
@@ -187,7 +187,7 @@ wget -c http://www.jsdig.com/testfile.zip
 wget -b http://www.jsdig.com/testfile.zip
 
 Continuing in background, pid 1840.
-Output will be written to `wget-log'.
+Output will be written to 'wget-log'.
 ```
 
 对于下载非常大的文件的时候，我们可以使用参数`-b`进行后台下载，你可以使用以下命令来察看下载进度：
@@ -334,4 +334,4 @@ wget --ftp-user=USERNAME --ftp-password=PASSWORD url
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

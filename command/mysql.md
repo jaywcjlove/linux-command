@@ -7,13 +7,13 @@ MySQL服务器客户端工具
 
 **mysql命令** 是MySQL数据库服务器的客户端工具，它工作在命令行终端中，完成对远程MySQL数据库服务器的操作。
 
-### 语法  
+###  语法
 
 ```shell
 mysql(选项)(参数)
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -h：MySQL服务器的ip地址或主机名；
@@ -22,9 +22,8 @@ mysql(选项)(参数)
 -p：连接MySQL服务器的密码。
 ```
 
-### 参数  
+###  参数
 
 数据库：指定连接服务器后自动打开的数据库。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

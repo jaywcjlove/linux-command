@@ -9,7 +9,7 @@ strace
 
 strace的最简单的用法就是执行一个指定的命令，在指定的命令结束之后它也就退出了。在命令执行的过程中，strace会记录和解析命令进程的所有系统调用以及这个进程所接收到的所有的信号值。
 
-### 语法  
+###  语法
 
 ```shell
 strace  [  -dffhiqrtttTvxx  ] [ -acolumn ] [ -eexpr ] ...
@@ -21,7 +21,7 @@ strace  -c  [ -eexpr ] ...  [ -Ooverhead ] [ -Ssortby ]
     [ command [ arg...  ] ]
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -c 统计每一系统调用的所执行的时间,次数和出错的次数等.
@@ -61,7 +61,7 @@ qualifier只能是 trace,abbrev,verbose,raw,signal,read,write其中之一.value�
 -u username 以username的UID和GID执行被跟踪的命令
 ```
 
-### 实例  
+###  实例
 
  **追踪系统调用** 
 
@@ -202,7 +202,7 @@ execve("./test", ["./test"], [/* 41 vars */]) = 0
 
 这里很清楚的告诉你调用了那些系统函数，调用次数多少，消耗了多少时间等等这些信息，这个对我们分析一个程序来说是非常有用的。
 
-### 常用参数说明  
+###  常用参数说明
 
 除了-c参数之外，strace还提供了其他有用的参数给我们，让我们能很方便的得到自己想要的信息，下面就对那些常用的参数一一做个介绍。
 
@@ -239,32 +239,11 @@ exit_group(0)                           = ?
 
 这是一个很有用的功能，strace会将每次系统调用的发生时间记录下来，只要使用-t/tt/ttt三个参数就可以看到效果了，具体的例子可以自己去尝试。
 
-<table>
-<thead>
-<tr>
-<th>参数名</th>
-<th>输出样式</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>-t</td>
-<td>10:33:04 exit_group(0)</td>
-<td>输出结果精确到秒</td>
-</tr>
-<tr>
-<td>-tt</td>
-<td>10:33:48.159682 exit_group(0)</td>
-<td>输出结果精确到微妙</td>
-</tr>
-<tr>
-<td>-ttt</td>
-<td>1262169244.788478 exit_group(0)</td>
-<td>精确到微妙，而且时间表示为unix时间戳</td>
-</tr>
-</tbody>
-</table>
+参数名 | 输出样式 | 说明
+--- | --- | ---
+-t | 10:33:04 exit_group(0) | 输出结果精确到秒
+-tt | 10:33:48.159682 exit_group(0) | 输出结果精确到微妙
+-ttt | 1262169244.788478 exit_group(0) | 精确到微妙，而且时间表示为unix时间戳
 
  **截断输出** 
 
@@ -285,7 +264,7 @@ strace不光能自己初始化一个进程进行trace，还能追踪现有的进
 strace -p pid
 ```
 
-### 综合例子  
+###  综合例子
 
 说了那么多的功能和参数，现在我们来一个实用点的，就是研究下Oracle的lgwr进程，看看这个进程是不是像文档所说的那样没3s钟写一次log文件，考虑到lgwr写日志的触发条件比较多，我们需要找一个空闲的Oracle实例做这个实验。
 
@@ -384,4 +363,3 @@ lrwx------    1 oracle   dba            64 Dec 30 10:55 25 -> /db/databases/orcl
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

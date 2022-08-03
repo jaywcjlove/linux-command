@@ -7,13 +7,13 @@ elm
 
 **elm命令** 是一个E-mail客户端管理程序，它提供了纯文本交互式全屏幕界面。
 
-### 语法  
+###  语法
 
 ```shell
 elm(选项)
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -s<邮件主题>：指定新邮件的邮件主题；
@@ -26,4 +26,3 @@ elm(选项)
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

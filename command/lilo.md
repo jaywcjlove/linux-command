@@ -11,13 +11,13 @@ Linux lilo已经成为所有 Linux 发行版的标准组成部分。作为一个
 
 虽然 LILO 仍在不断地发展，但 LILO 工作原理的基本概念保持不变。
 
-### 语法  
+###  语法
 
 ```shell
 lilo(选项)
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -b<外围设备代号>：指定安装lilo之处的外围设备代号；
@@ -43,7 +43,7 @@ lilo(选项)
 -V：显示版本信息。
 ```
 
-### 实例  
+###  实例
 
  **使用 LILO 作为引导加载程序** 
 
@@ -134,4 +134,3 @@ LILO 被成功加载后，将看到 LILO 提示符。还是使用前面的示例
 关于第一次尝试 LILO 的最后一点建议是：我发现使用软盘引导磁盘比使用硬盘实现 LILO 配置更为安全。为此，必须在 lilo.conf 文件中使用`boot=/dev/fd0`替换`boot=/dev/hda`。那样，如果弄乱了lilo.conf文件 中的任何配置，都可以取出引导磁盘并像先前一样引导到 Linux。当使用软盘进行引导一切正常以后，可以将lilo.conf修改回`boot=/dev/hda`，然后最后一次运行`/sbin/lilo`来上传修改。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

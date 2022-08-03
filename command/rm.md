@@ -48,14 +48,38 @@ Remove example ?y（删除文件example)
 
 应注意，这样做是非常危险的!
 
-**rm 命令删除文件**
+**删除当前目录下的 package-lock.json 文件**
 
-```shellbash
+```shell
+find .  -name "package-lock.json" -exec rm -rf {} \;
+```
+
+**查找 *.html 结尾的文件并删除**
+
+```shell
+find ./docs -name "*.html" -exec rm -rf {} \;
+```
+
+**删除当前项目下 *.html 结尾的文件**
+
+```shell
+rm -rf *.html
+```
+
+**删除当前目录下的 node_modules 目录**
+
+```shell
+find . -name 'node_modules' -type d -prune -exec rm -rf '{}' +
+```
+
+**删除文件**
+
+```shell
 # rm 文件1 文件2 ...
 rm testfile.txt
 ```
 
-**rm 命令删除目录**
+**删除目录**
 
 > rm -r [目录名称]
 > -r 表示递归地删除目录下的所有文件和目录。
@@ -106,4 +130,4 @@ rm -I file1 file2 file3
 rm -v [文件/目录]
 ```
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

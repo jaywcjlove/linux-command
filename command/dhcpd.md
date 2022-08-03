@@ -1,15 +1,15 @@
 dhcpd
 ===
 
-运行DHCP服务器。
+运行DHCP服务器
 
-### 语法  
+###  语法
 
 ```shell
 dhcpd [选项] [网络接口]
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -p <端口> 指定dhcpd监听的端口
@@ -54,4 +54,4 @@ it workbetter with this distribution.
 exiting.
 ```
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

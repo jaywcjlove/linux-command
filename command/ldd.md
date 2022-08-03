@@ -7,13 +7,13 @@ ldd
 
 **ldd命令** 用于打印程序或者库文件所依赖的共享库列表。
 
-### 语法  
+###  语法
 
 ```shell
 ldd(选项)(参数)
 ```
 
-### 选项  
+###  选项
 
 ```shell
 --version：打印指令版本号；
@@ -24,11 +24,11 @@ ldd(选项)(参数)
 --help：显示帮助信息。
 ```
 
-### 参数  
+###  参数
 
 文件：指定可执行程序或者文库。
 
-### 其他介绍  
+###  其他介绍
 
 首先ldd不是一个可执行程序，而只是一个shell脚本
 
@@ -45,4 +45,3 @@ ldd显示可执行模块的dependency的工作原理，其实质是通过ld-linu
 实际上可以直接执行ld-linux.so模块，如：`/lib/ld-linux.so.2 --list program`（这相当于ldd program）
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

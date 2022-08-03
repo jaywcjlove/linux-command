@@ -7,13 +7,13 @@ samba用户和密码管理工具
 
 **smbpasswd命令** 属于samba套件，能够实现添加或删除samba用户和为用户修改密码。
 
-### 语法  
+###  语法
 
 ```shell
 smbpasswd(选项)(参数)
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -a：向smbpasswd文件中添加用户；
@@ -24,9 +24,8 @@ smbpasswd(选项)(参数)
 -n：将指定的用户的密码置空。
 ```
 
-### 参数  
+###  参数
 
 用户名：指定要修改SMB密码的用户。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -7,13 +7,13 @@ ip6tables-restore
 
 **ip6tables-restore命令** 用来还原ip6tables表。
 
-### 语法  
+###  语法
 
 ```shell
 ip6tables-restore(选项)
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -c：指定在还原iptables表时，还原当前的数据包计数器和字节计数器值；
@@ -21,4 +21,3 @@ ip6tables-restore(选项)
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

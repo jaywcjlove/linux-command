@@ -18,7 +18,7 @@ Linux上常用的防火墙软件
     - [防火墙的策略](#防火墙的策略)
     - [防火墙的策略](#防火墙的策略-1)
   - [实例](#实例)
-    - [空当前的所有规则和计数](#空当前的所有规则和计数)
+    - [清空当前的所有规则和计数](#清空当前的所有规则和计数)
     - [配置允许ssh端口连接](#配置允许ssh端口连接)
     - [允许本地回环地址可以正常使用](#允许本地回环地址可以正常使用)
     - [设置默认的规则](#设置默认的规则)
@@ -72,7 +72,7 @@ iptables(选项)(参数)
 -F, --flush [chain] 清空指定链 chain 上面的所有规则。如果没有指定链，清空该表上所有链的所有规则。
 -N, --new-chain chain 用指定的名字创建一个新的链。
 -X, --delete-chain [chain] ：删除指定的链，这个链必须没有被其它任何规则引用，而且这条上必须没有任何规则。如果没有指定链名，则会删除该表中所有非内置的链。
--E, --rename-chain old-chain new-chain ：用指定的新名字去重命名指定的链。这并不会对链内部照成任何影响。
+-E, --rename-chain old-chain new-chain ：用指定的新名字去重命名指定的链。这并不会对链内部造成任何影响。
 -Z, --zero [chain] ：把指定链，或者表中的所有链上的所有计数器清零。
 
 -j, --jump target <指定目标> ：即满足某条件时该执行什么样的动作。target 可以是内置的目标，比如 ACCEPT，也可以是用户自定义的链。
@@ -154,6 +154,7 @@ iptables还支持自己定义链。但是自己定义的链，必须是跟某种
 - **DNAT** ：目标地址转换。
 - **MASQUERADE** ：IP伪装（NAT），用于ADSL。
 - **LOG** ：日志记录。
+- **SEMARK** : 添加SEMARK标记以供网域内强制访问控制（MAC）
 
 ```shell
                              ┏╍╍╍╍╍╍╍╍╍╍╍╍╍╍╍┓
@@ -191,7 +192,7 @@ iptables还支持自己定义链。但是自己定义的链，必须是跟某种
 
 ### 实例
 
-#### 空当前的所有规则和计数
+#### 清空当前的所有规则和计数
 
 ```shell
 iptables -F  # 清空所有的防火墙规则
@@ -390,6 +391,12 @@ iptables -I INPUT -j DROP -p tcp -s 0.0.0.0/0 -m string --algo kmp --string "cmd
 iptables -A INPUT -p tcp --syn -m limit --limit 5/second -j ACCEPT
 ```
 
+#### 添加SECMARK记录
+```shell
+iptables -t mangle -A INPUT -p tcp --src 192.168.1.2 --dport 443 -j SECMARK --selctx system_u:object_r:myauth_packet_t
+# 向从 192.168.1.2:443 以TCP方式发出到本机的包添加MAC安全上下文 system_u:object_r:myauth_packet_t
+```
+
 ## 更多实例
 > 用iptables搭建一套强大的安全防护盾 http://www.imooc.com/learn/389
 
@@ -512,4 +519,4 @@ iptables -I INPUT -p tcp --syn --dport 80 -m connlimit --connlimit-above 100 -j 
 iptables -I INPUT -m limit --limit 3/hour --limit-burst 10 -j ACCEPT # limit模块; --limit-burst 默认为5
 ```
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

@@ -7,13 +7,13 @@ cupsdisable
 
 **cupsdisable命令** 用于停止指定的打印机。
 
-### 语法  
+###  语法
 
 ```shell
 cupsdisable(选项)(参数)
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -E：当连接到服务器时强制使用加密；
@@ -24,9 +24,8 @@ cupsdisable(选项)(参数)
 -r：停止打印机的原因。
 ```
 
-### 参数  
+###  参数
 
 目标：指定目标打印机。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

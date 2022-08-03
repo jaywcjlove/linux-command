@@ -7,14 +7,14 @@ semanage
 
 **semanage命令** 是用来查询与修改SELinux默认目录的安全上下文。SELinux的策略与规则管理相关命令：seinfo命令、sesearch命令、getsebool命令、setsebool命令、semanage命令。
 
-### 语法  
+###  语法
 
 ```shell
 semanage {login|user|port|interface|fcontext|translation} -l
 semanage fcontext -{a|d|m} [-frst] file_spec
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -l：查询。
@@ -24,7 +24,7 @@ fcontext：主要用在安全上下文方面。
 -d：删除。
 ```
 
-### 实例  
+###  实例
 
 查询一下`/var/www/html`的默认安全性本文的设置：
 
@@ -82,4 +82,3 @@ drwxr-xr-x  root root system_u:object_r:public_content_t /srv/samba/  #有默认
 semanage命令的功能很多，这里主要用到的仅有fcontext这个选项的用法而已。如上所示，你可以使用semanage来查询所有的目录默认值，也能够使用它来增加默认值的设置！
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

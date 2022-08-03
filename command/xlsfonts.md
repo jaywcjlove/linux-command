@@ -7,13 +7,13 @@ xlsfonts
 
 **xlsfonts命令** 列出X Server使用的字体，也能使用范本样式仅列出的符合条件的字体。
 
-### 语法  
+###  语法
 
 ```shell
 xlsfonts(选项)
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -l：除字体名称外，同时列出字体的属性；
@@ -27,4 +27,3 @@ xlsfonts(选项)
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
