@@ -1,19 +1,19 @@
 named-checkzone
 ===
 
-使用named-checkzone命令可以进行区域文件有效性检查和转换，必须指定区域名称和区域文件名称。
+使用named-checkzone命令可以进行区域文件有效性检查和转换，必须指定区域名称和区域文件名称
 
 ## 补充说明
 
 **named-checkzone命令** 可以进行区域文件有效性检查和转换，必须指定区域名称和区域文件名称。
 
-### 语法  
+###  语法
 
 ```shell
 named-checkzone [选项] [区域名] [区域文件名]
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -q 安静模式
@@ -40,4 +40,4 @@ zonesh.com/IN: loaded serial 1268360234
 OK
 ```
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

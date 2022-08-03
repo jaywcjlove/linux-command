@@ -1,7 +1,7 @@
 firewall-cmd
 ===
 
-Linux上新用的防火墙软件，跟iptables差不多的工具。
+Linux上新用的防火墙软件，跟iptables差不多的工具
 
 ## 补充说明
 
@@ -47,16 +47,17 @@ firewall-cmd [选项 ... ]
 --set-log-denied=<value> # 设置记录被拒绝的日志，只能为 'all','unicast','broadcast','multicast','off' 其中的一个；
 ```
 
-### 实例  
+###  实例
 
 ```shell
 # 安装firewalld
 yum install firewalld firewall-config
 
 systemctl start  firewalld # 启动
+systemctl stop firewalld  # 停止
+systemctl enable firewalld # 启用自动启动
+systemctl disable firewalld # 禁用自动启动
 systemctl status firewalld # 或者 firewall-cmd --state 查看状态
-systemctl disable firewalld # 停止
-systemctl stop firewalld  # 禁用
 
 # 关闭服务的方法
 # 你也可以关闭目前还不熟悉的FirewallD防火墙，而使用iptables，命令如下：
@@ -138,10 +139,10 @@ Amanda, FTP, Samba和TFTP等最重要的服务已经被FirewallD提供相应的�
 firewall-cmd --get-services
 
 # 允许SSH服务通过
-firewall-cmd --enable service=ssh
+firewall-cmd --new-service=ssh
 
 # 禁止SSH服务通过
-firewall-cmd --disable service=ssh
+firewall-cmd --delete-service=ssh
 
 # 打开TCP的8080端口
 firewall-cmd --enable ports=8080/tcp

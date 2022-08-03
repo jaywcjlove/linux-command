@@ -7,13 +7,13 @@ scp
 
 **scp命令** 用于在Linux下进行远程拷贝文件的命令，和它类似的命令有cp，不过cp只是在本机进行拷贝不能跨服务器，而且scp传输是加密的。可能会稍微影响一下速度。当你服务器硬盘变为只读read only system时，用scp可以帮你把文件移出来。另外，scp还非常不占资源，不会提高多少系统负荷，在这一点上，rsync就远远不及它了。虽然 rsync比scp会快一点，但当小文件众多的情况下，rsync会导致硬盘I/O非常高，而scp基本不影响系统正常使用。
 
-### 语法  
+###  语法
 
 ```shell
 scp(选项)(参数)
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -1：使用ssh协议版本1；
@@ -32,16 +32,16 @@ scp(选项)(参数)
 -r：以递归方式复制。
 ```
 
-### 参数  
+###  参数
 
 * 源文件：指定要复制的源文件。
 * 目标文件：目标文件。格式为`user@host：filename`（文件名为目标文件的名称）。
 
-### 实例  
+###  实例
 
 从远程复制到本地的scp命令与上面的命令雷同，只要将从本地复制到远程的命令后面2个参数互换顺序就行了。
 
- **从远处复制文件到本地目录** 
+ **从远程机器复制文件到本地目录** 
 
 ```shell
 scp root@10.10.10.10:/opt/soft/nginx-0.5.38.tar.gz /opt/soft/
@@ -56,7 +56,7 @@ scp -i amazon.pem ubuntu@10.10.10.10:/usr/local/openvpn_as/etc/exe/openvpn-conne
 ```
 从10.10.10.10机器上下载openvpn安装文件到本地当前目录来。
 
- **从远处复制到本地** 
+ **从远程机器复制到本地** 
 
 ```shell
 scp -r root@10.10.10.10:/opt/soft/mongodb /opt/soft/
@@ -83,4 +83,4 @@ scp -r /opt/soft/mongodb root@10.10.10.10:/opt/soft/scptest
 上传本地目录`/opt/soft/mongodb`到远程机器10.10.10.10上`/opt/soft/scptest`的目录中去。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

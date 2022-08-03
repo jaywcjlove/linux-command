@@ -1,19 +1,19 @@
 vgrename
 ===
 
-使用vgrename命令可以重命名卷组的名称。
+使用vgrename命令可以重命名卷组的名称
 
 ## 补充说明
 
 **grename命令** 可以重命名卷组的名称。
 
-### 语法  
+### 语法
 
 ```shell
 vgrename [选项] [旧卷组路径|旧卷组名称|旧卷组UUID] [新卷组路径|新卷组名称]
 ```
 
-### 选项  
+### 选项
 
 ```shell
 -d 启用调试模式
@@ -36,4 +36,4 @@ vgrename [选项] [旧卷组路径|旧卷组名称|旧卷组UUID] [新卷组路�
   Volume group "vg1" successfully renamed to "vg2"
 ```
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

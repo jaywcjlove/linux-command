@@ -1,107 +1,171 @@
 <p align="center">
-  <a href="http://www.oschina.net/">
+  <a href="https://jaywcjlove.github.io/linux-command">
     <img src="./template/img/banner.svg?sanitize=true">
   </a>
+  <h1>Linux Command</h1>
 </p>
 
-Linux Command
---- 
+[![CI](https://github.com/jaywcjlove/linux-command/actions/workflows/ci.yml/badge.svg)](https://github.com/jaywcjlove/linux-command/actions/workflows/ci.yml)
+[![Web](https://jaywcjlove.github.io/sb/ico/linux.svg)](https://jaywcjlove.github.io/linux-command/)
+[![weibo](https://jaywcjlove.github.io/sb/ico/weibo.svg)](http://weibo.com/pc175)
+[![Get this with npm](https://jaywcjlove.github.io/sb/ico/npm.svg)](https://www.npmjs.com/package/linux-command)
+[![NPM Download](https://img.shields.io/npm/dm/linux-command.svg?style=flat)](https://www.npmjs.com/package/linux-command)
+[![jsdelivr cdn](https://data.jsdelivr.com/v1/package/npm/linux-command/badge)](https://www.jsdelivr.com/package/npm/linux-command)
+[![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/wcjiang/linux-command?logo=docker)](https://hub.docker.com/r/wcjiang/linux-command)
 
-[![](https://jaywcjlove.github.io/sb/ico/linux.svg)](https://jaywcjlove.github.io/linux-command/) [![](https://jaywcjlove.github.io/sb/ico/weibo.svg)](http://weibo.com/pc175)
+当前仓库搜集了 570 多个 Linux 命令，是一个非盈利性的仓库，生成了一个 web 网站方便使用，目前网站没有任何广告，内容包含 Linux 命令手册、详解、学习，内容来自网络和网友的补充，非常值得收藏的 Linux 命令速查手册。版权归属原作者，对任何法律问题及风险不承担任何责任，没有任何商业目的，如果认为侵犯了您的版权，请来信告知。我不能完全保证内容的正确性。通过使用本站内容带来的风险与我无关。当使用本站时，代表您已接受了本站的使用条款和隐私条款。
 
+[Web](#web-版本) | [微信小程序](#微信小程序版本) | [Dash](#dash-版本) | [Raycast](#raycast-版本) | [Alfred](#alfred-版本) | [KDE/Krunner](https://github.com/roachsinai/krunner-linuxcommands) | [Android](https://github.com/Ernest-su/LinuxCmd.git) | [Mac/Win/Linux](https://github.com/haloislet/linux-command) | [Chrome Plugin](#chrome-插件) | [命令行工具](#命令行工具) | [Docker](#docker)
 
-550 多个 Linux 命令，内容包含 Linux 命令手册、详解、学习，值得收藏的 Linux 命令速查手册。请原谅我写了个爬虫，爬了他们家的数据 [linuxde.net](http://man.linuxde.net) ，同时进行了编辑，增加了一些数据。对他们的辛勤劳动表示敬意，个人希望能本地离线搜索，不喜欢广告，希望得到干净漂亮的预览界面，业余和工作时间需要使用大量的命令，所以干了一件看似比较愚蠢的事情，在回头有空的时候估计能做一个App？，或者是命令行帮助工具？但目前还没有计划...
+### Web 版本
 
-[Web](#web-版本) | [Dash](#dash-版本) | [Alfred](#alfred-版本) | [Krunner](https://github.com/roachsinai/krunner-linuxcommands) | [Android](https://github.com/Ernest-su/LinuxCmd.git) | [Mac/Win/Linux](https://github.com/haloislet/linux-command) | [Chrome Plugin](#chrome-插件)
+[Github Web](http://jaywcjlove.github.io/linux-command/) | [Gitee Web](http://jaywcjlove.gitee.io/linux-command/) | [Githack](https://raw.githack.com/jaywcjlove/linux-command/gh-pages/index.html) | [Statically](https://cdn.statically.io/gh/jaywcjlove/linux-command/gh-pages/index.html)
 
-## 开发使用
+扫描二维码移动端预览搜索，也可通过二维码下面链接地址打开使用，下面网站是通过 Github Action 自动更新。
 
-可以通过 `npm` 安装 `linux-command` 包，包含所有命令的 markdown 文本，和一个[索引文件](dist/data.json)。
+⚠️ [Gitee Web](http://jaywcjlove.gitee.io/linux-command/) 存在 `违禁违规` 内容问题 [#283](https://github.com/jaywcjlove/linux-command/issues/283)。
 
-```bash
-npm install linux-command
-```
+[![Linux 命令大全](https://user-images.githubusercontent.com/1680273/123261718-ab585380-d529-11eb-86e1-e97cdcd78150.png)](https://jaywcjlove.github.io/linux-command/)
 
-```js
-var comm = require("linux-command");
-console.log("---->", comm.ls);
+预览搜索：**https://git.io/linux**
 
-var alias = require("linux-command/command/alias.md");
-console.log("---->", alias); // markdown string
-```
+[![Linux 命令大全](https://user-images.githubusercontent.com/1680273/123261829-ce830300-d529-11eb-8cea-a39059b972dd.gif)](https://jaywcjlove.github.io/linux-command/)
 
-你也可以通过 CDN 来访问索引数据，和对应的命令详细内容，我将更新内容定期发布版本，提供大家使用，[UNPKG](https://unpkg.com/linux-command/) 带上版本号，将锁定版本访问，删除版本号请求数据，将会自动重定向最新版本。
+你可以随意部署 web 版，这非常简单，只需要克隆 [`gh-pages`](https://github.com/jaywcjlove/linux-command/tree/gh-pages) 分支代码到你的静态服务就可以了。你也可以将 [`command`](https://github.com/jaywcjlove/linux-command/tree/master/command) 目录中的 Markdown 文件拿去自己生成 HTML。
 
-```shell
-# 命令索引 JSON 数据
-https://unpkg.com/linux-command/dist/data.json
-# 对应命令详情（Markdown）数据
-https://unpkg.com/linux-command/command/<命令名称>.md
-```
+⚠️ 你们拿过去部署的静态网站，还是希望挂个 GitHub 地址，这样大家共同维护命令文档，让文档更加完善，更加丰富，当然你删除本站所有信息相关信息，其实我也不太在意，默认允许你们随意搞，我不负任何负责。如果您也部署了一份，可以将网址放到下面 :)。
 
-你也可以通过 Github 的 Raw 来，获取最新的内容
+[`linux.devonline.net`](http://linux.devonline.net/)，[`linux.ftqq.com`](https://linux.ftqq.com/)，[`linux.gaomeluo.com`](https://linux.gaomeluo.com)，[`atoolbox.net`](http://www.atoolbox.net/Tool.php?Id=826)，[`xiaoshanseo.com`](https://tools.xiaoshanseo.com/Tools/linux-command/)，[`262235.xyz`](https://262235.xyz/linux-command/)，[`cmsblogs.cn`](https://linux.cmsblogs.cn/)，[`loquy.cn`](https://www.loquy.cn/linux-command/)，[`bqrdh.com`](https://tools.bqrdh.com/linux-command/)，[`buyao.vip`](https://demo.buyao.vip/linux/)，[`hezhiqiang.gitbook.io`](https://hezhiqiang.gitbook.io/linux/)，[`linux.mmoke.com`](https://linux.mmoke.com), [`luojianjun.cn`](https://luojianjun.cn/linux-command/), [`man.zch.ooo`](https://man.zch.ooo/)
 
-```shell
-# 命令索引 JSON 数据
-https://raw.githubusercontent.com/jaywcjlove/linux-command/master/dist/data.json
-# 对应命令详情（Markdown）数据
-https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命令名称>.md 
-```
+### 微信小程序版本
 
-#### Chrome 插件
+微信小程序版本，由 [**@Matz Yang**](https://github.com/MatzYang) 提供 [#260](https://github.com/jaywcjlove/linux-command/issues/260)。
+
+<img width="180" src="https://user-images.githubusercontent.com/1445225/123251478-d50b7d80-d51d-11eb-80e4-01e18212fc4d.png" />
+
+### Chrome 插件
 
 可在[源码仓库](https://github.com/jaywcjlove/oscnews)预览效果，[Github下载 crx 文件安装](https://github.com/jaywcjlove/oscnews/releases) 或者[开源中国下载 crx 文件安装](https://gitee.com/jaywcjlove/oscnews/releases) 也可通过 Chrome Web Store 下载：
 
 [![Chrome Web Store 下载](http://jaywcjlove.github.io/sb/download/chrome-web-store.svg)](https://chrome.google.com/webstore/detail/oscnews/iheapfheanfjcemgneblljhaebonakbg)
 
-[![Chrome Web Store 下载](./assets/chrome-extensions.gif)](https://github.com/jaywcjlove/oscnews)
+<details>
+<summary>Chrome 插件截图</summary>
 
-#### Web 版本
+<a href="https://github.com/jaywcjlove/oscnew"><img width="556" alt="Chrome 插件截图" src="./assets/chrome-extensions.gif" /></a>
 
-[Github Web](http://jaywcjlove.github.io/linux-command/) | [OSChina Web](http://jaywcjlove.gitee.io/linux-command/) | [Web 1](http://linux-command.composer-proxy.org/)
+</details>
 
-扫描二维码移动端预览搜索，也可通过二维码下面链接地址打开使用。
+### Raycast 版本
 
-[![Linux 命令大全](./assets/qr.png)](https://jaywcjlove.github.io/linux-command/)
+[Raycast 版本安装](https://www.raycast.com/jaywcjlove/linux-command)， ([**#338**](https://github.com/jaywcjlove/linux-command/issues/338))下图是界面效果： 
 
-预览搜索：**https://git.io/linux**
+<details>
+<summary>Raycast 版本截图</summary>
 
-[![Linux 命令大全](./assets/Linux.gif)](https://jaywcjlove.github.io/linux-command/)
+<img width="556" alt="Raycast 版本截图" src="https://user-images.githubusercontent.com/1680273/156889676-a4c5d6c5-3d0d-4ceb-a573-83f328c94756.png" />
 
-#### Alfred 版本
+<img width="556" alt="Raycast 版本截图" src="https://user-images.githubusercontent.com/1680273/156889683-e0d54e59-994a-4ef6-85e8-2ae3e7163a87.png" />
+
+<img width="556" alt="Raycast 版本截图" src="https://user-images.githubusercontent.com/1680273/156889728-c45290b0-100a-4a4c-a7cd-42bf3fe2b2f4.png" />
+
+<img width="556" alt="Raycast 版本截图" src="https://user-images.githubusercontent.com/1680273/156889699-42a8fb60-e239-49ce-b5db-a4b0875faa5f.png" />
+
+</details>
+
+
+### Alfred 版本
 
 [Alfred 版本下载](https://github.com/jaywcjlove/linux-command/releases)， 下图是界面效果。 
 
-[![Linux 命令大全](./assets/alfred.png)](https://github.com/jaywcjlove/linux-command/releases)
+<details>
+<summary>Alfred 版本截图</summary>
 
-#### Dash 版本
+<a href="https://github.com/jaywcjlove/linux-command/releases"><img width="556" alt="Alfred 版本截图" src="./assets/alfred.png" /></a>
 
-由 [**@SHANG殇**](https://github.com/xinshangshangxin) 提供的 `Dash` 版本 [#91](https://github.com/jaywcjlove/linux-command/pull/91)，可配合 `alfred` 玩耍，下载 [linux-command.docset.zip](https://github.com/jaywcjlove/linux-command/releases) 文件解压，点击安装即可。
+</details>
 
-[![](https://user-images.githubusercontent.com/8779091/57193499-5b475d00-6f6e-11e9-879d-e7e8fdc40ced.gif)](https://github.com/jaywcjlove/linux-command/releases)
+### Dash 版本
+
+由 [**@SHANG殇**](https://github.com/xinshangshangxin) 提供的 `Dash` 版本 [#91](https://github.com/jaywcjlove/linux-command/pull/91)，可配合 `alfred` 玩耍，下载 [linux-command.docset.zip](https://jaywcjlove.github.io/linux-command/linux-command.docset.zip) 文件解压，点击安装即可。
+
+
+<details>
+<summary>Dash 版本截图</summary>
+
+<a href="https://github.com/jaywcjlove/linux-command/releases"><img width="556" alt="Dash 版本截图" src="https://user-images.githubusercontent.com/8779091/57193499-5b475d00-6f6e-11e9-879d-e7e8fdc40ced.gif" /></a>
+
+</details>
+
+### Android 版本
+
+[Android 版本下载](https://github.com/Ernest-su/LinuxCmd/releases)， 下图是界面效果。 
+
+<details>
+<summary>Android 版本截图</summary>
+
+<img width="556" alt="Android 版本截图" src="https://github.com/Ernest-su/LinuxCmd/raw/master/screenshot/screenshot1.png" />
+
+<img width="556" alt="Android 版本截图" src="https://github.com/Ernest-su/LinuxCmd/raw/master/screenshot/screenshot2.png" />
+
+</details>
+
+### 命令行工具
+
+- [`@chenjiandongx/how`](https://github.com/chenjiandongx/how) Python 版 [#129](https://github.com/jaywcjlove/linux-command/issues/129)，由 [**@陈键冬**](https://github.com/chenjiandongx) 提供。
+- [`@chenjiandongx/pls`](https://github.com/chenjiandongx/pls) Golang 版 [#129](https://github.com/jaywcjlove/linux-command/issues/129)，由 [**@陈键冬**](https://github.com/chenjiandongx) 提供。
+
+
+## Docker
+
+[![Docker Image Version (latest by date)](https://img.shields.io/docker/v/wcjiang/linux-command?logo=docker)](https://hub.docker.com/r/wcjiang/linux-command) [![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/wcjiang/linux-command?logo=docker)](https://hub.docker.com/r/wcjiang/linux-command) [![Docker Pulls](https://img.shields.io/docker/pulls/wcjiang/linux-command?logo=docker)](https://hub.docker.com/r/wcjiang/linux-command)
+
+轻松通过 docker 部署 linux-command 网站。
+
+```bash
+docker pull wcjiang/linux-command
+# Or
+docker pull ghcr.io/jaywcjlove/linux-command:latest
+```
+
+```bash
+docker run --name linux-command --rm -d -p 9665:3000 wcjiang/linux-command:latest
+# Or
+docker run --name linux-command -itd -p 9665:3000 wcjiang/linux-command:latest
+# Or
+docker run --name linux-command -itd -p 9665:3000 ghcr.io/jaywcjlove/linux-command:latest
+```
+
+在浏览器中访问以下 URL
+
+```bash
+http://localhost:9665/
+```
 
 ## 目录
 
+- [目录](#目录)
 - [Linux命令分类](#linux命令分类)
-  - [文件管理](#文件管理) File Management
-  - [文件传输](#文件传输) File Transfer
-  - [文本处理](#文本处理) File Editor
-  - [备份压缩](#备份压缩) File Compression
-  - [系统管理](#系统管理) System Management
-  - [系统设置](#系统设置) System Settings
-  - [网络通讯](#网络通讯) Network Communication
-  - [磁盘管理](#磁盘管理) Disk Management
-  - [磁盘维护](#磁盘维护) Disk Maintenance
-  - [设备管理](#设备管理) Device Commands
+  - [文件传输](#文件传输)
+  - [备份压缩](#备份压缩)
+  - [文件管理](#文件管理)
+  - [磁盘管理](#磁盘管理)
+  - [磁盘维护](#磁盘维护)
+  - [系统设置](#系统设置)
+  - [系统管理](#系统管理)
+  - [文本处理](#文本处理)
+  - [网络通讯](#网络通讯)
+  - [设备管理](#设备管理)
   - [电子邮件与新闻组](#电子邮件与新闻组)
-  - [其他命令](#其他命令) Misc Commands
-- [Node调用](#node调用)
+  - [其他命令](#其他命令)
+- [开发使用](#开发使用)
 - [Linux学习资源整理](#linux学习资源整理)
- - [社区网站](#社区网站) 
- - [知识相关](#知识相关) 
- - [软件工具](#软件工具) 
- - [中国开源镜像站点](#中国开源镜像站点) 
- - [游戏玩家发行版](#游戏玩家发行版) 
+  - [社区网站](#社区网站)
+  - [知识相关](#知识相关)
+  - [软件工具](#软件工具)
+  - [中国开源镜像站点](#中国开源镜像站点)
+  - [游戏玩家发行版](#游戏玩家发行版)
+- [Team](#team)
 
 
 ## Linux命令分类
@@ -142,7 +206,7 @@ awk、col、colrm、comm、csplit、ed、egrep、ex、fgrep、fmt、fold、grep�
 
 ### 网络通讯
 
-dip、getty、mingetty、ppp-off、smbd(samba daemon)、telnet、uulog、uustat、uux、cu、dnsconf、efax、httpd、ifconfig、mesg、minicom、nc、netconf、netconfig、netstat、ping、pppstats、samba、setserial、shapecfg(shaper configuration)、smbd(samba daemon)、statserial(status ofserial port)、talk、tcpdump、testparm(test parameter)、traceroute、tty(teletypewriter)、uuname、wall(write all)、write、ytalk、arpwatch、apachectl、smbclient(samba client)、pppsetup
+dip、getty、mingetty、ppp-off、smbd(samba daemon)、telnet、uulog、uustat、uux、cu、dnsconf、efax、httpd、ip、ifconfig、mesg、minicom、nc、netconf、netconfig、netstat、ping、pppstats、samba、setserial、shapecfg(shaper configuration)、smbd(samba daemon)、statserial(status ofserial port)、talk、tcpdump、testparm(test parameter)、traceroute、tty(teletypewriter)、uuname、wall(write all)、write、ytalk、arpwatch、apachectl、smbclient(samba client)、pppsetup
 
 ### 设备管理
 
@@ -155,6 +219,41 @@ archive、ctlinnd、elm、getlist、inncheck、mail、mailconf、mailq、message
 ### 其他命令
 
 yes
+
+
+## 开发使用
+
+可以通过 `npm` 安装 [`linux-command`](https://www.npmjs.com/package/linux-command) 包，包含所有命令的 markdown 文本，和一个[索引文件](dist/data.json)。
+
+```bash
+npm install linux-command
+```
+
+```js
+var comm = require("linux-command");
+console.log("---->", comm.ls);
+
+var alias = require("linux-command/command/alias.md");
+console.log("---->", alias); // markdown string
+```
+
+你也可以通过 CDN 来访问索引数据，和对应的命令详细内容，我将更新内容定期发布版本，提供大家使用，[UNPKG](https://unpkg.com/linux-command/) 带上版本号，将锁定版本访问，删除版本号请求数据，将会自动重定向最新版本。
+
+```shell
+# 命令索引 JSON 数据
+https://unpkg.com/linux-command/dist/data.json
+# 对应命令详情（Markdown）数据
+https://unpkg.com/linux-command/command/<命令名称>.md
+```
+
+你也可以通过 Github 的 Raw 来，获取最新的内容
+
+```shell
+# 命令索引 JSON 数据
+https://raw.githubusercontent.com/jaywcjlove/linux-command/master/dist/data.json
+# 对应命令详情（Markdown）数据
+https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命令名称>.md 
+```
 
 ## Linux学习资源整理
 
@@ -181,10 +280,6 @@ yes
 ### 软件工具
 
 - [超赞的Linux软件](https://www.gitbook.com/book/alim0x/awesome-linux-software-zh_cn/details) Github仓库[Zh](https://github.com/alim0x/Awesome-Linux-Software-zh_CN) [En](https://github.com/VoLuong/Awesome-Linux-Software)
-- [程序员喜欢的9款最佳的Linux文件比较工具](http://os.51cto.com/art/201607/513796.htm)
-- [提高 Linux 开发效率的 5 个工具](http://www.codeceo.com/article/5-linux-productivity-tools.html)
-- [你要了解的11款面向Linux系统的一流备份实用工具](http://os.51cto.com/art/201603/508027.htm)
-- [16个很有用的在线工具](http://www.simlinux.com/archives/264.html)
 - Adobe软件的最佳替代品 [原文在这里](https://linux.cn/article-8928-1.html)
   - [Evince (Adobe Acrobat Reader)](https://wiki.gnome.org/Apps/Evince) 一个“支持多种文档格式的文档查看器”，可以查看PDF，还支持各种漫画书格式
   - [Pixlr (Adobe Photoshop)](https://pixlr.com/) 一个强大的图像编辑工具
@@ -202,13 +297,10 @@ yes
 - 搜狐开源镜像站：http://mirrors.sohu.com/
 - 北京交通大学：http://mirror.bjtu.edu.cn/ \<教育网荐\>
 - 兰州大学：http://mirror.lzu.edu.cn/ \<西北高校FTP搜索引擎\>
-- 厦门大学：http://mirrors.xmu.edu.cn/
 - 上海交通大学：http://ftp.sjtu.edu.cn/
 - 清华大学：http://mirrors.tuna.tsinghua.edu.cn/
-  - http://mirrors6.tuna.tsinghua.edu.cn/
   - http://mirrors4.tuna.tsinghua.edu.cn/
 - 中国科学技术大学：http://mirrors.ustc.edu.cn/ 
-  - http://ipv4.ustc.edu.cn/ \<教育网、电信\>
   - http://ipv6.ustc.edu.cn/ \<IPv6 only\>
 - 东北大学：http://mirror.neu.edu.cn/
 - 浙江大学：http://mirrors.zju.edu.cn/
@@ -226,3 +318,24 @@ yes
 - [Game Drift Linux](http://gamedrift.org/) [下载地址](http://gamedrift.org/Download.html)
 - [Solus](https://solus-project.com) [下载地址](https://solus-project.com/download/)
 - [Manjaro Gaming Edition (mGAMe)](https://sourceforge.net/projects/mgame/) [下载地址](https://sourceforge.net/projects/mgame/)
+
+
+## Team
+
+[![小弟调调™](https://github.com/jaywcjlove.png?size=100)](https://github.com/jaywcjlove) | [![ZhuangZhu-74](https://github.com/ZhuangZhu-74.png?size=100)](https://github.com/ZhuangZhu-74) | [![Huck Huang](https://github.com/huckhuang.png?size=100)](https://github.com/huckhuang)
+---|---|---
+[小弟调调™](http://wangchujiang.com) | [ZhuangZhu-74](https://github.com/ZhuangZhu-74) | [Huck Huang](https://github.com/huckhuang)
+
+## Contributors
+
+As always, thanks to our amazing contributors!
+
+<a href="https://github.com/jaywcjlove/linux-command/graphs/contributors">
+  <img src="https://jaywcjlove.github.io/linux-command/CONTRIBUTORS.svg" />
+</a>
+
+Made with [github-action-contributors](https://github.com/jaywcjlove/github-action-contributors).
+
+## License
+
+Licensed under the MIT License.

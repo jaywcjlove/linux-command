@@ -7,7 +7,7 @@ objdump
 
 **objdump命令** 是用查看目标文件或者可执行的目标文件的构成的gcc工具。
 
-### 选项  
+###  选项
 
 ```shell
 -a --archive-headers 
@@ -122,7 +122,7 @@ objdump -b oasys -m vax -h fu.o
 @file 可以将选项集中到一个文件中，然后使用这个@file选项载入。
 ```
 
-### 实例  
+###  实例
 
 首先，在给出后面大部分测试所基于的源代码以及编译指令。 源代码如下： 
 
@@ -484,4 +484,3 @@ Idx Name          Size      VMA       LMA       File off  Algn
 这里，更多的内容参见`man objdump`中的这个选项。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

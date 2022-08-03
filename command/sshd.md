@@ -7,13 +7,13 @@ openssh软件套件中的服务器守护进程
 
 **sshd命令** 是openssh软件套件中的服务器守护进程。
 
-### 语法  
+###  语法
 
 ```shell
 sshd(选项)
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -4：强制使用IPv4地址；
@@ -31,4 +31,3 @@ sshd(选项)
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

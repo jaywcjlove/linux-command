@@ -1,6 +1,6 @@
-
-<%-include('header'); %>
-<%- include('search',{type: "list"}); %>
+<%- include('partial/header'); %>
+<%- include('widget/search',{type: "list"}); %>
+<script type="text/javascript" src="<%=relative_path%>js/copy-to-clipboard.js"></script>
 
 <div class="markdown-body">
 <% if(md_path){ %>
@@ -10,7 +10,9 @@
 <a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master<%=md_path%>">添加实例</a>
 </span>
 <% } %>
-{{content}}
-</div>
 
-<%- include('footer',{type: "list"}); %>
+<%-mdhtml%>
+
+</div>
+<%- include('widget/footer',{type: "list"}); %>
+<%- include('partial/footer'); %>

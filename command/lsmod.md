@@ -7,13 +7,13 @@ lsmod
 
 **lsmod命令** 用于显示已经加载到内核中的模块的状态信息。执行lsmod命令后会列出所有已载入系统的模块。Linux操作系统的核心具有模块化的特性，应此在编译核心时，务须把全部的功能都放入核心。您可以将这些功能编译成一个个单独的模块，待需要时再分别载入。
 
-### 语法  
+###  语法
 
 ```shell
 lsmod
 ```
 
-### 实例  
+###  实例
 
 ```shell
 [root@LinServ-1 ~]# lsmod
@@ -100,4 +100,3 @@ ehci_hcd               34509  0
 通常在使用lsmod命令时，都会采用类似`lsmod | grep -i ext3`这样的命令来查询当前系统是否加载了某些模块。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

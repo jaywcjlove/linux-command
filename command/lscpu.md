@@ -7,13 +7,13 @@ lscpu
 
 **lscpu命令** 是显示有关CPU架构的信息。
 
-### 语法  
+###  语法
 
 ```shell
 lscpu [选项]
 ```
 
-### 选项  
+###  选项
 
 ```shell
  -a, --all               # 打印在线和离线CPU（默认为-e）
@@ -28,7 +28,7 @@ lscpu [选项]
  -V, --version  # 输出版本信息并退出
 ```
 
-### 参数  
+###  参数
 
 ```shell
 可用列：
@@ -72,4 +72,4 @@ L3 cache:              8192K
 NUMA node0 CPU(s):     0-3
 ```
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

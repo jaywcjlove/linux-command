@@ -7,21 +7,21 @@ setsebool
 
 **setsebool命令** 是用来修改SElinux策略内各项规则的布尔值。setsebool命令和getsebool命令是SELinux修改和查询布尔值的一套工具组。SELinux的策略与规则管理相关命令：seinfo命令、sesearch命令、getsebool命令、setsebool命令、semanage命令。
 
-### 语法  
+###  语法
 
 ```shell
 setsebool [-P] 布尔值=[0|1]
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -P:直接将设置值写入配置文件，该设置数据将来会生效的。
 ```
 
-### 实例  
+###  实例
 
-允许vsvtp匿名用户写入权限：
+允许vsftp匿名用户写入权限：
 
 ```shell
 setsebool -P allow_ftpd_anon_write=1
@@ -152,4 +152,3 @@ setsebool -P allow_ypbind 1
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -14,13 +14,13 @@ mv命令可以用来将源文件移至一个目标文件中，或将一组文件
 
 注意事项：mv与cp的结果不同，mv好像文件“搬家”，文件个数并未增加。而cp对文件进行复制，文件个数增加了。
 
-### 语法  
+###  语法 
 
 ```shell
 mv(选项)(参数)
 ```
 
-### 选项  
+###  选项 
 
 ```shell
 --backup=<备份模式>：若需覆盖文件，则覆盖前先行备份；
@@ -33,12 +33,12 @@ mv(选项)(参数)
 -u：当源文件比目标文件新或者目标文件不存在时，才执行移动操作。
 ```
 
-### 参数  
+###  参数 
 
 *   源文件：源文件列表。
 *   目标文件：如果“目标文件”是文件名则在移动文件的同时，将其改名为“目标文件”；如果“目标文件”是目录名则将源文件移动到“目标文件”下。
 
-### 实例  
+###  实例 
 
 将目录`/usr/men`中的所有文件移到当前目录（用`.`表示）中：
 
@@ -67,7 +67,7 @@ mv directory_1/ /home/office/
 
 重命名文件或目录
 
-```shellbash
+```shell
 mv file_1.txt file_2.txt # 将文件file_1.txt改名为file_2.txt
 ```
 
@@ -79,7 +79,7 @@ mv directory_1/ directory_2/
 
 打印移动信息
 
-```shellbash
+```shell
 mv -v *.txt /home/office
 ```
 
@@ -113,4 +113,4 @@ mv -bv *.txt /home/office
 mv -f *.txt /home/office
 ```
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

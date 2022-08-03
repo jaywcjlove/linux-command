@@ -7,17 +7,17 @@ newusers
 
 **newusers命令** 用于批处理的方式一次创建多个命令。
 
-### 语法  
+###  语法
 
 ```shell
 newusers(参数)
 ```
 
-### 参数  
+###  参数
 
 用户文件：指定包含用户信息的文本文件，文件的格式要与`/etc/passwd`相同。
 
-### 实例  
+###  实例
 
 实用newusers命令批量添加用户：
 
@@ -53,4 +53,3 @@ jingang1:x:521:521::/home/jingang1:/sbin/nologin
 关于用户名、UID、GID及用户的家目录是怎么回事，您可以读相应的参考文档。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

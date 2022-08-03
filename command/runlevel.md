@@ -7,13 +7,13 @@ runlevel
 
 **runlevel命令** 用于打印当前Linux系统的运行等级。
 
-### 语法  
+###  语法
 
 ```shell
 runlevel
 ```
 
-### 知识扩展  
+###  知识扩展
 
 linux操作系统自从开始启动至启动完毕需要经历几个不同的阶段，这几个阶段就叫做runlevel，同样，当linux操作系统关闭时也要经历另外几个不同的runlevel，下面我们就准备详细介绍一下runlevel，并向您展示一些小技巧来让您的linux系统避免不必要的重启动。
 
@@ -37,4 +37,3 @@ S s Single user mode
 linux的运行模式比起windows的启动模式的优势在于：你可以在系统空闲时使用init命令切换你现在使用的runlevel，另外，当你关闭或者启动linux系统时你已经不知不觉中切换你的runlevel，系统关机进程需要调用runlevel(0或6)来关闭所有正在运行中的进程。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

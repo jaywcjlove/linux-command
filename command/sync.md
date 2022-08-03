@@ -9,20 +9,22 @@ sync
 
 在Linux/Unix系统中，在文件或数据处理过程中一般先放到内存缓冲区中，等到适当的时候再写入磁盘，以提高系统的运行效率。sync命令则可用来强制将内存缓冲区中的数据立即写入磁盘中。用户通常不需执行sync命令，系统会自动执行update或bdflush操作，将缓冲区的数据写 入磁盘。只有在update或bdflush无法执行或用户需要非正常关机时，才需手动执行sync命令。
 
-### 语法  
+###  语法
 
 ```shell
 sync(选项)
 ```
 
-### 选项  
+###  选项
 
 ```shell
+-d, --data             只同步文件数据，不同步不必要的元数据
+-f, --file-system      同步包含这些文件的文件系统
 --help：显示帮助；
- --version：显示版本信息。
+--version：显示版本信息。
 ```
 
-### buffer与cache  
+###  buffer与cache
 
 *   buffer：为了解决写磁盘的效率
 *   cache：为了解决读磁盘的效率
@@ -34,4 +36,4 @@ sync命令用来flush文件系统buffer，这样数据才会真正的写到磁�
 如果不去手动的输入sync命令来真正的去写磁盘，linux系统也会周期性的去sync数据。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

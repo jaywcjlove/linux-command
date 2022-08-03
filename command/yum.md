@@ -5,7 +5,7 @@ yum
 
 ## 补充说明
 
-**yum命令** 是在Fedora和RedHat以及SUSE中基于rpm的软件包管理器，它可以使系统管理人员交互和自动化地更细与管理RPM软件包，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软体包，无须繁琐地一次次下载、安装。
+**yum命令** 是在Fedora和RedHat以及SUSE中基于rpm的软件包管理器，它可以使系统管理人员交互和自动化地更新与管理RPM软件包，能够从指定的服务器自动下载RPM包并且安装，可以自动处理依赖性关系，并且一次安装所有依赖的软体包，无须繁琐地一次次下载、安装。
 
 yum提供了查找、安装、删除某一个、一组甚至全部软件包的命令，而且命令简洁而又好记。
 
@@ -97,16 +97,16 @@ yum deplist package1               #查看程序package1依赖情况
 **清除缓存**
 
 ```shell
-yum clean packages       #清除缓存目录下的软件包
-yum clean headers        #清除缓存目录下的 headers
-yum clean oldheaders     #清除缓存目录下旧的 headers
+yum clean packages       # 清除缓存目录下的软件包
+yum clean headers        # 清除缓存目录下的 headers
+yum clean oldheaders     # 清除缓存目录下旧的 headers
 ```
 
 **更多实例**
 
 ```shell
 # yum
-/etc/yum.repos.d/       yum 源配置文件
+/etc/yum.repos.d/       # yum 源配置文件
 vi /etc/yum.repos.d/nginx.repo # 举个栗子: nginx yum源
 [nginx]
 name=nginx repo
@@ -126,4 +126,4 @@ yum groupinstall "Chinese Support" # 添加中文语言支持
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

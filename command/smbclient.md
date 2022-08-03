@@ -7,13 +7,13 @@ smbclient
 
 **smbclient命令** 属于samba套件，它提供一种命令行使用交互式方式访问samba服务器的共享资源。
 
-### 语法  
+###  语法
 
 ```shell
 smbclient(选项)(参数)
 ```
 
-### 选项  
+###  选项
 
 ```shell
 -B<ip地址>：传送广播数据包时所用的IP地址；
@@ -37,11 +37,11 @@ smbclient(选项)(参数)
 -w<工作群组>：指定工作群组名称。
 ```
 
-### 参数  
+###  参数
 
 smb服务器：指定要连接的smb服务器。
 
-### 实例  
+###  实例
 
  **列出某个IP地址所提供的共享文件夹** 
 
@@ -83,4 +83,3 @@ smbclient -c "mkdir share1" //192.168.0.1/tmp -U username%password
 如果用户共享`//192.168.0.1/tmp`的方式是只读的，会提示`NT_STATUS_ACCESS_DENIED making remote directory /share1`
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
