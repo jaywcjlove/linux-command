@@ -216,6 +216,38 @@ love被标记为1，所有loveable会被替换成lovers，并打印出来：
 sed -n 's/\(love\)able/\1rs/p' file
 ```
 
+通过替换获取ip：
+```shell
+ifconfig ens32 | sed -n '/inet /p' | sed 's/inet \([0-9.]\+\).*/\1/'
+192.168.75.126
+```
+
+### 大小写转换U/L
+```shell
+\u：	首字母转换为大写
+\U：  全部转换为大写
+\l：	 首字母转换为小写
+\L：	 全部转换为小写
+```
+
+首字母转换为大写：
+```shell
+[root@node6 ~]# sed 's/^[a-z]\+/\u&/' passwd 
+Root:x:0:0:root:/root:/bin/bash
+Bin:x:1:1:bin:/bin:/sbin/nologin
+Daemon:x:2:2:daemon:/sbin:/sbin/nologin
+Adm:x:3:4:adm:/var/adm:/sbin/nologin
+Lp:x:4:7:lp:/var/spool/lpd:/sbin/nologin
+Sync:x:5:0:sync:/sbin:/bin/sync
+```
+
+匹配到的字符全部转换为大写：
+```shell
+[root@node6 ~]# sed 's/^[a-z]\+/\U&/' passwd 
+ROOT:x:0:0:root:/root:/bin/bash
+BIN:x:1:1:bin:/bin:/sbin/nologin
+```
+
 ###  组合多个表达式 
 
 ```shell
@@ -315,6 +347,38 @@ sed '/^test/i\this is a test line' file
 ```shell
 sed -i '5i\this is a test line' test.conf
 ```
+###  替换指定行：c\命令 
+把root开头的行替换新内容：
+```shell
+[root@node6 ~]# sed '/^root/c this is new line!' passwd 
+this is new line!
+bin:x:1:1:bin:/bin:/sbin/nologin
+```
+
+如果是指定范围替换，需要注意，sed不是每行进行替换，而是把整个范围作为整体替换：
+```shell
+[root@node6 ~]# nl passwd | sed '1,5c\   this is dangerous!'
+     this is dangerous!
+     6	sync:x:5:0:sync:/sbin:/bin/sync
+     7	shutdown:x:6:0:shutdown:/sbin:/sbin/shutdown
+```
+如果想实现对第一行到第五行统一替换为相同内容，可以用下面的命令实现：
+```shell
+[root@node5 ~]# sed '1{:a;s/.*/lutxixia/;n;6!ba}' passwd 
+lutxixia
+lutxixia
+lutxixia
+lutxixia
+lutxixia
+sync:x:5:0:sync:/sbin:/bin/sync
+
+其中：
+:a  	是设置一个循环标签
+s/.*/lutixia/	是用lutixia字符替换匹配到的每行内容
+n	是读取下一行
+6!	是读到第六行退出循环，终止操作,如果没有，则继续循环。
+ba	是如果没有到第六行就跳转到a继续循环
+```
 
 ###  下一个：n命令 
 
@@ -334,10 +398,17 @@ sed '1,10y/abcde/ABCDE/' file
 
 ###  退出：q命令 
 
-打印完第10行后，退出sed
+打印完前10行后，退出sed:
 
 ```shell
 sed '10q' file
+```
+
+直到找到第一个匹配项，退出sed：
+```shell
+[root@node4 ~]# sed  '/nginx/q' nginx.yml 
+---
+- hosts: nginx
 ```
 
 ###  保持和获取：h命令和G命令 
