@@ -98,6 +98,12 @@ rm -r testdir
 rm -r -i testdir
 ```
 
+**批量删除 `icons` 文件夹中的子文件夹中的 data 文件夹**
+
+```shell
+rm -rf icons/**/data
+```
+
 **rm 忽略不存在的文件或目录**
 
 > -f 选项（LCTT 译注：即 “force”）让此次操作强制执行，忽略错误提示
