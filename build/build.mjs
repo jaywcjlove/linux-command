@@ -110,6 +110,7 @@ const contributorsPath = path.resolve(process.cwd(), 'CONTRIBUTORS.svg');
     if (err && err.message) {
       console.log(`\n ERROR :> ${err.message.red_bt}\n`)
     }
+    process.exit(1);
   }
 })();
 
