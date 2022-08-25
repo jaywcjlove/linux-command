@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,mv,用来对文件或目录重新命名">
     <title>mv 命令，Linux mv 命令详解：用来对文件或目录重新命名 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1661181733967">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1661420406855">
     <script src="../js/dark-mode.min.js"></script>
     <script type="module" src="../js/github-corners.js"></script>
 </head>
@@ -128,7 +128,7 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
 </span></code><div onclick="copied(this)" data-code="mv(选项)(参数)
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><span class="octicon octicon-link"></span></a>选项</h3>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">--backup<span class="token operator">=</span><span class="token operator">&#x3C;</span>备份模式<span class="token operator">></span>：若需覆盖文件，则覆盖前先行备份；
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token parameter variable">--backup</span><span class="token operator">=</span><span class="token operator">&#x3C;</span>备份模式<span class="token operator">></span>：若需覆盖文件，则覆盖前先行备份；
 </span><span class="code-line line-number" line="2">-b：当文件存在时，覆盖前，为其创建一个备份；
 </span><span class="code-line line-number" line="3">-f：若目标文件或目录与现有的文件或目录重复，则直接覆盖现有的文件或目录；
 </span><span class="code-line line-number" line="4">-i：交互式操作，覆盖前先行询问用户，如果源文件与目标文件或目标目录中的文件同名，则询问用户是否覆盖目标文件。用户输入”y”，表示将覆盖目标文件；输入”n”，表示取消对源文件的移动。这样可以避免误将文件覆盖。
@@ -178,30 +178,30 @@ mv *.txt /home/office/
 </span></code><div onclick="copied(this)" data-code="mv directory_1/ directory_2/
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>打印移动信息</p>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">mv</span> -v *.txt /home/office
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">mv</span> <span class="token parameter variable">-v</span> *.txt /home/office
 </span></code><div onclick="copied(this)" data-code="mv -v *.txt /home/office
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>提示是否覆盖文件</p>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">mv</span> -i file_1.txt /home/office
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">mv</span> <span class="token parameter variable">-i</span> file_1.txt /home/office
 </span></code><div onclick="copied(this)" data-code="mv -i file_1.txt /home/office
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>源文件比目标文件新时才执行更新</p>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">mv</span> -uv *.txt /home/office
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">mv</span> <span class="token parameter variable">-uv</span> *.txt /home/office
 </span></code><div onclick="copied(this)" data-code="mv -uv *.txt /home/office
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>不要覆盖任何已存在的文件</p>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">mv</span> -vn *.txt /home/office
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">mv</span> <span class="token parameter variable">-vn</span> *.txt /home/office
 </span></code><div onclick="copied(this)" data-code="mv -vn *.txt /home/office
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>复制时创建备份</p>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">mv</span> -bv *.txt /home/office
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">mv</span> <span class="token parameter variable">-bv</span> *.txt /home/office
 </span></code><div onclick="copied(this)" data-code="mv -bv *.txt /home/office
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>无条件覆盖已经存在的文件</p>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">mv</span> -f *.txt /home/office
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">mv</span> <span class="token parameter variable">-f</span> *.txt /home/office
 </span></code><div onclick="copied(this)" data-code="mv -f *.txt /home/office
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-<style>.markdown-body pre .copied {
+<style>markdown-style pre .copied {
   display: flex;
   position: absolute;
   cursor: pointer;
@@ -214,31 +214,31 @@ mv *.txt /home/office/
   font-size: 12px;
   transition: all .3s;
 }
-.markdown-body pre .copied:not(.active) {
+markdown-style pre .copied:not(.active) {
   visibility: hidden;
 }
-.markdown-body pre:hover .copied {
+markdown-style pre:hover .copied {
   visibility: visible;
 }
-.markdown-body pre:hover .copied:hover {
+markdown-style pre:hover .copied:hover {
   background: #4caf50;
   color: #fff;
 }
-.markdown-body pre:hover .copied:active,
-.markdown-body pre .copied.active {
+markdown-style pre:hover .copied:active,
+markdown-style pre .copied.active {
   background: #2e9b33;
   color: #fff;
 }
-.markdown-body pre .copied .octicon-copy {
+markdown-style pre .copied .octicon-copy {
   display: block;
 }
-.markdown-body pre .copied .octicon-check {
+markdown-style pre .copied .octicon-check {
   display: none;
 }
-.markdown-body pre .active .octicon-copy {
+markdown-style pre .active .octicon-copy {
   display: none;
 }
-.markdown-body pre .active .octicon-check {
+markdown-style pre .active .octicon-check {
   display: block;
 }</style><script>/*! @uiw/copy-to-clipboard v1.0.12 | MIT (c) 2021 Kenny Wang | https://github.com/uiwjs/copy-to-clipboard.git */
 !function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):(e="undefined"!=typeof globalThis?globalThis:e||self).copyTextToClipboard=t()}(this,(function(){"use strict";return function(e,t){const o=document.createElement("textarea");o.value=e,o.setAttribute("readonly",""),o.style={position:"absolute",left:"-9999px"},document.body.appendChild(o);const n=document.getSelection().rangeCount>0&&document.getSelection().getRangeAt(0);o.select();let c=!1;try{c=!!document.execCommand("copy")}catch(e){c=!1}document.body.removeChild(o),n&&document.getSelection&&(document.getSelection().removeAllRanges(),document.getSelection().addRange(n)),t&&t(c)}}));
@@ -272,7 +272,7 @@ function copied(target, str) {
     581
   </span> 个Linux命令，超过 <a href="../contributors.html">50+</a> 贡献者
 </div>
-<script type="text/javascript" src="../js/dt.js?v=1661181733968"></script>
-<script type="text/javascript" src="../js/index.js?v=1661181733968"></script>
+<script type="text/javascript" src="../js/dt.js?v=1661420406855"></script>
+<script type="text/javascript" src="../js/index.js?v=1661420406855"></script>
 </body>
 </html>

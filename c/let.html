@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,let,简单的计算器，执行算术表达式。">
     <title>let 命令，Linux let 命令详解：简单的计算器，执行算术表达式。 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1661181732908">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1661420405938">
     <script src="../js/dark-mode.min.js"></script>
     <script type="module" src="../js/github-corners.js"></script>
 </head>
@@ -256,7 +256,7 @@ expr 3 + 4
 </span><span class="code-line line-number" line="5">  <span class="token builtin class-name">echo</span> <span class="token string">'error'</span>
 </span><span class="code-line line-number" line="6"><span class="token keyword">fi</span>
 </span><span class="code-line line-number" line="7"><span class="token comment"># 注意空格。</span>
-</span><span class="code-line line-number" line="8"><span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token number">12</span> -le <span class="token number">10</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
+</span><span class="code-line line-number" line="8"><span class="token keyword">if</span> <span class="token punctuation">[</span><span class="token punctuation">[</span> <span class="token number">12</span> <span class="token parameter variable">-le</span> <span class="token number">10</span> <span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token keyword">then</span>
 </span><span class="code-line line-number" line="9">  <span class="token builtin class-name">echo</span> <span class="token string">'error'</span>
 </span><span class="code-line line-number" line="10"><span class="token keyword">else</span>
 </span><span class="code-line line-number" line="11">  <span class="token builtin class-name">echo</span> <span class="token string">'12 is greater than 10.'</span>
@@ -287,11 +287,11 @@ fi
 </span><span class="code-line line-number" line="11"><span class="token comment"># 显示7</span>
 </span><span class="code-line line-number" line="12">
 </span><span class="code-line line-number" line="13"><span class="token comment"># 设置了整型属性就可以直接加了。</span>
-</span><span class="code-line line-number" line="14"><span class="token builtin class-name">declare</span> -i <span class="token assign-left variable">a</span><span class="token operator">=</span><span class="token number">3</span> <span class="token assign-left variable">b</span><span class="token operator">=</span><span class="token number">4</span> c
+</span><span class="code-line line-number" line="14"><span class="token builtin class-name">declare</span> <span class="token parameter variable">-i</span> <span class="token assign-left variable">a</span><span class="token operator">=</span><span class="token number">3</span> <span class="token assign-left variable">b</span><span class="token operator">=</span><span class="token number">4</span> c
 </span><span class="code-line line-number" line="15"><span class="token assign-left variable">c</span><span class="token operator">=</span>a+b
 </span><span class="code-line line-number" line="16"><span class="token builtin class-name">echo</span> <span class="token variable">${c}</span>
 </span><span class="code-line line-number" line="17"><span class="token comment"># 同上。</span>
-</span><span class="code-line line-number" line="18"><span class="token builtin class-name">declare</span> -i a
+</span><span class="code-line line-number" line="18"><span class="token builtin class-name">declare</span> <span class="token parameter variable">-i</span> a
 </span><span class="code-line line-number" line="19"><span class="token assign-left variable">a</span><span class="token operator">=</span><span class="token number">2</span>*3
 </span><span class="code-line line-number" line="20"><span class="token builtin class-name">echo</span> <span class="token variable">${a}</span>
 </span><span class="code-line line-number" line="21"><span class="token comment"># 显示6。</span>
@@ -326,7 +326,7 @@ echo ${a}
     <p>执行算术计算的命令除了<code>let</code>，还有外部命令<code>expr</code>、<code>bc</code>等。</p>
   </li>
 </ol>
-<style>.markdown-body pre .copied {
+<style>markdown-style pre .copied {
   display: flex;
   position: absolute;
   cursor: pointer;
@@ -339,31 +339,31 @@ echo ${a}
   font-size: 12px;
   transition: all .3s;
 }
-.markdown-body pre .copied:not(.active) {
+markdown-style pre .copied:not(.active) {
   visibility: hidden;
 }
-.markdown-body pre:hover .copied {
+markdown-style pre:hover .copied {
   visibility: visible;
 }
-.markdown-body pre:hover .copied:hover {
+markdown-style pre:hover .copied:hover {
   background: #4caf50;
   color: #fff;
 }
-.markdown-body pre:hover .copied:active,
-.markdown-body pre .copied.active {
+markdown-style pre:hover .copied:active,
+markdown-style pre .copied.active {
   background: #2e9b33;
   color: #fff;
 }
-.markdown-body pre .copied .octicon-copy {
+markdown-style pre .copied .octicon-copy {
   display: block;
 }
-.markdown-body pre .copied .octicon-check {
+markdown-style pre .copied .octicon-check {
   display: none;
 }
-.markdown-body pre .active .octicon-copy {
+markdown-style pre .active .octicon-copy {
   display: none;
 }
-.markdown-body pre .active .octicon-check {
+markdown-style pre .active .octicon-check {
   display: block;
 }</style><script>/*! @uiw/copy-to-clipboard v1.0.12 | MIT (c) 2021 Kenny Wang | https://github.com/uiwjs/copy-to-clipboard.git */
 !function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):(e="undefined"!=typeof globalThis?globalThis:e||self).copyTextToClipboard=t()}(this,(function(){"use strict";return function(e,t){const o=document.createElement("textarea");o.value=e,o.setAttribute("readonly",""),o.style={position:"absolute",left:"-9999px"},document.body.appendChild(o);const n=document.getSelection().rangeCount>0&&document.getSelection().getRangeAt(0);o.select();let c=!1;try{c=!!document.execCommand("copy")}catch(e){c=!1}document.body.removeChild(o),n&&document.getSelection&&(document.getSelection().removeAllRanges(),document.getSelection().addRange(n)),t&&t(c)}}));
@@ -397,7 +397,7 @@ function copied(target, str) {
     581
   </span> 个Linux命令，超过 <a href="../contributors.html">50+</a> 贡献者
 </div>
-<script type="text/javascript" src="../js/dt.js?v=1661181732909"></script>
-<script type="text/javascript" src="../js/index.js?v=1661181732909"></script>
+<script type="text/javascript" src="../js/dt.js?v=1661420405939"></script>
+<script type="text/javascript" src="../js/index.js?v=1661420405939"></script>
 </body>
 </html>

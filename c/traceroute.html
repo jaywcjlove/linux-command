@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,traceroute,显示数据包到主机间的路径">
     <title>traceroute 命令，Linux traceroute 命令详解：显示数据包到主机间的路径 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1661181738044">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1661420410456">
     <script src="../js/dark-mode.min.js"></script>
     <script type="module" src="../js/github-corners.js"></script>
 </head>
@@ -218,12 +218,12 @@ traceroute to www.baidu.com (61.135.169.105), 10 hops max, 40 byte packets
 10  * * *
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>其它一些实例</p>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">traceroute</span> -m <span class="token number">10</span> www.baidu.com <span class="token comment"># 跳数设置</span>
-</span><span class="code-line line-number" line="2"><span class="token function">traceroute</span> -n www.baidu.com    <span class="token comment"># 显示IP地址，不查主机名</span>
-</span><span class="code-line line-number" line="3"><span class="token function">traceroute</span> -p <span class="token number">6888</span> www.baidu.com  <span class="token comment"># 探测包使用的基本UDP端口设置6888</span>
-</span><span class="code-line line-number" line="4"><span class="token function">traceroute</span> -q <span class="token number">4</span> www.baidu.com  <span class="token comment"># 把探测包的个数设置为值4</span>
-</span><span class="code-line line-number" line="5"><span class="token function">traceroute</span> -r www.baidu.com    <span class="token comment"># 绕过正常的路由表，直接发送到网络相连的主机</span>
-</span><span class="code-line line-number" line="6"><span class="token function">traceroute</span> -w <span class="token number">3</span> www.baidu.com  <span class="token comment"># 把对外发探测包的等待响应时间设置为3秒</span>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">traceroute</span> <span class="token parameter variable">-m</span> <span class="token number">10</span> www.baidu.com <span class="token comment"># 跳数设置</span>
+</span><span class="code-line line-number" line="2"><span class="token function">traceroute</span> <span class="token parameter variable">-n</span> www.baidu.com    <span class="token comment"># 显示IP地址，不查主机名</span>
+</span><span class="code-line line-number" line="3"><span class="token function">traceroute</span> <span class="token parameter variable">-p</span> <span class="token number">6888</span> www.baidu.com  <span class="token comment"># 探测包使用的基本UDP端口设置6888</span>
+</span><span class="code-line line-number" line="4"><span class="token function">traceroute</span> <span class="token parameter variable">-q</span> <span class="token number">4</span> www.baidu.com  <span class="token comment"># 把探测包的个数设置为值4</span>
+</span><span class="code-line line-number" line="5"><span class="token function">traceroute</span> <span class="token parameter variable">-r</span> www.baidu.com    <span class="token comment"># 绕过正常的路由表，直接发送到网络相连的主机</span>
+</span><span class="code-line line-number" line="6"><span class="token function">traceroute</span> <span class="token parameter variable">-w</span> <span class="token number">3</span> www.baidu.com  <span class="token comment"># 把对外发探测包的等待响应时间设置为3秒</span>
 </span></code><div onclick="copied(this)" data-code="traceroute -m 10 www.baidu.com # 跳数设置
 traceroute -n www.baidu.com    # 显示IP地址，不查主机名
 traceroute -p 6888 www.baidu.com  # 探测包使用的基本UDP端口设置6888
@@ -231,7 +231,7 @@ traceroute -q 4 www.baidu.com  # 把探测包的个数设置为值4
 traceroute -r www.baidu.com    # 绕过正常的路由表，直接发送到网络相连的主机
 traceroute -w 3 www.baidu.com  # 把对外发探测包的等待响应时间设置为3秒
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-<style>.markdown-body pre .copied {
+<style>markdown-style pre .copied {
   display: flex;
   position: absolute;
   cursor: pointer;
@@ -244,31 +244,31 @@ traceroute -w 3 www.baidu.com  # 把对外发探测包的等待响应时间设�
   font-size: 12px;
   transition: all .3s;
 }
-.markdown-body pre .copied:not(.active) {
+markdown-style pre .copied:not(.active) {
   visibility: hidden;
 }
-.markdown-body pre:hover .copied {
+markdown-style pre:hover .copied {
   visibility: visible;
 }
-.markdown-body pre:hover .copied:hover {
+markdown-style pre:hover .copied:hover {
   background: #4caf50;
   color: #fff;
 }
-.markdown-body pre:hover .copied:active,
-.markdown-body pre .copied.active {
+markdown-style pre:hover .copied:active,
+markdown-style pre .copied.active {
   background: #2e9b33;
   color: #fff;
 }
-.markdown-body pre .copied .octicon-copy {
+markdown-style pre .copied .octicon-copy {
   display: block;
 }
-.markdown-body pre .copied .octicon-check {
+markdown-style pre .copied .octicon-check {
   display: none;
 }
-.markdown-body pre .active .octicon-copy {
+markdown-style pre .active .octicon-copy {
   display: none;
 }
-.markdown-body pre .active .octicon-check {
+markdown-style pre .active .octicon-check {
   display: block;
 }</style><script>/*! @uiw/copy-to-clipboard v1.0.12 | MIT (c) 2021 Kenny Wang | https://github.com/uiwjs/copy-to-clipboard.git */
 !function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):(e="undefined"!=typeof globalThis?globalThis:e||self).copyTextToClipboard=t()}(this,(function(){"use strict";return function(e,t){const o=document.createElement("textarea");o.value=e,o.setAttribute("readonly",""),o.style={position:"absolute",left:"-9999px"},document.body.appendChild(o);const n=document.getSelection().rangeCount>0&&document.getSelection().getRangeAt(0);o.select();let c=!1;try{c=!!document.execCommand("copy")}catch(e){c=!1}document.body.removeChild(o),n&&document.getSelection&&(document.getSelection().removeAllRanges(),document.getSelection().addRange(n)),t&&t(c)}}));
@@ -302,7 +302,7 @@ function copied(target, str) {
     581
   </span> 个Linux命令，超过 <a href="../contributors.html">50+</a> 贡献者
 </div>
-<script type="text/javascript" src="../js/dt.js?v=1661181738045"></script>
-<script type="text/javascript" src="../js/index.js?v=1661181738045"></script>
+<script type="text/javascript" src="../js/dt.js?v=1661420410457"></script>
+<script type="text/javascript" src="../js/index.js?v=1661420410457"></script>
 </body>
 </html>

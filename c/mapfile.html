@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,mapfile,从标准输入读取行并赋值到数组。">
     <title>mapfile 命令，Linux mapfile 命令详解：从标准输入读取行并赋值到数组。 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1661181733694">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1661420406609">
     <script src="../js/dark-mode.min.js"></script>
     <script type="module" src="../js/github-corners.js"></script>
 </head>
@@ -124,14 +124,14 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
   <li>从标准输入或文件描述符读取行并赋值到数组。</li>
 </ul>
 <h2 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><span class="octicon octicon-link"></span></a>选项</h2>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">-d delim       将delim设为行分隔符，代替默认的换行符。
-</span><span class="code-line line-number" line="2">-n count       从标准输入中获取最多count行，如果count为零那么获取全部。
-</span><span class="code-line line-number" line="3">-O origin      从数组下标为origin的位置开始赋值，默认的下标为0。
-</span><span class="code-line line-number" line="4">-s count       跳过对前count行的读取。
-</span><span class="code-line line-number" line="5">-t             读取时移除行分隔符delim（默认为换行符）。
-</span><span class="code-line line-number" line="6">-u fd          从文件描述符fd中读取。
-</span><span class="code-line line-number" line="7">-C callback    每当读取了quantum行时，调用callback语句。
-</span><span class="code-line line-number" line="8">-c quantum     设定读取的行数为quantum。
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token parameter variable">-d</span> delim       将delim设为行分隔符，代替默认的换行符。
+</span><span class="code-line line-number" line="2"><span class="token parameter variable">-n</span> count       从标准输入中获取最多count行，如果count为零那么获取全部。
+</span><span class="code-line line-number" line="3"><span class="token parameter variable">-O</span> origin      从数组下标为origin的位置开始赋值，默认的下标为0。
+</span><span class="code-line line-number" line="4"><span class="token parameter variable">-s</span> count       跳过对前count行的读取。
+</span><span class="code-line line-number" line="5"><span class="token parameter variable">-t</span>             读取时移除行分隔符delim（默认为换行符）。
+</span><span class="code-line line-number" line="6"><span class="token parameter variable">-u</span> fd          从文件描述符fd中读取。
+</span><span class="code-line line-number" line="7"><span class="token parameter variable">-C</span> callback    每当读取了quantum行时，调用callback语句。
+</span><span class="code-line line-number" line="8"><span class="token parameter variable">-c</span> quantum     设定读取的行数为quantum。
 </span><span class="code-line line-number" line="9">
 </span><span class="code-line line-number" line="10">如果使用-C时没有同时使用-c指定quantum的值，那么quantum默认为5000。
 </span><span class="code-line line-number" line="11">当callback语句执行时，将数组下一个要赋值的下标以及读取的行作为额外的参数传递给callback语句。
@@ -157,30 +157,30 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
 <pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 常见的读取形式。</span>
 </span><span class="code-line line-number" line="2"><span class="token builtin class-name">mapfile</span> <span class="token operator">&#x3C;</span> source_file target_array
 </span><span class="code-line line-number" line="3"><span class="token function">cat</span> source_file <span class="token operator">|</span><span class="token builtin class-name">mapfile</span> target_array
-</span><span class="code-line line-number" line="4"><span class="token builtin class-name">mapfile</span> -u fd target_array
+</span><span class="code-line line-number" line="4"><span class="token builtin class-name">mapfile</span> <span class="token parameter variable">-u</span> fd target_array
 </span><span class="code-line line-number" line="5">
 </span><span class="code-line line-number" line="6"><span class="token comment"># 只读取前5行。</span>
-</span><span class="code-line line-number" line="7"><span class="token builtin class-name">mapfile</span> <span class="token operator">&#x3C;</span> source_file -n <span class="token number">5</span> target_array
+</span><span class="code-line line-number" line="7"><span class="token builtin class-name">mapfile</span> <span class="token operator">&#x3C;</span> source_file <span class="token parameter variable">-n</span> <span class="token number">5</span> target_array
 </span><span class="code-line line-number" line="8">
 </span><span class="code-line line-number" line="9"><span class="token comment"># 跳过前5行。</span>
-</span><span class="code-line line-number" line="10"><span class="token builtin class-name">mapfile</span> <span class="token operator">&#x3C;</span> source_file -s <span class="token number">5</span> target_array
+</span><span class="code-line line-number" line="10"><span class="token builtin class-name">mapfile</span> <span class="token operator">&#x3C;</span> source_file <span class="token parameter variable">-s</span> <span class="token number">5</span> target_array
 </span><span class="code-line line-number" line="11">
 </span><span class="code-line line-number" line="12"><span class="token comment"># 在数组指定的下标开始赋值。</span>
 </span><span class="code-line line-number" line="13"><span class="token comment"># 请注意：这样做不会清空该数组。</span>
-</span><span class="code-line line-number" line="14"><span class="token builtin class-name">mapfile</span> <span class="token operator">&#x3C;</span> source_file -O <span class="token number">2</span> target_array
+</span><span class="code-line line-number" line="14"><span class="token builtin class-name">mapfile</span> <span class="token operator">&#x3C;</span> source_file <span class="token parameter variable">-O</span> <span class="token number">2</span> target_array
 </span><span class="code-line line-number" line="15">
 </span><span class="code-line line-number" line="16"><span class="token comment"># 读取时设定行分隔符为tab。</span>
 </span><span class="code-line line-number" line="17"><span class="token comment"># 注意，第二行的tab在终端需要用ctrl+v tab输入；</span>
-</span><span class="code-line line-number" line="18"><span class="token builtin class-name">mapfile</span> <span class="token operator">&#x3C;</span> source_file -d <span class="token string">$'<span class="token entity" title="\t">\t</span>'</span> target_array
-</span><span class="code-line line-number" line="19"><span class="token builtin class-name">mapfile</span> <span class="token operator">&#x3C;</span> source_file -d <span class="token string">'	'</span> target_array
+</span><span class="code-line line-number" line="18"><span class="token builtin class-name">mapfile</span> <span class="token operator">&#x3C;</span> source_file <span class="token parameter variable">-d</span> <span class="token string">$'<span class="token entity" title="\t">\t</span>'</span> target_array
+</span><span class="code-line line-number" line="19"><span class="token builtin class-name">mapfile</span> <span class="token operator">&#x3C;</span> source_file <span class="token parameter variable">-d</span> <span class="token string">'	'</span> target_array
 </span><span class="code-line line-number" line="20">
 </span><span class="code-line line-number" line="21"><span class="token comment"># 读取时移除行分隔符（tab）。</span>
-</span><span class="code-line line-number" line="22"><span class="token builtin class-name">mapfile</span> <span class="token operator">&#x3C;</span> source_file -d <span class="token string">$'<span class="token entity" title="\t">\t</span>'</span> -t target_array
+</span><span class="code-line line-number" line="22"><span class="token builtin class-name">mapfile</span> <span class="token operator">&#x3C;</span> source_file <span class="token parameter variable">-d</span> <span class="token string">$'<span class="token entity" title="\t">\t</span>'</span> <span class="token parameter variable">-t</span> target_array
 </span><span class="code-line line-number" line="23"><span class="token comment"># 读取时移除行分隔符（换行符）。</span>
-</span><span class="code-line line-number" line="24"><span class="token builtin class-name">mapfile</span> <span class="token operator">&#x3C;</span> source_file -t target_array
+</span><span class="code-line line-number" line="24"><span class="token builtin class-name">mapfile</span> <span class="token operator">&#x3C;</span> source_file <span class="token parameter variable">-t</span> target_array
 </span><span class="code-line line-number" line="25">
 </span><span class="code-line line-number" line="26"><span class="token comment"># 每读取2行，执行一次语句（在这里是echo）。</span>
-</span><span class="code-line line-number" line="27"><span class="token builtin class-name">mapfile</span> <span class="token operator">&#x3C;</span> source_file -C <span class="token string">"echo CALLBACK:"</span> -c <span class="token number">2</span> target_array
+</span><span class="code-line line-number" line="27"><span class="token builtin class-name">mapfile</span> <span class="token operator">&#x3C;</span> source_file <span class="token parameter variable">-C</span> <span class="token string">"echo CALLBACK:"</span> <span class="token parameter variable">-c</span> <span class="token number">2</span> target_array
 </span><span class="code-line line-number" line="28">
 </span><span class="code-line line-number" line="29"><span class="token comment"># 遍历下标，依次显示数组的元素。</span>
 </span><span class="code-line line-number" line="30"><span class="token keyword">for</span> <span class="token for-or-select variable">i</span> <span class="token keyword">in</span> <span class="token variable">${<span class="token operator">!</span>target_array<span class="token punctuation">[</span>@<span class="token punctuation">]</span>}</span><span class="token punctuation">;</span> <span class="token keyword">do</span>
@@ -224,7 +224,7 @@ done
   <li>该命令是bash内建命令，相关的帮助信息请查看<code>help</code>命令。</li>
   <li>bash内建命令readarray是mapfile的同义词。</li>
 </ol>
-<style>.markdown-body pre .copied {
+<style>markdown-style pre .copied {
   display: flex;
   position: absolute;
   cursor: pointer;
@@ -237,31 +237,31 @@ done
   font-size: 12px;
   transition: all .3s;
 }
-.markdown-body pre .copied:not(.active) {
+markdown-style pre .copied:not(.active) {
   visibility: hidden;
 }
-.markdown-body pre:hover .copied {
+markdown-style pre:hover .copied {
   visibility: visible;
 }
-.markdown-body pre:hover .copied:hover {
+markdown-style pre:hover .copied:hover {
   background: #4caf50;
   color: #fff;
 }
-.markdown-body pre:hover .copied:active,
-.markdown-body pre .copied.active {
+markdown-style pre:hover .copied:active,
+markdown-style pre .copied.active {
   background: #2e9b33;
   color: #fff;
 }
-.markdown-body pre .copied .octicon-copy {
+markdown-style pre .copied .octicon-copy {
   display: block;
 }
-.markdown-body pre .copied .octicon-check {
+markdown-style pre .copied .octicon-check {
   display: none;
 }
-.markdown-body pre .active .octicon-copy {
+markdown-style pre .active .octicon-copy {
   display: none;
 }
-.markdown-body pre .active .octicon-check {
+markdown-style pre .active .octicon-check {
   display: block;
 }</style><script>/*! @uiw/copy-to-clipboard v1.0.12 | MIT (c) 2021 Kenny Wang | https://github.com/uiwjs/copy-to-clipboard.git */
 !function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):(e="undefined"!=typeof globalThis?globalThis:e||self).copyTextToClipboard=t()}(this,(function(){"use strict";return function(e,t){const o=document.createElement("textarea");o.value=e,o.setAttribute("readonly",""),o.style={position:"absolute",left:"-9999px"},document.body.appendChild(o);const n=document.getSelection().rangeCount>0&&document.getSelection().getRangeAt(0);o.select();let c=!1;try{c=!!document.execCommand("copy")}catch(e){c=!1}document.body.removeChild(o),n&&document.getSelection&&(document.getSelection().removeAllRanges(),document.getSelection().addRange(n)),t&&t(c)}}));
@@ -295,7 +295,7 @@ function copied(target, str) {
     581
   </span> 个Linux命令，超过 <a href="../contributors.html">50+</a> 贡献者
 </div>
-<script type="text/javascript" src="../js/dt.js?v=1661181733694"></script>
-<script type="text/javascript" src="../js/index.js?v=1661181733694"></script>
+<script type="text/javascript" src="../js/dt.js?v=1661420406611"></script>
+<script type="text/javascript" src="../js/index.js?v=1661420406611"></script>
 </body>
 </html>

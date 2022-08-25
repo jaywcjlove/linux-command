@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,ar,建立或修改备存文件，或是从备存文件中抽取文件">
     <title>ar 命令，Linux ar 命令详解：建立或修改备存文件，或是从备存文件中抽取文件 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1661181727740">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1661420401586">
     <script src="../js/dark-mode.min.js"></script>
     <script type="module" src="../js/github-corners.js"></script>
 </head>
@@ -120,7 +120,7 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
 <h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><span class="octicon octicon-link"></span></a>语法</h3>
 <pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">ar <span class="token punctuation">[</span>-<span class="token punctuation">]</span><span class="token punctuation">{</span>dmpqrtx<span class="token punctuation">}</span><span class="token punctuation">[</span>abcfilNoPsSuvV<span class="token punctuation">]</span> <span class="token punctuation">[</span>membername<span class="token punctuation">]</span> <span class="token punctuation">[</span>count<span class="token punctuation">]</span> archive files<span class="token punctuation">..</span>.
 </span><span class="code-line line-number" line="2">Usage: ar <span class="token punctuation">[</span>emulation options<span class="token punctuation">]</span> <span class="token punctuation">[</span>-<span class="token punctuation">]</span><span class="token punctuation">{</span>dmpqrstx<span class="token punctuation">}</span><span class="token punctuation">[</span>abcDfilMNoPsSTuvV<span class="token punctuation">]</span> <span class="token punctuation">[</span>--plugin <span class="token operator">&#x3C;</span>name<span class="token operator">></span><span class="token punctuation">]</span> <span class="token punctuation">[</span>member-name<span class="token punctuation">]</span> <span class="token punctuation">[</span>count<span class="token punctuation">]</span> archive-file file<span class="token punctuation">..</span>.
-</span><span class="code-line line-number" line="3">       ar -M <span class="token punctuation">[</span><span class="token operator">&#x3C;</span>mri-脚本<span class="token punctuation">]</span>
+</span><span class="code-line line-number" line="3">       ar <span class="token parameter variable">-M</span> <span class="token punctuation">[</span><span class="token operator">&#x3C;</span>mri-脚本<span class="token punctuation">]</span>
 </span></code><div onclick="copied(this)" data-code="ar [-]{dmpqrtx}[abcfilNoPsSuvV] [membername] [count] archive files...
 Usage: ar [emulation options] [-]{dmpqrstx}[abcDfilMNoPsSTuvV] [--plugin <name>] [member-name] [count] archive-file file...
        ar -M [<mri-脚本]
@@ -296,7 +296,7 @@ v      使用本修饰符可以进行 冗余的 操作。附加了此修饰符�
 V      显示 ar 的版本号。
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>选项参数</p>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">--plugin <span class="token operator">&#x3C;</span>p<span class="token operator">></span> - load the specified plugin
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token parameter variable">--plugin</span> <span class="token operator">&#x3C;</span>p<span class="token operator">></span> - load the specified plugin
 </span></code><div onclick="copied(this)" data-code="--plugin <p> - load the specified plugin
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>ar：支持的目标： elf64-x86-64 elf32-i386 elf32-x86-64 a.out-i386-linux pei-i386 pei-x86-64 elf64-l1om elf64-k1om elf64-little elf64-big elf32-little elf32-big plugin srec symbolsrec verilog tekhex binary ihex</p>
@@ -353,7 +353,7 @@ d.c
 [root@localhost ~]# ar t two.bak       
 d.c
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-<style>.markdown-body pre .copied {
+<style>markdown-style pre .copied {
   display: flex;
   position: absolute;
   cursor: pointer;
@@ -366,31 +366,31 @@ d.c
   font-size: 12px;
   transition: all .3s;
 }
-.markdown-body pre .copied:not(.active) {
+markdown-style pre .copied:not(.active) {
   visibility: hidden;
 }
-.markdown-body pre:hover .copied {
+markdown-style pre:hover .copied {
   visibility: visible;
 }
-.markdown-body pre:hover .copied:hover {
+markdown-style pre:hover .copied:hover {
   background: #4caf50;
   color: #fff;
 }
-.markdown-body pre:hover .copied:active,
-.markdown-body pre .copied.active {
+markdown-style pre:hover .copied:active,
+markdown-style pre .copied.active {
   background: #2e9b33;
   color: #fff;
 }
-.markdown-body pre .copied .octicon-copy {
+markdown-style pre .copied .octicon-copy {
   display: block;
 }
-.markdown-body pre .copied .octicon-check {
+markdown-style pre .copied .octicon-check {
   display: none;
 }
-.markdown-body pre .active .octicon-copy {
+markdown-style pre .active .octicon-copy {
   display: none;
 }
-.markdown-body pre .active .octicon-check {
+markdown-style pre .active .octicon-check {
   display: block;
 }</style><script>/*! @uiw/copy-to-clipboard v1.0.12 | MIT (c) 2021 Kenny Wang | https://github.com/uiwjs/copy-to-clipboard.git */
 !function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):(e="undefined"!=typeof globalThis?globalThis:e||self).copyTextToClipboard=t()}(this,(function(){"use strict";return function(e,t){const o=document.createElement("textarea");o.value=e,o.setAttribute("readonly",""),o.style={position:"absolute",left:"-9999px"},document.body.appendChild(o);const n=document.getSelection().rangeCount>0&&document.getSelection().getRangeAt(0);o.select();let c=!1;try{c=!!document.execCommand("copy")}catch(e){c=!1}document.body.removeChild(o),n&&document.getSelection&&(document.getSelection().removeAllRanges(),document.getSelection().addRange(n)),t&&t(c)}}));
@@ -424,7 +424,7 @@ function copied(target, str) {
     581
   </span> 个Linux命令，超过 <a href="../contributors.html">50+</a> 贡献者
 </div>
-<script type="text/javascript" src="../js/dt.js?v=1661181727741"></script>
-<script type="text/javascript" src="../js/index.js?v=1661181727741"></script>
+<script type="text/javascript" src="../js/dt.js?v=1661420401587"></script>
+<script type="text/javascript" src="../js/index.js?v=1661420401587"></script>
 </body>
 </html>

@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,history,显示或操作历史列表。">
     <title>history 命令，Linux history 命令详解：显示或操作历史列表。 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1661181731859">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1661420404984">
     <script src="../js/dark-mode.min.js"></script>
     <script type="module" src="../js/github-corners.js"></script>
 </head>
@@ -117,8 +117,8 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
 <p>显示或操作历史列表。</p>
 <h2 id="概要"><a class="anchor" aria-hidden="true" tabindex="-1" href="#概要"><span class="octicon octicon-link"></span></a>概要</h2>
 <pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">history</span> <span class="token punctuation">[</span>-c<span class="token punctuation">]</span> <span class="token punctuation">[</span>-d offset<span class="token punctuation">]</span> <span class="token punctuation">[</span>n<span class="token punctuation">]</span>
-</span><span class="code-line line-number" line="2"><span class="token function">history</span> -anrw <span class="token punctuation">[</span>filename<span class="token punctuation">]</span>
-</span><span class="code-line line-number" line="3"><span class="token function">history</span> -ps arg <span class="token punctuation">[</span>arg<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
+</span><span class="code-line line-number" line="2"><span class="token function">history</span> <span class="token parameter variable">-anrw</span> <span class="token punctuation">[</span>filename<span class="token punctuation">]</span>
+</span><span class="code-line line-number" line="3"><span class="token function">history</span> <span class="token parameter variable">-ps</span> arg <span class="token punctuation">[</span>arg<span class="token punctuation">..</span>.<span class="token punctuation">]</span>
 </span></code><div onclick="copied(this)" data-code="history [-c] [-d offset] [n]
 history -anrw [filename]
 history -ps arg [arg...]
@@ -133,14 +133,14 @@ history -ps arg [arg...]
   </li>
 </ul>
 <h2 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><span class="octicon octicon-link"></span></a>选项</h2>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">-c           清空历史列表。
-</span><span class="code-line line-number" line="2">-d offset    根据offset删除记录。如果是正数则表示offset位置的记录，如果为负数则表示从结尾向前offset位置的记录。
-</span><span class="code-line line-number" line="3">-a           将当前终端的历史记录行添加到历史记录文件。
-</span><span class="code-line line-number" line="4">-n           将尚未从历史文件中读取的历史行追加到当前历史列表中。
-</span><span class="code-line line-number" line="5">-r           读取历史文件，并将其内容附加到历史列表中。
-</span><span class="code-line line-number" line="6">-w           将当前历史记录列表附加到历史记录文件中并且附加它们到历史列表中。
-</span><span class="code-line line-number" line="7">-p           在每个arg上执行历史记录扩展并在标准输出上显示结果，而不将结果存储在历史记录列表中。
-</span><span class="code-line line-number" line="8">-s           将每个arg作为单个条目附加到历史记录列表。
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token parameter variable">-c</span>           清空历史列表。
+</span><span class="code-line line-number" line="2"><span class="token parameter variable">-d</span> offset    根据offset删除记录。如果是正数则表示offset位置的记录，如果为负数则表示从结尾向前offset位置的记录。
+</span><span class="code-line line-number" line="3"><span class="token parameter variable">-a</span>           将当前终端的历史记录行添加到历史记录文件。
+</span><span class="code-line line-number" line="4"><span class="token parameter variable">-n</span>           将尚未从历史文件中读取的历史行追加到当前历史列表中。
+</span><span class="code-line line-number" line="5"><span class="token parameter variable">-r</span>           读取历史文件，并将其内容附加到历史列表中。
+</span><span class="code-line line-number" line="6"><span class="token parameter variable">-w</span>           将当前历史记录列表附加到历史记录文件中并且附加它们到历史列表中。
+</span><span class="code-line line-number" line="7"><span class="token parameter variable">-p</span>           在每个arg上执行历史记录扩展并在标准输出上显示结果，而不将结果存储在历史记录列表中。
+</span><span class="code-line line-number" line="8"><span class="token parameter variable">-s</span>           将每个arg作为单个条目附加到历史记录列表。
 </span></code><div onclick="copied(this)" data-code="-c           清空历史列表。
 -d offset    根据offset删除记录。如果是正数则表示offset位置的记录，如果为负数则表示从结尾向前offset位置的记录。
 -a           将当前终端的历史记录行添加到历史记录文件。
@@ -200,7 +200,7 @@ history -ps arg [arg...]
   <li>环境变量<code>HISTTIMEFORMAT</code>如果是非空值，则使用其值作为<code>strftime(3)</code>打印相关时间戳的格式字符串添加在每个显示的历史记录之前；否则不会打印时间戳。</li>
   <li>该命令是bash内建命令，相关的帮助信息请查看<code>help</code>命令。</li>
 </ol>
-<style>.markdown-body pre .copied {
+<style>markdown-style pre .copied {
   display: flex;
   position: absolute;
   cursor: pointer;
@@ -213,31 +213,31 @@ history -ps arg [arg...]
   font-size: 12px;
   transition: all .3s;
 }
-.markdown-body pre .copied:not(.active) {
+markdown-style pre .copied:not(.active) {
   visibility: hidden;
 }
-.markdown-body pre:hover .copied {
+markdown-style pre:hover .copied {
   visibility: visible;
 }
-.markdown-body pre:hover .copied:hover {
+markdown-style pre:hover .copied:hover {
   background: #4caf50;
   color: #fff;
 }
-.markdown-body pre:hover .copied:active,
-.markdown-body pre .copied.active {
+markdown-style pre:hover .copied:active,
+markdown-style pre .copied.active {
   background: #2e9b33;
   color: #fff;
 }
-.markdown-body pre .copied .octicon-copy {
+markdown-style pre .copied .octicon-copy {
   display: block;
 }
-.markdown-body pre .copied .octicon-check {
+markdown-style pre .copied .octicon-check {
   display: none;
 }
-.markdown-body pre .active .octicon-copy {
+markdown-style pre .active .octicon-copy {
   display: none;
 }
-.markdown-body pre .active .octicon-check {
+markdown-style pre .active .octicon-check {
   display: block;
 }</style><script>/*! @uiw/copy-to-clipboard v1.0.12 | MIT (c) 2021 Kenny Wang | https://github.com/uiwjs/copy-to-clipboard.git */
 !function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):(e="undefined"!=typeof globalThis?globalThis:e||self).copyTextToClipboard=t()}(this,(function(){"use strict";return function(e,t){const o=document.createElement("textarea");o.value=e,o.setAttribute("readonly",""),o.style={position:"absolute",left:"-9999px"},document.body.appendChild(o);const n=document.getSelection().rangeCount>0&&document.getSelection().getRangeAt(0);o.select();let c=!1;try{c=!!document.execCommand("copy")}catch(e){c=!1}document.body.removeChild(o),n&&document.getSelection&&(document.getSelection().removeAllRanges(),document.getSelection().addRange(n)),t&&t(c)}}));
@@ -271,7 +271,7 @@ function copied(target, str) {
     581
   </span> 个Linux命令，超过 <a href="../contributors.html">50+</a> 贡献者
 </div>
-<script type="text/javascript" src="../js/dt.js?v=1661181731860"></script>
-<script type="text/javascript" src="../js/index.js?v=1661181731860"></script>
+<script type="text/javascript" src="../js/dt.js?v=1661420404985"></script>
+<script type="text/javascript" src="../js/index.js?v=1661420404985"></script>
 </body>
 </html>

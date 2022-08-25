@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,cp,将源文件或目录复制到目标文件或目录中">
     <title>cp 命令，Linux cp 命令详解：将源文件或目录复制到目标文件或目录中 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1661181729063">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1661420402742">
     <script src="../js/dark-mode.min.js"></script>
     <script type="module" src="../js/github-corners.js"></script>
 </head>
@@ -155,11 +155,11 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
 <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><span class="octicon octicon-link"></span></a>实例</h3>
 <p>下面的第一行中是 cp 命令和具体的参数（-r 是“递归”， -u 是“更新”，-v 是“详细”）。接下来的三行显示被复制文件的信息，最后一行显示命令行提示符。这样，只拷贝新的文件到我的存储设备上，我就使用 cp 的“更新”和“详细”选项。</p>
 <p>通常来说，参数 <code>-r</code> 也可用更详细的风格 <code>--recursive</code>。但是以简短的方式，也可以这么连用 <code>-ruv</code>。</p>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">cp</span> -r -u -v /usr/men/tmp ~/men/tmp
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">cp</span> <span class="token parameter variable">-r</span> <span class="token parameter variable">-u</span> <span class="token parameter variable">-v</span> /usr/men/tmp ~/men/tmp
 </span></code><div onclick="copied(this)" data-code="cp -r -u -v /usr/men/tmp ~/men/tmp
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>版本备份 <code>--backup=numbered</code> 参数意思为“我要做个备份，而且是带编号的连续备份”。所以一个备份就是 1 号，第二个就是 2 号，等等。</p>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">$ <span class="token function">cp</span> --force --backup<span class="token operator">=</span>numbered test1.py test1.py
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">$ <span class="token function">cp</span> <span class="token parameter variable">--force</span> <span class="token parameter variable">--backup</span><span class="token operator">=</span>numbered test1.py test1.py
 </span><span class="code-line line-number" line="2">$ <span class="token function">ls</span>
 </span><span class="code-line line-number" line="3">test1.py test1.py.~1~ test1.py.~2~
 </span></code><div onclick="copied(this)" data-code="$ cp --force --backup=numbered test1.py test1.py
@@ -176,24 +176,24 @@ test1.py test1.py.~1~ test1.py.~2~
 </span></code><div onclick="copied(this)" data-code="cp file /usr/men/tmp/file1
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>将目录<code>/usr/men</code>下的所有文件及其子目录复制到目录<code>/usr/zh</code>中</p>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">cp</span> -r /usr/men /usr/zh
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">cp</span> <span class="token parameter variable">-r</span> /usr/men /usr/zh
 </span></code><div onclick="copied(this)" data-code="cp -r /usr/men /usr/zh
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>交互式地将目录<code>/usr/men</code>中的以m打头的所有.c文件复制到目录<code>/usr/zh</code>中</p>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">cp</span> -i /usr/men m*.c /usr/zh
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">cp</span> <span class="token parameter variable">-i</span> /usr/men m*.c /usr/zh
 </span></code><div onclick="copied(this)" data-code="cp -i /usr/men m*.c /usr/zh
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>我们在Linux下使用cp命令复制文件时候，有时候会需要覆盖一些同名文件，覆盖文件的时候都会有提示：需要不停的按Y来确定执行覆盖。文件数量不多还好，但是要是几百个估计按Y都要吐血了，于是折腾来半天总结了一个方法：</p>
 <pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">cp</span> aaa/* /bbb
 </span><span class="code-line line-number" line="2"><span class="token comment"># 复制目录aaa下所有到/bbb目录下，这时如果/bbb目录下有和aaa同名的文件，需要按Y来确认并且会略过aaa目录下的子目录。</span>
 </span><span class="code-line line-number" line="3">
-</span><span class="code-line line-number" line="4"><span class="token function">cp</span> -r aaa/* /bbb
+</span><span class="code-line line-number" line="4"><span class="token function">cp</span> <span class="token parameter variable">-r</span> aaa/* /bbb
 </span><span class="code-line line-number" line="5"><span class="token comment"># 这次依然需要按Y来确认操作，但是没有忽略子目录。</span>
 </span><span class="code-line line-number" line="6">
-</span><span class="code-line line-number" line="7"><span class="token function">cp</span> -r -a aaa/* /bbb
+</span><span class="code-line line-number" line="7"><span class="token function">cp</span> <span class="token parameter variable">-r</span> <span class="token parameter variable">-a</span> aaa/* /bbb
 </span><span class="code-line line-number" line="8"><span class="token comment"># 依然需要按Y来确认操作，并且把aaa目录以及子目录和文件属性也传递到了/bbb。</span>
 </span><span class="code-line line-number" line="9">
-</span><span class="code-line line-number" line="10"><span class="token punctuation">\</span>cp -r -a aaa/* /bbb
+</span><span class="code-line line-number" line="10"><span class="token punctuation">\</span>cp <span class="token parameter variable">-r</span> <span class="token parameter variable">-a</span> aaa/* /bbb
 </span><span class="code-line line-number" line="11"><span class="token comment"># 成功，没有提示按Y、传递了目录属性、没有略过目录。</span>
 </span></code><div onclick="copied(this)" data-code="cp aaa/* /bbb
 # 复制目录aaa下所有到/bbb目录下，这时如果/bbb目录下有和aaa同名的文件，需要按Y来确认并且会略过aaa目录下的子目录。
@@ -208,16 +208,16 @@ cp -r -a aaa/* /bbb
 # 成功，没有提示按Y、传递了目录属性、没有略过目录。
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>递归强制复制目录到指定目录中覆盖已存在文件</p>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">cp</span> -rfb ./* <span class="token punctuation">..</span>/backup
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">cp</span> <span class="token parameter variable">-rfb</span> ./* <span class="token punctuation">..</span>/backup
 </span><span class="code-line line-number" line="2"><span class="token comment"># 将当前目录下所有文件，复制到当前目录的兄弟目录 backup 文件夹中</span>
 </span></code><div onclick="copied(this)" data-code="cp -rfb ./* ../backup
 # 将当前目录下所有文件，复制到当前目录的兄弟目录 backup 文件夹中
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>拷贝目录下的隐藏文件如 <code>.babelrc</code></p>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">cp</span> -r aaa/.* ./bbb
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">cp</span> <span class="token parameter variable">-r</span> aaa/.* ./bbb
 </span><span class="code-line line-number" line="2"><span class="token comment"># 将 aaa 目录下的，所有`.`开头的文件，复制到 bbb 目录中。</span>
 </span><span class="code-line line-number" line="3">
-</span><span class="code-line line-number" line="4"><span class="token function">cp</span> -a aaa ./bbb/ 
+</span><span class="code-line line-number" line="4"><span class="token function">cp</span> <span class="token parameter variable">-a</span> aaa ./bbb/ 
 </span><span class="code-line line-number" line="5"><span class="token comment"># 记住后面目录最好的'/' 带上 `-a` 参数</span>
 </span></code><div onclick="copied(this)" data-code="cp -r aaa/.* ./bbb
 # 将 aaa 目录下的，所有&#x60;.&#x60;开头的文件，复制到 bbb 目录中。
@@ -231,7 +231,7 @@ cp -a aaa ./bbb/
 </span></code><div onclick="copied(this)" data-code="cp aaa.conf ./
 # 将 aaa.conf 复制到当前目录
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-<style>.markdown-body pre .copied {
+<style>markdown-style pre .copied {
   display: flex;
   position: absolute;
   cursor: pointer;
@@ -244,31 +244,31 @@ cp -a aaa ./bbb/
   font-size: 12px;
   transition: all .3s;
 }
-.markdown-body pre .copied:not(.active) {
+markdown-style pre .copied:not(.active) {
   visibility: hidden;
 }
-.markdown-body pre:hover .copied {
+markdown-style pre:hover .copied {
   visibility: visible;
 }
-.markdown-body pre:hover .copied:hover {
+markdown-style pre:hover .copied:hover {
   background: #4caf50;
   color: #fff;
 }
-.markdown-body pre:hover .copied:active,
-.markdown-body pre .copied.active {
+markdown-style pre:hover .copied:active,
+markdown-style pre .copied.active {
   background: #2e9b33;
   color: #fff;
 }
-.markdown-body pre .copied .octicon-copy {
+markdown-style pre .copied .octicon-copy {
   display: block;
 }
-.markdown-body pre .copied .octicon-check {
+markdown-style pre .copied .octicon-check {
   display: none;
 }
-.markdown-body pre .active .octicon-copy {
+markdown-style pre .active .octicon-copy {
   display: none;
 }
-.markdown-body pre .active .octicon-check {
+markdown-style pre .active .octicon-check {
   display: block;
 }</style><script>/*! @uiw/copy-to-clipboard v1.0.12 | MIT (c) 2021 Kenny Wang | https://github.com/uiwjs/copy-to-clipboard.git */
 !function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):(e="undefined"!=typeof globalThis?globalThis:e||self).copyTextToClipboard=t()}(this,(function(){"use strict";return function(e,t){const o=document.createElement("textarea");o.value=e,o.setAttribute("readonly",""),o.style={position:"absolute",left:"-9999px"},document.body.appendChild(o);const n=document.getSelection().rangeCount>0&&document.getSelection().getRangeAt(0);o.select();let c=!1;try{c=!!document.execCommand("copy")}catch(e){c=!1}document.body.removeChild(o),n&&document.getSelection&&(document.getSelection().removeAllRanges(),document.getSelection().addRange(n)),t&&t(c)}}));
@@ -302,7 +302,7 @@ function copied(target, str) {
     581
   </span> 个Linux命令，超过 <a href="../contributors.html">50+</a> 贡献者
 </div>
-<script type="text/javascript" src="../js/dt.js?v=1661181729064"></script>
-<script type="text/javascript" src="../js/index.js?v=1661181729064"></script>
+<script type="text/javascript" src="../js/dt.js?v=1661420402742"></script>
+<script type="text/javascript" src="../js/index.js?v=1661420402742"></script>
 </body>
 </html>

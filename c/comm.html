@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,comm,按行比较两个已排序的文件。">
     <title>comm 命令，Linux comm 命令详解：按行比较两个已排序的文件。 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1661181728974">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1661420402690">
     <script src="../js/dark-mode.min.js"></script>
     <script type="module" src="../js/github-corners.js"></script>
 </head>
@@ -126,16 +126,16 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
   <li>无选项时输出三列，第一列为<code>FILE1</code>独有的行，第二列为<code>FILE2</code>独有的行，第三列为<code>FILE1</code>，<code>FILE2</code>共有的行。</li>
 </ul>
 <h2 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><span class="octicon octicon-link"></span></a>选项</h2>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">-1                        不输出第一列。
-</span><span class="code-line line-number" line="2">-2                        不输出第二列。
-</span><span class="code-line line-number" line="3">-3                        不输出第三列。
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token parameter variable">-1</span>                        不输出第一列。
+</span><span class="code-line line-number" line="2"><span class="token parameter variable">-2</span>                        不输出第二列。
+</span><span class="code-line line-number" line="3"><span class="token parameter variable">-3</span>                        不输出第三列。
 </span><span class="code-line line-number" line="4">--check-order             检查输入行是否正确的排序，即使它们确实是已排序过的。
 </span><span class="code-line line-number" line="5">--nocheck-order           不检查输入行是否正确的排序。
 </span><span class="code-line line-number" line="6">--output-delimiter<span class="token operator">=</span>STR    使用STR作为输出列之间的分隔符而不是默认的TAB。
-</span><span class="code-line line-number" line="7">--total                   额外地增加第四列输出概要。
+</span><span class="code-line line-number" line="7"><span class="token parameter variable">--total</span>                   额外地增加第四列输出概要。
 </span><span class="code-line line-number" line="8">-z, --zero-terminated     设置行终止符为NUL（空），而不是换行符。
-</span><span class="code-line line-number" line="9">--help                    显示帮助信息并退出。
-</span><span class="code-line line-number" line="10">--version                 显示版本信息并退出。
+</span><span class="code-line line-number" line="9"><span class="token parameter variable">--help</span>                    显示帮助信息并退出。
+</span><span class="code-line line-number" line="10"><span class="token parameter variable">--version</span>                 显示版本信息并退出。
 </span></code><div onclick="copied(this)" data-code="-1                        不输出第一列。
 -2                        不输出第二列。
 -3                        不输出第三列。
@@ -283,7 +283,7 @@ jjj
 <ol>
   <li>该命令是<code>GNU coreutils</code>包中的命令，相关的帮助信息请查看<code>man -s 1 comm</code>，<code>info coreutils 'comm invocation'</code>。</li>
 </ol>
-<style>.markdown-body pre .copied {
+<style>markdown-style pre .copied {
   display: flex;
   position: absolute;
   cursor: pointer;
@@ -296,31 +296,31 @@ jjj
   font-size: 12px;
   transition: all .3s;
 }
-.markdown-body pre .copied:not(.active) {
+markdown-style pre .copied:not(.active) {
   visibility: hidden;
 }
-.markdown-body pre:hover .copied {
+markdown-style pre:hover .copied {
   visibility: visible;
 }
-.markdown-body pre:hover .copied:hover {
+markdown-style pre:hover .copied:hover {
   background: #4caf50;
   color: #fff;
 }
-.markdown-body pre:hover .copied:active,
-.markdown-body pre .copied.active {
+markdown-style pre:hover .copied:active,
+markdown-style pre .copied.active {
   background: #2e9b33;
   color: #fff;
 }
-.markdown-body pre .copied .octicon-copy {
+markdown-style pre .copied .octicon-copy {
   display: block;
 }
-.markdown-body pre .copied .octicon-check {
+markdown-style pre .copied .octicon-check {
   display: none;
 }
-.markdown-body pre .active .octicon-copy {
+markdown-style pre .active .octicon-copy {
   display: none;
 }
-.markdown-body pre .active .octicon-check {
+markdown-style pre .active .octicon-check {
   display: block;
 }</style><script>/*! @uiw/copy-to-clipboard v1.0.12 | MIT (c) 2021 Kenny Wang | https://github.com/uiwjs/copy-to-clipboard.git */
 !function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):(e="undefined"!=typeof globalThis?globalThis:e||self).copyTextToClipboard=t()}(this,(function(){"use strict";return function(e,t){const o=document.createElement("textarea");o.value=e,o.setAttribute("readonly",""),o.style={position:"absolute",left:"-9999px"},document.body.appendChild(o);const n=document.getSelection().rangeCount>0&&document.getSelection().getRangeAt(0);o.select();let c=!1;try{c=!!document.execCommand("copy")}catch(e){c=!1}document.body.removeChild(o),n&&document.getSelection&&(document.getSelection().removeAllRanges(),document.getSelection().addRange(n)),t&&t(c)}}));
@@ -354,7 +354,7 @@ function copied(target, str) {
     581
   </span> 个Linux命令，超过 <a href="../contributors.html">50+</a> 贡献者
 </div>
-<script type="text/javascript" src="../js/dt.js?v=1661181728975"></script>
-<script type="text/javascript" src="../js/index.js?v=1661181728975"></script>
+<script type="text/javascript" src="../js/dt.js?v=1661420402691"></script>
+<script type="text/javascript" src="../js/index.js?v=1661420402691"></script>
 </body>
 </html>

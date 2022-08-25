@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,chmod,用来变更文件或目录的权限">
     <title>chmod 命令，Linux chmod 命令详解：用来变更文件或目录的权限 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1661181728820">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1661420402510">
     <script src="../js/dark-mode.min.js"></script>
     <script type="module" src="../js/github-corners.js"></script>
 </head>
@@ -118,7 +118,7 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
 <h2 id="概要"><a class="anchor" aria-hidden="true" tabindex="-1" href="#概要"><span class="octicon octicon-link"></span></a>概要</h2>
 <pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">chmod</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. MODE<span class="token punctuation">[</span>,MODE<span class="token punctuation">]</span><span class="token punctuation">..</span>. FILE<span class="token punctuation">..</span>.
 </span><span class="code-line line-number" line="2"><span class="token function">chmod</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. OCTAL-MODE FILE<span class="token punctuation">..</span>.
-</span><span class="code-line line-number" line="3"><span class="token function">chmod</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. --reference<span class="token operator">=</span>RFILE FILE<span class="token punctuation">..</span>.
+</span><span class="code-line line-number" line="3"><span class="token function">chmod</span> <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>. <span class="token parameter variable">--reference</span><span class="token operator">=</span>RFILE FILE<span class="token punctuation">..</span>.
 </span></code><div onclick="copied(this)" data-code="chmod [OPTION]... MODE[,MODE]... FILE...
 chmod [OPTION]... OCTAL-MODE FILE...
 chmod [OPTION]... --reference=RFILE FILE...
@@ -138,7 +138,7 @@ chmod [OPTION]... --reference=RFILE FILE...
 </span><span class="code-line line-number" line="3">--preserve-root：不能在根目录下递归操作。
 </span><span class="code-line line-number" line="4">-f, --silent, --quiet：抑制多数错误消息的输出。
 </span><span class="code-line line-number" line="5">-v, --verbose：无论文件是否更改了权限，一律输出操作信息。
-</span><span class="code-line line-number" line="6">--reference<span class="token operator">=</span>RFILE：使用参考文件或参考目录RFILE的权限来设置目标文件或目录的权限。
+</span><span class="code-line line-number" line="6"><span class="token parameter variable">--reference</span><span class="token operator">=</span>RFILE：使用参考文件或参考目录RFILE的权限来设置目标文件或目录的权限。
 </span><span class="code-line line-number" line="7">-R, --recursive：对目录以及目录下的文件递归执行更改权限操作。
 </span><span class="code-line line-number" line="8">--help：显示帮助信息并退出。
 </span><span class="code-line line-number" line="9">--version：显示版本信息并退出。
@@ -176,7 +176,7 @@ chmod [OPTION]... --reference=RFILE FILE...
 <pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">linux文件的用户权限说明：
 </span><span class="code-line line-number" line="2">
 </span><span class="code-line line-number" line="3"><span class="token comment"># 查看当前目录（包含隐藏文件）的长格式。</span>
-</span><span class="code-line line-number" line="4"><span class="token function">ls</span> -la
+</span><span class="code-line line-number" line="4"><span class="token function">ls</span> <span class="token parameter variable">-la</span>
 </span><span class="code-line line-number" line="5">  -rw-r--r--   <span class="token number">1</span> user  staff   <span class="token number">651</span> Oct <span class="token number">12</span> <span class="token number">12</span>:53 .gitmodules
 </span><span class="code-line line-number" line="6">
 </span><span class="code-line line-number" line="7"><span class="token comment"># 第1位如果是d则代表目录，是-则代表普通文件。</span>
@@ -208,9 +208,9 @@ ls -la
 </span><span class="code-line line-number" line="10"><span class="token function">chmod</span> <span class="token number">764</span> ./test.log
 </span><span class="code-line line-number" line="11"><span class="token comment"># 将目录以及目录下的文件都设置为所有用户拥有读写权限。</span>
 </span><span class="code-line line-number" line="12"><span class="token comment"># 注意，使用'-R'选项一定要保留当前用户的执行和读取权限，否则会报错！</span>
-</span><span class="code-line line-number" line="13"><span class="token function">chmod</span> -R <span class="token assign-left variable">a</span><span class="token operator">=</span>rw ./testdir/
+</span><span class="code-line line-number" line="13"><span class="token function">chmod</span> <span class="token parameter variable">-R</span> <span class="token assign-left variable">a</span><span class="token operator">=</span>rw ./testdir/
 </span><span class="code-line line-number" line="14"><span class="token comment"># 根据其他文件的权限设置文件权限。</span>
-</span><span class="code-line line-number" line="15"><span class="token function">chmod</span> --reference<span class="token operator">=</span>./1.log  ./test.log
+</span><span class="code-line line-number" line="15"><span class="token function">chmod</span> <span class="token parameter variable">--reference</span><span class="token operator">=</span>./1.log  ./test.log
 </span></code><div onclick="copied(this)" data-code="# 添加组用户的写权限。
 chmod g+w ./test.log
 # 删除其他用户的所有权限。
@@ -239,7 +239,7 @@ chmod --reference=./1.log  ./test.log
     <p>使用<code>-R</code>选项一定要保留当前用户的执行和读取权限，否则会报错！</p>
   </li>
 </ol>
-<style>.markdown-body pre .copied {
+<style>markdown-style pre .copied {
   display: flex;
   position: absolute;
   cursor: pointer;
@@ -252,31 +252,31 @@ chmod --reference=./1.log  ./test.log
   font-size: 12px;
   transition: all .3s;
 }
-.markdown-body pre .copied:not(.active) {
+markdown-style pre .copied:not(.active) {
   visibility: hidden;
 }
-.markdown-body pre:hover .copied {
+markdown-style pre:hover .copied {
   visibility: visible;
 }
-.markdown-body pre:hover .copied:hover {
+markdown-style pre:hover .copied:hover {
   background: #4caf50;
   color: #fff;
 }
-.markdown-body pre:hover .copied:active,
-.markdown-body pre .copied.active {
+markdown-style pre:hover .copied:active,
+markdown-style pre .copied.active {
   background: #2e9b33;
   color: #fff;
 }
-.markdown-body pre .copied .octicon-copy {
+markdown-style pre .copied .octicon-copy {
   display: block;
 }
-.markdown-body pre .copied .octicon-check {
+markdown-style pre .copied .octicon-check {
   display: none;
 }
-.markdown-body pre .active .octicon-copy {
+markdown-style pre .active .octicon-copy {
   display: none;
 }
-.markdown-body pre .active .octicon-check {
+markdown-style pre .active .octicon-check {
   display: block;
 }</style><script>/*! @uiw/copy-to-clipboard v1.0.12 | MIT (c) 2021 Kenny Wang | https://github.com/uiwjs/copy-to-clipboard.git */
 !function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):(e="undefined"!=typeof globalThis?globalThis:e||self).copyTextToClipboard=t()}(this,(function(){"use strict";return function(e,t){const o=document.createElement("textarea");o.value=e,o.setAttribute("readonly",""),o.style={position:"absolute",left:"-9999px"},document.body.appendChild(o);const n=document.getSelection().rangeCount>0&&document.getSelection().getRangeAt(0);o.select();let c=!1;try{c=!!document.execCommand("copy")}catch(e){c=!1}document.body.removeChild(o),n&&document.getSelection&&(document.getSelection().removeAllRanges(),document.getSelection().addRange(n)),t&&t(c)}}));
@@ -310,7 +310,7 @@ function copied(target, str) {
     581
   </span> 个Linux命令，超过 <a href="../contributors.html">50+</a> 贡献者
 </div>
-<script type="text/javascript" src="../js/dt.js?v=1661181728822"></script>
-<script type="text/javascript" src="../js/index.js?v=1661181728822"></script>
+<script type="text/javascript" src="../js/dt.js?v=1661420402511"></script>
+<script type="text/javascript" src="../js/index.js?v=1661420402511"></script>
 </body>
 </html>

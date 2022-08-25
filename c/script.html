@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,script,记录终端会话的所有操作">
     <title>script 命令，Linux script 命令详解：记录终端会话的所有操作 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1661181736268">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1661420408922">
     <script src="../js/dark-mode.min.js"></script>
     <script type="module" src="../js/github-corners.js"></script>
 </head>
@@ -122,19 +122,19 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
 </span></code><div onclick="copied(this)" data-code="script(选项)(参数)
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><span class="octicon octicon-link"></span></a>选项</h3>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">-a, --append              <span class="token comment"># 对终端会话的操作信息，以追加方式写入文件（保留原文件内容）</span>
-</span><span class="code-line line-number" line="2">-c, --command <span class="token builtin class-name">command</span>     <span class="token comment"># 只运行 command 命令而不打开交互终端。相当于开启 script ，执行 command ，再退出 script</span>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">-a, <span class="token parameter variable">--append</span>              <span class="token comment"># 对终端会话的操作信息，以追加方式写入文件（保留原文件内容）</span>
+</span><span class="code-line line-number" line="2">-c, <span class="token parameter variable">--command</span> <span class="token builtin class-name">command</span>     <span class="token comment"># 只运行 command 命令而不打开交互终端。相当于开启 script ，执行 command ，再退出 script</span>
 </span><span class="code-line line-number" line="3">                          <span class="token comment"># command 可以是任意能够在终端会话执行的命令</span>
-</span><span class="code-line line-number" line="4">-e, --return              <span class="token comment"># 返回子进程的退出状态码</span>
-</span><span class="code-line line-number" line="5">-f, --flush               <span class="token comment"># 每次终端的内容发生变动，立马写入日志文件</span>
-</span><span class="code-line line-number" line="6">--force                   <span class="token comment"># 允许默认输出终端数据文件为符号链接</span>
+</span><span class="code-line line-number" line="4">-e, <span class="token parameter variable">--return</span>              <span class="token comment"># 返回子进程的退出状态码</span>
+</span><span class="code-line line-number" line="5">-f, <span class="token parameter variable">--flush</span>               <span class="token comment"># 每次终端的内容发生变动，立马写入日志文件</span>
+</span><span class="code-line line-number" line="6"><span class="token parameter variable">--force</span>                   <span class="token comment"># 允许默认输出终端数据文件为符号链接</span>
 </span><span class="code-line line-number" line="7">-o, --output-limit size   <span class="token comment"># 限制终端数据文件和时间日志文件的大小，当文件大小达到此限制就会退出子进程</span>
 </span><span class="code-line line-number" line="8">                          <span class="token comment"># size 的单位可以设置为：KiB(=1024)、KB(=1000)、MiB(1024*1024)、MB(=1000*1000)</span>
 </span><span class="code-line line-number" line="9">                          <span class="token comment"># 同理还支持 GiB TiB PiB EiB ZiB YiB GB TB PB EB ZB YB</span>
-</span><span class="code-line line-number" line="10">-q, --quiet               <span class="token comment"># 安静模式。启动和退出script命令不显示任何提示</span>
+</span><span class="code-line line-number" line="10">-q, <span class="token parameter variable">--quiet</span>               <span class="token comment"># 安静模式。启动和退出script命令不显示任何提示</span>
 </span><span class="code-line line-number" line="11">-t<span class="token punctuation">[</span>file<span class="token punctuation">]</span>, --timing<span class="token punctuation">[</span><span class="token operator">=</span>file<span class="token punctuation">]</span> <span class="token comment"># 输出时间日志信息到标准错误(stderr)或者文件</span>
-</span><span class="code-line line-number" line="12">-V, --version             <span class="token comment"># 显示版本信息并退出</span>
-</span><span class="code-line line-number" line="13">-h, --help                <span class="token comment"># 显示帮助文本并退出</span>
+</span><span class="code-line line-number" line="12">-V, <span class="token parameter variable">--version</span>             <span class="token comment"># 显示版本信息并退出</span>
+</span><span class="code-line line-number" line="13">-h, <span class="token parameter variable">--help</span>                <span class="token comment"># 显示帮助文本并退出</span>
 </span></code><div onclick="copied(this)" data-code="-a, --append              # 对终端会话的操作信息，以追加方式写入文件（保留原文件内容）
 -c, --command command     # 只运行 command 命令而不打开交互终端。相当于开启 script ，执行 command ，再退出 script
                           # command 可以是任意能够在终端会话执行的命令
@@ -156,7 +156,7 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
 <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><span class="octicon octicon-link"></span></a>实例</h3>
 <pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">script                             <span class="token comment"># 开启记录，默认会在当前目录创建名称为 typescript 的文件来保存终端数据文件</span>
 </span><span class="code-line line-number" line="2">script command.log                 <span class="token comment"># 开启记录，在当前目录创建名称为 command.log 的文件来保存终端数据文件</span>
-</span><span class="code-line line-number" line="3">script -t <span class="token operator"><span class="token file-descriptor important">2</span>></span>time.file command.log  <span class="token comment"># 开启记录，在当前目录创建名称为 command.log 的文件来保存终端数据文件</span>
+</span><span class="code-line line-number" line="3">script <span class="token parameter variable">-t</span> <span class="token operator"><span class="token file-descriptor important">2</span>></span>time.file command.log  <span class="token comment"># 开启记录，在当前目录创建名称为 command.log 的文件来保存终端数据文件</span>
 </span><span class="code-line line-number" line="4">                                   <span class="token comment"># 在当前目录创建名称为 time.file 的文件来保存时间日志文件</span>
 </span></code><div onclick="copied(this)" data-code="script                             # 开启记录，默认会在当前目录创建名称为 typescript 的文件来保存终端数据文件
 script command.log                 # 开启记录，在当前目录创建名称为 command.log 的文件来保存终端数据文件
@@ -164,7 +164,7 @@ script -t 2>time.file command.log  # 开启记录，在当前目录创建名称�
                                    # 在当前目录创建名称为 time.file 的文件来保存时间日志文件
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p><strong>以追加模式记录终端信息</strong></p>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">zfb@localhost:~$ script -t <span class="token operator"><span class="token file-descriptor important">2</span>></span>time.file -a -f command.log
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">zfb@localhost:~$ script <span class="token parameter variable">-t</span> <span class="token operator"><span class="token file-descriptor important">2</span>></span>time.file <span class="token parameter variable">-a</span> <span class="token parameter variable">-f</span> command.log
 </span><span class="code-line line-number" line="2">Script started, <span class="token function">file</span> is command.log
 </span><span class="code-line line-number" line="3">zfb@localhost:~$ <span class="token builtin class-name">echo</span> <span class="token string">"hello, world"</span>
 </span><span class="code-line line-number" line="4">hello, world
@@ -172,7 +172,7 @@ script -t 2>time.file command.log  # 开启记录，在当前目录创建名称�
 </span><span class="code-line line-number" line="6"><span class="token number">2020</span>-12-23 <span class="token number">20</span>:48:46
 </span><span class="code-line line-number" line="7">zfb@localhost:~$ <span class="token builtin class-name">echo</span> <span class="token string">"Bye"</span>
 </span><span class="code-line line-number" line="8">Bye
-</span><span class="code-line line-number" line="9">zfb@localhost:~$ <span class="token function">ls</span> -al
+</span><span class="code-line line-number" line="9">zfb@localhost:~$ <span class="token function">ls</span> <span class="token parameter variable">-al</span>
 </span><span class="code-line line-number" line="10">total <span class="token number">20</span>
 </span><span class="code-line line-number" line="11">drwxr-xr-x  <span class="token number">2</span> zfb zfb <span class="token number">4096</span> Dec <span class="token number">23</span> <span class="token number">20</span>:48 <span class="token builtin class-name">.</span>
 </span><span class="code-line line-number" line="12">drwxr-xr-x <span class="token number">37</span> zfb zfb <span class="token number">4096</span> Dec <span class="token number">23</span> <span class="token number">20</span>:49 <span class="token punctuation">..</span>
@@ -212,7 +212,7 @@ zfb@localhost:~$
 </span><span class="code-line line-number" line="6"><span class="token number">2020</span>-12-23 <span class="token number">20</span>:48:46
 </span><span class="code-line line-number" line="7">zfb@localhost:~$ <span class="token builtin class-name">echo</span> <span class="token string">"Bye"</span>
 </span><span class="code-line line-number" line="8">Bye
-</span><span class="code-line line-number" line="9">zfb@localhost:~$ <span class="token function">ls</span> -al
+</span><span class="code-line line-number" line="9">zfb@localhost:~$ <span class="token function">ls</span> <span class="token parameter variable">-al</span>
 </span><span class="code-line line-number" line="10">total <span class="token number">20</span>
 </span><span class="code-line line-number" line="11">drwxr-xr-x  <span class="token number">2</span> zfb zfb <span class="token number">4096</span> Dec <span class="token number">23</span> <span class="token number">20</span>:48 <span class="token builtin class-name">.</span>
 </span><span class="code-line line-number" line="12">drwxr-xr-x <span class="token number">37</span> zfb zfb <span class="token number">4096</span> Dec <span class="token number">23</span> <span class="token number">20</span>:49 <span class="token punctuation">..</span>
@@ -248,9 +248,9 @@ zfb@localhost:~$
 <p>其中，只有命令<code>cat command.log</code>是用户输入，其他均为自动呈现。通过查看上面输出的时间<code>2020-12-23 20:48:46</code>，可以证明，这是重现的记录，而非重新执行一遍命令。也就是说，可以把<code>time.file</code>和<code>command.log</code>文件移动到任意一台机器上，都可以重现命令输入与终端回显。</p>
 <p><strong>记录服务器用户会话操作</strong></p>
 <p>以<code>root</code>身份编辑文件<code>/etc/profile</code>，在文件末尾追加以下内容</p>
-<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token environment constant">$UID</span> -ge <span class="token number">0</span> <span class="token punctuation">]</span>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token keyword">if</span> <span class="token punctuation">[</span> <span class="token environment constant">$UID</span> <span class="token parameter variable">-ge</span> <span class="token number">0</span> <span class="token punctuation">]</span>
 </span><span class="code-line line-number" line="2"><span class="token keyword">then</span>
-</span><span class="code-line line-number" line="3">    <span class="token builtin class-name">exec</span> /usr/bin/script -t <span class="token operator"><span class="token file-descriptor important">2</span>></span>/var/log/script-records/<span class="token environment constant">$USER</span>-<span class="token environment constant">$UID</span>-<span class="token variable"><span class="token variable">`</span><span class="token function">date</span> +%Y%m%d<span class="token variable">`</span></span>.time -a -f -q /var/log/script-records/<span class="token environment constant">$USER</span>-<span class="token environment constant">$UID</span>-<span class="token variable"><span class="token variable">`</span><span class="token function">date</span> +%Y%m%d<span class="token variable">`</span></span>.log
+</span><span class="code-line line-number" line="3">    <span class="token builtin class-name">exec</span> /usr/bin/script <span class="token parameter variable">-t</span> <span class="token operator"><span class="token file-descriptor important">2</span>></span>/var/log/script-records/<span class="token environment constant">$USER</span>-<span class="token environment constant">$UID</span>-<span class="token variable"><span class="token variable">`</span><span class="token function">date</span> +%Y%m%d<span class="token variable">`</span></span>.time <span class="token parameter variable">-a</span> <span class="token parameter variable">-f</span> <span class="token parameter variable">-q</span> /var/log/script-records/<span class="token environment constant">$USER</span>-<span class="token environment constant">$UID</span>-<span class="token variable"><span class="token variable">`</span><span class="token function">date</span> +%Y%m%d<span class="token variable">`</span></span>.log
 </span><span class="code-line line-number" line="4"><span class="token keyword">fi</span>
 </span></code><div onclick="copied(this)" data-code="if [ $UID -ge 0 ]
 then
@@ -258,13 +258,13 @@ then
 fi
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>然后再以<code>root</code>身份创建文件夹用于存储服务器上的各个用户在终端的所有操作信息</p>
-<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token function">sudo</span> <span class="token function">mkdir</span> -p /var/log/script-records/
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token function">sudo</span> <span class="token function">mkdir</span> <span class="token parameter variable">-p</span> /var/log/script-records/
 </span><span class="code-line line-number" line="2"><span class="token function">sudo</span> <span class="token function">chmod</span> <span class="token number">733</span> /var/log/script-records/
 </span></code><div onclick="copied(this)" data-code="sudo mkdir -p /var/log/script-records/
 sudo chmod 733 /var/log/script-records/
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>最后，执行命令<code>source /etc/profile</code>即可。任意用户（<code>UID ≥ 0</code>）在终端执行的所有操作都会被安静地记录下来，以天为单位存储。</p>
-<style>.markdown-body pre .copied {
+<style>markdown-style pre .copied {
   display: flex;
   position: absolute;
   cursor: pointer;
@@ -277,31 +277,31 @@ sudo chmod 733 /var/log/script-records/
   font-size: 12px;
   transition: all .3s;
 }
-.markdown-body pre .copied:not(.active) {
+markdown-style pre .copied:not(.active) {
   visibility: hidden;
 }
-.markdown-body pre:hover .copied {
+markdown-style pre:hover .copied {
   visibility: visible;
 }
-.markdown-body pre:hover .copied:hover {
+markdown-style pre:hover .copied:hover {
   background: #4caf50;
   color: #fff;
 }
-.markdown-body pre:hover .copied:active,
-.markdown-body pre .copied.active {
+markdown-style pre:hover .copied:active,
+markdown-style pre .copied.active {
   background: #2e9b33;
   color: #fff;
 }
-.markdown-body pre .copied .octicon-copy {
+markdown-style pre .copied .octicon-copy {
   display: block;
 }
-.markdown-body pre .copied .octicon-check {
+markdown-style pre .copied .octicon-check {
   display: none;
 }
-.markdown-body pre .active .octicon-copy {
+markdown-style pre .active .octicon-copy {
   display: none;
 }
-.markdown-body pre .active .octicon-check {
+markdown-style pre .active .octicon-check {
   display: block;
 }</style><script>/*! @uiw/copy-to-clipboard v1.0.12 | MIT (c) 2021 Kenny Wang | https://github.com/uiwjs/copy-to-clipboard.git */
 !function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):(e="undefined"!=typeof globalThis?globalThis:e||self).copyTextToClipboard=t()}(this,(function(){"use strict";return function(e,t){const o=document.createElement("textarea");o.value=e,o.setAttribute("readonly",""),o.style={position:"absolute",left:"-9999px"},document.body.appendChild(o);const n=document.getSelection().rangeCount>0&&document.getSelection().getRangeAt(0);o.select();let c=!1;try{c=!!document.execCommand("copy")}catch(e){c=!1}document.body.removeChild(o),n&&document.getSelection&&(document.getSelection().removeAllRanges(),document.getSelection().addRange(n)),t&&t(c)}}));
@@ -335,7 +335,7 @@ function copied(target, str) {
     581
   </span> 个Linux命令，超过 <a href="../contributors.html">50+</a> 贡献者
 </div>
-<script type="text/javascript" src="../js/dt.js?v=1661181736269"></script>
-<script type="text/javascript" src="../js/index.js?v=1661181736269"></script>
+<script type="text/javascript" src="../js/dt.js?v=1661420408922"></script>
+<script type="text/javascript" src="../js/index.js?v=1661420408922"></script>
 </body>
 </html>

@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,cat,连接多个文件并打印到标准输出。">
     <title>cat 命令，Linux cat 命令详解：连接多个文件并打印到标准输出。 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1661181728639">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1661420402350">
     <script src="../js/dark-mode.min.js"></script>
     <script type="module" src="../js/github-corners.js"></script>
 </head>
@@ -132,17 +132,17 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
 </span><span class="code-line line-number" line="2">
 </span><span class="code-line line-number" line="3">-A, --show-all           等价于<span class="token string">"-vET"</span>组合选项。
 </span><span class="code-line line-number" line="4">-b, --number-nonblank    只对非空行编号，从1开始编号，覆盖<span class="token string">"-n"</span>选项。
-</span><span class="code-line line-number" line="5">-e                       等价于<span class="token string">"-vE"</span>组合选项。
+</span><span class="code-line line-number" line="5"><span class="token parameter variable">-e</span>                       等价于<span class="token string">"-vE"</span>组合选项。
 </span><span class="code-line line-number" line="6">-E, --show-ends          在每行的结尾显示<span class="token string">'$'</span>字符。
-</span><span class="code-line line-number" line="7">-n, --number             对所有行编号，从1开始编号。
+</span><span class="code-line line-number" line="7">-n, <span class="token parameter variable">--number</span>             对所有行编号，从1开始编号。
 </span><span class="code-line line-number" line="8">-s, --squeeze-blank      压缩连续的空行到一行。
-</span><span class="code-line line-number" line="9">-t                       等价于<span class="token string">"-vT"</span>组合选项。
+</span><span class="code-line line-number" line="9"><span class="token parameter variable">-t</span>                       等价于<span class="token string">"-vT"</span>组合选项。
 </span><span class="code-line line-number" line="10">-T, --show-tabs          使用<span class="token string">"^I"</span>表示TAB（制表符）。
-</span><span class="code-line line-number" line="11">-u                       POSIX兼容性选项，无意义。
+</span><span class="code-line line-number" line="11"><span class="token parameter variable">-u</span>                       POSIX兼容性选项，无意义。
 </span><span class="code-line line-number" line="12">-v, --show-nonprinting   使用<span class="token string">"^"</span>和<span class="token string">"M-"</span>符号显示控制字符，除了LFD（line feed，即换行符<span class="token string">'\n'</span>）和TAB（制表符）。
 </span><span class="code-line line-number" line="13">
-</span><span class="code-line line-number" line="14">--help                   显示帮助信息并退出。
-</span><span class="code-line line-number" line="15">--version                显示版本信息并退出。
+</span><span class="code-line line-number" line="14"><span class="token parameter variable">--help</span>                   显示帮助信息并退出。
+</span><span class="code-line line-number" line="15"><span class="token parameter variable">--version</span>                显示版本信息并退出。
 </span></code><div onclick="copied(this)" data-code="长选项与短选项等价
 
 -A, --show-all           等价于&#x22;-vET&#x22;组合选项。
@@ -165,13 +165,13 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
 <pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 合并显示多个文件</span>
 </span><span class="code-line line-number" line="2"><span class="token function">cat</span> ./1.log ./2.log ./3.log
 </span><span class="code-line line-number" line="3"><span class="token comment"># 显示文件中的非打印字符、tab、换行符</span>
-</span><span class="code-line line-number" line="4"><span class="token function">cat</span> -A test.log
+</span><span class="code-line line-number" line="4"><span class="token function">cat</span> <span class="token parameter variable">-A</span> test.log
 </span><span class="code-line line-number" line="5"><span class="token comment"># 压缩文件的空行</span>
-</span><span class="code-line line-number" line="6"><span class="token function">cat</span> -s test.log
+</span><span class="code-line line-number" line="6"><span class="token function">cat</span> <span class="token parameter variable">-s</span> test.log
 </span><span class="code-line line-number" line="7"><span class="token comment"># 显示文件并在所有行开头附加行号</span>
-</span><span class="code-line line-number" line="8"><span class="token function">cat</span> -n test.log
+</span><span class="code-line line-number" line="8"><span class="token function">cat</span> <span class="token parameter variable">-n</span> test.log
 </span><span class="code-line line-number" line="9"><span class="token comment"># 显示文件并在所有非空行开头附加行号</span>
-</span><span class="code-line line-number" line="10"><span class="token function">cat</span> -b test.log
+</span><span class="code-line line-number" line="10"><span class="token function">cat</span> <span class="token parameter variable">-b</span> test.log
 </span><span class="code-line line-number" line="11"><span class="token comment"># 将标准输入的内容和文件内容一并显示</span>
 </span><span class="code-line line-number" line="12"><span class="token builtin class-name">echo</span> <span class="token string">'######'</span> <span class="token operator">|</span><span class="token function">cat</span> - test.log
 </span></code><div onclick="copied(this)" data-code="# 合并显示多个文件
@@ -197,7 +197,7 @@ echo &#x27;######&#x27; |cat - test.log
 <ol>
   <li><a href="https://superuser.com/questions/328054/is-there-an-lfd-key-on-my-keyboard">Question about LFD key</a></li>
 </ol>
-<style>.markdown-body pre .copied {
+<style>markdown-style pre .copied {
   display: flex;
   position: absolute;
   cursor: pointer;
@@ -210,31 +210,31 @@ echo &#x27;######&#x27; |cat - test.log
   font-size: 12px;
   transition: all .3s;
 }
-.markdown-body pre .copied:not(.active) {
+markdown-style pre .copied:not(.active) {
   visibility: hidden;
 }
-.markdown-body pre:hover .copied {
+markdown-style pre:hover .copied {
   visibility: visible;
 }
-.markdown-body pre:hover .copied:hover {
+markdown-style pre:hover .copied:hover {
   background: #4caf50;
   color: #fff;
 }
-.markdown-body pre:hover .copied:active,
-.markdown-body pre .copied.active {
+markdown-style pre:hover .copied:active,
+markdown-style pre .copied.active {
   background: #2e9b33;
   color: #fff;
 }
-.markdown-body pre .copied .octicon-copy {
+markdown-style pre .copied .octicon-copy {
   display: block;
 }
-.markdown-body pre .copied .octicon-check {
+markdown-style pre .copied .octicon-check {
   display: none;
 }
-.markdown-body pre .active .octicon-copy {
+markdown-style pre .active .octicon-copy {
   display: none;
 }
-.markdown-body pre .active .octicon-check {
+markdown-style pre .active .octicon-check {
   display: block;
 }</style><script>/*! @uiw/copy-to-clipboard v1.0.12 | MIT (c) 2021 Kenny Wang | https://github.com/uiwjs/copy-to-clipboard.git */
 !function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):(e="undefined"!=typeof globalThis?globalThis:e||self).copyTextToClipboard=t()}(this,(function(){"use strict";return function(e,t){const o=document.createElement("textarea");o.value=e,o.setAttribute("readonly",""),o.style={position:"absolute",left:"-9999px"},document.body.appendChild(o);const n=document.getSelection().rangeCount>0&&document.getSelection().getRangeAt(0);o.select();let c=!1;try{c=!!document.execCommand("copy")}catch(e){c=!1}document.body.removeChild(o),n&&document.getSelection&&(document.getSelection().removeAllRanges(),document.getSelection().addRange(n)),t&&t(c)}}));
@@ -268,7 +268,7 @@ function copied(target, str) {
     581
   </span> 个Linux命令，超过 <a href="../contributors.html">50+</a> 贡献者
 </div>
-<script type="text/javascript" src="../js/dt.js?v=1661181728640"></script>
-<script type="text/javascript" src="../js/index.js?v=1661181728640"></script>
+<script type="text/javascript" src="../js/dt.js?v=1661420402351"></script>
+<script type="text/javascript" src="../js/index.js?v=1661420402351"></script>
 </body>
 </html>

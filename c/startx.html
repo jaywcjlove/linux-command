@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,startx,用来启动X Window">
     <title>startx 命令，Linux startx 命令详解：用来启动X Window -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1661181737079">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1661420409655">
     <script src="../js/dark-mode.min.js"></script>
     <script type="module" src="../js/github-corners.js"></script>
 </head>
@@ -132,31 +132,31 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
 </span></code><div onclick="copied(this)" data-code="startx
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>要在工作站上强制启动 X 会话，请输入： </p>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">startx -w
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">startx <span class="token parameter variable">-w</span>
 </span></code><div onclick="copied(this)" data-code="startx -w
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>要为 X 终端启动 X 会话，并注销用户的 telnet 会话，请输入：</p>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">startx<span class="token punctuation">;</span> <span class="token function">kill</span> -9 $
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">startx<span class="token punctuation">;</span> <span class="token function">kill</span> <span class="token parameter variable">-9</span> $
 </span></code><div onclick="copied(this)" data-code="startx; kill -9 $
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>要使用 .xinitrc 脚本启动 X 会话，请输入：</p>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">startx -x .xinitrc
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">startx <span class="token parameter variable">-x</span> .xinitrc
 </span></code><div onclick="copied(this)" data-code="startx -x .xinitrc
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>要使用 mwm 窗口管理器启动 X 会话，请输入：</p>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">startx -m mwm
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">startx <span class="token parameter variable">-m</span> mwm
 </span></code><div onclick="copied(this)" data-code="startx -m mwm
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>但是，如果找到启动脚本文件，则忽略<code>-w</code>选项。在启动脚本中，启动窗口管理器、装入X资源以及产生X客户机是用户的责任。以下是.xsession脚本的一个示例。</p>
 <pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token shebang important">#!/bin/csh</span>
 </span><span class="code-line line-number" line="2"> <span class="token punctuation">(</span>mwm <span class="token operator">&#x26;</span><span class="token punctuation">)</span>
-</span><span class="code-line line-number" line="3"> xrdb -load .Xdefaults
-</span><span class="code-line line-number" line="4"> <span class="token punctuation">(</span>xclock -g 75x75+0+0 <span class="token operator">&#x26;</span><span class="token punctuation">)</span>
-</span><span class="code-line line-number" line="5"> <span class="token punctuation">(</span>xbiff -g 75x75+101-0 <span class="token operator">&#x26;</span><span class="token punctuation">)</span>
+</span><span class="code-line line-number" line="3"> xrdb <span class="token parameter variable">-load</span> .Xdefaults
+</span><span class="code-line line-number" line="4"> <span class="token punctuation">(</span>xclock <span class="token parameter variable">-g</span> 75x75+0+0 <span class="token operator">&#x26;</span><span class="token punctuation">)</span>
+</span><span class="code-line line-number" line="5"> <span class="token punctuation">(</span>xbiff <span class="token parameter variable">-g</span> 75x75+101-0 <span class="token operator">&#x26;</span><span class="token punctuation">)</span>
 </span><span class="code-line line-number" line="6"> <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token string">"/dev/lft*"</span> <span class="token operator">==</span> <span class="token string">"<span class="token variable"><span class="token variable">`</span><span class="token function">tty</span><span class="token variable">`</span></span>"</span><span class="token punctuation">)</span> <span class="token keyword">then</span>
-</span><span class="code-line line-number" line="7">  aixterm -g 80x24+0+0 +ut -C -T <span class="token variable"><span class="token variable">`</span><span class="token function">hostname</span><span class="token variable">`</span></span>
+</span><span class="code-line line-number" line="7">  aixterm <span class="token parameter variable">-g</span> 80x24+0+0 +ut <span class="token parameter variable">-C</span> <span class="token parameter variable">-T</span> <span class="token variable"><span class="token variable">`</span><span class="token function">hostname</span><span class="token variable">`</span></span>
 </span><span class="code-line line-number" line="8"> <span class="token keyword">else</span>
-</span><span class="code-line line-number" line="9">  aixterm -g 80x24+0+0 +ut -T <span class="token variable"><span class="token variable">`</span><span class="token function">hostname</span><span class="token variable">`</span></span>
+</span><span class="code-line line-number" line="9">  aixterm <span class="token parameter variable">-g</span> 80x24+0+0 +ut <span class="token parameter variable">-T</span> <span class="token variable"><span class="token variable">`</span><span class="token function">hostname</span><span class="token variable">`</span></span>
 </span><span class="code-line line-number" line="10"> endif
 </span></code><div onclick="copied(this)" data-code="#!/bin/csh
  (mwm &#x26;)
@@ -199,7 +199,7 @@ $HOME/.awmrc awm 配置文件。
 $HOME/.uwmrc uwm 配置文件。
 /dev/lft* 终端或 tty、工作站初始 login shell 的界面。
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-<style>.markdown-body pre .copied {
+<style>markdown-style pre .copied {
   display: flex;
   position: absolute;
   cursor: pointer;
@@ -212,31 +212,31 @@ $HOME/.uwmrc uwm 配置文件。
   font-size: 12px;
   transition: all .3s;
 }
-.markdown-body pre .copied:not(.active) {
+markdown-style pre .copied:not(.active) {
   visibility: hidden;
 }
-.markdown-body pre:hover .copied {
+markdown-style pre:hover .copied {
   visibility: visible;
 }
-.markdown-body pre:hover .copied:hover {
+markdown-style pre:hover .copied:hover {
   background: #4caf50;
   color: #fff;
 }
-.markdown-body pre:hover .copied:active,
-.markdown-body pre .copied.active {
+markdown-style pre:hover .copied:active,
+markdown-style pre .copied.active {
   background: #2e9b33;
   color: #fff;
 }
-.markdown-body pre .copied .octicon-copy {
+markdown-style pre .copied .octicon-copy {
   display: block;
 }
-.markdown-body pre .copied .octicon-check {
+markdown-style pre .copied .octicon-check {
   display: none;
 }
-.markdown-body pre .active .octicon-copy {
+markdown-style pre .active .octicon-copy {
   display: none;
 }
-.markdown-body pre .active .octicon-check {
+markdown-style pre .active .octicon-check {
   display: block;
 }</style><script>/*! @uiw/copy-to-clipboard v1.0.12 | MIT (c) 2021 Kenny Wang | https://github.com/uiwjs/copy-to-clipboard.git */
 !function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):(e="undefined"!=typeof globalThis?globalThis:e||self).copyTextToClipboard=t()}(this,(function(){"use strict";return function(e,t){const o=document.createElement("textarea");o.value=e,o.setAttribute("readonly",""),o.style={position:"absolute",left:"-9999px"},document.body.appendChild(o);const n=document.getSelection().rangeCount>0&&document.getSelection().getRangeAt(0);o.select();let c=!1;try{c=!!document.execCommand("copy")}catch(e){c=!1}document.body.removeChild(o),n&&document.getSelection&&(document.getSelection().removeAllRanges(),document.getSelection().addRange(n)),t&&t(c)}}));
@@ -270,7 +270,7 @@ function copied(target, str) {
     581
   </span> 个Linux命令，超过 <a href="../contributors.html">50+</a> 贡献者
 </div>
-<script type="text/javascript" src="../js/dt.js?v=1661181737080"></script>
-<script type="text/javascript" src="../js/index.js?v=1661181737080"></script>
+<script type="text/javascript" src="../js/dt.js?v=1661420409656"></script>
+<script type="text/javascript" src="../js/index.js?v=1661420409656"></script>
 </body>
 </html>

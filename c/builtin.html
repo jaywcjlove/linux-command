@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,builtin,执行bash内建命令。">
     <title>builtin 命令，Linux builtin 命令详解：执行bash内建命令。 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1661181728484">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1661420402207">
     <script src="../js/dark-mode.min.js"></script>
     <script type="module" src="../js/github-corners.js"></script>
 </head>
@@ -136,7 +136,7 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
 </span><span class="code-line line-number" line="2"><span class="token comment"># 此时内建命令优先使用</span>
 </span><span class="code-line line-number" line="3"><span class="token builtin class-name">echo</span> <span class="token string">"the Great Wall"</span>
 </span><span class="code-line line-number" line="4"><span class="token comment"># 调用内建命令type，返回命令的类型（builtin）</span>
-</span><span class="code-line line-number" line="5"><span class="token builtin class-name">type</span> -t <span class="token builtin class-name">echo</span>
+</span><span class="code-line line-number" line="5"><span class="token builtin class-name">type</span> <span class="token parameter variable">-t</span> <span class="token builtin class-name">echo</span>
 </span><span class="code-line line-number" line="6"><span class="token comment"># 定义 echo 函数</span>
 </span><span class="code-line line-number" line="7"><span class="token function-name function">echo</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
 </span><span class="code-line line-number" line="8">    <span class="token builtin class-name">printf</span> <span class="token string">"123<span class="token entity" title="\n">\n</span>"</span>
@@ -144,9 +144,9 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
 </span><span class="code-line line-number" line="10"><span class="token comment"># 此时同名函数优先使用，显示（123）</span>
 </span><span class="code-line line-number" line="11"><span class="token builtin class-name">echo</span>
 </span><span class="code-line line-number" line="12"><span class="token comment"># 调用内建命令type，返回命令的类型（function）</span>
-</span><span class="code-line line-number" line="13"><span class="token builtin class-name">type</span> -t <span class="token builtin class-name">echo</span>
+</span><span class="code-line line-number" line="13"><span class="token builtin class-name">type</span> <span class="token parameter variable">-t</span> <span class="token builtin class-name">echo</span>
 </span><span class="code-line line-number" line="14"><span class="token comment"># 此时内建命令优先使用</span>
-</span><span class="code-line line-number" line="15"><span class="token builtin class-name">builtin</span> <span class="token builtin class-name">echo</span> -e <span class="token string">"backslash <span class="token entity" title="\\">\\</span>"</span>
+</span><span class="code-line line-number" line="15"><span class="token builtin class-name">builtin</span> <span class="token builtin class-name">echo</span> <span class="token parameter variable">-e</span> <span class="token string">"backslash <span class="token entity" title="\\">\\</span>"</span>
 </span></code><div onclick="copied(this)" data-code="# 关于外部命令优先级最高的情况请参考enable命令。
 # 此时内建命令优先使用
 echo &#x22;the Great Wall&#x22;
@@ -191,7 +191,7 @@ alias which=&#x27;alias | /usr/bin/which --tty-only --read-alias --show-dot --sh
     <p>如果要调用的内建命令被禁用了（包括<code>builtin</code>），那么执行会报错；关于禁用和启用内建命令请参考<code>enable</code>命令。</p>
   </li>
 </ol>
-<style>.markdown-body pre .copied {
+<style>markdown-style pre .copied {
   display: flex;
   position: absolute;
   cursor: pointer;
@@ -204,31 +204,31 @@ alias which=&#x27;alias | /usr/bin/which --tty-only --read-alias --show-dot --sh
   font-size: 12px;
   transition: all .3s;
 }
-.markdown-body pre .copied:not(.active) {
+markdown-style pre .copied:not(.active) {
   visibility: hidden;
 }
-.markdown-body pre:hover .copied {
+markdown-style pre:hover .copied {
   visibility: visible;
 }
-.markdown-body pre:hover .copied:hover {
+markdown-style pre:hover .copied:hover {
   background: #4caf50;
   color: #fff;
 }
-.markdown-body pre:hover .copied:active,
-.markdown-body pre .copied.active {
+markdown-style pre:hover .copied:active,
+markdown-style pre .copied.active {
   background: #2e9b33;
   color: #fff;
 }
-.markdown-body pre .copied .octicon-copy {
+markdown-style pre .copied .octicon-copy {
   display: block;
 }
-.markdown-body pre .copied .octicon-check {
+markdown-style pre .copied .octicon-check {
   display: none;
 }
-.markdown-body pre .active .octicon-copy {
+markdown-style pre .active .octicon-copy {
   display: none;
 }
-.markdown-body pre .active .octicon-check {
+markdown-style pre .active .octicon-check {
   display: block;
 }</style><script>/*! @uiw/copy-to-clipboard v1.0.12 | MIT (c) 2021 Kenny Wang | https://github.com/uiwjs/copy-to-clipboard.git */
 !function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):(e="undefined"!=typeof globalThis?globalThis:e||self).copyTextToClipboard=t()}(this,(function(){"use strict";return function(e,t){const o=document.createElement("textarea");o.value=e,o.setAttribute("readonly",""),o.style={position:"absolute",left:"-9999px"},document.body.appendChild(o);const n=document.getSelection().rangeCount>0&&document.getSelection().getRangeAt(0);o.select();let c=!1;try{c=!!document.execCommand("copy")}catch(e){c=!1}document.body.removeChild(o),n&&document.getSelection&&(document.getSelection().removeAllRanges(),document.getSelection().addRange(n)),t&&t(c)}}));
@@ -262,7 +262,7 @@ function copied(target, str) {
     581
   </span> 个Linux命令，超过 <a href="../contributors.html">50+</a> 贡献者
 </div>
-<script type="text/javascript" src="../js/dt.js?v=1661181728485"></script>
-<script type="text/javascript" src="../js/index.js?v=1661181728485"></script>
+<script type="text/javascript" src="../js/dt.js?v=1661420402208"></script>
+<script type="text/javascript" src="../js/index.js?v=1661420402208"></script>
 </body>
 </html>

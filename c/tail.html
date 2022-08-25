@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,tail,在屏幕上显示指定文件的末尾若干行">
     <title>tail 命令，Linux tail 命令详解：在屏幕上显示指定文件的末尾若干行 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1661181737509">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1661420410011">
     <script src="../js/dark-mode.min.js"></script>
     <script type="module" src="../js/github-corners.js"></script>
 </head>
@@ -140,17 +140,17 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
 </span></code><div onclick="copied(this)" data-code="tail (选项) (参数)
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><span class="octicon octicon-link"></span></a>选项</h3>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">-c, --bytes<span class="token operator">=</span>NUM                 输出文件尾部的NUM（NUM为整数）个字节内容。
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">-c, <span class="token parameter variable">--bytes</span><span class="token operator">=</span>NUM                 输出文件尾部的NUM（NUM为整数）个字节内容。
 </span><span class="code-line line-number" line="2">-f, --follow<span class="token punctuation">[</span><span class="token operator">=</span><span class="token punctuation">{</span>name<span class="token operator">|</span>descript<span class="token punctuation">}</span><span class="token punctuation">]</span>  显示文件最新追加的内容。“name”表示以文件名的方式监视文件的变化。
-</span><span class="code-line line-number" line="3">-F                              与 “--follow<span class="token operator">=</span>name --retry” 功能相同。
-</span><span class="code-line line-number" line="4">-n, --line<span class="token operator">=</span>NUM                  输出文件的尾部NUM（NUM位数字）行内容。
-</span><span class="code-line line-number" line="5">--pid<span class="token operator">=</span><span class="token operator">&#x3C;</span>进程号<span class="token operator">></span>                  与“-f”选项连用，当指定的进程号的进程终止后，自动退出tail命令。
-</span><span class="code-line line-number" line="6">-q, --quiet, --silent           当有多个文件参数时，不输出各个文件名。
-</span><span class="code-line line-number" line="7">--retry                         即是在tail命令启动时，文件不可访问或者文件稍后变得不可访问，都始终尝试打开文件。使用此选项时需要与选项“--follow<span class="token operator">=</span>name”连用。
+</span><span class="code-line line-number" line="3"><span class="token parameter variable">-F</span>                              与 “--follow<span class="token operator">=</span>name --retry” 功能相同。
+</span><span class="code-line line-number" line="4">-n, <span class="token parameter variable">--line</span><span class="token operator">=</span>NUM                  输出文件的尾部NUM（NUM位数字）行内容。
+</span><span class="code-line line-number" line="5"><span class="token parameter variable">--pid</span><span class="token operator">=</span><span class="token operator">&#x3C;</span>进程号<span class="token operator">></span>                  与“-f”选项连用，当指定的进程号的进程终止后，自动退出tail命令。
+</span><span class="code-line line-number" line="6">-q, --quiet, <span class="token parameter variable">--silent</span>           当有多个文件参数时，不输出各个文件名。
+</span><span class="code-line line-number" line="7"><span class="token parameter variable">--retry</span>                         即是在tail命令启动时，文件不可访问或者文件稍后变得不可访问，都始终尝试打开文件。使用此选项时需要与选项“--follow<span class="token operator">=</span>name”连用。
 </span><span class="code-line line-number" line="8">-s, --sleep-interal<span class="token operator">=</span><span class="token operator">&#x3C;</span>秒数<span class="token operator">></span>      与“-f”选项连用，指定监视文件变化时间隔的秒数。
-</span><span class="code-line line-number" line="9">-v, --verbose                   当有多个文件参数时，总是输出各个文件名。
-</span><span class="code-line line-number" line="10">--help                          显示指令的帮助信息。
-</span><span class="code-line line-number" line="11">--version                       显示指令的版本信息。
+</span><span class="code-line line-number" line="9">-v, <span class="token parameter variable">--verbose</span>                   当有多个文件参数时，总是输出各个文件名。
+</span><span class="code-line line-number" line="10"><span class="token parameter variable">--help</span>                          显示指令的帮助信息。
+</span><span class="code-line line-number" line="11"><span class="token parameter variable">--version</span>                       显示指令的版本信息。
 </span></code><div onclick="copied(this)" data-code="-c, --bytes=NUM                 输出文件尾部的NUM（NUM为整数）个字节内容。
 -f, --follow[={name|descript}]  显示文件最新追加的内容。“name”表示以文件名的方式监视文件的变化。
 -F                              与 “--follow=name --retry” 功能相同。
@@ -167,12 +167,12 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
 <p>文件列表：指定要显示尾部内容的文件列表。</p>
 <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><span class="octicon octicon-link"></span></a>实例</h3>
 <pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">tail</span> <span class="token function">file</span> <span class="token comment">#（显示文件file的最后10行）</span>
-</span><span class="code-line line-number" line="2"><span class="token function">tail</span> -n +20 <span class="token function">file</span> <span class="token comment">#（显示文件file的内容，从第20行至文件末尾）</span>
-</span><span class="code-line line-number" line="3"><span class="token function">tail</span> -c <span class="token number">10</span> <span class="token function">file</span> <span class="token comment">#（显示文件file的最后10个字节）</span>
+</span><span class="code-line line-number" line="2"><span class="token function">tail</span> <span class="token parameter variable">-n</span> +20 <span class="token function">file</span> <span class="token comment">#（显示文件file的内容，从第20行至文件末尾）</span>
+</span><span class="code-line line-number" line="3"><span class="token function">tail</span> <span class="token parameter variable">-c</span> <span class="token number">10</span> <span class="token function">file</span> <span class="token comment">#（显示文件file的最后10个字节）</span>
 </span><span class="code-line line-number" line="4">
-</span><span class="code-line line-number" line="5"><span class="token function">tail</span> -25 mail.log <span class="token comment"># 显示 mail.log 最后的 25 行</span>
-</span><span class="code-line line-number" line="6"><span class="token function">tail</span> -f mail.log <span class="token comment"># 等同于--follow=descriptor，根据文件描述符进行追踪，当文件改名或被删除，追踪停止</span>
-</span><span class="code-line line-number" line="7"><span class="token function">tail</span> -F mail.log <span class="token comment"># 等同于--follow=name --retry，根据文件名进行追踪，并保持重试，即该文件被删除或改名后，如果再次创建相同的文件名，会继续追踪</span>
+</span><span class="code-line line-number" line="5"><span class="token function">tail</span> <span class="token parameter variable">-25</span> mail.log <span class="token comment"># 显示 mail.log 最后的 25 行</span>
+</span><span class="code-line line-number" line="6"><span class="token function">tail</span> <span class="token parameter variable">-f</span> mail.log <span class="token comment"># 等同于--follow=descriptor，根据文件描述符进行追踪，当文件改名或被删除，追踪停止</span>
+</span><span class="code-line line-number" line="7"><span class="token function">tail</span> <span class="token parameter variable">-F</span> mail.log <span class="token comment"># 等同于--follow=name --retry，根据文件名进行追踪，并保持重试，即该文件被删除或改名后，如果再次创建相同的文件名，会继续追踪</span>
 </span></code><div onclick="copied(this)" data-code="tail file #（显示文件file的最后10行）
 tail -n +20 file #（显示文件file的内容，从第20行至文件末尾）
 tail -c 10 file #（显示文件file的最后10个字节）
@@ -181,7 +181,7 @@ tail -25 mail.log # 显示 mail.log 最后的 25 行
 tail -f mail.log # 等同于--follow=descriptor，根据文件描述符进行追踪，当文件改名或被删除，追踪停止
 tail -F mail.log # 等同于--follow=name --retry，根据文件名进行追踪，并保持重试，即该文件被删除或改名后，如果再次创建相同的文件名，会继续追踪
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-<style>.markdown-body pre .copied {
+<style>markdown-style pre .copied {
   display: flex;
   position: absolute;
   cursor: pointer;
@@ -194,31 +194,31 @@ tail -F mail.log # 等同于--follow=name --retry，根据文件名进行追踪�
   font-size: 12px;
   transition: all .3s;
 }
-.markdown-body pre .copied:not(.active) {
+markdown-style pre .copied:not(.active) {
   visibility: hidden;
 }
-.markdown-body pre:hover .copied {
+markdown-style pre:hover .copied {
   visibility: visible;
 }
-.markdown-body pre:hover .copied:hover {
+markdown-style pre:hover .copied:hover {
   background: #4caf50;
   color: #fff;
 }
-.markdown-body pre:hover .copied:active,
-.markdown-body pre .copied.active {
+markdown-style pre:hover .copied:active,
+markdown-style pre .copied.active {
   background: #2e9b33;
   color: #fff;
 }
-.markdown-body pre .copied .octicon-copy {
+markdown-style pre .copied .octicon-copy {
   display: block;
 }
-.markdown-body pre .copied .octicon-check {
+markdown-style pre .copied .octicon-check {
   display: none;
 }
-.markdown-body pre .active .octicon-copy {
+markdown-style pre .active .octicon-copy {
   display: none;
 }
-.markdown-body pre .active .octicon-check {
+markdown-style pre .active .octicon-check {
   display: block;
 }</style><script>/*! @uiw/copy-to-clipboard v1.0.12 | MIT (c) 2021 Kenny Wang | https://github.com/uiwjs/copy-to-clipboard.git */
 !function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):(e="undefined"!=typeof globalThis?globalThis:e||self).copyTextToClipboard=t()}(this,(function(){"use strict";return function(e,t){const o=document.createElement("textarea");o.value=e,o.setAttribute("readonly",""),o.style={position:"absolute",left:"-9999px"},document.body.appendChild(o);const n=document.getSelection().rangeCount>0&&document.getSelection().getRangeAt(0);o.select();let c=!1;try{c=!!document.execCommand("copy")}catch(e){c=!1}document.body.removeChild(o),n&&document.getSelection&&(document.getSelection().removeAllRanges(),document.getSelection().addRange(n)),t&&t(c)}}));
@@ -252,7 +252,7 @@ function copied(target, str) {
     581
   </span> 个Linux命令，超过 <a href="../contributors.html">50+</a> 贡献者
 </div>
-<script type="text/javascript" src="../js/dt.js?v=1661181737510"></script>
-<script type="text/javascript" src="../js/index.js?v=1661181737510"></script>
+<script type="text/javascript" src="../js/dt.js?v=1661420410012"></script>
+<script type="text/javascript" src="../js/index.js?v=1661420410012"></script>
 </body>
 </html>

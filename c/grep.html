@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,grep,强大的文本搜索工具">
     <title>grep 命令，Linux grep 命令详解：强大的文本搜索工具 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1661181731645">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1661420404799">
     <script src="../js/dark-mode.min.js"></script>
     <script type="module" src="../js/github-corners.js"></script>
 </head>
@@ -118,35 +118,35 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
 <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><span class="octicon octicon-link"></span></a>补充说明</h2>
 <p><strong>grep</strong> （global search regular expression(RE) and print out the line，全面搜索正则表达式并把行打印出来）是一种强大的文本搜索工具，它能使用正则表达式搜索文本，并把匹配的行打印出来。用于过滤/搜索的特定字符。可使用正则表达式能配合多种命令使用，使用上十分灵活。</p>
 <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><span class="octicon octicon-link"></span></a>选项</h3>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">-a --text  <span class="token comment"># 不要忽略二进制数据。</span>
-</span><span class="code-line line-number" line="2">-A <span class="token operator">&#x3C;</span>显示行数<span class="token operator">></span>   --after-context<span class="token operator">=</span><span class="token operator">&#x3C;</span>显示行数<span class="token operator">></span>   <span class="token comment"># 除了显示符合范本样式的那一行之外，并显示该行之后的内容。</span>
-</span><span class="code-line line-number" line="3">-b --byte-offset                           <span class="token comment"># 在显示符合范本样式的那一行之外，并显示该行之前的内容。</span>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token parameter variable">-a</span> <span class="token parameter variable">--text</span>  <span class="token comment"># 不要忽略二进制数据。</span>
+</span><span class="code-line line-number" line="2"><span class="token parameter variable">-A</span> <span class="token operator">&#x3C;</span>显示行数<span class="token operator">></span>   --after-context<span class="token operator">=</span><span class="token operator">&#x3C;</span>显示行数<span class="token operator">></span>   <span class="token comment"># 除了显示符合范本样式的那一行之外，并显示该行之后的内容。</span>
+</span><span class="code-line line-number" line="3"><span class="token parameter variable">-b</span> --byte-offset                           <span class="token comment"># 在显示符合范本样式的那一行之外，并显示该行之前的内容。</span>
 </span><span class="code-line line-number" line="4">-B<span class="token operator">&#x3C;</span>显示行数<span class="token operator">></span>   --before-context<span class="token operator">=</span><span class="token operator">&#x3C;</span>显示行数<span class="token operator">></span>   <span class="token comment"># 除了显示符合样式的那一行之外，并显示该行之前的内容。</span>
-</span><span class="code-line line-number" line="5">-c --count    <span class="token comment"># 计算符合范本样式的列数。</span>
-</span><span class="code-line line-number" line="6">-C<span class="token operator">&#x3C;</span>显示行数<span class="token operator">></span> --context<span class="token operator">=</span><span class="token operator">&#x3C;</span>显示行数<span class="token operator">></span>或-<span class="token operator">&#x3C;</span>显示行数<span class="token operator">></span> <span class="token comment"># 除了显示符合范本样式的那一列之外，并显示该列之前后的内容。</span>
-</span><span class="code-line line-number" line="7">-d<span class="token operator">&#x3C;</span>进行动作<span class="token operator">></span> --directories<span class="token operator">=</span><span class="token operator">&#x3C;</span>动作<span class="token operator">></span>  <span class="token comment"># 当指定要查找的是目录而非文件时，必须使用这项参数，否则grep命令将回报信息并停止动作。</span>
-</span><span class="code-line line-number" line="8">-e<span class="token operator">&#x3C;</span>范本样式<span class="token operator">></span> --regexp<span class="token operator">=</span><span class="token operator">&#x3C;</span>范本样式<span class="token operator">></span>   <span class="token comment"># 指定字符串作为查找文件内容的范本样式。</span>
-</span><span class="code-line line-number" line="9">-E --extended-regexp             <span class="token comment"># 将范本样式为延伸的普通表示法来使用，意味着使用能使用扩展正则表达式。</span>
-</span><span class="code-line line-number" line="10">-f<span class="token operator">&#x3C;</span>范本文件<span class="token operator">></span> --file<span class="token operator">=</span><span class="token operator">&#x3C;</span>规则文件<span class="token operator">></span>     <span class="token comment"># 指定范本文件，其内容有一个或多个范本样式，让grep查找符合范本条件的文件内容，格式为每一列的范本样式。</span>
-</span><span class="code-line line-number" line="11">-F --fixed-regexp   <span class="token comment"># 将范本样式视为固定字符串的列表。</span>
-</span><span class="code-line line-number" line="12">-G --basic-regexp   <span class="token comment"># 将范本样式视为普通的表示法来使用。</span>
-</span><span class="code-line line-number" line="13">-h --no-filename    <span class="token comment"># 在显示符合范本样式的那一列之前，不标示该列所属的文件名称。</span>
-</span><span class="code-line line-number" line="14">-H --with-filename  <span class="token comment"># 在显示符合范本样式的那一列之前，标示该列的文件名称。</span>
-</span><span class="code-line line-number" line="15">-i --ignore-case    <span class="token comment"># 忽略字符大小写的差别。</span>
-</span><span class="code-line line-number" line="16">-l --file-with-matches   <span class="token comment"># 列出文件内容符合指定的范本样式的文件名称。</span>
-</span><span class="code-line line-number" line="17">-L --files-without-match <span class="token comment"># 列出文件内容不符合指定的范本样式的文件名称。</span>
-</span><span class="code-line line-number" line="18">-n --line-number         <span class="token comment"># 在显示符合范本样式的那一列之前，标示出该列的编号。</span>
-</span><span class="code-line line-number" line="19">-P --perl-regexp         <span class="token comment"># PATTERN 是一个 Perl 正则表达式</span>
-</span><span class="code-line line-number" line="20">-q --quiet或--silent     <span class="token comment"># 不显示任何信息。</span>
-</span><span class="code-line line-number" line="21">-R/-r  --recursive       <span class="token comment"># 此参数的效果和指定“-d recurse”参数相同。</span>
-</span><span class="code-line line-number" line="22">-s --no-messages  <span class="token comment"># 不显示错误信息。</span>
-</span><span class="code-line line-number" line="23">-v --revert-match <span class="token comment"># 反转查找。</span>
-</span><span class="code-line line-number" line="24">-V --version      <span class="token comment"># 显示版本信息。   </span>
-</span><span class="code-line line-number" line="25">-w --word-regexp  <span class="token comment"># 只显示全字符合的列。</span>
-</span><span class="code-line line-number" line="26">-x --line-regexp  <span class="token comment"># 只显示全列符合的列。</span>
-</span><span class="code-line line-number" line="27">-y <span class="token comment"># 此参数效果跟“-i”相同。</span>
-</span><span class="code-line line-number" line="28">-o <span class="token comment"># 只输出文件中匹配到的部分。</span>
-</span><span class="code-line line-number" line="29">-m <span class="token operator">&#x3C;</span>num<span class="token operator">></span> --max-count<span class="token operator">=</span><span class="token operator">&#x3C;</span>num<span class="token operator">></span> <span class="token comment"># 找到num行结果后停止查找，用来限制匹配行数</span>
+</span><span class="code-line line-number" line="5"><span class="token parameter variable">-c</span> <span class="token parameter variable">--count</span>    <span class="token comment"># 计算符合范本样式的列数。</span>
+</span><span class="code-line line-number" line="6">-C<span class="token operator">&#x3C;</span>显示行数<span class="token operator">></span> <span class="token parameter variable">--context</span><span class="token operator">=</span><span class="token operator">&#x3C;</span>显示行数<span class="token operator">></span>或-<span class="token operator">&#x3C;</span>显示行数<span class="token operator">></span> <span class="token comment"># 除了显示符合范本样式的那一列之外，并显示该列之前后的内容。</span>
+</span><span class="code-line line-number" line="7">-d<span class="token operator">&#x3C;</span>进行动作<span class="token operator">></span> <span class="token parameter variable">--directories</span><span class="token operator">=</span><span class="token operator">&#x3C;</span>动作<span class="token operator">></span>  <span class="token comment"># 当指定要查找的是目录而非文件时，必须使用这项参数，否则grep命令将回报信息并停止动作。</span>
+</span><span class="code-line line-number" line="8">-e<span class="token operator">&#x3C;</span>范本样式<span class="token operator">></span> <span class="token parameter variable">--regexp</span><span class="token operator">=</span><span class="token operator">&#x3C;</span>范本样式<span class="token operator">></span>   <span class="token comment"># 指定字符串作为查找文件内容的范本样式。</span>
+</span><span class="code-line line-number" line="9"><span class="token parameter variable">-E</span> --extended-regexp             <span class="token comment"># 将范本样式为延伸的普通表示法来使用，意味着使用能使用扩展正则表达式。</span>
+</span><span class="code-line line-number" line="10">-f<span class="token operator">&#x3C;</span>范本文件<span class="token operator">></span> <span class="token parameter variable">--file</span><span class="token operator">=</span><span class="token operator">&#x3C;</span>规则文件<span class="token operator">></span>     <span class="token comment"># 指定范本文件，其内容有一个或多个范本样式，让grep查找符合范本条件的文件内容，格式为每一列的范本样式。</span>
+</span><span class="code-line line-number" line="11"><span class="token parameter variable">-F</span> --fixed-regexp   <span class="token comment"># 将范本样式视为固定字符串的列表。</span>
+</span><span class="code-line line-number" line="12"><span class="token parameter variable">-G</span> --basic-regexp   <span class="token comment"># 将范本样式视为普通的表示法来使用。</span>
+</span><span class="code-line line-number" line="13"><span class="token parameter variable">-h</span> --no-filename    <span class="token comment"># 在显示符合范本样式的那一列之前，不标示该列所属的文件名称。</span>
+</span><span class="code-line line-number" line="14"><span class="token parameter variable">-H</span> --with-filename  <span class="token comment"># 在显示符合范本样式的那一列之前，标示该列的文件名称。</span>
+</span><span class="code-line line-number" line="15"><span class="token parameter variable">-i</span> --ignore-case    <span class="token comment"># 忽略字符大小写的差别。</span>
+</span><span class="code-line line-number" line="16"><span class="token parameter variable">-l</span> --file-with-matches   <span class="token comment"># 列出文件内容符合指定的范本样式的文件名称。</span>
+</span><span class="code-line line-number" line="17"><span class="token parameter variable">-L</span> --files-without-match <span class="token comment"># 列出文件内容不符合指定的范本样式的文件名称。</span>
+</span><span class="code-line line-number" line="18"><span class="token parameter variable">-n</span> --line-number         <span class="token comment"># 在显示符合范本样式的那一列之前，标示出该列的编号。</span>
+</span><span class="code-line line-number" line="19"><span class="token parameter variable">-P</span> --perl-regexp         <span class="token comment"># PATTERN 是一个 Perl 正则表达式</span>
+</span><span class="code-line line-number" line="20"><span class="token parameter variable">-q</span> --quiet或--silent     <span class="token comment"># 不显示任何信息。</span>
+</span><span class="code-line line-number" line="21">-R/-r  <span class="token parameter variable">--recursive</span>       <span class="token comment"># 此参数的效果和指定“-d recurse”参数相同。</span>
+</span><span class="code-line line-number" line="22"><span class="token parameter variable">-s</span> --no-messages  <span class="token comment"># 不显示错误信息。</span>
+</span><span class="code-line line-number" line="23"><span class="token parameter variable">-v</span> --revert-match <span class="token comment"># 反转查找。</span>
+</span><span class="code-line line-number" line="24"><span class="token parameter variable">-V</span> <span class="token parameter variable">--version</span>      <span class="token comment"># 显示版本信息。   </span>
+</span><span class="code-line line-number" line="25"><span class="token parameter variable">-w</span> --word-regexp  <span class="token comment"># 只显示全字符合的列。</span>
+</span><span class="code-line line-number" line="26"><span class="token parameter variable">-x</span> --line-regexp  <span class="token comment"># 只显示全列符合的列。</span>
+</span><span class="code-line line-number" line="27"><span class="token parameter variable">-y</span> <span class="token comment"># 此参数效果跟“-i”相同。</span>
+</span><span class="code-line line-number" line="28"><span class="token parameter variable">-o</span> <span class="token comment"># 只输出文件中匹配到的部分。</span>
+</span><span class="code-line line-number" line="29"><span class="token parameter variable">-m</span> <span class="token operator">&#x3C;</span>num<span class="token operator">></span> --max-count<span class="token operator">=</span><span class="token operator">&#x3C;</span>num<span class="token operator">></span> <span class="token comment"># 找到num行结果后停止查找，用来限制匹配行数</span>
 </span></code><div onclick="copied(this)" data-code="-a --text  # 不要忽略二进制数据。
 -A <显示行数>   --after-context=<显示行数>   # 除了显示符合范本样式的那一行之外，并显示该行之后的内容。
 -b --byte-offset                           # 在显示符合范本样式的那一行之外，并显示该行之前的内容。
@@ -223,15 +223,15 @@ grep &#x22;match_pattern&#x22; file_name
 </span></code><div onclick="copied(this)" data-code="grep &#x22;match_pattern&#x22; file_1 file_2 file_3 ...
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>输出除之外的所有行 <strong>-v</strong> 选项：</p>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">grep</span> -v <span class="token string">"match_pattern"</span> file_name
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">grep</span> <span class="token parameter variable">-v</span> <span class="token string">"match_pattern"</span> file_name
 </span></code><div onclick="copied(this)" data-code="grep -v &#x22;match_pattern&#x22; file_name
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>标记匹配颜色 <strong>--color=auto</strong> 选项：</p>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">grep</span> <span class="token string">"match_pattern"</span> file_name --color<span class="token operator">=</span>auto
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">grep</span> <span class="token string">"match_pattern"</span> file_name <span class="token parameter variable">--color</span><span class="token operator">=</span>auto
 </span></code><div onclick="copied(this)" data-code="grep &#x22;match_pattern&#x22; file_name --color=auto
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>使用正则表达式 <strong>-E</strong> 选项：</p>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">grep</span> -E <span class="token string">"[1-9]+"</span>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">grep</span> <span class="token parameter variable">-E</span> <span class="token string">"[1-9]+"</span>
 </span><span class="code-line line-number" line="2"><span class="token comment"># 或</span>
 </span><span class="code-line line-number" line="3"><span class="token function">egrep</span> <span class="token string">"[1-9]+"</span>
 </span></code><div onclick="copied(this)" data-code="grep -E &#x22;[1-9]+&#x22;
@@ -239,14 +239,14 @@ grep &#x22;match_pattern&#x22; file_name
 egrep &#x22;[1-9]+&#x22;
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>使用正则表达式 <strong>-P</strong> 选项：</p>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">grep</span> -P <span class="token string">"(\d{3}\-){2}\d{4}"</span> file_name
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">grep</span> <span class="token parameter variable">-P</span> <span class="token string">"(\d{3}\-){2}\d{4}"</span> file_name
 </span></code><div onclick="copied(this)" data-code="grep -P &#x22;(\d{3}\-){2}\d{4}&#x22; file_name
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>只输出文件中匹配到的部分 <strong>-o</strong> 选项：</p>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token builtin class-name">echo</span> this is a <span class="token builtin class-name">test</span> line. <span class="token operator">|</span> <span class="token function">grep</span> -o -E <span class="token string">"[a-z]+\."</span>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token builtin class-name">echo</span> this is a <span class="token builtin class-name">test</span> line. <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-o</span> <span class="token parameter variable">-E</span> <span class="token string">"[a-z]+\."</span>
 </span><span class="code-line line-number" line="2">line.
 </span><span class="code-line line-number" line="3">
-</span><span class="code-line line-number" line="4"><span class="token builtin class-name">echo</span> this is a <span class="token builtin class-name">test</span> line. <span class="token operator">|</span> <span class="token function">egrep</span> -o <span class="token string">"[a-z]+\."</span>
+</span><span class="code-line line-number" line="4"><span class="token builtin class-name">echo</span> this is a <span class="token builtin class-name">test</span> line. <span class="token operator">|</span> <span class="token function">egrep</span> <span class="token parameter variable">-o</span> <span class="token string">"[a-z]+\."</span>
 </span><span class="code-line line-number" line="5">line.
 </span></code><div onclick="copied(this)" data-code="echo this is a test line. | grep -o -E &#x22;[a-z]+\.&#x22;
 line.
@@ -255,7 +255,7 @@ echo this is a test line. | egrep -o &#x22;[a-z]+\.&#x22;
 line.
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>统计文件或者文本中包含匹配字符串的行数 <strong>-c</strong> 选项：</p>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">grep</span> -c <span class="token string">"text"</span> file_name
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">grep</span> <span class="token parameter variable">-c</span> <span class="token string">"text"</span> file_name
 </span></code><div onclick="copied(this)" data-code="grep -c &#x22;text&#x22; file_name
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>搜索命令行历史记录中 输入过 <code>git</code> 命令的记录：</p>
@@ -263,12 +263,12 @@ line.
 </span></code><div onclick="copied(this)" data-code="history | grep git
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>输出包含匹配字符串的行数 <strong>-n</strong> 选项：</p>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">grep</span> <span class="token string">"text"</span> -n file_name
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">grep</span> <span class="token string">"text"</span> <span class="token parameter variable">-n</span> file_name
 </span><span class="code-line line-number" line="2"><span class="token comment"># 或</span>
-</span><span class="code-line line-number" line="3"><span class="token function">cat</span> file_name <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"text"</span> -n
+</span><span class="code-line line-number" line="3"><span class="token function">cat</span> file_name <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"text"</span> <span class="token parameter variable">-n</span>
 </span><span class="code-line line-number" line="4">
 </span><span class="code-line line-number" line="5"><span class="token comment">#多个文件</span>
-</span><span class="code-line line-number" line="6"><span class="token function">grep</span> <span class="token string">"text"</span> -n file_1 file_2
+</span><span class="code-line line-number" line="6"><span class="token function">grep</span> <span class="token string">"text"</span> <span class="token parameter variable">-n</span> file_1 file_2
 </span></code><div onclick="copied(this)" data-code="grep &#x22;text&#x22; -n file_name
 # 或
 cat file_name | grep &#x22;text&#x22; -n
@@ -277,7 +277,7 @@ cat file_name | grep &#x22;text&#x22; -n
 grep &#x22;text&#x22; -n file_1 file_2
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>打印样式匹配所位于的字符或字节偏移：</p>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token builtin class-name">echo</span> gun is not unix <span class="token operator">|</span> <span class="token function">grep</span> -b -o <span class="token string">"not"</span>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token builtin class-name">echo</span> gun is not unix <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-b</span> <span class="token parameter variable">-o</span> <span class="token string">"not"</span>
 </span><span class="code-line line-number" line="2"><span class="token number">7</span>:not
 </span><span class="code-line line-number" line="3"><span class="token comment">#一行中字符串的字符偏移是从该行的第一个字符开始计算，起始值为0。选项  **-b -o**  一般总是配合使用。</span>
 </span></code><div onclick="copied(this)" data-code="echo gun is not unix | grep -b -o &#x22;not&#x22;
@@ -285,24 +285,24 @@ grep &#x22;text&#x22; -n file_1 file_2
 #一行中字符串的字符偏移是从该行的第一个字符开始计算，起始值为0。选项  **-b -o**  一般总是配合使用。
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>搜索多个文件并查找匹配文本在哪些文件中：</p>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">grep</span> -l <span class="token string">"text"</span> file1 file2 file3<span class="token punctuation">..</span>.
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">grep</span> <span class="token parameter variable">-l</span> <span class="token string">"text"</span> file1 file2 file3<span class="token punctuation">..</span>.
 </span></code><div onclick="copied(this)" data-code="grep -l &#x22;text&#x22; file1 file2 file3...
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <h3 id="grep递归搜索文件"><a class="anchor" aria-hidden="true" tabindex="-1" href="#grep递归搜索文件"><span class="octicon octicon-link"></span></a>grep递归搜索文件</h3>
 <p>在多级目录中对文本进行递归搜索：</p>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">grep</span> <span class="token string">"text"</span> <span class="token builtin class-name">.</span> -r -n
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">grep</span> <span class="token string">"text"</span> <span class="token builtin class-name">.</span> <span class="token parameter variable">-r</span> <span class="token parameter variable">-n</span>
 </span><span class="code-line line-number" line="2"><span class="token comment"># .表示当前目录。</span>
 </span></code><div onclick="copied(this)" data-code="grep &#x22;text&#x22; . -r -n
 # .表示当前目录。
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>忽略匹配样式中的字符大小写：</p>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token builtin class-name">echo</span> <span class="token string">"hello world"</span> <span class="token operator">|</span> <span class="token function">grep</span> -i <span class="token string">"HELLO"</span>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token builtin class-name">echo</span> <span class="token string">"hello world"</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-i</span> <span class="token string">"HELLO"</span>
 </span><span class="code-line line-number" line="2"><span class="token comment"># hello</span>
 </span></code><div onclick="copied(this)" data-code="echo &#x22;hello world&#x22; | grep -i &#x22;HELLO&#x22;
 # hello
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>选项 <strong>-e</strong> 制动多个匹配样式：</p>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token builtin class-name">echo</span> this is a text line <span class="token operator">|</span> <span class="token function">grep</span> -e <span class="token string">"is"</span> -e <span class="token string">"line"</span> -o
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token builtin class-name">echo</span> this is a text line <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-e</span> <span class="token string">"is"</span> <span class="token parameter variable">-e</span> <span class="token string">"line"</span> <span class="token parameter variable">-o</span>
 </span><span class="code-line line-number" line="2">is
 </span><span class="code-line line-number" line="3">is
 </span><span class="code-line line-number" line="4">line
@@ -312,7 +312,7 @@ grep &#x22;text&#x22; -n file_1 file_2
 </span><span class="code-line line-number" line="8">aaa
 </span><span class="code-line line-number" line="9">bbb
 </span><span class="code-line line-number" line="10">
-</span><span class="code-line line-number" line="11"><span class="token builtin class-name">echo</span> aaa bbb ccc ddd eee <span class="token operator">|</span> <span class="token function">grep</span> -f patfile -o
+</span><span class="code-line line-number" line="11"><span class="token builtin class-name">echo</span> aaa bbb ccc ddd eee <span class="token operator">|</span> <span class="token function">grep</span> <span class="token parameter variable">-f</span> patfile <span class="token parameter variable">-o</span>
 </span></code><div onclick="copied(this)" data-code="echo this is a text line | grep -e &#x22;is&#x22; -e &#x22;line&#x22; -o
 is
 is
@@ -327,13 +327,13 @@ echo aaa bbb ccc ddd eee | grep -f patfile -o
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>在grep搜索结果中包括或者排除指定文件：</p>
 <pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 只在目录中所有的.php和.html文件中递归搜索字符"main()"</span>
-</span><span class="code-line line-number" line="2"><span class="token function">grep</span> <span class="token string">"main()"</span> <span class="token builtin class-name">.</span> -r --include *.<span class="token punctuation">{</span>php,html<span class="token punctuation">}</span>
+</span><span class="code-line line-number" line="2"><span class="token function">grep</span> <span class="token string">"main()"</span> <span class="token builtin class-name">.</span> <span class="token parameter variable">-r</span> <span class="token parameter variable">--include</span> *.<span class="token punctuation">{</span>php,html<span class="token punctuation">}</span>
 </span><span class="code-line line-number" line="3">
 </span><span class="code-line line-number" line="4"><span class="token comment"># 在搜索结果中排除所有README文件</span>
-</span><span class="code-line line-number" line="5"><span class="token function">grep</span> <span class="token string">"main()"</span> <span class="token builtin class-name">.</span> -r --exclude <span class="token string">"README"</span>
+</span><span class="code-line line-number" line="5"><span class="token function">grep</span> <span class="token string">"main()"</span> <span class="token builtin class-name">.</span> <span class="token parameter variable">-r</span> <span class="token parameter variable">--exclude</span> <span class="token string">"README"</span>
 </span><span class="code-line line-number" line="6">
 </span><span class="code-line line-number" line="7"><span class="token comment"># 在搜索结果中排除filelist文件列表里的文件</span>
-</span><span class="code-line line-number" line="8"><span class="token function">grep</span> <span class="token string">"main()"</span> <span class="token builtin class-name">.</span> -r --exclude-from filelist
+</span><span class="code-line line-number" line="8"><span class="token function">grep</span> <span class="token string">"main()"</span> <span class="token builtin class-name">.</span> <span class="token parameter variable">-r</span> --exclude-from filelist
 </span><span class="code-line line-number" line="9">
 </span></code><div onclick="copied(this)" data-code="# 只在目录中所有的.php和.html文件中递归搜索字符&#x22;main()&#x22;
 grep &#x22;main()&#x22; . -r --include *.{php,html}
@@ -351,7 +351,7 @@ grep &#x22;main()&#x22; . -r --exclude-from filelist
 </span><span class="code-line line-number" line="3"><span class="token builtin class-name">echo</span> <span class="token string">"bbb"</span> <span class="token operator">></span> file2
 </span><span class="code-line line-number" line="4"><span class="token builtin class-name">echo</span> <span class="token string">"aaa"</span> <span class="token operator">></span> file3
 </span><span class="code-line line-number" line="5">
-</span><span class="code-line line-number" line="6"><span class="token function">grep</span> <span class="token string">"aaa"</span> file* -lZ <span class="token operator">|</span> <span class="token function">xargs</span> -0 <span class="token function">rm</span>
+</span><span class="code-line line-number" line="6"><span class="token function">grep</span> <span class="token string">"aaa"</span> file* <span class="token parameter variable">-lZ</span> <span class="token operator">|</span> <span class="token function">xargs</span> <span class="token parameter variable">-0</span> <span class="token function">rm</span>
 </span><span class="code-line line-number" line="7">
 </span><span class="code-line line-number" line="8"><span class="token comment"># 执行后会删除file1和file3，grep输出用-Z选项来指定以0值字节作为终结符文件名（\0），xargs -0 读取输入并用0值字节终结符分隔文件名，然后删除匹配文件，-Z通常和-l结合使用。</span>
 </span></code><div onclick="copied(this)" data-code="# 测试文件：
@@ -364,28 +364,28 @@ grep &#x22;aaa&#x22; file* -lZ | xargs -0 rm
 # 执行后会删除file1和file3，grep输出用-Z选项来指定以0值字节作为终结符文件名（\0），xargs -0 读取输入并用0值字节终结符分隔文件名，然后删除匹配文件，-Z通常和-l结合使用。
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>grep静默输出：</p>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">grep</span> -q <span class="token string">"test"</span> filename
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">grep</span> <span class="token parameter variable">-q</span> <span class="token string">"test"</span> filename
 </span><span class="code-line line-number" line="2"><span class="token comment"># 不会输出任何信息，如果命令运行成功返回0，失败则返回非0值。一般用于条件测试。</span>
 </span></code><div onclick="copied(this)" data-code="grep -q &#x22;test&#x22; filename
 # 不会输出任何信息，如果命令运行成功返回0，失败则返回非0值。一般用于条件测试。
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>打印出匹配文本之前或者之后的行：</p>
 <pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 显示匹配某个结果之后的3行，使用 -A 选项：</span>
-</span><span class="code-line line-number" line="2"><span class="token function">seq</span> <span class="token number">10</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"5"</span> -A <span class="token number">3</span>
+</span><span class="code-line line-number" line="2"><span class="token function">seq</span> <span class="token number">10</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"5"</span> <span class="token parameter variable">-A</span> <span class="token number">3</span>
 </span><span class="code-line line-number" line="3"><span class="token number">5</span>
 </span><span class="code-line line-number" line="4"><span class="token number">6</span>
 </span><span class="code-line line-number" line="5"><span class="token number">7</span>
 </span><span class="code-line line-number" line="6"><span class="token number">8</span>
 </span><span class="code-line line-number" line="7">
 </span><span class="code-line line-number" line="8"><span class="token comment"># 显示匹配某个结果之前的3行，使用 -B 选项：</span>
-</span><span class="code-line line-number" line="9"><span class="token function">seq</span> <span class="token number">10</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"5"</span> -B <span class="token number">3</span>
+</span><span class="code-line line-number" line="9"><span class="token function">seq</span> <span class="token number">10</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"5"</span> <span class="token parameter variable">-B</span> <span class="token number">3</span>
 </span><span class="code-line line-number" line="10"><span class="token number">2</span>
 </span><span class="code-line line-number" line="11"><span class="token number">3</span>
 </span><span class="code-line line-number" line="12"><span class="token number">4</span>
 </span><span class="code-line line-number" line="13"><span class="token number">5</span>
 </span><span class="code-line line-number" line="14">
 </span><span class="code-line line-number" line="15"><span class="token comment"># 显示匹配某个结果的前三行和后三行，使用 -C 选项：</span>
-</span><span class="code-line line-number" line="16"><span class="token function">seq</span> <span class="token number">10</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"5"</span> -C <span class="token number">3</span>
+</span><span class="code-line line-number" line="16"><span class="token function">seq</span> <span class="token number">10</span> <span class="token operator">|</span> <span class="token function">grep</span> <span class="token string">"5"</span> <span class="token parameter variable">-C</span> <span class="token number">3</span>
 </span><span class="code-line line-number" line="17"><span class="token number">2</span>
 </span><span class="code-line line-number" line="18"><span class="token number">3</span>
 </span><span class="code-line line-number" line="19"><span class="token number">4</span>
@@ -395,7 +395,7 @@ grep &#x22;aaa&#x22; file* -lZ | xargs -0 rm
 </span><span class="code-line line-number" line="23"><span class="token number">8</span>
 </span><span class="code-line line-number" line="24">
 </span><span class="code-line line-number" line="25"><span class="token comment"># 如果匹配结果有多个，会用“--”作为各匹配结果之间的分隔符：</span>
-</span><span class="code-line line-number" line="26"><span class="token builtin class-name">echo</span> -e <span class="token string">"a<span class="token entity" title="\n">\n</span>b<span class="token entity" title="\n">\n</span>c<span class="token entity" title="\n">\n</span>a<span class="token entity" title="\n">\n</span>b<span class="token entity" title="\n">\n</span>c"</span> <span class="token operator">|</span> <span class="token function">grep</span> a -A <span class="token number">1</span>
+</span><span class="code-line line-number" line="26"><span class="token builtin class-name">echo</span> <span class="token parameter variable">-e</span> <span class="token string">"a<span class="token entity" title="\n">\n</span>b<span class="token entity" title="\n">\n</span>c<span class="token entity" title="\n">\n</span>a<span class="token entity" title="\n">\n</span>b<span class="token entity" title="\n">\n</span>c"</span> <span class="token operator">|</span> <span class="token function">grep</span> a <span class="token parameter variable">-A</span> <span class="token number">1</span>
 </span><span class="code-line line-number" line="27">a
 </span><span class="code-line line-number" line="28">b
 </span><span class="code-line line-number" line="29">--
@@ -433,7 +433,7 @@ b
 a
 b
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-<style>.markdown-body pre .copied {
+<style>markdown-style pre .copied {
   display: flex;
   position: absolute;
   cursor: pointer;
@@ -446,31 +446,31 @@ b
   font-size: 12px;
   transition: all .3s;
 }
-.markdown-body pre .copied:not(.active) {
+markdown-style pre .copied:not(.active) {
   visibility: hidden;
 }
-.markdown-body pre:hover .copied {
+markdown-style pre:hover .copied {
   visibility: visible;
 }
-.markdown-body pre:hover .copied:hover {
+markdown-style pre:hover .copied:hover {
   background: #4caf50;
   color: #fff;
 }
-.markdown-body pre:hover .copied:active,
-.markdown-body pre .copied.active {
+markdown-style pre:hover .copied:active,
+markdown-style pre .copied.active {
   background: #2e9b33;
   color: #fff;
 }
-.markdown-body pre .copied .octicon-copy {
+markdown-style pre .copied .octicon-copy {
   display: block;
 }
-.markdown-body pre .copied .octicon-check {
+markdown-style pre .copied .octicon-check {
   display: none;
 }
-.markdown-body pre .active .octicon-copy {
+markdown-style pre .active .octicon-copy {
   display: none;
 }
-.markdown-body pre .active .octicon-check {
+markdown-style pre .active .octicon-check {
   display: block;
 }</style><script>/*! @uiw/copy-to-clipboard v1.0.12 | MIT (c) 2021 Kenny Wang | https://github.com/uiwjs/copy-to-clipboard.git */
 !function(e,t){"object"==typeof exports&&"undefined"!=typeof module?module.exports=t():"function"==typeof define&&define.amd?define(t):(e="undefined"!=typeof globalThis?globalThis:e||self).copyTextToClipboard=t()}(this,(function(){"use strict";return function(e,t){const o=document.createElement("textarea");o.value=e,o.setAttribute("readonly",""),o.style={position:"absolute",left:"-9999px"},document.body.appendChild(o);const n=document.getSelection().rangeCount>0&&document.getSelection().getRangeAt(0);o.select();let c=!1;try{c=!!document.execCommand("copy")}catch(e){c=!1}document.body.removeChild(o),n&&document.getSelection&&(document.getSelection().removeAllRanges(),document.getSelection().addRange(n)),t&&t(c)}}));
@@ -504,7 +504,7 @@ function copied(target, str) {
     581
   </span> 个Linux命令，超过 <a href="../contributors.html">50+</a> 贡献者
 </div>
-<script type="text/javascript" src="../js/dt.js?v=1661181731646"></script>
-<script type="text/javascript" src="../js/index.js?v=1661181731646"></script>
+<script type="text/javascript" src="../js/dt.js?v=1661420404799"></script>
+<script type="text/javascript" src="../js/index.js?v=1661420404799"></script>
 </body>
 </html>
