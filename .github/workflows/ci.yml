@@ -13,26 +13,18 @@ jobs:
       with:
         node-version: 16
 
-    - run: npm -v
-    - run: node -v
-    - run: npm install
-    - run: npm run build
-    - run: npm run dash
-
-    - name: Compress linux-command.docset.
-      run: zip -r -y linux-command.docset.zip . -x "node_modules/*"
-      working-directory: .deploy/linux-command.docset
-    - run: cp -rp .deploy/linux-command.docset/linux-command.docset.zip ./
-
-    - run: rm -rf .deploy/linux-command.docset
-
     - name: Generate Contributors Images
       uses: jaywcjlove/github-action-contributors@main
       with:
         filter-author: (renovate\[bot\]|renovate-bot|dependabot\[bot\])
         avatarSize: 42
 
-    - run: cp CONTRIBUTORS.svg .deploy
+    - name: Build Linux Command
+      run: |
+        npm install
+        npm run dash
+        cp CONTRIBUTORS.svg .deploy
+        rm -rf .deploy/linux-command.docset 
 
     - name: Create Tag
       id: create_tag
@@ -40,9 +32,13 @@ jobs:
       with:
         package-path: ./package.json
 
-    - name: get tag version
+    - name: Get Tag Version
       id: tag_version
       uses: jaywcjlove/changelog-generator@v1.5.3
+
+    - name: Update Dash Feed
+      run: |
+        echo "<entry><version>${{steps.create_tag.outputs.versionNumber}}</version><url>https://jaywcjlove.github.io/linux-command/linux-command.docset.tgz</url></entry>" > .deploy/linux-command-docset.xml
 
     - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
@@ -64,7 +60,7 @@ jobs:
       uses: ncipollo/release-action@v1
       if: steps.create_tag.outputs.successful
       with:
-        artifacts: 'linux-command.docset.zip'
+        artifacts: 'linux-command.docset.tgz'
         token: ${{ secrets.GITHUB_TOKEN }}
         name: ${{ steps.create_tag.outputs.version }}
         tag: ${{ steps.create_tag.outputs.version }}
@@ -106,18 +102,19 @@ jobs:
           http://localhost:9665/
           ```
 
-
-    - run: npm install @jsdevtools/npm-publish -g
-    - run: npm-publish --token="${{ secrets.NPM_TOKEN }}" ./package.json
-
-    - run: rm -rf .deploy/linux-command.docset.zip
+    - name: Push Npm
+      run: |
+        npm install @jsdevtools/npm-publish -g
+        npm-publish --token="${{ secrets.NPM_TOKEN }}" ./package.json
 
     # Create Docker Image
     - name: Docker login
       run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
     
     - name: Build linux-command image
-      run: docker image build -t linux-command .
+      run: |
+        rm -rf .deploy/linux-command.docset.tgz
+        docker image build -t linux-command .
 
     - name: Tags & Push image(latest)
       run: |
