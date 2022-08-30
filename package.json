@@ -6,8 +6,8 @@
   "main": "dist/data.json",
   "scripts": {
     "start": "npm run build",
-    "build": "node build/build.mjs",
-    "dash": "npm run build && node build/dash.mjs"
+    "build": "node scripts/build.mjs",
+    "dash": "npm run build && node scripts/dash.mjs"
   },
   "files": [
     "command",
@@ -38,6 +38,6 @@
     "uglify-js": "~3.16.0"
   },
   "engines": {
-    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
+    "node": ">=16.0.0"
   }
 }
