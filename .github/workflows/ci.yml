@@ -13,12 +13,8 @@ jobs:
       with:
         node-version: 16
 
-    - name: Generate Contributors Images
-      uses: jaywcjlove/github-action-contributors@main
-      with:
-        filter-author: (renovate\[bot\]|renovate-bot|dependabot\[bot\])
-        avatarSize: 42
-
+    - run: npm -v
+    - run: node -v
     - run: npm install
     - run: npm run build
     - run: node run dash
@@ -29,6 +25,13 @@ jobs:
     - run: cp -rp .deploy/linux-command.docset/linux-command.docset.zip ./
 
     - run: rm -rf .deploy/linux-command.docset
+
+    - name: Generate Contributors Images
+      uses: jaywcjlove/github-action-contributors@main
+      with:
+        filter-author: (renovate\[bot\]|renovate-bot|dependabot\[bot\])
+        avatarSize: 42
+
     - run: cp CONTRIBUTORS.svg .deploy
 
     - name: Create Tag
