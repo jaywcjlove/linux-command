@@ -29,6 +29,7 @@
     "@wcj/dark-mode": "~1.0.14",
     "colors-cli": "~1.0.28",
     "ejs": "~3.1.6",
+    "compressing": "^1.6.2",
     "fs-extra": "~10.1.0",
     "markdown-to-html-cli": "~3.4.1",
     "sitemap-generator": "~8.5.1",
@@ -38,8 +39,5 @@
   },
   "engines": {
     "node": ">=16.0.0"
-  },
-  "dependencies": {
-    "compressing": "^1.6.2"
   }
 }
