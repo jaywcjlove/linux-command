@@ -8,8 +8,8 @@ jobs:
   build-deploy:
     runs-on: ubuntu-20.04
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
       with:
         node-version: 16
 
@@ -21,7 +21,7 @@ jobs:
 
     - run: npm install
     - run: npm run build
-    - run: node build/dash.js
+    - run: node run dash
 
     - name: Compress linux-command.docset.
       run: zip -r -y linux-command.docset.zip . -x "node_modules/*"
