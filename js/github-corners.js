@@ -18,7 +18,7 @@ GITHUB_CORNERS_TEMPLATE.innerHTML = `
   top: 0px;
 }
 </style>
-<svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true">
+<svg width="54" height="54" viewBox="0 0 250 250" aria-hidden="true">
   <a xlink:href="https://github.com/uiwjs/react-github-corners" target="_blank" rel="nofollow sponsored" style="fill: rgb(21, 21, 19); color: rgb(255, 255, 255);">
     <g>
       <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
