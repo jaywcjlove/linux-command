@@ -2,7 +2,8 @@ import fs from 'fs-extra';
 import path from 'path';
 import { resolve as pathResolve, join as pathJoin } from 'path';
 import sqlite3 from 'sqlite3';
-import archiver from 'archiver';
+import {tgz} from 'compressing';
+import { spawn } from 'child_process';
 import {fileURLToPath} from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -103,45 +104,6 @@ async function buildApi(dbPath) {
   await createDatabase(arr, dbPath);
 }
 
-function compressing() {
-  new Promise((resolve, reject) => {
-    const outputPaht = pathJoin(process.cwd(), '.deploy', 'linux-command.docset.zip');
-    // create a file to stream archive data to.
-    const output = fs.createWriteStream(outputPaht);
-    const archive = archiver('zip', {
-      zlib: { level: 9 } // Sets the compression level.
-    });
-    
-    // listen for all archive data to be written
-    // 'close' event is fired only when a file descriptor is involved
-    output.on('close', () => {
-      console.log(archive.pointer() + ' total bytes');
-      console.log('archiver has been finalized and the output file descriptor has closed.');
-      resolve();
-    });
-    
-    // good practice to catch warnings (ie stat failures and other non-blocking errors)
-    archive.on('warning', (err) => {
-      if (err.code === 'ENOENT') {
-        console.log('warning:::', err)
-        // log warning
-      } else {
-        // throw error
-        throw err;
-      }
-    });
-    
-    // good practice to catch this error explicitly
-    archive.on('error', function(err) {
-      reject(err);
-    });
-    
-    // pipe archive data to the file
-    archive.pipe(output);
-    archive.directory(pathJoin(process.cwd(), '.deploy', 'linux-command.docset'), false);
-    archive.finalize();
-  })
-}
 
 async function build() {
   console.log(`mkdir -p ${RESOURCES_DIR}`);
@@ -154,8 +116,12 @@ async function build() {
   console.info('build documents');
   await buildApi(DB_PATH);
 
-  console.info('compressing zip');
-  await compressing();
+  console.info('compressing tgz');
+  // https://github.com/node-modules/compressing/issues/42 建议最好休眠15s，等待其余资源复制完毕
+  spawn("sleep", ['15'])
+  const tgzPath = pathJoin(process.cwd(), '.deploy', 'linux-command.docset');
+  const outputPath = pathJoin(process.cwd(), '.deploy', 'linux-command.docset.tgz');
+  await tgz.compressDir(tgzPath, outputPath);
 }
 
 build()
