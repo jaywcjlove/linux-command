@@ -31,11 +31,17 @@
 
 [![Linux 命令大全](https://user-images.githubusercontent.com/1680273/123261829-ce830300-d529-11eb-8cea-a39059b972dd.gif)](https://jaywcjlove.github.io/linux-command/)
 
-你可以随意部署 web 版，这非常简单，只需要克隆 [`gh-pages`](https://github.com/jaywcjlove/linux-command/tree/gh-pages) 分支代码到你的静态服务就可以了。你也可以将 [`command`](https://github.com/jaywcjlove/linux-command/tree/master/command) 目录中的 Markdown 文件拿去自己生成 HTML。
+你可以随意部署 web 版，这非常简单，只需要克隆 [`gh-pages`](https://github.com/jaywcjlove/linux-command/tree/gh-pages) 分支代码到你的静态服务就可以了。你也可以将 [`command`](https://github.com/jaywcjlove/linux-command/tree/master/command) 目录中的 Markdown 文件拿去自己生成 HTML。还可以使用下方 docker 方法部署 web 版。
 
 ⚠️ 你们拿过去部署的静态网站，还是希望挂个 GitHub 地址，这样大家共同维护命令文档，让文档更加完善，更加丰富，当然你删除本站所有信息相关信息，其实我也不太在意，默认允许你们随意搞，我不负任何负责。如果您也部署了一份，可以将网址放到下面 :)。
 
-[`linux.devonline.net`](http://linux.devonline.net/)，[`linux.ftqq.com`](https://linux.ftqq.com/)，[`linux.gaomeluo.com`](https://linux.gaomeluo.com)，[`atoolbox.net`](http://www.atoolbox.net/Tool.php?Id=826)，[`xiaoshanseo.com`](https://tools.xiaoshanseo.com/Tools/linux-command/)，[`262235.xyz`](https://262235.xyz/linux-command/)，[`cmsblogs.cn`](https://linux.cmsblogs.cn/)，[`loquy.cn`](https://www.loquy.cn/linux-command/)，[`bqrdh.com`](https://tools.bqrdh.com/linux-command/)，[`buyao.vip`](https://demo.buyao.vip/linux/)，[`hezhiqiang.gitbook.io`](https://hezhiqiang.gitbook.io/linux/)，[`linux.mmoke.com`](https://linux.mmoke.com), [`luojianjun.cn`](https://luojianjun.cn/linux-command/), [`man.zch.ooo`](https://man.zch.ooo/)
+**推荐使用的镜像 web 版本**
+
+[**`linux.devonline.net`**](http://linux.devonline.net/)，[**`man.zch.ooo`**](https://man.zch.ooo/)，[**`linux.mmoke.com`**](https://linux.mmoke.com)，[**`bqrdh.com`**](https://tools.bqrdh.com/linux-command/)
+
+**其它 web 版本**
+
+[`linux.ftqq.com`](https://linux.ftqq.com/)，[`linux.gaomeluo.com`](https://linux.gaomeluo.com)，[`atoolbox.net`](http://www.atoolbox.net/Tool.php?Id=826)，[`xiaoshanseo.com`](https://tools.xiaoshanseo.com/Tools/linux-command/)，[`262235.xyz`](https://262235.xyz/linux-command/)，[`cmsblogs.cn`](https://linux.cmsblogs.cn/)，[`loquy.cn`](https://www.loquy.cn/linux-command/)，[`buyao.vip`](https://demo.buyao.vip/linux/)，[`hezhiqiang.gitbook.io`](https://hezhiqiang.gitbook.io/linux/), [`luojianjun.cn`](https://luojianjun.cn/linux-command/)
 
 ### 微信小程序版本
 
