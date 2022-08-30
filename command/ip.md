@@ -10,12 +10,12 @@ ip
 ###  语法 
 
 ```shell
-ip(选项)(参数)
+ip(选项)(对象)
 Usage: ip [ OPTIONS ] OBJECT { COMMAND | help }
        ip [ -force ] -batch filename
 ```
 
-###  选项 
+###  对象 
 
 ```shell
 OBJECT := { link | address | addrlabel | route | rule | neigh | ntable |
@@ -31,7 +31,7 @@ OBJECT := { link | address | addrlabel | route | rule | neigh | ntable |
 -r：显示主机时，不使用IP地址，而使用主机的域名。
 ```
 
-###  参数 
+###  选项
 
 ```shell
 OPTIONS := { -V[ersion] | -s[tatistics] | -d[etails] | -r[esolve] |
@@ -50,16 +50,16 @@ help：显示网络对象支持的操作命令的帮助信息。
 ###  实例 
 
 ```shell
-ip link show                     # 显示网络接口信息
+ip link show                    # 显示网络接口信息
 ip link set eth0 up             # 开启网卡
 ip link set eth0 down            # 关闭网卡
 ip link set eth0 promisc on      # 开启网卡的混合模式
-ip link set eth0 promisc offi    # 关闭网卡的混个模式
+ip link set eth0 promisc offi    # 关闭网卡的混合模式
 ip link set eth0 txqueuelen 1200 # 设置网卡队列长度
 ip link set eth0 mtu 1400        # 设置网卡最大传输单元
 ip addr show     # 显示网卡IP信息
-ip addr add 192.168.0.1/24 dev eth0 # 设置eth0网卡IP地址192.168.0.1
-ip addr del 192.168.0.1/24 dev eth0 # 删除eth0网卡IP地址
+ip addr add 192.168.0.1/24 dev eth0 # 为eth0网卡添加一个新的IP地址192.168.0.1
+ip addr del 192.168.0.1/24 dev eth0 # 为eth0网卡删除一个IP地址192.168.0.1
 
 ip route show # 显示系统路由
 ip route add default via 192.168.1.254   # 设置系统默认路由
