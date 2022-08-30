@@ -17,7 +17,7 @@ jobs:
     - run: node -v
     - run: npm install
     - run: npm run build
-    - run: node run dash
+    - run: npm run dash
 
     - name: Compress linux-command.docset.
       run: zip -r -y linux-command.docset.zip . -x "node_modules/*"
