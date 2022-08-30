@@ -7,7 +7,7 @@
   "scripts": {
     "start": "npm run build",
     "build": "node build/build.mjs",
-    "dash": "npm run build && node build/dash.js"
+    "dash": "npm run build && node build/dash.mjs"
   },
   "files": [
     "command",
