@@ -1,8 +1,13 @@
-const fs = require('fs-extra');
-const { resolve: pathResolve, join: pathJoin } = require('path');
-const sqlite3 = require('sqlite3');
-const archiver = require('archiver');
-const pkg = require('../package.json');
+import fs from 'fs-extra';
+import path from 'path';
+import { resolve as pathResolve, join as pathJoin } from 'path';
+import sqlite3 from 'sqlite3';
+import archiver from 'archiver';
+import {fileURLToPath} from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const pkg = fs.readJSONSync(pathResolve(__dirname, '../package.json'));
 
 const DATA_DIR = pathResolve(__dirname, '../assets/');
 const INDEX_JSON_PATH = pathResolve(__dirname, '../dist/data.json');
