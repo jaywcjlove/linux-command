@@ -3,6 +3,7 @@ import path from 'path';
 import { resolve as pathResolve, join as pathJoin } from 'path';
 import sqlite3 from 'sqlite3';
 import {tgz} from 'compressing';
+import { spawn } from 'child_process';
 import {fileURLToPath} from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -116,6 +117,8 @@ async function build() {
   await buildApi(DB_PATH);
 
   console.info('compressing tgz');
+  // https://github.com/node-modules/compressing/issues/42 建议最好休眠15s，等待其余资源复制完毕
+  spawn("sleep", ['15'])
   const tgzPath = pathJoin(process.cwd(), '.deploy', 'linux-command.docset');
   const outputPath = pathJoin(process.cwd(), '.deploy', 'linux-command.docset.tgz');
   await tgz.compressDir(tgzPath, outputPath);
