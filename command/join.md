@@ -32,7 +32,9 @@ join(选项)(参数)
 *   文件2：要进行合并操作的第2个文件参数。
 
 ### 常见用法
+
 把两个文件制定栏位内容相同的行连接起来：
+
 ```shell
 [root@localhost ~]# cat name 
 1 xiaoming
@@ -49,7 +51,9 @@ join(选项)(参数)
 2 xiaowang hubei wuhan 
 3 xiaoliu hunan changsha
 ```
+
 把两个文件指定列拼接起来：
+
 ```shell
 # 把name文件的第2列和city文件的第3列拼接起来
 [root@localhost ~]# join -o 1.2 2.3 name  city 
