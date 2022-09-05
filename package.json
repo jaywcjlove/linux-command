@@ -31,7 +31,7 @@
     "ejs": "~3.1.6",
     "compressing": "^1.6.2",
     "fs-extra": "~10.1.0",
-    "markdown-to-html-cli": "~3.4.1",
+    "markdown-to-html-cli": "~3.5.0",
     "sitemap-generator": "~8.5.1",
     "sqlite3": "5.0.8",
     "stylus": "~0.59.0",
