@@ -93,7 +93,7 @@
 
 ### Dash 版本
 
-由 [**@SHANG殇**](https://github.com/xinshangshangxin) 提供的 `Dash` 版本 [#91](https://github.com/jaywcjlove/linux-command/pull/91)，可配合 `alfred` 玩耍，下载 [linux-command.docset.zip](https://jaywcjlove.github.io/linux-command/linux-command.docset.zip) 文件解压，点击安装即可。
+由 [**@SHANG殇**](https://github.com/xinshangshangxin) 提供的 `Dash` 版本 [#91](https://github.com/jaywcjlove/linux-command/pull/91)，可配合 `alfred` 玩耍，下载 [linux-command.docset.tgz](https://github.com/jaywcjlove/linux-command/releases) 文件解压，点击安装即可。
 
 
 <details>
