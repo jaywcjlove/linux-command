@@ -110,7 +110,7 @@ gcc testfun.c test.c -o test
 ```shell
 gcc -c testfun.c    #将testfun.c编译成testfun.o
 gcc -c test.c       #将test.c编译成test.o
-gcc -o testfun.o test.o -o test    #将testfun.o和test.o链接成test
+gcc testfun.o test.o -o test   #将testfun.o和test.o链接成test
 ```
 
 以上两种方法相比较，第一中方法编译时需要所有文件重新编译，而第二种方法可以只重新编译修改的文件，未修改的文件不用重新编译。
