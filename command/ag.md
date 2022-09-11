@@ -19,12 +19,11 @@ ag [可选项] 匹配模式 [路径...]
 
 ```shell
 Output Options:
-     --ackmate            Print results in AckMate-parseable format
-  -A --after [LINES]      Print lines after match (Default: 2) 显示匹配行之后的行
-  -B --before [LINES]     Print lines before match (Default: 2)   显示匹配行之前的行
-     --[no]break          Print newlines between matches in different files
-                          (Enabled by default)
-  -c --count              Only print the number of matches in each file. 只显示每个文件中匹配到的数量
+     --ackmate            以 AckMate-parseable 的格式显示结果
+  -A --after [LINES]      显示匹配行之后的行（默认2行）
+  -B --before [LINES]     显示匹配行之前的行（默认2行）
+     --[no]break          不同文件中匹配到的内容新建一行显示（默认开启）
+  -c --count              只显示每个文件中匹配到的数量
                           (This often differs from the number of matching lines)
      --[no]color          Print color codes in results (Enabled by default)
      --color-line-number  Color codes for line numbers (Default: 1;33)
@@ -32,21 +31,18 @@ Output Options:
      --color-path         Color codes for path names (Default: 1;32)
      --column             Print column numbers in results
      --[no]filename       Print file names (Enabled unless searching a single file)
-  -H --[no]heading        Print file names before each file\'s matches
-                          (Enabled by default)
-  -C --context [LINES]    Print lines before and after matches (Default: 2)   显示匹配行上下两行
+  -H --[no]heading        在每个文件匹配前输出文件名（默认开启）
+  -C --context [LINES]    显示匹配行上下两行（默认2行）
      --[no]group          Same as --[no]break --[no]heading
   -g --filename-pattern PATTERN
                           Print filenames matching PATTERN
-  -l --files-with-matches Only print filenames that contain matches  显示包含匹配的文件名
-                          (don\'t print the matching lines)
+  -l --files-with-matches 显示包含匹配的文件名（不显示匹配的行）
   -L --files-without-matches  只显示不包含匹配项的文件名
-                          Only print filenames that don\'t contain matches
      --print-all-files    Print headings for all files searched, even those that
                           don\'t contain matches
      --[no]numbers        Print line numbers. Default is to omit line numbers
                           when searching streams
-  -o --only-matching      Prints only the matching part of the lines    只输出每行匹配的部分
+  -o --only-matching      只输出每行匹配的部分
      --print-long-lines   Print matches on very long lines (Default: >2k characters)
      --passthrough        When searching a stream, print all lines even if they
                           don\'t match
@@ -59,36 +55,35 @@ Output Options:
   -0 --null --print0      Separate filenames with null (for 'xargs -0')
 
 Search Options:
-  -a --all-types          Search all files (doesn\'t include hidden files
-                          or patterns from ignore files) 搜索所有文件（包括隐藏文件）
+  -a --all-types          搜索所有文件（包括隐藏文件）
   -D --debug              Ridiculous debugging (probably not useful)
-     --depth NUM          Search up to NUM directories deep (Default: 25)
-  -f --follow             Follow symlinks 跟随链接
+     --depth NUM          目录搜索最大深度（默认25）
+  -f --follow             跟随链接进行搜索
   -F --fixed-strings      Alias for --literal for compatibility with grep
-  -G --file-search-regex  PATTERN Limit search to filenames matching PATTERN    根据正则匹配搜索指定类型的文件
+  -G --file-search-regex  根据正则匹配搜索指定类型的文件
      --hidden             Search hidden files (obeys .*ignore files)
   -i --ignore-case        Match case insensitively
      --ignore PATTERN     Ignore files/directories matching PATTERN
                           (literal file/directory names also allowed)
      --ignore-dir NAME    Alias for --ignore for compatibility with ack.
-  -m --max-count NUM      Skip the rest of a file after NUM matches (Default: 10,000)
-     --one-device         Don\'t follow links to other devices.
+  -m --max-count NUM      在一个文件中最大匹配的数量(默认: 10,000)
+     --one-device         不跟随其他设备的链接搜索
   -p --path-to-ignore STRING
                           Use .ignore file at STRING
   -Q --literal            Don\'t parse PATTERN as a regular expression
   -s --case-sensitive     Match case sensitively
   -S --smart-case         Match case insensitively unless PATTERN contains
                           uppercase characters (Enabled by default)
-     --search-binary      Search binary files for matches
-  -t --all-text           Search all text files (doesn\'t include hidden files)  搜索所有文本文件（不包括隐藏文件）
-  -u --unrestricted       Search all files (ignore .ignore, .gitignore, etc.;
-                          searches binary and hidden files as well)
+     --search-binary      搜索二进制文件
+  -t --all-text           搜索所有文本文件（不包括隐藏文件）
+  -u --unrestricted       搜索所有文件 (忽略 .ignore, .gitignore, etc.;
+                          搜索二进制和隐藏文件)
   -U --skip-vcs-ignores   Ignore VCS ignore files
                           (.gitignore, .hgignore; still obey .ignore)
-  -v --invert-match         反向匹配
-  -w --word-regexp        Only match whole words 匹配整个单词
+  -v --invert-match       反向匹配
+  -w --word-regexp        只匹配整个单词
   -W --width NUM          Truncate match lines after NUM characters
-  -z --search-zip         Search contents of compressed (e.g., gzip) files 搜索压缩文件中的内容
+  -z --search-zip         搜索压缩文件中的内容
 
 File Types:
 The search can be restricted to certain types of files. Example:
