@@ -35,7 +35,7 @@
     "sitemap-generator": "~8.5.1",
     "sqlite3": "5.0.8",
     "stylus": "~0.59.0",
-    "uglify-js": "~3.16.0"
+    "uglify-js": "~3.17.0"
   },
   "engines": {
     "node": ">=16.0.0"
