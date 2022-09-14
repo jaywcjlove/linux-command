@@ -37,6 +37,7 @@
 
 **推荐使用的镜像 web 版本**
 
+[**`qq.wdev.cn`**](https://qq.wdev.cn)
 [**`linux.devonline.net`**](http://linux.devonline.net/)，[**`man.zch.ooo`**](https://man.zch.ooo/)，[**`linux.mmoke.com`**](https://linux.mmoke.com)，[**`bqrdh.com`**](https://tools.bqrdh.com/linux-command/)
 
 **其它 web 版本**
