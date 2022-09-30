@@ -1,6 +1,6 @@
 {
   "name": "linux-command",
-  "version": "1.11.2",
+  "version": "1.12.0",
   "description": "Linux Command",
   "homepage": "https://jaywcjlove.github.io/linux-command/",
   "main": "dist/data.json",

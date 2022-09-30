@@ -2,7 +2,7 @@
   "7z": {
     "n": "7z",
     "p": "/7z",
-    "d": "拥有极高压缩比的开源压缩软件。用 7-Zip 解压过：zip、iso、7z压缩文件。"
+    "d": "拥有极高压缩比的开源压缩软件。"
   },
   "ab": {
     "n": "ab",
@@ -18,6 +18,11 @@
     "n": "ack",
     "p": "/ack",
     "d": "比grep好用的文本搜索工具"
+  },
+  "ag": {
+    "n": "ag",
+    "p": "/ag",
+    "d": "ack 的升级版，C语言编写，更快更人性化"
   },
   "alias": {
     "n": "alias",
@@ -883,6 +888,11 @@
     "n": "groupdel",
     "p": "/groupdel",
     "d": "用于删除指定的工作组"
+  },
+  "groupmems": {
+    "n": "groupmems",
+    "p": "/groupmems",
+    "d": "管理用户主要组的成员"
   },
   "groupmod": {
     "n": "groupmod",
@@ -2848,6 +2858,11 @@
     "n": "xlsfonts",
     "p": "/xlsfonts",
     "d": "列出X Server使用的字体"
+  },
+  "xrandr": {
+    "n": "xrandr",
+    "p": "/xrandr",
+    "d": "X 窗口系统配置管理工具"
   },
   "xset": {
     "n": "xset",
