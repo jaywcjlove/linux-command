@@ -22,16 +22,21 @@ wait(参数)
 使用命令wait等待作业号为1的作业完成后再返回，输入如下命令：
 
 运行一个sleep进程
+
 ```shell
 sleep 10s &
 [1] 27156
 ```
+
 指定作业号
+
 ```shell
 wait %1       #等待作业号为1的作业完成 
 [1]+  Done                    sleep 10s
 ```
+
 指定进程号
+
 ```shell
 wait 27156
 [1]+  Done                    sleep 10s
