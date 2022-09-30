@@ -39,4 +39,4 @@ wait 27156
 
 输出当前存在作业号的指令，如下所示：
 
-[jobs](https://wangchujiang.com/linux-command/c/jobs.html)
+[jobs](./jobs.md)
