@@ -30,6 +30,10 @@ Query or change system time and date settings.
   -H --host=[USER@]HOST    在远程主机上操作
   -M --machine=CONTAINER   在本地容器上操作。
      --adjust-system-clock 更改本地 RTC 模式时调整系统时钟。
+     --monitor		   监控systemd-timesyncd的状态
+  -p --property=NAME       仅显示此名称的属性
+  -a --all		   显示所有属性，包括空属性
+     --value		   显示属性时，只打印值
 
 Commands:
   status                   显示当前的时间设置。
