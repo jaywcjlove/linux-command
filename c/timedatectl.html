@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,timedatectl,用于在 Linux 中设置或查询系统时间、日期和时区等配置。">
     <title>timedatectl 命令，Linux timedatectl 命令详解：用于在 Linux 中设置或查询系统时间、日期和时区等配置。 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1664523094596">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1664802657155">
     <script src="../js/dark-mode.min.js"></script>
     <script type="module" src="../js/github-corners.js"></script>
 </head>
@@ -136,16 +136,20 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
 </span><span class="code-line line-number" line="7">  <span class="token parameter variable">-H</span> <span class="token parameter variable">--host</span><span class="token operator">=</span><span class="token punctuation">[</span><span class="token environment constant">USER</span>@<span class="token punctuation">]</span>HOST    在远程主机上操作
 </span><span class="code-line line-number" line="8">  <span class="token parameter variable">-M</span> <span class="token parameter variable">--machine</span><span class="token operator">=</span>CONTAINER   在本地容器上操作。
 </span><span class="code-line line-number" line="9">     --adjust-system-clock 更改本地 RTC 模式时调整系统时钟。
-</span><span class="code-line line-number" line="10">
-</span><span class="code-line line-number" line="11">Commands:
-</span><span class="code-line line-number" line="12">  status                   显示当前的时间设置。
-</span><span class="code-line line-number" line="13">  set-time TIME            设置系统时间。
-</span><span class="code-line line-number" line="14">  set-timezone ZONE        设置系统时区。
-</span><span class="code-line line-number" line="15">  list-timezones           显示已知时区。
-</span><span class="code-line line-number" line="16">  set-local-rtc BOOL       控制 RTC 是否在当地时间。（BOOL 的值可以是 <span class="token number">1</span> / <span class="token boolean">true</span> 或 <span class="token number">0</span> / false）
-</span><span class="code-line line-number" line="17">  set-ntp BOOL             启用或禁用网络时间同步。（BOOL 的值可以是 <span class="token number">1</span> / <span class="token boolean">true</span> 或 <span class="token number">0</span> / false）
-</span><span class="code-line line-number" line="18">  timesync-status          显示 systemd-timesyncd 的状态。
-</span><span class="code-line line-number" line="19">  show-timesync            显示 systemd-timesyncd 的属性。
+</span><span class="code-line line-number" line="10">     <span class="token parameter variable">--monitor</span>		   监控systemd-timesyncd的状态
+</span><span class="code-line line-number" line="11">  <span class="token parameter variable">-p</span> <span class="token parameter variable">--property</span><span class="token operator">=</span>NAME       仅显示此名称的属性
+</span><span class="code-line line-number" line="12">  <span class="token parameter variable">-a</span> <span class="token parameter variable">--all</span>		   显示所有属性，包括空属性
+</span><span class="code-line line-number" line="13">     <span class="token parameter variable">--value</span>		   显示属性时，只打印值
+</span><span class="code-line line-number" line="14">
+</span><span class="code-line line-number" line="15">Commands:
+</span><span class="code-line line-number" line="16">  status                   显示当前的时间设置。
+</span><span class="code-line line-number" line="17">  set-time TIME            设置系统时间。
+</span><span class="code-line line-number" line="18">  set-timezone ZONE        设置系统时区。
+</span><span class="code-line line-number" line="19">  list-timezones           显示已知时区。
+</span><span class="code-line line-number" line="20">  set-local-rtc BOOL       控制 RTC 是否在当地时间。（BOOL 的值可以是 <span class="token number">1</span> / <span class="token boolean">true</span> 或 <span class="token number">0</span> / false）
+</span><span class="code-line line-number" line="21">  set-ntp BOOL             启用或禁用网络时间同步。（BOOL 的值可以是 <span class="token number">1</span> / <span class="token boolean">true</span> 或 <span class="token number">0</span> / false）
+</span><span class="code-line line-number" line="22">  timesync-status          显示 systemd-timesyncd 的状态。
+</span><span class="code-line line-number" line="23">  show-timesync            显示 systemd-timesyncd 的属性。
 </span></code><div onclick="copied(this)" data-code="Query or change system time and date settings.
 
   -h --help                显示帮助信息。
@@ -155,6 +159,10 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
   -H --host=[USER@]HOST    在远程主机上操作
   -M --machine=CONTAINER   在本地容器上操作。
      --adjust-system-clock 更改本地 RTC 模式时调整系统时钟。
+     --monitor		   监控systemd-timesyncd的状态
+  -p --property=NAME       仅显示此名称的属性
+  -a --all		   显示所有属性，包括空属性
+     --value		   显示属性时，只打印值
 
 Commands:
   status                   显示当前的时间设置。
@@ -339,7 +347,7 @@ function copied(target, str) {
     584
   </span> 个Linux命令，超过 <a href="../contributors.html">50+</a> 贡献者
 </div>
-<script type="text/javascript" src="../js/dt.js?v=1664523094596"></script>
-<script type="text/javascript" src="../js/index.js?v=1664523094596"></script>
+<script type="text/javascript" src="../js/dt.js?v=1664802657156"></script>
+<script type="text/javascript" src="../js/index.js?v=1664802657156"></script>
 </body>
 </html>
