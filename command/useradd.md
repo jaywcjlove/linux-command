@@ -95,4 +95,19 @@ useradd caojh -u 544
 
 需要说明的是，设定ID值时尽量要大于500，以免冲突。因为Linux安装后会建立一些特殊用户，一般0到499之间的值留给bin、mail这样的系统账号。
 
+新建一个普通用户：
+
+```shell
+useradd lutixia
+```
+
+新建一个系统用户,系统用户一般用于管理服务，无需登录，所以分配nologin，限制其登录系统：
+```shell
+useradd -r -s /sbin/nologin mq
+```
+
+修改创建用户的默认参数，设置密码过期后到永久禁用的不活动时间为30天: 
+```shell
+useradd -D -f 30
+```
 
