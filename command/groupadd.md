@@ -18,7 +18,7 @@ groupadd(选项)(参数)
 ```shell
 -g：指定新建工作组的id；
 -r：创建系统工作组，系统工作组的组ID小于500；
--K：覆盖配置文件“/ect/login.defs”；
+-K：覆盖配置文件“/etc/login.defs”；
 -o：允许添加组ID号不唯一的工作组。
 ```
 
