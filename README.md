@@ -111,10 +111,13 @@
 <details>
 <summary>Android 版本截图</summary>
 
-<img width="556" alt="Android 版本截图" src="https://github.com/Ernest-su/LinuxCmd/raw/master/screenshot/screenshot1.png" />
+<img width="556" alt="Android 版本截图" src="https://github.com/Ernest-su/LinuxCmd/raw/master/screenshot/1.jpg" />
 
-<img width="556" alt="Android 版本截图" src="https://github.com/Ernest-su/LinuxCmd/raw/master/screenshot/screenshot2.png" />
+<img width="556" alt="Android 版本截图" src="https://github.com/Ernest-su/LinuxCmd/raw/master/screenshot/2.jpg" />
 
+<img width="556" alt="Android 版本截图" src="https://github.com/Ernest-su/LinuxCmd/raw/master/screenshot/3.jpg" />
+
+<img width="556" alt="Android 版本截图" src="https://github.com/Ernest-su/LinuxCmd/raw/master/screenshot/4.jpg" />
 </details>
 
 ## 命令行工具
