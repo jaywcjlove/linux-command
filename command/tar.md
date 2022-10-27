@@ -469,7 +469,7 @@ tar -jcvf log.tar.bz2 log2012.log  打包后，以 bzip2 压缩
 
 **解压目录**
 
-去掉第一层目录结构，要出除第二层，--strip-components 2
+去掉第一层目录结构，取出第二层（即剥离第一个路径），--strip-components 2
 
 ```shell
 tar -xvf portal-web-v2.0.0.tar --strip-components 1  -C 指定目录
