@@ -473,11 +473,16 @@ tar -jcvf log.tar.bz2 log2012.log  打包后，以 bzip2 压缩
 
 ```shell
 tar -xvf portal-web-v2.0.0.tar --strip-components 1  -C 指定目录
+```
 
 示例
+
+```shell
 tar -xvf xxx.tar.gz -C /usr/src/a
 /usr/src/a/xxxxx/src/opp/b.txt
+```
 
+```shell
 tar -xvf xxx.tar.gz -strip-components=1 -C /usr/src/a
 /usr/src/a/src/opp/b.txt
 ```
