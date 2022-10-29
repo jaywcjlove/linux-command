@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,lsof,显示Linux系统当前已打开的所有文件列表 `lsof -p pid`">
     <title>lsof 命令，Linux lsof 命令详解：显示Linux系统当前已打开的所有文件列表 `lsof -p pid` -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1666917701454">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1667070345730">
     <script src="../js/dark-mode.min.js"></script>
     <script type="module" src="../js/github-corners.js"></script>
 </head>
@@ -205,69 +205,256 @@ events/0      6 root  txt   unknown                                        /proc
 events/1      7 root  cwd       DIR                8,2     4096          2 /
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p><strong>lsof输出各列信息的意义如下：</strong></p>
-<ul>
-  <li>COMMAND：进程的名称</li>
-  <li>PID：进程标识符</li>
-  <li>PPID：父进程标识符（需要指定-R参数）</li>
-  <li>USER：进程所有者</li>
-  <li>PGID：进程所属组</li>
-  <li>FD：文件描述符，应用程序通过文件描述符识别该文件。</li>
-</ul>
+
+  
+    
+      
+      
+    
+  
+  
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+  
+<table><thead><tr><th align="left">标识</th><th align="left">说明</th></tr></thead><tbody><tr><td align="left"><code>COMMAND</code></td><td align="left">进程的名称</td></tr><tr><td align="left"><code>PID</code></td><td align="left">进程标识符</td></tr><tr><td align="left"><code>PPID</code></td><td align="left">父进程标识符（需要指定-R参数）</td></tr><tr><td align="left"><code>USER</code></td><td align="left">进程所有者</td></tr><tr><td align="left"><code>PGID</code></td><td align="left">进程所属组</td></tr><tr><td align="left"><code>FD</code></td><td align="left">文件描述符，应用程序通过它识别该文件</td></tr></tbody></table>
 <p>文件描述符列表：</p>
-<ol>
-  <li>cwd：表示current work dirctory，即：应用程序的当前工作目录，这是该应用程序启动的目录，除非它本身对这个目录进行更改</li>
-  <li>txt：该类型的文件是程序代码，如应用程序二进制文件本身或共享库，如上列表中显示的 /sbin/init 程序</li>
-  <li>lnn：library references (AIX);</li>
-  <li>er：FD information error (see NAME column);</li>
-  <li>jld：jail directory (FreeBSD);</li>
-  <li>ltx：shared library text (code and data);</li>
-  <li>mxx ：hex memory-mapped type number xx.</li>
-  <li>m86：DOS Merge mapped file;</li>
-  <li>mem：memory-mapped file;</li>
-  <li>mmap：memory-mapped device;</li>
-  <li>pd：parent directory;</li>
-  <li>rtd：root directory;</li>
-  <li>tr：kernel trace file (OpenBSD);</li>
-  <li>v86  VP/ix mapped file;</li>
-  <li>0：表示标准输出</li>
-  <li>1：表示标准输入</li>
-  <li>2：表示标准错误</li>
-</ol>
+
+  
+    
+      
+      
+    
+  
+  
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+  
+<table><thead><tr><th align="left">标识</th><th align="left">说明</th></tr></thead><tbody><tr><td align="left"><code>cwd</code></td><td align="left">表示当前工作目录，即：应用程序的当前工作目录，这是该应用程序启动的目录，除非它本身对这个目录进行更改</td></tr><tr><td align="left"><code>txt</code></td><td align="left">该类型的文件是程序代码，如应用程序二进制文件本身或共享库，如上列表中显示的 /sbin/init 程序</td></tr><tr><td align="left"><code>lnn</code></td><td align="left">库引用 (AIX);</td></tr><tr><td align="left"><code>er</code></td><td align="left">FD 信息错误（参见名称栏）</td></tr><tr><td align="left"><code>jld</code></td><td align="left">jail 目录 (FreeBSD);</td></tr><tr><td align="left"><code>ltx</code></td><td align="left">共享库文本（代码和数据）</td></tr><tr><td align="left"><code>mxx</code></td><td align="left">十六进制内存映射类型编号xx</td></tr><tr><td align="left"><code>m86</code></td><td align="left">DOS合并映射文件</td></tr><tr><td align="left"><code>mem</code></td><td align="left">内存映射文件</td></tr><tr><td align="left"><code>mmap</code></td><td align="left">内存映射设备</td></tr><tr><td align="left"><code>pd</code></td><td align="left">父目录</td></tr><tr><td align="left"><code>rtd</code></td><td align="left">根目录</td></tr><tr><td align="left"><code>tr</code></td><td align="left">内核跟踪文件 (OpenBSD)</td></tr><tr><td align="left"><code>v86</code></td><td align="left">VP/ix 映射文件</td></tr><tr><td align="left"><code>0</code></td><td align="left">表示标准输出</td></tr><tr><td align="left"><code>1</code></td><td align="left">表示标准输入</td></tr><tr><td align="left"><code>2</code></td><td align="left">表示标准错误</td></tr></tbody></table>
 <p>一般在标准输出、标准错误、标准输入后还跟着文件状态模式：</p>
-<ol>
-  <li>u：表示该文件被打开并处于读取/写入模式。</li>
-  <li>r：表示该文件被打开并处于只读模式。</li>
-  <li>w：表示该文件被打开并处于写入模式。</li>
-  <li>空格：表示该文件的状态模式为unknow，且没有锁定。</li>
-  <li>-：表示该文件的状态模式为unknow，且被锁定。</li>
-</ol>
+
+  
+    
+      
+      
+    
+  
+  
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+  
+<table><thead><tr><th align="left">标识</th><th align="left">说明</th></tr></thead><tbody><tr><td align="left"><code>u</code></td><td align="left">表示该文件被打开并处于读取/写入模式</td></tr><tr><td align="left"><code>r</code></td><td align="left">表示该文件被打开并处于只读模式</td></tr><tr><td align="left"><code>w</code></td><td align="left">表示该文件被打开并处于写入模式</td></tr><tr><td align="left"><code>空格</code></td><td align="left">表示该文件的状态模式为 unknow，且没有锁定</td></tr><tr><td align="left"><code>-</code></td><td align="left">表示该文件的状态模式为 unknow，且被锁定</td></tr></tbody></table>
 <p>同时在文件状态模式后面，还跟着相关的锁：</p>
-<ol>
-  <li>N：for a Solaris NFS lock of unknown type;</li>
-  <li>r：for read lock on part of the file;</li>
-  <li>R：for a read lock on the entire file;</li>
-  <li>w：for a write lock on part of the file;（文件的部分写锁）</li>
-  <li>W：for a write lock on the entire file;（整个文件的写锁）</li>
-  <li>u：for a read and write lock of any length;</li>
-  <li>U：for a lock of unknown type;</li>
-  <li>x：for an SCO OpenServer Xenix lock on part      of the file;</li>
-  <li>X：for an SCO OpenServer Xenix lock on the      entire file;</li>
-  <li>space：if there is no lock.</li>
-</ol>
-<p>文件类型：</p>
-<ol>
-  <li>DIR：表示目录。</li>
-  <li>CHR：表示字符类型。</li>
-  <li>BLK：块设备类型。</li>
-  <li>UNIX： UNIX 域套接字。</li>
-  <li>FIFO：先进先出 (FIFO) 队列。</li>
-  <li>IPv4：网际协议 (IP) 套接字。</li>
-  <li>DEVICE：指定磁盘的名称</li>
-  <li>SIZE：文件的大小</li>
-  <li>NODE：索引节点（文件在磁盘上的标识）</li>
-  <li>NAME：打开文件的确切名称</li>
-  <li>REG：常规文件</li>
-</ol>
+
+  
+    
+      
+      
+    
+  
+  
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+  
+<table><thead><tr><th align="left">标识</th><th align="left">说明</th></tr></thead><tbody><tr><td align="left"><code>N</code></td><td align="left">对于未知类型的Solaris NFS锁</td></tr><tr><td align="left"><code>r</code></td><td align="left">用于部分文件的读取锁定</td></tr><tr><td align="left"><code>R</code></td><td align="left">对整个文件进行读取锁定</td></tr><tr><td align="left"><code>w</code></td><td align="left">对文件的一部分进行写锁定(文件的部分写锁)</td></tr><tr><td align="left"><code>W</code></td><td align="left">对整个文件进行写锁定(整个文件的写锁)</td></tr><tr><td align="left"><code>u</code></td><td align="left">用于任何长度的读写锁</td></tr><tr><td align="left"><code>U</code></td><td align="left">对于未知类型的锁</td></tr><tr><td align="left"><code>x</code></td><td align="left">对于文件部分的SCO OpenServer Xenix锁</td></tr><tr><td align="left"><code>X</code></td><td align="left">对于整个文件的SCO OpenServer Xenix锁</td></tr><tr><td align="left"><code>space</code></td><td align="left">如果没有锁</td></tr></tbody></table>
+<p><strong>文件类型</strong></p>
+
+  
+    
+      
+      
+    
+  
+  
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+    
+      
+      
+    
+  
+<table><thead><tr><th align="left">标识</th><th align="left">说明</th></tr></thead><tbody><tr><td align="left"><code>DIR</code></td><td align="left">表示目录</td></tr><tr><td align="left"><code>CHR</code></td><td align="left">表示字符类型</td></tr><tr><td align="left"><code>BLK</code></td><td align="left">块设备类型</td></tr><tr><td align="left"><code>UNIX</code></td><td align="left">UNIX 域套接字</td></tr><tr><td align="left"><code>FIFO</code></td><td align="left">先进先出 (FIFO) 队列</td></tr><tr><td align="left"><code>IPv4</code></td><td align="left">网际协议 (IP) 套接字</td></tr><tr><td align="left"><code>DEVICE</code></td><td align="left">指定磁盘的名称</td></tr><tr><td align="left"><code>SIZE</code></td><td align="left">文件的大小</td></tr><tr><td align="left"><code>NODE</code></td><td align="left">索引节点（文件在磁盘上的标识）</td></tr><tr><td align="left"><code>NAME</code></td><td align="left">打开文件的确切名称</td></tr><tr><td align="left"><code>REG</code></td><td align="left">常规文件</td></tr></tbody></table>
 <p>列出指定进程号所打开的文件:</p>
 <pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">lsof</span> <span class="token parameter variable">-p</span> <span class="token variable">$pid</span>
 </span></code><div onclick="copied(this)" data-code="lsof -p $pid
@@ -351,7 +538,7 @@ function copied(target, str) {
     586
   </span> 个Linux命令，超过 <a href="../contributors.html">50+</a> 贡献者
 </div>
-<script type="text/javascript" src="../js/dt.js?v=1666917701454"></script>
-<script type="text/javascript" src="../js/index.js?v=1666917701454"></script>
+<script type="text/javascript" src="../js/dt.js?v=1667070345731"></script>
+<script type="text/javascript" src="../js/index.js?v=1667070345731"></script>
 </body>
 </html>
