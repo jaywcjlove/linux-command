@@ -57,7 +57,7 @@ simple, never   # 永远使用普通方式备份
 
 ```shell
 cd /usr/mengqc
-ln /mub1/m2.c /usr/liu/a2.c
+ln mub1/m2.c /usr/liu/a2.c
 ```
 
 在执行ln命令之前，目录`/usr/liu`中不存在a2.c文件。执行ln之后，在`/usr/liu`目录中才有a2.c这一项，表明m2.c和a2.c链接起来（注意，二者在物理上是同一文件），利用`ls -l`命令可以看到链接数的变化。
