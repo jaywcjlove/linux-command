@@ -1,6 +1,7 @@
-# mkcert
+mkcert
+===
 
-用来生成自签证书的工具。
+用来生成自签证书的工具
 
 ## 示例
 
@@ -49,65 +50,65 @@ Ncat: Failed SSL connection from 127.0.0.1: error:00000000:lib(0):func(0):reason
 
 ### macOS
 
-```zsh
-brew install mkcert
-brew install nss # 如果用 Firefox 的话
+```bash
+$ brew install mkcert
+$ brew install nss # 如果用 Firefox 的话
 ```
 
 ### Linux
 
 在 Linux 上，首先要安装 `certutil`
 
-```zsh
-sudo apt install libnss3-tools
-    -or-
-sudo yum install nss-tools
-    -or-
-sudo pacman -S nss
-    -or-
-sudo zypper install mozilla-nss-tools
+```bash
+$ sudo apt install libnss3-tools
+#    -or-
+$ sudo yum install nss-tools
+#    -or-
+$ sudo pacman -S nss
+#    -or-
+$ sudo zypper install mozilla-nss-tools
 ```
 
 然后可以使用 [Homebrew on Linux](https://docs.brew.sh/Homebrew-on-Linux) 来安装。
 
-```zsh
-brew install mkcert
+```bash
+$ brew install mkcert
 ```
 
 或者从源码构建（要求 Go 1.13+）
 
-```zsh
+```bash
 git clone https://github.com/FiloSottile/mkcert && cd mkcert
 go build -ldflags "-X main.Version=$(git describe --tags)"
 ```
 
 又或者使用 [预构建的二进制文件](https://github.com/FiloSottile/mkcert/releases)。
 
-```zsh
-curl -JLO "https://dl.filippo.io/mkcert/latest?for=linux/amd64"
-chmod +x mkcert-v*-linux-amd64
-sudo cp mkcert-v*-linux-amd64 /usr/local/bin/mkcert
+```bash
+$ curl -JLO "https://dl.filippo.io/mkcert/latest?for=linux/amd64"
+$ chmod +x mkcert-v*-linux-amd64
+$ sudo cp mkcert-v*-linux-amd64 /usr/local/bin/mkcert
 ```
 
 对于 Arch Linux 用户（比如我），[`mkcert`](https://www.archlinux.org/packages/community/x86_64/mkcert/) 在 Arch Linux 官方仓库中可用。
 
-```zsh
-sudo pacman -S mkcert
+```bash
+$ sudo pacman -S mkcert
 ```
 
 ### Windows
 
 使用 [Chocolatey](https://chocolatey.org/)
 
-```zsh
-choco install mkcert
+```bash
+$ choco install mkcert
 ```
 
 或者使用 Scoop
 
-```zsh
-scoop bucket add extras
-scoop install mkcert
+```bash
+$ scoop bucket add extras
+$ scoop install mkcert
 ```
 
 或者从源码构建（要求 Go 1.10+） ，或者使用 [预构建的二进制文件](https://github.com/FiloSottile/mkcert/releases)。
@@ -119,48 +120,30 @@ scoop install mkcert
 `mkcert` 支持以下 root stores：
 
 - macOS system store
-
 - Windows system store
-
 - Linux 发行版提供
-  
   - `update-ca-trust` （Fedora，RHEL，CentOS）或者
-  
   - `update-ca-certificates` （Ubuntu，Debian，OpenSUSE，SLES）或者
-  
   - `trust` （Arch）
-
 - Firefox （仅 macOS 和 Linux）
-
 - Chrome 和 Chromium
-
 - Java（当 `JAVA_HOME` 被设置时）
 
 为了把 local root CA 装到这些 root stores 中，你可以设置 `TRUST_STORES` 环境变量到一个逗号分隔的 list。有这些选项："system","java" 和 "nss"（包括了 Firefox）。
 
 ## 高级 topics
 
----
-
 ### 高级选项
 
-```zsh
-    -cert-file FILE, -key-file FILE, -p12-file FILE
-        自定义输出路径.
-
-    -client
-        生成供客户端认证使用的证书.
-
-    -ecdsa
-        生成使用一个 ECDSA （一种椭圆曲线签名算法）key 来生成证书.
-
-    -pkcs12
-        生成一个 ".p12" PKCS #12 文件，也可以被识别为 ".pfx" 文件,
-        包含 cert 和 key for legacy applications.
-
-    -csr CSR
-        生成一个给予 CSR（证书签名申请） 的证书。
-    与除了 -install 和 -cert-file 以外的其它所以 flag 和参数冲突！
+```bash
+-cert-file FILE, -key-file FILE, -p12-file FILE
+    # 自定义输出路径.
+-client # 生成供客户端认证使用的证书.
+-ecdsa  # 生成使用一个 ECDSA （一种椭圆曲线签名算法）key 来生成证书.
+-pkcs12 # 生成一个 ".p12" PKCS #12 文件，也可以被识别为 ".pfx" 文件,
+        # 包含 cert 和 key for legacy applications.
+-csr CSR # 生成一个给予 CSR（证书签名申请） 的证书。
+         # 与除了 -install 和 -cert-file 以外的其它所以 flag 和参数冲突！
 ```
 
 [SSL 证书 什么是CSR？-常见问题-文档中心-腾讯云](https://cloud.tencent.com/document/product/400/5367)
@@ -169,7 +152,7 @@ scoop install mkcert
 
 ### 例如
 
-```zsh
+```bash
 mkcert -key-file key.pem -cert-file cert.pem example.com *.example.com
 ```
 
@@ -177,7 +160,7 @@ mkcert -key-file key.pem -cert-file cert.pem example.com *.example.com
 
 用下面这种方式 `mkcert` 会生成一个 S/MIME 证书：
 
-```zsh
+```bash
 mkcert filippo@example.com
 ```
 
@@ -193,7 +176,7 @@ mkcert filippo@example.com
 
 Node 不使用 system root store，所以它不会自动接受 `mkcert` 证书。相反，你得设置 [`NODE_EXTRA_CA_CERTS`](https://nodejs.org/api/cli.html#cli_node_extra_ca_certs_file) 环境变量。
 
-```zsh
+```bash
 export NODE_EXTRA_CA_CERTS="$(mkcert -CAROOT)/rootCA.pem"
 ```
 
@@ -208,11 +191,8 @@ CA 证书和它的 key 被存储在用户家目录的一个文件夹中。一般
 安装 trust store 不需要 CA key（只要 CA），所以你可以导出 CA，并且使用 `mkcert` 来安装到其它机器上。
 
 - 找到 `rootCA.pem` 文件，可以用 `mkcert -CAROOT` 找到对应目录。
-
 - 把它 copy 到别的机器上。
-
 - 设置 `\$CAROOT` 为 `rootCA.pem` 所在目录。
-
 - 运行 `mkcert -install`(arch linux 可以 `sudo trust anchor --store rootCA.pem`，其它发行版可以用自带的命令手动添加来信任 CA)
 
 请千万记住 `mkcert` 是用于开发目的的，不建议用于生产，所以它不应该被用到用户终端上，并且你不应该导出或者共享 `rootCA-key.pem` 。
