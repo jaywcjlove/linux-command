@@ -5,11 +5,11 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-    <meta name="description" content="arch:显示当前主机的硬件架构类型 - 最专业的Linux命令大全，内容包含Linux命令手册、详解、学习，值得收藏的Linux命令速查手册。">
-    <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,arch,显示当前主机的硬件架构类型">
-    <title>arch 命令，Linux arch 命令详解：显示当前主机的硬件架构类型 -  Linux 命令搜索引擎</title>
+    <meta name="description" content="mkcert:用来生成自签证书的工具 - 最专业的Linux命令大全，内容包含Linux命令手册、详解、学习，值得收藏的Linux命令速查手册。">
+    <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,mkcert,用来生成自签证书的工具">
+    <title>mkcert 命令，Linux mkcert 命令详解：用来生成自签证书的工具 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1667960923680">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1667960930778">
     <script src="../js/dark-mode.min.js"></script>
     <script type="module" src="../js/github-corners.js"></script>
 </head>
@@ -29,7 +29,7 @@
           </ul>
           <input type="text" class="query" id="query" autocomplete="off" autofocus="autofocus" placeholder="Linux 命令搜索"/>
           <div class="enter-input">
-              <input type="hidden" id="current_path" value="/c/arch.html">
+              <input type="hidden" id="current_path" value="/c/mkcert.html">
               <button id="search_btn">搜索</button>
           </div>
       </div>
@@ -40,9 +40,9 @@
 <div class="markdown-body">
 
 <span class="edit_btn">
-<a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/arch.md">纠正错误</a> 
+<a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/mkcert.md">纠正错误</a> 
 <span class="split"></span>
-<a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/arch.md">添加实例</a>
+<a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/mkcert.md">添加实例</a>
 </span>
 
 
@@ -113,37 +113,205 @@ class MarkdownStyle extends HTMLElement {
     }
 }
 customElements.define('markdown-style', MarkdownStyle);</script><markdown-style style="max-width: 960px; margin: 0 auto 60px auto; padding: 8px" class="markdown-style">
-<h1 id="arch"><a class="anchor" aria-hidden="true" tabindex="-1" href="#arch"><span class="octicon octicon-link"></span></a>arch</h1>
-<p>显示当前主机的硬件架构类型</p>
-<h2 id="概要"><a class="anchor" aria-hidden="true" tabindex="-1" href="#概要"><span class="octicon octicon-link"></span></a>概要</h2>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">arch <span class="token punctuation">[</span>OPTION<span class="token punctuation">]</span><span class="token punctuation">..</span>.
-</span></code><div onclick="copied(this)" data-code="arch [OPTION]...
+<h1 id="mkcert"><a class="anchor" aria-hidden="true" tabindex="-1" href="#mkcert"><span class="octicon octicon-link"></span></a>mkcert</h1>
+<p>用来生成自签证书的工具</p>
+<h2 id="示例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#示例"><span class="octicon octicon-link"></span></a>示例</h2>
+<p><code>mkcert</code> 是 GO 编写的，一个简单的<strong>零配置</strong>的用来生成自签证书的工具。</p>
+<p>下面给一个简单的示例，在本地生成自签证书，并使用让 nc 使用生成的证书。</p>
+<pre><code class="language-zsh code-highlight"><span class="code-line line-number" line="1">~ ·········································································································································  10:46:25
+</span><span class="code-line line-number" line="2">❯ mkcert -install
+</span><span class="code-line line-number" line="3">The local CA is already installed in the system trust store! 👍The local CA is already installed in the Firefox and/or Chrome/Chromium trust store! 👍
+</span><span class="code-line line-number" line="4">~ ·········································································································································  10:46:34
+</span><span class="code-line line-number" line="5">❯ mkcert example.com "*.example.com" example.test localhost 127.0.0.1 ::1
+</span><span class="code-line line-number" line="6">
+</span><span class="code-line line-number" line="7">Created a new certificate valid for the following names 📜 - "example.com"
+</span><span class="code-line line-number" line="8"> - "*.example.com"
+</span><span class="code-line line-number" line="9"> - "example.test"
+</span><span class="code-line line-number" line="10"> - "localhost"
+</span><span class="code-line line-number" line="11"> - "127.0.0.1"
+</span><span class="code-line line-number" line="12"> - "::1"
+</span><span class="code-line line-number" line="13">
+</span><span class="code-line line-number" line="14">Reminder: X.509 wildcards only go one level deep, so this won't match a.b.example.com ℹ️
+</span><span class="code-line line-number" line="15">
+</span><span class="code-line line-number" line="16">The certificate is at "./example.com+5.pem" and the key at "./example.com+5-key.pem" ✅
+</span><span class="code-line line-number" line="17">It will expire on 30 January 2025 🗓
+</span><span class="code-line line-number" line="18">
+</span><span class="code-line line-number" line="19">~ ·········································································································································  10:47:37
+</span><span class="code-line line-number" line="20">❯ ls             
+</span><span class="code-line line-number" line="21">公共  视频  文档  音乐  aria          aria2-downloads  Dockerfile             example.com+5.pem  GOPATH  minio-binaries  nowip_hosts.txt  tech_backend.jar
+</span><span class="code-line line-number" line="22">模板  图片  下载  桌面  aria2-config  cv_debug.log     example.com+5-key.pem  go                 math    navicat_reset   src
+</span><span class="code-line line-number" line="23">~ ·········································································································································  10:47:55
+</span><span class="code-line line-number" line="24">❯ ncat -lvp 1589 --ssl-key example.com+5-key.pem --ssl-cert example.com+5.pem 
+</span><span class="code-line line-number" line="25">Ncat: Version 7.92 ( https://nmap.org/ncat )
+</span><span class="code-line line-number" line="26">Ncat: Listening on :::1589
+</span><span class="code-line line-number" line="27">Ncat: Listening on 0.0.0.0:1589
+</span><span class="code-line line-number" line="28">Ncat: Connection from 127.0.0.1.
+</span><span class="code-line line-number" line="29">Ncat: Connection from 127.0.0.1:39156.
+</span><span class="code-line line-number" line="30">Ncat: Failed SSL connection from 127.0.0.1: error:00000000:lib(0):func(0):reason(0)
+</span></code><div onclick="copied(this)" data-code="~ ·········································································································································  10:46:25
+❯ mkcert -install
+The local CA is already installed in the system trust store! 👍The local CA is already installed in the Firefox and/or Chrome/Chromium trust store! 👍
+~ ·········································································································································  10:46:34
+❯ mkcert example.com &#x22;*.example.com&#x22; example.test localhost 127.0.0.1 ::1
+
+Created a new certificate valid for the following names 📜 - &#x22;example.com&#x22;
+ - &#x22;*.example.com&#x22;
+ - &#x22;example.test&#x22;
+ - &#x22;localhost&#x22;
+ - &#x22;127.0.0.1&#x22;
+ - &#x22;::1&#x22;
+
+Reminder: X.509 wildcards only go one level deep, so this won&#x27;t match a.b.example.com ℹ️
+
+The certificate is at &#x22;./example.com+5.pem&#x22; and the key at &#x22;./example.com+5-key.pem&#x22; ✅
+It will expire on 30 January 2025 🗓
+
+~ ·········································································································································  10:47:37
+❯ ls             
+公共  视频  文档  音乐  aria          aria2-downloads  Dockerfile             example.com+5.pem  GOPATH  minio-binaries  nowip_hosts.txt  tech_backend.jar
+模板  图片  下载  桌面  aria2-config  cv_debug.log     example.com+5-key.pem  go                 math    navicat_reset   src
+~ ·········································································································································  10:47:55
+❯ ncat -lvp 1589 --ssl-key example.com+5-key.pem --ssl-cert example.com+5.pem 
+Ncat: Version 7.92 ( https://nmap.org/ncat )
+Ncat: Listening on :::1589
+Ncat: Listening on 0.0.0.0:1589
+Ncat: Connection from 127.0.0.1.
+Ncat: Connection from 127.0.0.1:39156.
+Ncat: Failed SSL connection from 127.0.0.1: error:00000000:lib(0):func(0):reason(0)
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-<h2 id="主要用途"><a class="anchor" aria-hidden="true" tabindex="-1" href="#主要用途"><span class="octicon octicon-link"></span></a>主要用途</h2>
+<p><code>mkcert</code> 自动生成并安装一个本地 CA 到 root stores，并且生成 locally-trusted 证书。<code>mkcert</code> 不会自动使用证书来配置服务器，不过，这取决于你。</p>
+<h2 id="安装"><a class="anchor" aria-hidden="true" tabindex="-1" href="#安装"><span class="octicon octicon-link"></span></a>安装</h2>
+<blockquote>
+  <p>Warning: <code>mkcert</code> 自动生成的 <code>rootCA-key.pem</code> 文件提供了完整的能力来拦截你机器上的安全请求。请不要分享它。</p>
+</blockquote>
+<h3 id="macos"><a class="anchor" aria-hidden="true" tabindex="-1" href="#macos"><span class="octicon octicon-link"></span></a>macOS</h3>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1">$ brew <span class="token function">install</span> mkcert
+</span><span class="code-line line-number" line="2">$ brew <span class="token function">install</span> nss <span class="token comment"># 如果用 Firefox 的话</span>
+</span></code><div onclick="copied(this)" data-code="$ brew install mkcert
+$ brew install nss # 如果用 Firefox 的话
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+<h3 id="linux"><a class="anchor" aria-hidden="true" tabindex="-1" href="#linux"><span class="octicon octicon-link"></span></a>Linux</h3>
+<p>在 Linux 上，首先要安装 <code>certutil</code></p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1">$ <span class="token function">sudo</span> <span class="token function">apt</span> <span class="token function">install</span> libnss3-tools
+</span><span class="code-line line-number" line="2"><span class="token comment">#    -or-</span>
+</span><span class="code-line line-number" line="3">$ <span class="token function">sudo</span> yum <span class="token function">install</span> nss-tools
+</span><span class="code-line line-number" line="4"><span class="token comment">#    -or-</span>
+</span><span class="code-line line-number" line="5">$ <span class="token function">sudo</span> pacman <span class="token parameter variable">-S</span> nss
+</span><span class="code-line line-number" line="6"><span class="token comment">#    -or-</span>
+</span><span class="code-line line-number" line="7">$ <span class="token function">sudo</span> <span class="token function">zypper</span> <span class="token function">install</span> mozilla-nss-tools
+</span></code><div onclick="copied(this)" data-code="$ sudo apt install libnss3-tools
+#    -or-
+$ sudo yum install nss-tools
+#    -or-
+$ sudo pacman -S nss
+#    -or-
+$ sudo zypper install mozilla-nss-tools
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+<p>然后可以使用 <a href="https://docs.brew.sh/Homebrew-on-Linux">Homebrew on Linux</a> 来安装。</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1">$ brew <span class="token function">install</span> mkcert
+</span></code><div onclick="copied(this)" data-code="$ brew install mkcert
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+<p>或者从源码构建（要求 Go 1.13+）</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token function">git</span> clone https://github.com/FiloSottile/mkcert <span class="token operator">&#x26;&#x26;</span> <span class="token builtin class-name">cd</span> mkcert
+</span><span class="code-line line-number" line="2">go build <span class="token parameter variable">-ldflags</span> <span class="token string">"-X main.Version=<span class="token variable"><span class="token variable">$(</span><span class="token function">git</span> describe <span class="token parameter variable">--tags</span><span class="token variable">)</span></span>"</span>
+</span></code><div onclick="copied(this)" data-code="git clone https://github.com/FiloSottile/mkcert &#x26;&#x26; cd mkcert
+go build -ldflags &#x22;-X main.Version=$(git describe --tags)&#x22;
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+<p>又或者使用 <a href="https://github.com/FiloSottile/mkcert/releases">预构建的二进制文件</a>。</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1">$ <span class="token function">curl</span> <span class="token parameter variable">-JLO</span> <span class="token string">"https://dl.filippo.io/mkcert/latest?for=linux/amd64"</span>
+</span><span class="code-line line-number" line="2">$ <span class="token function">chmod</span> +x mkcert-v*-linux-amd64
+</span><span class="code-line line-number" line="3">$ <span class="token function">sudo</span> <span class="token function">cp</span> mkcert-v*-linux-amd64 /usr/local/bin/mkcert
+</span></code><div onclick="copied(this)" data-code="$ curl -JLO &#x22;https://dl.filippo.io/mkcert/latest?for=linux/amd64&#x22;
+$ chmod +x mkcert-v*-linux-amd64
+$ sudo cp mkcert-v*-linux-amd64 /usr/local/bin/mkcert
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+<p>对于 Arch Linux 用户（比如我），<a href="https://www.archlinux.org/packages/community/x86_64/mkcert/"><code>mkcert</code></a> 在 Arch Linux 官方仓库中可用。</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1">$ <span class="token function">sudo</span> pacman <span class="token parameter variable">-S</span> mkcert
+</span></code><div onclick="copied(this)" data-code="$ sudo pacman -S mkcert
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+<h3 id="windows"><a class="anchor" aria-hidden="true" tabindex="-1" href="#windows"><span class="octicon octicon-link"></span></a>Windows</h3>
+<p>使用 <a href="https://chocolatey.org/">Chocolatey</a></p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1">$ choco <span class="token function">install</span> mkcert
+</span></code><div onclick="copied(this)" data-code="$ choco install mkcert
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+<p>或者使用 Scoop</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1">$ scoop bucket <span class="token function">add</span> extras
+</span><span class="code-line line-number" line="2">$ scoop <span class="token function">install</span> mkcert
+</span></code><div onclick="copied(this)" data-code="$ scoop bucket add extras
+$ scoop install mkcert
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+<p>或者从源码构建（要求 Go 1.10+） ，或者使用 <a href="https://github.com/FiloSottile/mkcert/releases">预构建的二进制文件</a>。</p>
+<p>如果遇到权限问题，请使用管理员运行 <code>mkcert</code></p>
+<h2 id="支持的-root-stores"><a class="anchor" aria-hidden="true" tabindex="-1" href="#支持的-root-stores"><span class="octicon octicon-link"></span></a>支持的 root stores</h2>
+<p><code>mkcert</code> 支持以下 root stores：</p>
 <ul>
-  <li>打印机器架构信息；<code>arch</code> 命令输出结果有：i386、i486、i586、alpha、sparc、arm、m68k、mips、ppc、i686等。</li>
+  <li>macOS system store</li>
+  <li>Windows system store</li>
+  <li>Linux 发行版提供
+    <ul>
+      <li><code>update-ca-trust</code> （Fedora，RHEL，CentOS）或者</li>
+      <li><code>update-ca-certificates</code> （Ubuntu，Debian，OpenSUSE，SLES）或者</li>
+      <li><code>trust</code> （Arch）</li>
+    </ul>
+  </li>
+  <li>Firefox （仅 macOS 和 Linux）</li>
+  <li>Chrome 和 Chromium</li>
+  <li>Java（当 <code>JAVA_HOME</code> 被设置时）</li>
 </ul>
-<h2 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><span class="octicon octicon-link"></span></a>选项</h2>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token parameter variable">--help</span>       显示帮助信息并退出。
-</span><span class="code-line line-number" line="2"><span class="token parameter variable">--version</span>    显示版本信息并退出。
-</span></code><div onclick="copied(this)" data-code="--help       显示帮助信息并退出。
---version    显示版本信息并退出。
+<p>为了把 local root CA 装到这些 root stores 中，你可以设置 <code>TRUST_STORES</code> 环境变量到一个逗号分隔的 list。有这些选项："system","java" 和 "nss"（包括了 Firefox）。</p>
+<h2 id="高级-topics"><a class="anchor" aria-hidden="true" tabindex="-1" href="#高级-topics"><span class="octicon octicon-link"></span></a>高级 topics</h2>
+<h3 id="高级选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#高级选项"><span class="octicon octicon-link"></span></a>高级选项</h3>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1">-cert-file FILE, -key-file FILE, -p12-file FILE
+</span><span class="code-line line-number" line="2">    <span class="token comment"># 自定义输出路径.</span>
+</span><span class="code-line line-number" line="3"><span class="token parameter variable">-client</span> <span class="token comment"># 生成供客户端认证使用的证书.</span>
+</span><span class="code-line line-number" line="4"><span class="token parameter variable">-ecdsa</span>  <span class="token comment"># 生成使用一个 ECDSA （一种椭圆曲线签名算法）key 来生成证书.</span>
+</span><span class="code-line line-number" line="5"><span class="token parameter variable">-pkcs12</span> <span class="token comment"># 生成一个 ".p12" PKCS #12 文件，也可以被识别为 ".pfx" 文件,</span>
+</span><span class="code-line line-number" line="6">        <span class="token comment"># 包含 cert 和 key for legacy applications.</span>
+</span><span class="code-line line-number" line="7"><span class="token parameter variable">-csr</span> CSR <span class="token comment"># 生成一个给予 CSR（证书签名申请） 的证书。</span>
+</span><span class="code-line line-number" line="8">         <span class="token comment"># 与除了 -install 和 -cert-file 以外的其它所以 flag 和参数冲突！</span>
+</span></code><div onclick="copied(this)" data-code="-cert-file FILE, -key-file FILE, -p12-file FILE
+    # 自定义输出路径.
+-client # 生成供客户端认证使用的证书.
+-ecdsa  # 生成使用一个 ECDSA （一种椭圆曲线签名算法）key 来生成证书.
+-pkcs12 # 生成一个 &#x22;.p12&#x22; PKCS #12 文件，也可以被识别为 &#x22;.pfx&#x22; 文件,
+        # 包含 cert 和 key for legacy applications.
+-csr CSR # 生成一个给予 CSR（证书签名申请） 的证书。
+         # 与除了 -install 和 -cert-file 以外的其它所以 flag 和参数冲突！
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-<h2 id="例子"><a class="anchor" aria-hidden="true" tabindex="-1" href="#例子"><span class="octicon octicon-link"></span></a>例子</h2>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># arch</span>
-</span><span class="code-line line-number" line="2">x86_64
-</span></code><div onclick="copied(this)" data-code="[root@localhost ~]# arch
-x86_64
+<p><a href="https://cloud.tencent.com/document/product/400/5367">SSL 证书 什么是CSR？-常见问题-文档中心-腾讯云</a></p>
+<blockquote>
+  <p><strong>请注意！</strong> 你必须把这些选项放在域名列表之前。</p>
+</blockquote>
+<h3 id="例如"><a class="anchor" aria-hidden="true" tabindex="-1" href="#例如"><span class="octicon octicon-link"></span></a>例如</h3>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1">mkcert -key-file key.pem -cert-file cert.pem example.com *.example.com
+</span></code><div onclick="copied(this)" data-code="mkcert -key-file key.pem -cert-file cert.pem example.com *.example.com
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-<h3 id="注意"><a class="anchor" aria-hidden="true" tabindex="-1" href="#注意"><span class="octicon octicon-link"></span></a>注意</h3>
-<ol>
-  <li>
-    <p>该命令等价于 <code>uname -m</code>。</p>
-  </li>
-  <li>
-    <p>该命令是<code>GNU coreutils</code>包中的命令，相关的帮助信息请查看<code>man -s 1 arch</code>，<code>info coreutils 'arch invocation'</code>。</p>
-  </li>
-</ol>
+<h3 id="smime-邮件安全证书"><a class="anchor" aria-hidden="true" tabindex="-1" href="#smime-邮件安全证书"><span class="octicon octicon-link"></span></a>S/MIME （邮件安全证书）</h3>
+<p>用下面这种方式 <code>mkcert</code> 会生成一个 S/MIME 证书：</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1">mkcert filippo@example.com
+</span></code><div onclick="copied(this)" data-code="mkcert filippo@example.com
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+<h3 id="移动设备"><a class="anchor" aria-hidden="true" tabindex="-1" href="#移动设备"><span class="octicon octicon-link"></span></a>移动设备</h3>
+<p>对于要让移动设备信任证书的情况，你得安装 root CA。就是 <code>rootCA.pem</code> 这个文件，可以通过 <code>mkcert -CAROOT</code> 打印出这个文件所在的目录。</p>
+<p>在 iOS 上，你也可以使用 AirDrop，把 CA 邮件发给你自己，或者通过一个 HTTP server 提供它。在打开它之后，你需要  <a href="https://github.com/FiloSottile/mkcert/issues/233#issuecomment-690110809">install the profile in Settings > Profile Downloaded</a> and then <a href="https://support.apple.com/en-nz/HT204477">enable full trust in it</a> 。</p>
+<p>对于 Android ，你得安装这个 CA 然后在应用程序的开发版本中启用 user roots。可以看一看这个 <a href="https://stackoverflow.com/a/22040887/749014">StackOverflow 回答</a> 。</p>
+<h3 id="用-nodejs-来使用这个-root"><a class="anchor" aria-hidden="true" tabindex="-1" href="#用-nodejs-来使用这个-root"><span class="octicon octicon-link"></span></a>用 Node.js 来使用这个 root</h3>
+<p>Node 不使用 system root store，所以它不会自动接受 <code>mkcert</code> 证书。相反，你得设置 <a href="https://nodejs.org/api/cli.html#cli_node_extra_ca_certs_file"><code>NODE_EXTRA_CA_CERTS</code></a> 环境变量。</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token builtin class-name">export</span> <span class="token assign-left variable">NODE_EXTRA_CA_CERTS</span><span class="token operator">=</span><span class="token string">"<span class="token variable"><span class="token variable">$(</span>mkcert <span class="token parameter variable">-CAROOT</span><span class="token variable">)</span></span>/rootCA.pem"</span>
+</span></code><div onclick="copied(this)" data-code="export NODE_EXTRA_CA_CERTS=&#x22;$(mkcert -CAROOT)/rootCA.pem&#x22;
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+<h3 id="改变-ca-文件的位置"><a class="anchor" aria-hidden="true" tabindex="-1" href="#改变-ca-文件的位置"><span class="octicon octicon-link"></span></a>改变 CA 文件的位置</h3>
+<p>CA 证书和它的 key 被存储在用户家目录的一个文件夹中。一般来说你不会想去关注它的位置，因为它会被自动装载。但是你可以通过 <code>mkcert -CAROOT</code> 来打印这个目录位置。</p>
+<p>如果你想要管理单独的 CA 们，你可以使用 <code>\$CAROOT</code> 环境变量来设置 mkcert 放置和寻找 CA files 的路径。</p>
+<h3 id="在其它系统上安装-ca"><a class="anchor" aria-hidden="true" tabindex="-1" href="#在其它系统上安装-ca"><span class="octicon octicon-link"></span></a>在其它系统上安装 CA</h3>
+<p>安装 trust store 不需要 CA key（只要 CA），所以你可以导出 CA，并且使用 <code>mkcert</code> 来安装到其它机器上。</p>
+<ul>
+  <li>找到 <code>rootCA.pem</code> 文件，可以用 <code>mkcert -CAROOT</code> 找到对应目录。</li>
+  <li>把它 copy 到别的机器上。</li>
+  <li>设置 <code>\$CAROOT</code> 为 <code>rootCA.pem</code> 所在目录。</li>
+  <li>运行 <code>mkcert -install</code>(arch linux 可以 <code>sudo trust anchor --store rootCA.pem</code>，其它发行版可以用自带的命令手动添加来信任 CA)</li>
+</ul>
+<p>请千万记住 <code>mkcert</code> 是用于开发目的的，不建议用于生产，所以它不应该被用到用户终端上，并且你不应该导出或者共享 <code>rootCA-key.pem</code> 。</p>
 <style>markdown-style pre .copied {
   display: flex;
   position: absolute;
@@ -215,7 +383,7 @@ function copied(target, str) {
     587
   </span> 个Linux命令，超过 <a href="../contributors.html">50+</a> 贡献者
 </div>
-<script type="text/javascript" src="../js/dt.js?v=1667960923681"></script>
-<script type="text/javascript" src="../js/index.js?v=1667960923681"></script>
+<script type="text/javascript" src="../js/dt.js?v=1667960930779"></script>
+<script type="text/javascript" src="../js/index.js?v=1667960930779"></script>
 </body>
 </html>
