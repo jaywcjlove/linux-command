@@ -202,7 +202,7 @@
   "bunzip2": {
     "n": "bunzip2",
     "p": "/bunzip2",
-    "d": "创一个bz2文件压缩包"
+    "d": "可解压缩.bz2格式的压缩文件。 "
   },
   "bye": {
     "n": "bye",
@@ -212,7 +212,7 @@
   "bzcat": {
     "n": "bzcat",
     "p": "/bzcat",
-    "d": "解压缩指定的.bz2文件"
+    "d": "不解压，直接查看指定的.bz2文件"
   },
   "bzcmp": {
     "n": "bzcmp",
@@ -797,7 +797,7 @@
   "fsck": {
     "n": "fsck",
     "p": "/fsck",
-    "d": "检查并且试图修复文件系统中的错误"
+    "d": "fsck（英文全拼：file system check）命令检查并且试图修复文件系统中的错误"
   },
   "ftp": {
     "n": "ftp",
@@ -923,6 +923,16 @@
     "n": "grub",
     "p": "/grub",
     "d": "多重引导程序grub的命令行shell工具"
+  },
+  "grub2-mkconfig": {
+    "n": "grub2-mkconfig",
+    "p": "/grub2-mkconfig",
+    "d": "生成 grub.cfg 配置文件。"
+  },
+  "grub2-set-default": {
+    "n": "grub2-set-default",
+    "p": "/grub2-set-default",
+    "d": "设置系统默认的启动内核"
   },
   "gunzip": {
     "n": "gunzip",
@@ -1518,6 +1528,11 @@
     "n": "mkbootdisk",
     "p": "/mkbootdisk",
     "d": "可建立目前系统的启动盘"
+  },
+  "mkcert": {
+    "n": "mkcert",
+    "p": "/mkcert",
+    "d": "用来生成自签证书的工具"
   },
   "mkdir": {
     "n": "mkdir",
