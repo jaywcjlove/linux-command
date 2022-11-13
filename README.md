@@ -336,15 +336,17 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 ---|---|---
 [小弟调调™](http://wangchujiang.com) | [ZhuangZhu-74](https://github.com/ZhuangZhu-74) | [Huck Huang](https://github.com/huckhuang)
 
-## Contributors
+## 感谢所有贡献者
 
-As always, thanks to our amazing contributors!
+一如既往，感谢我们出色的贡献者！
 
+<!--GAMFC-->
 <a href="https://github.com/jaywcjlove/linux-command/graphs/contributors">
   <img src="https://jaywcjlove.github.io/linux-command/CONTRIBUTORS.svg" />
 </a>
+<!--GAMFC-END-->
 
-Made with [github-action-contributors](https://github.com/jaywcjlove/github-action-contributors).
+贡献者列表，由 [contributors](https://github.com/jaywcjlove/github-action-contributors) 自动生成
 
 ## License
 

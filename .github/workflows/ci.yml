@@ -15,9 +15,17 @@ jobs:
 
       - name: Generate Contributors Images
         uses: jaywcjlove/github-action-contributors@main
+        id: contributors
         with:
           filter-author: (renovate\[bot\]|renovate-bot|dependabot\[bot\])
           avatarSize: 42
+
+      - name: Modify README.md
+        uses: jaywcjlove/github-action-modify-file-content@main
+        with:
+          path: README.md
+          body: |
+            ${{steps.contributors.outputs.htmlList}}
 
       - name: Build Linux Command
         run: |
