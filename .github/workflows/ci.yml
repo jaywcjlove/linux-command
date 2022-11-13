@@ -18,14 +18,14 @@ jobs:
         id: contributors
         with:
           filter-author: (renovate\[bot\]|renovate-bot|dependabot\[bot\])
-          openDelimiter: '<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-->'
-          closeDelimiter: '<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END-->'
           avatarSize: 42
 
       - name: Modify README.md
         uses: jaywcjlove/github-action-modify-file-content@main
         with:
           path: README.md
+          openDelimiter: '<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-->'
+          closeDelimiter: '<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END-->'
           body: |
             ${{steps.contributors.outputs.htmlList}}
 
@@ -33,6 +33,8 @@ jobs:
         uses: jaywcjlove/github-action-modify-file-content@main
         with:
           path: template/contributors.ejs
+          openDelimiter: '<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-->'
+          closeDelimiter: '<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END-->'
           body: |
             ${{steps.contributors.outputs.htmlList}}
 
