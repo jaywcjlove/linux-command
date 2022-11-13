@@ -29,6 +29,13 @@ jobs:
           body: |
             ${{steps.contributors.outputs.htmlList}}
 
+      - name: Modify contributors.ejs
+        uses: jaywcjlove/github-action-modify-file-content@main
+        with:
+          path: template/contributors.ejs
+          body: |
+            ${{steps.contributors.outputs.htmlList}}
+
       - name: Build Linux Command
         run: |
           npm install
