@@ -18,6 +18,8 @@ jobs:
         id: contributors
         with:
           filter-author: (renovate\[bot\]|renovate-bot|dependabot\[bot\])
+          openDelimiter: '<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-->'
+          closeDelimiter: '<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END-->'
           avatarSize: 42
 
       - name: Modify README.md

@@ -340,7 +340,7 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 
 一如既往，感谢我们出色的贡献者！
 
-<!--GAMFC--><a href="https://github.com/jaywcjlove" title="小弟调调™">
+<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT--><a href="https://github.com/jaywcjlove" title="小弟调调™">
   <img src="https://avatars.githubusercontent.com/u/1680273?v=4" width="42;" alt="小弟调调™"/>
 </a>
 <a href="https://github.com/ZhuangZhu-74" title="ZhuangZhu-74">
@@ -693,7 +693,7 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 </a>
 <a href="https://github.com/HDsky" title="黑&蛋">
   <img src="https://avatars.githubusercontent.com/u/17249963?v=4" width="42;" alt="黑&蛋"/>
-</a><!--GAMFC-END-->
+</a><!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END-->
 
 贡献者列表，由 [contributors](https://github.com/jaywcjlove/github-action-contributors) 自动生成
 
