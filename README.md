@@ -427,8 +427,8 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/ibook86" title="Shell">
   <img src="https://avatars.githubusercontent.com/u/39795988?v=4" width="42;" alt="Shell"/>
 </a>
-<a href="https://github.com/Makonike" title="吕程风">
-  <img src="https://avatars.githubusercontent.com/u/75628309?v=4" width="42;" alt="吕程风"/>
+<a href="https://github.com/Makonike" title="谈笑风生间">
+  <img src="https://avatars.githubusercontent.com/u/75628309?v=4" width="42;" alt="谈笑风生间"/>
 </a>
 <a href="https://github.com/DaYangtuo247" title="DaYangtuo247">
   <img src="https://avatars.githubusercontent.com/u/73392515?v=4" width="42;" alt="DaYangtuo247"/>
@@ -600,6 +600,9 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 </a>
 <a href="https://github.com/leiaoo" title="leo">
   <img src="https://avatars.githubusercontent.com/u/8576385?v=4" width="42;" alt="leo"/>
+</a>
+<a href="https://github.com/lewis1573" title="lewis1573">
+  <img src="https://avatars.githubusercontent.com/u/77063576?v=4" width="42;" alt="lewis1573"/>
 </a>
 <a href="https://github.com/linuxwd" title="linuxwd">
   <img src="https://avatars.githubusercontent.com/u/1127767?v=4" width="42;" alt="linuxwd"/>
