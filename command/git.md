@@ -964,7 +964,8 @@ git --git-dir='<绝对地址>/.git' describe --tags HEAD # 查看本地版本信
 ```shell
 git config format.pretty oneline  #显示历史记录时，每个提交的信息只显示一行   
 git config color.ui true #彩色的 git 输出   
-git log #查看最近的提交日志   
+git log #查看提交日志，从最近的提交开始显示  
+git log --reverse #查看提交日志，从最远的提交开始显示
 git log --pretty=oneline #单行显示提交日志   
 git log --graph --pretty=oneline --abbrev-commit   
 git log -num #显示第几条log（倒数）   
