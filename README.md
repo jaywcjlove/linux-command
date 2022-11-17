@@ -442,6 +442,9 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/toFrankie" title="Frankie">
   <img src="https://avatars.githubusercontent.com/u/26947203?v=4" width="42;" alt="Frankie"/>
 </a>
+<a href="https://github.com/IdiosyncraticDragon" title="Guiying Li">
+  <img src="https://avatars.githubusercontent.com/u/3750460?v=4" width="42;" alt="Guiying Li"/>
+</a>
 <a href="https://github.com/Herbert8" title="Herbert8">
   <img src="https://avatars.githubusercontent.com/u/3112923?v=4" width="42;" alt="Herbert8"/>
 </a>
@@ -663,6 +666,9 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 </a>
 <a href="https://github.com/xiaobeicn" title="宋小北">
   <img src="https://avatars.githubusercontent.com/u/6057437?v=4" width="42;" alt="宋小北"/>
+</a>
+<a href="https://github.com/kindevil" title="尘埃">
+  <img src="https://avatars.githubusercontent.com/u/846488?v=4" width="42;" alt="尘埃"/>
 </a>
 <a href="https://github.com/yybht155" title="Loofra">
   <img src="https://avatars.githubusercontent.com/u/32786211?v=4" width="42;" alt="Loofra"/>
