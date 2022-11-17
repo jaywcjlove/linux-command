@@ -42,7 +42,7 @@
 
 **其它 web 版本**
 
-[`linux.ftqq.com`](https://linux.ftqq.com/)，[`linux.gaomeluo.com`](https://linux.gaomeluo.com)，[`atoolbox.net`](http://www.atoolbox.net/Tool.php?Id=826)，[`xiaoshanseo.com`](https://tools.xiaoshanseo.com/Tools/linux-command/)，[`262235.xyz`](https://262235.xyz/linux-command/)，[`cmsblogs.cn`](https://linux.cmsblogs.cn/)，[`loquy.cn`](https://www.loquy.cn/linux-command/)，[`buyao.vip`](https://demo.buyao.vip/linux/)，[`hezhiqiang.gitbook.io`](https://hezhiqiang.gitbook.io/linux/)
+[`linux.ftqq.com`](https://linux.ftqq.com/)，[`linux.gaomeluo.com`](https://linux.gaomeluo.com)，[`atoolbox.net`](http://www.atoolbox.net/Tool.php?Id=826)，[`xiaoshanseo.com`](https://tools.xiaoshanseo.com/Tools/linux-command/)，[`262235.xyz`](https://262235.xyz/linux-command/)，[`cmsblogs.cn`](https://linux.cmsblogs.cn/)，[`loquy.cn`](https://www.loquy.cn/linux-command/)，[`buyao.vip`](https://demo.buyao.vip/linux/)，[`hezhiqiang.gitbook.io`](https://hezhiqiang.gitbook.io/linux/)，[`linux.liguiying.cn`](https://linux.liguiying.cn/)
 
 ## 微信小程序版本
 
