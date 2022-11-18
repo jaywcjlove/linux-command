@@ -553,6 +553,9 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<å‘½ä»
 <a href="https://github.com/brinkqiang" title="brinkqiang">
   <img src="https://avatars.githubusercontent.com/u/10229072?v=4" width="42;" alt="brinkqiang"/>
 </a>
+<a href="https://github.com/c2ch" title="c2ch">
+  <img src="https://avatars.githubusercontent.com/u/35028011?v=4" width="42;" alt="c2ch"/>
+</a>
 <a href="https://github.com/121812" title="chen ">
   <img src="https://avatars.githubusercontent.com/u/39209748?v=4" width="42;" alt="chen "/>
 </a>
