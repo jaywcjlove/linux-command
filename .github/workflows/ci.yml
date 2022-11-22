@@ -152,7 +152,7 @@ jobs:
         run: echo ${{ github.token }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
 
       - name: Build docker image
-        run: docker buildx create --platform linux/arm64,linux/arm/v8 -t ghcr.io/jaywcjlove/linux-command:latest .
+        run: docker buildx build --platform linux/amd64,linux/arm64 -t ghcr.io/jaywcjlove/linux-command:latest .
 
       - name: Publish to GitHub registry
         run: docker push ghcr.io/jaywcjlove/linux-command:latest
