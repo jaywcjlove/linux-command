@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,grep,强大的文本搜索工具">
     <title>grep 命令，Linux grep 命令详解：强大的文本搜索工具 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1669138448308">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1669541465858">
     <script src="../js/dark-mode.min.js"></script>
     <script type="module" src="../js/github-corners.js"></script>
 </head>
@@ -184,7 +184,7 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
 </span><span class="code-line line-number" line="4">*    <span class="token comment"># 匹配零个或多个先前字符 如：'*grep'匹配所有一个或多个空格后紧跟grep的行。    </span>
 </span><span class="code-line line-number" line="5">.*   <span class="token comment"># 一起用代表任意字符。   </span>
 </span><span class="code-line line-number" line="6"><span class="token punctuation">[</span><span class="token punctuation">]</span>   <span class="token comment"># 匹配一个指定范围内的字符，如'[Gg]rep'匹配Grep和grep。    </span>
-</span><span class="code-line line-number" line="7"><span class="token punctuation">[</span>^<span class="token punctuation">]</span>  <span class="token comment"># 匹配一个不在指定范围内的字符，如：'[^A-FH-Z]rep'匹配不包含A-R和T-Z的一个字母开头，紧跟rep的行。    </span>
+</span><span class="code-line line-number" line="7"><span class="token punctuation">[</span>^<span class="token punctuation">]</span>  <span class="token comment"># 匹配一个不在指定范围内的字符，如：'[^A-Z]rep' 匹配不包含 A-Z 中的字母开头，紧跟 rep 的行</span>
 </span><span class="code-line line-number" line="8"><span class="token punctuation">\</span><span class="token punctuation">(</span><span class="token punctuation">..</span><span class="token punctuation">\</span><span class="token punctuation">)</span>  <span class="token comment"># 标记匹配字符，如'\(love\)'，love被标记为1。    </span>
 </span><span class="code-line line-number" line="9"><span class="token punctuation">\</span><span class="token operator">&#x3C;</span>      <span class="token comment"># 锚定单词的开始，如:'\&#x3C;grep'匹配包含以grep开头的单词的行。    </span>
 </span><span class="code-line line-number" line="10"><span class="token punctuation">\</span><span class="token operator">></span>      <span class="token comment"># 锚定单词的结束，如'grep\>'匹配包含以grep结尾的单词的行。    </span>
@@ -200,7 +200,7 @@ $    # 锚定行的结束 如：&#x27;grep$&#x27; 匹配所有以grep结尾的�
 *    # 匹配零个或多个先前字符 如：&#x27;*grep&#x27;匹配所有一个或多个空格后紧跟grep的行。    
 .*   # 一起用代表任意字符。   
 []   # 匹配一个指定范围内的字符，如&#x27;[Gg]rep&#x27;匹配Grep和grep。    
-[^]  # 匹配一个不在指定范围内的字符，如：&#x27;[^A-FH-Z]rep&#x27;匹配不包含A-R和T-Z的一个字母开头，紧跟rep的行。    
+[^]  # 匹配一个不在指定范围内的字符，如：&#x27;[^A-Z]rep&#x27; 匹配不包含 A-Z 中的字母开头，紧跟 rep 的行
 \(..\)  # 标记匹配字符，如&#x27;\(love\)&#x27;，love被标记为1。    
 \<      # 锚定单词的开始，如:&#x27;\<grep&#x27;匹配包含以grep开头的单词的行。    
 \>      # 锚定单词的结束，如&#x27;grep\>&#x27;匹配包含以grep结尾的单词的行。    
@@ -504,7 +504,7 @@ function copied(target, str) {
     587
   </span> 个Linux命令，超过 <a href="../contributors.html">50+</a> 贡献者
 </div>
-<script type="text/javascript" src="../js/dt.js?v=1669138448308"></script>
-<script type="text/javascript" src="../js/index.js?v=1669138448308"></script>
+<script type="text/javascript" src="../js/dt.js?v=1669541465859"></script>
+<script type="text/javascript" src="../js/index.js?v=1669541465859"></script>
 </body>
 </html>
