@@ -90,7 +90,7 @@ remote
 push
 
 ```shell
-git push -u origin master # push同事设置默认跟踪分支  
+git push -u origin master # push 同时设置默认跟踪分支  
 git push origin master  
 git push -f origin master # 强制推送文件，缩写 -f（全写--force）
 ```
