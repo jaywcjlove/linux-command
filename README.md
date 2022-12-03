@@ -361,11 +361,11 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/clay-wangzhi" title="clay-wangzhi">
   <img src="https://avatars.githubusercontent.com/u/34151437?v=4" width="42;" alt="clay-wangzhi"/>
 </a>
-<a href="https://github.com/gletthereblight" title="Glett">
-  <img src="https://avatars.githubusercontent.com/u/29481184?v=4" width="42;" alt="Glett"/>
-</a>
 <a href="https://github.com/hujingnb" title="烟草的香味">
   <img src="https://avatars.githubusercontent.com/u/29052630?v=4" width="42;" alt="烟草的香味"/>
+</a>
+<a href="https://github.com/gletthereblight" title="Glett">
+  <img src="https://avatars.githubusercontent.com/u/29481184?v=4" width="42;" alt="Glett"/>
 </a>
 <a href="https://github.com/admxj" title="项金">
   <img src="https://avatars.githubusercontent.com/u/15245021?v=4" width="42;" alt="项金"/>
