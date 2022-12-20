@@ -373,8 +373,8 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<å‘½ä»
 <a href="https://github.com/Jayin" title="Jayin Taung">
   <img src="https://avatars.githubusercontent.com/u/2763894?v=4" width="42;" alt="Jayin Taung"/>
 </a>
-<a href="https://github.com/pluveto" title="Zhang Zijing">
-  <img src="https://avatars.githubusercontent.com/u/50045289?v=4" width="42;" alt="Zhang Zijing"/>
+<a href="https://github.com/pluveto" title="Zijing Zhang">
+  <img src="https://avatars.githubusercontent.com/u/50045289?v=4" width="42;" alt="Zijing Zhang"/>
 </a>
 <a href="https://github.com/zfb132" title="Fubin Zhang">
   <img src="https://avatars.githubusercontent.com/u/18099238?v=4" width="42;" alt="Fubin Zhang"/>
@@ -528,6 +528,9 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<å‘½ä»
 </a>
 <a href="https://github.com/XD-DENG" title="Xiaodong DENG">
   <img src="https://avatars.githubusercontent.com/u/11539188?v=4" width="42;" alt="Xiaodong DENG"/>
+</a>
+<a href="https://github.com/Xrtero" title="Xrtero">
+  <img src="https://avatars.githubusercontent.com/u/55886907?v=4" width="42;" alt="Xrtero"/>
 </a>
 <a href="https://github.com/xuchunyang" title="Xu Chunyang">
   <img src="https://avatars.githubusercontent.com/u/4550353?v=4" width="42;" alt="Xu Chunyang"/>
