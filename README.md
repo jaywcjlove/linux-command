@@ -418,6 +418,9 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<å‘½ä»
 <a href="https://github.com/XingwenZhang" title="Xingwen Zhang">
   <img src="https://avatars.githubusercontent.com/u/21063553?v=4" width="42;" alt="Xingwen Zhang"/>
 </a>
+<a href="https://github.com/Xrtero" title="Xrtero">
+  <img src="https://avatars.githubusercontent.com/u/55886907?v=4" width="42;" alt="Xrtero"/>
+</a>
 <a href="https://github.com/Dazhuangw" title="Dazhuangw">
   <img src="https://avatars.githubusercontent.com/u/74780009?v=4" width="42;" alt="Dazhuangw"/>
 </a>
@@ -528,9 +531,6 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<å‘½ä»
 </a>
 <a href="https://github.com/XD-DENG" title="Xiaodong DENG">
   <img src="https://avatars.githubusercontent.com/u/11539188?v=4" width="42;" alt="Xiaodong DENG"/>
-</a>
-<a href="https://github.com/Xrtero" title="Xrtero">
-  <img src="https://avatars.githubusercontent.com/u/55886907?v=4" width="42;" alt="Xrtero"/>
 </a>
 <a href="https://github.com/xuchunyang" title="Xu Chunyang">
   <img src="https://avatars.githubusercontent.com/u/4550353?v=4" width="42;" alt="Xu Chunyang"/>
