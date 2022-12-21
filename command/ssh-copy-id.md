@@ -7,6 +7,8 @@ ssh-copy-id
 
 **ssh-copy-id命令** 可以把本地主机的公钥复制到远程主机的authorized_keys文件上，ssh-copy-id命令也会给远程主机的用户主目录（home）和`~/.ssh`, 和`~/.ssh/authorized_keys`设置合适的权限。
 
+**ssh-copy-id** 使用ssh登陆远程服务器，一般是通过密码校验用户身份，所以在sshd的配制中应该启用密码校验方式：
+  将/etc/ssh/sshd_config中的PasswordAuthentication设置为yes，之后重启sshd
 ###  语法
 
 ```shell
