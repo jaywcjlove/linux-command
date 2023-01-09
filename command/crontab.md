@@ -176,13 +176,13 @@ chkconfig –level 35 crond on
 每一小时重启smb 
 
 ```shell
-* */1 * * * /etc/init.d/smb restart
+0 */1 * * * /etc/init.d/smb restart
 ```
 
 晚上11点到早上7点之间，每隔一小时重启smb
 
 ```shell
-* 23-7/1 * * * /etc/init.d/smb restart
+0 23-7/1 * * * /etc/init.d/smb restart
 ```
 
 每月的4号与每周一到周三的11点重启smb 
