@@ -427,7 +427,7 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/wa7t" title="wa7t">
   <img src="https://avatars.githubusercontent.com/u/38394031?v=4" width="42;" alt="wa7t"/>
 </a>
-<a href="https://github.com/ibook86" title="Shell">
+<a href="https://github.com/Jeffery186" title="Shell">
   <img src="https://avatars.githubusercontent.com/u/39795988?v=4" width="42;" alt="Shell"/>
 </a>
 <a href="https://github.com/Makonike" title="谈笑风生间">
@@ -523,8 +523,8 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/Spaghetti-C" title="Spaghetti-C">
   <img src="https://avatars.githubusercontent.com/u/16163995?v=4" width="42;" alt="Spaghetti-C"/>
 </a>
-<a href="https://github.com/iwangjie" title="王杰">
-  <img src="https://avatars.githubusercontent.com/u/23075587?v=4" width="42;" alt="王杰"/>
+<a href="https://github.com/iwangjie" title="iwangjie">
+  <img src="https://avatars.githubusercontent.com/u/23075587?v=4" width="42;" alt="iwangjie"/>
 </a>
 <a href="https://github.com/wingrez" title="Wingrez">
   <img src="https://avatars.githubusercontent.com/u/31106425?v=4" width="42;" alt="Wingrez"/>
@@ -549,6 +549,9 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 </a>
 <a href="https://github.com/amit794" title="amit794">
   <img src="https://avatars.githubusercontent.com/u/43886572?v=4" width="42;" alt="amit794"/>
+</a>
+<a href="https://github.com/asunrong" title="asunrong">
+  <img src="https://avatars.githubusercontent.com/u/103101986?v=4" width="42;" alt="asunrong"/>
 </a>
 <a href="https://github.com/bellpk" title="bell">
   <img src="https://avatars.githubusercontent.com/u/12622129?v=4" width="42;" alt="bell"/>
@@ -616,8 +619,8 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/linuxwd" title="linuxwd">
   <img src="https://avatars.githubusercontent.com/u/1127767?v=4" width="42;" alt="linuxwd"/>
 </a>
-<a href="https://github.com/logicwang" title="logicwang">
-  <img src="https://avatars.githubusercontent.com/u/81006817?v=4" width="42;" alt="logicwang"/>
+<a href="https://github.com/ricardowangyf" title="Ricardowang">
+  <img src="https://avatars.githubusercontent.com/u/81006817?v=4" width="42;" alt="Ricardowang"/>
 </a>
 <a href="https://github.com/lonlng" title="cole">
   <img src="https://avatars.githubusercontent.com/u/46036684?v=4" width="42;" alt="cole"/>
