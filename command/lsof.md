@@ -156,5 +156,8 @@ lsof -i:9981 -P -t -sTCP:LISTEN
 ```shell
 lsof $filename
 ```
-
+查看端口占用
+```shell
+lsof -i:$port
+```
 
