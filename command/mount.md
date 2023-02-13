@@ -7,6 +7,8 @@ mount
 
 **mount命令** Linux mount命令是经常会使用到的命令，它用于挂载Linux系统外的文件。
 
+如果通过webdav协议挂载网络磁盘，需要运行指令`apt install davfs2`安装必要的组件
+
 ###  语法
 
 ```shell
@@ -46,7 +48,7 @@ mount [-fnrsvw] [-t vfstype] [-o options] device dir
 -o loop=：使用 loop 模式用来将一个档案当成硬盘分割挂上系统。
 ```
 
-###  实例
+###  实例1
 
 将 `/dev/hda1` 挂在 `/mnt` 之下。
 
@@ -66,6 +68,14 @@ mount [-fnrsvw] [-t vfstype] [-o options] device dir
 #mount -o loop /tmp/image.iso /mnt/cdrom
 ```
 
+### 实例2
+通过 webdav 协议挂载网络硬盘
+
+将`https://your.webdav.link.here`的网络存储以网络磁盘的形式挂载到系统路径`/path/to/mount`
+
+```shell
+mount -t davfs https://your.webdav.link.here /path/to/mount
+```
 
 
 
