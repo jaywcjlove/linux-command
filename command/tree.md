@@ -119,4 +119,17 @@ tree -if /private/
 /private/tftpboot
 ```
 
+显示所有文件目录(包括隐藏文件)并忽略(node_modules|.git)目录，展示(`-L 2`)两层。
+
+```shell
+$ tree -I 'node_modules|.git' -L 2 -a
+
+.
+├── .github
+│   └── workflows
+├── LICENSE
+├── README.md
+└── renovate.json
+```
+
 
