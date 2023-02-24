@@ -1,4 +1,4 @@
-Smartmontools
+smartmontools
 ===
 
 Smartmontools 是一种硬盘检测工具，通过控制和管理硬盘的SMART（Self Monitoring Analysis and Reporting Technology，自动检测分析及报告技术）技术来实现的
