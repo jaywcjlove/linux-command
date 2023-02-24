@@ -12,6 +12,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 16
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Generate Contributors Images
         uses: jaywcjlove/github-action-contributors@main
@@ -125,6 +126,12 @@ jobs:
         run: |
           npm install @jsdevtools/npm-publish -g
           npm-publish --token="${{ secrets.NPM_TOKEN }}" ./package.json
+
+      - run: npm publish
+        continue-on-error: true
+        name: 📦 linux-command publish to NPM
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
 
       # Create Docker Image
       - name: Set up Docker Buildx
