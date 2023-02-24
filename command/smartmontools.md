@@ -3,18 +3,19 @@ Smartmontools
 
 Smartmontools 是一种硬盘检测工具，通过控制和管理硬盘的SMART（Self Monitoring Analysis and Reporting Technology，自动检测分析及报告技术）技术来实现的
 
-### 安装
+##安装
+
 ```shell
 sudo aptitude install smartmontools
 ```
 
-###  语法
+## 语法
 
 ```shell
 smartctl (选项) (参数)
 ```
 
-###  选项
+## 选项
 ```shell
 -i <硬盘> 显示硬盘设备的标识信息
 -a <硬盘> 显示设备的所有SMART信息
@@ -22,7 +23,7 @@ smartctl (选项) (参数)
 -A <硬盘> 显示设备SMART供应商特定的属性和值
 ```
 
-###  参数
+## 参数
 硬盘设备：指定要查看的硬盘(可以使用 fdisk -l 获取有哪些硬盘设备)
 
 ```shell
@@ -32,7 +33,7 @@ smartctl (选项) (参数)
 /dev/sda2  1050624 976771071 975720448 465.3G Linux 文件系统
 ```
 
-###  实例
+## 实例
 
 查看 /dev/sda1 硬盘的健康状态，在这个命令中，"-s on"标志开启指定设备上的SMART功能。如果/dev/sda上已开启SMART支持，那就省略它。\
 （PASSED 表示健康；FAILED 表示即将出现故障所以需要开始备份这块磁盘上的重要数据）
@@ -68,7 +69,7 @@ ID# ATTRIBUTE_NAME          FLAG     VALUE WORST THRESH TYPE      UPDATED  WHEN_
 194 Temperature_Celsius     0x0022   060   055   040    Old_age   Always       -       40 (Min/Max 16/44)
 ```
 
-#### 以指定的间隔运行，同时又能通知硬盘的测试结果
+### 以指定的间隔运行，同时又能通知硬盘的测试结果
 首先，编辑smartctl的配置文件(/etc/default/smartmontools)以便在系统启动时启动smartd，并以秒为单位指定间隔时间（如7200 = 2小时）
 
 ```shell
@@ -82,7 +83,7 @@ smartd_opts="--interval=7200"
 ```
 
 选项说明 \
--m ：指定发送测试报告到某个电子邮件地址。这里可以是系统用户比如root，或者如果服务器已经配置成发送电子邮件到系统外部，则是类似于myemail@mydomain.com的邮件地址。\
+-m ：指定发送测试报告到某个电子邮件地址。这里可以是系统用户比如root，或者如果服务器已经配置成发送电子邮件到系统外部，则是类似于 myemail@mydomain.com 的邮件地址。\
 -M ：指定发送邮件报告的期望类型。\
 once：为检测到的每种磁盘问题只发送一封警告邮件。\
 daily：为检测到的每种磁盘问题每隔一天发送一封额外的警告提醒邮件。\
