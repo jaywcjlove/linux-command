@@ -122,11 +122,6 @@ jobs:
             http://localhost:9665/
             ```
 
-      - name: Push Npm
-        run: |
-          npm install @jsdevtools/npm-publish -g
-          npm-publish --token="${{ secrets.NPM_TOKEN }}" ./package.json
-
       - run: npm publish
         continue-on-error: true
         name: 📦 linux-command publish to NPM
