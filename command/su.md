@@ -46,7 +46,7 @@ su root -f
 变更帐号为test并改变工作目录至test的家目录：
 
 ```shell
-su -test
+su - test
 ```
 
 
