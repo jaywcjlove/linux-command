@@ -406,6 +406,9 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/Ernest-su" title="ernest">
   <img src="https://avatars.githubusercontent.com/u/5917446?v=4" width="42;" alt="ernest"/>
 </a>
+<a href="https://github.com/Makonike" title="谈笑风生间">
+  <img src="https://avatars.githubusercontent.com/u/75628309?v=4" width="42;" alt="谈笑风生间"/>
+</a>
 <a href="https://github.com/einverne" title="Ein Verne">
   <img src="https://avatars.githubusercontent.com/u/1962738?v=4" width="42;" alt="Ein Verne"/>
 </a>
@@ -429,9 +432,6 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 </a>
 <a href="https://github.com/Jeffery186" title="Shell">
   <img src="https://avatars.githubusercontent.com/u/39795988?v=4" width="42;" alt="Shell"/>
-</a>
-<a href="https://github.com/Makonike" title="谈笑风生间">
-  <img src="https://avatars.githubusercontent.com/u/75628309?v=4" width="42;" alt="谈笑风生间"/>
 </a>
 <a href="https://github.com/DaYangtuo247" title="DaYangtuo247">
   <img src="https://avatars.githubusercontent.com/u/73392515?v=4" width="42;" alt="DaYangtuo247"/>
