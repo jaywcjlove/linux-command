@@ -2274,8 +2274,8 @@
     "p": "/slocate",
     "d": "命令查找文件或目录"
   },
-  "Smartmontools": {
-    "n": "Smartmontools",
+  "smartmontools": {
+    "n": "smartmontools",
     "p": "/smartmontools",
     "d": "Smartmontools 是一种硬盘检测工具，通过控制和管理硬盘的SMART（Self Monitoring Analysis and Reporting Technology，自动检测分析及报告技术）技术来实现的"
   },

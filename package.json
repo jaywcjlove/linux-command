@@ -27,7 +27,7 @@
   "devDependencies": {
     "@uiw/github-corners": "~1.5.11",
     "@wcj/dark-mode": "~1.0.14",
-    "colors-cli": "~1.0.28",
+    "colors-cli": "~1.0.31",
     "ejs": "~3.1.6",
     "compressing": "^1.6.2",
     "fs-extra": "~10.1.0",

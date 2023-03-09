@@ -4,7 +4,7 @@ import stylus from 'stylus';
 import * as ejs from 'ejs';
 import UglifyJS from 'uglify-js';
 import { create } from 'markdown-to-html-cli';
-import _ from 'colors-cli/toxic.js';
+import _ from 'colors-cli/toxic';
 
 const deployDir = path.resolve(process.cwd(), '.deploy');
 const faviconPath = path.resolve(process.cwd(), 'template', 'img', 'favicon.ico');
