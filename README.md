@@ -649,8 +649,8 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/snovey" title="snovey">
   <img src="https://avatars.githubusercontent.com/u/15171147?v=4" width="42;" alt="snovey"/>
 </a>
-<a href="https://github.com/sunls24" title="sunls24">
-  <img src="https://avatars.githubusercontent.com/u/57647932?v=4" width="42;" alt="sunls24"/>
+<a href="https://github.com/sunls24" title="sliux">
+  <img src="https://avatars.githubusercontent.com/u/57647932?v=4" width="42;" alt="sliux"/>
 </a>
 <a href="https://github.com/hunantangke" title="tangke">
   <img src="https://avatars.githubusercontent.com/u/22476435?v=4" width="42;" alt="tangke"/>
@@ -693,6 +693,9 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 </a>
 <a href="https://github.com/kindevil" title="尘埃">
   <img src="https://avatars.githubusercontent.com/u/846488?v=4" width="42;" alt="尘埃"/>
+</a>
+<a href="https://github.com/fseasy" title="徐伟">
+  <img src="https://avatars.githubusercontent.com/u/5585818?v=4" width="42;" alt="徐伟"/>
 </a>
 <a href="https://github.com/yybht155" title="Loofra">
   <img src="https://avatars.githubusercontent.com/u/32786211?v=4" width="42;" alt="Loofra"/>
