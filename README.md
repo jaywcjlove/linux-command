@@ -427,8 +427,8 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<å‘½ä»
 <a href="https://github.com/Dazhuangw" title="Dazhuangw">
   <img src="https://avatars.githubusercontent.com/u/74780009?v=4" width="42;" alt="Dazhuangw"/>
 </a>
-<a href="https://github.com/wa7t" title="wa7t">
-  <img src="https://avatars.githubusercontent.com/u/38394031?v=4" width="42;" alt="wa7t"/>
+<a href="https://github.com/ptenst" title="ptenst">
+  <img src="https://avatars.githubusercontent.com/u/38394031?v=4" width="42;" alt="ptenst"/>
 </a>
 <a href="https://github.com/Jeffery186" title="Shell">
   <img src="https://avatars.githubusercontent.com/u/39795988?v=4" width="42;" alt="Shell"/>
