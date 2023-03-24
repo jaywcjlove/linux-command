@@ -340,8 +340,8 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 
 一如既往，感谢我们出色的贡献者！
 
-<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT--><a href="https://github.com/jaywcjlove" title="小弟调调™">
-  <img src="https://avatars.githubusercontent.com/u/1680273?v=4" width="42;" alt="小弟调调™"/>
+<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT--><a href="https://github.com/jaywcjlove" title="小弟调调">
+  <img src="https://avatars.githubusercontent.com/u/1680273?v=4" width="42;" alt="小弟调调"/>
 </a>
 <a href="https://github.com/ZhuangZhu-74" title="ZhuangZhu-74">
   <img src="https://avatars.githubusercontent.com/u/49544524?v=4" width="42;" alt="ZhuangZhu-74"/>
@@ -387,9 +387,6 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 </a>
 <a href="https://github.com/Lnkstls" title="Lnkstls">
   <img src="https://avatars.githubusercontent.com/u/41938676?v=4" width="42;" alt="Lnkstls"/>
-</a>
-<a href="https://github.com/primeNumberAndMe" title="Segfault">
-  <img src="https://avatars.githubusercontent.com/u/60969914?v=4" width="42;" alt="Segfault"/>
 </a>
 <a href="https://github.com/lavaicer" title="lavaicer">
   <img src="https://avatars.githubusercontent.com/u/52038323?v=4" width="42;" alt="lavaicer"/>
@@ -558,6 +555,9 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 </a>
 <a href="https://github.com/asunrong" title="asunrong">
   <img src="https://avatars.githubusercontent.com/u/103101986?v=4" width="42;" alt="asunrong"/>
+</a>
+<a href="https://github.com/azureology" title="azureology">
+  <img src="https://avatars.githubusercontent.com/u/34760051?v=4" width="42;" alt="azureology"/>
 </a>
 <a href="https://github.com/bellpk" title="bell">
   <img src="https://avatars.githubusercontent.com/u/12622129?v=4" width="42;" alt="bell"/>
