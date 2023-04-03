@@ -5,11 +5,11 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-    <meta name="description" content="ncftp:是增强的的FTP工具 - 最专业的Linux命令大全，内容包含Linux命令手册、详解、学习，值得收藏的Linux命令速查手册。">
-    <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,ncftp,是增强的的FTP工具">
-    <title>ncftp 命令，Linux ncftp 命令详解：是增强的的FTP工具 -  Linux 命令搜索引擎</title>
+    <meta name="description" content="getent:查询 DNS 名称服务器中的命名空间 - 最专业的Linux命令大全，内容包含Linux命令手册、详解、学习，值得收藏的Linux命令速查手册。">
+    <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,getent,查询 DNS 名称服务器中的命名空间">
+    <title>getent 命令，Linux getent 命令详解：查询 DNS 名称服务器中的命名空间 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1680495541531">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1680495539097">
     <script src="../js/dark-mode.min.js"></script>
     <script type="module" src="../js/github-corners.js"></script>
 </head>
@@ -29,7 +29,7 @@
           </ul>
           <input type="text" class="query" id="query" autocomplete="off" autofocus="autofocus" placeholder="Linux 命令搜索"/>
           <div class="enter-input">
-              <input type="hidden" id="current_path" value="/c/ncftp.html">
+              <input type="hidden" id="current_path" value="/c/getent.html">
               <button id="search_btn">搜索</button>
           </div>
       </div>
@@ -40,9 +40,9 @@
 <div class="markdown-body">
 
 <span class="edit_btn">
-<a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/ncftp.md">纠正错误</a> 
+<a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/getent.md">纠正错误</a> 
 <span class="split"></span>
-<a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/ncftp.md">添加实例</a>
+<a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/getent.md">添加实例</a>
 </span>
 
 
@@ -113,58 +113,68 @@ class MarkdownStyle extends HTMLElement {
     }
 }
 customElements.define('markdown-style', MarkdownStyle);</script><markdown-style style="max-width: 960px; margin: 0 auto 60px auto; padding: 8px" class="markdown-style">
-<h1 id="ncftp"><a class="anchor" aria-hidden="true" tabindex="-1" href="#ncftp"><span class="octicon octicon-link"></span></a>ncftp</h1>
-<p>是增强的的FTP工具</p>
-<h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><span class="octicon octicon-link"></span></a>补充说明</h2>
-<p><strong>ncftp命令</strong> 是增强的的ftp工具，比传统的FTP指令更加强大。FTP让用户得以下载存放于服务器主机的文件，也能将文件上传到远端主机放置。ncftp是文字模式FTP程序的佼佼者，它具备多样特色，包括显示传输速率，下载进度，自动续传，标住书签，可通过防火墙和代理服务器等。</p>
-<h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><span class="octicon octicon-link"></span></a>语法</h3>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">ncftp<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
-</span></code><div onclick="copied(this)" data-code="ncftp(选项)(参数)
+<h1 id="getent"><a class="anchor" aria-hidden="true" tabindex="-1" href="#getent"><span class="octicon octicon-link"></span></a>getent</h1>
+<p>查询 DNS 名称服务器中的命名空间</p>
+<h2 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><span class="octicon octicon-link"></span></a>语法</h2>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">getent <span class="token punctuation">[</span>选项<span class="token punctuation">]</span> 主机名或域名
+</span></code><div onclick="copied(this)" data-code="getent [选项] 主机名或域名
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-<h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><span class="octicon octicon-link"></span></a>选项</h3>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">-u：指定登录FTP服务器时使用的用户名；
-</span><span class="code-line line-number" line="2">-p：指定登录FTP服务器时使用的密码；
-</span><span class="code-line line-number" line="3">-P：如果FTP服务器没有使用默认的TCP协议的21端口，则使用此选项指定FTP服务器的端口号。
-</span><span class="code-line line-number" line="4">-m：在传之前尝试在目录位置创建目录<span class="token punctuation">(</span>用于传目录的情况<span class="token punctuation">)</span>
-</span><span class="code-line line-number" line="5">-R：递规传子目录
-</span></code><div onclick="copied(this)" data-code="-u：指定登录FTP服务器时使用的用户名；
--p：指定登录FTP服务器时使用的密码；
--P：如果FTP服务器没有使用默认的TCP协议的21端口，则使用此选项指定FTP服务器的端口号。
--m：在传之前尝试在目录位置创建目录(用于传目录的情况)
--R：递规传子目录
+<h2 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><span class="octicon octicon-link"></span></a>选项</h2>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token parameter variable">-h</span>  <span class="token comment"># 显示帮助信息  </span>
+</span><span class="code-line line-number" line="2"><span class="token parameter variable">-n</span>  <span class="token comment"># 不解析 DNS 名称  </span>
+</span><span class="code-line line-number" line="3"><span class="token parameter variable">-p</span>  <span class="token comment"># 打印解析过程  </span>
+</span><span class="code-line line-number" line="4"><span class="token parameter variable">-s</span>  <span class="token comment"># 只输出有关已知主机的信息  </span>
+</span><span class="code-line line-number" line="5"><span class="token parameter variable">-t</span>  <span class="token comment"># 指定 DNS 查询类型 (默认为 NXDOMAIN)  </span>
+</span><span class="code-line line-number" line="6"><span class="token parameter variable">-U</span>  <span class="token comment"># 使用顶级域名服务器  </span>
+</span><span class="code-line line-number" line="7"><span class="token parameter variable">-V</span>  <span class="token comment"># 显示版本信息  </span>
+</span><span class="code-line line-number" line="8"><span class="token parameter variable">-O</span>  <span class="token comment"># 以其他模式解析命名空间</span>
+</span></code><div onclick="copied(this)" data-code="-h  # 显示帮助信息  
+-n  # 不解析 DNS 名称  
+-p  # 打印解析过程  
+-s  # 只输出有关已知主机的信息  
+-t  # 指定 DNS 查询类型 (默认为 NXDOMAIN)  
+-U  # 使用顶级域名服务器  
+-V  # 显示版本信息  
+-O  # 以其他模式解析命名空间
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-<h3 id="参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参数"><span class="octicon octicon-link"></span></a>参数</h3>
-<p>FTP服务器：指定远程FTP服务器的ip地址或主机名。</p>
-<h3 id="安装"><a class="anchor" aria-hidden="true" tabindex="-1" href="#安装"><span class="octicon octicon-link"></span></a>安装</h3>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token function">wget</span> ftp://ftp.ncftp.com/ncftp/ncftp-3.2.3-src.tar.gz
-</span><span class="code-line line-number" line="2"><span class="token function">tar</span> zxvf ncftp-3.2.3-src.tar.gz
-</span><span class="code-line line-number" line="3"><span class="token builtin class-name">cd</span> ncftp-3.2.3/
-</span><span class="code-line line-number" line="4">./configure <span class="token parameter variable">--prefix</span><span class="token operator">=</span>/usr/local/ncftp
-</span><span class="code-line line-number" line="5"><span class="token function">make</span> <span class="token operator">&#x26;&#x26;</span> <span class="token function">make</span> <span class="token function">install</span>
-</span></code><div onclick="copied(this)" data-code="wget ftp://ftp.ncftp.com/ncftp/ncftp-3.2.3-src.tar.gz
-tar zxvf ncftp-3.2.3-src.tar.gz
-cd ncftp-3.2.3/
-./configure --prefix=/usr/local/ncftp
-make &#x26;&#x26; make install
+<p>主机名或域名可以是通配符 (例如 *.example.com) 或单个主机名。如果指定了 -h 选项，则显示帮助信息。如果指定了 -n 选项，则不再解析 DNS 名称。如果指定了 -p 选项，则打印解析过程。如果指定了 -s 选项，则只输出有关已知主机的信息。如果指定了 -t 选项，则指定 DNS 查询类型 (默认为 NXDOMAIN)。如果指定了 -U 选项，则使用顶级域名服务器。如果指定了 -V 选项，则显示版本信息。如果指定了 -O 选项，则解析命名空间以其他模式。</p>
+<h2 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><span class="octicon octicon-link"></span></a>实例</h2>
+<ol>
+  <li>查看所有已知账户:</li>
+</ol>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">getent <span class="token function">passwd</span>  
+</span></code><div onclick="copied(this)" data-code="getent passwd  
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-<h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><span class="octicon octicon-link"></span></a>实例</h3>
-<p>将本地/etc/目录内的所有文件和目录，上传到FTP服务器的flv/games/目录内(如果不存在flv/games/目录则自动创建)。</p>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">/usr/local/ncftp/bin/ncftpput <span class="token parameter variable">-u</span> koumm <span class="token parameter variable">-p</span> koumm <span class="token parameter variable">-P</span> <span class="token number">21</span> <span class="token parameter variable">-m</span> <span class="token parameter variable">-R</span> <span class="token number">192.168</span>.162.137  flv/games/ /etc/*
-</span></code><div onclick="copied(this)" data-code="/usr/local/ncftp/bin/ncftpput -u koumm -p koumm -P 21 -m -R 192.168.162.137  flv/games/ /etc/*
+<p>这将列出所有已知账户的密码文件，例如 <code>/etc/passwd</code> 或 <code>/run/user/1000/gshadow</code>。</p>
+<ol start="2">
+  <li>查看指定账户的信息:</li>
+</ol>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">getent <span class="token function">passwd</span> someuser  
+</span></code><div onclick="copied(this)" data-code="getent passwd someuser  
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-<p><strong>指令说明</strong></p>
-<p>ncftp的基本命令和普通ftp一样，可以输入help获得命令列表。对于所有的命令，都可以使用help &#x3C;命令>的格式获得详细帮助。l开头的就是对本地执行的命令，其它的就是对登入的ftp服务目录的操作命令。</p>
-<p>增加的本地文件系统的操作命令：</p>
-<ul>
-  <li>lls: 列出本地当前目录文件；</li>
-  <li>lmkdir : 本地建立目录；</li>
-  <li>lrename: 本地文件改名；</li>
-  <li>lpwd: 显示当前本地路 径；</li>
-  <li>lchmod: 改变本地文件权限；</li>
-  <li>lpage: 显示本地文件内容；</li>
-  <li>lrm: 删除本地文件；</li>
-  <li>lrmdir: 删除本地目录。</li>
-</ul>
+<p>这将只列出指定用户的信息，例如用户名、密码、uid、gid 等。</p>
+<ol start="3">
+  <li>查看指定域名的 DNS 记录:</li>
+</ol>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">getent <span class="token function">host</span> example.com  
+</span></code><div onclick="copied(this)" data-code="getent host example.com  
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+<p>这将列出 example.com 域名的 DNS 记录，包括主机名、IP 地址和其他相关信息。</p>
+<ol start="4">
+  <li>查看指定 IP 地址的 TCP 连接信息:</li>
+</ol>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">getentent ips8.ipaddress.com <span class="token number">80</span>  
+</span></code><div onclick="copied(this)" data-code="getentent ips8.ipaddress.com 80  
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+<p>这将列出 IP 地址为 192.168.0.100 的 TCP 连接信息，例如连接的服务器地址、端口号和连接状态。</p>
+<ol start="5">
+  <li>查看指定主机的已知端口:</li>
+</ol>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">getent port somehost.example.com  
+</span></code><div onclick="copied(this)" data-code="getent port somehost.example.com  
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+<p>这将列出指定主机的已知端口，例如端口号、协议和主机名。</p>
+<p>这些只是 <code>getent</code> 命令的一些例子，它还有许多其他用法和选项，可以根据需要进行调整。</p>
 <style>markdown-style pre .copied {
   display: flex;
   position: absolute;
@@ -236,7 +246,7 @@ function copied(target, str) {
     589
   </span> 个Linux命令，超过 <a href="../contributors.html">50+</a> 贡献者
 </div>
-<script type="text/javascript" src="../js/dt.js?v=1680495541532"></script>
-<script type="text/javascript" src="../js/index.js?v=1680495541532"></script>
+<script type="text/javascript" src="../js/dt.js?v=1680495539097"></script>
+<script type="text/javascript" src="../js/index.js?v=1680495539097"></script>
 </body>
 </html>
