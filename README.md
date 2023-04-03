@@ -649,8 +649,8 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/snovey" title="snovey">
   <img src="https://avatars.githubusercontent.com/u/15171147?v=4" width="42;" alt="snovey"/>
 </a>
-<a href="https://github.com/sunls24" title="sliux">
-  <img src="https://avatars.githubusercontent.com/u/57647932?v=4" width="42;" alt="sliux"/>
+<a href="https://github.com/sunls24" title="sunix">
+  <img src="https://avatars.githubusercontent.com/u/57647932?v=4" width="42;" alt="sunix"/>
 </a>
 <a href="https://github.com/hunantangke" title="tangke">
   <img src="https://avatars.githubusercontent.com/u/22476435?v=4" width="42;" alt="tangke"/>
@@ -715,8 +715,8 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/madordie" title="继刚">
   <img src="https://avatars.githubusercontent.com/u/10811132?v=4" width="42;" alt="继刚"/>
 </a>
-<a href="https://github.com/huzk8" title="huzk">
-  <img src="https://avatars.githubusercontent.com/u/18548053?v=4" width="42;" alt="huzk"/>
+<a href="https://github.com/huzk8" title="Pine">
+  <img src="https://avatars.githubusercontent.com/u/18548053?v=4" width="42;" alt="Pine"/>
 </a>
 <a href="https://github.com/xminjie" title="谢民皆">
   <img src="https://avatars.githubusercontent.com/u/25931342?v=4" width="42;" alt="谢民皆"/>
