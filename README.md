@@ -478,8 +478,8 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/LucienShui" title="Lucien">
   <img src="https://avatars.githubusercontent.com/u/30151093?v=4" width="42;" alt="Lucien"/>
 </a>
-<a href="https://github.com/M4n5ter" title="王勇涛">
-  <img src="https://avatars.githubusercontent.com/u/68144809?v=4" width="42;" alt="王勇涛"/>
+<a href="https://github.com/M4n5ter" title="M4n5ter">
+  <img src="https://avatars.githubusercontent.com/u/68144809?v=4" width="42;" alt="M4n5ter"/>
 </a>
 <a href="https://github.com/linmingwei" title="mwei">
   <img src="https://avatars.githubusercontent.com/u/20484631?v=4" width="42;" alt="mwei"/>
@@ -715,8 +715,8 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/madordie" title="继刚">
   <img src="https://avatars.githubusercontent.com/u/10811132?v=4" width="42;" alt="继刚"/>
 </a>
-<a href="https://github.com/huzk8" title="Pine">
-  <img src="https://avatars.githubusercontent.com/u/18548053?v=4" width="42;" alt="Pine"/>
+<a href="https://github.com/Kyofin" title="Koyfin">
+  <img src="https://avatars.githubusercontent.com/u/18548053?v=4" width="42;" alt="Koyfin"/>
 </a>
 <a href="https://github.com/xminjie" title="谢民皆">
   <img src="https://avatars.githubusercontent.com/u/25931342?v=4" width="42;" alt="谢民皆"/>
@@ -724,8 +724,8 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/fmalee" title="远方">
   <img src="https://avatars.githubusercontent.com/u/3209058?v=4" width="42;" alt="远方"/>
 </a>
-<a href="https://github.com/anmaxi68" title="鞍马稀">
-  <img src="https://avatars.githubusercontent.com/u/101485931?v=4" width="42;" alt="鞍马稀"/>
+<a href="https://github.com/catAndZ" title="catAndZ">
+  <img src="https://avatars.githubusercontent.com/u/101485931?v=4" width="42;" alt="catAndZ"/>
 </a>
 <a href="https://github.com/HDsky" title="黑&蛋">
   <img src="https://avatars.githubusercontent.com/u/17249963?v=4" width="42;" alt="黑&蛋"/>
