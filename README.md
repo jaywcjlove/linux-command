@@ -152,6 +152,21 @@ docker run --name linux-command -itd -p 9665:3000 ghcr.io/jaywcjlove/linux-comma
 http://localhost:9665/
 ```
 
+## Vercel
+
+可以点击下面按钮一键部署至 [Vercel](https://vercel.com):
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/jaywcjlove/linux-command)
+
+<details>
+<summary>部署结果</summary>
+
+![](./assets/vercel.png)
+
+</details>
+
+通过 Vercel 分配的域名访问，或者自行在设置中绑定域名。
+
 ## 目录
 
 - [目录](#目录)
