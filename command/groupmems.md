@@ -9,13 +9,13 @@ groupmems
 
 只有作为管理员的超级用户可以使用 `groupmems` 来更改其他组的成员资格。
 
-###  语法
+### 语法
 
 ```shell
 groupmems -a user_name | -d 用户名 | [-g 用户组名] | -l | -p
 ```
 
-###  选项
+### 选项
 
 ```bash
 -a, --add user_name # 将用户添加到组成员列表。如果 /etc/gshadow 文件存在，并且该组在 /etc/gshadow 文件中没有条目，则将创建一个新条目。
@@ -54,58 +54,58 @@ MAX_MEMBERS_PER_GROUP (number)
 groupmems 可执行文件应该在模式 2770 中作为用户 root 和组组。 系统管理员可以将用户添加到组中，以允许或禁止他们使用 groupmems 实用程序来管理他们自己的组成员列表。
 
 ```shell
-$ groupadd -r groups
-$ chmod 2770 groupmems
+groupadd -r groups
+chmod 2770 groupmems
 
-$ chown root.groups groupmems
-$ groupmems -g groups -a gk4
+chown root.groups groupmems
+groupmems -g groups -a gk4
 ```
 
 让我们创建一个新用户和一个新组并验证结果：
 
 ```shell
-$ useradd student
-$ passwd student
-$ groupadd staff
+useradd student
+passwd student
+groupadd staff
 ```
 
 使用户 student 成为组人员的成员：
 
 ```shell
-$ groupmems -g staff -a student
-$ groupmems -g staff -l 
+groupmems -g staff -a student
+groupmems -g staff -l 
 ```
 
 将用户添加到组：
 
 ```shell
-$ groupmems -a mike -g SUPPORT
-$ groupmems --add mike -g SUPPORT 
+groupmems -a mike -g SUPPORT
+groupmems --add mike -g SUPPORT 
 ```
 
 从组中删除/移除用户：
 
 ```shell
-$ groupmems -d mike SUPPORT -g SUPPORT
-$ groupmems --delete mike SUPPORT -g SUPPORT
+groupmems -d mike SUPPORT -g SUPPORT
+groupmems --delete mike SUPPORT -g SUPPORT
 ```
 
 更改组名称：
 
 ```shell
-$ groupmems -g SUPPORT
+groupmems -g SUPPORT
 ```
 
 从组中删除用户：
 
 ```shell
-$ groupmems -p -g SUPPORT
-$ groupmems --purge -g SUPPORT
+groupmems -p -g SUPPORT
+groupmems --purge -g SUPPORT
 ```
 
 要列出组的成员：
 
 ```shell
-$ groupmems -l -g SUPPORT
-$ groupmems --list -g SUPPORT
+groupmems -l -g SUPPORT
+groupmems --list -g SUPPORT
 ```

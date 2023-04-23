@@ -90,11 +90,9 @@ _      (下划线) 使用空格填充相应的字段。
 -d, --date=STRING          解析字符串并按照指定格式输出，字符串不能是'now'。
 --debug                    注释已解析的日期，并将有疑问的用法发送到标准错误。
 -f, --file=DATEFILE        类似于--date; 一次从DATEFILE处理一行。
--I[FMT], --iso-8601[=FMT]  按照ISO 8601格式输出，FMT可以为'date'(默认)，'hours'，'minutes'，'seconds'，'ns'。
-                           例如：2006-08-14T02:34:56-06:00
+-I[FMT], --iso-8601[=FMT]  按照ISO 8601格式输出，FMT可以为'date'(默认)，'hours'，'minutes'，'seconds'，'ns'。例如：2006-08-14T02:34:56-06:00
 -R, --rfc-email            按照RFC 5322格式输出，例如: Mon, 14 Aug 2006 02:34:56 -0600
---rfc-3339=FMT             按照RFC 3339格式输出，FMT可以为'date', 'seconds','ns'中的一个，
-                           例如：2006-08-14 02:34:56-06:00
+--rfc-3339=FMT             按照RFC 3339格式输出，FMT可以为'date', 'seconds','ns'中的一个，例如：2006-08-14 02:34:56-06:00
 -r, --reference=FILE       显示文件的上次修改时间。
 -s, --set=STRING           根据字符串设置系统时间。
 -u, --utc, --universal     显示或设置世界协调时(UTC)。
