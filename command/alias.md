@@ -117,7 +117,5 @@ A：运行cd依然会切换目录，运行ls依然会列出文件夹的内容；
 
 ### 其他参考链接
 
-[Linux命令详解：\[8\]alias创建自己的命令](https://jingyan.baidu.com/article/ac6a9a5e6738422b653eac01.html)
-
-
-
+- [alias(1p) - Linux manual page](https://man7.org/linux/man-pages/man1/alias.1p.html)
+- [Linux命令详解：\[8\]alias创建自己的命令](https://jingyan.baidu.com/article/ac6a9a5e6738422b653eac01.html)
