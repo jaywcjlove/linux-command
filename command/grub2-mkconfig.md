@@ -6,14 +6,14 @@ grub2-mkconfig
 ## 语法
 
 ```shell
-Usage: grub2-mkconfig [OPTION]
-Generate a grub config file
+用法: grub2-mkconfig [OPTION]
+生成 grub 配置文件
 
-  -o, --output=FILE       output generated config to FILE [default=stdout]
-  -h, --help              print this message and exit
-  -v, --version           print the version information and exit
+  -o, --output=FILE       将生成的配置输出到 FILE 文件 [default=stdout]
+  -h, --help              打印这个文件并退出
+  -v, --version           打印版本信息并退出
 
-Report bugs to <bug-grub@gnu.org>.
+报告 Bug 通过 <bug-grub@gnu.org>.
 
 ```
 
