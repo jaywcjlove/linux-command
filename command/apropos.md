@@ -5,7 +5,7 @@ apropos
 
 ## 补充说明
 
-**apropos命令** 在一些特定的包含系统命令的简短描述的数据库文件里查找关键字，然后把结果送到标准输出。 
+**apropos命令** 在一些特定的包含系统命令的简短描述的数据库文件里查找关键字，然后把结果送到标准输出。
 
 如果你不知道完成某个特定任务所需要命令的名称，可以使用一个关键字通过Linux apropos实用程序来搜索它。该实用程序可以搜索关键字并且显示所有包含匹配项的man页面的简短描述。另外，使用man实用程序和-k（关键字）选项，可以得到和用Linux apropos实用程序相同的结果（实际上是相同的命令）。
 
@@ -27,8 +27,8 @@ apropos [-dalhvV] -e|-[w|-r] [-s section] [-m system[,...]] [-M path] [-L locale
 -l, --long：不根据终端宽度缩减输出。
 -s section, --section section：只查找指定的手册section。
 -m system[,...], --systems=system[,...]：用于查找其它操作系统的手册页。
--M path, --manpath=path：指定从其它以冒号分隔的手册页层次查找。默认使用$MANPATH环境变量。这个选项覆盖$MANPATH的内容。
--L locale, --locale=locale：apropos调用C函数setlocale来得到当前本地化信息，包括$LC_MESSAGE和$LANG。使用该选项提供一个locale字符串来临时更改本地化信息。
+-M path, --manpath=path：指定从其它以冒号分隔的手册页层次查找。默认使用 $MANPATH 环境变量。这个选项覆盖 $MANPATH 的内容。
+-L locale, --locale=locale：apropos调用C函数setlocale来得到当前本地化信息，包括 $LC_MESSAGE 和 $LANG 。使用该选项提供一个locale字符串来临时更改本地化信息。
 -C file, --config-file=file：使用这个用户配置文件而不是默认的~/.manpath。
 -h, --help：打印帮助信息并退出。
 -V, --version：打印版本信息并退出。
@@ -69,5 +69,3 @@ whoami               (1)  - print effective userid
 ```shell
 apropos -a emacs vi
 ```
-
-
