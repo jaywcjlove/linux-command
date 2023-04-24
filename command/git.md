@@ -27,17 +27,13 @@ Git迅速成为最流行的分布式版本控制系统，尤其是2008年，GitH
 
 [Git常用命令清单](https://github.com/jaywcjlove/handbook/blob/master/other/Git%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E6%B8%85%E5%8D%95.md)
 
-###  语法
+### 语法
 
 ```shell
-git [--version] [--help] [-C <path>] [-c name=value]
-   [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path]
-   [-p | --paginate | --no-pager] [--no-replace-objects] [--bare]
-   [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>]
-   <command> [<args>]
+git [--version] [--help] [-C <path>] [-c name=value] [--exec-path[=<path>]] [--html-path] [--man-path] [--info-path] [-p | --paginate | --no-pager] [--no-replace-objects] [--bare] [--git-dir=<path>] [--work-tree=<path>] [--namespace=<name>] <command> [<args>]
 ```
 
-###  选项
+### 选项
 
 ```shell
 add              将文件内容添加到索引
@@ -97,20 +93,20 @@ git push -f origin master # 强制推送文件，缩写 -f（全写--force）
 
 clone
 
-`git clone git://github.com/JSLite/JSLite.js.git `  
+`git clone git://github.com/JSLite/JSLite.js.git`  
 `git clone git://github.com/JSLite/JSLite.js.git mypro` #克隆到自定义文件夹  
 `git clone [user@]example.com:path/to/repo.git/` #SSH协议还有另一种写法。  
 
 git clone支持多种协议，除了HTTP(s)以外，还支持SSH、Git、本地文件协议等，下面是一些例子。`git clone <版本库的网址> <本地目录名>`  
 
 ```shell
-$ git clone http[s]://example.com/path/to/repo.git/
-$ git clone ssh://example.com/path/to/repo.git/
-$ git clone git://example.com/path/to/repo.git/
-$ git clone /opt/git/project.git 
-$ git clone file:///opt/git/project.git
-$ git clone ftp[s]://example.com/path/to/repo.git/
-$ git clone rsync://example.com/path/to/repo.git/
+git clone http[s]://example.com/path/to/repo.git/
+git clone ssh://example.com/path/to/repo.git/
+git clone git://example.com/path/to/repo.git/
+git clone /opt/git/project.git 
+git clone file:///opt/git/project.git
+git clone ftp[s]://example.com/path/to/repo.git/
+git clone rsync://example.com/path/to/repo.git/
 ```
 
 ## 配置
@@ -128,7 +124,7 @@ git config --list         # 查看配置的信息
 
 ### 配置自动换行
 
-自动转换坑太大，提交到git是自动将换行符转换为lf 
+自动转换坑太大，提交到git是自动将换行符转换为lf
 
 ```shell
 git config --global core.autocrlf input
@@ -155,8 +151,8 @@ ssh -T git@github.com # 测试是否成功
 
 **2.密钥复制到托管平台上**
 
-`vim ~/.ssh/jslite_rsa.pub`   
-打开公钥文件 `jslite_rsa.pub` ，并把内容复制至代码托管平台上   
+`vim ~/.ssh/jslite_rsa.pub`
+打开公钥文件 `jslite_rsa.pub` ，并把内容复制至代码托管平台上
 
 **3.修改config文件**
 
@@ -214,8 +210,8 @@ ssh-add -d  ~/.ssh/jslite_rsa # 删除指定的key
 ### 免密码登录远程服务器
 
 ```shell
-$ ssh-keygen -t rsa -P '' -f ~/.ssh/aliyunserver.key
-$ ssh-copy-id -i ~/.ssh/aliyunserver.key.pub root@192.168.182.112 # 这里需要输入密码一次
+ssh-keygen -t rsa -P '' -f ~/.ssh/aliyunserver.key
+ssh-copy-id -i ~/.ssh/aliyunserver.key.pub root@192.168.182.112 # 这里需要输入密码一次
 ```
 
 编辑 `~/.ssh/config`
@@ -240,19 +236,19 @@ git clone https://github.com/username/rep.git
 
 ```shell
 [core]
-	repositoryformatversion = 0
-	filemode = true
-	bare = false
-	logallrefupdates = true
-	ignorecase = true
-	precomposeunicode = true
+ repositoryformatversion = 0
+ filemode = true
+ bare = false
+ logallrefupdates = true
+ ignorecase = true
+ precomposeunicode = true
 [remote "origin"]
--	url = https://github.com/username/rep.git
-+	url = https://用户名:密码@github.com/username/rep.git
-	fetch = +refs/heads/*:refs/remotes/origin/*
+- url = https://github.com/username/rep.git
++ url = https://用户名:密码@github.com/username/rep.git
+ fetch = +refs/heads/*:refs/remotes/origin/*
 [branch "master"]
-	remote = origin
-	merge = refs/heads/master
+ remote = origin
+ merge = refs/heads/master
 ```
 
 ### 文件推向3个git库
@@ -310,8 +306,7 @@ $ git fetch -p
 
 **5.更改pull**
 
-只需要更改config文件里，那三个url的顺序即可，fetch-url会直接对应排行第一的那个utl连接。    
-
+只需要更改config文件里，那三个url的顺序即可，fetch-url会直接对应排行第一的那个utl连接。
 
 ### 修改远程仓库地址
 
@@ -374,7 +369,6 @@ git stash && git stash drop
 git revert HEAD~1 # 撤销一条记录 会弹出 commit 编辑
 git push # 提交回滚
 ```
-
 
 ### 回退到某一个版本
 
@@ -469,8 +463,6 @@ git rebase --continue
 git push -f origin master
 ```
 
-
-
 ### 添加忽略文件
 
 ```shell
@@ -540,7 +532,6 @@ git merge upstream/master
 #  create mode 100644 README.md
 ```
 
-
 ### 批量修改历史commit中的名字和邮箱
 
 **1.克隆仓库**
@@ -608,7 +599,6 @@ git pull  --allow-unrelated-histories
 git pull origin master --allow-unrelated-histories
 ```
 
-
 ### 查看某个文件历史
 
 ```shell
@@ -674,20 +664,20 @@ git push -f origin master # 强制推送文件，缩写 -f（全写--force）
 
 ## clone
 
-`git clone git://github.com/JSLite/JSLite.js.git `  
+`git clone git://github.com/JSLite/JSLite.js.git`  
 `git clone git://github.com/JSLite/JSLite.js.git mypro` #克隆到自定义文件夹  
 `git clone [user@]example.com:path/to/repo.git/` #SSH协议还有另一种写法。  
 
 git clone支持多种协议，除了HTTP(s)以外，还支持SSH、Git、本地文件协议等，下面是一些例子。`git clone <版本库的网址> <本地目录名>`  
 
 ```shell
-$ git clone http[s]://example.com/path/to/repo.git/
-$ git clone ssh://example.com/path/to/repo.git/
-$ git clone git://example.com/path/to/repo.git/
-$ git clone /opt/git/project.git 
-$ git clone file:///opt/git/project.git
-$ git clone ftp[s]://example.com/path/to/repo.git/
-$ git clone rsync://example.com/path/to/repo.git/
+git clone http[s]://example.com/path/to/repo.git/
+git clone ssh://example.com/path/to/repo.git/
+git clone git://example.com/path/to/repo.git/
+git clone /opt/git/project.git 
+git clone file:///opt/git/project.git
+git clone ftp[s]://example.com/path/to/repo.git/
+git clone rsync://example.com/path/to/repo.git/
 ```
 
 ## 本地
@@ -1032,7 +1022,6 @@ git help *  # 获取命令的帮助信息
 git status  # 获取当前的状态，非常有用，因为git会提示接下来的能做的操作  
 ```
 
-
 ## 报错问题解决
 
 **1. `git fatal: protocol error: bad line length character: No s`**
@@ -1082,7 +1071,7 @@ git config --global core.quotepath false
 - [图解Git](http://marklodato.github.io/visual-git-guide/index-zh-cn.html)
 - [git-简明指南](http://rogerdudler.github.io/git-guide/index.zh.html)
 - [learnGitBranching 在线学习工具](http://pcottle.github.io/learnGitBranching/)
-- [初级教程](http://rogerdudler.github.io/git-guide/index.zh.html) 
+- [初级教程](http://rogerdudler.github.io/git-guide/index.zh.html)
 - [廖雪峰的Git教程](http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000)
 - [蒋鑫老师将带你入github的大门](http://www.worldhello.net/gotgithub/)
 - [git详解](http://www.open-open.com/lib/view/open1328069609436.html)
@@ -1092,5 +1081,3 @@ git config --global core.quotepath false
 - [Git 本地仓库和裸仓库](https://gold.xitu.io/post/5842f9b861ff4b005889ade6)
 - [沉浸式学 Git](http://www.kancloud.cn/kancloud/igit/46710)
 - [Git进阶用法，主要是rebase高级用法](http://way.oschina.io/2016/12/15/notes/GitAdvance/?utm_source=gank.io&utm_medium=email)
-
-

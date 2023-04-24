@@ -12,10 +12,7 @@ alias [-p] [name[=value] ...]
 ## 主要用途
 
 - 简化较长的命令。
-- 定义一个或多个别名。
-- 修改一个或多个已定义别名的值。
-- 显示一个或多个已定义别名。
-- 显示全部已定义的别名。
+- 定义、修改或者显示一个或多个别名。
 
 ## 选项
 
@@ -117,7 +114,5 @@ A：运行cd依然会切换目录，运行ls依然会列出文件夹的内容；
 
 ### 其他参考链接
 
-[Linux命令详解：\[8\]alias创建自己的命令](https://jingyan.baidu.com/article/ac6a9a5e6738422b653eac01.html)
-
-
-
+- [alias(1p) - Linux manual page](https://man7.org/linux/man-pages/man1/alias.1p.html)
+- [Linux命令详解：\[8\]alias创建自己的命令](https://jingyan.baidu.com/article/ac6a9a5e6738422b653eac01.html)
