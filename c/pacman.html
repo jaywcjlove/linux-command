@@ -5,11 +5,11 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-    <meta name="description" content="pwunconv:用来关闭用户的投影密码 - 最专业的Linux命令大全，内容包含Linux命令手册、详解、学习，值得收藏的Linux命令速查手册。">
-    <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,pwunconv,用来关闭用户的投影密码">
-    <title>pwunconv 命令，Linux pwunconv 命令详解：用来关闭用户的投影密码 -  Linux 命令搜索引擎</title>
+    <meta name="description" content="pacman:Arch Linux 系统极其衍生系统中默认使用的包管理器 - 最专业的Linux命令大全，内容包含Linux命令手册、详解、学习，值得收藏的Linux命令速查手册。">
+    <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,pacman,Arch Linux 系统极其衍生系统中默认使用的包管理器">
+    <title>pacman 命令，Linux pacman 命令详解：Arch Linux 系统极其衍生系统中默认使用的包管理器 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1682345769815">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1682345769077">
     <script src="../js/dark-mode.min.js"></script>
     <script type="module" src="../js/github-corners.js"></script>
 </head>
@@ -29,7 +29,7 @@
           </ul>
           <input type="text" class="query" id="query" autocomplete="off" autofocus="autofocus" placeholder="Linux 命令搜索"/>
           <div class="enter-input">
-              <input type="hidden" id="current_path" value="/c/pwunconv.html">
+              <input type="hidden" id="current_path" value="/c/pacman.html">
               <button id="search_btn">搜索</button>
           </div>
       </div>
@@ -40,9 +40,9 @@
 <div class="markdown-body">
 
 <span class="edit_btn">
-<a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/pwunconv.md">纠正错误</a> 
+<a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/pacman.md">纠正错误</a> 
 <span class="split"></span>
-<a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/pwunconv.md">添加实例</a>
+<a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/pacman.md">添加实例</a>
 </span>
 
 
@@ -113,28 +113,39 @@ class MarkdownStyle extends HTMLElement {
     }
 }
 customElements.define('markdown-style', MarkdownStyle);</script><markdown-style style="max-width: 960px; margin: 0 auto 60px auto; padding: 8px" class="markdown-style">
-<h1 id="pwunconv"><a class="anchor" aria-hidden="true" tabindex="-1" href="#pwunconv"><span class="octicon octicon-link"></span></a>pwunconv</h1>
-<p>用来关闭用户的投影密码</p>
-<h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><span class="octicon octicon-link"></span></a>补充说明</h2>
-<p><strong>pwunconv命令</strong> 与pwconv功能相反，用来关闭用户的投影密码。它会把密码从shadow文件内，重回存到passwd文件里。</p>
-<h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><span class="octicon octicon-link"></span></a>语法</h3>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">pwunconv
-</span></code><div onclick="copied(this)" data-code="pwunconv
+<h1 id="pacman"><a class="anchor" aria-hidden="true" tabindex="-1" href="#pacman"><span class="octicon octicon-link"></span></a>pacman</h1>
+<p>Arch Linux 系统极其衍生系统中默认使用的包管理器</p>
+<h2 id="安装"><a class="anchor" aria-hidden="true" tabindex="-1" href="#安装"><span class="octicon octicon-link"></span></a>安装</h2>
+<p>在安装 Arch Linux 时，会需要安装 base 包组，其中包括 pacman 包，具体 Arch Linux 安装流程请参见 <a href="https://wiki.archlinuxcn.org/wiki/%E5%AE%89%E8%A3%85%E6%8C%87%E5%8D%97">Arch Wiki(CN)</a></p>
+<h2 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><span class="octicon octicon-link"></span></a>实例</h2>
+<h3 id="安装软件包"><a class="anchor" aria-hidden="true" tabindex="-1" href="#安装软件包"><span class="octicon octicon-link"></span></a>安装软件包</h3>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1">pacman <span class="token parameter variable">-S</span> p7zip
+</span></code><div onclick="copied(this)" data-code="pacman -S p7zip
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-<h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><span class="octicon octicon-link"></span></a>实例</h3>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">pwunconv     <span class="token comment"># 关闭影子密码</span>
-</span><span class="code-line line-number" line="2"><span class="token function">cat</span> /etc/passwd <span class="token operator">|</span> <span class="token function">grep</span> <span class="token builtin class-name">test</span>     <span class="token comment"># 发现密码已经在passwd文件中了</span>
-</span><span class="code-line line-number" line="3">test:<span class="token variable">$6</span><span class="token variable">$nYOEWamm</span><span class="token variable">$bz07nlv</span>/.RgJufb3FAqJJeULfwybzgxmrWqbk7O4vI0KsT6N.ujrh6dDIUcAJdfjksyuyAFDPIngZeD3cgcf.0:3001:3001::/home/test:/bin/sh
-</span><span class="code-line line-number" line="4">
-</span><span class="code-line line-number" line="5"><span class="token function">ls</span> /etc/shadow     <span class="token comment"># 查看影子文件，提示没有这个文件或目录</span>
-</span><span class="code-line line-number" line="6">ls: cannot access /etc/shadow: No such <span class="token function">file</span> or directory
-</span></code><div onclick="copied(this)" data-code="pwunconv     # 关闭影子密码
-cat /etc/passwd | grep test     # 发现密码已经在passwd文件中了
-test:$6$nYOEWamm$bz07nlv/.RgJufb3FAqJJeULfwybzgxmrWqbk7O4vI0KsT6N.ujrh6dDIUcAJdfjksyuyAFDPIngZeD3cgcf.0:3001:3001::/home/test:/bin/sh
-
-ls /etc/shadow     # 查看影子文件，提示没有这个文件或目录
-ls: cannot access /etc/shadow: No such file or directory
+<p>也可以安装一个软件包组</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1">pacman <span class="token parameter variable">-S</span> gnome
+</span></code><div onclick="copied(this)" data-code="pacman -S gnome
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+<h3 id="列出所有软件包"><a class="anchor" aria-hidden="true" tabindex="-1" href="#列出所有软件包"><span class="octicon octicon-link"></span></a>列出所有软件包</h3>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1">pacman <span class="token parameter variable">-Q</span>
+</span></code><div onclick="copied(this)" data-code="pacman -Q
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+<h3 id="删除某个软件包"><a class="anchor" aria-hidden="true" tabindex="-1" href="#删除某个软件包"><span class="octicon octicon-link"></span></a>删除某个软件包</h3>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1">pacman <span class="token parameter variable">-R</span> p7zip
+</span></code><div onclick="copied(this)" data-code="pacman -R p7zip
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+<p>或者是同时删除他的依赖</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1">pacman <span class="token parameter variable">-Rsc</span> p7zip
+</span></code><div onclick="copied(this)" data-code="pacman -Rsc p7zip
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+<h3 id="开始滚动更新"><a class="anchor" aria-hidden="true" tabindex="-1" href="#开始滚动更新"><span class="octicon octicon-link"></span></a>开始滚动更新</h3>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1">pacman <span class="token parameter variable">-Syyu</span>
+</span></code><div onclick="copied(this)" data-code="pacman -Syyu
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+<h2 id="参考资料"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参考资料"><span class="octicon octicon-link"></span></a>参考资料</h2>
+<ul>
+  <li>Archlinux 中文维基<a href="https://wiki.archlinuxcn.org/zh-hans/Pacman">https://wiki.archlinuxcn.org/zh-hans/Pacman</a></li>
+</ul>
 <style>markdown-style pre .copied {
   display: flex;
   position: absolute;
@@ -206,7 +217,7 @@ function copied(target, str) {
     591
   </span> 个Linux命令，超过 <a href="../contributors.html">50+</a> 贡献者
 </div>
-<script type="text/javascript" src="../js/dt.js?v=1682345769815"></script>
-<script type="text/javascript" src="../js/index.js?v=1682345769815"></script>
+<script type="text/javascript" src="../js/dt.js?v=1682345769078"></script>
+<script type="text/javascript" src="../js/index.js?v=1682345769078"></script>
 </body>
 </html>
