@@ -1,4 +1,5 @@
-# pacman
+pacman
+===
 
 Arch Linux 系统极其衍生系统中默认使用的包管理器
 
