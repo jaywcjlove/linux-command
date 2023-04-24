@@ -592,8 +592,8 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/daydaygo" title="dayday">
   <img src="https://avatars.githubusercontent.com/u/3986303?v=4" width="42;" alt="dayday"/>
 </a>
-<a href="https://github.com/denymz" title="deny">
-  <img src="https://avatars.githubusercontent.com/u/23657601?v=4" width="42;" alt="deny"/>
+<a href="https://github.com/denymz" title="Deny">
+  <img src="https://avatars.githubusercontent.com/u/23657601?v=4" width="42;" alt="Deny"/>
 </a>
 <a href="https://github.com/dongpohezui" title="dongpohezui">
   <img src="https://avatars.githubusercontent.com/u/40270581?v=4" width="42;" alt="dongpohezui"/>
@@ -621,6 +621,9 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 </a>
 <a href="https://github.com/huangyoo" title="huangyao">
   <img src="https://avatars.githubusercontent.com/u/16477499?v=4" width="42;" alt="huangyao"/>
+</a>
+<a href="https://github.com/Coder-ZJQ" title="jqz3.tech">
+  <img src="https://avatars.githubusercontent.com/u/15013685?v=4" width="42;" alt="jqz3.tech"/>
 </a>
 <a href="https://github.com/juemuren4449" title="juemuren4449">
   <img src="https://avatars.githubusercontent.com/u/12666694?v=4" width="42;" alt="juemuren4449"/>
@@ -664,8 +667,8 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/snovey" title="snovey">
   <img src="https://avatars.githubusercontent.com/u/15171147?v=4" width="42;" alt="snovey"/>
 </a>
-<a href="https://github.com/sunls24" title="sunix">
-  <img src="https://avatars.githubusercontent.com/u/57647932?v=4" width="42;" alt="sunix"/>
+<a href="https://github.com/sunls24" title="sunls24">
+  <img src="https://avatars.githubusercontent.com/u/57647932?v=4" width="42;" alt="sunls24"/>
 </a>
 <a href="https://github.com/hunantangke" title="tangke">
   <img src="https://avatars.githubusercontent.com/u/22476435?v=4" width="42;" alt="tangke"/>
@@ -699,6 +702,9 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 </a>
 <a href="https://github.com/lxp731" title="七朔">
   <img src="https://avatars.githubusercontent.com/u/95358476?v=4" width="42;" alt="七朔"/>
+</a>
+<a href="https://github.com/conglinyizhi" title="丛林意志">
+  <img src="https://avatars.githubusercontent.com/u/42381347?v=4" width="42;" alt="丛林意志"/>
 </a>
 <a href="https://github.com/gclm" title="孤城落寞">
   <img src="https://avatars.githubusercontent.com/u/27618687?v=4" width="42;" alt="孤城落寞"/>
@@ -739,8 +745,8 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/fmalee" title="远方">
   <img src="https://avatars.githubusercontent.com/u/3209058?v=4" width="42;" alt="远方"/>
 </a>
-<a href="https://github.com/catAndZ" title="catAndZ">
-  <img src="https://avatars.githubusercontent.com/u/101485931?v=4" width="42;" alt="catAndZ"/>
+<a href="https://github.com/catAndZ" title="catandz">
+  <img src="https://avatars.githubusercontent.com/u/101485931?v=4" width="42;" alt="catandz"/>
 </a>
 <a href="https://github.com/HDsky" title="黑&蛋">
   <img src="https://avatars.githubusercontent.com/u/17249963?v=4" width="42;" alt="黑&蛋"/>
