@@ -18,7 +18,7 @@ jobs:
         uses: jaywcjlove/github-action-contributors@main
         id: contributors
         with:
-          filter-author: (renovate\[bot\]|renovate-bot|dependabot\[bot\])
+          filter-author: (renovate\[bot\]|renovate-bot|@github-actions-bot|dependabot\[bot\])
           avatarSize: 42
 
       - name: Modify README.md
