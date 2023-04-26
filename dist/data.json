@@ -854,6 +854,11 @@
     "p": "/getenforce",
     "d": "显示当前SELinux的应用模式，是强制、执行还是停用"
   },
+  "getent": {
+    "n": "getent",
+    "p": "/getent",
+    "d": "查询 DNS 名称服务器中的命名空间"
+  },
   "getsebool": {
     "n": "getsebool",
     "p": "/getsebool",
@@ -1754,6 +1759,11 @@
     "p": "/openssl",
     "d": "强大的安全套接字层密码库"
   },
+  "pacman": {
+    "n": "pacman",
+    "p": "/pacman",
+    "d": "Arch Linux 系统极其衍生系统中默认使用的包管理器"
+  },
   "parted": {
     "n": "parted",
     "p": "/parted",
@@ -1948,6 +1958,11 @@
     "n": "pwd",
     "p": "/pwd",
     "d": "显示当前工作目录的绝对路径。"
+  },
+  "pwdx": {
+    "n": "pwdx",
+    "p": "/pwdx",
+    "d": "用于显示指定进程的当前工作目录"
   },
   "pwunconv": {
     "n": "pwunconv",
