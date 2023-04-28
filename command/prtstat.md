@@ -14,24 +14,6 @@ prtstat [-r|--raw] pid
 prtstat -V|--version
 ```
 
-## 参数
-
-```shell
--t：显示系统总体状态
--p pid：显示指定进程的状态
--d：显示磁盘 I/O 统计信息
--n：显示网络 I/O 统计信息
--s：显示系统调用统计信息
--u：显示用户 CPU 使用率统计信息
--w：显示等待事件统计信息
--x：显示进程间通信统计信息
--h：显示帮助信息
--i interval：设置输出间隔时间
--c count：设置输出次数
--l：使用长格式输出
--v：显示版本信息
-```
-
 ## 例子
 
 ```shell
@@ -60,54 +42,6 @@ nobody   224313 224312  0 4月26 ?       00:00:00 nginx: worker process
    processor: 2                            rt_priority: 0
       policy: 0                  delayaccr_blkio_ticks: 0
   guest_time: 0                            cguest_time: 0
-```
-
-显示当前系统的总体状态，包括 CPU 使用率、内存使用率、磁盘 I/O 等信息。
-
-```shell
-prtstat -t
-```
-
-显示指定进程的 CPU 使用率、内存使用率、线程数等信息。
-
-```shell
-prtstat -p pid
-```
-
-显示磁盘 I/O 统计信息，包括每个磁盘的读写速度、IOPS 等。
-
-```shell
-prtstat -d
-```
-
-显示网络 I/O 统计信息，包括每个网络接口的传输速度、数据包数等。
-
-```shell
-prtstat -n
-```
-
-显示系统调用统计信息，包括每个系统调用的调用次数、平均耗时等。
-
-```shell
-prtstat -s
-```
-
-显示用户 CPU 使用率统计信息，包括每个用户的 CPU 使用率、进程数等。
-
-```shell
-prtstat -u
-```
-
-显示等待事件统计信息，包括每个等待事件的等待次数、平均等待时间等。
-
-```shell
-prtstat -w
-```
-
-显示进程间通信统计信息，包括每个进程间通信方式的调用次数、平均耗时等。
-
-```shell
-prtstat -x
 ```
 
 ### 注意
