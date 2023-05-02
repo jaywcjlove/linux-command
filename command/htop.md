@@ -24,6 +24,54 @@ top缺点：
 
 htop 官网：http://htop.sourceforge.net/
 
+### htop 安装
+
+在大多数的 Linux 发行版中你不会找到预安装的 `htop`，但作为最流行的实用程序之一，你会在几乎每个 Linux 发行版的默认存储库中找到 `htop`。
+
+因此，如果你的机器是基于 Debian/Ubuntu 驱动的，则以下命令应该可以完成你的工作：
+
+```shell
+sudo apt install htop
+```
+
+类似的，如果你使用的是 Fedora，则可以使用以下的命令：
+
+```shell
+sudo dnf install htop
+```
+
+如果你使用的是 CentOS 或 RedHat 则可以使用以下的命令：
+
+```shell
+sudo yum install htop
+```
+如果你想避免从源代码构建包，还有一个 Snap 包可用：
+
+```shell
+sudo snap install htop
+```
+
+如果你使用的是其它的发行版或者想从源代码构建，你可以使用 `wget` 下载并安装：
+这需要你下载并安装 `wget` `cmake`
+
+```shell
+wget https://link.zhihu.com/?target=https%3A//hisham.hm/htop/releases/2.2.0/htop-2.2.0.tar.gz
+
+tar -zxvf htop-2.2.0.tar.gz
+
+cd htop-2.2.0/
+
+./configure
+
+make
+
+make install
+```
+
+当然你也可以随时参考你可以随时参考 [htop 的 GitHub](https://link.zhihu.com/?target=https%3A//github.com/htop-dev/htop) 页面以获得详细说明。
+
+**说明**：htop源码安装方式默认安装到 `/usr/local` 目录下，如果想安装到其它路径，在执行 configure 时通过 `—prefix` 指定，格式为：`./configure --prefix=/some/path`
+
 ###  语法
 
 ```shell
@@ -41,6 +89,16 @@ htop
 -h --help                   打印此命令帮助
 -v --version                打印版本信息
 ```
+
+#### 参数示例
+
+- -C 选项：设置界面为无颜色。
+
+- -d 选项 : 设置刷新时间，单位为秒。如，htop -d 10命令会每10秒刷新一次。
+
+- -s 选项 : 按指定的列排序。如，htop -s PID命令会按PID 列的大小排序来显示。
+
+- -u 选项 : 显示指定的用户的进程信息。如，htop -u test命令会只显示出用户名为test的相关进程。
 
 ###  选项
 
