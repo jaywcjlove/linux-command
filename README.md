@@ -169,6 +169,16 @@ http://localhost:9665/
 
 ## 目录
 
+- [Web 版本](#web-版本)
+- [微信小程序版本](#微信小程序版本)
+- [Chrome 插件](#chrome-插件)
+- [Raycast 版本](#raycast-版本)
+- [Alfred 版本](#alfred-版本)
+- [Dash 版本](#dash-版本)
+- [Android 版本](#android-版本)
+- [命令行工具](#命令行工具)
+- [Docker](#docker)
+- [Vercel](#vercel)
 - [目录](#目录)
 - [Linux命令分类](#linux命令分类)
   - [文件传输](#文件传输)
@@ -191,6 +201,8 @@ http://localhost:9665/
   - [中国开源镜像站点](#中国开源镜像站点)
   - [游戏玩家发行版](#游戏玩家发行版)
 - [Team](#team)
+- [感谢所有贡献者](#感谢所有贡献者)
+- [License](#license)
 
 
 ## Linux命令分类
@@ -231,7 +243,7 @@ awk、col、colrm、comm、csplit、ed、egrep、ex、fgrep、fmt、fold、grep�
 
 ### 网络通讯
 
-dip、getty、mingetty、ppp-off、smbd(samba daemon)、telnet、uulog、uustat、uux、cu、dnsconf、efax、httpd、ip、ifconfig、mesg、minicom、nc、netconf、netconfig、netstat、ping、pppstats、samba、setserial、shapecfg(shaper configuration)、smbd(samba daemon)、statserial(status ofserial port)、talk、tcpdump、testparm(test parameter)、traceroute、tty(teletypewriter)、uuname、wall(write all)、write、ytalk、arpwatch、apachectl、smbclient(samba client)、pppsetup
+dip、getty、mingetty、ppp-off、smbd(samba daemon)、telnet、uulog、uustat、uux、cu、dnsconf、efax、httpd、ip、ifconfig、mesg、minicom、nc、netconf、netconfig、netstat、ping、ping6、pppstats、samba、setserial、shapecfg(shaper configuration)、smbd(samba daemon)、statserial(status ofserial port)、talk、tcpdump、testparm(test parameter)、traceroute、tty(teletypewriter)、uuname、wall(write all)、write、ytalk、arpwatch、apachectl、smbclient(samba client)、pppsetup
 
 ### 设备管理
 
