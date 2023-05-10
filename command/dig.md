@@ -37,29 +37,28 @@ dig(选项)(参数)
 ###  实例
 
 ```shell
-[root@localhost ~]# dig www.jsdig.com
+[root@localhost ~]# dig www.baidu.com
 
-; <<>> DiG 9.3.6-P1-RedHat-9.3.6-20.P1.el5_8.1 <<>> www.jsdig.com
-;; global options:  printcmd
+; <<>> DiG 9.10.6 <<>> www.baidu.com
+;; global options: +cmd
 ;; Got answer:
-;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 2115
-;; flags: qr rd ra; QUERY: 1, ANSWER: 2, AUTHORITY: 2, ADDITIONAL: 0
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 57295
+;; flags: qr rd ra; QUERY: 1, ANSWER: 3, AUTHORITY: 0, ADDITIONAL: 1
 
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 4096
 ;; QUESTION SECTION:
-;www.jsdig.com.               IN      A
+;www.baidu.com.			IN	A
 
 ;; ANSWER SECTION:
-www.jsdig.com.        0       IN      CNAME   host.1.jsdig.com.
-host.1.jsdig.com.     0       IN      A       100.42.212.8
+www.baidu.com.		963	IN	CNAME	www.a.shifen.com.
+www.a.shifen.com.	63	IN	A	180.101.50.242
+www.a.shifen.com.	63	IN	A	180.101.50.188
 
-;; AUTHORITY SECTION:
-jsdig.com.            8       IN      NS      f1g1ns2.dnspod.net.
-jsdig.com.            8       IN      NS      f1g1ns1.dnspod.net.
-
-;; Query time: 0 msec
-;; SERVER: 202.96.104.15#53(202.96.104.15)
-;; WHEN: Thu Dec 26 11:14:37 2013
-;; MSG SIZE  rcvd: 121
+;; Query time: 14 msec
+;; SERVER: 119.29.29.29#53(119.29.29.29)
+;; WHEN: Wed May 10 16:16:36 CST 2023
+;; MSG SIZE  rcvd: 101
 ```
 
 
