@@ -153,4 +153,3 @@ hping3 192.168.10.44 -p53 -d 100 --udp --sign siganature --file ./test.cmd
 当然这里只是简单的演示程序，真实的场景，控制端可以利益shell执行很多的高级复杂的操作。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

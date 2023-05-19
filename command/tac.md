@@ -64,4 +64,4 @@ seq 1 3 |tac -b
 1. 该命令是`GNU coreutils`包中的命令，相关的帮助信息请查看`man -s 1 tac`或`info coreutils 'tac invocation'`。
 2. 关于基础正则表达式（BRE）的内容，详见`man -s 1 grep`的`REGULAR EXPRESSIONS`段落。
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

@@ -125,4 +125,4 @@ ifconfig eth0  #显示eth0的网卡信息
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

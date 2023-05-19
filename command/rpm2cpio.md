@@ -24,4 +24,3 @@ rpm2cpio ../libstdc++-4.3.0-8.i386.rpm | cpio -idv
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

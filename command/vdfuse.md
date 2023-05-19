@@ -56,4 +56,3 @@ mount /path/to/mountpoint/Partition1 /path/to/someother/mountpoint
 文件系统就挂载到`/path/to/someother/mountpoint`了。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

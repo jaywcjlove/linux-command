@@ -21,7 +21,7 @@ setsebool [-P] 布尔值=[0|1]
 
 ###  实例
 
-允许vsvtp匿名用户写入权限：
+允许vsftp匿名用户写入权限：
 
 ```shell
 setsebool -P allow_ftpd_anon_write=1
@@ -152,4 +152,3 @@ setsebool -P allow_ypbind 1
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -27,4 +27,3 @@ mysql(选项)(参数)
 数据库：指定连接服务器后自动打开的数据库。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

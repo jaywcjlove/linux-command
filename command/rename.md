@@ -160,4 +160,3 @@ rename foo0 foo foo0[2]*
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

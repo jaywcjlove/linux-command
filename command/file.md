@@ -67,4 +67,3 @@ lrwxrwxrwx 1 root root 10 08-13 00:11 /var/mail -> spool/mail
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

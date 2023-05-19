@@ -69,4 +69,6 @@ boot
 这里的关键问题是如何确定系统的几个分区：`/boot` `/` `/sbin`
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+### 参考资料
+
+- 自由软件基金会 - grub 文档 <https://www.gnu.org/software/grub/>

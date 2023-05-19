@@ -119,4 +119,4 @@ echo ${a}
 
 2. 执行算术计算的命令除了`let`，还有外部命令`expr`、`bc`等。
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

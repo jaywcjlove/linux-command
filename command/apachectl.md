@@ -25,4 +25,3 @@ apachectl(参数)
 * stop：停止Apache服务器。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

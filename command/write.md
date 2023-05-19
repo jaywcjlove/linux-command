@@ -41,4 +41,3 @@ write Rollaend pts/2
 若对方设定`mesg n`，则此时信息将无法传给对方。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

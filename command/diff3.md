@@ -32,4 +32,3 @@ diff3(选项)(参数)
 * 文件3：指定要比较的第3个文件。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -35,4 +35,4 @@ ld -o output /lib/crt0.o hello.o -lc
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

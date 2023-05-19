@@ -86,7 +86,7 @@ rsync [OPTION]... rsync://[USER@]HOST[:PORT]/SRC [DEST]
 --port=PORT 指定其他的rsync服务端口。
 --blocking-io 对远程shell使用阻塞IO。
 -stats 给出某些文件的传输状态。
---progress 在传输时现实传输过程。
+--progress 在传输时显示传输过程。
 --log-format=formAT 指定日志文件格式。
 --password-file=FILE 从FILE中得到密码。
 --bwlimit=KBPS 限制I/O带宽，KBytes per second。
@@ -326,4 +326,4 @@ $ rsync -av --include="*.txt" --exclude='*' source/ destination
 
 上面命令指定同步时，排除所有文件，但是会包括 `TXT` 文件。
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

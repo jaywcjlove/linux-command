@@ -1,12 +1,13 @@
 {
   "name": "linux-command",
-  "version": "1.6.1",
+  "version": "1.15.0",
   "description": "Linux Command",
+  "homepage": "https://jaywcjlove.github.io/linux-command/",
   "main": "dist/data.json",
   "scripts": {
     "start": "npm run build",
-    "build": "node build/build.js",
-    "dash": "npm run build && node build/dash.js"
+    "build": "node scripts/build.mjs",
+    "dash": "npm run build && node scripts/dash.mjs"
   },
   "files": [
     "command",
@@ -24,19 +25,19 @@
     "url": "git+https://github.com/jaywcjlove/linux-command.git"
   },
   "devDependencies": {
-    "archiver": "5.1.0",
-    "colors-cli": "1.0.27",
-    "ejs": "3.1.3",
-    "fs-extra": "9.0.1",
-    "marked": "2.0.3",
-    "prismjs": "1.23.0",
-    "sitemap-generator": "8.5.1",
-    "sqlite3": "4.1.1",
-    "stylus": "0.54.8",
-    "uglify-js": "3.12.1"
+    "@uiw/github-corners": "~1.5.11",
+    "@wcj/dark-mode": "~1.0.14",
+    "colors-cli": "~1.0.31",
+    "ejs": "~3.1.6",
+    "compressing": "^1.6.2",
+    "fs-extra": "~10.1.0",
+    "markdown-to-html-cli": "~3.5.0",
+    "sitemap-generator": "~8.5.1",
+    "sqlite3": "5.0.8",
+    "stylus": "~0.59.0",
+    "uglify-js": "~3.17.0"
   },
-  "bugs": {
-    "url": "https://github.com/jaywcjlove/linux-command/issues"
-  },
-  "homepage": "https://jaywcjlove.github.io/linux-command/"
+  "engines": {
+    "node": ">=16.0.0"
+  }
 }

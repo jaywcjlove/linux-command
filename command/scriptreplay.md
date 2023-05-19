@@ -90,4 +90,4 @@ zfb@localhost:~$
 
 其中，只有命令`scriptreplay -d 1 -m 2 -t time.file -s command.log`是用户输入，其他均为自动呈现（且视觉效果与真实用户的操作一致）。通过查看上面输出的时间`2020-12-23 20:48:46`，可以证明，这是重新播放当时的记录，而非重新执行一遍命令。也就是说，可以把`time.file`和`command.log`文件移动到任意一台支持`scriptreplay`命令的机器上，都可以动态重现命令输入与终端回显。
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

@@ -95,4 +95,4 @@ size(或minsize) log-size 当日志文件到达指定的大小时才转储
 ```
 这种情况下，会将轮转过的log再重新轮转,因为轮转过后的文件名也是已log开头的
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

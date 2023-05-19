@@ -42,4 +42,3 @@ Do you really want to reduce lvol0? [y/n]: y  #确认操作
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

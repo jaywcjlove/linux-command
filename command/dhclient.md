@@ -34,4 +34,3 @@ dhclient        #获取IP
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

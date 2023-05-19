@@ -1,51 +1,40 @@
 @import('mixins/reset.styl')
-@import('mixins/css.styl')
 @import('mixins/markdown.styl')
 
 mq-mobile = "screen and (max-width: 479px)"
 
-a.github-corner { 
-  position: fixed
-  z-index: 9999
-  top: 0
-  right: 0
-  &:hover {
-    .octo-arm{
-      animation: octocat-wave 560ms ease-in-out
-    }
-  }
-  svg {
-    fill #f1f1f1
-    color #000
-    position absolute
-    top 0
-    border 0
-    right 0
-    z-index 99
-    width 70px
-    height 70px
-  }
+[data-color-mode*='dark'], [data-color-mode*='dark'] body {
+  color-scheme: dark;
+  --color-header-bg: #3a3a3a8f;
+  --color-header-border: #323232;
+  --color-hover: #ffffff30;
 }
-a {
-  transition: all .2s ease-in
+[data-color-mode*='light'], [data-color-mode*='light'] body {
+  color-scheme: light;
+  --color-header-bg: #ffffff52;
+  --color-header-border: #d3d3d3;
+  --color-hover: #f2f2f2;
 }
 
-@keyframes octocat-wave{
-  0%,100%{-webkit-transform:rotate(0);transform:rotate(0)}
-  20%,60%{-webkit-transform:rotate(-25deg);transform:rotate(-25deg)}
-  40%,80%{-webkit-transform:rotate(10deg);transform:rotate(10deg)}
+.warpper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  .footer {
+    padding-bottom: 280px;
+  }
 }
 
 .header {
   width 517px
   margin 0 auto 0
   padding 0 10px
-  .logo {
-    text-align center
-    padding-top 50px
-    padding-bottom 50px
+  .logo a {
+    display flex
+    color: currentColor;
   }
-  .box{
+  .box {
     position relative
   }
   .search {
@@ -65,15 +54,15 @@ a {
       position absolute
       display none
       z-index 999
-      box-shadow 1px 1px 3px #ededed
-      border 1px solid #d5d5d5
-      background #fff
+      box-shadow 1px 1px 3px var(--color-theme-bg)
+      border 1px solid var(--color-header-border)
+      background var(--color-theme-bg)
       min-width 100px
       top 39px
       width 100%
       padding 5px
       border-radius 5px 5px 5px 5px
-      li{
+      li {
         line-height 23px
         span{
           padding 0 8px
@@ -83,9 +72,8 @@ a {
       a {
         display block
         padding 2px 6px 2px 6px
-        color #555555
         &:hover {
-          background-color #f2f2f2
+          background-color var(--color-hover)
         }
         .kw {
           color #f00
@@ -108,8 +96,7 @@ a {
       font-size 14px
       font-weight bold
       line-height 1.42857143
-      color #555
-      background-color #fff
+      background-color: transparent;
       background-image none
       border 1px solid $border-color
       border-radius 5px 0 0 5px
@@ -122,9 +109,7 @@ a {
       }
     }
     .enter-input {
-      width 1%
       white-space nowrap
-      vertical-align middle
       button {
         margin 0
         left -1px
@@ -143,31 +128,29 @@ a {
         cursor pointer
         user-select none
         background-image none
-        background-color #fff
         border 1px solid transparent
         border-collapse separate
         border-radius 0 5px 5px 0
         border-color $border-color
-        color #333
-        &:focus,&:active:focus{
+        &:focus,&:active:focus {
           outline thin dotted
           outline 5px auto -webkit-focus-ring-color
           outline-offset -2px
         }
-        &:active{
+        &:active {
           color #333
           background-color #e6e6e6
           border-color #b4b4b4
           background-image none
           box-shadow inset 0 8px 32px -8px rgba(0,0,0,0.3)
         }
-        &:focus{
+        &:focus {
           color #333
           background-color #e6e6e6
           border-color #999
           text-decoration none
         }
-        &:hover{
+        &:hover {
           color #333
           background-color #e6e6e6
           border-color #b4b4b4
@@ -177,69 +160,77 @@ a {
   }
 }
 
-.footer{
+.footer {
   text-align center
   padding-top 31px
-  color #616161
   font-size 14px
   font-weight 300
-  border-top: 1px solid #efefef;
-  padding-bottom: 50px;
-  &.footer_index {
-    border-top: 0
+  border-top 1px solid var(--color-header-border)
+  padding-bottom 50px;
+  padding 31px 6px 50px 6px
+  &.home {
+    border-top 0
   }
 }
-
+.header.home {
+  .header_inner {
+    display flex
+    flex-direction column
+    align-items center
+  }
+  .logo {
+    min-height 140px
+    display flex
+    align-items center
+  }
+  .search {
+    display flex
+    min-width 320px
+  }
+}
 
 .header.header_list {
   width auto
   position fixed
   width 100%
-  background #fff
+  background var(--color-theme-bg)
+  backdrop-filter saturate(180%) blur(0.4rem)
+  background-color var(--color-header-bg)
   z-index 99
 }
 
-.header_list{
+.header_list {
   padding 10px 10px 10px 13px 
-  border-bottom 1px solid #EEEEEE
-  .logo{
-    float left
-    padding-top 3px
-    padding-bottom 0
+  border-bottom 1px solid var(--color-header-border)
+  .logo {
     padding-right 24px
     text-align left
-    svg{
+    svg {
       height 37px
       width 136px
     }
   }
-  .search{
-    max-width 517px
-  }
-  .footer{
-    display none
-  }
 }
 
-.search_list{
+.search_list {
   padding 79px 27px 
-  a{
+  a {
     font-size 16px
-    strong{
+    strong {
       font-weight bold
     }
-    .kw{
+    .kw {
       color #f00
       font-style inherit
       font-weight bold
     }
-    &:hover{
-      .kw{
+    &:hover {
+      .kw {
         color #333
       }
     }
   }
-  li{
+  li {
     padding 10px 0 10px 0
     list-style-type none
     p {
@@ -249,16 +240,15 @@ a {
   }
 }
 
-.hotlist{
+.hotlist {
   padding 79px 27px 
-  a{
+  a {
     font-size 16px
-    strong{
+    strong {
       font-weight bold
     }
-    &:hover{ }
   }
-  li{
+  li {
     padding 5px 0 5px 0
     list-style-type none
     p{
@@ -268,44 +258,58 @@ a {
   }
 }
 
+.header_list .header_inner {
+  display: flex;
+  align-items: center;
+  .search {
+    flex: 1;
+    display: flex;
+  }
+}
 
-@media mq-mobile{
+.header_inner, .hotlist, .search_list, .contributors {
+  max-width 920px
+  margin 0 auto
+}
+
+.contributors {
+  padding 79px 27px
+  max-width: 960px;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji";
+  font-size: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  a {
+    font-weight: bold;
+  }
+}
+
+@media mq-mobile {
   .header{
     width inherit
     .search .enter-input {
-      button{
-        padding: 9px 14px;
+      button {
+        padding 9px 14px
       }
     }
   }
-  .header_list{
-    .logo svg{
+  .header_list {
+    padding: 10px 10px 10px 13px
+    .logo {
+      float inherit
+      padding-right 10px
+      text-align center
+    }
+    .logo svg {
       width 96px
     }
     .search {
-      .query{
+      .query {
         line-height 31px
       }
     }
   }
-  .header_list .logo{
-    float inherit
-    padding-right 10px
-    padding-top 8px
-    padding-bottom 14px
-    text-align center
-  }
-  div.markdown-body{
-    padding: 140px 10px 10px 13px;
-  }
-  div.markdown-body .edit_btn + *{
-    margin-top: 0 !important;
-  }
-  div.markdown-body .edit_btn{
-    top: 9px;
-    a{
-      background #f1f1f1
-      color #a3a3a3
-    }
+  .search_list, .hotlist {
+    padding 78px 27px
   }
 }

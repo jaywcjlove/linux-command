@@ -46,4 +46,3 @@ shutdown +5 "System will shutdown after 5 minutes"
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

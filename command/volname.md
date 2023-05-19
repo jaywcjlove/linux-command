@@ -18,4 +18,3 @@ volname(参数)
 设备文件名：指定要显示卷名称的设备。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

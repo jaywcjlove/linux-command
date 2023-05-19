@@ -35,4 +35,3 @@ lpadmin(选项)(参数)
 打印机：指定要配置的打印机的名称。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -209,4 +209,4 @@ netstat -anpo | grep "php-cgi" | wc -l
 
 * FIN: (结束标志,FINish)用来结束一个TCP回话.但对应端口仍处于开放状态,准备接收后续数据。
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

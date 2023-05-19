@@ -36,4 +36,3 @@ renice 1 987 -u daemon root -p 32
 注意：每一个行程都有一个唯一的id。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

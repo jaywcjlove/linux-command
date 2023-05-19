@@ -43,4 +43,3 @@ root root *pts/1 Dec 18 13
 如果要查询远程机上的用户信息，需要在用户名后面接`@主机名`，采用`用户名@主机名`的格式，不过要查询的网络主机需要运行finger守护进程的支持。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

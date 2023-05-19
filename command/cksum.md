@@ -47,4 +47,3 @@ cksum testfile1            #对指定文件进行CRC校验
 注意：如果文件中有任何字符被修改，都将改变计算后CRC校验码的值。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

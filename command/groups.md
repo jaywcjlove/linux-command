@@ -43,4 +43,4 @@ linux : linux adm dialout cdrom plugdev lpadmin admin sambashare
 2. 每个用户属于`/etc/passwd`中指定的一个组和在`/etc/group`中指定的其他组。
 3. 该命令是`GNU coreutils`包中的命令，相关的帮助信息请查看`man -s 1 groups`，`info coreutils 'groups invocation'`。
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

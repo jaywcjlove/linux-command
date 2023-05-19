@@ -45,4 +45,3 @@ mkdir -p-m 750 bin/os_1
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -24,4 +24,3 @@ uuto./testfile localhost/tmp # 将文件传送到远程UUCP 主机localhost的tm
 
 该命令通常没有输出。
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

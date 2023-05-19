@@ -35,7 +35,7 @@ sftp(选项)(参数)
 建立联接
 
 ```shell
-$ sfpt username@1.1.1.1 # 回车输入密码
+$ sftp username@1.1.1.1 # 回车输入密码
 ```
 
 获取文件下载到指定路径
@@ -54,4 +54,3 @@ Uploading /Users/my/Downloads/re-produce.gif to /export/sftp/re-produce.gif
 /Users/my/Downloads/re-produce.gif            100%  257KB  86.6KB/s   00:02
 ```
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

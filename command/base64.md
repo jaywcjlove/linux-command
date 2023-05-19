@@ -50,4 +50,3 @@ printf Zm9v|base64 -d
 base64 -d file
 ```
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

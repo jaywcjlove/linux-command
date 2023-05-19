@@ -61,4 +61,3 @@ depmod -b /home/windsome/EMMA3PF-KernelSource-20080626/install_pos -e -F ./boot/
 如，我编译了一个新的wifi驱动r8192se_pci.ko，将其拷贝到`/lib/modules/2.6.31-20-generic/wireless`下，然后到`/lib/modules/2.6.31-20-generic`运行`depmod -a`，之后可以在任意目录运行modprobe r8192se_pci。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

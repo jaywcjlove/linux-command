@@ -84,16 +84,46 @@ linux [master●] % pv ~/Downloads/CentOS-7-x86_64-Minimal-1511.iso > ~/Desktop/
 pv -L 2m /media/himanshu/1AC2-A8E3/fNf.mkv > ./Desktop/fnf.mkv 
 ```
 
+复制文件时显示进度条（如果没有指定选项，默认使用 -p, -t, -e, -r 和 -b 选项）
+
+```bash
+$ pv getiot.db > getiot.db.bak
+```
+将 `/var/log/syslog` 文件打包成 zip 压缩包，并显示进度
+
+```bash
+$ pv /var/log/syslog | zip > syslog.zip
+```
+
+使用 tar 命令解压缩时显示进度条
+
+```bash
+$ pv rootfs.tar.bz2 | tar -jxf - -C rootfs/
+12.3MiB 0:00:02 [6.15MiB/s] [=========>                                     ] 21% ETA 0:00:07
+````
+
+解压完成
+
+```bash
+$ pv rootfs.tar.bz2 | tar -jxf - -C rootfs/
+57.8MiB 0:00:10 [5.53MiB/s] [==============================================>] 100%
+```
+
+字符一个个匀速在命令行中显示出来
 
 ```shell
-# 字符一个个匀速在命令行中显示出来
 echo "Tecmint[dot]com is a community of Linux Nerds and Geeks" | pv -qL 10
+```
 
-# 压缩文件展示进度信息
+压缩文件展示进度信息
+
+```shell
 pv /media/himanshu/1AC2-A8E3/fnf.mkv | gzip > ./Desktop/fnf.log.gz 
+```
 
+用 dd 命令将 iso 写入磁盘，pv来实现进度条的显示
 
-# 用 dd 命令将 iso 写入磁盘，pv来实现进度条的显示
+```shell
 sudo pv -cN source < /Users/kacperwang/Downloads/CentOS-7-x86_64-Everything-1511.iso | sudo dd of=/dev/disk2 bs=4m
 ## 显示下面进度
 source:  5.2GiB 5:11:41 [ 503KiB/s] [=====================>       ] 71% ETA 2:01:56
@@ -110,4 +140,3 @@ $ pv -d $(ps -ef | grep -v grep | grep "<脚本或命令的关键字>" | awk '{p
 1. 选项"-d, --watchfd PID[:FD]", 是在1.6.6版本中才有的参数,如果使用需要`pv`升级到大于等于1.6.6的版本
 2. CentOS7的Yum仓库里`pv`最新的是1.4.6版本,1.6.6版本是发布在CentOS8里面的,如果需要,可以将CentOS8里的pv下载到本地电脑上或者本地的Yum私服里, 这个是[下载地址](http://www.rpmfind.net/linux/rpm2html/search.php?query=pv&submit=Search+...&system=EPEL&arch=), 可以根据自己不同的架构下载, 1.6.6的安装: `rpm -ivh pv-1.6.6-7.el8.x86_64.rpm -U`
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

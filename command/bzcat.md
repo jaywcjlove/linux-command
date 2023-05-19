@@ -1,11 +1,11 @@
 bzcat
 ===
 
-解压缩指定的.bz2文件
+不解压，直接查看指定的.bz2文件
 
 ## 补充说明
 
-**bzcat命令** 解压缩指定的.bz2文件，并显示解压缩后的文件内容。保留原压缩文件，并且不生成解压缩后的文件。
+**bzcat命令** 无需解压缩指定的.bz2文件，即可显示解压缩后的文件内容。
 
 ###  语法
 
@@ -36,4 +36,3 @@ bzcat man.config.bz2
 此时屏幕上会显示 man.config.bz2 解压缩之后的文件内容。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

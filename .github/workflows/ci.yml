@@ -1,33 +1,218 @@
-name: GitHub Actions Build and Deploy linux-command
+name: CI
 on:
   push:
     branches:
       - master
+
 jobs:
   build-deploy:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-node@v2
-      with:
-        node-version: 14
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          registry-url: 'https://registry.npmjs.org'
 
-    - name: Generate Changelog
-      id: changelog
-      uses: jaywcjlove/changelog-generator@v1.4.2
-      with:
-        token: ${{ secrets.GITHUB_TOKEN }}
-        head-ref: ${{steps.create_tag.outputs.version}}
-        filter-author: (jaywcjlove|小弟调调™|dependabot\[bot\]|Renovate Bot)
-        filter: '[R|r]elease[d]\s+[v|V]\d(\.\d+){0,2}'
+      - name: Generate Contributors Images
+        uses: jaywcjlove/github-action-contributors@main
+        id: contributors
+        with:
+          filter-author: (renovate\[bot\]|renovate-bot|@github-actions-bot|dependabot\[bot\])
+          avatarSize: 42
 
-    - run: npm install
-    - run: npm run build
-    - run: npm run dash
+      - name: Modify README.md
+        uses: jaywcjlove/github-action-modify-file-content@main
+        with:
+          path: README.md
+          openDelimiter: '<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-->'
+          closeDelimiter: '<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END-->'
+          body: |
+            ${{steps.contributors.outputs.htmlList}}
 
-    - name: Deploy
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./.deploy
-        
+      - name: Modify contributors.ejs
+        uses: jaywcjlove/github-action-modify-file-content@main
+        with:
+          path: template/contributors.ejs
+          openDelimiter: '<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-->'
+          closeDelimiter: '<!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END-->'
+          body: |
+            ${{steps.contributors.outputs.htmlList}}
+
+      - name: Build Linux Command
+        run: |
+          npm install
+          npm run dash
+          cp CONTRIBUTORS.svg .deploy
+          rm -rf .deploy/linux-command.docset 
+
+      - name: Create Tag
+        id: create_tag
+        uses: jaywcjlove/create-tag-action@main
+        with:
+          package-path: ./package.json
+
+      - name: Get Tag Version
+        id: tag_version
+        uses: jaywcjlove/changelog-generator@main
+
+      - name: Update Dash Feed
+        run: |
+          echo "<entry><version>${{steps.create_tag.outputs.versionNumber}}</version><url>https://jaywcjlove.github.io/linux-command/linux-command.docset.tgz</url></entry>" > .deploy/linux-command-docset.xml
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          commit_message: '[${{steps.tag_version.outputs.tag}}] ${{ github.event.head_commit.message }}'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./.deploy
+          user_name: github-actions[bot]
+          user_email: github-actions[bot]@users.noreply.github.com
+
+      - name: Generate Changelog
+        id: changelog
+        uses: jaywcjlove/changelog-generator@main
+        with:
+          filter-author: (小弟调调™)
+          filter: (^[\s]+?[R|r]elease)|(^[R|r]elease)
+
+      - name: Create Release
+        uses: ncipollo/release-action@v1
+        if: steps.create_tag.outputs.successful
+        with:
+          artifacts: '.deploy/linux-command.docset.tgz'
+          token: ${{ secrets.GITHUB_TOKEN }}
+          name: ${{ steps.create_tag.outputs.version }}
+          tag: ${{ steps.create_tag.outputs.version }}
+          body: |
+            [![](https://img.shields.io/badge/Open%20in-unpkg-blue)](https://uiwjs.github.io/npm-unpkg/#/pkg/linux-command@${{steps.create_tag.outputs.versionNumber}}/file/README.md) [![npm bundle size](https://img.shields.io/bundlephobia/minzip/linux-command)](https://bundlephobia.com/result?p=linux-command@${{steps.create_tag.outputs.versionNumber}})
+            
+            ```bash
+            npm i linux-command@${{steps.create_tag.outputs.versionNumber}}
+            ```
+
+            ${{ steps.changelog.outputs.compareurl }}
+            
+            ${{ steps.changelog.outputs.changelog }}
+
+
+            Document linux-command@${{ steps.changelog.outputs.tag }}:  
+            https://raw.githack.com/jaywcjlove/linux-command/${{ steps.changelog.outputs.gh-pages-short-hash }}/index.html
+
+
+            ## Docker
+
+            [![Docker Image Version (latest by date)](https://img.shields.io/docker/v/wcjiang/linux-command)](https://hub.docker.com/r/wcjiang/linux-command) [![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/wcjiang/linux-command)](https://hub.docker.com/r/wcjiang/linux-command) [![Docker Pulls](https://img.shields.io/docker/pulls/wcjiang/linux-command)](https://hub.docker.com/r/wcjiang/linux-command)
+
+            轻松通过 `docker` 部署 `linux-command` 网站。
+
+            ```bash
+            docker pull wcjiang/linux-command
+            ```
+
+            ```bash
+            docker run --name linux-command --rm -d -p 9665:3000 wcjiang/linux-command:latest
+            # Or
+            docker run --name linux-command -itd -p 9665:3000 wcjiang/linux-command:latest
+            ```
+
+            在浏览器中访问以下 URL
+
+            ```bash
+            http://localhost:9665/
+            ```
+
+      - run: npm publish
+        continue-on-error: true
+        name: 📦 linux-command publish to NPM
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+
+      # Create Docker Image
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+      - name: Login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{ secrets.DOCKER_USER }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Build and push image:latest
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          context: .
+          platforms: linux/amd64,linux/arm64
+          tags: ${{ secrets.DOCKER_USER }}/linux-command:latest
+
+      - name: Build and push image:tags
+        uses: docker/build-push-action@v3
+        if: steps.create_tag.outputs.successful
+        with:
+          push: true
+          context: .
+          platforms: linux/amd64,linux/arm64
+          tags: ${{ secrets.DOCKER_USER }}/linux-command:${{steps.changelog.outputs.version}}
+
+      # Create Docker Image in Github
+      - name: Login to the GitHub Container Registry
+        uses: docker/login-action@v2
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Build and push image:latest
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          context: .
+          platforms: linux/amd64,linux/arm64
+          tags: ghcr.io/jaywcjlove/linux-command:latest
+
+      - name: Build and push image:tags
+        uses: docker/build-push-action@v3
+        if: steps.create_tag.outputs.successful
+        with:
+          push: true
+          context: .
+          platforms: linux/amd64,linux/arm64
+          tags: ghcr.io/jaywcjlove/linux-command:${{steps.changelog.outputs.version}}
+
+      # # Create Docker Image
+      # - name: Docker login
+      #   run: docker login -u ${{ secrets.DOCKER_USER }} -p ${{ secrets.DOCKER_PASSWORD }}
+      
+      # - name: Build linux-command image
+      #   run: |
+      #     rm -rf .deploy/linux-command.docset.tgz
+      #     docker image build -t linux-command .
+
+      # - name: Tags & Push image(latest)
+      #   run: |
+      #     docker tag linux-command ${{ secrets.DOCKER_USER }}/linux-command:latest
+      #     docker push ${{ secrets.DOCKER_USER }}/linux-command:latest
+
+      # - name: Tags & Push image
+      #   if: steps.create_tag.outputs.successful
+      #   run: |
+      #     echo "outputs.tag - ${{ steps.changelog.outputs.version }}"
+      #     docker tag linux-command ${{ secrets.DOCKER_USER }}/linux-command:${{steps.changelog.outputs.version}}
+      #     docker push ${{ secrets.DOCKER_USER }}/linux-command:${{steps.changelog.outputs.version}}
+
+      # # Create Docker Image in Github
+      # - name: Login to GitHub registry
+      #   run: echo ${{ github.token }} | docker login ghcr.io -u ${{ github.actor }} --password-stdin
+
+      # - name: Build docker image
+      #   run: docker build -t ghcr.io/jaywcjlove/linux-command:latest .
+
+      # - name: Publish to GitHub registry
+      #   run: docker push ghcr.io/jaywcjlove/linux-command:latest
+
+      # - name: Tag docker image (beta) and publish to GitHub registry
+      #   if: steps.create_tag.outputs.successful
+      #   run: |
+      #       echo "version: v${{ steps.changelog.outputs.version }}"
+      #       docker tag ghcr.io/jaywcjlove/linux-command:latest ghcr.io/jaywcjlove/linux-command:${{steps.changelog.outputs.version}}
+      #       docker push ghcr.io/jaywcjlove/linux-command:${{steps.changelog.outputs.version}}

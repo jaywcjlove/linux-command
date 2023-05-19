@@ -83,4 +83,4 @@ scp -r /opt/soft/mongodb root@10.10.10.10:/opt/soft/scptest
 上传本地目录`/opt/soft/mongodb`到远程机器10.10.10.10上`/opt/soft/scptest`的目录中去。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

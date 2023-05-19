@@ -31,5 +31,33 @@ join(选项)(参数)
 *   文件1：要进行合并操作的第1个文件参数；
 *   文件2：要进行合并操作的第2个文件参数。
 
+### 常见用法
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+把两个文件制定栏位内容相同的行连接起来：
+
+```shell
+[root@localhost ~]# cat name 
+1 xiaoming
+2 xiaowang
+3 xiaoliu
+[root@localhost ~]# cat city 
+1 beijing  beijing
+2 hubei   wuhan 
+3 hunan   changsha
+
+# city文件在后，则拼接在后，如果city文件在前，则name文件拼接在后。
+[root@localhost ~]# join  name  city 
+1 xiaoming beijing beijing
+2 xiaowang hubei wuhan 
+3 xiaoliu hunan changsha
+```
+
+把两个文件指定列拼接起来：
+
+```shell
+# 把name文件的第2列和city文件的第3列拼接起来
+[root@localhost ~]# join -o 1.2 2.3 name  city 
+xiaoming beijing
+xiaowang wuhan
+xiaoliu changsha
+```

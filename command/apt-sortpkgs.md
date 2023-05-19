@@ -25,4 +25,3 @@ apt-sortpkgs(选项)(参数)
 文件：指定要排序的包含debian包信息的索引文件。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

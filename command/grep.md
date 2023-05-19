@@ -50,7 +50,7 @@ $    # 锚定行的结束 如：'grep$' 匹配所有以grep结尾的行。
 *    # 匹配零个或多个先前字符 如：'*grep'匹配所有一个或多个空格后紧跟grep的行。    
 .*   # 一起用代表任意字符。   
 []   # 匹配一个指定范围内的字符，如'[Gg]rep'匹配Grep和grep。    
-[^]  # 匹配一个不在指定范围内的字符，如：'[^A-FH-Z]rep'匹配不包含A-R和T-Z的一个字母开头，紧跟rep的行。    
+[^]  # 匹配一个不在指定范围内的字符，如：'[^A-Z]rep' 匹配不包含 A-Z 中的字母开头，紧跟 rep 的行
 \(..\)  # 标记匹配字符，如'\(love\)'，love被标记为1。    
 \<      # 锚定单词的开始，如:'\<grep'匹配包含以grep开头的单词的行。    
 \>      # 锚定单词的结束，如'grep\>'匹配包含以grep结尾的单词的行。    
@@ -119,6 +119,12 @@ line.
 grep -c "text" file_name
 ```
 
+搜索命令行历史记录中 输入过 `git` 命令的记录：
+
+```shell
+history | grep git
+```
+
 输出包含匹配字符串的行数  **-n**  选项：
 
 ```shell
@@ -135,7 +141,7 @@ grep "text" -n file_1 file_2
 ```shell
 echo gun is not unix | grep -b -o "not"
 7:not
-#一行中字符串的字符便宜是从该行的第一个字符开始计算，起始值为0。选项  **-b -o**  一般总是配合使用。
+#一行中字符串的字符偏移是从该行的第一个字符开始计算，起始值为0。选项  **-b -o**  一般总是配合使用。
 ```
 
 搜索多个文件并查找匹配文本在哪些文件中：
@@ -164,6 +170,7 @@ echo "hello world" | grep -i "HELLO"
 
 ```shell
 echo this is a text line | grep -e "is" -e "line" -o
+is
 is
 line
 
@@ -246,4 +253,4 @@ b
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

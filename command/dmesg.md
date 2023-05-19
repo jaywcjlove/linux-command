@@ -50,4 +50,4 @@ dmesg | grep sda
 [    2.448503] sd 0:0:0:0: [sda] Attached SCSI disk
 ```
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

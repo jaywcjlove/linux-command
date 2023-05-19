@@ -34,4 +34,3 @@ dpkg-preconfigure /var/cache/apt/archives/mysql-server-5.5*.deb
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

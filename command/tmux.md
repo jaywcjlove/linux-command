@@ -38,291 +38,60 @@ make && make install
 
 ## 快捷键使用说明
 
-<table class="table-view log-set-param">
-<tbody>
-<tr>
-<td colspan="2" align="left" valign="center" width="0">
-  <div>Ctrl+b</div>
-</td>
-<td>
-  <div>激活控制台；此时以下按键生效</div>
-</td>
-</tr>
-<tr>
-<td rowspan="9" align="left" valign="center" width="0">
-  <div>系统操作</div>
-</td>
-<td>
-  <div>?</div>
-</td>
-<td>
-  <div>列出所有快捷键；按q返回</div>
-</td>
-</tr>
-<tr>
-<td>
-  <div>d</div>
-</td>
-<td>
-  <div>脱离当前会话；这样可以暂时返回Shell界面，输入tmux attach能够重新进入之前的会话</div>
-</td>
-</tr>
-<tr>
-<td>
-  <div>D</div>
-</td>
-<td>
-  <div>选择要脱离的会话；在同时开启了多个会话时使用</div>
-</td>
-</tr>
-<tr>
-<td>
-  <div>Ctrl+z</div>
-</td>
-<td>
-  <div>挂起当前会话</div>
-</td>
-</tr>
-<tr>
-<td>
-  <div>r</div>
-</td>
-<td>
-  <div>强制重绘未脱离的会话</div>
-</td>
-</tr>
-<tr>
-<td>
-  <div>s</div>
-</td>
-<td>
-  <div>选择并切换会话；在同时开启了多个会话时使用</div>
-</td>
-</tr>
-<tr>
-<td>
-  <div>:</div>
-</td>
-<td>
-  <div>进入命令行模式；此时可以输入支持的命令，例如kill-server可以关闭服务器</div>
-</td>
-</tr>
-<tr>
-<td>
-  <div>[</div>
-</td>
-<td>
-  <div>进入复制模式；此时的操作与vi/emacs相同，按q/Esc退出</div>
-</td>
-</tr>
-<tr>
-<td>
-  <div>~</div>
-</td>
-<td>
-  <div>列出提示信息缓存；其中包含了之前tmux返回的各种提示信息</div>
-</td>
-</tr>
-<tr>
-<td rowspan="10" align="left" valign="center" width="0">
-  <div>窗口操作</div>
-</td>
-<td>
-  <div>c</div>
-</td>
-<td>
-  <div>创建新窗口</div>
-</td>
-</tr>
-<tr>
-<td>
-  <div>&amp;</div>
-</td>
-<td>
-  <div>关闭当前窗口</div>
-</td>
-</tr>
-<tr>
-<td>
-  <div>数字键</div>
-</td>
-<td>
-  <div>切换至指定窗口</div>
-</td>
-</tr>
-<tr>
-<td>
-  <div>p</div>
-</td>
-<td>
-  <div>切换至上一窗口</div>
-</td>
-</tr>
-<tr>
-<td>
-  <div>n</div>
-</td>
-<td>
-  <div>切换至下一窗口</div>
-</td>
-</tr>
-<tr>
-<td>
-  <div>l</div>
-</td>
-<td>
-  <div>在前后两个窗口间互相切换</div>
-</td>
-</tr>
-<tr>
-<td>
-  <div>w</div>
-</td>
-<td>
-  <div>通过窗口列表切换窗口</div>
-</td>
-</tr>
-<tr>
-<td>
-  <div>,</div>
-</td>
-<td>
-  <div>重命名当前窗口；这样便于识别</div>
-</td>
-</tr>
-<tr>
-<td>
-  <div>.</div>
-</td>
-<td>
-  <div>修改当前窗口编号；相当于窗口重新排序</div>
-</td>
-</tr>
-<tr>
-<td>
-  <div>f</div>
-</td>
-<td>
-  <div>在所有窗口中查找指定文本</div>
-</td>
-</tr>
-<tr>
-<td rowspan="14" align="left" valign="center" width="0">
-  <div>面板操作</div>
-</td>
-<td>
-  <div>”</div>
-</td>
-<td>
-  <div>将当前面板平分为上下两块</div>
-</td>
-</tr>
-<tr>
-<td>
-  <div>%</div>
-</td>
-<td>
-  <div>将当前面板平分为左右两块</div>
-</td>
-</tr>
-<tr>
-<td>
-  <div>x</div>
-</td>
-<td>
-  <div>关闭当前面板</div>
-</td>
-</tr>
-<tr>
-<td>
-  <div>!</div>
-</td>
-<td>
-  <div>将当前面板置于新窗口；即新建一个窗口，其中仅包含当前面板</div>
-</td>
-</tr>
-<tr>
-<td>
-  <div>Ctrl+方向键</div>
-</td>
-<td>
-  <div>以1个单元格为单位移动边缘以调整当前面板大小</div>
-</td>
-</tr>
-<tr>
-<td>
-  <div>Alt+方向键</div>
-</td>
-<td>
-  <div>以5个单元格为单位移动边缘以调整当前面板大小</div>
-</td>
-</tr>
-<tr>
-<td>
-  <div>Space</div>
-</td>
-<td>
-  <div>在预置的面板布局中循环切换；依次包括even-horizontal、even-vertical、main-horizontal、main-vertical、tiled</div>
-</td>
-</tr>
-<tr>
-<td>
-  <div>q</div>
-</td>
-<td>
-  <div>显示面板编号</div>
-</td>
-</tr>
-<tr>
-<td>
-  <div>o</div>
-</td>
-<td>
-  <div>在当前窗口中选择下一面板</div>
-</td>
-</tr>
-<tr>
-<td>
-  <div>方向键</div>
-</td>
-<td>
-  <div>移动光标以选择面板</div>
-</td>
-</tr>
-<tr>
-<td>
-  <div>{</div>
-</td>
-<td>
-  <div>向前置换当前面板</div>
-</td>
-</tr>
-<tr>
-<td>
-  <div>}</div>
-</td>
-<td>
-  <div>向后置换当前面板</div>
-</td>
-</tr>
-<tr>
-<td>
-  <div>Alt+o</div>
-</td>
-<td>
-  <div>逆时针旋转当前窗口的面板</div>
-</td>
-</tr>
-<tr>
-<td>
-  <div>Ctrl+o</div>
-</td>
-<td>
-  <div>顺时针旋转当前窗口的面板</div>
-</td>
-</tr>
-</tbody>
-</table>
+|        |        |
+| :----- | :----- |
+| Ctrl+b | 激活控制台；此时以下按键生效  |
+
+
+### 系统操作
+
+|        |          |
+| :----- | -------- |
+| ?        | 列出所有快捷键；按q返回 |
+| d        | 脱离当前会话；这样可以暂时返回Shell界面，输入tmux attach能够重新进入之前的会话 |
+| D        | 选择要脱离的会话；在同时开启了多个会话时使用 |
+| Ctrl+z   | 挂起当前会话 |
+| r        | 强制重绘未脱离的会话 |
+| s        | 选择并切换会话；在同时开启了多个会话时使用 |
+| :        | 进入命令行模式；此时可以输入支持的命令，例如kill-server可以关闭服务器 |
+| \[       | 进入复制模式；此时的操作与vi/emacs相同，按q/Esc退出 |
+| \~       | 列出提示信息缓存；其中包含了之前tmux返回的各种提示信息 |
+
+
+### 窗口操作
+
+|        |          |
+| :----- | -------- |
+| c      | 创建新窗口 |
+| &      | 关闭当前窗口 |
+| 数字键  | 切换至指定窗口 |
+| p      | 切换至上一窗口 |
+| n      | 切换至下一窗口 |
+| l      | 在前后两个窗口间互相切换 |
+| w      | 通过窗口列表切换窗口 |
+| ,      | 重命名当前窗口；这样便于识别 |
+| .      | 修改当前窗口编号；相当于窗口重新排序 |
+| f      | 在所有窗口中查找指定文本 |
+
+### 面板操作
+
+|        |          |
+| :----- | -------- |
+| ”        | 将当前面板平分为上下两块 |
+| %        | 将当前面板平分为左右两块 |
+| x        | 关闭当前面板 |
+| !        | 将当前面板置于新窗口；即新建一个窗口，其中仅包含当前面板 |
+| Ctrl+方向键 | 以1个单元格为单位移动边缘以调整当前面板大小 |
+| Alt+方向键  | 以5个单元格为单位移动边缘以调整当前面板大小 |
+| Space    | 在预置的面板布局中循环切换；依次包括even-horizontal、even-vertical、main-horizontal、main-vertical、tiled |
+| q        | 显示面板编号 |
+| o        | 在当前窗口中选择下一面板 |
+| 方向键      | 移动光标以选择面板 |
+| {        | 向前置换当前面板 |
+| }        | 向后置换当前面板 |
+| Alt+o    | 逆时针旋转当前窗口的面板 |
+| Ctrl+o   | 顺时针旋转当前窗口的面板 |
+
 
 1）进入tmux面板后，一定要先按ctrl+b，然后松开，再按其他的组合键才生效。
 2）常用到的几个组合键：

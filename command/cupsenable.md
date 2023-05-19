@@ -27,4 +27,3 @@ cupsenable(选项)(参数)
 目标：指定目标打印机。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

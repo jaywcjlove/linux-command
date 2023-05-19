@@ -49,4 +49,3 @@ version：得到服务器的版本信息。
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

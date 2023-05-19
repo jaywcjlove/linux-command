@@ -72,4 +72,3 @@ svctm | I/O需求完成的平均时间
 %util | 被I/O需求消耗的CPU百分比
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

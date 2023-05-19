@@ -11,6 +11,7 @@ zip
 
 ```shell
 zip(选项)(参数)
+zip [-选项] [-b 路径] [-t 日期] [-n 后缀名] [压缩文件列表] [-xi 列表]
 ```
 
 ### 选项
@@ -127,4 +128,4 @@ CentOS7中命令找不到
 yum install -y unzip zip
 ```
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

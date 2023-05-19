@@ -47,4 +47,4 @@ value（可选）：变量的值。
 1. 该命令是bash内建命令，相关的帮助信息请查看`help`命令以及`man bash`、`info bash`的相应部分。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

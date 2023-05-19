@@ -33,4 +33,3 @@ httpd-2.2.3-81.el5.centos
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

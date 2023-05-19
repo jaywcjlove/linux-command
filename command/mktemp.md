@@ -26,4 +26,3 @@ mktemp(选项)(参数)
 文件：指定创建的临时文件。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

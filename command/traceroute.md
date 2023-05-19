@@ -96,4 +96,4 @@ traceroute -r www.baidu.com    # 绕过正常的路由表，直接发送到网�
 traceroute -w 3 www.baidu.com  # 把对外发探测包的等待响应时间设置为3秒
 ```
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

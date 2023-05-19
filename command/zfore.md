@@ -18,4 +18,3 @@ zfore(参数)
 文件列表：指定要添加“.gz”后缀的gzip压缩文件。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

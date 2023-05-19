@@ -125,4 +125,3 @@ Empty password.                          # 空密码，也就是没有密码；
 注意：当我们清除一个用户的密码时，登录时就无需密码，这一点要加以注意。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

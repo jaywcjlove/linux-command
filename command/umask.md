@@ -98,4 +98,4 @@ stat newdir
 
 3. **请谨慎使用该命令**，特别是不要取消当前用户的读取权限，那样会导致你在终端使用`TAB`键补全时报错。
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

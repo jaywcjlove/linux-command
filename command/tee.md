@@ -59,4 +59,4 @@ ps -ef |tee -a info_a.log info_b.log
 1. 该命令是`GNU coreutils`包中的命令，相关的帮助信息请查看`man -s 1 tee`或`info coreutils 'tee invocation'`。
 2. 存在缓存机制，每1024个字节将输出一次。若从管道接收输入数据，应该是缓冲区满，才将数据转存到指定的文件中。若文件内容不到1024个字节，则接收从标准输入设备读入的数据后，将刷新一次缓冲区，并转存数据到指定文件。
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

@@ -119,4 +119,3 @@ chroot newRoot /a.out
 这样就能够正确运行a.out了，因为a.out使用到了其他的动态连接库，所以需要将库拷贝到newRoot中，如果没有其他库那么直接拷贝a.out就能运行。例如静态编译后的busybox，其安装目录中的`/bin/busybox`就没有依赖其他库。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

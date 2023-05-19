@@ -16,15 +16,15 @@ apt-get [OPTION] PACKAGE
 ###  选项
 
 ```shell
-apt-get install 安装新包
-apt-get remove 卸载已安装的包（保留配置文件）
-apt-get purge 卸载已安装的包（删除配置文件）
-apt-get update 更新软件包列表
-apt-get upgrade 更新所有已安装的包
-apt-get autoremove 卸载已不需要的包依赖
-apt-get dist-upgrade 自动处理依赖包升级
-apt-get autoclean 将已经删除了的软件包的.deb安装文件从硬盘中删除掉
-apt-get clean 删除软件包的安装包
+apt-get install  # 安装新包
+apt-get remove   # 卸载已安装的包（保留配置文件）
+apt-get purge    # 卸载已安装的包（删除配置文件）
+apt-get update   # 更新软件包列表
+apt-get upgrade  # 更新所有已安装的包
+apt-get autoremove   # 卸载已不需要的包依赖
+apt-get dist-upgrade # 自动处理依赖包升级
+apt-get autoclean    # 将已经删除了的软件包的.deb安装文件从硬盘中删除掉
+apt-get clean        # 删除软件包的安装包
 
 -c：指定配置文件。
 ```
@@ -99,4 +99,4 @@ apt-get autoclean
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

@@ -43,4 +43,3 @@ label=/new  /new  ext3  defaults  1 1
 下次重新起动机器的时候，就会把卷标为`/new`的分区挂接到`/new`上。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

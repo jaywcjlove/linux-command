@@ -19,4 +19,3 @@ colrm(参数)
 *   结尾列号：指定要删除的结尾列。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

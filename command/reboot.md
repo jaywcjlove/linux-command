@@ -31,4 +31,3 @@ reboot -w     //做个重开机的模拟（只有纪录并不会真的重开机�
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

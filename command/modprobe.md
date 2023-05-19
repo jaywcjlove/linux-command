@@ -76,4 +76,4 @@ modprobe -r 模块名
 这里，移除已加载的模块，和rmmod功能相同。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

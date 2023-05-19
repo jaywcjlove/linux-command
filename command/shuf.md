@@ -44,7 +44,7 @@ ARG（可选）：作为输入行的字符串，可以为任意数量。
 
 ```shell
 # 模拟硬币抛掷，获取前10个结果：
-[user2@pc ~]$ head -r -n 10 -e "正面" -e "反面"
+[user2@pc ~]$ shuf -r -n 10 -e "正面" -e "反面"
 反面
 正面
 正面
@@ -58,7 +58,6 @@ ARG（可选）：作为输入行的字符串，可以为任意数量。
 ```
 
 ```shell
-# 体彩超级大乐透：
 [user2@pc ~]$ shuf -i 1-35 -n 5|sort -n && shuf -i 1-12 -n 2|sort -n
 4
 17
@@ -74,4 +73,4 @@ ARG（可选）：作为输入行的字符串，可以为任意数量。
 
 1. 该命令是`GNU coreutils`包中的命令，更多详细的帮助信息请查看`man -s 1 shuf`，`info coreutils 'shuf invocation'`。
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

@@ -67,4 +67,4 @@ alias which='alias | /usr/bin/which --tty-only --read-alias --show-dot --show-ti
 2. 如果要调用的内建命令被禁用了（包括`builtin`），那么执行会报错；关于禁用和启用内建命令请参考`enable`命令。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

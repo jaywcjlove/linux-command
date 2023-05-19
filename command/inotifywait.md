@@ -119,4 +119,3 @@ open | **打开** ，对文件进行打开操作。
 close | **关闭** ，对文件进行关闭操作。
 delete | **删除** ，文件被删除。
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -76,4 +76,4 @@ pc@192.168.1.4's password:
 2. 该命令需要`set`选项`monitor`处于开启状态时才能执行；查看作业控制状态：输入`set -o`查看`monitor`行；执行`set -o monitor`或`set -m`开启该选项。
 3. 该命令是bash内建命令，相关的帮助信息请查看`help`命令。
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+

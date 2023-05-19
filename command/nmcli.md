@@ -40,17 +40,28 @@ OBJECT
 ###  实例
 
 ```shell
-nmcli connection show           # 查看当前连接状态
-nmcli connection reload         # 重启服务
-nmcli connection show -active   # 显示活动的连接
-nmcli connection show "lan eth0"# 显示指定一个网络连接配置
-nmcli device status             # 显示设备状态
-nmcli device show eno16777736   # 显示指定接口属性
-nmcli device show               # 显示全部接口属性
-nmcli con up static             # 启用static连接配置
-nmcli con up default            # 启用default连接配置 
-nmcli con add help              # 查看帮助
+nmcli connection show            # 查看当前连接状态
+nmcli connection reload          # 重启服务
+nmcli connection show -active    # 显示活动的连接
+nmcli connection show "lan eth0" # 显示指定一个网络连接配置
+nmcli device status              # 显示设备状态
+nmcli device show eno16777736    # 显示指定接口属性
+nmcli device show                # 显示全部接口属性
+nmcli con up static              # 启用static连接配置
+nmcli con up default             # 启用default连接配置 
+nmcli con add help               # 查看帮助
 
 ```
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
+### 创建网络会话
+
+```shell
+nmcli connection add con-name company ifname ens33 autoconnect no type ethernet ip4 192.168.1.2/24 gw4 192.168.1.1
+# con-name 指定会话名称，
+# ifname 指定本机网卡
+# autoconnect no 是否自动连接
+# ethernet 指定网卡类型
+# ip4/ip6
+# gw4/gw5
+```
+

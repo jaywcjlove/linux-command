@@ -30,4 +30,3 @@ mysqlshow(选项)(参数)
 数据库信息：指定要显示的数据库信息，可以是一个数据库名，或者是数据库名和表名，或者是数据库名、表名和列名。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

@@ -30,9 +30,9 @@ route(选项)(参数)
 ###  参数
 
 ```shell
-Add：增加指定的路由记录；
-Del：删除指定的路由记录；
-Target：目的网络或目的主机；
+add：增加指定的路由记录；
+del：删除指定的路由记录；
+target：目的网络或目的主机；
 gw：设置默认网关；
 mss：设置TCP的最大区块长度（MSS），单位MB；
 window：指定通过路由表的TCP连接的TCP窗口大小；
@@ -78,7 +78,7 @@ Destination     Gateway         Genmask         Flags Metric Ref    Use Iface
  **添加网关/设置网关：** 
 
 ```shell
-route add -net 224.0.0.0 netmask 240.0.0.0 dev eth0    #增加一条到达244.0.0.0的路由。
+route add -net 224.0.0.0 netmask 240.0.0.0 dev eth0    #增加一条到达224.0.0.0的路由。
 ```
 
  **屏蔽一条路由：** 
@@ -102,4 +102,3 @@ route add default gw 192.168.120.240
 ```
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->

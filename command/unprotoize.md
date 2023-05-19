@@ -25,4 +25,3 @@ unprotoize(选项)(参数)
 文件：需要转换代码的C语言源文件。
 
 
-<!-- Linux命令行搜索引擎：https://jaywcjlove.github.io/linux-command/ -->
