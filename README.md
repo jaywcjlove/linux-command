@@ -415,6 +415,9 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<å‘½ä»
 <a href="https://github.com/Lnkstls" title="Lnkstls">
   <img src="https://avatars.githubusercontent.com/u/41938676?v=4" width="42;" alt="Lnkstls"/>
 </a>
+<a href="https://github.com/fsyyzz" title="fsyyzz">
+  <img src="https://avatars.githubusercontent.com/u/23179539?v=4" width="42;" alt="fsyyzz"/>
+</a>
 <a href="https://github.com/lavaicer" title="lavaicer">
   <img src="https://avatars.githubusercontent.com/u/52038323?v=4" width="42;" alt="lavaicer"/>
 </a>
@@ -514,8 +517,8 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<å‘½ä»
 <a href="https://github.com/LucienShui" title="Lucien">
   <img src="https://avatars.githubusercontent.com/u/30151093?v=4" width="42;" alt="Lucien"/>
 </a>
-<a href="https://github.com/M4n5ter" title="M4n5ter">
-  <img src="https://avatars.githubusercontent.com/u/68144809?v=4" width="42;" alt="M4n5ter"/>
+<a href="https://github.com/M4n5ter" title="Wang">
+  <img src="https://avatars.githubusercontent.com/u/68144809?v=4" width="42;" alt="Wang"/>
 </a>
 <a href="https://github.com/linmingwei" title="mwei">
   <img src="https://avatars.githubusercontent.com/u/20484631?v=4" width="42;" alt="mwei"/>
