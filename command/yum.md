@@ -44,7 +44,8 @@ shell：进入yum的shell提示符；
 resolvedep：显示rpm软件包的依赖关系；
 localinstall：安装本地的rpm软件包；
 localupdate：显示本地rpm软件包进行更新；
-deplist：显示rpm软件包的所有依赖关系。
+deplist：显示rpm软件包的所有依赖关系；
+provides：查询某个程序所在安装包。
 ```
 
 ### 实例
