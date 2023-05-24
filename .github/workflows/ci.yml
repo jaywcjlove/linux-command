@@ -44,7 +44,6 @@ jobs:
           npm install
           npm run dash
           cp CONTRIBUTORS.svg .deploy
-          rm -rf .deploy/linux-command.docset 
 
       - name: Create Tag
         id: create_tag
@@ -59,15 +58,6 @@ jobs:
       - name: Update Dash Feed
         run: |
           echo "<entry><version>${{steps.create_tag.outputs.versionNumber}}</version><url>https://jaywcjlove.github.io/linux-command/linux-command.docset.tgz</url></entry>" > .deploy/linux-command-docset.xml
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          commit_message: '[${{steps.tag_version.outputs.tag}}] ${{ github.event.head_commit.message }}'
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./.deploy
-          user_name: github-actions[bot]
-          user_email: github-actions[bot]@users.noreply.github.com
 
       - name: Generate Changelog
         id: changelog
@@ -122,6 +112,17 @@ jobs:
             http://localhost:9665/
             ```
 
+      - run: rm -rf .deploy/linux-command.docset 
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          commit_message: '[${{steps.tag_version.outputs.tag}}] ${{ github.event.head_commit.message }}'
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./.deploy
+          user_name: github-actions[bot]
+          user_email: github-actions[bot]@users.noreply.github.com
+    
       - run: npm publish
         continue-on-error: true
         name: 📦 linux-command publish to NPM
