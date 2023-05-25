@@ -223,6 +223,7 @@ ifconfig ens32 | sed -n '/inet /p' | sed 's/inet \([0-9.]\+\).*/\1/'
 ```
 
 ### 大小写转换U/L
+
 ```shell
 \u：	首字母转换为大写
 \U：  全部转换为大写
@@ -250,13 +251,25 @@ BIN:x:1:1:bin:/bin:/sbin/nologin
 
 ###  组合多个表达式 
 
+1. 替换文本中的多个字符串：
+
 ```shell
-sed '表达式' | sed '表达式'
-
-等价于：
-
-sed '表达式; 表达式'
+sed -e 's/old_string/new_string/g' -e 's/another_old_string/another_new_string/g' file.txt
 ```
+
+2. 删除文本中的多个行：
+
+```shell
+sed -e '1d' -e '/pattern/d' file.txt
+```
+
+3. 在文本中插入多个行：
+
+```shell
+sed -e '1i\inserted_line1' -e '2i\inserted_line2' file.txt
+```
+
+其中，-e 表示指定一个表达式，多个表达式之间用 -e 分隔。每个表达式可以是一个 sed 命令，例如 s、d、i 等。
 
 ###  引用 
 
