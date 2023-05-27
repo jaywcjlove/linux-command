@@ -499,8 +499,8 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<å‘½ä»
 <a href="https://github.com/Jeremy2214" title="Jeremy2214">
   <img src="https://avatars.githubusercontent.com/u/97098763?v=4" width="42;" alt="Jeremy2214"/>
 </a>
-<a href="https://github.com/Joke-csgo" title="Joke-csgo">
-  <img src="https://avatars.githubusercontent.com/u/61868296?v=4" width="42;" alt="Joke-csgo"/>
+<a href="https://github.com/Nexchard" title="Nexchard">
+  <img src="https://avatars.githubusercontent.com/u/61868296?v=4" width="42;" alt="Nexchard"/>
 </a>
 <a href="https://github.com/LaudOak" title="LaudOak">
   <img src="https://avatars.githubusercontent.com/u/11486158?v=4" width="42;" alt="LaudOak"/>
@@ -565,8 +565,8 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<å‘½ä»
 <a href="https://github.com/Spaghetti-C" title="Spaghetti-C">
   <img src="https://avatars.githubusercontent.com/u/16163995?v=4" width="42;" alt="Spaghetti-C"/>
 </a>
-<a href="https://github.com/iwangjie" title="iwangjie">
-  <img src="https://avatars.githubusercontent.com/u/23075587?v=4" width="42;" alt="iwangjie"/>
+<a href="https://github.com/iwangjie" title="Na Meng">
+  <img src="https://avatars.githubusercontent.com/u/23075587?v=4" width="42;" alt="Na Meng"/>
 </a>
 <a href="https://github.com/wingrez" title="Wingrez">
   <img src="https://avatars.githubusercontent.com/u/31106425?v=4" width="42;" alt="Wingrez"/>
