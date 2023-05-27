@@ -58,6 +58,55 @@ ssh-keygen -f keyfile -i -m key_format -e -m key_format # key_format: RFC4716/SS
 ssh-copy-id user@ip:port # 将当前用户的公钥复制到需要 ssh 的服务器的 ~/.ssh/authorized_keys，之后可以免密登录
 ```
 
+连接远程服务器
+
+```shell
+ssh username@remote_host
+```
+
+2. 连接远程服务器并指定端口
+
+```shell
+ssh -p port username@remote_host
+```
+
+使用密钥文件连接远程服务器
+
+```shell
+ssh -i path/to/private_key username@remote_host
+```
+
+在本地执行远程命令
+
+```shell
+ssh username@remote_host "command"
+```
+
+在本地复制文件到远程服务器
+
+```shell
+scp path/to/local_file username@remote_host:/path/to/remote_directory
+```
+
+在远程服务器复制文件到本地
+
+```shell
+scp username@remote_host:/path/to/remote_file path/to/local_directory
+```
+
+在本地端口转发到远程服务器
+
+```shell
+ssh -L local_port:remote_host:remote_port username@remote_host
+```
+
+在远程服务器端口转发到本地
+
+```shell
+ssh -R remote_port:local_host:local_port username@remote_host
+```
+
+
 ### 背后故事
 
 > 英文：Tatu Ylonen  
