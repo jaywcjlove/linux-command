@@ -51,7 +51,7 @@ rsync [OPTION]... rsync://[USER@]HOST[:PORT]/SRC [DEST]
 -D, --devices 保持设备文件信息。
 -t, --times 保持文件时间信息。
 -S, --sparse 对稀疏文件进行特殊处理以节省DST的空间。
--n, --dry-run现实哪些文件将被传输。
+-n, --dry-run 显示哪些文件将被传输。
 -w, --whole-file 拷贝文件，不进行增量检测。
 -x, --one-file-system 不要跨越文件系统边界。
 -B, --block-size=SIZE 检验算法使用的块尺寸，默认是700字节。
