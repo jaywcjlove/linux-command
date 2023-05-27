@@ -64,7 +64,7 @@ ssh-copy-id user@ip:port # 将当前用户的公钥复制到需要 ssh 的服务
 ssh username@remote_host
 ```
 
-2. 连接远程服务器并指定端口
+连接远程服务器并指定端口
 
 ```shell
 ssh -p port username@remote_host
