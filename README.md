@@ -565,6 +565,9 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<å‘½ä»
 <a href="https://github.com/Spaghetti-C" title="Spaghetti-C">
   <img src="https://avatars.githubusercontent.com/u/16163995?v=4" width="42;" alt="Spaghetti-C"/>
 </a>
+<a href="https://github.com/T-TRz879" title="T-TRz879">
+  <img src="https://avatars.githubusercontent.com/u/50860504?v=4" width="42;" alt="T-TRz879"/>
+</a>
 <a href="https://github.com/iwangjie" title="Na Meng">
   <img src="https://avatars.githubusercontent.com/u/23075587?v=4" width="42;" alt="Na Meng"/>
 </a>
