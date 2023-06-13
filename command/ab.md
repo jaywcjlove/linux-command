@@ -1,7 +1,22 @@
 ab
-===
+==
 
 Apache服务器的性能测试工具
+
+
+## 安装
+
+若系统未安装，使用以下命令安装
+
+```shell
+# Ubuntu
+sudo apt-get install apache2-utils
+
+# Centos
+yum install httpd-tools
+
+```
+
 
 ## 补充说明
 
@@ -119,4 +134,9 @@ name[:port]/path
 主机：被测试主机。
 
 
+### 实例
 
+```shell
+# 10个并发， 请求500次
+ab -c 10 -n 500 https://www.qq.com/
+```
