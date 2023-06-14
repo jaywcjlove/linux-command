@@ -38,7 +38,7 @@
 **推荐使用的镜像 web 版本**
 
 [**`qq.wdev.cn`**](https://qq.wdev.cn)
-[**`linux.devonline.net`**](http://linux.devonline.net/)，[**`man.zch.ooo`**](https://man.zch.ooo/)，[**`linux.mmoke.com`**](https://linux.mmoke.com)，[**`bqrdh.com`**](https://tools.bqrdh.com/linux-command/)，[**`linux.zyimm.com`**](http://linux.zyimm.com/)，[linux.vovuo.com](https://linux.vovuo.com/)，[`linux.liguiying.cn`](https://linux.liguiying.cn/)
+[**`linux.devonline.net`**](http://linux.devonline.net/)，[**`man.zch.ooo`**](https://man.zch.ooo/)，[**`linux.mmoke.com`**](https://linux.mmoke.com)，[**`bqrdh.com`**](https://tools.bqrdh.com/linux-command/)，[**`linux.zyimm.com`**](http://linux.zyimm.com/)，[linux.vovuo.com](https://linux.vovuo.com/)，[`linux.liguiying.cn`](https://linux.liguiying.cn/)，[**`linux.zgrnb.com`**](https://linux.zgrnb.com/)
 
 **其它 web 版本**
 
