@@ -715,6 +715,9 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<å‘½ä»
 <a href="https://github.com/wlf-darkmatter" title="Lingfeng Wang">
   <img src="https://avatars.githubusercontent.com/u/62014693?v=4" width="42;" alt="Lingfeng Wang"/>
 </a>
+<a href="https://github.com/xhal" title="xhal">
+  <img src="https://avatars.githubusercontent.com/u/34055638?v=4" width="42;" alt="xhal"/>
+</a>
 <a href="https://github.com/yanyixing" title="yanyx">
   <img src="https://avatars.githubusercontent.com/u/12455492?v=4" width="42;" alt="yanyx"/>
 </a>
