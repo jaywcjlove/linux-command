@@ -39,6 +39,10 @@ jobs:
           body: |
             ${{steps.contributors.outputs.htmlList}}
 
+      - run: npm install
+      - run: npm run dash
+      - run: cp CONTRIBUTORS.svg .deploy
+
       - name: Build Linux Command
         run: |
           npm install
