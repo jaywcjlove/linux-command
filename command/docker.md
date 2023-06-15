@@ -1,7 +1,11 @@
 Docker
-==
+===
 
-极为方便的容器软件。
+容器化技术，可以将应用程序及其依赖项打包到一个可移植的容器中，使其可以在不同的环境中运行
+
+## 补充说明
+
+Docker 容器可以快速部署、可移植、可扩展，并且可以在不同的平台上运行。Docker 可以帮助开发人员和运维人员更轻松地构建、发布和管理应用程序。
 
 ## 安装
 
@@ -33,41 +37,15 @@ sudo systemctl start docker
 
 ```
 
-## 实例
+## 语法
 
-介绍几个常用场景：Docker Hub镜像市场相关，镜像仓库命令。
-
-1、下载docker hub镜像市场中的镜像。
-
-```bash
-docker pull user/image
+```shell
+docker create [options] IMAGE
 ```
 
-2、在 docker hub 中搜索镜像。
+## 选项参数
 
-```bash
-# 注意需要下载镜像才能使用
-docker search search_word
-```
-
-3、向 docker hub 进行身份验证。
-
-```bash
-docker login
-```
-
-4、将镜像上传到 docker hub。
-
-```bash
-docker push user/image
-```
-
-## help 信息翻译
-
-```run
-使用方法： docker create [options] IMAGE
-
-<命令>
+```shell
 attach	将本地标准输入、输出和错误流附加到正在运行的容器
 build	从 Dockerfile 构建镜像
 commit	从容器的更改创建新镜像
@@ -208,6 +186,36 @@ wait	阻塞直到一个或多个容器停止，然后打印它们的退出代码
     --volumes-from list        # 从指定容器挂载卷
 -w, --workdir string           # 容器内的工作目录
 ```
+
+## 实例
+
+介绍几个常用场景：Docker Hub镜像市场相关，镜像仓库命令。
+
+1、下载docker hub镜像市场中的镜像。
+
+```bash
+docker pull user/image
+```
+
+2、在 docker hub 中搜索镜像。
+
+```bash
+# 注意需要下载镜像才能使用
+docker search search_word
+```
+
+3、向 docker hub 进行身份验证。
+
+```bash
+docker login
+```
+
+4、将镜像上传到 docker hub。
+
+```bash
+docker push user/image
+```
+
 
 ## 官网
 
