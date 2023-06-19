@@ -538,6 +538,9 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<å‘½ä»
 <a href="https://github.com/pplmx" title="Mystic">
   <img src="https://avatars.githubusercontent.com/u/26994103?v=4" width="42;" alt="Mystic"/>
 </a>
+<a href="https://github.com/Qliangw" title="Qliangw">
+  <img src="https://avatars.githubusercontent.com/u/22791711?v=4" width="42;" alt="Qliangw"/>
+</a>
 <a href="https://github.com/rayyee" title="Ray Yee">
   <img src="https://avatars.githubusercontent.com/u/685149?v=4" width="42;" alt="Ray Yee"/>
 </a>
