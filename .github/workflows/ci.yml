@@ -159,30 +159,30 @@ jobs:
           platforms: linux/amd64,linux/arm64
           tags: ${{ secrets.DOCKER_USER }}/linux-command:${{steps.changelog.outputs.version}}
 
-      # Create Docker Image in Github
-      - name: Login to the GitHub Container Registry
-        uses: docker/login-action@v2
-        with:
-          registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+      # # Create Docker Image in Github
+      # - name: Login to the GitHub Container Registry
+      #   uses: docker/login-action@v2
+      #   with:
+      #     registry: ghcr.io
+      #     username: ${{ github.actor }}
+      #     password: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Build and push image:latest
-        uses: docker/build-push-action@v3
-        with:
-          push: true
-          context: .
-          platforms: linux/amd64,linux/arm64
-          tags: ghcr.io/jaywcjlove/linux-command:latest
+      # - name: Build and push image:latest
+      #   uses: docker/build-push-action@v3
+      #   with:
+      #     push: true
+      #     context: .
+      #     platforms: linux/amd64,linux/arm64
+      #     tags: ghcr.io/jaywcjlove/linux-command:latest
 
-      - name: Build and push image:tags
-        uses: docker/build-push-action@v3
-        if: steps.create_tag.outputs.successful
-        with:
-          push: true
-          context: .
-          platforms: linux/amd64,linux/arm64
-          tags: ghcr.io/jaywcjlove/linux-command:${{steps.changelog.outputs.version}}
+      # - name: Build and push image:tags
+      #   uses: docker/build-push-action@v3
+      #   if: steps.create_tag.outputs.successful
+      #   with:
+      #     push: true
+      #     context: .
+      #     platforms: linux/amd64,linux/arm64
+      #     tags: ghcr.io/jaywcjlove/linux-command:${{steps.changelog.outputs.version}}
 
       # # Create Docker Image
       # - name: Docker login
