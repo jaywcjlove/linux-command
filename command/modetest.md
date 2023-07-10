@@ -7,6 +7,23 @@ DRM/KMS驱动程序libdrm中的模式测试工具
 
 `modetest` 是一个用于测试和验证 DRM（Direct Rendering Manager）驱动程序功能的命令行工具。
 
+**安装**
+
+**源码**：[Mesa / drm · GitLab](https://gitlab.freedesktop.org/mesa/drm)
+
+**下载**：[Index of /libdrm (dri.freedesktop.org)](https://dri.freedesktop.org/libdrm/)
+
+**编译**
+```shell
+./configure --prefix=/opt/ --host=aarch64-linux-gnu
+make && make install
+## 编译删除
+make distclean
+```
+
+**参考**：[libdrm调试准备 - 简书](https://www.jianshu.com/p/a9152ca3e7ab)
+
+
 ### 语法
 
 ```shell
