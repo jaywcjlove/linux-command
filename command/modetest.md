@@ -7,13 +7,13 @@ DRM/KMS驱动程序libdrm中的模式测试工具
 
 `modetest` 是一个用于测试和验证 DRM（Direct Rendering Manager）驱动程序功能的命令行工具。
 
-**安装**
+### 安装
 
-**源码**：[Mesa / drm · GitLab](https://gitlab.freedesktop.org/mesa/drm)
+- **源码**：[Mesa / drm · GitLab](https://gitlab.freedesktop.org/mesa/drm)
+- **下载**：[Index of /libdrm (dri.freedesktop.org)](https://dri.freedesktop.org/libdrm/)
 
-**下载**：[Index of /libdrm (dri.freedesktop.org)](https://dri.freedesktop.org/libdrm/)
+__编译__
 
-**编译**
 ```shell
 ./configure --prefix=/opt/ --host=aarch64-linux-gnu
 make && make install
@@ -21,8 +21,7 @@ make && make install
 make distclean
 ```
 
-**参考**：[libdrm调试准备 - 简书](https://www.jianshu.com/p/a9152ca3e7ab)
-
+__参考__：[libdrm调试准备 - 简书](https://www.jianshu.com/p/a9152ca3e7ab)
 
 ### 语法
 
@@ -73,7 +72,8 @@ modetest [选项]
 
 ### 实例
 
-使用modetest查看相关信息
+使用 `modetest` 查看相关信息
+
 ```shell
 ~# modetest
 Encoders:  # 省略了好多好多
@@ -114,7 +114,7 @@ id      crtc    fb      CRTC x,y        x,y     gamma size      possible crtcs
 
 ------
 
-根据以上信息在MIPI-DSI显示设备上使用Rockchip显卡驱动测试
+根据以上信息在 `MIPI-DSI` 显示设备上使用 `Rockchip` 显卡驱动测试
 
 ```shell
 ~# modetest -M rockchip -s 211@108:1200x1920 -v
@@ -129,7 +129,7 @@ freq: 59.87Hz
 freq: 59.87Hz
 ```
 
-在MIPI屏幕上将会看到闪烁的彩色块。
+在 `MIPI` 屏幕上将会看到闪烁的彩色块。
 
 ------
 
@@ -139,6 +139,6 @@ setting mode 1200x1920-60Hz@XR24 on connectors 211, crtc 108
 starting cursor
 ```
 
-在MIPI屏幕上将会看到静止的彩色块。
+在 `MIPI` 屏幕上将会看到静止的彩色块。
 
 
