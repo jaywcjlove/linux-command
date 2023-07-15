@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,pgrep,根据用户给出的信息在当前运行进程中查找并列出符合条件的进程ID（PID）">
     <title>pgrep 命令，Linux pgrep 命令详解：根据用户给出的信息在当前运行进程中查找并列出符合条件的进程ID（PID） -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1688976017483">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1689388412082">
     <script src="../js/dark-mode.min.js"></script>
     <script type="module" src="../js/github-corners.js"></script>
 </head>
@@ -140,20 +140,54 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
 </span></code><div onclick="copied(this)" data-code="pgrep(选项)(参数)
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><span class="octicon octicon-link"></span></a>选项</h3>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">-o：仅显示找到的最小（起始）进程号；
-</span><span class="code-line line-number" line="2">-n：仅显示找到的最大（结束）进程号；
-</span><span class="code-line line-number" line="3">-l：显示进程名称；
-</span><span class="code-line line-number" line="4">-P：指定父进程号；
-</span><span class="code-line line-number" line="5">-g：指定进程组；
-</span><span class="code-line line-number" line="6">-t：指定开启进程的终端；
-</span><span class="code-line line-number" line="7">-u：指定进程的有效用户ID。
-</span></code><div onclick="copied(this)" data-code="-o：仅显示找到的最小（起始）进程号；
--n：仅显示找到的最大（结束）进程号；
--l：显示进程名称；
--P：指定父进程号；
--g：指定进程组；
--t：指定开启进程的终端；
--u：指定进程的有效用户ID。
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">-d, <span class="token parameter variable">--delimiter</span> <span class="token operator">&#x3C;</span>string<span class="token operator">></span>：指定输出的分隔符。
+</span><span class="code-line line-number" line="2">-l, --list-name：列出进程ID和进程名称。
+</span><span class="code-line line-number" line="3">-a, --list-full：列出进程ID和完整的命令行。
+</span><span class="code-line line-number" line="4">-v, --inverse：反向匹配，即只显示不匹配的进程。
+</span><span class="code-line line-number" line="5">-w, --lightweight：列出所有TID（轻量级线程）。
+</span><span class="code-line line-number" line="6">-c, --count：显示匹配的进程数量。
+</span><span class="code-line line-number" line="7">-f, --full：使用完整的进程名称进行匹配。
+</span><span class="code-line line-number" line="8">-g, <span class="token parameter variable">--pgroup</span> <span class="token operator">&#x3C;</span>PGID,<span class="token punctuation">..</span>.<span class="token operator">></span>：匹配指定的进程组ID。
+</span><span class="code-line line-number" line="9">-G, <span class="token parameter variable">--group</span> <span class="token operator">&#x3C;</span>GID,<span class="token punctuation">..</span>.<span class="token operator">></span>：匹配真实组ID。
+</span><span class="code-line line-number" line="10">-i, --ignore-case：忽略大小写进行匹配。
+</span><span class="code-line line-number" line="11">-n, --newest：选择最近启动的进程。
+</span><span class="code-line line-number" line="12">-o, --oldest：选择最早启动的进程。
+</span><span class="code-line line-number" line="13">-O, <span class="token parameter variable">--older</span> <span class="token operator">&#x3C;</span>seconds<span class="token operator">></span>：选择启动时间早于指定秒数的进程。
+</span><span class="code-line line-number" line="14">-P, <span class="token parameter variable">--parent</span> <span class="token operator">&#x3C;</span><span class="token environment constant">PPID</span>,<span class="token punctuation">..</span>.<span class="token operator">></span>：只匹配给定父进程的子进程。
+</span><span class="code-line line-number" line="15">-s, <span class="token parameter variable">--session</span> <span class="token operator">&#x3C;</span>SID,<span class="token punctuation">..</span>.<span class="token operator">></span>：匹配会话ID。
+</span><span class="code-line line-number" line="16">-t, <span class="token parameter variable">--terminal</span> <span class="token operator">&#x3C;</span>tty,<span class="token punctuation">..</span>.<span class="token operator">></span>：根据控制终端进行匹配。
+</span><span class="code-line line-number" line="17">-u, <span class="token parameter variable">--euid</span> <span class="token operator">&#x3C;</span>ID,<span class="token punctuation">..</span>.<span class="token operator">></span>：根据有效用户ID进行匹配。
+</span><span class="code-line line-number" line="18">-U, <span class="token parameter variable">--uid</span> <span class="token operator">&#x3C;</span>ID,<span class="token punctuation">..</span>.<span class="token operator">></span>：根据真实用户ID进行匹配。
+</span><span class="code-line line-number" line="19">-x, --exact：精确匹配进程名称。
+</span><span class="code-line line-number" line="20">-F, <span class="token parameter variable">--pidfile</span> <span class="token operator">&#x3C;</span>file<span class="token operator">></span>：从文件中读取PID。
+</span><span class="code-line line-number" line="21">-L, --logpidfile：如果PID文件没有锁定，则失败。
+</span><span class="code-line line-number" line="22">-r, <span class="token parameter variable">--runstates</span> <span class="token operator">&#x3C;</span>state<span class="token operator">></span>：匹配运行状态（D, S, Z等）。
+</span><span class="code-line line-number" line="23"><span class="token parameter variable">--ns</span> <span class="token operator">&#x3C;</span>PID<span class="token operator">></span>：匹配与指定PID相同命名空间的进程。
+</span><span class="code-line line-number" line="24"><span class="token parameter variable">--nslist</span> <span class="token operator">&#x3C;</span>ns,<span class="token punctuation">..</span>.<span class="token operator">></span>：列出将在 <span class="token parameter variable">--ns</span> 选项中考虑的命名空间。可用的命名空间包括：ipc、mnt、net、pid、user、uts。
+</span></code><div onclick="copied(this)" data-code="-d, --delimiter <string>：指定输出的分隔符。
+-l, --list-name：列出进程ID和进程名称。
+-a, --list-full：列出进程ID和完整的命令行。
+-v, --inverse：反向匹配，即只显示不匹配的进程。
+-w, --lightweight：列出所有TID（轻量级线程）。
+-c, --count：显示匹配的进程数量。
+-f, --full：使用完整的进程名称进行匹配。
+-g, --pgroup <PGID,...>：匹配指定的进程组ID。
+-G, --group <GID,...>：匹配真实组ID。
+-i, --ignore-case：忽略大小写进行匹配。
+-n, --newest：选择最近启动的进程。
+-o, --oldest：选择最早启动的进程。
+-O, --older <seconds>：选择启动时间早于指定秒数的进程。
+-P, --parent <PPID,...>：只匹配给定父进程的子进程。
+-s, --session <SID,...>：匹配会话ID。
+-t, --terminal <tty,...>：根据控制终端进行匹配。
+-u, --euid <ID,...>：根据有效用户ID进行匹配。
+-U, --uid <ID,...>：根据真实用户ID进行匹配。
+-x, --exact：精确匹配进程名称。
+-F, --pidfile <file>：从文件中读取PID。
+-L, --logpidfile：如果PID文件没有锁定，则失败。
+-r, --runstates <state>：匹配运行状态（D, S, Z等）。
+--ns <PID>：匹配与指定PID相同命名空间的进程。
+--nslist <ns,...>：列出将在 --ns 选项中考虑的命名空间。可用的命名空间包括：ipc、mnt、net、pid、user、uts。
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <h3 id="参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参数"><span class="octicon octicon-link"></span></a>参数</h3>
 <p>进程名称：指定要查找的进程名称，同时也支持类似grep指令中的匹配模式。</p>
@@ -181,6 +215,16 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
 </span><span class="code-line line-number" line="21"><span class="token number">4564</span>
 </span><span class="code-line line-number" line="22"><span class="token number">4565</span>
 </span><span class="code-line line-number" line="23"><span class="token number">4566</span>
+</span><span class="code-line line-number" line="24">
+</span><span class="code-line line-number" line="25"><span class="token punctuation">[</span>root@localhost ~<span class="token punctuation">]</span><span class="token comment"># pgrep -x httpd</span>
+</span><span class="code-line line-number" line="26"><span class="token number">4557</span>
+</span><span class="code-line line-number" line="27"><span class="token number">4560</span>
+</span><span class="code-line line-number" line="28"><span class="token number">4561</span>
+</span><span class="code-line line-number" line="29"><span class="token number">4562</span>
+</span><span class="code-line line-number" line="30"><span class="token number">4563</span>
+</span><span class="code-line line-number" line="31"><span class="token number">4564</span>
+</span><span class="code-line line-number" line="32"><span class="token number">4565</span>
+</span><span class="code-line line-number" line="33"><span class="token number">4566</span>
 </span></code><div onclick="copied(this)" data-code="pgrep -lo httpd
 4557 httpd
  [root@localhost ~]# pgrep -ln httpd
@@ -197,6 +241,16 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
 4566 httpd
 
 [root@localhost ~]# pgrep httpd 4557
+4560
+4561
+4562
+4563
+4564
+4565
+4566
+
+[root@localhost ~]# pgrep -x httpd
+4557
 4560
 4561
 4562
@@ -276,7 +330,7 @@ function copied(target, str) {
     596
   </span> 个Linux命令，超过 <a href="../contributors.html">50+</a> 贡献者
 </div>
-<script type="text/javascript" src="../js/dt.js?v=1688976017483"></script>
-<script type="text/javascript" src="../js/index.js?v=1688976017483"></script>
+<script type="text/javascript" src="../js/dt.js?v=1689388412083"></script>
+<script type="text/javascript" src="../js/index.js?v=1689388412083"></script>
 </body>
 </html>
