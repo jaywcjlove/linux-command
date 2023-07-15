@@ -586,6 +586,9 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<å‘½ä»
 <a href="https://github.com/Xonline-Tech" title="Xonline-Tech">
   <img src="https://avatars.githubusercontent.com/u/55641276?v=4" width="42;" alt="Xonline-Tech"/>
 </a>
+<a href="https://github.com/alfred-nice" title="Xu Chao">
+  <img src="https://avatars.githubusercontent.com/u/49786895?v=4" width="42;" alt="Xu Chao"/>
+</a>
 <a href="https://github.com/xuchunyang" title="Xu Chunyang">
   <img src="https://avatars.githubusercontent.com/u/4550353?v=4" width="42;" alt="Xu Chunyang"/>
 </a>
