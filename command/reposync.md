@@ -1,4 +1,5 @@
-# reposync
+reposync
+===
 
 同步yum存储库到本地目录
 
