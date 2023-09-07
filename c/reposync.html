@@ -5,11 +5,11 @@
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
-    <meta name="description" content="login:登录系统或切换用户身份 - 最专业的Linux命令大全，内容包含Linux命令手册、详解、学习，值得收藏的Linux命令速查手册。">
-    <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,login,登录系统或切换用户身份">
-    <title>login 命令，Linux login 命令详解：登录系统或切换用户身份 -  Linux 命令搜索引擎</title>
+    <meta name="description" content="reposync:同步yum存储库到本地目录 - 最专业的Linux命令大全，内容包含Linux命令手册、详解、学习，值得收藏的Linux命令速查手册。">
+    <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,reposync,同步yum存储库到本地目录">
+    <title>reposync 命令，Linux reposync 命令详解：同步yum存储库到本地目录 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1694066391569">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1694066394601">
     <script src="../js/dark-mode.min.js"></script>
     <script type="module" src="../js/github-corners.js"></script>
 </head>
@@ -29,7 +29,7 @@
           </ul>
           <input type="text" class="query" id="query" autocomplete="off" autofocus="autofocus" placeholder="Linux 命令搜索"/>
           <div class="enter-input">
-              <input type="hidden" id="current_path" value="/c/login.html">
+              <input type="hidden" id="current_path" value="/c/reposync.html">
               <button id="search_btn">搜索</button>
           </div>
       </div>
@@ -40,9 +40,9 @@
 <div class="markdown-body">
 
 <span class="edit_btn">
-<a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/login.md">纠正错误</a> 
+<a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/reposync.md">纠正错误</a> 
 <span class="split"></span>
-<a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/login.md">添加实例</a>
+<a target="_blank" href="https://github.com/jaywcjlove/linux-command/edit/master/command/reposync.md">添加实例</a>
 </span>
 
 
@@ -131,22 +131,160 @@ class MarkdownStyle extends HTMLElement {
     }
 }
 customElements.define('markdown-style', MarkdownStyle);</script><markdown-style style="max-width: 960px; margin: 0 auto 60px auto; padding: 8px;" class="markdown-style">
-<h1 id="login"><a class="anchor" aria-hidden="true" tabindex="-1" href="#login"><span class="octicon octicon-link"></span></a>login</h1>
-<p>登录系统或切换用户身份</p>
-<h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><span class="octicon octicon-link"></span></a>补充说明</h2>
-<p><strong>login命令</strong> 用于给出登录界面，可用于重新登录或者切换用户身份，也可通过它的功能随时更换登入身份。在Slackware发行版中 ，您可在命令后面附加欲登入的用户名称，它会直接询问密码，等待用户输入。当<code>/etc/nologin</code>文件存在时，系统只root帐号登入系统，其他用户一律不准登入。</p>
-<h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><span class="octicon octicon-link"></span></a>语法</h3>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">login<span class="token punctuation">(</span>选项<span class="token punctuation">)</span><span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
-</span></code><div onclick="copied(this)" data-code="login(选项)(参数)
+<h1 id="reposync"><a class="anchor" aria-hidden="true" tabindex="-1" href="#reposync"><span class="octicon octicon-link"></span></a>reposync</h1>
+<p>同步yum存储库到本地目录</p>
+<h2 id="概要"><a class="anchor" aria-hidden="true" tabindex="-1" href="#概要"><span class="octicon octicon-link"></span></a>概要</h2>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">reposync <span class="token punctuation">[</span>选项<span class="token punctuation">]</span>
+</span></code><div onclick="copied(this)" data-code="reposync [选项]
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-<h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><span class="octicon octicon-link"></span></a>选项</h3>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">-p：告诉login指令不销毁环境变量；
-</span><span class="code-line line-number" line="2">-h：指定远程服务器的主机名。
-</span></code><div onclick="copied(this)" data-code="-p：告诉login指令不销毁环境变量；
--h：指定远程服务器的主机名。
+<h2 id="主要用途"><a class="anchor" aria-hidden="true" tabindex="-1" href="#主要用途"><span class="octicon octicon-link"></span></a>主要用途</h2>
+<p>reposync用于将远程yum存储库同步到本地目录，使用yum检索包。</p>
+<h2 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><span class="octicon octicon-link"></span></a>选项</h2>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">-h, <span class="token parameter variable">--help</span>
+</span><span class="code-line line-number" line="2"><span class="token comment"># 显示帮助信息</span>
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"><span class="token parameter variable">-c</span> CONFIG, <span class="token parameter variable">--config</span><span class="token operator">=</span>CONFIG
+</span><span class="code-line line-number" line="5"><span class="token comment"># 指定配置文件(默认为/etc/yum.conf)</span>
+</span><span class="code-line line-number" line="6">
+</span><span class="code-line line-number" line="7"><span class="token parameter variable">-a</span> ARCH, <span class="token parameter variable">--arch</span><span class="token operator">=</span>ARCH
+</span><span class="code-line line-number" line="8"><span class="token comment"># 指定arch</span>
+</span><span class="code-line line-number" line="9">
+</span><span class="code-line line-number" line="10"><span class="token parameter variable">--source</span>
+</span><span class="code-line line-number" line="11"><span class="token comment"># 同时下载src和rpm文件.</span>
+</span><span class="code-line line-number" line="12">
+</span><span class="code-line line-number" line="13"><span class="token parameter variable">-r</span> REPOID, <span class="token parameter variable">--repoid</span><span class="token operator">=</span>REPOID
+</span><span class="code-line line-number" line="14"><span class="token comment"># 指定要查询的repo id，可以指定多次(默认为全部启用)。</span>
+</span><span class="code-line line-number" line="15">
+</span><span class="code-line line-number" line="16"><span class="token parameter variable">-e</span> CACHEDIR, <span class="token parameter variable">--cachedir</span> CACHEDIR
+</span><span class="code-line line-number" line="17"><span class="token comment"># 存储元数据的目录。</span>
+</span><span class="code-line line-number" line="18">
+</span><span class="code-line line-number" line="19">-t, <span class="token parameter variable">--tempcache</span>
+</span><span class="code-line line-number" line="20"><span class="token comment"># 使用临时目录存储/访问yum-cache。</span>
+</span><span class="code-line line-number" line="21">
+</span><span class="code-line line-number" line="22">-d, <span class="token parameter variable">--delete</span>
+</span><span class="code-line line-number" line="23"><span class="token comment"># 删除存储库中不再存在的本地包。</span>
+</span><span class="code-line line-number" line="24">
+</span><span class="code-line line-number" line="25"><span class="token parameter variable">-p</span> DESTDIR, <span class="token parameter variable">--download_path</span><span class="token operator">=</span>DESTDIR
+</span><span class="code-line line-number" line="26"><span class="token comment"># 指定下载路径:默认为当前目录。</span>
+</span><span class="code-line line-number" line="27">
+</span><span class="code-line line-number" line="28"><span class="token parameter variable">--norepopath</span>
+</span><span class="code-line line-number" line="29"><span class="token comment"># 不要将重命名添加到下载路径中。只能在同步单个存储库时使用(默认是添加重命名)。</span>
+</span><span class="code-line line-number" line="30">
+</span><span class="code-line line-number" line="31">-g, <span class="token parameter variable">--gpgcheck</span>
+</span><span class="code-line line-number" line="32"><span class="token comment"># 下载后删除GPG签名检查失败的包。如果至少有一个包被删除，退出状态为“1”。</span>
+</span><span class="code-line line-number" line="33">
+</span><span class="code-line line-number" line="34">-u, <span class="token parameter variable">--urls</span>
+</span><span class="code-line line-number" line="35"><span class="token comment"># 只列出要下载的内容的url，不要下载。</span>
+</span><span class="code-line line-number" line="36">
+</span><span class="code-line line-number" line="37">-l, <span class="token parameter variable">--plugins</span>
+</span><span class="code-line line-number" line="38"><span class="token comment"># 启用yum插件支持。</span>
+</span><span class="code-line line-number" line="39">
+</span><span class="code-line line-number" line="40">-m, <span class="token parameter variable">--downloadcomps</span>
+</span><span class="code-line line-number" line="41"><span class="token comment"># 同时下载comps.xml。</span>
+</span><span class="code-line line-number" line="42">
+</span><span class="code-line line-number" line="43">--download-metadata
+</span><span class="code-line line-number" line="44"><span class="token comment"># 下载所有非默认元数据。</span>
+</span><span class="code-line line-number" line="45">
+</span><span class="code-line line-number" line="46">-n, --newest-only
+</span><span class="code-line line-number" line="47"><span class="token comment"># 每个repo只下载最新的包。</span>
+</span><span class="code-line line-number" line="48">
+</span><span class="code-line line-number" line="49">-q, <span class="token parameter variable">--quiet</span>
+</span><span class="code-line line-number" line="50"><span class="token comment"># 输出尽可能少的信息。</span>
+</span><span class="code-line line-number" line="51">
+</span><span class="code-line line-number" line="52">--allow-path-traversal
+</span><span class="code-line line-number" line="53"><span class="token comment"># 允许同步存储在repo目录之外的包。这些包是在元数据中通过使用绝对路径或上一级“..”系统引用的并且出于安全原因通常会在reposync中跳过。</span>
+</span><span class="code-line line-number" line="54"><span class="token comment"># 注意:使用此选项有潜在的安全隐患，因为通过提供恶意repodata，攻击者可以使reposync写入任意位置运行该文件系统的用户可以访问的文件系统。</span>
+</span></code><div onclick="copied(this)" data-code="-h, --help
+# 显示帮助信息
+
+-c CONFIG, --config=CONFIG
+# 指定配置文件(默认为/etc/yum.conf)
+
+-a ARCH, --arch=ARCH
+# 指定arch
+
+--source
+# 同时下载src和rpm文件.
+
+-r REPOID, --repoid=REPOID
+# 指定要查询的repo id，可以指定多次(默认为全部启用)。
+
+-e CACHEDIR, --cachedir CACHEDIR
+# 存储元数据的目录。
+
+-t, --tempcache
+# 使用临时目录存储/访问yum-cache。
+
+-d, --delete
+# 删除存储库中不再存在的本地包。
+
+-p DESTDIR, --download_path=DESTDIR
+# 指定下载路径:默认为当前目录。
+
+--norepopath
+# 不要将重命名添加到下载路径中。只能在同步单个存储库时使用(默认是添加重命名)。
+
+-g, --gpgcheck
+# 下载后删除GPG签名检查失败的包。如果至少有一个包被删除，退出状态为“1”。
+
+-u, --urls
+# 只列出要下载的内容的url，不要下载。
+
+-l, --plugins
+# 启用yum插件支持。
+
+-m, --downloadcomps
+# 同时下载comps.xml。
+
+--download-metadata
+# 下载所有非默认元数据。
+
+-n, --newest-only
+# 每个repo只下载最新的包。
+
+-q, --quiet
+# 输出尽可能少的信息。
+
+--allow-path-traversal
+# 允许同步存储在repo目录之外的包。这些包是在元数据中通过使用绝对路径或上一级“..”系统引用的并且出于安全原因通常会在reposync中跳过。
+# 注意:使用此选项有潜在的安全隐患，因为通过提供恶意repodata，攻击者可以使reposync写入任意位置运行该文件系统的用户可以访问的文件系统。
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-<h3 id="参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参数"><span class="octicon octicon-link"></span></a>参数</h3>
-<p>用户名：指定登录使用的用户名。</p>
+<h2 id="例子"><a class="anchor" aria-hidden="true" tabindex="-1" href="#例子"><span class="octicon octicon-link"></span></a>例子</h2>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 将'updates'仓库中的所有包同步到当前目录:</span>
+</span><span class="code-line line-number" line="2">reposync <span class="token parameter variable">--repoid</span><span class="token operator">=</span>updates
+</span><span class="code-line line-number" line="3">
+</span><span class="code-line line-number" line="4"><span class="token comment"># 只同步最新的包从'updates'仓库到当前目录:</span>
+</span><span class="code-line line-number" line="5">reposync <span class="token parameter variable">-n</span> <span class="token parameter variable">--repoid</span><span class="token operator">=</span>updates
+</span><span class="code-line line-number" line="6">
+</span><span class="code-line line-number" line="7"><span class="token comment"># 将'updates'和'extras'仓库中的包同步到当前目录:</span>
+</span><span class="code-line line-number" line="8">reposync <span class="token parameter variable">--repoid</span><span class="token operator">=</span>updates <span class="token parameter variable">--repoid</span><span class="token operator">=</span>extras
+</span><span class="code-line line-number" line="9">
+</span><span class="code-line line-number" line="10"><span class="token comment"># 将'updates'仓库中的所有包同步到repos目录:</span>
+</span><span class="code-line line-number" line="11">reposync <span class="token parameter variable">-p</span> repos <span class="token parameter variable">--repoid</span><span class="token operator">=</span>updates
+</span><span class="code-line line-number" line="12">
+</span><span class="code-line line-number" line="13"><span class="token comment"># 将'updates'仓库中的所有包同步到repos目录，排除x86_64架构文件。编辑/etc/yum.conf，添加选项exclude=*.x86_64。再执行:</span>
+</span><span class="code-line line-number" line="14">reposync <span class="token parameter variable">-p</span> repos <span class="token parameter variable">--repoid</span><span class="token operator">=</span>updates
+</span></code><div onclick="copied(this)" data-code="# 将&#x27;updates&#x27;仓库中的所有包同步到当前目录:
+reposync --repoid=updates
+
+# 只同步最新的包从&#x27;updates&#x27;仓库到当前目录:
+reposync -n --repoid=updates
+
+# 将&#x27;updates&#x27;和&#x27;extras&#x27;仓库中的包同步到当前目录:
+reposync --repoid=updates --repoid=extras
+
+# 将&#x27;updates&#x27;仓库中的所有包同步到repos目录:
+reposync -p repos --repoid=updates
+
+# 将&#x27;updates&#x27;仓库中的所有包同步到repos目录，排除x86_64架构文件。编辑/etc/yum.conf，添加选项exclude=*.x86_64。再执行:
+reposync -p repos --repoid=updates
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+<h2 id="文件"><a class="anchor" aria-hidden="true" tabindex="-1" href="#文件"><span class="octicon octicon-link"></span></a>文件</h2>
+<p>reposync使用yum库来检索信息和包。如果没有指定配置文件，将使用默认的yum配置。</p>
+<ul>
+  <li>/etc/yum.conf</li>
+  <li>/etc/yum/repos.d/</li>
+</ul>
 <style>markdown-style pre .copied {
   display: flex;
   position: absolute;
@@ -218,7 +356,7 @@ function copied(target, str) {
     597
   </span> 个Linux命令，超过 <a href="../contributors.html">50+</a> 贡献者
 </div>
-<script type="text/javascript" src="../js/dt.js?v=1694066391569"></script>
-<script type="text/javascript" src="../js/index.js?v=1694066391569"></script>
+<script type="text/javascript" src="../js/dt.js?v=1694066394601"></script>
+<script type="text/javascript" src="../js/index.js?v=1694066394601"></script>
 </body>
 </html>
