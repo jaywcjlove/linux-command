@@ -107,6 +107,7 @@ const contributorsPath = path.resolve(process.cwd(), 'CONTRIBUTORS.svg');
     }));
 
   } catch (err) {
+    console.log(`\n ERROR :> ${err}\n`)
     if (err && err.message) {
       console.log(`\n ERROR :> ${err.message.red_bt}\n`)
     }

@@ -50,4 +50,12 @@ dmesg | grep sda
 [    2.448503] sd 0:0:0:0: [sda] Attached SCSI disk
 ```
 
+查看多关键字
 
+```shell
+dmesg | grep -E "vcc5v0_host|vcc_3v3_s0|ttyS"
+
+[    1.193143] vcc5v0_host: supplied by vcc5v0_usb
+[    1.481139] feb80000.serial: ttyS5 at MMIO 0xfeb80000 (irq = 73, base_baud = 1500000) is a 16550A
+[    1.513541] vcc_3v3_s0: supplied by vcc5v0_sys
+```

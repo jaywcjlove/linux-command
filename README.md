@@ -38,7 +38,7 @@
 **推荐使用的镜像 web 版本**
 
 [**`qq.wdev.cn`**](https://qq.wdev.cn)
-[**`linux.devonline.net`**](http://linux.devonline.net/)，[**`man.zch.ooo`**](https://man.zch.ooo/)，[**`linux.mmoke.com`**](https://linux.mmoke.com)，[**`bqrdh.com`**](https://tools.bqrdh.com/linux-command/)，[**`linux.zyimm.com`**](http://linux.zyimm.com/)，[linux.vovuo.com](https://linux.vovuo.com/)，[`linux.liguiying.cn`](https://linux.liguiying.cn/)
+[**`linux.devonline.net`**](http://linux.devonline.net/)，[**`man.zch.ooo`**](https://man.zch.ooo/)，[**`linux.mmoke.com`**](https://linux.mmoke.com)，[**`bqrdh.com`**](https://tools.bqrdh.com/linux-command/)，[**`linux.zyimm.com`**](http://linux.zyimm.com/)，[linux.vovuo.com](https://linux.vovuo.com/)，[`linux.liguiying.cn`](https://linux.liguiying.cn/)，[**`linux.zgrnb.com`**](https://linux.zgrnb.com/)
 
 **其它 web 版本**
 
@@ -415,6 +415,9 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/Lnkstls" title="Lnkstls">
   <img src="https://avatars.githubusercontent.com/u/41938676?v=4" width="42;" alt="Lnkstls"/>
 </a>
+<a href="https://github.com/SteveLauC" title="SteveLauC">
+  <img src="https://avatars.githubusercontent.com/u/96880612?v=4" width="42;" alt="SteveLauC"/>
+</a>
 <a href="https://github.com/lavaicer" title="lavaicer">
   <img src="https://avatars.githubusercontent.com/u/52038323?v=4" width="42;" alt="lavaicer"/>
 </a>
@@ -454,14 +457,20 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/Xrtero" title="Xrtero">
   <img src="https://avatars.githubusercontent.com/u/55886907?v=4" width="42;" alt="Xrtero"/>
 </a>
+<a href="https://github.com/YanhiWang" title="YH">
+  <img src="https://avatars.githubusercontent.com/u/114390595?v=4" width="42;" alt="YH"/>
+</a>
 <a href="https://github.com/Dazhuangw" title="Dazhuangw">
   <img src="https://avatars.githubusercontent.com/u/74780009?v=4" width="42;" alt="Dazhuangw"/>
 </a>
-<a href="https://github.com/ptenst" title="ptenst">
-  <img src="https://avatars.githubusercontent.com/u/38394031?v=4" width="42;" alt="ptenst"/>
+<a href="https://github.com/Wvvatt" title="wVVaTT">
+  <img src="https://avatars.githubusercontent.com/u/38394031?v=4" width="42;" alt="wVVaTT"/>
 </a>
 <a href="https://github.com/Jeffery186" title="Shell">
   <img src="https://avatars.githubusercontent.com/u/39795988?v=4" width="42;" alt="Shell"/>
+</a>
+<a href="https://github.com/Qliangw" title="Qliangw">
+  <img src="https://avatars.githubusercontent.com/u/22791711?v=4" width="42;" alt="Qliangw"/>
 </a>
 <a href="https://github.com/Evilrabbit520" title="Wang Jianing">
   <img src="https://avatars.githubusercontent.com/u/25611476?v=4" width="42;" alt="Wang Jianing"/>
@@ -583,6 +592,9 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/Xonline-Tech" title="Xonline-Tech">
   <img src="https://avatars.githubusercontent.com/u/55641276?v=4" width="42;" alt="Xonline-Tech"/>
 </a>
+<a href="https://github.com/alfred-nice" title="Isidro Osoria">
+  <img src="https://avatars.githubusercontent.com/u/49786895?v=4" width="42;" alt="Isidro Osoria"/>
+</a>
 <a href="https://github.com/xuchunyang" title="Xu Chunyang">
   <img src="https://avatars.githubusercontent.com/u/4550353?v=4" width="42;" alt="Xu Chunyang"/>
 </a>
@@ -646,7 +658,7 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/gggwvg" title="gggwvg">
   <img src="https://avatars.githubusercontent.com/u/6913118?v=4" width="42;" alt="gggwvg"/>
 </a>
-<a href="https://github.com/G-ghy" title="ghy">
+<a href="https://github.com/gaohongy" title="ghy">
   <img src="https://avatars.githubusercontent.com/u/56125657?v=4" width="42;" alt="ghy"/>
 </a>
 <a href="https://github.com/gcluffy" title="gcluffy">
@@ -700,11 +712,14 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/snovey" title="snovey">
   <img src="https://avatars.githubusercontent.com/u/15171147?v=4" width="42;" alt="snovey"/>
 </a>
-<a href="https://github.com/sunls24" title="sunls24">
-  <img src="https://avatars.githubusercontent.com/u/57647932?v=4" width="42;" alt="sunls24"/>
+<a href="https://github.com/sunls23" title="sunls23">
+  <img src="https://avatars.githubusercontent.com/u/57647932?v=4" width="42;" alt="sunls23"/>
 </a>
 <a href="https://github.com/hunantangke" title="tangke">
   <img src="https://avatars.githubusercontent.com/u/22476435?v=4" width="42;" alt="tangke"/>
+</a>
+<a href="https://github.com/tutianyu101" title="tutianyu101">
+  <img src="https://avatars.githubusercontent.com/u/134258491?v=4" width="42;" alt="tutianyu101"/>
 </a>
 <a href="https://github.com/UniqueDing" title="UniqueDing">
   <img src="https://avatars.githubusercontent.com/u/24190814?v=4" width="42;" alt="UniqueDing"/>
@@ -712,8 +727,11 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/weibk" title="weibk">
   <img src="https://avatars.githubusercontent.com/u/79395818?v=4" width="42;" alt="weibk"/>
 </a>
-<a href="https://github.com/wlf-darkmatter" title="王凌枫">
-  <img src="https://avatars.githubusercontent.com/u/62014693?v=4" width="42;" alt="王凌枫"/>
+<a href="https://github.com/wlf-darkmatter" title="Lingfeng Wang">
+  <img src="https://avatars.githubusercontent.com/u/62014693?v=4" width="42;" alt="Lingfeng Wang"/>
+</a>
+<a href="https://github.com/xhal" title="xhal">
+  <img src="https://avatars.githubusercontent.com/u/34055638?v=4" width="42;" alt="xhal"/>
 </a>
 <a href="https://github.com/yanyixing" title="yanyx">
   <img src="https://avatars.githubusercontent.com/u/12455492?v=4" width="42;" alt="yanyx"/>
@@ -775,8 +793,8 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/fmalee" title="远方">
   <img src="https://avatars.githubusercontent.com/u/3209058?v=4" width="42;" alt="远方"/>
 </a>
-<a href="https://github.com/catAndZ" title="catandz">
-  <img src="https://avatars.githubusercontent.com/u/101485931?v=4" width="42;" alt="catandz"/>
+<a href="https://github.com/catAndZ" title="Panthea Johnson">
+  <img src="https://avatars.githubusercontent.com/u/101485931?v=4" width="42;" alt="Panthea Johnson"/>
 </a>
 <a href="https://github.com/HDsky" title="黑&蛋">
   <img src="https://avatars.githubusercontent.com/u/17249963?v=4" width="42;" alt="黑&蛋"/>
