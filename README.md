@@ -736,9 +736,6 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/yanyixing" title="yanyx">
   <img src="https://avatars.githubusercontent.com/u/12455492?v=4" width="42;" alt="yanyx"/>
 </a>
-<a href="https://github.com/nio755" title="zengFz">
-  <img src="https://avatars.githubusercontent.com/u/14274524?v=4" width="42;" alt="zengFz"/>
-</a>
 <a href="https://github.com/zjlovezj" title="zjlovezj">
   <img src="https://avatars.githubusercontent.com/u/388222?v=4" width="42;" alt="zjlovezj"/>
 </a>
@@ -750,6 +747,9 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 </a>
 <a href="https://github.com/zuixin369" title="zuixin369">
   <img src="https://avatars.githubusercontent.com/u/54224677?v=4" width="42;" alt="zuixin369"/>
+</a>
+<a href="https://github.com/zyimm" title="zyimm">
+  <img src="https://avatars.githubusercontent.com/u/13979159?v=4" width="42;" alt="zyimm"/>
 </a>
 <a href="https://github.com/lxp731" title="七朔">
   <img src="https://avatars.githubusercontent.com/u/95358476?v=4" width="42;" alt="七朔"/>
