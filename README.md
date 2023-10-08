@@ -409,6 +409,9 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/lichunqiang" title="__FresHmaN">
   <img src="https://avatars.githubusercontent.com/u/2433916?v=4" width="42;" alt="__FresHmaN"/>
 </a>
+<a href="https://github.com/conglinyizhi" title="丛林意志">
+  <img src="https://avatars.githubusercontent.com/u/42381347?v=4" width="42;" alt="丛林意志"/>
+</a>
 <a href="https://github.com/james-wangx" title="James Wang">
   <img src="https://avatars.githubusercontent.com/u/62491424?v=4" width="42;" alt="James Wang"/>
 </a>
@@ -432,9 +435,6 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 </a>
 <a href="https://github.com/Ernest-su" title="ernest">
   <img src="https://avatars.githubusercontent.com/u/5917446?v=4" width="42;" alt="ernest"/>
-</a>
-<a href="https://github.com/conglinyizhi" title="丛林意志">
-  <img src="https://avatars.githubusercontent.com/u/42381347?v=4" width="42;" alt="丛林意志"/>
 </a>
 <a href="https://github.com/Makonike" title="谈笑风生间">
   <img src="https://avatars.githubusercontent.com/u/75628309?v=4" width="42;" alt="谈笑风生间"/>
