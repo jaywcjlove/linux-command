@@ -29,15 +29,15 @@ GITHUB_CORNERS_TEMPLATE.innerHTML = `
 </svg>
 `;
 export class GithubCorners extends HTMLElement {
+    static get observedAttributes() {
+        return ['style', 'z-index', 'target', 'height', 'width', 'href', 'color', 'fill', 'position', 'top', 'left', 'right', 'bottom', 'transform'];
+    }
     constructor() {
         super();
         this.right = '0';
         this.shadow = this.attachShadow({ mode: 'open' });
         this.shadow.appendChild(this.ownerDocument.importNode(GITHUB_CORNERS_TEMPLATE.content, true));
         this.update();
-    }
-    static get observedAttributes() {
-        return ['style', 'z-index', 'target', 'height', 'width', 'href', 'color', 'fill', 'position', 'top', 'left', 'right', 'bottom', 'transform'];
     }
     setAttr(name, value) {
         const svg = this.shadow.querySelector('svg');
