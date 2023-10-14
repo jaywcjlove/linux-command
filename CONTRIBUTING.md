@@ -19,7 +19,7 @@
 ```markdown
 CommandName
 ===
-作为代码规范文档进行展示
+z
 
 ## 补充说明
 
