@@ -39,8 +39,7 @@ mount [-fnrsvw] [-t vfstype] [-o options] device dir
 -o auto、-o noauto：打开/关闭自动挂上模式。
 -o defaults:使用预设的选项 rw, suid, dev, exec, auto, nouser, and async.
 -o dev、-o nodev-o exec、-o noexec允许执行档被执行。
--o suid、-o nosuid：
-允许执行档在 root 权限下执行。
+-o suid、-o nosuid：允许执行档在 root 权限下执行。
 -o user、-o nouser：使用者可以执行 mount/umount 的动作。
 -o remount：将一个已经挂下的档案系统重新用不同的方式挂上。例如原先是唯读的系统，现在用可读写的模式重新挂上。
 -o ro：用唯读模式挂上。
@@ -53,19 +52,19 @@ mount [-fnrsvw] [-t vfstype] [-o options] device dir
 将 `/dev/hda1` 挂在 `/mnt` 之下。
 
 ```shell
-#mount /dev/hda1 /mnt
+mount /dev/hda1 /mnt
 ```
 
 将 `/dev/hda1` 用唯读模式挂在 `/mnt` 之下。
 
 ```shell
-#mount -o ro /dev/hda1 /mnt
+mount -o ro /dev/hda1 /mnt
 ```
 
-将 `/tmp/image.iso` 这个光碟的 `image` 档使用 `loop` 模式挂在 `/mnt/cdrom` 之下。用这种方法可以将一般网络上可以找到的 `Linux` 光 碟 ISO 档在不烧录成光碟的情况下检视其内容。
+将 `/tmp/image.iso` 这个光碟的 `image` 档使用 `loop` 模式挂在 `/mnt/cdrom` 之下。用这种方法可以将一般网络上可以找到的 `Linux` 光碟 ISO 档在不烧录成光碟的情况下检视其内容。
 
 ```shell
-#mount -o loop /tmp/image.iso /mnt/cdrom
+mount -o loop /tmp/image.iso /mnt/cdrom
 ```
 
 ### 实例2
@@ -77,6 +76,9 @@ mount [-fnrsvw] [-t vfstype] [-o options] device dir
 mount -t davfs https://your.webdav.link.here /path/to/mount
 ```
 
+### 实例3 
+挂载 Android 系统 system 分区到 `/dev/loopX`，在知道文件格式的情况下，可以用 -t 来指定文件格式，比如 ext4。
 
-
-
+```shell
+mount -t ext4 /dev/loopX /mnt/system
+```
