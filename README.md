@@ -396,6 +396,9 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/gletthereblight" title="Glett">
   <img src="https://avatars.githubusercontent.com/u/29481184?v=4" width="42;" alt="Glett"/>
 </a>
+<a href="https://github.com/conglinyizhi" title="丛林意志">
+  <img src="https://avatars.githubusercontent.com/u/42381347?v=4" width="42;" alt="丛林意志"/>
+</a>
 <a href="https://github.com/Jayin" title="Jayin Taung">
   <img src="https://avatars.githubusercontent.com/u/2763894?v=4" width="42;" alt="Jayin Taung"/>
 </a>
@@ -407,9 +410,6 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 </a>
 <a href="https://github.com/lichunqiang" title="__FresHmaN">
   <img src="https://avatars.githubusercontent.com/u/2433916?v=4" width="42;" alt="__FresHmaN"/>
-</a>
-<a href="https://github.com/conglinyizhi" title="丛林意志">
-  <img src="https://avatars.githubusercontent.com/u/42381347?v=4" width="42;" alt="丛林意志"/>
 </a>
 <a href="https://github.com/james-wangx" title="James Wang">
   <img src="https://avatars.githubusercontent.com/u/62491424?v=4" width="42;" alt="James Wang"/>
