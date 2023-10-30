@@ -2379,6 +2379,11 @@
     "p": "/sshd",
     "d": "openssh软件套件中的服务器守护进程"
   },
+  "sshpass":{
+    "n": "sshpass",
+    "p": "/sshpass",
+    "d": "免交互 SSH 登录工具"
+  },
   "startx": {
     "n": "startx",
     "p": "/startx",
