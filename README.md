@@ -399,8 +399,8 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/conglinyizhi" title="丛林意志">
   <img src="https://avatars.githubusercontent.com/u/42381347?v=4" width="42;" alt="丛林意志"/>
 </a>
-<a href="https://github.com/Jayin" title="Jayin Taung">
-  <img src="https://avatars.githubusercontent.com/u/2763894?v=4" width="42;" alt="Jayin Taung"/>
+<a href="https://github.com/Jayin" title="Jayin Tang">
+  <img src="https://avatars.githubusercontent.com/u/2763894?v=4" width="42;" alt="Jayin Tang"/>
 </a>
 <a href="https://github.com/pluveto" title="Zijing Zhang">
   <img src="https://avatars.githubusercontent.com/u/50045289?v=4" width="42;" alt="Zijing Zhang"/>
@@ -473,6 +473,9 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 </a>
 <a href="https://github.com/Evilrabbit520" title="Wang Jianing">
   <img src="https://avatars.githubusercontent.com/u/25611476?v=4" width="42;" alt="Wang Jianing"/>
+</a>
+<a href="https://github.com/alfchao" title="alfred">
+  <img src="https://avatars.githubusercontent.com/u/49786895?v=4" width="42;" alt="alfred"/>
 </a>
 <a href="https://github.com/apnpc" title="Alan">
   <img src="https://avatars.githubusercontent.com/u/39884597?v=4" width="42;" alt="Alan"/>
@@ -591,9 +594,6 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/Xonline-Tech" title="Xonline-Tech">
   <img src="https://avatars.githubusercontent.com/u/55641276?v=4" width="42;" alt="Xonline-Tech"/>
 </a>
-<a href="https://github.com/alfred-nice" title="Isidro Osoria">
-  <img src="https://avatars.githubusercontent.com/u/49786895?v=4" width="42;" alt="Isidro Osoria"/>
-</a>
 <a href="https://github.com/xuchunyang" title="Xu Chunyang">
   <img src="https://avatars.githubusercontent.com/u/4550353?v=4" width="42;" alt="Xu Chunyang"/>
 </a>
@@ -612,8 +612,8 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/amit794" title="amit794">
   <img src="https://avatars.githubusercontent.com/u/43886572?v=4" width="42;" alt="amit794"/>
 </a>
-<a href="https://github.com/asunrong" title="asunrong">
-  <img src="https://avatars.githubusercontent.com/u/103101986?v=4" width="42;" alt="asunrong"/>
+<a href="https://github.com/asunrong" title="Ashine">
+  <img src="https://avatars.githubusercontent.com/u/103101986?v=4" width="42;" alt="Ashine"/>
 </a>
 <a href="https://github.com/azureology" title="azureology">
   <img src="https://avatars.githubusercontent.com/u/34760051?v=4" width="42;" alt="azureology"/>
