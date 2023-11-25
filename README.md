@@ -5,10 +5,10 @@
   <h1>Linux Command</h1>
 </p>
 
+[![Buy me a coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-048754?logo=buymeacoffee)](https://jaywcjlove.github.io/#/sponsor)
 [![CI](https://github.com/jaywcjlove/linux-command/actions/workflows/ci.yml/badge.svg)](https://github.com/jaywcjlove/linux-command/actions/workflows/ci.yml)
 [![Web](https://jaywcjlove.github.io/sb/ico/linux.svg)](https://jaywcjlove.github.io/linux-command/)
 [![weibo](https://jaywcjlove.github.io/sb/ico/weibo.svg)](http://weibo.com/pc175)
-[![Get this with npm](https://jaywcjlove.github.io/sb/ico/npm.svg)](https://www.npmjs.com/package/linux-command)
 [![NPM Download](https://img.shields.io/npm/dm/linux-command.svg?style=flat)](https://www.npmjs.com/package/linux-command)
 [![jsdelivr cdn](https://data.jsdelivr.com/v1/package/npm/linux-command/badge)](https://www.jsdelivr.com/package/npm/linux-command)
 [![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/wcjiang/linux-command?logo=docker)](https://hub.docker.com/r/wcjiang/linux-command)
