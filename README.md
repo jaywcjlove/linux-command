@@ -567,7 +567,7 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/luoxiaohei" title="SMVirus">
   <img src="https://avatars.githubusercontent.com/u/7138906?v=4" width="42;" alt="SMVirus"/>
 </a>
-<a href="https://github.com/Seven-Steven" title="SevenSteven">
+<a href="https://github.com/seven-steven" title="SevenSteven">
   <img src="https://avatars.githubusercontent.com/u/13358658?v=4" width="42;" alt="SevenSteven"/>
 </a>
 <a href="https://github.com/Azolla" title="Azolla">
@@ -717,8 +717,8 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/snovey" title="snovey">
   <img src="https://avatars.githubusercontent.com/u/15171147?v=4" width="42;" alt="snovey"/>
 </a>
-<a href="https://github.com/sunls23" title="sunls23">
-  <img src="https://avatars.githubusercontent.com/u/57647932?v=4" width="42;" alt="sunls23"/>
+<a href="https://github.com/sunls2" title="sunls24">
+  <img src="https://avatars.githubusercontent.com/u/57647932?v=4" width="42;" alt="sunls24"/>
 </a>
 <a href="https://github.com/hunantangke" title="tangke">
   <img src="https://avatars.githubusercontent.com/u/22476435?v=4" width="42;" alt="tangke"/>
@@ -789,8 +789,8 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/madordie" title="继刚">
   <img src="https://avatars.githubusercontent.com/u/10811132?v=4" width="42;" alt="继刚"/>
 </a>
-<a href="https://github.com/Kyofin" title="Koyfin">
-  <img src="https://avatars.githubusercontent.com/u/18548053?v=4" width="42;" alt="Koyfin"/>
+<a href="https://github.com/Kyofin" title="Kyofin">
+  <img src="https://avatars.githubusercontent.com/u/18548053?v=4" width="42;" alt="Kyofin"/>
 </a>
 <a href="https://github.com/xminjie" title="谢民皆">
   <img src="https://avatars.githubusercontent.com/u/25931342?v=4" width="42;" alt="谢民皆"/>
