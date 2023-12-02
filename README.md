@@ -786,6 +786,9 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/maboloshi" title="沙漠之子">
   <img src="https://avatars.githubusercontent.com/u/7850715?v=4" width="42;" alt="沙漠之子"/>
 </a>
+<a href="https://github.com/yenfeng-shetiko" title="甲寅">
+  <img src="https://avatars.githubusercontent.com/u/47802694?v=4" width="42;" alt="甲寅"/>
+</a>
 <a href="https://github.com/LuckyDevin" title="移动的红烧肉">
   <img src="https://avatars.githubusercontent.com/u/26499884?v=4" width="42;" alt="移动的红烧肉"/>
 </a>
