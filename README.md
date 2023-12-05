@@ -609,6 +609,9 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/0Knot" title="0Knot (0KN)">
   <img src="https://avatars.githubusercontent.com/u/48816852?v=4" width="42;" alt="0Knot (0KN)"/>
 </a>
+<a href="https://github.com/alterem" title="alterem">
+  <img src="https://avatars.githubusercontent.com/u/16953053?v=4" width="42;" alt="alterem"/>
+</a>
 <a href="https://github.com/aluopy" title="One Person’s Revelry">
   <img src="https://avatars.githubusercontent.com/u/69625113?v=4" width="42;" alt="One Person’s Revelry"/>
 </a>
