@@ -404,6 +404,11 @@
     "p": "/cpio",
     "d": "用来建立、还原备份档的工具程序"
   },
+  "createrepo": {
+    "n": "createrepo",
+    "p": "/createrepo",
+    "d": "创建YUM仓库"
+  },
   "crontab": {
     "n": "crontab",
     "p": "/crontab",
@@ -543,6 +548,11 @@
     "n": "dnsdomainname",
     "p": "/dnsdomainname",
     "d": "定义DNS系统中FQDN名称的域名"
+  },
+  "docker": {
+    "n": "docker",
+    "p": "/docker",
+    "d": "容器化技术，可以将应用程序及其依赖项打包到一个可移植的容器中，使其可以在不同的环境中运行"
   },
   "domainname": {
     "n": "domainname",
@@ -1579,6 +1589,11 @@
     "p": "/mktemp",
     "d": "创建临时文件供shell脚本使用"
   },
+  "modetest": {
+    "n": "modetest",
+    "p": "/modetest",
+    "d": "DRM/KMS驱动程序libdrm中的模式测试工具"
+  },
   "modprobe": {
     "n": "modprobe",
     "p": "/modprobe",
@@ -1647,7 +1662,7 @@
   "nc": {
     "n": "nc",
     "p": "/nc",
-    "d": "用于设置路由器，是网络工具中的瑞士军刀。"
+    "d": "nc是网络工具中的瑞士军刀"
   },
   "ncftp": {
     "n": "ncftp",
@@ -1762,7 +1777,7 @@
   "pacman": {
     "n": "pacman",
     "p": "/pacman",
-    "d": "Arch Linux 系统极其衍生系统中默认使用的包管理器"
+    "d": "Arch Linux 系统及其衍生系统中默认使用的包管理器"
   },
   "parted": {
     "n": "parted",
@@ -1837,7 +1852,17 @@
   "ping": {
     "n": "ping",
     "p": "/ping",
-    "d": "测试主机之间网络的连通性"
+    "d": "测试主机之间网络的连通性(ipv4)"
+  },
+  "ping6": {
+    "n": "ping6",
+    "p": "/ping6",
+    "d": "测试主机之间网络的连通性(ipv6)"
+  },
+  "pkexec": {
+    "n": "pkexec",
+    "p": "/pkexec",
+    "d": "以其他用户身份执行命令"
   },
   "pkill": {
     "n": "pkill",
@@ -1878,6 +1903,11 @@
     "n": "protoize",
     "p": "/protoize",
     "d": "GNU-C代码转换为ANSI-C代码"
+  },
+  "prtstat": {
+    "n": "prtstat",
+    "p": "/prtstat",
+    "d": "显示进程信息"
   },
   "ps": {
     "n": "ps",
@@ -2033,6 +2063,11 @@
     "n": "renice",
     "p": "/renice",
     "d": "修改正在运行的进程的调度优先级"
+  },
+  "reposync": {
+    "n": "reposync",
+    "p": "/reposync",
+    "d": "同步yum存储库到本地目录"
   },
   "repquota": {
     "n": "repquota",
@@ -2244,6 +2279,11 @@
     "p": "/sh",
     "d": "shell命令解释器"
   },
+  "sha256sum": {
+    "n": "sha256sum",
+    "p": "/sha256sum",
+    "d": "用于计算文件的 SHA-256 哈希值"
+  },
   "shift": {
     "n": "shift",
     "p": "/shift",
@@ -2379,10 +2419,10 @@
     "p": "/sshd",
     "d": "openssh软件套件中的服务器守护进程"
   },
-  "sshpass":{
+  "sshpass": {
     "n": "sshpass",
     "p": "/sshpass",
-    "d": "免交互 SSH 登录工具"
+    "d": "免交互 SSH 登录工具。"
   },
   "startx": {
     "n": "startx",
@@ -2502,7 +2542,7 @@
   "tcpreplay": {
     "n": "tcpreplay",
     "p": "/tcpreplay",
-    "d": "将PCAP包重新发送，用于性能或者功能测试"
+    "d": "将保存在 PCAP 文件包重新发送，用于性能或者功能测试"
   },
   "tee": {
     "n": "tee",
