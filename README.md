@@ -570,6 +570,9 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<å‘½ä»
 <a href="https://github.com/seven-steven" title="SevenSteven">
   <img src="https://avatars.githubusercontent.com/u/13358658?v=4" width="42;" alt="SevenSteven"/>
 </a>
+<a href="https://github.com/ischenyu" title="Shan Chenyu">
+  <img src="https://avatars.githubusercontent.com/u/103872353?v=4" width="42;" alt="Shan Chenyu"/>
+</a>
 <a href="https://github.com/Azolla" title="Azolla">
   <img src="https://avatars.githubusercontent.com/u/65333936?v=4" width="42;" alt="Azolla"/>
 </a>
