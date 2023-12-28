@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,7z,拥有极高压缩比的开源压缩软件。">
     <title>7z 命令，Linux 7z 命令详解：拥有极高压缩比的开源压缩软件。 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1703380035933">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1703762938393">
     <script src="../js/dark-mode.min.js"></script>
     <script type="module" src="../js/github-corners.js"></script>
 </head>
@@ -159,16 +159,22 @@ yum install p7zip p7zip-plugins
 </span></code><div onclick="copied(this)" data-code="7z x text.7z
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <p>2、将压缩文件 text.7z 在指定目录(/home/text)下解压缩。</p>
-<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 注意 -o 用来指定解压缩文件存放目录，-o 后是没有空格的,直接接目录</span>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 注意 -o 用来指定解压缩文件存放目录，-o 后是没有空格的，直接接目录</span>
 </span><span class="code-line line-number" line="2">7z x text.7z <span class="token parameter variable">-r</span> -o/home/text
-</span></code><div onclick="copied(this)" data-code="# 注意 -o 用来指定解压缩文件存放目录，-o 后是没有空格的,直接接目录
+</span></code><div onclick="copied(this)" data-code="# 注意 -o 用来指定解压缩文件存放目录，-o 后是没有空格的，直接接目录
 7z x text.7z -r -o/home/text
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-<p>3、将文件 /home/text 压缩成 text.7z。</p>
+<p>3、将压缩文件 text.7z 中的 <code>dir1/dir2</code> 和 <code>dir1/file1</code> 提取到在指定目录(/home/text)下（保持原有路径结构）。</p>
+<pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 注意 dir1/dir2，dir1/file1 为压缩包中文件或文件夹路径</span>
+</span><span class="code-line line-number" line="2">7z x text.7z dir1/dir2 dir1/file1 -o/home/text
+</span></code><div onclick="copied(this)" data-code="# 注意 dir1/dir2，dir1/file1 为压缩包中文件或文件夹路径
+7z x text.7z dir1/dir2 dir1/file1 -o/home/text
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+<p>4、将文件 /home/text 压缩成 text.7z。</p>
 <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1">7z a text.7z <span class="token parameter variable">-r</span> /home/text
 </span></code><div onclick="copied(this)" data-code="7z a text.7z -r /home/text
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
-<p>4、查看压缩包 text.7z 内容，但不解压。</p>
+<p>5、查看压缩包 text.7z 内容，但不解压。</p>
 <pre class="language-bash"><code class="language-bash code-highlight"><span class="code-line line-number" line="1">7z l text.7z
 </span></code><div onclick="copied(this)" data-code="7z l text.7z
 " class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
@@ -176,124 +182,154 @@ yum install p7zip p7zip-plugins
 <pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">使用方法： 7z <span class="token operator">&#x3C;</span>命令<span class="token operator">></span> <span class="token punctuation">[</span><span class="token operator">&#x3C;</span>开关<span class="token operator">></span><span class="token punctuation">..</span>.<span class="token punctuation">]</span> <span class="token operator">&#x3C;</span>archive_name<span class="token operator">></span> <span class="token punctuation">[</span><span class="token operator">&#x3C;</span>file_names<span class="token operator">></span><span class="token punctuation">..</span>.］
 </span><span class="code-line line-number" line="2">
 </span><span class="code-line line-number" line="3"><span class="token operator">&#x3C;</span>命令<span class="token operator">></span>
-</span><span class="code-line line-number" line="4">  a <span class="token builtin class-name">:</span> 添加文件到存档
+</span><span class="code-line line-number" line="4">  a <span class="token builtin class-name">:</span> 添加文件到压缩包
 </span><span class="code-line line-number" line="5">  b <span class="token builtin class-name">:</span> 基准测试
-</span><span class="code-line line-number" line="6">  d <span class="token builtin class-name">:</span> 从存档中删除文件
-</span><span class="code-line line-number" line="7">  e：从档案中提取文件（不使用目录名）。
-</span><span class="code-line line-number" line="8">  h：计算文件的哈希值
+</span><span class="code-line line-number" line="6">  d <span class="token builtin class-name">:</span> 从压缩包中删除文件
+</span><span class="code-line line-number" line="7">  e <span class="token builtin class-name">:</span> 从压缩包中提取文件（不使用目录名）。
+</span><span class="code-line line-number" line="8">  h <span class="token builtin class-name">:</span> 计算文件的哈希值
 </span><span class="code-line line-number" line="9">  i <span class="token builtin class-name">:</span> 显示支持的格式信息
-</span><span class="code-line line-number" line="10">  l <span class="token builtin class-name">:</span> 列出档案的内容
-</span><span class="code-line line-number" line="11">  rn <span class="token builtin class-name">:</span> 重命名档案中的文件
-</span><span class="code-line line-number" line="12">  t <span class="token builtin class-name">:</span> 测试档案的完整性
-</span><span class="code-line line-number" line="13">  u <span class="token builtin class-name">:</span> 更新档案中的文件
+</span><span class="code-line line-number" line="10">  l <span class="token builtin class-name">:</span> 列出压缩包的内容
+</span><span class="code-line line-number" line="11">  rn <span class="token builtin class-name">:</span> 重命名压缩包中的文件
+</span><span class="code-line line-number" line="12">  t <span class="token builtin class-name">:</span> 测试压缩包的完整性
+</span><span class="code-line line-number" line="13">  u <span class="token builtin class-name">:</span> 更新压缩包中的文件
 </span><span class="code-line line-number" line="14">  x <span class="token builtin class-name">:</span> 提取完整路径的文件
 </span><span class="code-line line-number" line="15">
 </span><span class="code-line line-number" line="16"><span class="token operator">&#x3C;</span>开关<span class="token operator">></span>
-</span><span class="code-line line-number" line="17">  --：停止开关解析
-</span><span class="code-line line-number" line="18">  @listfile <span class="token builtin class-name">:</span> 设置包含文件名的列表文件的路径
-</span><span class="code-line line-number" line="19">  -ai<span class="token punctuation">[</span>r<span class="token punctuation">[</span>-<span class="token operator">|</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">{</span>@listfile<span class="token operator">|</span><span class="token operator">!</span>wildcard<span class="token punctuation">}</span> <span class="token builtin class-name">:</span> 包括归档文件
-</span><span class="code-line line-number" line="20">  -ax<span class="token punctuation">[</span>r<span class="token punctuation">[</span>-<span class="token operator">|</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">{</span>@listfile<span class="token operator">|</span><span class="token operator">!</span>wildcard<span class="token punctuation">}</span> <span class="token builtin class-name">:</span> 排除档案。
-</span><span class="code-line line-number" line="21">  -ao<span class="token punctuation">{</span>a<span class="token operator">|</span>s<span class="token operator">|</span>t<span class="token operator">|</span>u<span class="token punctuation">}</span> <span class="token builtin class-name">:</span> 设置覆写模式
-</span><span class="code-line line-number" line="22">  <span class="token parameter variable">-an</span> <span class="token builtin class-name">:</span> 禁用档案名称字段
-</span><span class="code-line line-number" line="23">  -bb<span class="token punctuation">[</span><span class="token number">0</span>-3<span class="token punctuation">]</span> <span class="token builtin class-name">:</span> 设置输出日志级别
-</span><span class="code-line line-number" line="24">  <span class="token parameter variable">-bd</span> <span class="token builtin class-name">:</span> 禁用进度指示器
-</span><span class="code-line line-number" line="25">  -bs<span class="token punctuation">{</span>o<span class="token operator">|</span>e<span class="token operator">|</span>p<span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token number">0</span><span class="token operator">|</span><span class="token number">1</span><span class="token operator">|</span><span class="token number">2</span><span class="token punctuation">}</span>：设置输出/错误/进度行的输出流
-</span><span class="code-line line-number" line="26">  <span class="token parameter variable">-bt</span> <span class="token builtin class-name">:</span> 显示执行时间统计
-</span><span class="code-line line-number" line="27">  -i<span class="token punctuation">[</span>r<span class="token punctuation">[</span>-<span class="token operator">|</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">{</span>@listfile<span class="token operator">|</span>！通配符<span class="token punctuation">}</span> <span class="token builtin class-name">:</span> 包括文件名
-</span><span class="code-line line-number" line="28">  -m<span class="token punctuation">{</span>Parameters<span class="token punctuation">}</span> <span class="token builtin class-name">:</span> 设置压缩方法
-</span><span class="code-line line-number" line="29">  -mmt<span class="token punctuation">[</span>N<span class="token punctuation">]</span> <span class="token builtin class-name">:</span> 设置CPU线程的数量
-</span><span class="code-line line-number" line="30">  -mx<span class="token punctuation">[</span>N<span class="token punctuation">]</span> <span class="token builtin class-name">:</span> 设置压缩级别: <span class="token parameter variable">-mx1</span> <span class="token punctuation">(</span>最快<span class="token punctuation">)</span> <span class="token punctuation">..</span>. <span class="token parameter variable">-mx9</span> <span class="token punctuation">(</span>超强<span class="token punctuation">)</span>
-</span><span class="code-line line-number" line="31">  -o<span class="token punctuation">{</span>Directory<span class="token punctuation">}</span> <span class="token builtin class-name">:</span> 设置输出目录
-</span><span class="code-line line-number" line="32">  -p<span class="token punctuation">{</span>Password<span class="token punctuation">}</span> <span class="token builtin class-name">:</span> 设置密码
-</span><span class="code-line line-number" line="33">  -r<span class="token punctuation">[</span>-<span class="token operator">|</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token builtin class-name">:</span> 重新搜索子目录
-</span><span class="code-line line-number" line="34">  -sa<span class="token punctuation">{</span>a<span class="token operator">|</span>e<span class="token operator">|</span>s<span class="token punctuation">}</span> <span class="token builtin class-name">:</span> 设置存档名称模式
-</span><span class="code-line line-number" line="35">  -scc<span class="token punctuation">{</span>UTF-8<span class="token operator">|</span>WIN<span class="token operator">|</span>DOS<span class="token punctuation">}</span>：设置控制台输入/输出的字符集。
-</span><span class="code-line line-number" line="36">  -scs<span class="token punctuation">{</span>UTF-8<span class="token operator">|</span>UTF-16LE<span class="token operator">|</span>UTF-16BE<span class="token operator">|</span>WIN<span class="token operator">|</span>DOS<span class="token operator">|</span><span class="token punctuation">{</span>id<span class="token punctuation">}</span><span class="token punctuation">}</span>：设置列表文件的字符集。
-</span><span class="code-line line-number" line="37">  -scrc<span class="token punctuation">[</span>CRC32<span class="token operator">|</span>CRC64<span class="token operator">|</span>SHA1<span class="token operator">|</span>SHA256<span class="token operator">|</span>*<span class="token punctuation">]</span> ：为x、e、h命令设置哈希函数。
-</span><span class="code-line line-number" line="38">  <span class="token parameter variable">-sdel</span> <span class="token builtin class-name">:</span> 压缩后删除文件
-</span><span class="code-line line-number" line="39">  -seml<span class="token punctuation">[</span>.<span class="token punctuation">]</span> <span class="token builtin class-name">:</span> 通过电子邮件发送档案
-</span><span class="code-line line-number" line="40">  -sfx<span class="token punctuation">[</span><span class="token punctuation">{</span>name<span class="token punctuation">}</span><span class="token punctuation">]</span> <span class="token builtin class-name">:</span> 创建SFX档案
-</span><span class="code-line line-number" line="41">  -si<span class="token punctuation">[</span><span class="token punctuation">{</span>name<span class="token punctuation">}</span><span class="token punctuation">]</span> <span class="token builtin class-name">:</span> 从stdin读取数据
-</span><span class="code-line line-number" line="42">  <span class="token parameter variable">-slp</span> <span class="token builtin class-name">:</span> 设置大型页面模式
-</span><span class="code-line line-number" line="43">  <span class="token parameter variable">-slt</span> <span class="token builtin class-name">:</span> 显示l（List）命令的技术信息
-</span><span class="code-line line-number" line="44">  <span class="token parameter variable">-snh</span> <span class="token builtin class-name">:</span> 将硬链接存储为链接
-</span><span class="code-line line-number" line="45">  <span class="token parameter variable">-snl</span> <span class="token builtin class-name">:</span> 将符号链接存储为链接
-</span><span class="code-line line-number" line="46">  <span class="token parameter variable">-sni</span> <span class="token builtin class-name">:</span> 存储NT安全信息
-</span><span class="code-line line-number" line="47">  -sns<span class="token punctuation">[</span>-<span class="token punctuation">]</span> <span class="token builtin class-name">:</span> 存储NTFS备用流
-</span><span class="code-line line-number" line="48">  <span class="token parameter variable">-so</span> <span class="token builtin class-name">:</span> 向stdout写数据
-</span><span class="code-line line-number" line="49">  <span class="token parameter variable">-spd</span> <span class="token builtin class-name">:</span> 禁用文件名的通配符匹配
-</span><span class="code-line line-number" line="50">  <span class="token parameter variable">-spe</span> <span class="token builtin class-name">:</span> 消除提取命令中根文件夹的重复。
-</span><span class="code-line line-number" line="51">  <span class="token parameter variable">-spf</span> <span class="token builtin class-name">:</span> 使用完全合格的文件路径
-</span><span class="code-line line-number" line="52">  -ssc<span class="token punctuation">[</span>-<span class="token punctuation">]</span> <span class="token builtin class-name">:</span> 设置敏感的大小写模式
-</span><span class="code-line line-number" line="53">  <span class="token parameter variable">-ssw</span> <span class="token builtin class-name">:</span> 压缩共享文件
-</span><span class="code-line line-number" line="54">  <span class="token parameter variable">-stl</span> <span class="token builtin class-name">:</span> 从最近修改的文件设置存档时间戳
-</span><span class="code-line line-number" line="55">  -stm<span class="token punctuation">{</span>HexMask<span class="token punctuation">}</span> <span class="token builtin class-name">:</span> 设置CPU线程亲和力掩码（十六进制数字）。
-</span><span class="code-line line-number" line="56">  -stx<span class="token punctuation">{</span>Type<span class="token punctuation">}</span> <span class="token builtin class-name">:</span> 排除存档类型
-</span><span class="code-line line-number" line="57">  -t<span class="token punctuation">{</span>Type<span class="token punctuation">}</span> <span class="token builtin class-name">:</span> 设置存档的类型
-</span><span class="code-line line-number" line="58">  -u<span class="token punctuation">[</span>-<span class="token punctuation">]</span><span class="token punctuation">[</span>p<span class="token comment">#][q#][r#][x#][y#][z#] [!newArchiveName] : 更新选项</span>
-</span><span class="code-line line-number" line="59">  -v<span class="token punctuation">{</span>大小<span class="token punctuation">}</span><span class="token punctuation">[</span>b<span class="token operator">|</span>k<span class="token operator">|</span>m<span class="token operator">|</span>g<span class="token punctuation">]</span> <span class="token builtin class-name">:</span> 创建卷册
-</span><span class="code-line line-number" line="60">  -w<span class="token punctuation">[</span><span class="token punctuation">{</span>path<span class="token punctuation">}</span><span class="token punctuation">]</span> <span class="token builtin class-name">:</span> 指定工作目录。空的路径意味着一个临时目录
-</span><span class="code-line line-number" line="61">  -x<span class="token punctuation">[</span>r<span class="token punctuation">[</span>-<span class="token operator">|</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">{</span>@listfile<span class="token operator">|</span><span class="token operator">!</span>wildcard<span class="token punctuation">}</span> <span class="token builtin class-name">:</span> 排除文件名。
-</span><span class="code-line line-number" line="62">  <span class="token parameter variable">-y</span> <span class="token builtin class-name">:</span> 假设所有的查询都是肯定的
+</span><span class="code-line line-number" line="17">  -- <span class="token builtin class-name">:</span> 停止对 - 开头的开关和 @ 开头的文件列表的解析，为了允许 <span class="token number">7</span>-Zip 使用以 - 和 @ 开头的文件名。
+</span><span class="code-line line-number" line="18">  -ai<span class="token punctuation">[</span>r<span class="token punctuation">[</span>-<span class="token operator">|</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">{</span>@listfile<span class="token operator">|</span><span class="token operator">!</span>wildcard<span class="token punctuation">}</span> <span class="token builtin class-name">:</span> 包括指定压缩包文件
+</span><span class="code-line line-number" line="19">  -ax<span class="token punctuation">[</span>r<span class="token punctuation">[</span>-<span class="token operator">|</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">{</span>@listfile<span class="token operator">|</span><span class="token operator">!</span>wildcard<span class="token punctuation">}</span> <span class="token builtin class-name">:</span> 排除指定压缩包文件
+</span><span class="code-line line-number" line="20">  -ao<span class="token punctuation">{</span>a<span class="token operator">|</span>s<span class="token operator">|</span>t<span class="token operator">|</span>u<span class="token punctuation">}</span> <span class="token builtin class-name">:</span> 设置覆写模式
+</span><span class="code-line line-number" line="21">    <span class="token parameter variable">-aoa</span> 覆盖所有现有文件，无提示。
+</span><span class="code-line line-number" line="22">    <span class="token parameter variable">-aos</span> 跳过提取现有文件。
+</span><span class="code-line line-number" line="23">    <span class="token parameter variable">-aou</span> 自动重命名提取的文件（例如，name.txt 将重命名为 name_1.txt）。
+</span><span class="code-line line-number" line="24">    <span class="token parameter variable">-aot</span> 自动重命名现有文件（例如，name.txt 将重命名为 name_1.txt）。
+</span><span class="code-line line-number" line="25">  <span class="token parameter variable">-an</span> <span class="token builtin class-name">:</span> 禁用压缩包名称字段解析，必须与 <span class="token parameter variable">-ai</span> 开关一起使用。
+</span><span class="code-line line-number" line="26">  -bb<span class="token punctuation">[</span><span class="token number">0</span>-3<span class="token punctuation">]</span> <span class="token builtin class-name">:</span> 设置输出日志级别
+</span><span class="code-line line-number" line="27">    <span class="token parameter variable">-bb0</span> 禁用日志（默认）。
+</span><span class="code-line line-number" line="28">    <span class="token parameter variable">-bb1</span> 或 <span class="token parameter variable">-bb</span> 在日志中显示已处理文件的名称。
+</span><span class="code-line line-number" line="29">    <span class="token parameter variable">-bb2</span> 显示在压缩包文件中跳过的文件名称（对于 “提取” 操作）和重新打包的文件名称（对于 “添加” / “更新” 操作）
+</span><span class="code-line line-number" line="30">    <span class="token parameter variable">-bb3</span> 显示 “添加” / “更新” 操作的其他操作（分析、复制）信息。
+</span><span class="code-line line-number" line="31">  <span class="token parameter variable">-bd</span> <span class="token builtin class-name">:</span> 禁用进度指示器
+</span><span class="code-line line-number" line="32">  -bs<span class="token punctuation">{</span>o<span class="token operator">|</span>e<span class="token operator">|</span>p<span class="token punctuation">}</span><span class="token punctuation">{</span><span class="token number">0</span><span class="token operator">|</span><span class="token number">1</span><span class="token operator">|</span><span class="token number">2</span><span class="token punctuation">}</span> <span class="token builtin class-name">:</span> 设置输出/错误/进度行的输出流
+</span><span class="code-line line-number" line="33">    o 标准输出信息
+</span><span class="code-line line-number" line="34">    e 错误信息
+</span><span class="code-line line-number" line="35">    p 进度信息
+</span><span class="code-line line-number" line="36">    <span class="token number">0</span> 禁用流
+</span><span class="code-line line-number" line="37">    <span class="token number">1</span> 重定向到标准输出流
+</span><span class="code-line line-number" line="38">    <span class="token number">2</span> 重定向到标准错误流
+</span><span class="code-line line-number" line="39">  <span class="token parameter variable">-bt</span> <span class="token builtin class-name">:</span> 显示执行时间统计
+</span><span class="code-line line-number" line="40">  -i<span class="token punctuation">[</span>r<span class="token punctuation">[</span>-<span class="token operator">|</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">{</span>@listfile<span class="token operator">|</span><span class="token operator">!</span>wildcard<span class="token punctuation">}</span> <span class="token builtin class-name">:</span> 包括文件名
+</span><span class="code-line line-number" line="41">  -m<span class="token punctuation">{</span>Parameters<span class="token punctuation">}</span> <span class="token builtin class-name">:</span> 设置压缩方法
+</span><span class="code-line line-number" line="42">    -mmt<span class="token punctuation">[</span>N<span class="token punctuation">]</span> <span class="token builtin class-name">:</span> 设置 CPU 线程的数量
+</span><span class="code-line line-number" line="43">    -mx<span class="token punctuation">[</span>N<span class="token punctuation">]</span> <span class="token builtin class-name">:</span> 设置压缩级别: <span class="token parameter variable">-mx1</span> <span class="token punctuation">(</span>最快<span class="token punctuation">)</span> <span class="token punctuation">..</span>. <span class="token parameter variable">-mx9</span> <span class="token punctuation">(</span>超强<span class="token punctuation">)</span>，-mx0（不压缩）
+</span><span class="code-line line-number" line="44">  -o<span class="token punctuation">{</span>Directory<span class="token punctuation">}</span> <span class="token builtin class-name">:</span> 设置输出目录
+</span><span class="code-line line-number" line="45">  -p<span class="token punctuation">{</span>Password<span class="token punctuation">}</span> <span class="token builtin class-name">:</span> 设置密码
+</span><span class="code-line line-number" line="46">  -r<span class="token punctuation">[</span>-<span class="token operator">|</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token builtin class-name">:</span> 重新搜索子目录
+</span><span class="code-line line-number" line="47">  -sa<span class="token punctuation">{</span>a<span class="token operator">|</span>e<span class="token operator">|</span>s<span class="token punctuation">}</span> <span class="token builtin class-name">:</span> 设置压缩包名称模式
+</span><span class="code-line line-number" line="48">  -scc<span class="token punctuation">{</span>UTF-8<span class="token operator">|</span>WIN<span class="token operator">|</span>DOS<span class="token punctuation">}</span> <span class="token builtin class-name">:</span> 设置控制台输入/输出的字符集。
+</span><span class="code-line line-number" line="49">  -scs<span class="token punctuation">{</span>UTF-8<span class="token operator">|</span>UTF-16LE<span class="token operator">|</span>UTF-16BE<span class="token operator">|</span>WIN<span class="token operator">|</span>DOS<span class="token operator">|</span><span class="token punctuation">{</span>id<span class="token punctuation">}</span><span class="token punctuation">}</span> <span class="token builtin class-name">:</span> 设置列表文件的字符集。
+</span><span class="code-line line-number" line="50">  -scrc<span class="token punctuation">[</span>CRC32<span class="token operator">|</span>CRC64<span class="token operator">|</span>SHA1<span class="token operator">|</span>SHA256<span class="token operator">|</span>*<span class="token punctuation">]</span> <span class="token builtin class-name">:</span> 为x、e、h命令设置哈希函数。
+</span><span class="code-line line-number" line="51">  <span class="token parameter variable">-sdel</span> <span class="token builtin class-name">:</span> 压缩后删除文件
+</span><span class="code-line line-number" line="52">  -seml<span class="token punctuation">[</span>.<span class="token punctuation">]</span> <span class="token builtin class-name">:</span> 通过电子邮件发送压缩包
+</span><span class="code-line line-number" line="53">  -sfx<span class="token punctuation">[</span><span class="token punctuation">{</span>name<span class="token punctuation">}</span><span class="token punctuation">]</span> <span class="token builtin class-name">:</span> 创建 SFX 压缩包
+</span><span class="code-line line-number" line="54">  -si<span class="token punctuation">[</span><span class="token punctuation">{</span>name<span class="token punctuation">}</span><span class="token punctuation">]</span> <span class="token builtin class-name">:</span> 从标准输入读取数据
+</span><span class="code-line line-number" line="55">  <span class="token parameter variable">-slp</span> <span class="token builtin class-name">:</span> 设置大型页面模式
+</span><span class="code-line line-number" line="56">  <span class="token parameter variable">-slt</span> <span class="token builtin class-name">:</span> 显示l（List）命令的技术信息
+</span><span class="code-line line-number" line="57">  <span class="token parameter variable">-snh</span> <span class="token builtin class-name">:</span> 将硬链接存储为链接
+</span><span class="code-line line-number" line="58">  <span class="token parameter variable">-snl</span> <span class="token builtin class-name">:</span> 将符号链接存储为链接
+</span><span class="code-line line-number" line="59">  <span class="token parameter variable">-sni</span> <span class="token builtin class-name">:</span> 存储 NT 安全信息
+</span><span class="code-line line-number" line="60">  -sns<span class="token punctuation">[</span>-<span class="token punctuation">]</span> <span class="token builtin class-name">:</span> 存储 NTFS 备用流
+</span><span class="code-line line-number" line="61">  <span class="token parameter variable">-so</span> <span class="token builtin class-name">:</span> 向标准输出写数据
+</span><span class="code-line line-number" line="62">  <span class="token parameter variable">-spd</span> <span class="token builtin class-name">:</span> 禁用文件名的通配符匹配
+</span><span class="code-line line-number" line="63">  <span class="token parameter variable">-spe</span> <span class="token builtin class-name">:</span> 消除提取命令中根文件夹的重复。
+</span><span class="code-line line-number" line="64">  -spf<span class="token punctuation">[</span><span class="token number">2</span><span class="token punctuation">]</span> <span class="token builtin class-name">:</span> 使用完全合格的文件路径
+</span><span class="code-line line-number" line="65">  -ssc<span class="token punctuation">[</span>-<span class="token punctuation">]</span> <span class="token builtin class-name">:</span> 设置敏感的大小写模式
+</span><span class="code-line line-number" line="66">  <span class="token parameter variable">-sse</span> <span class="token builtin class-name">:</span> 如果无法打开某些输入文件，则停止创建压缩包
+</span><span class="code-line line-number" line="67">  <span class="token parameter variable">-ssp</span> <span class="token builtin class-name">:</span> 压缩包时不更改源文件的最后访问时间
+</span><span class="code-line line-number" line="68">  <span class="token parameter variable">-ssw</span> <span class="token builtin class-name">:</span> 压缩共享文件
+</span><span class="code-line line-number" line="69">  <span class="token parameter variable">-stl</span> <span class="token builtin class-name">:</span> 从最近修改的文件设置压缩包时间戳
+</span><span class="code-line line-number" line="70">  -stm<span class="token punctuation">{</span>HexMask<span class="token punctuation">}</span> <span class="token builtin class-name">:</span> 设置 CPU 线程亲和力掩码（十六进制数字）。
+</span><span class="code-line line-number" line="71">  -stx<span class="token punctuation">{</span>Type<span class="token punctuation">}</span> <span class="token builtin class-name">:</span> 排除压缩包类型
+</span><span class="code-line line-number" line="72">  -t<span class="token punctuation">{</span>Type<span class="token punctuation">}</span> <span class="token builtin class-name">:</span> 设置压缩包的类型
+</span><span class="code-line line-number" line="73">  -u<span class="token punctuation">[</span>-<span class="token punctuation">]</span><span class="token punctuation">[</span>p<span class="token comment">#][q#][r#][x#][y#][z#] [!newArchiveName] : 更新选项</span>
+</span><span class="code-line line-number" line="74">  -v<span class="token punctuation">{</span>Size<span class="token punctuation">}</span><span class="token punctuation">[</span>b<span class="token operator">|</span>k<span class="token operator">|</span>m<span class="token operator">|</span>g<span class="token punctuation">]</span> <span class="token builtin class-name">:</span> 创建卷
+</span><span class="code-line line-number" line="75">  -w<span class="token punctuation">[</span><span class="token punctuation">{</span>path<span class="token punctuation">}</span><span class="token punctuation">]</span> <span class="token builtin class-name">:</span> 指定工作目录。空的路径意味着一个临时目录
+</span><span class="code-line line-number" line="76">  -x<span class="token punctuation">[</span>r<span class="token punctuation">[</span>-<span class="token operator">|</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">]</span><span class="token punctuation">{</span>@listfile<span class="token operator">|</span><span class="token operator">!</span>wildcard<span class="token punctuation">}</span> <span class="token builtin class-name">:</span> 排除文件名。
+</span><span class="code-line line-number" line="77">  <span class="token parameter variable">-y</span> <span class="token builtin class-name">:</span> 假设所有的查询都是肯定的
 </span></code><div onclick="copied(this)" data-code="使用方法： 7z <命令> [<开关>...] <archive_name> [<file_names>...］
 
 <命令>
-  a : 添加文件到存档
+  a : 添加文件到压缩包
   b : 基准测试
-  d : 从存档中删除文件
-  e：从档案中提取文件（不使用目录名）。
-  h：计算文件的哈希值
+  d : 从压缩包中删除文件
+  e : 从压缩包中提取文件（不使用目录名）。
+  h : 计算文件的哈希值
   i : 显示支持的格式信息
-  l : 列出档案的内容
-  rn : 重命名档案中的文件
-  t : 测试档案的完整性
-  u : 更新档案中的文件
+  l : 列出压缩包的内容
+  rn : 重命名压缩包中的文件
+  t : 测试压缩包的完整性
+  u : 更新压缩包中的文件
   x : 提取完整路径的文件
 
 <开关>
-  --：停止开关解析
-  @listfile : 设置包含文件名的列表文件的路径
-  -ai[r[-|0]]{@listfile|!wildcard} : 包括归档文件
-  -ax[r[-|0]]{@listfile|!wildcard} : 排除档案。
+  -- : 停止对 - 开头的开关和 @ 开头的文件列表的解析，为了允许 7-Zip 使用以 - 和 @ 开头的文件名。
+  -ai[r[-|0]]{@listfile|!wildcard} : 包括指定压缩包文件
+  -ax[r[-|0]]{@listfile|!wildcard} : 排除指定压缩包文件
   -ao{a|s|t|u} : 设置覆写模式
-  -an : 禁用档案名称字段
+    -aoa 覆盖所有现有文件，无提示。
+    -aos 跳过提取现有文件。
+    -aou 自动重命名提取的文件（例如，name.txt 将重命名为 name_1.txt）。
+    -aot 自动重命名现有文件（例如，name.txt 将重命名为 name_1.txt）。
+  -an : 禁用压缩包名称字段解析，必须与 -ai 开关一起使用。
   -bb[0-3] : 设置输出日志级别
+    -bb0 禁用日志（默认）。
+    -bb1 或 -bb 在日志中显示已处理文件的名称。
+    -bb2 显示在压缩包文件中跳过的文件名称（对于 “提取” 操作）和重新打包的文件名称（对于 “添加” / “更新” 操作）
+    -bb3 显示 “添加” / “更新” 操作的其他操作（分析、复制）信息。
   -bd : 禁用进度指示器
-  -bs{o|e|p}{0|1|2}：设置输出/错误/进度行的输出流
+  -bs{o|e|p}{0|1|2} : 设置输出/错误/进度行的输出流
+    o 标准输出信息
+    e 错误信息
+    p 进度信息
+    0 禁用流
+    1 重定向到标准输出流
+    2 重定向到标准错误流
   -bt : 显示执行时间统计
-  -i[r[-|0]]{@listfile|！通配符} : 包括文件名
+  -i[r[-|0]]{@listfile|!wildcard} : 包括文件名
   -m{Parameters} : 设置压缩方法
-  -mmt[N] : 设置CPU线程的数量
-  -mx[N] : 设置压缩级别: -mx1 (最快) ... -mx9 (超强)
+    -mmt[N] : 设置 CPU 线程的数量
+    -mx[N] : 设置压缩级别: -mx1 (最快) ... -mx9 (超强)，-mx0（不压缩）
   -o{Directory} : 设置输出目录
   -p{Password} : 设置密码
   -r[-|0] : 重新搜索子目录
-  -sa{a|e|s} : 设置存档名称模式
-  -scc{UTF-8|WIN|DOS}：设置控制台输入/输出的字符集。
-  -scs{UTF-8|UTF-16LE|UTF-16BE|WIN|DOS|{id}}：设置列表文件的字符集。
-  -scrc[CRC32|CRC64|SHA1|SHA256|*] ：为x、e、h命令设置哈希函数。
+  -sa{a|e|s} : 设置压缩包名称模式
+  -scc{UTF-8|WIN|DOS} : 设置控制台输入/输出的字符集。
+  -scs{UTF-8|UTF-16LE|UTF-16BE|WIN|DOS|{id}} : 设置列表文件的字符集。
+  -scrc[CRC32|CRC64|SHA1|SHA256|*] : 为x、e、h命令设置哈希函数。
   -sdel : 压缩后删除文件
-  -seml[.] : 通过电子邮件发送档案
-  -sfx[{name}] : 创建SFX档案
-  -si[{name}] : 从stdin读取数据
+  -seml[.] : 通过电子邮件发送压缩包
+  -sfx[{name}] : 创建 SFX 压缩包
+  -si[{name}] : 从标准输入读取数据
   -slp : 设置大型页面模式
   -slt : 显示l（List）命令的技术信息
   -snh : 将硬链接存储为链接
   -snl : 将符号链接存储为链接
-  -sni : 存储NT安全信息
-  -sns[-] : 存储NTFS备用流
-  -so : 向stdout写数据
+  -sni : 存储 NT 安全信息
+  -sns[-] : 存储 NTFS 备用流
+  -so : 向标准输出写数据
   -spd : 禁用文件名的通配符匹配
   -spe : 消除提取命令中根文件夹的重复。
-  -spf : 使用完全合格的文件路径
+  -spf[2] : 使用完全合格的文件路径
   -ssc[-] : 设置敏感的大小写模式
+  -sse : 如果无法打开某些输入文件，则停止创建压缩包
+  -ssp : 压缩包时不更改源文件的最后访问时间
   -ssw : 压缩共享文件
-  -stl : 从最近修改的文件设置存档时间戳
-  -stm{HexMask} : 设置CPU线程亲和力掩码（十六进制数字）。
-  -stx{Type} : 排除存档类型
-  -t{Type} : 设置存档的类型
+  -stl : 从最近修改的文件设置压缩包时间戳
+  -stm{HexMask} : 设置 CPU 线程亲和力掩码（十六进制数字）。
+  -stx{Type} : 排除压缩包类型
+  -t{Type} : 设置压缩包的类型
   -u[-][p#][q#][r#][x#][y#][z#] [!newArchiveName] : 更新选项
-  -v{大小}[b|k|m|g] : 创建卷册
+  -v{Size}[b|k|m|g] : 创建卷
   -w[{path}] : 指定工作目录。空的路径意味着一个临时目录
   -x[r[-|0]]{@listfile|!wildcard} : 排除文件名。
   -y : 假设所有的查询都是肯定的
@@ -375,7 +411,7 @@ function copied(target, str) {
     600
   </span> 个Linux命令，超过 <a href="../contributors.html">50+</a> 贡献者
 </div>
-<script type="text/javascript" src="../js/dt.js?v=1703380035934"></script>
-<script type="text/javascript" src="../js/index.js?v=1703380035934"></script>
+<script type="text/javascript" src="../js/dt.js?v=1703762938394"></script>
+<script type="text/javascript" src="../js/index.js?v=1703762938394"></script>
 </body>
 </html>
