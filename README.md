@@ -468,6 +468,9 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/Jeffery186" title="Shell">
   <img src="https://avatars.githubusercontent.com/u/39795988?v=4" width="42;" alt="Shell"/>
 </a>
+<a href="https://github.com/maboloshi" title="沙漠之子">
+  <img src="https://avatars.githubusercontent.com/u/7850715?v=4" width="42;" alt="沙漠之子"/>
+</a>
 <a href="https://github.com/Qliangw" title="Qliangw">
   <img src="https://avatars.githubusercontent.com/u/22791711?v=4" width="42;" alt="Qliangw"/>
 </a>
@@ -602,6 +605,9 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 </a>
 <a href="https://github.com/xuchunyang" title="Xu Chunyang">
   <img src="https://avatars.githubusercontent.com/u/4550353?v=4" width="42;" alt="Xu Chunyang"/>
+</a>
+<a href="https://github.com/yeungchie" title="YEUNGCHIE">
+  <img src="https://avatars.githubusercontent.com/u/30793662?v=4" width="42;" alt="YEUNGCHIE"/>
 </a>
 <a href="https://github.com/yansheng836" title="Yan Sheng">
   <img src="https://avatars.githubusercontent.com/u/45334066?v=4" width="42;" alt="Yan Sheng"/>
@@ -788,9 +794,6 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 </a>
 <a href="https://github.com/XksA-me" title="极简XksA">
   <img src="https://avatars.githubusercontent.com/u/43670614?v=4" width="42;" alt="极简XksA"/>
-</a>
-<a href="https://github.com/maboloshi" title="沙漠之子">
-  <img src="https://avatars.githubusercontent.com/u/7850715?v=4" width="42;" alt="沙漠之子"/>
 </a>
 <a href="https://github.com/yenfeng-shetiko" title="甲寅">
   <img src="https://avatars.githubusercontent.com/u/47802694?v=4" width="42;" alt="甲寅"/>
