@@ -24,6 +24,7 @@ conv=<关键字>：指定文件转换的方式；
 count=<区块数>：仅读取指定的区块数；
 ibs=<字节数>：每次读取的字节数；
 obs=<字节数>：每次输出的字节数；
+if=<文件>：输入文件；
 of=<文件>：输出到文件；
 seek=<区块数>：一开始输出时，跳过指定的区块数；
 skip=<区块数>：一开始读取时，跳过指定的区块数；
@@ -82,3 +83,19 @@ wFRAnlkXeBXmWs1MyGEs
 
 
 
+**测试磁盘写入速度**
+
+```shell
+[root@localhost ~]# dd if=/dev/zero of=/tmp/testfile bs=1G count=1 oflag=direct
+1+0 records in
+1+0 records out
+1073741824 bytes (1.1 GB) copied, 7.10845 s, 151 MB/s
+```
+
+**测试磁盘读取速度**
+```shell
+[root@localhost ~]# dd if=/tmp/testfile of=/dev/null bs=1G count=1 iflag=direct
+1+0 records in
+1+0 records out
+1073741824 bytes (1.1 GB) copied, 6.53009 s, 164 MB/s
+```
