@@ -158,7 +158,7 @@ curl -s -o /dev/null https://example.com
 
 #### **断点续传**
 
-curl能够从特定的文件偏移处继续下载，它可以通过指定一个便宜量来下载部分文件：
+curl能够从特定的文件偏移处继续下载，它可以通过指定一个偏移量来下载部分文件：
 
 ```shell
 curl URL/File -C 偏移量
