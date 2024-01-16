@@ -657,9 +657,6 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/robigus" title="Robigus">
   <img src="https://avatars.githubusercontent.com/u/8164967?v=4" width="42;" alt="Robigus"/>
 </a>
-<a href="https://github.com/robigus" title="Robigus">
-  <img src="https://avatars.githubusercontent.com/u/8164967?v=4" width="42;" alt="Robigus"/>
-</a>
 <a href="https://github.com/wurining" title="Rining Wu">
   <img src="https://avatars.githubusercontent.com/u/26198634?v=4" width="42;" alt="Rining Wu"/>
 </a>
@@ -738,6 +735,9 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/apnpc" title="Alan">
   <img src="https://avatars.githubusercontent.com/u/39884597?v=4" width="42;" alt="Alan"/>
 </a>
+<a href="https://github.com/cxalc" title="cxalc">
+  <img src="https://avatars.githubusercontent.com/u/79086256?v=4" width="42;" alt="cxalc"/>
+</a>
 <a href="https://github.com/121812" title="Forever121">
   <img src="https://avatars.githubusercontent.com/u/39209748?v=4" width="42;" alt="Forever121"/>
 </a>
@@ -807,6 +807,9 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/Azolla" title="Azolla">
   <img src="https://avatars.githubusercontent.com/u/65333936?v=4" width="42;" alt="Azolla"/>
 </a>
+<a href="https://github.com/ischenyu" title="Shan Chenyu">
+  <img src="https://avatars.githubusercontent.com/u/103872353?v=4" width="42;" alt="Shan Chenyu"/>
+</a>
 <a href="https://github.com/seven-steven" title="SevenSteven">
   <img src="https://avatars.githubusercontent.com/u/13358658?v=4" width="42;" alt="SevenSteven"/>
 </a>
@@ -815,9 +818,6 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 </a>
 <a href="https://github.com/xinshangshangxin" title="殇">
   <img src="https://avatars.githubusercontent.com/u/8779091?v=4" width="42;" alt="殇"/>
-</a>
-<a href="https://github.com/RocherKong" title="Rocher">
-  <img src="https://avatars.githubusercontent.com/u/10215178?v=4" width="42;" alt="Rocher"/>
 </a><!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END-->
 
 贡献者列表，由 [contributors](https://github.com/jaywcjlove/github-action-contributors) 自动生成
