@@ -10,19 +10,19 @@ kill
 
 ## 内建命令
 
-#### 概要
+### 概要
 
 ```shell
 kill [-s sigspec | -n signum | -sigspec] pid | jobspec ...
 kill -l [sigspec]
 ```
 
-#### 主要用途
+### 主要用途
 
 - 发送信号到作业或进程（可以为多个）。
 - 列出信号。
 
-#### 选项
+### 选项
 
 ```shell
 -s sig    信号名称。
@@ -31,17 +31,17 @@ kill -l [sigspec]
 -L        等价于-l选项。
 ```
 
-#### 参数
+### 参数
 
 pid：进程ID
 
 jobspec：作业标识符
 
-#### 返回值
+### 返回值
 
 返回状态为成功除非给出了非法选项、执行出现错误。
 
-#### 例子
+### 例子
 
 ```shell
 [user2@pc] kill -l 9
@@ -110,7 +110,7 @@ STOP   19    暂停（同 Ctrl + Z）
 [1]+ 181537 Running                 sleep 90 &
 ```
 
-#### 注意
+### 注意
 
 1. `bash`的作业控制命令包括`bg fg kill wait disown suspend`。
 2. 该命令是bash内建命令，相关的帮助信息请查看`help`命令。
@@ -118,20 +118,20 @@ STOP   19    暂停（同 Ctrl + Z）
 
 ## 外部命令
 
-#### 概要
+### 概要
 
 ```shell
 kill [-signal|-s signal|-p] [-q value] [-a] [--] pid|name...
 kill -l [number] | -L
 ```
 
-#### 主要用途
+### 主要用途
 
 - 发送信号到进程（可以为多个）。
 
 - 列出信号。
 
-#### 选项
+### 选项
 
 ```shell
 -s, --signal signal    要发送的信号，可能是信号名称或信号对应的数字。
@@ -147,7 +147,7 @@ kill -l [number] | -L
 --version              显示版本信息并退出。
 ```
 
-#### 参数
+### 参数
 
 接收信号的进程列表可以是PID以及name的混合组成。
 
@@ -162,7 +162,7 @@ n | 当n大于0时，PID为n的进程接收信号。
 
 name：使用此名称调用的所有进程将接收信号。
 
-#### 例子
+### 例子
 
 ```shell
 > sleep 20 &
@@ -172,19 +172,19 @@ name：使用此名称调用的所有进程将接收信号。
 23021
 ```
 
-#### 返回值
+### 返回值
 
 - 0 成功。
 - 1 失败。
 - 64 部分成功（当指定了多个进程时）。
 
-#### 注意
+### 注意
 
 1. 该命令是`GNU coreutils`包中的命令，相关的帮助信息请查看`man -s 1 kill`或`info coreutils 'kill invocation'`。
 2. 启动或关闭内建命令请查看`enable`命令，关于同名优先级的问题请查看`builtin`命令的例子部分的相关讨论。
 3. 与`kill`命令类似的有`xkill`，`pkill`,`killall`等，用于不同的目的和场景。
 
-#### 参考链接
+## 参考链接
 
 [发送信号到进程](https://bash.cyberciti.biz/guide/Sending_signal_to_Processes)
 
