@@ -15,13 +15,13 @@ systemctl restart iscsi             #重启iscsi服务
 systemctl restart iscsid           
 ```
 
-### 语法
+## 语法
 
 ```shell
 iscsiadm [选项] <命令> <参数>
 ```
 
-### 选项
+## 选项
 
 ```shell
 -m，--mode         # <模式> 指定工作模式，如discovery（发现模式）、node（管理节点）、session（管理会话）、discoverydb、host、iface（管理 iSCSI 网络接口）；
@@ -37,7 +37,7 @@ iscsiadm [选项] <命令> <参数>
 -V，--version      # 显示版本信息。
 ```
 
-### 实例
+## 实例
 
 发送iSCSI发现请求，并列出发现的iSCSI设备目标器：
 
