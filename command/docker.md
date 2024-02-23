@@ -217,6 +217,124 @@ docker push user/image
 ```
 
 
+## docker network
+## 语法
+
+```
+docker network [COMMAND]
+```
+
+## COMMAND
+
+### docker network connect
+将容器连接到网络。您可以按名称或ID连接容器。连接后，容器可以与同一网络中的其他容器通信。
+
+```shell
+docker network connect [OPTIONS] NETWORK CONTAINER
+```
+
+#### 选项参数
+
+```shell
+--alias	为容器添加网络范围的别名
+--driver-opt	网络的驱动程序选项
+--ip	IPv4地址（例如172.30.100.104）
+--ip6	IPv6地址（例如2001：db8 :: 33）
+--link	将链接添加到另一个容器(建议不用,后期应该会删除的)
+--link-local-ip	为容器添加本地链接地址
+```
+
+### docker network disconnect
+断开容器与网络的连接
+
+```shell
+docker network disconnect [OPTIONS] NETWORK CONTAINER
+```
+
+#### 选项参数
+
+```shell
+-f,--force	强制容器断开网络连接
+```
+
+### docker network create
+创建一个新的网络
+
+```shell
+docker network create [OPTIONS] NETWORK
+```
+
+#### 选项参数
+
+```shell
+--attachable		API 1.25+启用手动容器附件
+--aux-address		网络驱动程序使用的辅助IPv4或IPv6地址
+--config-from		API 1.30+从中复制配置的网络
+--config-only		API 1.30+创建仅配置网络
+-d,--driver	bridge	驱动程序来管理网络
+--gateway		主子网的IPv4或IPv6网关
+--ingress		API 1.29+创建群集路由网状网络
+--internal		限制外部访问网络
+--ip-range		从子范围分配容器ip
+--ipam-driver		IP地址管理驱动程序
+--ipam-opt		设置IPAM驱动程序特定选项
+--ipv6		启用IPv6网络
+--label		在网络上设置元数据
+-o,--opt		设置驱动程序特定选项
+--scope		API 1.30+控制网络范围
+--subnet		代表网段的CIDR格式的子网
+```
+
+### docker network inspect
+返回有关一个或多个网络的信息。默认情况下，此命令将所有结果呈现在JSON对象中。
+
+```shell
+docker network inspect [OPTIONS] NETWORK [NETWORK...]
+```
+
+#### 选项参数
+
+```shell
+-f,--format	使用给定的Go模板格式化输出
+-v,--verbose	详细输出以进行诊断
+```
+
+### docker network ls
+列出引擎daemon知道的所有网络。这包括跨群集中多个主机的网络
+
+```shell
+docker network ls [OPTIONS]
+```
+
+#### 选项参数
+
+```shell
+-f,--filter	提供过滤器值（例如"driver = bridge"）
+--format	使用Go模板的精美印刷网络
+--no-trunc	不要截断输出
+-q,--quiet	仅显示网络ID
+```
+
+### docker network prune
+删除所有未使用的网络。未使用的网络是未被任何正在使用的容器引用的网络()。
+
+```shell
+docker network prune [OPTIONS]
+```
+
+#### 选项参数
+
+```shell
+--filter	提供过滤器值（例如'until ='）
+-f,--force	不提示确认
+```
+### docker network rm
+按名称或标识符删除一个或多个网络。要删除网络，必须首先断开连接到它的所有容器。
+
+```shell
+docker network rm NETWORKID [NETWORKID...]
+```
+
 ## 官网
 
 更多安装使用方法可以访问学习：https://wangchujiang.com/reference/docs/docker.html
