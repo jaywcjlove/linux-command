@@ -72,7 +72,7 @@ info info
  **Del 键**  上一页（PageUp 也可以，上一页从当前页的开始两行开始算起）
        上一个 Node （若当前页 Node 文档的开始）
 
- **b 或 t 或 Home**    文档的开始（b 是 begining 的意思）
+ **b 或 t 或 Home**    文档的开始（b 是 beginning 的意思）
  **e 或 End**          文档的末尾（b 是 ending 的意思）
  **Ctrl-l**     刷新当前页，若当前文档显示情况有问题时
  **Ctrl-g**     取消所键入的指令

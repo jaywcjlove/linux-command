@@ -936,7 +936,7 @@ git remote show origin  # 查看指定源的全部信息
 ```shell
 git tag -a v0.1 -m 'my version 1.4' # 新建带注释标签   
 git push origin --tags              # 一次性推送所有分支 
-git push origin v1.5                # 推送单个tag到orgin源上 
+git push origin v1.5                # 推送单个tag到origin源上 
 git tag -v v1.4.2.1                 # 验证标签，验证已经签署的标签
 git show v1.5                       # 看到对应的 GPG 签
 

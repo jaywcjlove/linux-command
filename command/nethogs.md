@@ -49,7 +49,7 @@ usage: nethogs [-V] [-h] [-b] [-d seconds] [-v mode] [-c count] [-t] [-p] [-s] [
 ```shell
 -d : 刷新间隔
 -h : 帮助
--p : promiscious 模式
+-p : promiscuous 模式
 -t : trace模式 
 -V : 版本
 ```

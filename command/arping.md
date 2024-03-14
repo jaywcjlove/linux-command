@@ -21,7 +21,7 @@ arping(选项)(参数)
 -f：表示在收到第一个响应报文后就退出；
 -w timeout：设定一个超时时间，单位是秒。如果到了指定时间，arping还没到完全收到响应则退出；
 -c count：表示发送指定数量的ARP请求数据包后就停止。如果指定了deadline选项，则arping会等待相同数量的arp响应包，直到超时为止；
--s source：设定arping发送的arp数据包中的SPA字段的值。如果为空，则按下面处理，如果是DAD模式（冲突地址探测），则设置为0.0.0.0，如果是Unsolicited ARP模式（Gratutious ARP）则设置为目标地址，否则从路由表得出；
+-s source：设定arping发送的arp数据包中的SPA字段的值。如果为空，则按下面处理，如果是DAD模式（冲突地址探测），则设置为0.0.0.0，如果是Unsolicited ARP模式（Gratuitous ARP）则设置为目标地址，否则从路由表得出；
 -I interface：设置ping使用的网络接口。
 ```
 
