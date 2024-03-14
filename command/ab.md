@@ -61,7 +61,7 @@ name[:port]/path
 -g gnuplot-file
       # Write all measured values out as a 'gnuplot' or TSV  (Tab  separate
       # values)  file.  This file can easily be imported into packages like
-      # Gnuplot, IDL, Mathematica, Igor or even Excell. The labels  are  on
+      # Gnuplot, IDL, Mathematica, Igor or even Excel. The labels  are  on
       # the first line of the file.
 -h    # 显示使用说明
 -H custom-header
