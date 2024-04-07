@@ -134,7 +134,7 @@ jobs:
         continue-on-error: true
         name: 📦 linux-command publish to NPM
         env:
-          NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
       # Create Docker Image
       - name: Set up Docker Buildx
