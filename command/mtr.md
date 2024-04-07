@@ -1,12 +1,13 @@
 mtr
 ===
 
-`mtr`结合了`traceroute`和`ping`程序的功能，是一款简单的网络诊断工具。  
-用于调查 mtr 运行的主机与用户指定的目标主机之间的网络连接。在确定机器之间每个网络跳转的地址后，它会向每台机器发送一系列 ICMP ECHO 请求，以确定与每台机器的链路质量。在此过程中，它会打印每台机器的运行统计数据。
+`mtr` 结合了 `traceroute` 和 `ping` 程序的功能，是一款简单的网络诊断工具
 
 ## 补充说明
 
-Debian发行版已经内置了`mtr`,其它发行版可自行安装，支持主流操作系统。
+用于调查 mtr 运行的主机与用户指定的目标主机之间的网络连接。在确定机器之间每个网络跳转的地址后，它会向每台机器发送一系列 ICMP ECHO 请求，以确定与每台机器的链路质量。在此过程中，它会打印每台机器的运行统计数据。
+
+Debian 发行版已经内置了 `mtr`,其它发行版可自行安装，支持主流操作系统。
 可以访问其[官网](https://www.bitwizard.nl/mtr)详细了解。
 
 ###  语法
@@ -16,18 +17,20 @@ mtr (参数) (目标ip/域名)
 ```
 
 ###  参数
+
 | 参数 | 解释  
 ---- | ----  
--r | 以报告模式显示
--c | 发送数据包大小
--n | 不用主机名解释
--s | 指定ping数据包的大小
---report | 不动态显示结果
+`-r` | 以报告模式显示
+`-c` | 发送数据包大小
+`-n` | 不用主机名解释
+`-s` | 指定ping数据包的大小
+`--report` | 不动态显示结果
 
 ###  实例
 
+使用 `-r` 参数显示报告：
+
 ```shell
-使用 -r 参数显示报告：
 [root@localhost ~]# mtr -r github.com
 
 HOST: WIKIHOST                    Loss%   Snt   Last   Avg  Best  Wrst  StDev
@@ -46,8 +49,11 @@ HOST: WIKIHOST                    Loss%   Snt   Last   Avg  Best  Wrst  StDev
  13.|-- ???                       100.0    10    0.0   0.0   0.0   0.0   0.0
  14.|-- ???                       100.0    10    0.0   0.0   0.0   0.0   0.0
  15.|-- 20.205.243.166             0.0%    10   35.7  35.8  35.7  35.9   0.0
+```
 
-使用-c参数设置每秒发送数据包数量：
+使用 `-c` 参数设置每秒发送数据包数量：
+
+```shell
 [root@localhost ~]# mtr -r -c 30 github.com
 
 HOST: WIKIHOST                    Loss%   Snt   Last   Avg  Best  Wrst  StDev
@@ -66,8 +72,11 @@ HOST: WIKIHOST                    Loss%   Snt   Last   Avg  Best  Wrst  StDev
  13.|-- ???                       100.0    30    0.0   0.0   0.0   0.0   0.0
  14.|-- ???                       100.0    30    0.0   0.0   0.0   0.0   0.0
  15.|-- 20.205.243.166             0.0%    30   35.7  35.8  35.6  35.8   0.0
+```
 
-使用-s参数指定ping数据包的大小：
+使用 `-s` 参数指定 `ping` 数据包的大小：
+
+```shell
 [root@localhost ~]# mtr -r -c 30 -s 1024 github.com
 
 HOST: WIKIHOST                    Loss%   Snt   Last   Avg  Best  Wrst  StDev
@@ -81,5 +90,4 @@ HOST: WIKIHOST                    Loss%   Snt   Last   Avg  Best  Wrst  StDev
   8.|-- be-10-0.ibr01.sg3.ntwk.ms 33.3%    30   38.3  36.9  36.3  39.1   0.7
   9.|-- ae100-0.icr01.sg3.ntwk.ms  0.0%    30   36.1  38.4  35.9  66.6   5.9
  10.|-- ???                       100.0    30    0.0   0.0   0.0   0.0   0.0
-
 ```

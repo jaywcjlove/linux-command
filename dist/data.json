@@ -364,6 +364,11 @@
     "p": "/colrm",
     "d": "删除文件中的指定列"
   },
+  "column": {
+    "n": "column",
+    "p": "/column",
+    "d": "按列格式化输出文件"
+  },
   "comm": {
     "n": "comm",
     "p": "/comm",
@@ -969,6 +974,11 @@
     "p": "/halt",
     "d": "关闭正在运行的Linux操作系统"
   },
+  "hcitool": {
+    "n": "hcitool",
+    "p": "/hcitool",
+    "d": "hcitool是一个Linux命令行工具，用于管理和调试蓝牙设备。它可以用于扫描周围的蓝牙设备、连接到蓝牙设备发送命令和数据包等。"
+  },
   "hdparm": {
     "n": "hdparm",
     "p": "/hdparm",
@@ -1183,6 +1193,11 @@
     "n": "iptstate",
     "p": "/iptstate",
     "d": "显示iptables的工作状态"
+  },
+  "iscsiadm": {
+    "n": "iscsiadm",
+    "p": "/iscsiadm",
+    "d": "管理iSCSI连接"
   },
   "ispell": {
     "n": "ispell",
@@ -1619,6 +1634,11 @@
     "p": "/mtools",
     "d": "显示mtools支持的指令"
   },
+  "mtr": {
+    "n": "mtr",
+    "p": "/mtr",
+    "d": "`mtr`结合了`traceroute`和`ping`程序的功能，是一款简单的网络诊断工具。  "
+  },
   "mv": {
     "n": "mv",
     "p": "/mv",
@@ -1858,6 +1878,11 @@
     "n": "ping6",
     "p": "/ping6",
     "d": "测试主机之间网络的连通性(ipv6)"
+  },
+  "pip": {
+    "n": "pip",
+    "p": "/pip",
+    "d": "Python 编程语言中的包管理器，用于安装和管理第三方 Python 模块"
   },
   "pkexec": {
     "n": "pkexec",
