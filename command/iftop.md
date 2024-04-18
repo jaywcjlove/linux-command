@@ -16,39 +16,38 @@ iftop(选项)
 ###  选项
 
 ```shell
-iftop: display bandwidth usage on an interface by host
+iftop: 按主机显示接口带宽使用情况
 
-Synopsis: iftop -h | [-npblNBP] [-i interface] [-f filter code]
+参数: iftop -h | [-npblNBP] [-i interface] [-f filter code]
     [-F net/mask] [-G net6/mask6]
 
-   -h                  display this message
-   -n                  don't do hostname lookups
-   -N                  don't convert port numbers to services
-   -p                  run in promiscuous mode (show traffic between other
-                       hosts on the same network segment)
-   -b                  don't display a bar graph of traffic
-   -B                  Display bandwidth in bytes
-   -i interface        listen on named interface
+   -h                  显示帮助信息
+   -n                  不要讲ip转为主机名
+   -N                  不要将端口转为对应服务名
+   -p                  以混杂模式运行(显示同一网段内其他主机之间的流量)
+   -b                  不要展示流量通行条形图
+   -B                  使用Byte展示流量情况(默认展示的bit)
+   -i interface        指定需要监听的网络端口 -i eth0
    -f filter code      use filter code to select packets to count
                       (default: none, but only IP packets are counted)
-   -F net/mask         show traffic flows in/out of IPv4 network
-   -G net6/mask6       show traffic flows in/out of IPv6 network
-   -l                  display and count link-local IPv6 traffic (default: off)
-   -P                  show ports as well as hosts
-   -m limit            sets the upper limit for the bandwidth scale
-   -c config file      specifies an alternative configuration file
-   -t                  use text interface without ncurses
+   -F net/mask         展示指定IPV4网络的流量，参数可以是主机名/IP/掩码
+   -G net6/mask6       展示指定IPV6网络的流量，参数可以是主机名/IP/掩码
+   -l                  展示本地网络/回环网络/ipv6流量 (默认值: 关闭)
+   -P                  展示主机端口
+   -m limit            设置带宽规模的上限
+   -c config file      指定可选配置文件
+   -t                  使用文本模式展示
    
    Sorting orders:
-   -o 2s                Sort by first column (2s traffic average)
-   -o 10s               Sort by second column (10s traffic average) [default]
-   -o 40s               Sort by third column (40s traffic average)
-   -o source            Sort by source address
-   -o destination       Sort by destination address
+   -o 2s                按照第一列进行排序 (每2秒的平均值为一个计数周期)
+   -o 10s               按照第二列进行排序 (每10秒的平均值为一个计数周期]
+   -o 40s               按照第三列进行排序 (每40秒的平均值为一个计数周期)
+   -o source            按照原地址继续排序
+   -o destination       按照目标地址进行排序
    
-   The following options are only available in combination with -t
-   -s num              print one single text output afer num seconds, then quit
-   -L num              number of lines to print
+   以下选项仅在与 -t
+   -s num              在num秒后打印一个文本输出，然后退出
+   -L num              打印的行数
 ```
 
 ### 界面说明
