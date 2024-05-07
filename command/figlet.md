@@ -3,6 +3,22 @@ figlet
 
 字符串转为 “字画符”。
 
+## 安装
+
++ Ubuntu 等系统
+
+```shell
+apt-get update
+apt-get install -y figlet
+```
+
++ CentOS 等系统
+
+```shell
+yum install epel-release
+yum install -y figlet
+```
+
 ## 概要
 
 ```shell
