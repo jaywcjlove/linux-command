@@ -3,31 +3,31 @@ figlet
 
 字符串转为 “字画符”。
 
+## 补充说明
+
+将普通字符串转为有简单字符拼接而成的 “字画符”。
+
 ## 安装
 
-+ Ubuntu 等系统
+Ubuntu 等系统
 
 ```shell
 apt-get update
 apt-get install -y figlet
 ```
 
-+ CentOS 等系统
+CentOS 等系统
 
 ```shell
 yum install epel-release
 yum install -y figlet
 ```
 
-## 概要
+## 语法
 
 ```shell
 figlet [ message ] [ -option ]
 ```
-
-## 主要用途
-
-- 将普通字符串转为有简单字符拼接而成的 “字画符”。
 
 ## 参数
 
