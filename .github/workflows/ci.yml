@@ -77,6 +77,7 @@ jobs:
         uses: ncipollo/release-action@v1
         if: steps.create_tag.outputs.successful
         with:
+          allowUpdates: true
           artifacts: '.deploy/linux-command.docset.tgz'
           draft: false
           token: ${{ secrets.GITHUB_TOKEN }}
