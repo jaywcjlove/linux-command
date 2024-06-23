@@ -148,7 +148,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Build and push image:latest
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v6
         with:
           push: true
           context: .
@@ -156,7 +156,7 @@ jobs:
           tags: ${{ secrets.DOCKER_USER }}/linux-command:latest
 
       - name: Build and push image:tags
-        uses: docker/build-push-action@v3
+        uses: docker/build-push-action@v6
         if: steps.create_tag.outputs.successful
         with:
           push: true
@@ -173,7 +173,7 @@ jobs:
       #     password: ${{ secrets.GITHUB_TOKEN }}
 
       # - name: Build and push image:latest
-      #   uses: docker/build-push-action@v3
+      #   uses: docker/build-push-action@v6
       #   with:
       #     push: true
       #     context: .
@@ -181,7 +181,7 @@ jobs:
       #     tags: ghcr.io/jaywcjlove/linux-command:latest
 
       # - name: Build and push image:tags
-      #   uses: docker/build-push-action@v3
+      #   uses: docker/build-push-action@v6
       #   if: steps.create_tag.outputs.successful
       #   with:
       #     push: true
