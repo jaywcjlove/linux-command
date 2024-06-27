@@ -43,87 +43,15 @@
 
 [`linux.ftqq.com`](https://linux.ftqq.com/)，[`linux.gaomeluo.com`](https://linux.gaomeluo.com)，[`atoolbox.net`](http://www.atoolbox.net/Tool.php?Id=826)，[`xiaoshanseo.com`](https://tools.xiaoshanseo.com/Tools/linux-command/)，[`262235.xyz`](https://262235.xyz/linux-command/)，[`cmsblogs.cn`](https://linux.cmsblogs.cn/)，[`loquy.cn`](https://www.loquy.cn/linux-command/)，[`buyao.vip`](https://demo.buyao.vip/linux/)，[`hezhiqiang.gitbook.io`](https://hezhiqiang.gitbook.io/linux/)，[`utils.fun`](https://linux.utils.fun/), [`51tools.info`](https://51tools.info/linux/)
 
-## 微信小程序版本
+## 其它版本
 
-微信小程序版本，由 [**@Matz Yang**](https://github.com/MatzYang) 提供 [#260](https://github.com/jaywcjlove/linux-command/issues/260)。
-
-<img width="180" src="https://user-images.githubusercontent.com/1445225/123251478-d50b7d80-d51d-11eb-80e4-01e18212fc4d.png" />
-
-## Chrome 插件
-
-可在[源码仓库](https://github.com/jaywcjlove/oscnews)预览效果，[Github下载 crx 文件安装](https://github.com/jaywcjlove/oscnews/releases) 或者[开源中国下载 crx 文件安装](https://gitee.com/jaywcjlove/oscnews/releases) 也可通过 Chrome Web Store 下载：
-
-[![Chrome Web Store 下载](http://jaywcjlove.github.io/sb/download/chrome-web-store.svg)](https://chrome.google.com/webstore/detail/oscnews/iheapfheanfjcemgneblljhaebonakbg)
-
-<details>
-<summary>Chrome 插件截图</summary>
-
-<a href="https://github.com/jaywcjlove/oscnew"><img width="556" alt="Chrome 插件截图" src="./assets/chrome-extensions.gif" /></a>
-
-</details>
-
-## Raycast 版本
-
-[Raycast 版本安装](https://www.raycast.com/jaywcjlove/linux-command)， ([**#338**](https://github.com/jaywcjlove/linux-command/issues/338))下图是界面效果： 
-
-<details>
-<summary>Raycast 版本截图</summary>
-
-<img width="556" alt="Raycast 版本截图" src="https://user-images.githubusercontent.com/1680273/156889676-a4c5d6c5-3d0d-4ceb-a573-83f328c94756.png" />
-
-<img width="556" alt="Raycast 版本截图" src="https://user-images.githubusercontent.com/1680273/156889683-e0d54e59-994a-4ef6-85e8-2ae3e7163a87.png" />
-
-<img width="556" alt="Raycast 版本截图" src="https://user-images.githubusercontent.com/1680273/156889728-c45290b0-100a-4a4c-a7cd-42bf3fe2b2f4.png" />
-
-<img width="556" alt="Raycast 版本截图" src="https://user-images.githubusercontent.com/1680273/156889699-42a8fb60-e239-49ce-b5db-a4b0875faa5f.png" />
-
-</details>
-
-
-## Alfred 版本
-
-[Alfred 版本下载](https://github.com/jaywcjlove/linux-command/releases)， 下图是界面效果。 
-
-<details>
-<summary>Alfred 版本截图</summary>
-
-<a href="https://github.com/jaywcjlove/linux-command/releases"><img width="556" alt="Alfred 版本截图" src="./assets/alfred.png" /></a>
-
-</details>
-
-## Dash 版本
-
-由 [**@SHANG殇**](https://github.com/xinshangshangxin) 提供的 `Dash` 版本 [#91](https://github.com/jaywcjlove/linux-command/pull/91)，可配合 `alfred` 玩耍，下载 [linux-command.docset.tgz](https://github.com/jaywcjlove/linux-command/releases) 文件解压，点击安装即可。
-
-
-<details>
-<summary>Dash 版本截图</summary>
-
-<a href="https://github.com/jaywcjlove/linux-command/releases"><img width="556" alt="Dash 版本截图" src="https://user-images.githubusercontent.com/8779091/57193499-5b475d00-6f6e-11e9-879d-e7e8fdc40ced.gif" /></a>
-
-</details>
-
-## Android 版本
-
-[Android 版本下载](https://github.com/Ernest-su/LinuxCmd/releases)， 下图是界面效果。 
-
-<details>
-<summary>Android 版本截图</summary>
-
-<img width="556" alt="Android 版本截图" src="https://github.com/Ernest-su/LinuxCmd/raw/master/screenshot/1.jpg" />
-
-<img width="556" alt="Android 版本截图" src="https://github.com/Ernest-su/LinuxCmd/raw/master/screenshot/2.jpg" />
-
-<img width="556" alt="Android 版本截图" src="https://github.com/Ernest-su/LinuxCmd/raw/master/screenshot/3.jpg" />
-
-<img width="556" alt="Android 版本截图" src="https://github.com/Ernest-su/LinuxCmd/raw/master/screenshot/4.jpg" />
-</details>
-
-## 命令行工具
-
-- [`@chenjiandongx/how`](https://github.com/chenjiandongx/how) Python 版 [#129](https://github.com/jaywcjlove/linux-command/issues/129)，由 [**@陈键冬**](https://github.com/chenjiandongx) 提供。
-- [`@chenjiandongx/pls`](https://github.com/chenjiandongx/pls) Golang 版 [#129](https://github.com/jaywcjlove/linux-command/issues/129)，由 [**@陈键冬**](https://github.com/chenjiandongx) 提供。
-
+- [微信小程序版本](https://github.com/jaywcjlove/linux-command/issues/260)，由 [**@Matz Yang**](https://github.com/MatzYang) 提供 [#260](https://github.com/jaywcjlove/linux-command/issues/260)
+- [Chrome 插件](https://github.com/jaywcjlove/oscnews)，[下载 crx 文件安装](https://github.com/jaywcjlove/oscnews/releases) 或者通过 Chrome Web Store 下载
+- [Raycast 版本](https://www.raycast.com/jaywcjlove/linux-command)，([**#338**](https://github.com/jaywcjlove/linux-command/issues/338))
+- [Alfred 版本下载](https://github.com/jaywcjlove/linux-command/releases)，`Dash` 版本 [#91](https://github.com/jaywcjlove/linux-command/pull/91)，可配合 `alfred` 使用，[下载 .docset.tgz](https://github.com/jaywcjlove/linux-command/releases) 文件，由 [**@SHANG殇**](https://github.com/xinshangshangxin) 提供
+- [Android 版本下载](https://github.com/Ernest-su/LinuxCmd/releases)
+- [`@chenjiandongx/how`](https://github.com/chenjiandongx/how) Python 版 [#129](https://github.com/jaywcjlove/linux-command/issues/129)，由 [**@陈键冬**](https://github.com/chenjiandongx) 提供
+- [`@chenjiandongx/pls`](https://github.com/chenjiandongx/pls) Golang 版 [#129](https://github.com/jaywcjlove/linux-command/issues/129)，由 [**@陈键冬**](https://github.com/chenjiandongx) 提供
 
 ## Docker
 
@@ -165,44 +93,6 @@ http://localhost:9665/
 </details>
 
 通过 Vercel 分配的域名访问，或者自行在设置中绑定域名。
-
-## 目录
-
-- [Web 版本](#web-版本)
-- [微信小程序版本](#微信小程序版本)
-- [Chrome 插件](#chrome-插件)
-- [Raycast 版本](#raycast-版本)
-- [Alfred 版本](#alfred-版本)
-- [Dash 版本](#dash-版本)
-- [Android 版本](#android-版本)
-- [命令行工具](#命令行工具)
-- [Docker](#docker)
-- [Vercel](#vercel)
-- [目录](#目录)
-- [Linux命令分类](#linux命令分类)
-  - [文件传输](#文件传输)
-  - [备份压缩](#备份压缩)
-  - [文件管理](#文件管理)
-  - [磁盘管理](#磁盘管理)
-  - [磁盘维护](#磁盘维护)
-  - [系统设置](#系统设置)
-  - [系统管理](#系统管理)
-  - [文本处理](#文本处理)
-  - [网络通讯](#网络通讯)
-  - [设备管理](#设备管理)
-  - [电子邮件与新闻组](#电子邮件与新闻组)
-  - [其他命令](#其他命令)
-- [开发使用](#开发使用)
-- [Linux学习资源整理](#linux学习资源整理)
-  - [社区网站](#社区网站)
-  - [知识相关](#知识相关)
-  - [软件工具](#软件工具)
-  - [中国开源镜像站点](#中国开源镜像站点)
-  - [游戏玩家发行版](#游戏玩家发行版)
-- [Team](#team)
-- [感谢所有贡献者](#感谢所有贡献者)
-- [License](#license)
-
 
 ## Linux命令分类
 
@@ -354,7 +244,6 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 - [Game Drift Linux](http://gamedrift.org/) [下载地址](http://gamedrift.org/Download.html)
 - [Solus](https://solus-project.com) [下载地址](https://solus-project.com/download/)
 - [Manjaro Gaming Edition (mGAMe)](https://sourceforge.net/projects/mgame/) [下载地址](https://sourceforge.net/projects/mgame/)
-
 
 ## Team
 
