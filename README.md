@@ -352,12 +352,12 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/wlf-darkmatter" title="Lingfeng Wang"><img src="https://avatars.githubusercontent.com/u/62014693?v=4" width="42;" alt="Lingfeng Wang"/></a>
 <a href="https://github.com/weibk" title="weibk"><img src="https://avatars.githubusercontent.com/u/79395818?v=4" width="42;" alt="weibk"/></a>
 <a href="https://github.com/UniqueDing" title="UniqueDing"><img src="https://avatars.githubusercontent.com/u/24190814?v=4" width="42;" alt="UniqueDing"/></a>
+<a href="https://github.com/tutianyu101" title="tutianyu101"><img src="https://avatars.githubusercontent.com/u/134258491?v=4" width="42;" alt="tutianyu101"/></a>
 <a href="https://github.com/hunantangke" title="tangke"><img src="https://avatars.githubusercontent.com/u/22476435?v=4" width="42;" alt="tangke"/></a>
 <a href="https://github.com/snovey" title="snovey"><img src="https://avatars.githubusercontent.com/u/15171147?v=4" width="42;" alt="snovey"/></a>
 <a href="https://github.com/shuangcui" title="shuangcui"><img src="https://avatars.githubusercontent.com/u/16413463?v=4" width="42;" alt="shuangcui"/></a>
 <a href="https://github.com/shhch" title="shc"><img src="https://avatars.githubusercontent.com/u/46923522?v=4" width="42;" alt="shc"/></a>
 <a href="https://github.com/sfwwslm" title="sfwwslm"><img src="https://avatars.githubusercontent.com/u/77674552?v=4" width="42;" alt="sfwwslm"/></a>
-<a href="https://github.com/c2ch" title="c2ch"><img src="https://avatars.githubusercontent.com/u/35028011?v=4" width="42;" alt="c2ch"/></a>
 <a href="https://github.com/MinsonLee" title="MinsonLee"><img src="https://avatars.githubusercontent.com/u/22138919?v=4" width="42;" alt="MinsonLee"/></a>
 <a href="https://github.com/Marnm" title="Marnm"><img src="https://avatars.githubusercontent.com/u/13164237?v=4" width="42;" alt="Marnm"/></a>
 <a href="https://github.com/linmingwei" title="mwei"><img src="https://avatars.githubusercontent.com/u/20484631?v=4" width="42;" alt="mwei"/></a>
@@ -387,6 +387,8 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/Azroys" title="Azroy"><img src="https://avatars.githubusercontent.com/u/73465351?v=4" width="42;" alt="Azroy"/></a>
 <a href="https://github.com/apnpc" title="Alan"><img src="https://avatars.githubusercontent.com/u/39884597?v=4" width="42;" alt="Alan"/></a>
 <a href="https://github.com/loprx" title="0x_000"><img src="https://avatars.githubusercontent.com/u/32635468?v=4" width="42;" alt="0x_000"/></a>
+<a href="https://github.com/121812" title="Forever121"><img src="https://avatars.githubusercontent.com/u/39209748?v=4" width="42;" alt="Forever121"/></a>
+<a href="https://github.com/c2ch" title="c2ch"><img src="https://avatars.githubusercontent.com/u/35028011?v=4" width="42;" alt="c2ch"/></a>
 <a href="https://github.com/brinkqiang" title="brinkqiang"><img src="https://avatars.githubusercontent.com/u/10229072?v=4" width="42;" alt="brinkqiang"/></a>
 <a href="https://github.com/bellpk" title="bell"><img src="https://avatars.githubusercontent.com/u/12622129?v=4" width="42;" alt="bell"/></a>
 <a href="https://github.com/azureology" title="azureology"><img src="https://avatars.githubusercontent.com/u/34760051?v=4" width="42;" alt="azureology"/></a>
@@ -414,8 +416,7 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 <a href="https://github.com/robigus" title="Robigus"><img src="https://avatars.githubusercontent.com/u/8164967?v=4" width="42;" alt="Robigus"/></a>
 <a href="https://github.com/wurining" title="Rining Wu"><img src="https://avatars.githubusercontent.com/u/26198634?v=4" width="42;" alt="Rining Wu"/></a>
 <a href="https://github.com/rayyee" title="Ray Yee"><img src="https://avatars.githubusercontent.com/u/685149?v=4" width="42;" alt="Ray Yee"/></a>
-<a href="https://github.com/fishandsheep" title="QinShower"><img src="https://avatars.githubusercontent.com/u/43347407?v=4" width="42;" alt="QinShower"/></a>
-<a href="https://github.com/pplmx" title="Mystic"><img src="https://avatars.githubusercontent.com/u/26994103?v=4" width="42;" alt="Mystic"/></a><!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END-->
+<a href="https://github.com/fishandsheep" title="QinShower"><img src="https://avatars.githubusercontent.com/u/43347407?v=4" width="42;" alt="QinShower"/></a><!--AUTO_GENERATED_PLEASE_DONT_DELETE_IT-END-->
 
 贡献者列表，由 [contributors](https://github.com/jaywcjlove/github-action-contributors) 自动生成
 
