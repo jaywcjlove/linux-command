@@ -371,7 +371,7 @@ awk 'NR%2==1{next}{print NR,$0;}' text.txt
 
 当记录行号除以2余1，就跳过当前行。下面的`print NR,$0`也不会执行。下一行开始，程序有开始判断`NR%2`值。这个时候记录行号是`：2` ，就会执行下面语句块：`'print NR,$0'`
 
-分析发现需要将包含有“web”行进行跳过，然后需要将内容与下面行合并为一行：
+跳过以“web”为首的行，再将该行内容分别与下面不以“web”为首的行合并打印，使用一个“：”和一个制表符连接：
 
 ```shell
 cat text.txt
@@ -386,7 +386,7 @@ web03[192.168.2.102]
 mysqld            ok
 httpd               ok
 0
-awk '/^web/{T=$0;next;}{print T":"t,$0;}' text.txt
+awk '/^web/{T=$0;next;}{print T":\t"$0;}' text.txt
 web01[192.168.2.100]:   httpd            ok
 web01[192.168.2.100]:   tomcat               ok
 web01[192.168.2.100]:   sendmail               ok
