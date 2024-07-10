@@ -172,9 +172,10 @@ sed '2,$d' file
 sed '$d' file
 ```
 
-删除文件中所有开头是test的行：
+删除文件中所有开头是test的行(d写外边效果一样)：
 
 ```shell
+sed '/^test/d' file
 sed '/^test/'d file
 ```
 
