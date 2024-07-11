@@ -191,6 +191,7 @@ https://raw.githubusercontent.com/jaywcjlove/linux-command/master/command/<命�
 - [鸟哥的linux私房菜](http://linux.vbird.org/) - 非常适合Linux入门初学者看的教程。
 - [Linux公社](http://www.linuxidc.com/) - Linux相关的新闻、教程、主题、壁纸都有。
 - [Linux Today](http://www.linuxde.net) - Linux新闻资讯发布，Linux职业技术学习！。
+- [X-CMD](https://www.x-cmd.com/) - Shell + AWK 为核心增强原生命令输出以及交互体验，各种命令以及现代化软件包的介绍和使用教程，每日科技新闻资讯，欢迎浏览关注！
 
 ### 知识相关
 
