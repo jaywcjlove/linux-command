@@ -62,6 +62,7 @@ axel [options] url1 [url2] [url...]
 --alternate ， -a            # Alternate progress indicator
 --help ，-h                  # 帮助
 --version ，-V               # 版本信息
+--insecure，-k	             # 不验证SSL证书
 ```
 
 ###  实例
