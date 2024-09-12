@@ -37,6 +37,17 @@ sudo systemctl start docker
 
 ```
 
+```bash
+# Docker官方提供的快速安装脚本 https://github.com/docker/docker-install 
+# 不建议在生产环境中使用
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh ./get-docker.sh --dry-run
+
+# 使用systemctl设置开机启动
+sudo systemctl enable docker.service
+sudo systemctl enable containerd.service
+```
+
 ## 语法
 
 ```shell
