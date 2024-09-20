@@ -1,0 +1,20 @@
+linuxCommand:
+  linuxCommandContainer:
+    image:
+      repository: wcjiang/linux-command
+      tag: latest
+    imagePullPolicy: IfNotPresent
+    resources:
+      limits:
+        cpu: 100m
+        memory: 50Mi
+      requests:
+        cpu: 100m
+        memory: 50Mi
+  replicas: 1
+service:
+  ports:
+  - port: 9665
+    protocol: TCP
+    targetPort: 3000
+  type: NodePort
