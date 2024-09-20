@@ -24,8 +24,16 @@ spec:
       containers:
       - name: linux-command-container
         image: wcjiang/linux-command:latest
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 3000
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "50Mi"
+          limits:
+            cpu: "100m"
+            memory: "50Mi"
 ---
 apiVersion: v1
 kind: Service
