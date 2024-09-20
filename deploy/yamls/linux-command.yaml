@@ -1,0 +1,50 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: linux-command
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: linux-command
+  namespace: linux-command
+  labels:
+    app: linux-command
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: linux-command
+  template:
+    metadata:
+      labels:
+        app: linux-command
+    spec:
+      containers:
+      - name: linux-command-container
+        image: wcjiang/linux-command:latest
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 3000
+        resources:
+          requests:
+            cpu: "100m"
+            memory: "50Mi"
+          limits:
+            cpu: "100m"
+            memory: "50Mi"
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: linux-command-service
+  namespace: linux-command
+spec:
+  selector:
+    app: linux-command
+  ports:
+    - protocol: TCP
+      port: 9665
+      targetPort: 3000
+  type: NodePort
