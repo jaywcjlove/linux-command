@@ -14,7 +14,7 @@ $ helm install linux-command ./linux-command --namespace linux-command --create-
 $ helm -n linux-command uninstall linux-command
 ```
 
-This removes all the Kubernetes components associated with the chart and deletes the release.
+这会删除与图表相关的所有 Kubernetes 组件，并删除发布。
 
 ## 配置参数
 
