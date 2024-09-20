@@ -12,7 +12,7 @@
 我们将使用此存储库中的`kubectl`应用 YAML 文件，该文件将安装 `linux-command` 应用。
 
 ```bash
-$ kubectl apply -f https://raw.githubusercontent.com/jaywcjlove/linux-command/master/deploy/yamls/linux-command.yaml
+$ kubectl apply -f https://raw.githubusercontent.com/jaywcjlove/linux-command/refs/heads/master/k8s/linux-command.yaml
 ```
 
 检查 `Deployment` 状态：
