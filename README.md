@@ -94,6 +94,41 @@ http://localhost:9665/
 
 通过 Vercel 分配的域名访问，或者自行在设置中绑定域名。
 
+## 宝塔面板
+
+可通过宝塔面板应用商店快速部署 linux-command
+
+<details>
+<summary>部署步骤</summary>
+
+### 前提
+
+* 仅适用于宝塔面板 9.2.0 及以上版本
+* 安装宝塔面板，前往[宝塔面板](https://www.bt.cn/new/download.html)官网，选择正式版的脚本下载安装
+
+### 部署
+
+1. 登录宝塔面板，在左侧菜单栏中点击 `Docker`
+2. 首次会提示安装`Docker`和`Docker Compose`服务，点击立即安装，若已安装请忽略。
+3. 安装完成后在`Docker-应用商店-实用工具`中找到 `linux-command`，点击`安装`，也可以在搜索框直接搜索`linux`。
+4. 设置域名等基本信息，点击`确定`
+* 说明：
+  * 名称：应用名称，默认`linuxcommand_随机字符`
+  * 版本选择：默认`latest`
+  * 域名：如您需要通过域名访问，请在此处填写您的域名
+  * 允许外部访问：如您需通过`IP+Port`直接访问，请勾选，如您已经设置了域名，请不要勾选此处
+  * 端口：默认`3000`，可自行修改
+  * CPU 限制：0 为不限制，根据实际需要设置
+  * 内存限制：0 为不限制，根据实际需要设置
+5. 提交后面板会自动进行应用初始化，大概需要`1-3`分钟，初始化完成后即可访问。
+
+### 访问 linux-command
+
+* 如果您填写域名，请在浏览器输入您的域名访问，如`http://demo.linux-command`，即可访问 `linux-command` 页面。
+* 如您选择`IP+端口访问`请在浏览器地址栏中输入域名访问 `http://<宝塔面板IP>:6806`，即可访问 `linux-command` 页面。
+
+</details>
+
 ## Linux命令分类
 
 *这里存放Linux 命令大全并不全，你可以通过[linux-command](https://jaywcjlove.github.io/linux-command/)来搜索，它是把 [command](./assets/command) 目录里面搜集的命令，生成了静态HTML并提供预览以及索引搜索。*
