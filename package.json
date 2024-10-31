@@ -1,6 +1,6 @@
 {
   "name": "linux-command",
-  "version": "1.18.0",
+  "version": "1.19.1",
   "description": "Linux Command",
   "homepage": "https://jaywcjlove.github.io/linux-command/",
   "main": "dist/data.json",
@@ -33,9 +33,9 @@
     "fs-extra": "~10.1.0",
     "markdown-to-html-cli": "~4.0.0",
     "sitemap-generator": "~8.5.1",
-    "sqlite3": "5.0.8",
-    "stylus": "~0.59.0",
-    "uglify-js": "~3.17.0"
+    "sqlite3": "5.1.5",
+    "stylus": "~0.63.0",
+    "uglify-js": "~3.19.0"
   },
   "engines": {
     "node": ">=16.0.0"

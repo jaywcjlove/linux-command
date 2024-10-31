@@ -9,6 +9,14 @@ axel
 
 ###  安装
 
+#### 源码安装
+
+github地址：https://github.com/axel-download-accelerator/axel
+
+下载相应的 release 版本后，解压进入目录执行`./configure && make && make install`安装即可。
+
+#### 二进制安装
+
 CentOS安装Axel：
 
 目前yum源上没有Axel，我们可以到 http://pkgs.repoforge.org/axel/ 下载rpm包安装。
@@ -54,6 +62,7 @@ axel [options] url1 [url2] [url...]
 --alternate ， -a            # Alternate progress indicator
 --help ，-h                  # 帮助
 --version ，-V               # 版本信息
+--insecure，-k	             # 不验证SSL证书
 ```
 
 ###  实例

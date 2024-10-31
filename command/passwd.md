@@ -85,6 +85,15 @@ Retype new UNIX password:    # 再输入一次；
 passwd: all authentication tokens updated successfully.  # 成功；
 ```
 
+或通过管道符把`echo`命令和`passwd`命令的`--stdin`参数相结合，用一条命令来完成密码修改，无序交互。
+以 linuxde 用户的密码改成 123456 为例：
+
+```shell
+[root@localhost ~]# echo "123456" | passwd --stdin linuxde
+Changing password for user linuxde.                        # 正在更改 linuxde 用户的密码。
+passwd: all authentication tokens updated successfully.    # passwd：所有身份验证令牌都已成功更新
+```
+
 普通用户如果想更改自己的密码，直接运行passwd即可，比如当前操作的用户是linuxde。
 
 ```shell

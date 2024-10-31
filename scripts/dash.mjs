@@ -118,7 +118,9 @@ async function build() {
 
   console.info('compressing tgz');
   // https://github.com/node-modules/compressing/issues/42 建议最好休眠15s，等待其余资源复制完毕
-  spawn("sleep", ['15'])
+  // 确保所有操作完成后再压缩
+  await new Promise(resolve => setTimeout(resolve, 30000)); // 增加到 30 秒
+
   const outputPath = pathJoin(process.cwd(), '.deploy', 'linux-command.docset.tgz');
   await tgz.compressDir(DOCSET_DIR, outputPath);
 }
