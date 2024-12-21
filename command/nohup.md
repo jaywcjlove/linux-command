@@ -47,4 +47,16 @@ nohup wget site.com/file.zip
 nohup ping -c 10 baidu.com
 ```
 
+### 最简单的后台运行
+nohup command &
+### 输出默认重定向到当前目录下 nohup.out 文件
+nohup python main.py &  
+### 自定义输出文件(标准输出和错误输出合并到 main.log)
+nohup python main.py >> main.log 2>&1 & 
+### 与上一个例子相同作用的简写方法
+nohup python main.py &> main.log &
+### 不记录输出信息
+nohup python main.py &> /dev/null &
+### 不记录输出信息并将程序的进程号写入 pidfile.txt 文件中，方便后续杀死进程
+nohup python main.py &> /dev/null & echo $! > pidfile.txt
 
