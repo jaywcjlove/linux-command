@@ -5,15 +5,15 @@ as
 
 ## 补充说明
 
-**as命令** GNU组织推出的一款汇编语言编译器，它支持多种不同类型的处理器。
+**as命令** 是GNU组织推出的一款汇编语言编译器，它支持多种不同类型的处理器。
 
-###  语法
+### 语法
 
 ```shell
-as(选项)(参数)
+as [选项] [参数]
 ```
 
-###  选项
+### 选项
 
 ```shell
 -ac：忽略失败条件；
@@ -33,8 +33,44 @@ as(选项)(参数)
 --statistics：打印汇编所用的最大空间和总时间。
 ```
 
-###  参数
+### 参数
 
 汇编文件：指定要汇编的源文件。
 
+### 示例
 
+编译一个汇编文件并生成目标文件
+
+```shell
+as -o output.o source.s
+```
+
+忽略调试指令并生成目标文件
+
+```shell
+as -ad -o output.o source.s
+```
+
+生成包含调试信息的目标文件
+
+```shell
+as -g -o output.o source.s
+```
+
+包括宏扩展并生成目标文件
+
+```shell
+as -am -o output.o source.s
+```
+
+打印汇编所用的最大空间和总时间
+
+```shell
+as --statistics -o output.o source.s
+```
+
+跳过空白和注释预处理并生成目标文件
+
+```shell
+as -f -o output.o source.s
+```
