@@ -1,5 +1,6 @@
 chmod
 ===
+`Change Mode`
 
 用来变更文件或目录的权限
 
