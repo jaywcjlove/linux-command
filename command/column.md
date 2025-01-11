@@ -26,6 +26,8 @@ file（可选），当没有指定文件时，默认会从标准输入读取，�
 -s, --separator <string>        指定识别表格的分隔符
 -o, --output-separator <string> 输出表格的列分隔符，默认为两个空格
 -x, --fillrows                  在列之前填充行
+-N, --table-columns <names>     添加列名（逗号分隔）
+-J  --json                      格式化为JSON输出（需要配合-N/--table-columns使用）
 -h, --help                      显示此帮助
 -V, --version                   输出版本信息
 ```
@@ -120,4 +122,55 @@ DataOut[3]  Metal3  pin  62.46    159.92
 MemReq      Metal3  pin  108.215  159.92
 RdWrBar     Metal3  pin  87.415   159.92
 clock       Metal3  pin  74.935   159.92
+```
+
+- 添加列名并以JSON格式输出
+
+```shell
+$ column -J -s ":" -N "Username,Password,UID,GID,Gecos,HomeDirectory,Shell" /etc/passwd
+{
+   "table": [
+      {
+         "username": "root",
+         "password": "x",
+         "uid": "0",
+         "gid": "0",
+         "gecos": "root",
+         "homedirectory": "/root",
+         "shell": "/bin/bash"
+      },{
+         "username": "daemon",
+         "password": "x",
+         "uid": "1",
+         "gid": "1",
+         "gecos": "daemon",
+         "homedirectory": "/usr/sbin",
+         "shell": "/usr/sbin/nologin"
+      },{
+         "username": "bin",
+         "password": "x",
+         "uid": "2",
+         "gid": "2",
+         "gecos": "bin",
+         "homedirectory": "/bin",
+         "shell": "/usr/sbin/nologin"
+      },{
+         "username": "sys",
+         "password": "x",
+         "uid": "3",
+         "gid": "3",
+         "gecos": "sys",
+         "homedirectory": "/dev",
+         "shell": "/usr/sbin/nologin"
+      },{
+         "username": "sync",
+         "password": "x",
+         "uid": "4",
+         "gid": "65534",
+         "gecos": "sync",
+         "homedirectory": "/bin",
+         "shell": "/bin/sync"
+      }
+   ]
+}
 ```
