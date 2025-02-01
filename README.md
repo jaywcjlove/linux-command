@@ -35,7 +35,7 @@
 
 **推荐使用的镜像 web 版本**
 
-[**`linuxsearch.largeinfo.cc`**](http://linuxsearch.largeinfo.cc)，[**`srebro.cn`**](https://linux.srebro.cn/)，[**`getaifun.com`**](https://getaifun.com/linux)，[**`linux.devonline.net`**](http://linux.devonline.net/)，[**`man.zch.ooo`**](https://man.zch.ooo/)，[**`linux.mmoke.com`**](https://linux.mmoke.com)，[**`bqrdh.com`**](https://tools.bqrdh.com/linux-command/)，[**`linux.zyimm.com`**](http://linux.zyimm.com/)，[**`linux.vovuo.com`**](https://linux.vovuo.com/)，[`linux.liguiying.cn`](https://linux.liguiying.cn/), [`renye.net`](https://renye.net/), [`diqi.org`](https://diqi.org/)，[`linux.alistnas.xyz`](https://linux.alistnas.xyz/)，[`nenufm.com`](https://www.nenufm.com/linux-command/)
+[**`linuxsearch.largeinfo.cc`**](http://linuxsearch.largeinfo.cc)，[**`srebro.cn`**](https://linux.srebro.cn/)，[**`getaifun.com`**](https://getaifun.com/linux)，[**`linux.devonline.net`**](http://linux.devonline.net/)，[**`man.zch.ooo`**](https://man.zch.ooo/)，[**`linux.mmoke.com`**](https://linux.mmoke.com)，[**`bqrdh.com`**](https://tools.bqrdh.com/linux-command/)，[**`linux.zyimm.com`**](http://linux.zyimm.com/)，[**`linux.vovuo.com`**](https://linux.vovuo.com/)，[`linux.liguiying.cn`](https://linux.liguiying.cn/), [`renye.net`](https://renye.net/), [`diqi.org`](https://diqi.org/)，[`linux.alistnas.top`](https://linux.alistnas.top/)，[`nenufm.com`](https://www.nenufm.com/linux-command/)
 
 **其它 web 版本**
 
