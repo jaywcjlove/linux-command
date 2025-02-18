@@ -10,15 +10,20 @@ Arch Linux 系统及其衍生系统中默认使用的包管理器
 ## 实例
 
 ### 安装软件包
-
+官方软件包
 ```bash
 pacman -S p7zip
 ```
 
-也可以安装一个软件包组
+非官方软件包（用户制作）
+```bash
+yay -S package_name1 package_name2 ...
+```
+
+### 查询软件包
 
 ```bash
-pacman -S gnome
+pacman -Ss package_name1 package_name2 ...
 ```
 
 ### 列出所有软件包
