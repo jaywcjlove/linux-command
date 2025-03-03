@@ -45,7 +45,7 @@ losetup [ -d ] loop_device
 dd if=/dev/zero of=floppy.img bs=512 count=2880
 ```
 
-使用 losetup将磁盘镜像文件虚拟成快设备：
+使用 losetup 将磁盘镜像文件虚拟成块设备：
 
 ```shell
 losetup /dev/loop1 floppy.img
@@ -57,7 +57,7 @@ losetup /dev/loop1 floppy.img
 mount /dev/loop0 /tmp
 ```
 
-经过上面的三步之后，我们就可以通过/tmp目录，像访问真实快设备一样来访问磁盘镜像文件floppy.img。
+经过上面的三步之后，我们就可以通过/tmp目录，像访问真实块设备一样来访问磁盘镜像文件floppy.img。
 
 卸载loop设备：
 
