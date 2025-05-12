@@ -15,6 +15,36 @@
 
 当前仓库搜集了 600 多个 Linux 命令，是一个非盈利性的仓库，生成了一个 web 网站方便使用，目前网站没有任何广告，内容包含 Linux 命令手册、详解、学习，内容来自网络和网友的补充，非常值得收藏的 Linux 命令速查手册。版权归属原作者，对任何法律问题及风险不承担任何责任，没有任何商业目的，如果认为侵犯了您的版权，请来信告知。我不能完全保证内容的正确性。通过使用本站内容带来的风险与我无关。当使用本站时，代表您已接受了本站的使用条款和隐私条款。
 
+## 赞助支持
+
+非常感谢一直以来支持我开源项目的朋友们！如果您认可我的工作，欢迎通过 [赞助](https://wangchujiang.com/#/sponsor) 我或下载并使用我开发的 [macOS 应用](https://wangchujiang.com/#/app) 来支持我。以下是我个人独立开发的 macOS 应用列表：
+
+<p style="display: inline-block">
+  <a target="_blank" href="https://apps.apple.com/app/6745227444" title="Musicer for macOS"><img align="center" alt="Musicer" height="52" width="52" src="./appicon/musicer.png"></a>
+  <a target="_blank" href="https://apps.apple.com/app/6743841447" title="Audioer for macOS"><img align="center" alt="Audioer" height="52" width="52" src="./appicon/audioer.png"></a>
+  <a target="_blank" href="https://apps.apple.com/app/6744690194" title="FileSentinel for macOS"><img align="center" alt="FileSentinel" height="52" width="52" src="./appicon/file-sentinel.png"></a>
+  <a target="_blank" href="https://apps.apple.com/app/6743495172" title="FocusCursor for macOS"><img align="center" alt="FocusCursor" height="52" width="52" src="./appicon/focus-cursor.png"></a>
+  <a target="_blank" href="https://apps.apple.com/app/6742680573" title="Videoer for macOS"><img align="center" alt="Videoer" height="52" width="52" src="./appicon/videoer.png"></a>
+  <a target="_blank" href="https://apps.apple.com/app/6740425504" title="KeyClicker for macOS"><img align="center" alt="KeyClicker" height="50" width="50" src="./appicon/key-clicker.png"></a>
+  <a target="_blank" href="https://apps.apple.com/app/6739052447" title="DayBar for macOS"><img align="center" alt="DayBar" height="50" width="50" src="./appicon/daybar.png"></a>
+  <a target="_blank" href="https://apps.apple.com/app/6739444407" title="Iconed for macOS"><img align="center" alt="Iconed" height="50" width="50" src="./appicon/iconed.png"></a>
+  <a target="_blank" href="https://apps.apple.com/app/6737160756" title="RightMenu Master for macOS"><img align="center" alt="RightMenu Master" height="50" width="50" src="./appicon/rightmenu-master.png"></a>
+  <a target="_blank" href="https://apps.apple.com/app/6723903021" title="Paste Quick for macOS"><img align="center" alt="Paste Quick" height="50" width="50" src="./appicon/paste-quick.png"></a>
+  <a target="_blank" href="https://apps.apple.com/app/6670696072" title="Quick RSS for macOS/iOS"><img align="center" alt="Quick RSS" height="50" width="50" src="./appicon/quick-rss.png"></a>
+  <a target="_blank" href="https://apps.apple.com/app/6670167443" title="Web Serve for macOS"><img align="center" alt="Web Serve" height="50" width="50" src="./appicon/web-serve.png"></a>
+  <a target="_blank" href="https://apps.apple.com/app/6503953628" title="Copybook Generator for macOS/iOS"><img align="center" alt="Copybook Generator" height="50" width="50" src="./appicon/copybook-generator.png"></a>
+  <a target="_blank" href="https://apps.apple.com/app/6471227008" title="DevTutor for macOS/iOS"><img align="center" alt="DevTutor for SwiftUI" height="50" width="50" src="./appicon/devtutor.png"></a>
+  <a target="_blank" href="https://apps.apple.com/app/6479819388" title="RegexMate for macOS/iOS"><img align="center" alt="RegexMate" height="50" width="50" src="./appicon/regex-mate.png"></a>
+  <a target="_blank" href="https://apps.apple.com/app/6479194014" title="Time Passage for macOS/iOS"><img align="center" alt="Time Passage" height="50" width="50" src="./appicon/time-passage.png"></a>
+  <a target="_blank" href="https://apps.apple.com/app/6478772538" title="IconizeFolder for macOS"><img align="center" alt="Iconize Folder" height="50" width="50" src="./appicon/iconize-folder.png"></a>
+  <a target="_blank" href="https://apps.apple.com/app/6478511402" title="Textsound Saver for macOS/iOS"><img align="center" alt="Textsound Saver" height="50" width="50" src="./appicon/textsound-saver.png"></a>
+  <a target="_blank" href="https://apps.apple.com/app/6476924627" title="Create Custom Symbols for macOS"><img align="center" alt="Create Custom Symbols" height="50" width="50" src="./appicon/create-custom-symbols.png"></a>
+  <a target="_blank" href="https://apps.apple.com/app/6476452351" title="DevHub for macOS"><img align="center" alt="DevHub" height="50" width="50" src="./appicon/devhub.png"></a>
+  <a target="_blank" href="https://apps.apple.com/app/6476400184" title="Resume Revise for macOS"><img align="center" alt="Resume Revise" height="50" width="50" src="./appicon/resume-revise.png"></a>
+  <a target="_blank" href="https://apps.apple.com/app/6472593276" title="Palette Genius for macOS"><img align="center" alt="Palette Genius" height="50" width="50" src="./appicon/palette-genius.png"></a>
+  <a target="_blank" href="https://apps.apple.com/app/6470879005" title="Symbol Scribe for macOS"><img align="center" alt="Symbol Scribe" height="50" width="50" src="./appicon/symbol-scribe.png"></a>
+</p>
+
 ## Web 版本
 
 [Github Web](http://jaywcjlove.github.io/linux-command/) | [Gitee Web](http://jaywcjlove.gitee.io/linux-command/) | [Githack](https://raw.githack.com/jaywcjlove/linux-command/gh-pages/index.html) | [Statically](https://cdn.statically.io/gh/jaywcjlove/linux-command/gh-pages/index.html)
