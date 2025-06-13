@@ -65,6 +65,8 @@
 
 ⚠️ 你们拿过去部署的静态网站，还是希望挂个 GitHub 地址，这样大家共同维护命令文档，让文档更加完善，更加丰富，当然你删除本站所有信息相关信息，其实我也不太在意，默认允许你们随意搞，我不负任何负责。如果您也部署了一份，可以将网址放到下面 :)。
 
+由于中国国内访问，时常打不开，你可以访问下面镜像网站(国内打不开的不再收录)。推荐自己的[镜像网站 #649](https://github.com/jaywcjlove/linux-command/issues/649)
+
 **推荐使用的镜像 web 版本**
 
 [**`linuxsearch.largeinfo.cc`**](http://linuxsearch.largeinfo.cc)，[**`srebro.cn`**](https://linux.srebro.cn/)，[**`getaifun.com`**](https://getaifun.com/linux)，[**`linux.devonline.net`**](http://linux.devonline.net/)，[**`man.zch.ooo`**](https://man.zch.ooo/)，[**`linux.mmoke.com`**](https://linux.mmoke.com)，[**`bqrdh.com`**](https://tools.bqrdh.com/linux-command/)，[**`linux.zyimm.com`**](http://linux.zyimm.com/)，[**`linux.vovuo.com`**](https://linux.vovuo.com/)，[`linux.liguiying.cn`](https://linux.liguiying.cn/)，[`renye.net`](https://renye.net/)，[`diqi.org`](https://diqi.org/)，[`linux.alistnas.top`](https://linux.alistnas.top/)，[`nenufm.com`](https://www.nenufm.com/linux-command/)，[`linux.jiangyang.online`](https://linux.jiangyang.online/)
@@ -85,7 +87,7 @@
 - [`@chenjiandongx/how`](https://github.com/chenjiandongx/how) Python 版 [#129](https://github.com/jaywcjlove/linux-command/issues/129)，由 [**@陈键冬**](https://github.com/chenjiandongx) 提供
 - [`@chenjiandongx/pls`](https://github.com/chenjiandongx/pls) Golang 版 [#129](https://github.com/jaywcjlove/linux-command/issues/129)，由 [**@陈键冬**](https://github.com/chenjiandongx) 提供
 
-## Docker
+## Docker 部署
 
 [![Docker Image Version (latest by date)](https://img.shields.io/docker/v/wcjiang/linux-command?logo=docker)](https://hub.docker.com/r/wcjiang/linux-command) [![Docker Image Size (latest by date)](https://img.shields.io/docker/image-size/wcjiang/linux-command?logo=docker)](https://hub.docker.com/r/wcjiang/linux-command) [![Docker Pulls](https://img.shields.io/docker/pulls/wcjiang/linux-command?logo=docker)](https://hub.docker.com/r/wcjiang/linux-command)
 
@@ -93,16 +95,12 @@
 
 ```bash
 docker pull wcjiang/linux-command
-# Or
-docker pull ghcr.io/jaywcjlove/linux-command:latest
 ```
 
 ```bash
 docker run --name linux-command --rm -d -p 9665:3000 wcjiang/linux-command:latest
 # Or
 docker run --name linux-command -itd -p 9665:3000 wcjiang/linux-command:latest
-# Or
-docker run --name linux-command -itd -p 9665:3000 ghcr.io/jaywcjlove/linux-command:latest
 ```
 
 在浏览器中访问以下 URL
