@@ -869,6 +869,11 @@
     "p": "/get_module",
     "d": "获取Linux内核模块的详细信息"
   },
+  "getcap": {
+    "n": "getcap",
+    "p": "/getcap",
+    "d": "显示文件的能力（capabilities）"
+  },
   "getenforce": {
     "n": "getenforce",
     "p": "/getenforce",
@@ -878,6 +883,11 @@
     "n": "getent",
     "p": "/getent",
     "d": "查询 DNS 名称服务器中的命名空间"
+  },
+  "getfacl": {
+    "n": "getfacl",
+    "p": "/getfacl",
+    "d": "获取文件访问控制列表(access control lists)"
   },
   "getsebool": {
     "n": "getsebool",
@@ -1132,7 +1142,7 @@
   "iostat": {
     "n": "iostat",
     "p": "/iostat",
-    "d": "iostat命令被用于监视系统输入输出设备和CPU的使用情况。它的特点是汇报磁盘活动统计情况，同时也会汇报出CPU使用情况。同vmstat一样，iostat也有一个弱点，就是它不能对某个进程进行深入分析，仅对系统的整体情况进行分析。iowait 指在一个采样周期内有百分之几的时间是属于以下情况：CPU处于空闲状态并且至少有一个未完成的磁盘IO请求。"
+    "d": "监视系统输入输出设备和CPU的使用情况"
   },
   "iotop": {
     "n": "iotop",
@@ -1778,6 +1788,11 @@
     "n": "nslookup",
     "p": "/nslookup",
     "d": "查询域名DNS信息的工具"
+  },
+  "nstat": {
+    "n": "nstat",
+    "p": "/nstat",
+    "d": "nstat 是一个简单的监视内核的 SNMP 计数器和网络接口状态的实用工具。"
   },
   "ntpdate": {
     "n": "ntpdate",
@@ -2688,6 +2703,11 @@
     "n": "type",
     "p": "/type",
     "d": "显示指定命令的类型。"
+  },
+  "ufw": {
+    "n": "ufw",
+    "p": "/ufw",
+    "d": "  ubuntu防火墙管理工具"
   },
   "ulimit": {
     "n": "ulimit",
