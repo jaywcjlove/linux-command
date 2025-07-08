@@ -102,6 +102,8 @@
 [`utils.fun`](https://linux.utils.fun/)
 [`51tools.info`](https://51tools.info/linux/)
 
+在项目仓库和网站上添加你部署的镜像链接，这不仅有助于提升你网站的**权重**，还能加快搜索引擎的抓取和收录速度。
+
 ## 其它版本
 
 - [KDE/Krunner](https://github.com/roachsinai/krunner-linuxcommands)
