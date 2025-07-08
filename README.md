@@ -102,7 +102,7 @@
 [`utils.fun`](https://linux.utils.fun/)
 [`51tools.info`](https://51tools.info/linux/)
 
-在项目仓库和网站上添加你部署的镜像链接，这不仅有助于提升你网站的**权重**，还能加快搜索引擎的抓取和收录速度。
+在项目仓库和网站上[添加你部署的镜像链接](https://github.com/jaywcjlove/linux-command/issues/649#issue-3141950597)，这不仅有助于提升你网站的**权重**，还能加快搜索引擎的抓取和收录速度。
 
 ## 其它版本
 
