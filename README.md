@@ -70,6 +70,7 @@
 
 **推荐使用的镜像 web 版本**
 
+[**`linux.sicangge.com`**](https://linux.sicangge.com)
 [**`linuxsearch.largeinfo.cc`**](http://linuxsearch.largeinfo.cc)
 [**`srebro.cn`**](https://linux.srebro.cn/)
 [**`getaifun.com`**](https://getaifun.com/linux)
