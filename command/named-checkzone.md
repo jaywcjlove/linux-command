@@ -1,7 +1,7 @@
 named-checkzone
 ===
 
-使用named-checkzone命令可以进行区域文件有效性检查和转换，必须指定区域名称和区域文件名称
+使用 named-checkzone 可验证并转换区域文件，需指定区域名和文件名。
 
 ## 补充说明
 
