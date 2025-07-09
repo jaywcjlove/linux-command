@@ -62,11 +62,11 @@
 
 [![Linux 命令大全](https://user-images.githubusercontent.com/1680273/123261829-ce830300-d529-11eb-8cea-a39059b972dd.gif)](https://jaywcjlove.github.io/linux-command/)
 
-你可以随意部署 web 版，这非常简单，只需要克隆 [`gh-pages`](https://github.com/jaywcjlove/linux-command/tree/gh-pages) 分支代码到你的静态服务就可以了。你也可以将 [`command`](https://github.com/jaywcjlove/linux-command/tree/master/command) 目录中的 Markdown 文件拿去自己生成 HTML。还可以使用下方 docker 方法部署 web 版。
+你可以随意部署 web 版，这非常简单，只需要克隆 [gh-pages](https://github.com/jaywcjlove/linux-command/tree/gh-pages) 分支代码到你的静态服务就可以了。你也可以将 [`command`](https://github.com/jaywcjlove/linux-command/tree/master/command) 目录中的 Markdown 文件拿去自己生成 HTML。还可以使用下方 [Docker 部署](#docker-部署) web 版。
 
-⚠️ 你们拿过去部署的静态网站，还是希望挂个 GitHub 地址，这样大家共同维护命令文档，让文档更加完善，更加丰富，当然你删除本站所有信息相关信息，其实我也不太在意，默认允许你们随意搞，我不负任何负责。如果您也部署了一份，可以将网址放到下面 :)。
+⚠️ 部署的静态网站，还是希望挂个 GitHub 地址，这样大家共同维护命令文档，让文档更加完善，更加丰富，当然删除本站所有相关信息，其实我也不太在意，默认允许你们随意搞，我不负任何负责。如果您也部署了一份，可以将网址放到下面 :)。
 
-由于中国国内访问，时常打不开，你可以通过推荐或提交 PR 的方式添加你的[镜像站 #649](https://github.com/jaywcjlove/linux-command/issues/649#issue-3141950597)，以提升权重并加快搜索引擎收录。
+由于中国国内访问，时常打不开，你可以访问下面镜像网站。也可以通过推荐或提交 PR 的方式添加你的[镜像站 #649](https://github.com/jaywcjlove/linux-command/issues/649#issue-3141950597)，以提升权重并加快搜索引擎收录。
 
 **推荐使用的镜像 web 版本**
 
