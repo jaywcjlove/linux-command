@@ -70,6 +70,7 @@
 
 **推荐使用的镜像 web 版本**
 
+[**`cnxiaobai.com`**](https://linux.cnxiaobai.com)
 [**`sicangge.com`**](https://linux.sicangge.com)
 [**`largeinfo.cc`**](http://linuxsearch.largeinfo.cc)
 [**`srebro.cn`**](https://linux.srebro.cn/)
