@@ -70,6 +70,7 @@
 
 **推荐使用的镜像 web 版本**
 
+[**`fasfuah.icu`**](https://linux.fasfuah.icu)
 [**`cnxiaobai.com`**](https://linux.cnxiaobai.com)
 [**`sicangge.com`**](https://linux.sicangge.com)
 [**`largeinfo.cc`**](http://linuxsearch.largeinfo.cc)
