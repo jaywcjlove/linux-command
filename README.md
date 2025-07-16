@@ -70,6 +70,7 @@
 
 **推荐使用的镜像 web 版本**
 
+[**`zanglikun.com`**](https://linux.zanglikun.com)
 [**`alapi.cn`**](https://linux.alapi.cn)
 [**`fasfuah.icu`**](https://linux.fasfuah.icu)
 [**`cnxiaobai.com`**](https://linux.cnxiaobai.com)
@@ -93,6 +94,7 @@
 
 **其它 web 版本**
 
+[`briline.net`](http://linux.briline.net)
 [`pkslow.com`](https://www.pkslow.com/linux-commands/index.html)
 [`ifdev.cn`](https://cmd.ifdev.cn)
 [`witnect.top`](https://witnect.top/)
