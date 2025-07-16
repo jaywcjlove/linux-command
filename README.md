@@ -93,6 +93,9 @@
 
 **其它 web 版本**
 
+[`pkslow.com`](https://www.pkslow.com/linux-commands/index.html)
+[`ifdev.cn`](https://cmd.ifdev.cn)
+[`witnect.top`](https://witnect.top/)
 [`lylme.com`](https://linux.lylme.com/)
 [`ftqq.com`](https://linux.ftqq.com/)
 [`gaomeluo.com`](https://linux.gaomeluo.com)
