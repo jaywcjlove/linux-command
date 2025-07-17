@@ -1,16 +1,16 @@
-bmodinfo
+modinfo
 ===
 
 显示给定模块的详细信息
 
 ## 补充说明
 
-**bmodinfo命令** 用于显示给定模块的详细信息。
+**modinfo命令** 用于显示给定模块的详细信息。
 
 ###  语法
 
 ```shell
-bmodinfo(选项)(参数)
+modinfo(选项)(参数)
 ```
 
 ###  选项
