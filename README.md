@@ -91,6 +91,7 @@
 [`alistnas.top`](https://linux.alistnas.top/)
 [`nenufm.com`](https://www.nenufm.com/linux-command/)
 [`jiangyang.online`](https://linux.jiangyang.online/)
+[`xiyung.cn`](https://xiyung.cn/linux-command/)
 
 **其它 web 版本**
 
