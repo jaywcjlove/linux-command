@@ -184,11 +184,6 @@
     "p": "/blockdev",
     "d": "从命令行调用区块设备控制程序"
   },
-  "bmodinfo": {
-    "n": "bmodinfo",
-    "p": "/bmodinfo",
-    "d": "显示给定模块的详细信息"
-  },
   "break": {
     "n": "break",
     "p": "/break",
@@ -1629,6 +1624,11 @@
     "p": "/modetest",
     "d": "DRM/KMS驱动程序libdrm中的模式测试工具"
   },
+  "modinfo": {
+    "n": "modinfo",
+    "p": "/modinfo",
+    "d": "显示给定模块的详细信息"
+  },
   "modprobe": {
     "n": "modprobe",
     "p": "/modprobe",
@@ -1692,7 +1692,7 @@
   "named-checkzone": {
     "n": "named-checkzone",
     "p": "/named-checkzone",
-    "d": "使用named-checkzone命令可以进行区域文件有效性检查和转换，必须指定区域名称和区域文件名称"
+    "d": "使用 named-checkzone 可验证并转换区域文件，需指定区域名和文件名。"
   },
   "nano": {
     "n": "nano",
@@ -2398,6 +2398,11 @@
     "n": "sort",
     "p": "/sort",
     "d": "对文本文件中所有行进行排序。"
+  },
+  "sosreport": {
+    "n": "sosreport",
+    "p": "/sosreport",
+    "d": "收集系统配置和诊断信息"
   },
   "source": {
     "n": "source",
