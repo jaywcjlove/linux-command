@@ -70,6 +70,7 @@
 
 **推荐使用的镜像 web 版本**
 
+[**`waadri.top`**](https://linuxcommand.waadri.top)
 [**`zanglikun.com`**](https://linux.zanglikun.com)
 [**`alapi.cn`**](https://linux.alapi.cn)
 [**`fasfuah.icu`**](https://linux.fasfuah.icu)
