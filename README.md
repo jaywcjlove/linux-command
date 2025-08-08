@@ -70,6 +70,7 @@
 
 **推荐使用的镜像 web 版本**
 
+[**`wu114.cn`**](https://linux.wu114.cn)
 [**`waadri.top`**](https://linuxcommand.waadri.top)
 [**`zanglikun.com`**](https://linux.zanglikun.com)
 [**`alapi.cn`**](https://linux.alapi.cn)
