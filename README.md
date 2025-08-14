@@ -499,7 +499,7 @@ Adobe软件的最佳替代品 [原文在这里](https://linux.cn/article-8928-1.
 <a href="https://github.com/LaudOak" title="LaudOak"><img src="https://avatars.githubusercontent.com/u/11486158?v=4" width="42;" alt="LaudOak"/></a>
 <a href="https://github.com/liux-pro" title="Legend"><img src="https://avatars.githubusercontent.com/u/20764978?v=4" width="42;" alt="Legend"/></a>
 <a href="https://github.com/LexsionLee" title="LexsionLee"><img src="https://avatars.githubusercontent.com/u/10875417?v=4" width="42;" alt="LexsionLee"/></a>
-<a href="https://github.com/mengsixing" title="孟思行"><img src="https://avatars.githubusercontent.com/u/13692434?v=4" width="42;" alt="孟思行"/></a>
+<a href="https://github.com/mengsixing" title="hengli"><img src="https://avatars.githubusercontent.com/u/13692434?v=4" width="42;" alt="hengli"/></a>
 <a href="https://github.com/wuxian" title="Lin Wuxian"><img src="https://avatars.githubusercontent.com/u/2416757?v=4" width="42;" alt="Lin Wuxian"/></a>
 <a href="https://github.com/LinuxZilong" title="LinuxZilong"><img src="https://avatars.githubusercontent.com/u/97012545?v=4" width="42;" alt="LinuxZilong"/></a>
 <a href="https://github.com/LesterWeng" title="Lix"><img src="https://avatars.githubusercontent.com/u/23631443?v=4" width="42;" alt="Lix"/></a>
