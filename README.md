@@ -398,6 +398,7 @@ Adobe软件的最佳替代品 [原文在这里](https://linux.cn/article-8928-1.
 <a href="https://github.com/zyy2477" title="zyy2477"><img src="https://avatars.githubusercontent.com/u/23225911?v=4" width="42;" alt="zyy2477"/></a>
 <a href="https://github.com/rgshare" title="rgshare"><img src="https://avatars.githubusercontent.com/u/3303320?v=4" width="42;" alt="rgshare"/></a>
 <a href="https://github.com/james-wangx" title="James Wang"><img src="https://avatars.githubusercontent.com/u/62491424?v=4" width="42;" alt="James Wang"/></a>
+<a href="https://github.com/Jeremy2214" title="Jeremy2214"><img src="https://avatars.githubusercontent.com/u/97098763?v=4" width="42;" alt="Jeremy2214"/></a>
 <a href="https://github.com/MioMuse" title="MioMuse"><img src="https://avatars.githubusercontent.com/u/41938676?v=4" width="42;" alt="MioMuse"/></a>
 <a href="https://github.com/SteveLauC" title="SteveLauC"><img src="https://avatars.githubusercontent.com/u/96880612?v=4" width="42;" alt="SteveLauC"/></a>
 <a href="https://github.com/ischenyu" title="Shan Chenyu"><img src="https://avatars.githubusercontent.com/u/103872353?v=4" width="42;" alt="Shan Chenyu"/></a>
@@ -405,10 +406,10 @@ Adobe软件的最佳替代品 [原文在这里](https://linux.cn/article-8928-1.
 <a href="https://github.com/yeungchie" title="YEUNGCHIE"><img src="https://avatars.githubusercontent.com/u/30793662?v=4" width="42;" alt="YEUNGCHIE"/></a>
 <a href="https://github.com/lavaicer" title="lavaicer"><img src="https://avatars.githubusercontent.com/u/52038323?v=4" width="42;" alt="lavaicer"/></a>
 <a href="https://github.com/loverainye" title="loverainye"><img src="https://avatars.githubusercontent.com/u/2232094?v=4" width="42;" alt="loverainye"/></a>
-<a href="https://github.com/alfchao" title="alfred"><img src="https://avatars.githubusercontent.com/u/49786895?v=4" width="42;" alt="alfred"/></a>
 <a href="https://github.com/Evilrabbit520" title="Wang Yujia"><img src="https://avatars.githubusercontent.com/u/25611476?v=4" width="42;" alt="Wang Yujia"/></a>
-<a href="https://github.com/maboloshi" title="沙漠之子"><img src="https://avatars.githubusercontent.com/u/7850715?v=4" width="42;" alt="沙漠之子"/></a>
+<a href="https://github.com/alfchao" title="alfred"><img src="https://avatars.githubusercontent.com/u/49786895?v=4" width="42;" alt="alfred"/></a>
 <a href="https://github.com/Qliangw" title="Qliangw"><img src="https://avatars.githubusercontent.com/u/22791711?v=4" width="42;" alt="Qliangw"/></a>
+<a href="https://github.com/maboloshi" title="沙漠之子"><img src="https://avatars.githubusercontent.com/u/7850715?v=4" width="42;" alt="沙漠之子"/></a>
 <a href="https://github.com/Jeffery186" title="Shell"><img src="https://avatars.githubusercontent.com/u/39795988?v=4" width="42;" alt="Shell"/></a>
 <a href="https://github.com/xhal" title="xhal"><img src="https://avatars.githubusercontent.com/u/34055638?v=4" width="42;" alt="xhal"/></a>
 <a href="https://github.com/weironz" title="will"><img src="https://avatars.githubusercontent.com/u/33590311?v=4" width="42;" alt="will"/></a>
@@ -418,7 +419,6 @@ Adobe软件的最佳替代品 [原文在这里](https://linux.cn/article-8928-1.
 <a href="https://github.com/BingCoke" title="BingCoke"><img src="https://avatars.githubusercontent.com/u/81607010?v=4" width="42;" alt="BingCoke"/></a>
 <a href="https://github.com/einverne" title="Ein Verne"><img src="https://avatars.githubusercontent.com/u/1962738?v=4" width="42;" alt="Ein Verne"/></a>
 <a href="https://github.com/FunKeen" title="FunKeen"><img src="https://avatars.githubusercontent.com/u/112614943?v=4" width="42;" alt="FunKeen"/></a>
-<a href="https://github.com/Jeremy2214" title="Jeremy2214"><img src="https://avatars.githubusercontent.com/u/97098763?v=4" width="42;" alt="Jeremy2214"/></a>
 <a href="https://github.com/hellof20" title="Pan, Wen-Ming"><img src="https://avatars.githubusercontent.com/u/8756642?v=4" width="42;" alt="Pan, Wen-Ming"/></a>
 <a href="https://github.com/fishandsheep" title="QinShower"><img src="https://avatars.githubusercontent.com/u/43347407?v=4" width="42;" alt="QinShower"/></a>
 <a href="https://github.com/duzhuoshanwai" title="duzhuoshanwai"><img src="https://avatars.githubusercontent.com/u/65448395?v=4" width="42;" alt="duzhuoshanwai"/></a>
