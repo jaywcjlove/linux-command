@@ -109,6 +109,7 @@
 [`nenufm.com`](https://www.nenufm.com/linux-command/)
 [`jiangyang.online`](https://linux.jiangyang.online/)
 [`xiyung.cn`](https://xiyung.cn/linux-command/)
+[`78888889.xyz`](https://linux-command.78888889.xyz/)
 
 **其它 web 版本**
 
@@ -177,6 +178,22 @@ http://localhost:9665/
 </details>
 
 通过 Vercel 分配的域名访问，或者自行在设置中绑定域名。
+
+
+## Netlify
+
+可以点击下面按钮一键部署至 [Netlify](https://netlify.com):
+
+[![Deploy to Netlify Button](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/jaywcjlove/linux-command)
+
+<details>
+<summary>部署结果</summary>
+
+![](./assets/netlify.png)
+
+</details>
+
+通过 Netlify 分配的域名访问，或者自行在设置中绑定域名。
 
 ## 宝塔面板
 
