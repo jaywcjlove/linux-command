@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,groupdel,用于删除指定的工作组">
     <title>groupdel 命令，Linux groupdel 命令详解：用于删除指定的工作组 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1755755192301">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1756263195978">
     <script src="../js/dark-mode.min.js"></script>
     <script type="module" src="../js/github-corners.js"></script>
 </head>
@@ -134,7 +134,7 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
 <h1 id="groupdel"><a class="anchor" aria-hidden="true" tabindex="-1" href="#groupdel"><span class="octicon octicon-link"></span></a>groupdel</h1>
 <p>用于删除指定的工作组</p>
 <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><span class="octicon octicon-link"></span></a>补充说明</h2>
-<p><strong>groupdel命令</strong> 用于删除指定的工作组，本命令要修改的系统文件包括/ect/group和/ect/gshadow。若该群组中仍包括某些用户，则必须先删除这些用户后，方能删除群组。</p>
+<p><strong>groupdel命令</strong> 用于删除指定的工作组，本命令要修改的系统文件包括/ect/group和/ect/gshadow。若该群组是某些用户的主组，则必须先删除这些用户或改变其主组后，才能删除该群组;如果该群组仅为某些用户的附加组,则可以直接删除,这些用户中的该组信息也会被删除。</p>
 <h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><span class="octicon octicon-link"></span></a>语法</h3>
 <pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">groupdel<span class="token punctuation">(</span>参数<span class="token punctuation">)</span>
 </span></code><div onclick="copied(this)" data-code="groupdel(参数)
@@ -225,7 +225,7 @@ function copied(target, str) {
     <a href="https://github.com/jaywcjlove/linux-command/issues/649" target="_blank">推荐</a>自己的镜像网站
   </div>
 </div>
-<script type="text/javascript" src="../js/dt.js?v=1755755192302"></script>
-<script type="text/javascript" src="../js/index.js?v=1755755192302"></script>
+<script type="text/javascript" src="../js/dt.js?v=1756263195978"></script>
+<script type="text/javascript" src="../js/index.js?v=1756263195978"></script>
 </body>
 </html>
