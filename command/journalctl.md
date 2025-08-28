@@ -1,7 +1,7 @@
 journalctl
 ===
 
-检索 systemd 日志，是 CentOS 7 才有的工具。
+检索 systemd 日志，只要使用 systemd 的 Linux 发行版（如 Fedora、Ubuntu Modern、Debian、SUSE、Arch），几乎都会配备 journalctl。
 
 ### 语法
 
