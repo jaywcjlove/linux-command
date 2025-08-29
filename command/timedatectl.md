@@ -37,6 +37,7 @@ Query or change system time and date settings.
 
 Commands:
   status                   显示当前的时间设置。
+  show                     显示systemd-timedated的属性。
   set-time TIME            设置系统时间。
   set-timezone ZONE        设置系统时区。
   list-timezones           显示已知时区。
@@ -62,11 +63,22 @@ NTP synchronized: no
       DST active: n/a
 ```
 
+显示systemd-timedated的属性
+
+```
+$ timedatectl show
+Timezone=Asia/Shanghai
+LocalRTC=no
+CanNTP=yes
+NTP=yes
+NTPSynchronized=yes
+TimeUSec=Fri 2022-04-08 17:04:02 CST
+RTCTimeUSec=Fri 2022-04-08 17:04:02 CST
+```
+
 显示系统所有可用的时区
 
 ```shell
-$ timedatectl show
-Unknown operation show
 $ timedatectl list-timezones
 Africa/Abidjan
 Africa/Accra
