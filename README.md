@@ -508,7 +508,7 @@ Adobe软件的最佳替代品 [原文在这里](https://linux.cn/article-8928-1.
 <a href="https://github.com/waiwai24" title="waiwai"><img src="https://avatars.githubusercontent.com/u/131680154?v=4" width="42;" alt="waiwai"/></a>
 <a href="https://github.com/weibk" title="weibk"><img src="https://avatars.githubusercontent.com/u/79395818?v=4" width="42;" alt="weibk"/></a>
 <a href="https://github.com/wlf-darkmatter" title="Lingfeng Wang"><img src="https://avatars.githubusercontent.com/u/62014693?v=4" width="42;" alt="Lingfeng Wang"/></a>
-<a href="https://github.com/yanyixing" title="yanyx"><img src="https://avatars.githubusercontent.com/u/12455492?v=4" width="42;" alt="yanyx"/></a>
+<a href="https://github.com/hkyyx" title="yanyx"><img src="https://avatars.githubusercontent.com/u/12455492?v=4" width="42;" alt="yanyx"/></a>
 <a href="https://github.com/zjlovezj" title="zjlovezj"><img src="https://avatars.githubusercontent.com/u/388222?v=4" width="42;" alt="zjlovezj"/></a>
 <a href="https://github.com/xin99xin" title="zodiac"><img src="https://avatars.githubusercontent.com/u/10813088?v=4" width="42;" alt="zodiac"/></a>
 <a href="https://github.com/fireairforce" title="zoomdong"><img src="https://avatars.githubusercontent.com/u/32598811?v=4" width="42;" alt="zoomdong"/></a>
