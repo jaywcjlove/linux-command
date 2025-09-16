@@ -86,6 +86,7 @@
 **推荐使用的镜像 web 版本**
 
 [**`qqcl.com`**](https://linux.qqcl.com/)
+[**`huiyex.top`**](https://linux.huiyex.top)
 [**`wu114.cn`**](https://linux.wu114.cn)
 [**`waadri.top`**](https://linuxcommand.waadri.top)
 [**`zanglikun.com`**](https://linux.zanglikun.com)
