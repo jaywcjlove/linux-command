@@ -104,6 +104,7 @@
 [**`zyimm.com`**](http://linux.zyimm.com/)
 [**`vovuo.com`**](https://linux.vovuo.com/)
 [**`shinote.net`**](https://linux.shinote.net/)
+[`vekicc.com`](https://ll.vekicc.com/)
 [`liguiying.cn`](https://linux.liguiying.cn/)
 [`renye.net`](https://renye.net/)
 [`diqi.org`](https://diqi.org/)
