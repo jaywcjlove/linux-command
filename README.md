@@ -131,6 +131,7 @@
 [`hezhiqiang.gitbook.io`](https://hezhiqiang.gitbook.io/linux/)
 [`utils.fun`](https://linux.utils.fun/)
 [`51tools.info`](https://51tools.info/linux/)
+[`ddosi.org`](https://www.ddosi.org/linux-cmd/)
 
 ## 其它版本
 
