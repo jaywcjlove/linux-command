@@ -86,6 +86,8 @@
 
 **推荐使用的镜像 web 版本**
 
+[**`lihaicheng.cn`**](https://linux.lihaicheng.cn)
+[**`kkcry.com`**](https://linux.kkcry.com)
 [**`dyh1319.asia`**](https://linux.dyh1319.asia)
 [**`qqcl.com`**](https://linux.qqcl.com/)
 [**`huiyex.top`**](https://linux.huiyex.top)
