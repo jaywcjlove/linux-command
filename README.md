@@ -88,6 +88,7 @@
 
 **推荐使用的镜像 web 版本**
 
+[**`szsyw.cn`**](https://linux.szsyw.cn/)
 [**`lukix.xyz`**](https://linux.lukix.xyz/)
 [**`lihaicheng.cn`**](https://linux.lihaicheng.cn)
 [**`kkcry.com`**](https://linux.kkcry.com)
