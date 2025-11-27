@@ -326,4 +326,101 @@ $ rsync -av --include="*.txt" --exclude='*' source/ destination
 
 上面命令指定同步时，排除所有文件，但是会包括 `TXT` 文件。
 
+**指定要使用的远程shell**
 
+远程shell(remote shell)用于在本地和远程主机之间建立连接，它不是指执行脚本的shell(bash/zsh等)
+
+`-e`选项可以指定使用的远程shell(默认为ssh)，例如 rsh、socat 或自定义脚本
+
+```shell
+$ rsync -av -e rsh /tmp/src/ user@host:/tmp/dest/
+```
+
+`-e`选项同时可以指定远程shell的参数，如果需要指定 ssh user，必须使用`ssh -l user`，而不能使用`ssh user@host`，因为`ssh user@host`会破坏 rsync 对 host 的解析方式
+
+```shell
+$ rsync -av -e "ssh -l root -p 9000" /tmp/src/ user@192.168.56.12:/tmp/dest/
+```
+
+**通过SSH加密daemon传输**
+
+使用daemon语法(`host::module`或`rsync://host/module`)时，默认情况下会直接连接到远程的rsync daemon，走TCP 873 端口明文传输
+
+```shell
+$ rsync -av /tmp/src/ testuser@192.168.56.12::max
+```
+
+当使用daemon语法的同时添加`-e ssh`选项时，rsync 通过ssh登录远程主机，并在ssh会话中启动一个临时的single-use(单次使用) daemon，从而使daemon传输经过ssh加密，临时daemon不会监听任何TCP端口，它全部通信都通过SSH管道完成。
+
+```shell
+# 此时会使用当前登录的Linux用户作为 ssh user，随后还需要输入模块 max 的 rsync user 密码
+$ rsync -av -e ssh /tmp/src/ 192.168.56.12::max
+```
+
+```shell
+# 此时会默认使用testuser同时作为ssh user和rsync user，需要保证远程服务器存在Linux用户testuser，不推荐这种写法
+$ rsync -av -e ssh /tmp/src/ testuser@192.168.56.12::max
+```
+
+更推荐的写法是使用`ssh -l user`同时显式指定ssh user，并在daemon语法中显式写明rsync user，避免二者混淆
+
+```shell
+# 此时使用user进行ssh连接，rsync user是testuser
+$ rsync -av -e "ssh -l user" /tmp/src/ testuser@192.168.56.12::max
+```
+
+在通过ssh加密daemon传输的模式下，本地rsync通过ssh远程登录，并在远程以ssh用户的身份创建一个临时daemon。该daemon会在ssh用户家目录下寻找`rsyncd.conf`，如果没有找到则会报错，而不是使用`/etc/rsyncd.conf`(如果使用root进行ssh则会直接读取`/etc/rsyncd.conf`)。
+
+可以在ssh user的家目录新建一个`rsyncd.conf`，写入类似下面的配置：
+
+```
+[max]
+    path = /tmp/dest
+    read only = no
+    auth users = testuser
+    secrets file = /home/user/rsyncd.secrets
+```
+
+配置文件中不要使用`uid`、`gid`、`chroot`等需要root权限的配置，然后新建一个密码文件`/home/user/rsyncd.secrets`，内容例如：
+
+```
+testuser:123123
+```
+
+并将密码文件权限设置为600：
+
+```shell
+$ chmod 600 /home/user/rsyncd.secrets
+```
+
+**通过SSH隧道加密daemon传输**
+
+除了上面提到的临时daemon，还可以使用SSH隧道加密正常的daemon
+
+默认情况下`sudo rsync --daemon`启动的是一个监听`0.0.0.0:873`的端口，通过SSH将远程端口映射到本地，然后`rsync`只需连接本地端口即可完成加密传输。
+
+修改配置文件`/etc/rsyncd.conf`:
+
+```
+hosts allow = 127.0.0.1
+address = 127.0.0.1
+```
+
+启动 rsync daemon（此时只会监听本地回环地址`127.0.0.1:873`）
+
+```shell
+$ sudo rsync --daemon
+```
+
+映射远程端口到本地
+
+```shell
+$ ssh -L 8873:127.0.0.1:873 user@192.168.56.12
+```
+
+使用本地端口同步（流量会自动经 SSH 加密转发到远程 daemon）
+
+```shell
+# 默认连接873端口，必须显式指明端口
+$ rsync -av /tmp/src/ testuser@127.0.0.1::max --port=8873
+```
