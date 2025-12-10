@@ -89,6 +89,7 @@
 
 **推荐使用的镜像 web 版本**
 
+[**`ykkit.cn`**](https://linux.ykkit.cn)
 [**`geekswg.js.cool`**](https://geekswg.js.cool/linux-command/)
 [**`szsyw.cn`**](https://linux.szsyw.cn/)
 [**`lukix.xyz`**](https://linux.lukix.xyz/)
