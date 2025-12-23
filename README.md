@@ -589,7 +589,7 @@ Adobe软件的最佳替代品 [原文在这里](https://linux.cn/article-8928-1.
 <a href="https://github.com/linmingwei" title="mwei"><img src="https://avatars.githubusercontent.com/u/20484631?v=4" width="42;" alt="mwei"/></a>
 <a href="https://github.com/wingrez" title="Wingrez"><img src="https://avatars.githubusercontent.com/u/31106425?v=4" width="42;" alt="Wingrez"/></a>
 <a href="https://github.com/loprx" title="0x_000"><img src="https://avatars.githubusercontent.com/u/32635468?v=4" width="42;" alt="0x_000"/></a>
-<a href="https://github.com/apnpc" title="PanHeng"><img src="https://avatars.githubusercontent.com/u/39884597?v=4" width="42;" alt="PanHeng"/></a>
+<a href="https://github.com/apnpc" title="AlenPann"><img src="https://avatars.githubusercontent.com/u/39884597?v=4" width="42;" alt="AlenPann"/></a>
 <a href="https://github.com/Azroys" title="azroy"><img src="https://avatars.githubusercontent.com/u/73465351?v=4" width="42;" alt="azroy"/></a>
 <a href="https://github.com/cy920820" title="Cui Yang"><img src="https://avatars.githubusercontent.com/u/21211512?v=4" width="42;" alt="Cui Yang"/></a>
 <a href="https://github.com/DYH1319" title="DYH1319"><img src="https://avatars.githubusercontent.com/u/50073268?v=4" width="42;" alt="DYH1319"/></a>
