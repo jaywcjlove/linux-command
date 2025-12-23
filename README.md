@@ -91,7 +91,7 @@
 
 [**`ykkit.cn`**](https://linux.ykkit.cn)
 [**`geekswg.js.cool`**](https://geekswg.js.cool/linux-command/)
-[**`szsyw.cn`**](https://linux.szsyw.cn/)
+[**`szsyw.cn`**](https://projects.szsyw.cn/linux/)
 [**`lukix.xyz`**](https://linux.lukix.xyz/)
 [**`lihaicheng.cn`**](https://linux.lihaicheng.cn)
 [**`kkcry.com`**](https://linux.kkcry.com)
