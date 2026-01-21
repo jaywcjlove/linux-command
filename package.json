@@ -33,7 +33,7 @@
     "fs-extra": "~10.1.0",
     "markdown-to-html-cli": "~4.0.0",
     "sitemap-generator": "~8.5.1",
-    "sqlite3": "5.1.5",
+    "sqlite3": "5.1.7",
     "stylus": "~0.63.0",
     "uglify-js": "~3.19.0"
   },
