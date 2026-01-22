@@ -90,6 +90,7 @@
 
 **推荐使用的镜像 web 版本**
 
+[**`iced.eu.org`**](https://command.iced.eu.org/)
 [**`85604608.xyz`**](https://85604608.xyz)
 [**`ykkit.cn`**](https://linux.ykkit.cn)
 [**`geekswg.js.cool`**](https://geekswg.js.cool/linux-command/)
