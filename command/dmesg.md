@@ -1,5 +1,6 @@
 dmesg
 ===
+`Diagnostic Message`
 
 显示Linux系统启动信息
 

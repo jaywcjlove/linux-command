@@ -1,5 +1,6 @@
 chown
 ===
+`Change owner`
 
 用来变更文件或目录的拥有者或所属群组
 
