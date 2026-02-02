@@ -932,7 +932,7 @@
   "groupmod": {
     "n": "groupmod",
     "p": "/groupmod",
-    "d": "更改群组识别码或名称"
+    "d": "修改系统上的组定义"
   },
   "groups": {
     "n": "groups",
@@ -1704,6 +1704,11 @@
     "p": "/nc",
     "d": "nc是网络工具中的瑞士军刀"
   },
+  "ncdu": {
+    "n": "ncdu",
+    "p": "/ncdu",
+    "d": "磁盘使用情况的交互式查看工具，可视为 du 的增强版本"
+  },
   "ncftp": {
     "n": "ncftp",
     "p": "/ncftp",
@@ -2093,6 +2098,11 @@
     "n": "readonly",
     "p": "/readonly",
     "d": "标记shell变量或函数为只读"
+  },
+  "realpath": {
+    "n": "realpath",
+    "p": "/realpath",
+    "d": "解析并规范化文件路径，返回绝对路径。"
   },
   "reboot": {
     "n": "reboot",

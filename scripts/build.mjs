@@ -7,7 +7,7 @@ import { create } from 'markdown-to-html-cli';
 import _ from 'colors-cli/toxic';
 
 const deployDir = path.resolve(process.cwd(), '.deploy');
-const faviconPath = path.resolve(process.cwd(), 'template', 'img', 'favicon.ico');
+const templateImgDir = path.resolve(process.cwd(), 'template', 'img');
 const rootIndexJSPath = path.resolve(process.cwd(), 'template', 'js', 'index.js');
 const dataJsonPath = path.resolve(process.cwd(), 'dist', 'data.json');
 const dataJsonMinPath = path.resolve(process.cwd(), 'dist', 'data.min.json');
@@ -18,11 +18,10 @@ const contributorsPath = path.resolve(process.cwd(), 'CONTRIBUTORS.svg');
   try {
     await FS.ensureDir(deployDir);
     await FS.emptyDir(deployDir);
-    await FS.ensureDir(path.resolve(deployDir, 'img'));
     await FS.ensureDir(path.resolve(deployDir, 'js'));
     await FS.ensureDir(path.resolve(deployDir, 'css'));
     await FS.ensureDir(path.resolve(deployDir, 'c'));
-    await FS.copySync(faviconPath, path.resolve(deployDir, 'img', 'favicon.ico'));
+    await FS.copySync(templateImgDir, path.resolve(deployDir, 'img'));
     
     await FS.copyFile(path.resolve(process.cwd(), 'template', 'js', 'copy-to-clipboard.js'), path.resolve(deployDir, 'js', 'copy-to-clipboard.js'));
     await FS.copyFile(path.resolve(process.cwd(), 'node_modules/@wcj/dark-mode/main.js'), path.resolve(deployDir, 'js', 'dark-mode.min.js'));
