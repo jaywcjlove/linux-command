@@ -11,10 +11,10 @@ jobs:
       contents: write
       id-token: write
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
         with:
-          node-version: 20
+          node-version: 24
           registry-url: 'https://registry.npmjs.org'
 
       - name: Generate Contributors Images
@@ -134,11 +134,9 @@ jobs:
           user_name: github-actions[bot]
           user_email: github-actions[bot]@users.noreply.github.com
     
-      - run: npm publish --access public --provenance
+      - run: NODE_AUTH_TOKEN="" npm publish --access public --provenance
         continue-on-error: true
         name: 📦 linux-command publish to NPM
-        env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
 
       # Create Docker Image
       - name: Set up Docker Buildx
