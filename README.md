@@ -10,6 +10,14 @@
   <a href="https://go.warp.dev/linux-command">Available for MacOS, Linux, & Windows</a><br><br>
 
   <br><br>
+  <a href="https://pawakalabs.com/products/fakey/">
+    <img alt="Fakey sponsorship" width="400" src="./template/img/fakey.png">
+  </a>
+  <br>
+  <a href="https://pawakalabs.com/products/fakey/"><b>Fakey - Manga Translator</b></a><br>
+  <a href="https://pawakalabs.com/products/fakey/">Available for Android, iOS and browser extension</a><br><br>
+
+  <br><br>
 </div>
 <hr>
 
