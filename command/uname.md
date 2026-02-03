@@ -1,5 +1,6 @@
 uname
 ===
+`Unix Name`
 
 打印系统信息。
 

@@ -1,5 +1,6 @@
 chgrp
 ===
+`Change group`
 
 用来变更文件或目录的所属群组
 

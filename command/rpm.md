@@ -1,5 +1,6 @@
 rpm
 ===
+`RedHat Package Management`
 
 RPM软件包的管理工具
 

@@ -1,5 +1,6 @@
 tty
 ===
+`TeleTypeWriter`
 
 显示连接到当前标准输入的终端设备文件名
 

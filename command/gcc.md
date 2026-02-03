@@ -1,5 +1,6 @@
 gcc
 ===
+`GNU Compiler Collection`
 
 基于C/C++的编译器
 
