@@ -9,7 +9,6 @@
   <a href="https://go.warp.dev/linux-command"><b>Warp, the intelligent terminal for developers!</b></a><br>
   <a href="https://go.warp.dev/linux-command">Available for MacOS, Linux, & Windows</a><br><br>
 
-  <br><br>
   <a href="https://pawakalabs.com/products/fakey/">
     <img alt="Fakey sponsorship" width="400" src="./template/img/fakey.png">
   </a>
