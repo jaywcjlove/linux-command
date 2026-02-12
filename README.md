@@ -497,7 +497,7 @@ Adobe软件的最佳替代品 [原文在这里](https://linux.cn/article-8928-1.
 <a href="https://github.com/Evilrabbit520" title="Wang Yujia"><img src="https://avatars.githubusercontent.com/u/25611476?v=4" width="42;" alt="Wang Yujia"/></a>
 <a href="https://github.com/sundakai" title="永恒"><img src="https://avatars.githubusercontent.com/u/21995250?v=4" width="42;" alt="永恒"/></a>
 <a href="https://github.com/Jeffery186" title="Shell"><img src="https://avatars.githubusercontent.com/u/39795988?v=4" width="42;" alt="Shell"/></a>
-<a href="https://github.com/xhal" title="xhal"><img src="https://avatars.githubusercontent.com/u/34055638?v=4" width="42;" alt="xhal"/></a>
+<a href="https://github.com/xhal" title="H Liu"><img src="https://avatars.githubusercontent.com/u/34055638?v=4" width="42;" alt="H Liu"/></a>
 <a href="https://github.com/weironz" title="will"><img src="https://avatars.githubusercontent.com/u/33590311?v=4" width="42;" alt="will"/></a>
 <a href="https://github.com/Wvvatt" title="VVatt"><img src="https://avatars.githubusercontent.com/u/38394031?v=4" width="42;" alt="VVatt"/></a>
 <a href="https://github.com/jcdj666" title="jcdj666"><img src="https://avatars.githubusercontent.com/u/38837009?v=4" width="42;" alt="jcdj666"/></a>
