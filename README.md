@@ -95,6 +95,7 @@
 
 **推荐使用的镜像 web 版本**
 
+[**`chaoxi.online`**](https://linux.chaoxi.online)
 [**`iced.eu.org`**](https://command.iced.eu.org/)
 [**`85604608.xyz`**](https://85604608.xyz)
 [**`ykkit.cn`**](https://linux.ykkit.cn)
