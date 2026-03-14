@@ -511,7 +511,7 @@ Adobe软件的最佳替代品 [原文在这里](https://linux.cn/article-8928-1.
 <a href="https://github.com/RichardLCD" title="RichardLCD"><img src="https://avatars.githubusercontent.com/u/41584321?v=4" width="42;" alt="RichardLCD"/></a>
 <a href="https://github.com/fishandsheep" title="QinShower"><img src="https://avatars.githubusercontent.com/u/43347407?v=4" width="42;" alt="QinShower"/></a>
 <a href="https://github.com/hellof20" title="Pan, Wen-Ming"><img src="https://avatars.githubusercontent.com/u/8756642?v=4" width="42;" alt="Pan, Wen-Ming"/></a>
-<a href="https://github.com/KrisMagical" title="KrisMagical"><img src="https://avatars.githubusercontent.com/u/144247736?v=4" width="42;" alt="KrisMagical"/></a>
+<a href="https://github.com/KrisMagical" title="KrisMagic"><img src="https://avatars.githubusercontent.com/u/144247736?v=4" width="42;" alt="KrisMagic"/></a>
 <a href="https://github.com/li7355608" title="Skuld"><img src="https://avatars.githubusercontent.com/u/68886053?v=4" width="42;" alt="Skuld"/></a>
 <a href="https://github.com/FunKeen" title="FunKeen"><img src="https://avatars.githubusercontent.com/u/112614943?v=4" width="42;" alt="FunKeen"/></a>
 <a href="https://github.com/BingCoke" title="BingCoke"><img src="https://avatars.githubusercontent.com/u/81607010?v=4" width="42;" alt="BingCoke"/></a>
@@ -572,7 +572,7 @@ Adobe软件的最佳替代品 [原文在这里](https://linux.cn/article-8928-1.
 <a href="https://github.com/shuangcui" title="shuangcui"><img src="https://avatars.githubusercontent.com/u/16413463?v=4" width="42;" alt="shuangcui"/></a>
 <a href="https://github.com/snovey" title="snovey"><img src="https://avatars.githubusercontent.com/u/15171147?v=4" width="42;" alt="snovey"/></a>
 <a href="https://github.com/hunantangke" title="tangke"><img src="https://avatars.githubusercontent.com/u/22476435?v=4" width="42;" alt="tangke"/></a>
-<a href="https://github.com/tutianyu101" title="tutianyu101"><img src="https://avatars.githubusercontent.com/u/134258491?v=4" width="42;" alt="tutianyu101"/></a>
+<a href="https://github.com/tutianyu101" title="可爱软萌喵"><img src="https://avatars.githubusercontent.com/u/134258491?v=4" width="42;" alt="可爱软萌喵"/></a>
 <a href="https://github.com/UniqueDing" title="UniqueDing"><img src="https://avatars.githubusercontent.com/u/24190814?v=4" width="42;" alt="UniqueDing"/></a>
 <a href="https://github.com/waiwai24" title="waiwai"><img src="https://avatars.githubusercontent.com/u/131680154?v=4" width="42;" alt="waiwai"/></a>
 <a href="https://github.com/weibk" title="weibk"><img src="https://avatars.githubusercontent.com/u/79395818?v=4" width="42;" alt="weibk"/></a>
