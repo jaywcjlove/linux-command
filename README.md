@@ -127,6 +127,7 @@
 [**`vovuo.com`**](https://linux.vovuo.com/)
 [**`shinote.net`**](https://linux.shinote.net/)
 [**`dogexorg.com`**](http://linux.dogexorg.com/)
+[**`alexander.xin`**](https://linux-command.alexander.xin/)
 [`vekicc.com`](https://ll.vekicc.com/)
 [`liguiying.cn`](https://linux.liguiying.cn/)
 [`renye.net`](https://renye.net/)
