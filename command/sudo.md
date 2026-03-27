@@ -1,5 +1,6 @@
 sudo
 ===
+`Superuser Do`
 
 以其他身份来执行命令
 
