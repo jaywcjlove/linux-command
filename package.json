@@ -30,7 +30,7 @@
     "colors-cli": "~1.0.31",
     "ejs": "~3.1.6",
     "compressing": "^1.6.2",
-    "fs-extra": "~10.1.0",
+    "fs-extra": "~11.3.0",
     "markdown-to-html-cli": "~4.0.0",
     "sitemap-generator": "~8.5.1",
     "sqlite3": "5.1.5",
