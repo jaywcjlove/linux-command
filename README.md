@@ -2,12 +2,6 @@
   <sup>Special thanks to:</sup>
   <br>
   <br>
-  <a href="https://go.warp.dev/linux-command">
-    <img alt="Warp sponsorship" width="400" src="https://github.com/warpdotdev/brand-assets/blob/main/Github/Sponsor/Warp-Github-LG-02.png?raw=true">
-  </a>
-  <br>
-  <a href="https://go.warp.dev/linux-command"><b>Warp, the intelligent terminal for developers!</b></a><br>
-  <a href="https://go.warp.dev/linux-command">Available for MacOS, Linux, & Windows</a><br><br>
 
   <a href="https://pawakalabs.com/products/fakey/">
     <img alt="Fakey sponsorship" width="400" src="./template/img/fakey.png">
