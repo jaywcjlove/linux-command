@@ -90,6 +90,7 @@
 
 **推荐使用的镜像 web 版本**
 
+[**`235978.xyz`**](https://linux-command.235978.xyz)
 [**`hycer.cn`**](https://linux.hycer.cn)
 [**`chaoxi.online`**](https://linux.chaoxi.online)
 [**`iced.eu.org`**](https://command.iced.eu.org/)
