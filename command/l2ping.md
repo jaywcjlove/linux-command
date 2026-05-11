@@ -9,6 +9,21 @@
 
 通常在通过蓝牙连接设备（如蓝牙键盘、鼠标、耳机或手机等）之前，可以使用此命令诊断物理和数据链路层面的连接情况。
 
+## 安装
+
+`l2ping` 不是 Linux 的内置命令，它通常包含在官方的官方蓝牙协议栈软件包 **BlueZ** 中。如果系统中未安装该命令，可以通过以下方式安装：
+
+```bash
+# Ubuntu/Debian 系统
+sudo apt update
+sudo apt install bluez
+
+# CentOS/RHEL/Fedora 系统
+sudo dnf install bluez
+# 或早期版本
+sudo yum install bluez
+```
+
 ## 语法
 
 ```bash
