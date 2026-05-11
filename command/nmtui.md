@@ -9,6 +9,16 @@
 
 使用 `nmtui`，你可以轻松地添加、修改、激活（连接）或停用网络连接，以及设置系统的主机名等。
 
+## 安装
+
+需要注意的是，`nmtui` 并非所有 Linux 发行版的内置默认命令。它包含在 NetworkManager 包中。在 Fedora/RHEL 中通常是默认安装的，但在 Ubuntu/Debian 中可能需要手动安装。
+
+```bash
+sudo apt install network-manager   # Ubuntu/Debian
+# 或
+sudo dnf install NetworkManager    # Fedora
+```
+
 ## 语法
 
 ```bash
