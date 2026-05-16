@@ -152,7 +152,7 @@
 [`utils.fun`](https://linux.utils.fun/)
 [`51tools.info`](https://51tools.info/linux/)
 [`ddosi.org`](https://www.ddosi.org/linux-cmd/)
-
+[`jin2005-issues.github.io`](https://jin2005-issues.github.io/linux-command.github.io)
 ## 其它版本
 
 - [KDE/Krunner](https://github.com/roachsinai/krunner-linuxcommands)
