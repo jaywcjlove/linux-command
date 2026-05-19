@@ -1279,6 +1279,11 @@
     "p": "/killall",
     "d": "使用进程的名称来杀死一组进程"
   },
+  "l2ping": {
+    "n": "l2ping",
+    "p": "/l2ping",
+    "d": "收发 L2CAP 回显请求，用于检查与目标蓝牙设备的连通性。"
+  },
   "last": {
     "n": "last",
     "p": "/last",
@@ -1778,6 +1783,11 @@
     "n": "nmcli",
     "p": "/nmcli",
     "d": "地址配置工具"
+  },
+  "nmtui": {
+    "n": "nmtui",
+    "p": "/nmtui",
+    "d": "基于文本的用户界面（TUI），用于控制和配置 NetworkManager。"
   },
   "nohup": {
     "n": "nohup",
