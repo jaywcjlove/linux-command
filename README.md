@@ -8,7 +8,7 @@
   </a>
   <br>
   <a href="https://github.com/Doloffer-g/guide"><b>DolOffer - 一站式数字订阅充值平台</b></a><br>
-  <a href="https://doloffer.com">主营 GPT、Claude 等 AI 会员正版订阅，覆盖多类数字服务，支持共享套餐，优惠码 AI8888 享 9 折，极速发货 + 售后无忧</a><br><br>
+  <a href="https://doloffer.com">主营 GPT、Claude 等 AI 多类数字服务会员正版订阅，9 折优惠码 AI8888，极速发货，售后无忧</a><br><br>
 
   <a href="https://pawakalabs.com/products/fakey/">
     <img alt="Fakey sponsorship" width="400" src="./template/img/fakey.png">
