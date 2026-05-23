@@ -27,8 +27,8 @@ apk add --upgrade busybox # 指定升级部分软件包
 ### 搜索
 
 ```shell
-apk search # 查找所以可用软件包
-apk search -v # 查找所以可用软件包及其描述内容
+apk search # 查找所有可用软件包
+apk search -v # 查找所有可用软件包及其描述内容
 apk search -v 'acf*' # 通过软件包名称查找软件包
 apk search -v -d 'docker' # 通过描述文件查找特定的软件包
 ```
