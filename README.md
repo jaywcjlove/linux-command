@@ -98,6 +98,7 @@
 
 **推荐使用的镜像 web 版本**
 
+[**`itool123.cn`**](https://linux.itool123.cn)
 [**`235978.xyz`**](https://linux-command.235978.xyz)
 [**`hycer.cn`**](https://linux.hycer.cn)
 [**`chaoxi.online`**](https://linux.chaoxi.online)
