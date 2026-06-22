@@ -1,4 +1,4 @@
-gcc
+pullgcc
 ===
 
 基于C/C++的编译器
