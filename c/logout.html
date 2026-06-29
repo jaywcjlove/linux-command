@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,logout,退出当前登录的Shell">
     <title>logout 命令，Linux logout 命令详解：退出当前登录的Shell -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1782173456753">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1782737601282">
     <script src="../js/dark-mode.min.js"></script>
     <script type="module" src="../js/github-corners.js"></script>
 </head>
@@ -134,11 +134,54 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
 <h1 id="logout"><a class="anchor" aria-hidden="true" tabindex="-1" href="#logout"><span class="octicon octicon-link"></span></a>logout</h1>
 <p>退出当前登录的Shell</p>
 <h2 id="补充说明"><a class="anchor" aria-hidden="true" tabindex="-1" href="#补充说明"><span class="octicon octicon-link"></span></a>补充说明</h2>
-<p><strong>logout命令</strong> 用于退出当前登录的Shell，logout指令让用户退出系统，其功能和login指令相互对应。</p>
-<h3 id="语法"><a class="anchor" aria-hidden="true" tabindex="-1" href="#语法"><span class="octicon octicon-link"></span></a>语法</h3>
-<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token builtin class-name">logout</span>
-</span></code><div onclick="copied(this)" data-code="logout
-" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
+<p><strong>logout命令</strong> 用于退出当前登录的Shell。logout指令让用户退出系统，其功能和login指令相互对应。</p>
+<p>logout命令通常用于shell脚本中，表示正常结束当前的shell会话。在非交互式shell（如脚本）中，logout等同于exit命令。在交互式shell中，logout也可以用来退出登录会话。</p>
+<p>需要注意的是，logout是一个shell内建命令，不是独立的可执行程序，因此无法通过which或whereis找到它。</p>
+<h3 id="概要"><a class="anchor" aria-hidden="true" tabindex="-1" href="#概要"><span class="octicon octicon-link"></span></a>概要</h3>
+<p><code>shell logout [status]</code></p>
+<h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><span class="octicon octicon-link"></span></a>选项</h3>
+<p><code>shell --help 显示帮助信息并退出。 --version 显示版本信息并退出。</code></p>
+<h3 id="参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参数"><span class="octicon octicon-link"></span></a>参数</h3>
+<p><code>shell status 可选的退出状态码。如果不指定，默认返回上一个命令的退出状态。</code></p>
+<h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><span class="octicon octicon-link"></span></a>实例</h3>
+<p>`shell</p>
+<h1 id="在shell脚本中退出"><a class="anchor" aria-hidden="true" tabindex="-1" href="#在shell脚本中退出"><span class="octicon octicon-link"></span></a>在shell脚本中退出</h1>
+<p>
+  #!/bin/bash
+  echo "正在执行任务..."
+</p>
+<h1 id="执行某些操作"><a class="anchor" aria-hidden="true" tabindex="-1" href="#执行某些操作"><span class="octicon octicon-link"></span></a>执行某些操作</h1>
+<p>
+  if [ ! -f "/tmp/test.txt" ]; then
+  echo "文件不存在，退出脚本"
+  logout 1
+  fi
+  echo "任务完成"
+</p>
+<h1 id="在交互式shell中退出当前会话"><a class="anchor" aria-hidden="true" tabindex="-1" href="#在交互式shell中退出当前会话"><span class="octicon octicon-link"></span></a>在交互式shell中退出当前会话</h1>
+<p>logout</p>
+<h1 id="指定退出状态码"><a class="anchor" aria-hidden="true" tabindex="-1" href="#指定退出状态码"><span class="octicon octicon-link"></span></a>指定退出状态码</h1>
+<p>
+  logout 0 # 正常退出
+  logout 1 # 异常退出
+  `
+</p>
+<h3 id="相关命令"><a class="anchor" aria-hidden="true" tabindex="-1" href="#相关命令"><span class="octicon octicon-link"></span></a>相关命令</h3>
+<ul>
+  <li>xit — 退出当前shell，功能与logout类似</li>
+  <li>login — 登录到系统</li>
+  <li>shutdown — 关闭系统</li>
+  <li></li>
+</ul>
+<p>eboot — 重启系统</p>
+<h3 id="注意"><a class="anchor" aria-hidden="true" tabindex="-1" href="#注意"><span class="octicon octicon-link"></span></a>注意</h3>
+<ol>
+  <li>logout是bash等shell的内建命令，不是独立的可执行程序。</li>
+  <li>在交互式登录shell中，logout的效果等同于exit。</li>
+  <li>在shell脚本中，logout和exit的行为基本一致，都会终止脚本执行。</li>
+  <li>如果想退出远程SSH会话，logout和exit都可以使用，也可以使用快捷键Ctrl+D。</li>
+  <li>logout命令不会关闭终端窗口本身，只会退出当前的shell会话。如果打开了嵌套的shell，可能需要多次执行logout才能完全退出。</li>
+</ol>
 <style>markdown-style pre .copied {
   display: flex;
   position: absolute;
@@ -230,7 +273,7 @@ function copied(target, str) {
     </a>
   </div>
 </div>
-<script type="text/javascript" src="../js/dt.js?v=1782173456753"></script>
-<script type="text/javascript" src="../js/index.js?v=1782173456753"></script>
+<script type="text/javascript" src="../js/dt.js?v=1782737601283"></script>
+<script type="text/javascript" src="../js/index.js?v=1782737601283"></script>
 </body>
 </html>
