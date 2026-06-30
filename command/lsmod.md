@@ -1,5 +1,6 @@
 lsmod
 ===
+`List modules`
 
 显示已载入系统的模块
 

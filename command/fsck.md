@@ -1,5 +1,6 @@
 fsck
 ===
+`File system check`
 
 fsck（英文全拼：file system check）命令检查并且试图修复文件系统中的错误
 

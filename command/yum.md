@@ -1,5 +1,6 @@
 yum
 ===
+`Yellow Dog Update,Modified`
 
 基于RPM的软件包管理器
 

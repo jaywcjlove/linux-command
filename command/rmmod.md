@@ -1,5 +1,6 @@
 rmmod
 ===
+`Remove Module`
 
 从运行的内核中移除指定的内核模块
 

@@ -1,5 +1,6 @@
 ldd
 ===
+`List dynamic dependencies`
 
 打印程序或者库文件所依赖的共享库列表
 

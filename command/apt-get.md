@@ -1,5 +1,6 @@
 apt-get
 ===
+`Advanced Package Tool Get`
 
 Debian Linux发行版中的APT软件包管理工具
 

@@ -1,5 +1,6 @@
 ex
 ===
+`Extended`
 
 启动vim编辑器的ex编辑模式
 
