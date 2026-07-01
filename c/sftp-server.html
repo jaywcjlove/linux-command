@@ -9,7 +9,7 @@
     <meta name="keywords" content="Linux,Command,命令大全,Linux命令手册,sftp-server,sftp协议的服务器端程序">
     <title>sftp-server 命令，Linux sftp-server 命令详解：sftp协议的服务器端程序 -  Linux 命令搜索引擎</title>
     <link rel="shortcut icon" href="../img/favicon.ico">
-    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1782809728501">
+    <link rel="stylesheet" type="text/css" href="../css/index.css?v=1782915447114">
     <script src="../js/dark-mode.min.js"></script>
     <script type="module" src="../js/github-corners.js"></script>
 </head>
@@ -137,29 +137,61 @@ customElements.define('markdown-style', MarkdownStyle);</script><markdown-style 
 <p><strong>sftp-server命令</strong> 是一个"SFTP"协议的服务器端程序，它使用加密的方式进行文件传输。它是OpenSSH套件的一部分，通常在后台由sshd守护进程调用，作为SFTP子系统的后端实现。</p>
 <p>sftp-server提供了比传统FTP更安全的文件传输方式，所有通信数据均经过SSH加密通道传输，包括认证信息和文件内容。</p>
 <h3 id="概要"><a class="anchor" aria-hidden="true" tabindex="-1" href="#概要"><span class="octicon octicon-link"></span></a>概要</h3>
-<p><code>shell /usr/lib/openssh/sftp-server [选项]</code></p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1">/usr/lib/openssh/sftp-server <span class="token punctuation">[</span>选项<span class="token punctuation">]</span>
+</span></code><div onclick="copied(this)" data-code="/usr/lib/openssh/sftp-server [选项]
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <h3 id="选项"><a class="anchor" aria-hidden="true" tabindex="-1" href="#选项"><span class="octicon octicon-link"></span></a>选项</h3>
-<p><code>shell -d 调试模式，将调试信息输出到系统日志 -f facility 指定syslog的设施类型（如DAEMON、USER等） -l log_level 指定日志级别（QUIET、FATAL、ERROR、INFO、VERBOSE、DEBUG、DEBUG1、DEBUG2、DEBUG3） -P pid_file 将进程PID写入指定文件 -t version SFTP协议版本（2-6） -u umask 设置文件创建的umask值</code></p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token parameter variable">-d</span>               调试模式，将调试信息输出到系统日志
+</span><span class="code-line line-number" line="2"><span class="token parameter variable">-f</span> facility      指定syslog的设施类型（如DAEMON、<span class="token environment constant">USER</span>等）
+</span><span class="code-line line-number" line="3"><span class="token parameter variable">-l</span> log_level     指定日志级别（QUIET、FATAL、ERROR、INFO、VERBOSE、DEBUG、DEBUG1、DEBUG2、DEBUG3）
+</span><span class="code-line line-number" line="4"><span class="token parameter variable">-P</span> pid_file      将进程PID写入指定文件
+</span><span class="code-line line-number" line="5"><span class="token parameter variable">-t</span> version       SFTP协议版本（2-6）
+</span><span class="code-line line-number" line="6"><span class="token parameter variable">-u</span> <span class="token builtin class-name">umask</span>         设置文件创建的umask值
+</span></code><div onclick="copied(this)" data-code="-d               调试模式，将调试信息输出到系统日志
+-f facility      指定syslog的设施类型（如DAEMON、USER等）
+-l log_level     指定日志级别（QUIET、FATAL、ERROR、INFO、VERBOSE、DEBUG、DEBUG1、DEBUG2、DEBUG3）
+-P pid_file      将进程PID写入指定文件
+-t version       SFTP协议版本（2-6）
+-u umask         设置文件创建的umask值
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <h3 id="参数"><a class="anchor" aria-hidden="true" tabindex="-1" href="#参数"><span class="octicon octicon-link"></span></a>参数</h3>
 <p>sftp-server通常不需要手动直接调用，而是由sshd通过SFTP子系统自动启动。用户可以通过sftp客户端命令连接到服务器，服务端会自动加载sftp-server。</p>
 <h3 id="实例"><a class="anchor" aria-hidden="true" tabindex="-1" href="#实例"><span class="octicon octicon-link"></span></a>实例</h3>
-<p>`shell</p>
-<h1 id="配置sshd以使用sftp-server"><a class="anchor" aria-hidden="true" tabindex="-1" href="#配置sshd以使用sftp-server"><span class="octicon octicon-link"></span></a>配置sshd以使用sftp-server</h1>
-<h1 id="在-etcsshsshd_config-中添加或修改"><a class="anchor" aria-hidden="true" tabindex="-1" href="#在-etcsshsshd_config-中添加或修改"><span class="octicon octicon-link"></span></a>在 /etc/ssh/sshd_config 中添加或修改：</h1>
-<p>Subsystem sftp /usr/lib/openssh/sftp-server</p>
-<h1 id="使用sftp客户端连接远程服务器"><a class="anchor" aria-hidden="true" tabindex="-1" href="#使用sftp客户端连接远程服务器"><span class="octicon octicon-link"></span></a>使用sftp客户端连接远程服务器</h1>
-<p>sftp user@remote-host</p>
-<h1 id="通过sftp上传文件"><a class="anchor" aria-hidden="true" tabindex="-1" href="#通过sftp上传文件"><span class="octicon octicon-link"></span></a>通过sftp上传文件</h1>
-<p>sftp> put localfile.txt</p>
-<h1 id="通过sftp下载文件"><a class="anchor" aria-hidden="true" tabindex="-1" href="#通过sftp下载文件"><span class="octicon octicon-link"></span></a>通过sftp下载文件</h1>
-<p>sftp> get remotefile.txt</p>
-<h1 id="查看sftp-server的位置"><a class="anchor" aria-hidden="true" tabindex="-1" href="#查看sftp-server的位置"><span class="octicon octicon-link"></span></a>查看sftp-server的位置</h1>
-<p>which sftp-server</p>
-<h1 id="或"><a class="anchor" aria-hidden="true" tabindex="-1" href="#或"><span class="octicon octicon-link"></span></a>或</h1>
-<p>
-  whereis sftp-server
-  `
-</p>
+<pre class="language-shell"><code class="language-shell code-highlight"><span class="code-line line-number" line="1"><span class="token comment"># 配置sshd以使用sftp-server</span>
+</span><span class="code-line line-number" line="2"><span class="token comment"># 在 /etc/ssh/sshd_config 中添加或修改：</span>
+</span><span class="code-line line-number" line="3">Subsystem <span class="token function">sftp</span> /usr/lib/openssh/sftp-server
+</span><span class="code-line line-number" line="4">
+</span><span class="code-line line-number" line="5"><span class="token comment"># 使用sftp客户端连接远程服务器</span>
+</span><span class="code-line line-number" line="6"><span class="token function">sftp</span> user@remote-host
+</span><span class="code-line line-number" line="7">
+</span><span class="code-line line-number" line="8"><span class="token comment"># 通过sftp上传文件</span>
+</span><span class="code-line line-number" line="9">sftp<span class="token operator">></span> put localfile.txt
+</span><span class="code-line line-number" line="10">
+</span><span class="code-line line-number" line="11"><span class="token comment"># 通过sftp下载文件</span>
+</span><span class="code-line line-number" line="12">sftp<span class="token operator">></span> get remotefile.txt
+</span><span class="code-line line-number" line="13">
+</span><span class="code-line line-number" line="14"><span class="token comment"># 查看sftp-server的位置</span>
+</span><span class="code-line line-number" line="15"><span class="token function">which</span> sftp-server
+</span><span class="code-line line-number" line="16"><span class="token comment"># 或</span>
+</span><span class="code-line line-number" line="17"><span class="token function">whereis</span> sftp-server
+</span></code><div onclick="copied(this)" data-code="# 配置sshd以使用sftp-server
+# 在 /etc/ssh/sshd_config 中添加或修改：
+Subsystem sftp /usr/lib/openssh/sftp-server
+
+# 使用sftp客户端连接远程服务器
+sftp user@remote-host
+
+# 通过sftp上传文件
+sftp> put localfile.txt
+
+# 通过sftp下载文件
+sftp> get remotefile.txt
+
+# 查看sftp-server的位置
+which sftp-server
+# 或
+whereis sftp-server
+" class="copied"><svg class="octicon-copy" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 010 1.5h-1.5a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-1.5a.75.75 0 011.5 0v1.5A1.75 1.75 0 019.25 16h-7.5A1.75 1.75 0 010 14.25v-7.5z"></path><path fill-rule="evenodd" d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0114.25 11h-7.5A1.75 1.75 0 015 9.25v-7.5zm1.75-.25a.25.25 0 00-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 00.25-.25v-7.5a.25.25 0 00-.25-.25h-7.5z"></path></svg><svg class="octicon-check" aria-hidden="true" viewBox="0 0 16 16" fill="currentColor" height="12" width="12"><path fill-rule="evenodd" d="M13.78 4.22a.75.75 0 010 1.06l-7.25 7.25a.75.75 0 01-1.06 0L2.22 9.28a.75.75 0 011.06-1.06L6 10.94l6.72-6.72a.75.75 0 011.06 0z"></path></svg></div></pre>
 <h3 id="相关命令"><a class="anchor" aria-hidden="true" tabindex="-1" href="#相关命令"><span class="octicon octicon-link"></span></a>相关命令</h3>
 <ul>
   <li>sftp — SFTP客户端命令</li>
@@ -264,7 +296,7 @@ function copied(target, str) {
     </a>
   </div>
 </div>
-<script type="text/javascript" src="../js/dt.js?v=1782809728501"></script>
-<script type="text/javascript" src="../js/index.js?v=1782809728501"></script>
+<script type="text/javascript" src="../js/dt.js?v=1782915447114"></script>
+<script type="text/javascript" src="../js/index.js?v=1782915447114"></script>
 </body>
 </html>
