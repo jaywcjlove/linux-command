@@ -11,8 +11,7 @@ Vault是DevSecOps领域的重要工具，广泛应用于云原生环境中的秘
 
 ### 安装
 
-`shell
-# macOS (Homebrew)
+```shell# macOS (Homebrew)
 brew install vault
 
 # Ubuntu/Debian
@@ -32,14 +31,12 @@ vault version
 
 ### 语法
 
-`shell
-vault [command]
+`shellvault [command]
 `
 
 ### 常用命令
 
-`shell
-server          启动Vault服务器
+`shellserver          启动Vault服务器
 login           认证
 policy          管理策略
 secret          管理秘密
@@ -57,8 +54,7 @@ workspace       工作区管理
 
 ### 实例
 
-`shell
-# 启动开发模式服务器（仅用于测试）
+```shell# 启动开发模式服务器（仅用于测试）
 vault server -dev
 
 # 启动生产模式服务器
@@ -399,8 +395,7 @@ curl -s http://127.0.0.1:8200/v1/sys/health | jq '.sealed'
 
 ### 配置文件示例
 
-`hcl
-# vault.hcl
+```hcl# vault.hcl
 storage "consul" {
   address = "consul.example.com:8501"
   path    = "vault"
@@ -423,8 +418,7 @@ max_lease_ttl     = "768h"
 
 ### 安全最佳实践
 
-`shell
-# 1. 使用生产模式而非开发模式
+```shell# 1. 使用生产模式而非开发模式
 vault server -config=vault.hcl
 
 # 2. 启用TLS

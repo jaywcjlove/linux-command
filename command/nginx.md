@@ -11,8 +11,7 @@ nginx采用事件驱动的异步架构，能够支持高并发连接，内存消
 
 ### 安装
 
-`shell
-# Ubuntu/Debian
+```shell# Ubuntu/Debian
 apt-get update
 apt-get install nginx
 
@@ -32,14 +31,12 @@ nginx -v
 
 ### 语法
 
-`shell
-nginx [options]
+`shellnginx [options]
 `
 
 ### 常用选项
 
-`shell
--c --configuration-file   指定配置文件
+```shell-c --configuration-file   指定配置文件
 -t --test-config          测试配置文件语法
 -T --dump-config          转储配置文件
 -s --signal               发送信号（stop/reload/reopen/restart）
@@ -50,8 +47,7 @@ nginx [options]
 
 ### 实例
 
-`shell
-# 启动nginx
+```shell# 启动nginx
 nginx
 
 # 停止nginx
@@ -184,8 +180,7 @@ nginx -t -c /tmp/test.conf
 
 ### 配置文件结构
 
-`shell
-/etc/nginx/                    # nginx配置目录
+```shell/etc/nginx/                    # nginx配置目录
 ├── nginx.conf                 # 主配置文件
 ├── conf.d/                    # 额外配置目录
 │   └── *.conf                 # 额外的配置文件
@@ -205,8 +200,7 @@ nginx -t -c /tmp/test.conf
 
 ### 常用配置指令
 
-`shell
-# 基本配置
+```shell# 基本配置
 worker_processes auto;        # 工作进程数
 worker_connections 1024;       # 每个进程的最大连接数
 pid /run/nginx.pid;           # PID文件位置
@@ -226,8 +220,7 @@ error_log /var/log/nginx/error.log warn;
 
 ### 性能优化建议
 
-`shell
-# 1. 调整worker进程数
+```shell# 1. 调整worker进程数
 worker_processes auto;  # 自动设置为CPU核心数
 
 # 2. 使用epoll事件模型（Linux）

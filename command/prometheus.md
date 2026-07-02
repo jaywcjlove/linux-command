@@ -11,8 +11,7 @@ Prometheus是云原生环境下事实标准的监控系统，与Kubernetes深度
 
 ### 安装
 
-`shell
-# 从官方下载
+```shell# 从官方下载
 version=2.50.0
 wget https://github.com/prometheus/prometheus/releases/download/v/prometheus-.linux-amd64.tar.gz
 tar xzf prometheus-.linux-amd64.tar.gz
@@ -53,15 +52,13 @@ sudo systemctl start prometheus
 
 ### 语法
 
-`shell
-prometheus [options]
+`shellprometheus [options]
 promtool [command]
 `
 
 ### 常用选项
 
-`shell
---config.file            Prometheus配置文件路径
+```shell--config.file            Prometheus配置文件路径
 --storage.tsdb.path      存储路径
 --storage.tsdb.retention.time  数据保留时间
 --storage.tsdb.retention.size    最大存储大小
@@ -74,8 +71,7 @@ promtool [command]
 
 ### 实例
 
-`shell
-# 启动Prometheus
+```shell# 启动Prometheus
 prometheus --config.file=prometheus.yml
 
 # 指定存储路径
@@ -146,8 +142,7 @@ promtool check metrics metrics_file.txt
 
 ### 配置文件示例
 
-`yaml
-# prometheus.yml
+```yaml# prometheus.yml
 global:
   scrape_interval: 15s
   evaluation_interval: 15s
@@ -176,8 +171,7 @@ scrape_configs:
 
 ### 常用PromQL查询
 
-`shell
-# 查看可用指标
+```shell# 查看可用指标
 up
 
 # 查看特定指标
@@ -204,8 +198,7 @@ rate(http_requests_total[1h]) / rate(http_requests_total[1h] offset 1d)
 
 ### 架构组件
 
-`shell
-# Prometheus核心组件
+```shell# Prometheus核心组件
 prometheus          # 时间序列数据库和查询引擎
 node-exporter       # 主机指标收集器
 cadvisor            # 容器指标收集器

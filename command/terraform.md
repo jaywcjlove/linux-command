@@ -11,8 +11,7 @@ Terraform支持多种云提供商（AWS、Azure、GCP等）和本地基础设施
 
 ### 安装
 
-`shell
-# macOS (Homebrew)
+```shell# macOS (Homebrew)
 brew install terraform
 
 # Ubuntu/Debian
@@ -37,14 +36,12 @@ terraform --version
 
 ### 语法
 
-`shell
-terraform [command]
+`shellterraform [command]
 `
 
 ### 常用命令
 
-`shell
-init            初始化工作目录
+`shellinit            初始化工作目录
 plan            生成并查看变更计划
 apply           应用变更到基础设施
 destroy         销毁基础设施
@@ -63,8 +60,7 @@ workspaces      管理工作区
 
 ### 实例
 
-`shell
-# 初始化Terraform工作目录
+```shell# 初始化Terraform工作目录
 terraform init
 
 # 初始化并获取指定版本
@@ -301,8 +297,7 @@ terraform state show aws_instance.web | grep -A5 'tags:'
 
 ### 配置文件示例
 
-`hcl
-# main.tf
+```hcl# main.tf
 provider "aws" {
   region = var.aws_region
 }
@@ -347,8 +342,7 @@ output "instance_ip" {
 
 ### 状态文件
 
-`shell
-# 状态文件默认位置
+```shell# 状态文件默认位置
 .terraform/terraform.tfstate
 
 # 远程状态配置（S3示例）
@@ -369,8 +363,7 @@ dynamodb_table = "terraform-locks"
 
 ### 模块化开发
 
-`shell
-# 创建模块
+```shell# 创建模块
 mkdir modules/vpc
 cat > modules/vpc/main.tf <<EOF
 resource "aws_vpc" "main" {
