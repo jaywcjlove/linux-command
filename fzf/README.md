@@ -24,6 +24,12 @@
 
 ---
 
+## demo
+
+![demo_fzf_bat_combine](./demo.png)
+
+---
+
 ## 安装
 
 - 然后通过脚本直接安装(你应该先审查一下脚本有没有问题)
@@ -42,6 +48,8 @@ curl -fsSL https://raw.githubusercontent.com/IridiumNan/linux-command/master/fzf
 # 如果你用 zsh => ~/.zshrc
 help
 ```
+
+敲完help之后， 输入你需要查的命令即可
 
 - 特殊情况
 我脚本里面只处理了 bash 还有 zsh 的情况，因为本人不熟悉 fish
