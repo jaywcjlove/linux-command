@@ -1,5 +1,6 @@
 telnet
 ===
+`Telecommunication Network`
 
 登录远程主机和管理(测试ip端口是否连通)
 
