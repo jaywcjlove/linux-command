@@ -1,5 +1,8 @@
 vi
 ===
+`Visual Editor`
+
+`vim => Visual Editor Improved`
 
 功能强大的纯文本编辑器
 
