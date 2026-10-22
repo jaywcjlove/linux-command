@@ -67,7 +67,8 @@ KILL
 63) SIGRTMAX-1  64) SIGRTMAX
 
 # 下面是常用的信号。
-# 只有第9种信号(SIGKILL)才可以无条件终止进程，其他信号进程都有权利忽略。
+# SIGKILL 和 SIGSTOP 不能被捕获、阻塞或忽略：前者终止进程，后者停止进程。
+# Ctrl + Z 通常向前台进程组发送 SIGTSTP，该信号可以被捕获或忽略。
 
 HUP     1    终端挂断
 INT     2    中断（同 Ctrl + C）
@@ -75,7 +76,8 @@ QUIT    3    退出（同 Ctrl + \）
 KILL    9    强制终止
 TERM   15    终止
 CONT   18    继续（与STOP相反，fg/bg命令）
-STOP   19    暂停（同 Ctrl + Z）
+STOP   19    停止（不能被捕获或忽略）
+TSTP   20    终端停止（通常由 Ctrl + Z 触发）
 ```
 
 ```shell
