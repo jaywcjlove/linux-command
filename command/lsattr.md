@@ -1,5 +1,6 @@
 lsattr
 ===
+`List Attribute`
 
 查看文件的第二扩展文件系统属性
 
