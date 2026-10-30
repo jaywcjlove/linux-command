@@ -11,7 +11,7 @@ uniq [OPTION]... [INPUT [OUTPUT]]
 
 ## 主要用途
 
-- 将输入文件（或标准输入）中邻近的重复行写入到输出文件（或标准输出）中。
+- 过滤输入文件（或标准输入）中邻近的重复行，并将结果写入到输出文件（或标准输出）中。
 - 当没有选项时，邻近的重复行将合并为一个。
 
 
@@ -26,7 +26,7 @@ uniq [OPTION]... [INPUT [OUTPUT]]
 --group[=METHOD]           显示所有行，允许每组之间以空行分割。METHOD取值范围：{separate(默认)，prepend，append，both}。
 -i, --ignore-case          忽略大小写的差异。
 -s, --skip-chars=N         跳过对前N个字符的比较。
--u, --unique               只打印非邻近的重复行。
+-u, --unique               只打印没有邻近重复的行（重复的行一行都不打印）。
 -z, --zero-terminated      设置行终止符为NUL（空），而不是换行符。
 -w, --check-chars=N        只对每行前N个字符进行比较。
 --help                     显示帮助信息并退出。
