@@ -30,13 +30,13 @@ tail (选项) (参数)
 
 ```shell
 -c, --bytes=NUM                 输出文件尾部的NUM（NUM为整数）个字节内容。
--f, --follow[={name|descript}]  显示文件最新追加的内容。“name”表示以文件名的方式监视文件的变化。
+-f, --follow[={name|descriptor}]  显示文件最新追加的内容。省略参数时为“descriptor”，跟踪已打开的文件本身；“name”表示以文件名的方式监视文件的变化。
 -F                              与 “--follow=name --retry” 功能相同。
--n, --line=NUM                  输出文件的尾部NUM（NUM位数字）行内容。
+-n, --lines=NUM                 输出文件的尾部NUM（NUM位数字）行内容。
 --pid=<进程号>                  与“-f”选项连用，当指定的进程号的进程终止后，自动退出tail命令。
 -q, --quiet, --silent           当有多个文件参数时，不输出各个文件名。
 --retry                         即是在tail命令启动时，文件不可访问或者文件稍后变得不可访问，都始终尝试打开文件。使用此选项时需要与选项“--follow=name”连用。
--s, --sleep-interal=<秒数>      与“-f”选项连用，指定监视文件变化时间隔的秒数。
+-s, --sleep-interval=<秒数>     与“-f”选项连用，指定监视文件变化时间隔的秒数。
 -v, --verbose                   当有多个文件参数时，总是输出各个文件名。
 --help                          显示指令的帮助信息。
 --version                       显示指令的版本信息。
@@ -54,7 +54,7 @@ tail -n +20 file #（显示文件file的内容，从第20行至文件末尾）
 tail -c 10 file #（显示文件file的最后10个字节）
 
 tail -25 mail.log # 显示 mail.log 最后的 25 行
-tail -f mail.log # 等同于--follow=descriptor，根据文件描述符进行追踪，当文件改名或被删除，追踪停止
+tail -f mail.log # 等同于--follow=descriptor，根据文件描述符进行追踪，文件改名后仍继续输出原文件追加的内容，之后新建的同名文件不会被追踪
 tail -F mail.log # 等同于--follow=name --retry，根据文件名进行追踪，并保持重试，即该文件被删除或改名后，如果再次创建相同的文件名，会继续追踪
 ```
 
