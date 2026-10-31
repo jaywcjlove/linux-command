@@ -12,7 +12,7 @@ grep
 ```shell
 -a --text  # 不要忽略二进制数据。
 -A <显示行数>   --after-context=<显示行数>   # 除了显示符合范本样式的那一行之外，并显示该行之后的内容。
--b --byte-offset                           # 在显示符合范本样式的那一行之外，并显示该行之前的内容。
+-b --byte-offset                           # 在显示符合范本样式的那一行之前，标示出该行在输入中的字节偏移（从 0 开始）；与 -o 连用时标示匹配部分的偏移。
 -B<显示行数>   --before-context=<显示行数>   # 除了显示符合样式的那一行之外，并显示该行之前的内容。
 -c --count    # 计算符合范本样式的列数。
 -C<显示行数> --context=<显示行数>或-<显示行数> # 除了显示符合范本样式的那一列之外，并显示该列之前后的内容。
@@ -25,14 +25,15 @@ grep
 -h --no-filename    # 在显示符合范本样式的那一列之前，不标示该列所属的文件名称。
 -H --with-filename  # 在显示符合范本样式的那一列之前，标示该列的文件名称。
 -i --ignore-case    # 忽略字符大小写的差别。
--l --file-with-matches   # 列出文件内容符合指定的范本样式的文件名称。
+-l --files-with-matches  # 列出文件内容符合指定的范本样式的文件名称。
 -L --files-without-match # 列出文件内容不符合指定的范本样式的文件名称。
 -n --line-number         # 在显示符合范本样式的那一列之前，标示出该列的编号。
 -P --perl-regexp         # PATTERN 是一个 Perl 正则表达式
 -q --quiet或--silent     # 不显示任何信息。
--R/-r  --recursive       # 此参数的效果和指定“-d recurse”参数相同。
+-r --recursive           # 此参数的效果和指定“-d recurse”参数相同。
+-R --dereference-recursive # 与 -r 相同，但会跟随所有符号链接。
 -s --no-messages  # 不显示错误信息。
--v --revert-match # 反转查找。
+-v --invert-match # 反转查找。
 -V --version      # 显示版本信息。   
 -w --word-regexp  # 只显示全字符合的列。
 -x --line-regexp  # 只显示全列符合的列。
@@ -47,18 +48,18 @@ grep
 ^    # 锚定行的开始 如：'^grep'匹配所有以grep开头的行。    
 $    # 锚定行的结束 如：'grep$' 匹配所有以grep结尾的行。
 .    # 匹配一个非换行符的字符 如：'gr.p'匹配gr后接一个任意字符，然后是p。    
-*    # 匹配零个或多个先前字符 如：'*grep'匹配所有一个或多个空格后紧跟grep的行。    
+*    # 匹配零个或多个先前字符 如：'^ *grep'匹配以零个或多个空格开头、后面紧跟grep的行。    
 .*   # 一起用代表任意字符。   
 []   # 匹配一个指定范围内的字符，如'[Gg]rep'匹配Grep和grep。    
 [^]  # 匹配一个不在指定范围内的字符，如：'[^A-Z]rep' 匹配不包含 A-Z 中的字母开头，紧跟 rep 的行
 \(..\)  # 标记匹配字符，如'\(love\)'，love被标记为1。    
 \<      # 锚定单词的开始，如:'\<grep'匹配包含以grep开头的单词的行。    
 \>      # 锚定单词的结束，如'grep\>'匹配包含以grep结尾的单词的行。    
-x\{m\}  # 重复字符x，m次，如：'0\{5\}'匹配包含5个o的行。    
+x\{m\}  # 重复字符x，m次，如：'o\{5\}'匹配包含5个o的行。    
 x\{m,\}   # 重复字符x,至少m次，如：'o\{5,\}'匹配至少有5个o的行。    
 x\{m,n\}  # 重复字符x，至少m次，不多于n次，如：'o\{5,10\}'匹配5--10个o的行。   
-\w    # 匹配文字和数字字符，也就是[A-Za-z0-9]，如：'G\w*p'匹配以G后跟零个或多个文字或数字字符，然后是p。   
-\W    # \w的反置形式，匹配一个或多个非单词字符，如点号句号等。   
+\w    # 匹配文字、数字字符和下划线，也就是[A-Za-z0-9_]，如：'G\w*p'匹配以G后跟零个或多个文字、数字字符或下划线，然后是p。   
+\W    # \w的反置形式，匹配一个非单词字符，如点号句号等。   
 \b    # 单词锁定符，如: '\bgrep\b'只匹配grep。  
 ```
 
@@ -125,7 +126,7 @@ grep -c "text" file_name
 history | grep git
 ```
 
-输出包含匹配字符串的行数  **-n**  选项：
+输出包含匹配字符串的行，并标出行号  **-n**  选项：
 
 ```shell
 grep "text" -n file_name
@@ -136,12 +137,14 @@ cat file_name | grep "text" -n
 grep "text" -n file_1 file_2
 ```
 
-打印样式匹配所位于的字符或字节偏移：
+打印样式匹配所位于的字节偏移：
 
 ```shell
 echo gun is not unix | grep -b -o "not"
 7:not
-#一行中字符串的字符偏移是从该行的第一个字符开始计算，起始值为0。选项  **-b -o**  一般总是配合使用。
+#偏移按字节计算，起点是整个输入（文件）的开头而不是该行行首，起始值为0。选项  **-b -o**  一般总是配合使用。
+printf 'abc\ngun is not unix\n' | grep -b -o "not"
+11:not
 ```
 
 搜索多个文件并查找匹配文本在哪些文件中：
@@ -186,7 +189,7 @@ echo aaa bbb ccc ddd eee | grep -f patfile -o
 
 ```shell
 # 只在目录中所有的.php和.html文件中递归搜索字符"main()"
-grep "main()" . -r --include *.{php,html}
+grep "main()" . -r --include='*.php' --include='*.html'
 
 # 在搜索结果中排除所有README文件
 grep "main()" . -r --exclude "README"
