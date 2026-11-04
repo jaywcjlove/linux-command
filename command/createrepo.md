@@ -59,7 +59,7 @@ createrepo [选项] <目录>
 # 从这个路径使用现有的repodata来升级。
 
 -C --checkts
-# 不要生成回购元数据，如果它们的时间戳比rpm更新。如果您碰巧开启了该选项，则此选项将再次大幅减少处理时间一个未修改的回购，但它(目前)与——split选项互斥。注意:当包从repo中删除时，这个命令不会注意到。使用——update来处理这个。
+# 不要生成回购元数据，如果它们的时间戳比rpm更新。如果您碰巧开启了该选项，则此选项将再次大幅减少处理时间一个未修改的回购，但它(目前)与--split选项互斥。注意:当包从repo中删除时，这个命令不会注意到。使用--update来处理这个。
 
 --split
 # 在拆分媒体模式下运行。与其传递单个目录，不如获取一组对应于媒体集中不同卷的目录。
@@ -101,7 +101,7 @@ createrepo [选项] <目录>
 # 保留旧repodata的最新(按时间戳)N个副本(这样使用旧repodata .xml文件的客户端仍然可以访问它)。默认为0。
 
 --distro
-指定发行版标签。可以多次指定。可选语法，指定cpeid(http://cpe.mitre.org/)——distro=cpeid,distrotag
+指定发行版标签。可以多次指定。可选语法，指定cpeid(http://cpe.mitre.org/)--distro=cpeid,distrotag
 
 --content
 # 指定关于存储库内容的关键字/标记。可以多次指定。
@@ -122,7 +122,7 @@ createrepo [选项] <目录>
 # 要进行增量处理的旧版本的数量。默认为1
 
 --read-pkgs-list READ_PKGS_LIST
-# 使用——update将路径输出到PKGS实际读起来很有用
+# 使用--update将路径输出到PKGS实际读起来很有用
 
 --max-delta-rpm-size MAX_DELTA_RPM_SIZE
 # 要运行deltarpm的RPM的最大大小(以字节为单位)

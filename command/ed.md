@@ -26,9 +26,9 @@ q # 退出ed编辑器。
 ```
 
 ```shell
--G或——traditional：提供兼容的功能；
+-G或--traditional：提供兼容的功能；
 -p<字符串>：指定ed在command mode的提示字符；
--s，-，--quiet或——silent：不执行开启文件时的检查功能；
+-s，-，--quiet或--silent：不执行开启文件时的检查功能；
 --help：显示帮助；
 --version：显示版本信息。
 ```

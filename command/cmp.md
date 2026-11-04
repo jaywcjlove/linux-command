@@ -18,9 +18,9 @@ cmp(选项)(参数)
 ```shell
 -c或--print-chars：除了标明差异处的十进制字码之外，一并显示该字符所对应字符；
 -i<字符数目>或--ignore-initial=<字符数目>：指定一个数目；
--l或——verbose：标示出所有不一样的地方；
--s或--quiet或——silent：不显示错误信息；
--v或——version：显示版本信息；
+-l或--verbose：标示出所有不一样的地方；
+-s或--quiet或--silent：不显示错误信息；
+-v或--version：显示版本信息；
 --help：在线帮助。
 ```
 
