@@ -22,7 +22,7 @@ sed [options] -f scriptfile file(s)
 -e<script>或--expression=<script>：以选项中的指定的script来处理输入的文本文件；
 -f<script文件>或--file=<script文件>：以选项中指定的script文件来处理输入的文本文件；
 -h或--help：显示帮助；
--n或--quiet或——silent：仅显示script处理后的结果；
+-n或--quiet或--silent：仅显示script处理后的结果；
 -V或--version：显示版本信息。
 ```
 
