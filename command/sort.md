@@ -28,7 +28,7 @@ sort [OPTION]... --files0-from=F
 -h, --human-numeric-sort       根据存储容量排序(注意使用大写字母，例如：2K 1G)。
 -n, --numeric-sort             根据数字排序。
 -R, --random-sort              随机排序，但分组相同的行。
---random-source=FILE           从FILE中获取随机长度的字节。
+--random-source=FILE           从FILE中获取随机字节。
 -r, --reverse                  将结果倒序排列。
 --sort=WORD                    根据WORD排序，其中: general-numeric 等价于 -g，human-numeric 等价于 -h，month 等价于 -M，numeric 等价于 -n，random 等价于 -R，version 等价于 -V。
 -V, --version-sort             文本中(版本)数字的自然排序。
@@ -58,7 +58,7 @@ sort [OPTION]... --files0-from=F
 
 KEYDEF的格式为：F[.C][OPTS][,F[.C][OPTS]] ，表示开始到结束的位置。
 F表示列的编号
-C表示
+C表示该列中的第几个字符，F和C都从1开始；省略结束位置时，一直到行尾。
 OPTS为[bdfgiMhnRrV]中的一到多个字符，用于覆盖当前排序选项。
 使用--debug选项可诊断出错误的用法。
 
@@ -83,7 +83,7 @@ FILE（可选）：要处理的文件，可以为任意数量。
 sort将文件/文本的每一行作为一个单位相互比较，比较原则是从首字符向后依次按ASCII码值进行比较，最后将他们按升序输出。
 
 ```shell
-root@[mail text]# cat sort.txt
+[root@mail text]# cat sort.txt
 aaa:10:1.1
 ccc:30:3.3
 ddd:40:4.4
@@ -176,6 +176,16 @@ Start部分由三部分组成，其中的Modifier部分就是我们之前说过�
 同理，在End部分中，你可以设定`FEnd.CEnd`，如果你省略`.CEnd`或将它设定为0，则表示结尾到本域的最后一个字符。
 
 
+下面的例子都用这个文件：
+
+```shell
+$ cat facebook.txt
+google 110 5000
+baidu 100 5000
+guge 50 3000
+sohu 100 4500
+```
+
 例子：从公司英文名称的第二个字母开始排序：
 
 ```shell
@@ -186,21 +196,22 @@ google 110 5000
 guge 50 3000
 ```
 
-解读：使用了`-k 1.2`，表示对第一个域的第二个字符开始到本域的最后一个字符为止的字符串进行排序。你会发现baidu因为第二个字母是a而名列榜首。sohu和google第二个字符都是o，但sohu的h在google的o前面，所以两者分别排在第二和第三。guge只能屈居第四了。
+解读：使用了`-k 1.2`，表示对第一个域的第二个字符开始一直到行尾的字符串进行排序。你会发现baidu因为第二个字母是a而名列榜首。sohu和google第二个字符都是o，但sohu的h在google的o前面，所以两者分别排在第二和第三。guge只能屈居第四了。
 
 
 例子：只针对公司英文名称的第二个字母进行排序，如果相同的按照员工工资进行降序排序：
 
 ```shell
-$ sort -t ' ' -k 1.2,1.2 -nrk 3,3 facebook.txt
+$ sort -t ' ' -k 1.2,1.2 -k 3,3nr facebook.txt
 baidu 100 5000
 google 110 5000
 sohu 100 4500
 guge 50 3000
 ```
 
-解读：由于只对第二个字母进行排序，所以我们使用了`-k 1.2,1.2`的表示方式，表示我们只对第二个字母进行排序（如果你问我使用`-k 1.2`怎么不行？当然不行，因为你省略了End部分，这就意味着你将对从第二个字母起到本域最后一个字符为止的字符串进行排序）。
+解读：由于只对第二个字母进行排序，所以我们使用了`-k 1.2,1.2`的表示方式，表示我们只对第二个字母进行排序（如果你问我使用`-k 1.2`怎么不行？当然不行，因为你省略了End部分，这就意味着你将对从第二个字母起到行尾的字符串进行排序）。
 对员工工资进行排序，我们也使用了`-k 3,3`，这是最准确的表述，表示我们只对本域进行排序，因为如果你省略了后面的3，就变成了我们对第3个域开始到最后一个域位置的内容进行排序了。
+`n`和`r`要写在这个key后面（`-k 3,3nr`），这样只对工资这一列生效。如果写成`-nrk 3,3`，`-n`和`-r`就成了全局选项，第一个key也会按数字比较。字母都当作0，第一个key就不起作用了，google会排到baidu前面。
 
 
 ### 注意
@@ -209,6 +220,6 @@ guge 50 3000
 
 2. 关于这个复杂命令的学习，建议您阅读info文档及参考博客、问答网站等。
 
-3. 该命令是`GNU coreutils`包中的命令，相关的帮助信息请查看`man -s 1 shuf`，`info coreutils 'shuf invocation'`。
+3. 该命令是`GNU coreutils`包中的命令，相关的帮助信息请查看`man -s 1 sort`，`info coreutils 'sort invocation'`。
 
 
