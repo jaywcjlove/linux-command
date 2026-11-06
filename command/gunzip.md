@@ -41,7 +41,7 @@ gunzip(选项)(参数)
 首先将`/etc`目录下的所有文件以及子目录进行压缩，备份压缩包etc.zip到`/opt`目录，然后对etc.zip文件进行gzip压缩，设置gzip的压缩级别为9。
 
 ```shell
-zip –r /opt/etc.zip /etc
+zip -r /opt/etc.zip /etc
 gzip -9v /opt/etc.zip
 ```
 
@@ -56,11 +56,11 @@ compressed        uncompressed ratio uncompressed_name
 解压上述etc.zip.gz文件到当前目录。
 
 ```shell
-[root@mylinux ~]#gzip –d /opt/etc.zip.gz 
+[root@mylinux ~]#gzip -d /opt/etc.zip.gz 
 或者执行
 [root@mylinux ~]#gunzip /opt/etc.zip.gz
 ```
 
-通过上面的示例可以知道`gzip –d`等价于`gunzip`命令。
+通过上面的示例可以知道`gzip -d`等价于`gunzip`命令。
 
 

@@ -65,7 +65,7 @@ apt-get remove packagename
 卸载一个已安装的软件包（删除配置文件）：
 
 ```shell
-apt-get –purge remove packagename
+apt-get --purge remove packagename
 ```
 
 会把已装或已卸的软件都备份在硬盘上，所以如果需要空间的话，可以让这个命令来删除你已经删掉的软件：

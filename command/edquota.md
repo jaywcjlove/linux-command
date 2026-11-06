@@ -167,7 +167,7 @@ Grace period before enforcing soft limits for users:
 比如加入用户bye2000的磁盘配额，执行以下命令：
 
 ```shell
-setquota –u / 2000 2500 100 110 bye2000
+setquota -u / 2000 2500 100 110 bye2000
 ```
 
 以下是setquota命令用法的简单描述：

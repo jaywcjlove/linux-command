@@ -110,13 +110,13 @@ rcp -r work webserver1:/home/root/products Enter
 要将远程目录及其所有文件和子目录复制到本地目录，请在以下语法中使用 rcp 和 -r（递归）选项。
 
 ```shell
-rcp –r remote_hostname:remote_dir local_dir Enter
+rcp -r remote_hostname:remote_dir local_dir Enter
 ```
 
 要将名为 work 的远程目录复制到当前目录，请键入以下内容：
 
 ```shell
-rcp –r webserver1:/home/root/work .Enter
+rcp -r webserver1:/home/root/work .Enter
 ```
 
 `.`表示当前目录。将在此目录下创建 work 目录。

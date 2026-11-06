@@ -220,13 +220,13 @@ a、在客户端使用 ethereal 抓包，存为 ftp.pcap 文件。
 b、 将 ftp.pcap 文件进行 tcpprep 操作，制作 cache 文件。
 
 ```shell
-[root@A ~]# tcpprep -an client -i ftp.pcap -o ftp.cache –v 
+[root@A ~]# tcpprep -an client -i ftp.pcap -o ftp.cache -v 
 ```
 
 c、 将 DUT 设备的两个接口和 PC 的两个接口使用网线连接，使用 tcpreplay 重 放报文。注意防火墙的配置为网桥（透明）模式。 
 
 ```shell
-[root@A ~]# tcpreplay -c ftp.cache -i eth0 -j eth1 ftp.pcap -R –v 
+[root@A ~]# tcpreplay -c ftp.cache -i eth0 -j eth1 ftp.pcap -R -v 
 ```
 
 -R 参数表示全速发送，-v 显示打印信息。 
@@ -238,7 +238,7 @@ a、在实验室 BT 下载一些台湾的娱乐节目和热门的大片，使用
 b、将 bt.pcap 文件进行 tcpprep 操作，制作 cache 文件。
 
 ```shell
- [root@A ~]# tcpprep -an client -i bt.pcap -o bt.cache -C "100M BT Packet" –v
+ [root@A ~]# tcpprep -an client -i bt.pcap -o bt.cache -C "100M BT Packet" -v
 ```
 
 制作 cache 文件，在 cache 文件中写入“100M BT Packet”的注释。 
@@ -246,7 +246,7 @@ b、将 bt.pcap 文件进行 tcpprep 操作，制作 cache 文件。
 c、使用 tcpreplay 重放报文。 
 
 ```shell
-[root@A ~]# tcpreplay -c bt.cache -i eth0 -j eth1 bt.pcap -v –R 
+[root@A ~]# tcpreplay -c bt.cache -i eth0 -j eth1 bt.pcap -v -R 
 ```
 
 **3、重放 tftp 服务器上抓到的报文 ** 
@@ -256,7 +256,7 @@ a、在 tftp 服务器上使用 ethereal 抓包，存为 tftp.pcap 文件。 
 b、将 pcap 文件进行 tcpprep 的操作，制作 cache 文件。 
 
 ```shell
-[root@A ~]# tcpprep -an server -i tftp.pcap -o tftp.cache –v 
+[root@A ~]# tcpprep -an server -i tftp.pcap -o tftp.cache -v 
 ```
 
 注意：我在测试的时候犯了一个错误，使用 DUT 的 tftp 升级来做实验，同时穿 过 DUT 重放报文，结果在网卡发送报文的后，DUT 的 mac 地址做了的回应，导致 交互过程没有穿过 DUT，这个问题比较搞笑，上午弄了半天才发现原因，开始还 以为 udp 的连接不能重放。 
@@ -264,7 +264,7 @@ b、将 pcap 文件进行 tcpprep 的操作，制作 cache 文件。 
 c、使用 tcpreplay 重放报文。 
 
 ```shell
-[root@A ~]# tcpreplay -c tftp.cache -i eth0 -j eth1 tftp.pcap –v
+[root@A ~]# tcpreplay -c tftp.cache -i eth0 -j eth1 tftp.pcap -v
 ```
 
 **4、重放pcap包，并指定速率和 loop 次数**

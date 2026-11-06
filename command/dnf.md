@@ -44,7 +44,7 @@ yum install dnf
 用处：该命令用于查看安装在您系统中的 DNF 包管理器的版本
 
 ```shell
-dnf –version
+dnf --version
 ```
 
 !Check-DNF-Version
@@ -230,7 +230,7 @@ dnf groupremove ‘Educational Software’
 用处：该命令用于从特定的软件包库安装特定的软件（本例中我们将使用命令从软件包库 epel 中安装 phpmyadmin 软件包）
 
 ```shell
-dnf –enablerepo=epel install phpmyadmin
+dnf --enablerepo=epel install phpmyadmin
 ```
 
 **更新软件包到最新的稳定发行版** 
@@ -271,7 +271,7 @@ Error: Nothing to do.
 
 DNF 包管理器作为 YUM 包管理器的升级替代品，它能自动完成更多的操作。但在我看来，正因如此，所以 DNF 包管理器不会太受那些经验老道的 Linux 系统管理者的欢迎。举例如下：
 
-1.  在 DNF 中没有 –skip-broken 命令，并且没有替代命令供选择。
+1.  在 DNF 中没有 --skip-broken 命令，并且没有替代命令供选择。
 2.  在 DNF 中没有判断哪个包提供了指定依赖的 resolvedep 命令。
 3.  在 DNF 中没有用来列出某个软件依赖包的 deplist 命令。
 4.  当你在 DNF 中排除了某个软件库，那么该操作将会影响到你之后所有的操作，不像在 YUM 下那样，你的排除操作只会咋升级和安装软件时才起作用。

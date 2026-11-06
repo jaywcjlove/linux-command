@@ -70,7 +70,7 @@ make install
 
 当然你也可以随时参考你可以随时参考 [htop 的 GitHub](https://link.zhihu.com/?target=https%3A//github.com/htop-dev/htop) 页面以获得详细说明。
 
-**说明**：htop源码安装方式默认安装到 `/usr/local` 目录下，如果想安装到其它路径，在执行 configure 时通过 `—prefix` 指定，格式为：`./configure --prefix=/some/path`
+**说明**：htop源码安装方式默认安装到 `/usr/local` 目录下，如果想安装到其它路径，在执行 configure 时通过 `--prefix` 指定，格式为：`./configure --prefix=/some/path`
 
 ###  语法
 

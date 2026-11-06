@@ -97,7 +97,7 @@ ethtool -i eth0
 ethtool -K eth0 rx off
 ```
 
-操作完毕后，可输入`ethtool –k eth0`，查看校验功能是否已被停止。如果机器上安装了两块网卡，那么eth0对应着哪块网卡呢？输入：
+操作完毕后，可输入`ethtool -k eth0`，查看校验功能是否已被停止。如果机器上安装了两块网卡，那么eth0对应着哪块网卡呢？输入：
 
 ```shell
 ethtool -p eth0 10
@@ -106,7 +106,7 @@ ethtool -p eth0 10
 操作完毕后，看哪块网卡的led灯在闪，eth0就对应着哪块网卡。查看网卡，在接收/发送数据时，有没有出错？请输入：
 
 ```shell
-ethtool –S eth0
+ethtool -S eth0
 ```
 
 将千兆网卡的速度降为百兆，请输入：

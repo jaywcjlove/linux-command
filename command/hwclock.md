@@ -35,8 +35,8 @@ hwclock(选项)
 设置硬件时间要依赖于操作系统时间，具体方法如下：
 
 ```shell
-hwclock –systohc
-hwclock --systohc –-utc
+hwclock --systohc
+hwclock --systohc --utc
 ```
 
 不加任何参数使用hwclock，可以查看当前的硬件日期和时间。

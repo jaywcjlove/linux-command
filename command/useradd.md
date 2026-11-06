@@ -84,7 +84,7 @@ useradd(选项)(参数)
 新建用户加入组：
 
 ```shell
-useradd –g sales jack –G company,employees    # -g：加入主要组、-G：加入次要组
+useradd -g sales jack -G company,employees    # -g：加入主要组、-G：加入次要组
 ```
 
 建立一个新用户账户，并设置ID：

@@ -63,7 +63,7 @@ cpio(选项)
 **将`/etc`下的所有普通文件都备份到`/opt/etc.cpio`，使用以下命令：** 
 
 ```shell
-find /etc –type f | cpio –ocvB >/opt/etc.cpio
+find /etc -type f | cpio -ocvB >/opt/etc.cpio
 ```
 
 **将系统上所有资料备份到磁带机内，使用以下命令：** 
@@ -85,7 +85,7 @@ cpio  -icdvt < /dev/st0 > /tmp/st_content
 **将示例1中的备份包还原到相应的位置，如果有相同文件进行覆盖，使用以下命令：** 
 
 ```shell
-cpio –icduv < /opt/etc.cpio
+cpio -icduv < /opt/etc.cpio
 ```
 
 注意，cpio恢复的路径，如果cpio在打包备份的时候用的是绝对路径，那么在恢复的时候会自动恢复到这些绝对路径下，本例就会将备份文件全部还原到/etc路径下对应的目录中。同理，如果在打包备份用的是相对路径，还原时也将恢复到相对路径下。
