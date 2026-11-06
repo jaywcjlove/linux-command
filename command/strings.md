@@ -17,8 +17,8 @@ strings [ -a ] [ - ] [ -o ] [ -t Format ] [ -n Number ] [ -Number ]  [file ... ]
 
 ```shell
 -a --all：扫描整个文件而不是只扫描目标文件初始化和装载段
--f –print-file-name：在显示字符串前先显示文件名
--n –bytes=[number]：找到并且输出所有NUL终止符序列
+-f --print-file-name：在显示字符串前先显示文件名
+-n --bytes=[number]：找到并且输出所有NUL终止符序列
 - ：设置显示的最少的字符数，默认是4个字符
 -t --radix={o,d,x} ：输出字符的位置，基于八进制，十进制或者十六进制
 -o ：类似--radix=o

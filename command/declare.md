@@ -106,7 +106,7 @@ test
 # 定义函数外的全局变量
 declare a=3
 b=3
-declare –p a b
+declare -p a b
 # 返回结果如下。
 # declare -- a="3"
 # declare -- b="3"

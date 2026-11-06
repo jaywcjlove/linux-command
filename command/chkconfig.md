@@ -66,7 +66,7 @@ chkconfig --list mysqld        # 列出mysqld服务设置情况。
 chkconfig --level 35 mysqld on # 设定mysqld在等级3和5为开机运行服务，--level 35表示操作只在等级3和5执行，on表示启动，off表示关闭。
 chkconfig mysqld on            # 设定mysqld在各等级为on，“各等级”包括2、3、4、5等级。
 
-chkconfig –level redis 2345 on # 把redis在运行级别为2、3、4、5的情况下都是on（开启）的状态。
+chkconfig --level redis 2345 on # 把redis在运行级别为2、3、4、5的情况下都是on（开启）的状态。
 ```
 
 如何增加一个服务：

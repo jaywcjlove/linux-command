@@ -49,7 +49,7 @@ nfsstat -r
 要显示关于服务器接收和拒绝的RPC和NFS调用数目的信息，输入如下命令：
 
 ```shell
-nfsstat –s
+nfsstat -s
 ```
 
 

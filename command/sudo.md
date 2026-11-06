@@ -163,7 +163,7 @@ ps aux grep syslogd
 把得到的syslogd进程的PID（输出的第二列是PID）填入下面：
 
 ```shell
-kill –HUP PID
+kill -HUP PID
 ```
 
 这样，sudo就可以写日志了：

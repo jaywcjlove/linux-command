@@ -108,7 +108,7 @@ ntsysv
 加入开机自动启动：
 
 ```shell
-chkconfig –level 35 crond on
+chkconfig --level 35 crond on
 ```
 
 ###  实例
