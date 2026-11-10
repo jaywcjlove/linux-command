@@ -438,6 +438,7 @@ Adobe软件的最佳替代品 [原文在这里](https://linux.cn/article-8928-1.
 - [Webflow (Adobe Muse)](https://webflow.com/) 一款可以帮助用户不用编码就可以快速创建网站的谷歌浏览器插件。
 - [Tupi (Adobe Animate)](http://www.maefloresta.com/portal/) 一款可以创建HTML5动画的工具。
 - [Black Magic Fusion (Adobe After Effects)](https://www.blackmagicdesign.com) 一款先进的合成软件，广泛应用于视觉特效、广电影视设计以及3D动画设计等领域。
+-  [BackGone (AI 智能抠图与去背景)](https://backgone.com) 一个专业的 AI 图像背景移除平台，支持网页在线处理、批量处理、REST API 以及 MCP Server。
 
 ### 中国开源镜像站点
 
