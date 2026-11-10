@@ -26,7 +26,7 @@
   },
   "devDependencies": {
     "@uiw/github-corners": "~1.5.11",
-    "@wcj/dark-mode": "~1.0.14",
+    "@wcj/dark-mode": "~1.1.0",
     "colors-cli": "~1.0.31",
     "ejs": "~3.1.6",
     "compressing": "^1.6.2",
