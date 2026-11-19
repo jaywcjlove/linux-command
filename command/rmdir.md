@@ -1,5 +1,6 @@
 rmdir
 ===
+`Remove Directory`
 
 用来删除空目录
 
